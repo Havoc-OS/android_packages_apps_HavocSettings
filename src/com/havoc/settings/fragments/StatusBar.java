@@ -42,8 +42,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
     public static final String TAG = "StatusBar";
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String SMART_PULLDOWN = "smart_pulldown";
 
     private ListPreference mQuickPulldown;
+    private ListPreference mSmartPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,16 +61,28 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
         mQuickPulldown.setOnPreferenceChangeListener(this);
+
+        mSmartPulldown = (ListPreference) findPreference(SMART_PULLDOWN);
+        int smartPulldown = Settings.System.getInt(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0);
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        updateSmartPulldownSummary(smartPulldown);
+        mSmartPulldown.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
-            int quickPulldownValue = Integer.parseInt((String) newValue);
-            LineageSettings.System.putIntForUser(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    quickPulldownValue, UserHandle.USER_CURRENT);
-            updatePulldownSummary(quickPulldownValue);
+            int value = Integer.parseInt((String) newValue);
+            LineageSettings.System.putInt(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    value);
+            updatePulldownSummary(value);
+            return true;
+        } else if (preference == mSmartPulldown) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, value);
+            updateSmartPulldownSummary(value);
             return true;
         }
         return false;
@@ -90,11 +104,22 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
         }
     }
-    
-    @Override 
-    public boolean onPreferenceChange(Preference preference, Object newValue) { 
-        return false; 
-    } 
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+        }
+    }
 
     @Override
     public int getMetricsCategory() {
