@@ -57,6 +57,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 3;
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
@@ -66,6 +67,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
     private ListPreference mQuickPulldown;
+    private ListPreference mSmartPulldown;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -112,6 +114,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
+
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        mSmartPulldown.setOnPreferenceChangeListener(this);
+        int smartPulldown = Settings.System.getInt(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0);
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        updateSmartPulldownSummary(smartPulldown);
     }
 
     @Override
@@ -153,6 +162,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     quickPulldownValue, UserHandle.USER_CURRENT);
             updatePulldownSummary(quickPulldownValue);
             return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
+            updateSmartPulldownSummary(smartPulldown);
+            return true;
 		}
         return false;
     }
@@ -180,6 +194,22 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     ? R.string.quick_pulldown_left
                     : R.string.quick_pulldown_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+    }
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
         }
     }
 

@@ -974,4 +974,13 @@
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
     <string name="quick_pulldown_always">Always</string>
+
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
+    <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_none">No notifications</string>
+    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_ongoing">No ongoing</string>
 </resources>
