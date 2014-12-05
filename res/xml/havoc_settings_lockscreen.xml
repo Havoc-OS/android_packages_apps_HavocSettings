@@ -232,6 +232,18 @@
         android:key="ls_shortcuts"
         android:title="@string/ls_shortcuts">
 
+        <PreferenceScreen
+            android:key="lockscreen_shortcuts"
+            android:fragment="com.havoc.settings.preferences.dslv.ActionListViewSettings"
+            android:summary="@string/lockscreen_shortcuts_summary"
+            android:title="@string/lockscreen_shortcuts_title">
+            <extra android:name="actionMode" android:value="4" />
+            <extra android:name="maxAllowedActions" android:value="8" />
+            <extra android:name="disableLongpress" android:value="true" />
+            <extra android:name="useAppPickerOnly" android:value="true" />
+            <extra android:name="fragment" android:value="com.havoc.settings.fragments.LockscreenShortcutFragment" />
+        </PreferenceScreen>
+
         <Preference
             android:title="@string/lockscreen_tuner_title"
             android:summary="@string/lockscreen_tuner_summary" >

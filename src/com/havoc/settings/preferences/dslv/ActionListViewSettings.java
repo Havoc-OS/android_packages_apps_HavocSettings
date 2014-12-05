@@ -497,7 +497,7 @@ public class ActionListViewSettings extends ListFragment implements
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_HELP, 0, R.string.help)
+        menu.add(0, MENU_HELP, 0, R.string.shortcuts_icon_picker_help)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         menu.add(0, MENU_RESET, 0, R.string.shortcut_action_reset)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
@@ -523,9 +523,9 @@ public class ActionListViewSettings extends ListFragment implements
 
     private ArrayList<ActionConfig> getConfig() {
         switch (mActionMode) {
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case LOCKSCREEN_SHORTCUT:
                 return ActionHelper.getLockscreenShortcutConfig(mActivity);
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 return ActionHelper.getNavBarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -553,10 +553,10 @@ public class ActionListViewSettings extends ListFragment implements
 
     private void setConfig(ArrayList<ActionConfig> actionConfigs, boolean reset) {
         switch (mActionMode) {
-/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case LOCKSCREEN_SHORTCUT:
                 ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
                 break;
+/* Disabled for now till all features are back. Enable it step per step!!!!!!
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
                 break;
@@ -773,7 +773,7 @@ public class ActionListViewSettings extends ListFragment implements
                                 : R.string.shortcut_action_help_delete_last_entry, actionMode);
                     }
                     return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.help)
+                    .setTitle(R.string.shortcuts_icon_picker_help)
                     .setMessage(finalHelpMessage)
                     .setNegativeButton(R.string.ok,
                         new DialogInterface.OnClickListener() {
