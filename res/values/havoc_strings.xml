@@ -297,4 +297,8 @@
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>	
 
+    <!-- Hide brightness slider -->
+    <string name="brightness_slider_title">Brightness slider</string>
+    <string name="brightness_slider_summary">Show the brightness slider underneath quick settings</string>
+
 </resources>
