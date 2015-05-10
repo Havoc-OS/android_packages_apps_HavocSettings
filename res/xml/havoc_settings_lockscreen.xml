@@ -17,7 +17,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
+	
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
@@ -41,6 +41,12 @@
         android:title="@string/block_on_secure_keyguard_title"
         android:summary="@string/block_on_secure_keyguard_summary"
         android:defaultValue="false"/>
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_power_menu_disabled"
+        android:title="@string/lockscreen_power_menu_disabled_title"
+        android:summary="@string/lockscreen_power_menu_disabled_summary"
+        android:defaultValue="true" />
 		
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_pin_ripple"

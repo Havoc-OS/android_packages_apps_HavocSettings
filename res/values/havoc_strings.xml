@@ -231,4 +231,8 @@
     <string name="lockscreen_pin_ripple_title">Pin Ripple</string>
     <string name="lockscreen_pin_ripple_summary">Disable to remove ripple when entering pin numbers</string>
 
+    <!-- Power menu on lockscreen -->
+    <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
+    <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
+
 </resources>
