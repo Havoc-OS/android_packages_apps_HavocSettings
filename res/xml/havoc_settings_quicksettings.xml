@@ -61,5 +61,11 @@
             settings:min="1"
             settings:units=""
             android:persistent="false" />
+			
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="quick_settings_vibrate" 
+            android:title="@string/quick_settings_vibrate_title" 
+            android:summary="@string/quick_settings_vibrate_summary" 
+            android:defaultValue="false"/>			
     </PreferenceCategory> 		
 </PreferenceScreen>

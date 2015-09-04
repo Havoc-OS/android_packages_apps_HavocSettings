@@ -474,4 +474,8 @@
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_portrait_title">Columns (portrait)</string>
     <string name="qs_columns_landscape_title">Columns (landscape)</string>
+	
+    <!-- QuickSettings haptic feedback --> 
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string> 
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string> 	
 </resources>
