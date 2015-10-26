@@ -17,4 +17,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <ListPreference
+        android:key="volume_key_cursor_control"
+        android:dialogTitle="@string/volbtn_cursor_control_title"
+        android:title="@string/volbtn_cursor_control_title"
+        android:entries="@array/volbtn_cursor_control_entries"
+        android:entryValues="@array/volbtn_cursor_control_values"
+        android:persistent="false" />
+
 </PreferenceScreen>
