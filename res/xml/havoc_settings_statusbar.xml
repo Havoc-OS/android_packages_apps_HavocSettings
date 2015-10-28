@@ -40,15 +40,21 @@
         android:key="statusbar_clock"
         android:title="@string/statusbar_clock">
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="statusbar_battery"
         android:title="@string/statusbar_battery">
 
+        <Preference
+            android:key="battery_settings"
+            android:title="@string/battery_style_category_title"
+            android:summary="@string/battery_style_category_summary"
+            android:fragment="com.havoc.settings.fragments.StatusBarBattery" />
+
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="statusbar_networkicon"
         android:title="@string/statusbar_networkicon">
 

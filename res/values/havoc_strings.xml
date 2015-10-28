@@ -567,4 +567,11 @@
     <string name="chooser_activity_blacklist_pref_title">Add app</string>
     <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
 
+    <!-- Battery percentage -->
+    <string name="battery_style_category_title">Battery icon</string>
+    <string name="battery_style_category_summary">Customize the battery icon in statusbar</string>
+    <string name="status_bar_battery_percentage_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
 </resources>
