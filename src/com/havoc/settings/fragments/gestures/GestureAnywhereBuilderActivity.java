@@ -43,7 +43,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.BitmapDrawable;
 import com.android.settings.R;
-import com.havoc.settings.fragments.ShortcutPickHelper;
+import com.havoc.settings.preferences.ShortcutPickHelper;
 
 import java.util.Map;
 import java.util.Collections;
