@@ -90,6 +90,13 @@
             android:summary="@string/network_traffic_state_summary"
             android:defaultValue="true" />
 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="network_traffic_hidearrow"
+            android:title="@string/network_traffic_hidearrow"
+            android:summary="@string/network_traffic_hidearrow_summary"
+            android:dependency="network_traffic_state"
+            android:defaultValue="false" />
+
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="network_traffic_autohide_threshold"
             android:title="@string/network_traffic_autohide_threshold_title"
