@@ -21,6 +21,12 @@
     <PreferenceCategory
         android:key="back_key"
         android:title="@string/hardware_keys_back_key_title" >
+		
+        <com.havoc.settings.preferences.ActionPreference 
+            android:key="hwkeys_button_back_single_tap" 
+            android:summary="@string/hardware_keys_single_tap_summary" 
+            android:title="@string/hardware_keys_single_tap_title" > 
+        </com.havoc.settings.preferences.ActionPreference>		
 
         <com.havoc.settings.preferences.ActionPreference
             android:key="hwkeys_button_back_long_press"
@@ -38,6 +44,12 @@
     <PreferenceCategory
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
+		
+        <com.havoc.settings.preferences.ActionPreference 
+            android:key="hwkeys_button_home_single_tap" 
+            android:summary="@string/hardware_keys_single_tap_summary" 
+            android:title="@string/hardware_keys_single_tap_title" > 
+        </com.havoc.settings.preferences.ActionPreference>		
 
         <com.havoc.settings.preferences.ActionPreference
             android:key="hwkeys_button_home_long_press"
