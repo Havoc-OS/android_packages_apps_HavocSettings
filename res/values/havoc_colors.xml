@@ -18,4 +18,5 @@
     <!-- ColorPicker -->
     <color name="list_background_pressed">#ff555555</color>
     <color name="transparent">@android:color/transparent</color>
+     <color name="ga_gesture_color">@*android:color/accent_material_dark</color>
 </resources>
