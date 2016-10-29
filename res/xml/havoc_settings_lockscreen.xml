@@ -41,6 +41,12 @@
         android:title="@string/block_on_secure_keyguard_title"
         android:summary="@string/block_on_secure_keyguard_summary"
         android:defaultValue="false"/>
+		
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_pin_ripple"
+        android:title="@string/lockscreen_pin_ripple_title"
+        android:summary="@string/lockscreen_pin_ripple_summary"
+        android:defaultValue="true" />
 
     <Preference
             android:title="@string/lockscreen_tuner_title" >
