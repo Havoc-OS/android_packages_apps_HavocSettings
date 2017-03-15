@@ -22,4 +22,10 @@
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="network_traffic_settings" />
 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="roaming_indicator_icon"
+        android:title="@string/roaming_indicator_icon_title"
+        android:summary="@string/roaming_indicator_icon_summary"
+        android:defaultValue="true"/>
+		
 </PreferenceScreen>
