@@ -250,4 +250,8 @@
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Show roaming indicator</string>
     <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming</string>	
+
+    <!-- Bluetooth battery status --> 
+    <string name="bluetooth_battery_title">Bluetooth battery status</string> 
+    <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
 </resources>
