@@ -457,6 +457,14 @@
 
     <!-- Hide Lockscreen clock & date --> 
     <string name="hide_lockscreen_items_title">Lockscreen items</string> 
-    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string> 
-    <string name="hide_lockscreen_date_title">Show lockscreen date</string> 
+    <string name="hide_lockscreen_clock_title">Clock widget</string> 
+    <string name="hide_lockscreen_clock_summary">Change the clock widget\'s visibility</string> 
+    <string name="hide_lockscreen_date_title">Date widget</string> 
+    <string name="hide_lockscreen_date_summary">Change the date\'s visibility underneath the clock widget</string> 
+	
+    <!-- Incall vibrate options --> 
+    <string name="incall_vibration_category">In-call vibration options</string> 
+    <string name="incall_vibrate_connect_title">Vibrate on connect</string> 
+    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string> 
+    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string> 
 </resources>

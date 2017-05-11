@@ -93,7 +93,7 @@
             android:key="notifications_category"
             android:title="@string/notifications_title"
             android:fragment="com.havoc.settings.fragments.Notifications"
-            android:icon="@drawable/ic_settings_notifications"/>
+            android:icon="@drawable/ic_settings_notification"/>
 
         <!-- Weather -->
         <Preference
