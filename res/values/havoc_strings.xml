@@ -254,4 +254,8 @@
     <!-- Bluetooth battery status --> 
     <string name="bluetooth_battery_title">Bluetooth battery status</string> 
     <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
+	
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G icon</string>
+    <string name="show_fourg_icon_summary">Display 4G in signal icon instead LTE</string>	
 </resources>
