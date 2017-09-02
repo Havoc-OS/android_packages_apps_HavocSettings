@@ -24,4 +24,10 @@
         android:entries="@array/media_scanner_on_boot_entries" 
         android:entryValues="@array/media_scanner_on_boot_values" /> 
 
+    <Preference 
+        android:key="wakelock_blocker" 
+        android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
+        android:title="@string/wakelock_blocker_title" 
+        android:summary="@string/wakelock_blocker_summary" />
+
 </PreferenceScreen>
