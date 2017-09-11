@@ -27,11 +27,34 @@
         android:key="power_menu"
         android:title="@string/powermenu_title"
         android:fragment="com.havoc.settings.fragments.PowerMenu" />
-		
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
-        android:key="allow_incall_home"
-        android:title="@string/allow_incall_home_title"
-        android:summary="@string/allow_incall_home_summary"
-        android:defaultValue="true" />
+
+    <PreferenceCategory
+        android:key="hardware_keys"
+        android:title="@string/hardware_keys_category" >
+
+        <com.havoc.settings.preferences.CustomSeekBarPreference
+            android:key="button_brightness"
+            android:title="@string/button_brightness_title"
+            android:max="255"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false" />
+
+        <ListPreference
+            android:dialogTitle="@string/backlight_timeout_title"
+            android:entries="@array/backlight_timeout_entries"
+            android:entryValues="@array/backlight_timeout_values"
+            android:key="backlight_timeout"
+            android:persistent="false"
+            android:title="@string/backlight_timeout_title" />
+
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="allow_incall_home"
+            android:title="@string/allow_incall_home_title"
+            android:summary="@string/allow_incall_home_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
