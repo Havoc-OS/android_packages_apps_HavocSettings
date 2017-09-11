@@ -27,5 +27,11 @@
         android:key="power_menu"
         android:title="@string/powermenu_title"
         android:fragment="com.havoc.settings.fragments.PowerMenu" />
+		
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="allow_incall_home"
+        android:title="@string/allow_incall_home_title"
+        android:summary="@string/allow_incall_home_summary"
+        android:defaultValue="true" />
 
 </PreferenceScreen>
