@@ -682,4 +682,7 @@
     <string name="lockscreen_visualizer_title">Music visualizer</string>
     <string name="lockscreen_visualizer_summary">Show visualizer on lockscreen when music is playing</string>
 
+    <!-- The volume key answer -->
+    <string name="volume_answer_call_title">Volume keys answer</string>
+    <string name="volume_answer_call_summary">Answer the call when volume keys pressed</string>
 </resources>
