@@ -35,6 +35,11 @@
         android:summary="@string/battery_fully_charged_notif_summary"
         android:defaultValue="false" />
 		
+    <Preference
+        android:key="charging_light"
+        android:fragment="com.havoc.settings.BatteryLightSettings"
+        android:title="@string/battery_light_settings" />
+
     <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
