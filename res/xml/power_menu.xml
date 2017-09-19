@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 Havoc-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/powermenu_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_power"
+       android:title="@string/powermenu_power"
+       android:defaultValue="true" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_restart"
+       android:title="@string/powermenu_restart"
+       android:defaultValue="true" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_restart_recovery"
+       android:title="@string/powermenu_restart_recovery"
+       android:defaultValue="true" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_screenshot"
+       android:title="@string/powermenu_screenshot"
+       android:defaultValue="false" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_airplane"
+       android:title="@string/powermenu_airplane"
+       android:defaultValue="false" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_settings"
+       android:title="@string/powermenu_settings"
+       android:defaultValue="false" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_lockdown"
+       android:title="@string/powermenu_lockdown"
+       android:defaultValue="false" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_users"
+       android:title="@string/powermenu_users"
+       android:defaultValue="false" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_logout"
+       android:title="@string/powermenu_logout"
+       android:defaultValue="false" />
+
+</PreferenceScreen>

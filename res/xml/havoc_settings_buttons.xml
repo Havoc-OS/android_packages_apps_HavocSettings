@@ -18,9 +18,14 @@
     android:title="@string/buttons_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
+    <Preference
         android:key="volume_key"
         android:fragment="com.havoc.settings.fragments.Volume"
         android:title="@string/volume_title" />
+
+    <Preference
+        android:key="power_menu"
+        android:title="@string/powermenu_title"
+        android:fragment="com.havoc.settings.fragments.PowerMenu" />
 
 </PreferenceScreen>
