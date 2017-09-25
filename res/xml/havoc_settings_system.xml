@@ -18,4 +18,13 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <Preference
+            android:key="app_ops_settings"
+            android:title="@string/app_ops_settings_title"
+            android:summary="@string/app_ops_settings_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.applications.appops.AppOpsSummary" />
+        </Preference>
+
 </PreferenceScreen>

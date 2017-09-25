@@ -170,5 +170,8 @@
     <string name="global_actions_onthego_title">On-The-Go</string>
     <string name="onthego_alpha_title">On-The-Go Alpha</string>
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay</string>
+	
+    <string name="app_ops_settings_title">App Ops</string>
+    <string name="app_ops_settings_summary">Block app permissions</string>
 
 </resources>
