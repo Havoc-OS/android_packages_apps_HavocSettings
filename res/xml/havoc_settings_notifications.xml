@@ -18,6 +18,11 @@
 	android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:fragment="com.havoc.settings.fragments.HeadsUpSettings" />
+
     <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
         android:key="toast_icon" 
         android:title="@string/toast_icon_title" 
