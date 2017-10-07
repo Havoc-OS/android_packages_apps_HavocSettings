@@ -266,4 +266,9 @@
     <!-- Double-tap-to sleep -->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
     <string name="double_tap_sleep_lockscreen_sumary">Double tap anywhere on the lockscreen to put phone to sleep</string>	
+	
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">Notification count</string>
+    <string name="lockscreen_maxnotif_summary">Customize notification count</string>
+    <string name="lockscreen_maxnotif_config">Maximum number of allowed notifications</string>	
 </resources>
