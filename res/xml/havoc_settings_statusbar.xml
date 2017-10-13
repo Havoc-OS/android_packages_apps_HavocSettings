@@ -19,6 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
+    <Preference
+        android:key="batterybar"
+        android:title="@string/battery_bar_title"
+        android:summary="@string/battery_bar_summary"
+        android:fragment="com.havoc.settings.fragments.statusbar.BatteryBar" />
+
     <lineageos.preference.LineageSystemSettingSwitchPreference 
         android:key="double_tap_sleep_gesture" 
         android:title="@string/statusbar_doubletap_sleep_title" 
