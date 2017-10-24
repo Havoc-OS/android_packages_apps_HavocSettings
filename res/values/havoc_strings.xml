@@ -275,4 +275,8 @@
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>	
+	
+	<!-- Show VoLTE icon on statusbar --> 
+    <string name="volte_icon_title">VoLTE icon</string> 
+    <string name="volte_icon_summary">Display VoLTE icon when available</string>	
 </resources>
