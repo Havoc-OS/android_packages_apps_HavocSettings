@@ -65,6 +65,12 @@
         android:summary="@string/pocket_judge_summary" 
         android:defaultValue="false" />		
 		
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference  
+        android:key="fp_success_vibrate"  
+        android:title="@string/fprint_sucess_vib_title"  
+        android:summary="@string/fprint_sucess_vib_summary"  
+        android:defaultValue="true" /> 		
+
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="lock_screen_custom_notif"
         android:title="@string/lockscreen_maxnotif_title"

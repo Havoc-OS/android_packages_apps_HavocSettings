@@ -725,4 +725,8 @@
     <!-- Scroll small QS tiles -->
     <string name="qqs_scroll_title">Scroll small QS tiles</string> 
     <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
+	
+    <!-- Fingerprint authentication vibration --> 
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string> 
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string> 	
 </resources>
