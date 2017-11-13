@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 Havoc-OS
+<!--
+     Copyright (C) 2018 Havoc-OS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,17 +14,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <dimen name="picker_circle_preview_size">26dp</dimen>
-	
-    <dimen name="alert_dialog_padding_material">20dp</dimen>	
-	
-    <!-- Navbar height --> 
-    <integer name="navigation_bar_height_min_percent">65</integer> 
-    <integer name="navigation_bar_height_max_percent">135</integer> 
-    <integer name="navigation_bar_width_min_percent">65</integer> 
-    <integer name="navigation_bar_width_max_percent">135</integer> 
- 
-    <!-- Shortcut picker --> 
-    <dimen name="shortcut_picker_left_padding">70dip</dimen>	
-</resources>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="24.0dp"
+        android:height="24.0dp"
+        android:viewportWidth="24.0"
+        android:viewportHeight="24.0"
+        android:tint="?android:attr/colorAccent">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+</vector>
