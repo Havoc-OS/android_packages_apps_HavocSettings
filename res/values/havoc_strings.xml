@@ -36,6 +36,7 @@
     <string name="system_title">System</string>
     <string name="weather_title">Weather</string>
     <string name="volume_title">Volume Rockers</string>
+    <string name="device_part_title">Device</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
