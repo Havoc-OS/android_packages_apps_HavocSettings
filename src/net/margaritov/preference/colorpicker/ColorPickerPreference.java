@@ -37,7 +37,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.android.settings.R;
+import com.havoc.settings.R;
 
 /**
  * A preference type that allows a user to choose a time
@@ -88,6 +88,11 @@ public class ColorPickerPreference extends Preference implements
     @Override
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
         onColorChanged(restoreValue ? getPersistedInt(mValue) : (Integer) defaultValue);
+    }
+
+    @Override
+    protected boolean isPersisted() {
+        return true;
     }
 
     private void init(Context context, AttributeSet attrs) {
@@ -208,7 +213,7 @@ public class ColorPickerPreference extends Preference implements
         }
         widgetFrameView.addView(iView);
         widgetFrameView.setMinimumWidth(0);
-        final int size = (int) getContext().getResources().getDimension(R.dimen.picker_circle_preview_size);
+        final int size = (int) getContext().getResources().getDimension(R.dimen.oval_notification_size);
         final int imageColor = ((mValue & 0xF0F0F0) == 0xF0F0F0) ?
                 (mValue - 0x101010) : mValue;
         iView.setImageDrawable(createOvalShape(size, 0xFF000000 + imageColor));
@@ -216,19 +221,23 @@ public class ColorPickerPreference extends Preference implements
         iView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mEnabled) {
-                    showDialog(null);
-                }
+                showDialog(null);
             }
         });
+    }
+
+    private static ShapeDrawable createOvalShape(int size, int color) {
+        ShapeDrawable shape = new ShapeDrawable(new OvalShape());
+        shape.setIntrinsicHeight(size);
+        shape.setIntrinsicWidth(size);
+        shape.getPaint().setColor(color);
+        return shape;
     }
 
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
-        if (mEnabled != enabled) {
-            mEnabled = enabled;
-        }
+        mEnabled = enabled;
     }
 
     @Override
@@ -249,11 +258,13 @@ public class ColorPickerPreference extends Preference implements
     }
 
     public boolean onPreferenceClick(Preference preference) {
-        //showDialog(null);
         return false;
     }
 
     protected void showDialog(Bundle state) {
+        if (!mEnabled)
+            return;
+
         mDialog = new ColorPickerDialog(getContext(), mValue, mShowLedPreview);
         mDialog.setOnColorChangedListener(this);
         if (mAlphaSliderEnabled) {
@@ -407,13 +418,5 @@ public class ColorPickerPreference extends Preference implements
                 return new SavedState[size];
             }
         };
-    }
-
-    private static ShapeDrawable createOvalShape(int size, int color) {
-        ShapeDrawable shape = new ShapeDrawable(new OvalShape());
-        shape.setIntrinsicHeight(size);
-        shape.setIntrinsicWidth(size);
-        shape.getPaint().setColor(color);
-        return shape;
     }
 }
