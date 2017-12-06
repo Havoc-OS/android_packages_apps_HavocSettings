@@ -353,6 +353,8 @@
     <string name="hardware_keys_double_tap_title">Double tap action</string> 
     <string name="hardware_keys_category">Hardware keys</string> 
     <string name="hardware_keys_disable_title">Disable keys</string>
+    <string name="hardware_keys_category">Navigation buttons</string> 
+    <string name="hardware_keys_disable_title">Disable navigation buttons</string>	
 	
 	<string name="button_backlight_on_touch_only_title">Button touch</string>
     <string name="button_backlight_on_touch_only_summary">Enable backlight with timeout only on button touch</string>
