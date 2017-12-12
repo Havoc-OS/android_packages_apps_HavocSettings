@@ -530,4 +530,10 @@
     <!-- Lockscreen visualizer --> 
     <string name="lockscreen_visualizer_title">Music visualizer</string> 
     <string name="lockscreen_visualizer_summary">Display music visualizer when available</string> 	
+	
+    <!-- Data/Wifi activity arrows --> 
+    <string name="data_activity_arrows_title">Data activity</string> 
+    <string name="data_activity_arrows_summary">Display data activity arrows</string> 
+    <string name="wifi_activity_arrows_title">Wifi activity</string> 
+    <string name="wifi_activity_arrows_summary">Display wifi activity arrows</string> 	
 </resources>
