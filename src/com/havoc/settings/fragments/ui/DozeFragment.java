@@ -15,32 +15,58 @@
  */
 package com.havoc.settings.fragments.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
-
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
-import com.android.settings.SettingsPreferenceFragment;
-
-import com.havoc.settings.R;
-
-public class DozeFragment extends SettingsPreferenceFragment {
-
-    public static final String TAG = "DozeFragment";
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.doze_settings);
+import android.content.ContentResolver; 
+import android.content.Context; 
+import android.content.res.Resources; 
+import android.os.Bundle; 
+import android.os.UserHandle; 
+import android.support.v7.preference.ListPreference; 
+import android.support.v7.preference.Preference; 
+import android.provider.Settings; 
+import android.support.v7.preference.Preference; 
+ 
+import com.android.internal.logging.nano.MetricsProto; 
+import com.android.settings.SettingsPreferenceFragment; 
+ 
+import com.havoc.settings.R; 
+ 
+public class DozeFragment extends SettingsPreferenceFragment implements 
+        Preference.OnPreferenceChangeListener { 
+ 
+    private ListPreference mAmbientTicker; 
+ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        addPreferencesFromResource(R.xml.doze_settings); 
+        final ContentResolver resolver = getActivity().getContentResolver();  
+ 
+        mAmbientTicker = (ListPreference) findPreference("force_ambient_for_media"); 
+        int mode = Settings.System.getIntForUser(resolver, 
+                Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0, UserHandle.USER_CURRENT); 
+        mAmbientTicker.setValue(Integer.toString(mode)); 
+        mAmbientTicker.setSummary(mAmbientTicker.getEntry()); 
+        mAmbientTicker.setOnPreferenceChangeListener(this); 
+    } 
+ 
+    public boolean onPreferenceChange(Preference preference, Object newValue) { 
+        final ContentResolver resolver = getActivity().getContentResolver(); 
+        if (preference == mAmbientTicker) { 
+            int value = Integer.valueOf((String) newValue); 
+            int index = mAmbientTicker.findIndexOfValue((String) newValue); 
+            mAmbientTicker.setSummary( 
+                    mAmbientTicker.getEntries()[index]); 
+            Settings.System.putIntForUser(resolver, Settings.System.FORCE_AMBIENT_FOR_MEDIA, 
+                    value, UserHandle.USER_CURRENT); 
+            return true; 
+        } 
+        return false; 
+    } 
+ 
+    public static void reset(Context mContext) { 
+        ContentResolver resolver = mContext.getContentResolver(); 
+        Settings.System.putIntForUser(resolver, 
+                Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0, UserHandle.USER_CURRENT); 
     }
 
     @Override

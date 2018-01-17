@@ -18,6 +18,13 @@
 	android:title="@string/doze_display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <ListPreference 
+        android:key="force_ambient_for_media" 
+        android:title="@string/force_ambient_for_media_title" 
+        android:entries="@array/force_ambient_for_media_entries" 
+        android:entryValues="@array/force_ambient_for_media_values" 
+        android:summary="@string/force_ambient_for_media_summary" />
+		
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="ambient_battery_percent" 
         android:title="@string/ambient_battery_percent_title" 
