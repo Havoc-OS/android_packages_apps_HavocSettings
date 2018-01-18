@@ -101,6 +101,15 @@
     <string name="carbon_gesture_customapp">Launch application</string> 
     <string name="carbon_gesture_launch">Launch</string> 
 
+    <string name="recents_clear_all_location_title">Clear all location</string>  
+    <string name="recents_clear_all_location_top_right">Top right</string>  
+    <string name="recents_clear_all_location_top_left">Top left</string>  
+    <string name="recents_clear_all_location_top_center">Top center</string>  
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>  
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>  
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>  
+    <string name="recents_clear_all_title">Clear all</string> 
+
      <!-- Notification count --> 
     <string name="status_bar_notif_count_title">Show notification count</string> 
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string> 
