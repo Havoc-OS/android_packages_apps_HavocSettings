@@ -79,6 +79,12 @@
         android:summary="@string/face_auto_unlock_summary" 
         android:defaultValue="false" /> 		
 		
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="pocket_judge" 
+        android:title="@string/pocket_judge_title" 
+        android:summary="@string/pocket_judge_summary" 
+        android:defaultValue="false" />		
+		
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="lock_screen_custom_notif"
         android:title="@string/lockscreen_maxnotif_title"
