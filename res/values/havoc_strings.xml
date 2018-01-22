@@ -930,4 +930,8 @@
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+
+    <!-- Pocket judge --> 
+    <string name="pocket_judge_title">Pocket detection</string> 
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string> 	
 </resources>
