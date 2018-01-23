@@ -64,6 +64,19 @@
         <item>@string/smartbar_button_animation_pixel_home</item>
         <item>@string/smartbar_button_animation_pixel_home_ripple</item>
     </string-array>
+    
+        <!-- Screen off animation --> 
+    <string-array name="screen_off_animation_entries"> 
+        <item>@string/screen_off_animation_default</item> 
+        <item>@string/screen_off_animation_crt</item> 
+        <item>@string/screen_off_animation_scale</item> 
+    </string-array> 
+ 
+    <string-array name="screen_off_animation_values" translatable="false"> 
+        <item>0</item> 
+        <item>1</item> 
+        <item>2</item> 
+    </string-array> 
 
       <!-- Edge gestures --> 
     <string-array name="edge_gestures_feedback_time" translatable="false"> 
