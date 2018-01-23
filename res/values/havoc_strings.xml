@@ -37,7 +37,7 @@
     <string name="weather_title">Weather</string>
     <string name="volume_title">Volume Rockers</string>
     <string name="device_part_title">Device</string>
-
+y
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
@@ -89,6 +89,14 @@
 
     <string name="face_auto_unlock_title">Face auto unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
+    
+            <!-- Screen Off animation --> 
+    <string name="screen_off_animation_title">Screen off animation</string> 
+    <string name="screen_off_animation_fade">Simple fade</string> 
+    <string name="screen_off_animation_color">Color fade</string> 
+    <string name="screen_off_animation_crt">CRT</string> 
+    <string name="screen_off_animation_scale">Scale</string> 
+
 
     <!-- Incall Home button behavior-->
     <string name="allow_incall_home_title">Home button when ringing</string>
