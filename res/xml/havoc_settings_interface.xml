@@ -36,4 +36,15 @@
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings" />
 		
+    <PreferenceCategory 
+        android:title="@string/havoc_blur_category"> 
+ 
+        <PreferenceScreen 
+            android:key="havoc_blur" 
+            android:fragment="com.havoc.settings.fragments.BlurPersonalizations" 
+            android:title="@string/settings_blur_cat"  
+            android:summary="@string/settings_blur_sum"/> 
+ 
+    </PreferenceCategory>		
+		
 </PreferenceScreen>
