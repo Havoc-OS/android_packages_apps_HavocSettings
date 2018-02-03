@@ -20,6 +20,12 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
     <Preference
+        android:key="clock" 
+        android:title="@string/status_bar_clock_title" 
+        android:summary="@string/status_bar_clock_summary" 
+        android:fragment="com.havoc.settings.fragments.statusbar.Clock" />	
+
+    <Preference
         android:key="batterybar"
         android:title="@string/battery_bar_title"
         android:summary="@string/battery_bar_summary"
