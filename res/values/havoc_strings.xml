@@ -671,6 +671,9 @@
     <string name="status_bar_clock_font_style_title">Font style</string>
     <string name="status_bar_clock_font_style_summary">%1$s</string>
     <string name="status_bar_clock_font_size_title">Font size</string>
+    <string name="clock_date_right">Right of time</string>
+    <string name="clock_date_left">Left of time</string>
+    <string name="clock_date_position">Date position</string>
 
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
