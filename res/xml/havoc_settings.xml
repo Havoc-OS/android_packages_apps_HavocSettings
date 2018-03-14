@@ -45,6 +45,13 @@
             android:title="@string/interface_title"
             android:fragment="com.havoc.settings.fragments.Interface"
             android:icon="@drawable/ic_settings_int"/>
+			
+        <!-- Ambient Display -->			
+        <Preference
+            android:key="doze_fragment" 
+            android:title="@string/doze_display_title" 
+            android:icon="@drawable/ic_settings_ambient"
+            android:fragment="com.havoc.settings.fragments.ui.DozeFragment" />
 
         <!-- Display -->
         <Preference
