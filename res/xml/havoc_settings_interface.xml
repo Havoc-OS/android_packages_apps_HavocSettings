@@ -26,6 +26,12 @@
         android:key="custom_font" 
         android:title="@string/font_picker_title" 
         android:persistent="false" />
+	
+    <Preference
+        android:key="doze_fragment" 
+        android:title="@string/doze_display_title" 
+        android:summary="@string/doze_display_summary" 
+        android:fragment="com.havoc.settings.fragments.ui.DozeFragment" />
 		
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings" />
