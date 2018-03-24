@@ -644,5 +644,10 @@
 
     <!-- System default animation --> 
     <string name="system_default_animation_title">Android P animation style</string> 
-    <string name="system_default_animation_summary">Enable Android P \"Default\" animations</string> 	
+    <string name="system_default_animation_summary">Enable Android P \"Default\" animations</string> 
+	
+    <!-- Dark Shade --> 
+    <string name="berry_dark_shade_title">Dark style</string> 
+    <string name="berry_dark_shade_stock">Dark Grey</string> 
+    <string name="berry_dark_shade_black">Black</string>
 </resources>

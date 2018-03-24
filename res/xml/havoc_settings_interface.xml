@@ -22,6 +22,13 @@
     <org.lineageos.internal.lineageparts.LineagePartsPreference  
         android:key="style" />
 		
+    <com.havoc.settings.preferences.SystemSettingListPreference 
+        android:key="berry_dark_shade" 
+        android:title="@string/berry_dark_shade_title" 
+        android:entries="@array/berry_dark_shade_entries" 
+        android:entryValues="@array/berry_dark_shade_values" 
+        android:defaultValue="0" />		
+		
     <com.havoc.settings.fragments.ui.FontDialogPreference 
         android:key="custom_font" 
         android:title="@string/font_picker_title" 
