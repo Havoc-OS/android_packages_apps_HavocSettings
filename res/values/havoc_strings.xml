@@ -790,4 +790,7 @@
     <string name="burn_in_protection_summary">Shift navbar and statusbar icons to prevent burn-in</string>
     <string name="burn_in_protection_interval_title">Interval of shift</string>
 
+    <!-- Hide statusbar on lockscreen -->
+    <string name="lockscreen_hide_status_bar_title">Disable Statusbar</string>
+    <string name="lockscreen_hide_status_bar_summary">When enabled the statusbar will be hidden on lockscreen</string>
 </resources>
