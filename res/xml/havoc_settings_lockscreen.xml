@@ -51,4 +51,9 @@
         android:persistent="false"
         android:dependency="lock_screen_custom_notif"/>		
 		
+    <Preference
+        android:key="lockscreen_colors" 
+        android:title="@string/lockscreen_colors" 
+        android:fragment="com.havoc.settings.fragments.LockColors" />
+		
 </PreferenceScreen>
