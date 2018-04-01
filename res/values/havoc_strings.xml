@@ -640,5 +640,9 @@
 	
     <!-- Advanced restart options --> 
     <string name="advanced_reboot_title">Advanced restart</string> 
-    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string> 	
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string> 
+
+    <!-- System default animation --> 
+    <string name="system_default_animation_title">Android P animation style</string> 
+    <string name="system_default_animation_summary">Enable Android P \"Default\" animations</string> 	
 </resources>

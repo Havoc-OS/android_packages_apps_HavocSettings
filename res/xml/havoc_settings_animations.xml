@@ -18,4 +18,9 @@
     android:title="@string/animations_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="system_default_animation" 
+        android:title="@string/system_default_animation_title" 
+        android:summary="@string/system_default_animation_summary" />
+	
 </PreferenceScreen>
