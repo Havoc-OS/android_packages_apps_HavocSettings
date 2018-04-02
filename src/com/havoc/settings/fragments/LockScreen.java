@@ -34,15 +34,54 @@ import com.havoc.settings.R;
 
 import lineageos.providers.LineageSettings; 
 
-public class LockScreen extends SettingsPreferenceFragment {
+import com.havoc.settings.preferences.CustomSeekBarPreference;
+
+public class LockScreen extends SettingsPreferenceFragment
+    implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "LockScreen";
+
+    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size"; 
+    private static final String DATE_FONT_SIZE  = "lockdate_font_size"; 	
+
+    private CustomSeekBarPreference mClockFontSize; 
+    private CustomSeekBarPreference mDateFontSize; 	
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_lockscreen);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+		
+        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE); 
+        mClockFontSize.setValue(Settings.System.getInt(getContentResolver(), 
+                Settings.System.LOCKCLOCK_FONT_SIZE, 78)); 
+        mClockFontSize.setOnPreferenceChangeListener(this); 
+ 
+        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE); 
+        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(), 
+                Settings.System.LOCKDATE_FONT_SIZE,14)); 
+        mDateFontSize.setOnPreferenceChangeListener(this);		
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mClockFontSize) { 
+            int top = (Integer) newValue; 
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1); 
+            return true; 
+        } else if (preference == mDateFontSize) { 
+            int top = (Integer) newValue; 
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.LOCKDATE_FONT_SIZE, top*1); 
+            return true; 			
+        }
+        return false;
     }
 
     @Override
