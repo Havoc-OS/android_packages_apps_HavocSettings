@@ -15,10 +15,13 @@
  */
 package com.havoc.settings.fragments;
 
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.FontInfo;
 import android.content.IFontService;
+import android.content.Intent; 
+import android.content.IntentFilter; 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -48,6 +51,33 @@ public class Interface extends SettingsPreferenceFragment {
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
 
+    private IntentFilter mIntentFilter; 
+ 
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() { 
+        @Override 
+        public void onReceive(Context context, Intent intent) { 
+            String action = intent.getAction(); 
+            if (action.equals("com.android.server.ACTION_FONT_CHANGED")) { 
+                mFontPreference.stopProgress(); 
+            } 
+        } 
+    }; 
+ 
+    @Override 
+    public void onResume() { 
+        super.onResume(); 
+        final Context context = getActivity(); 
+        context.registerReceiver(mIntentReceiver, mIntentFilter); 
+    } 
+ 
+    @Override 
+    public void onPause() { 
+        super.onPause(); 
+        final Context context = getActivity(); 
+        context.unregisterReceiver(mIntentReceiver); 
+        mFontPreference.stopProgress(); 
+    }
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +94,9 @@ public class Interface extends SettingsPreferenceFragment {
             mFontPreference.setSummary(getActivity().getString(
                     R.string.disable_fonts_installed_title));
         }
+
+        mIntentFilter = new IntentFilter(); 
+        mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED"); 		
     }
 
     private FontInfo getCurrentFontInfo() {
