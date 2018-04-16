@@ -302,4 +302,9 @@
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Tap to sleep</string>
     <string name="statusbar_doubletap_sleep_summary">Double-tap on the status bar to put device asleep</string>	
+
+    <!-- Font picker --> 
+    <string name="font_picker_title">Font</string> 
+    <string name="disable_fonts_installed_title">Custom fonts disabled</string>	
+
 </resources>

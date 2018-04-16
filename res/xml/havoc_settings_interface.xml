@@ -19,6 +19,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
+    <com.havoc.settings.fragments.ui.FontDialogPreference 
+        android:key="custom_font" 
+        android:title="@string/font_picker_title" 
+        android:persistent="false" />
+		
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings" />
 		
