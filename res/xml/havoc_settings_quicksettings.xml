@@ -71,10 +71,19 @@
             settings:units=""
             android:persistent="false" />
 			
+        <com.havoc.settings.preferences.CustomSeekBarPreference 
+            android:key="qs_panel_alpha" 
+            android:title="@string/qs_panel_alpha_title" 
+            android:summary="@string/qs_panel_alpha_summary"
+            android:max="255" 
+            settings:min="0" 
+            settings:units="" 
+            android:persistent="false" /> 
+			
         <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="quick_settings_vibrate" 
             android:title="@string/quick_settings_vibrate_title" 
             android:summary="@string/quick_settings_vibrate_summary" 
-            android:defaultValue="false"/>			
+            android:defaultValue="false"/>		
     </PreferenceCategory> 		
 </PreferenceScreen>

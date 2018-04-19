@@ -717,4 +717,8 @@
     <string name="filter_substratum_apps">Substratum overlays</string> 
     <string name="menu_show_substratum">Show overlays</string> 
     <string name="menu_hide_substratum">Hide overlays</string> 	
+
+    <!-- QuickSettings Panel Opacity --> 
+    <string name="qs_panel_alpha_title">Opacity</string> 
+    <string name="qs_panel_alpha_summary">Set opacity level for QS panel</string>
 </resources>
