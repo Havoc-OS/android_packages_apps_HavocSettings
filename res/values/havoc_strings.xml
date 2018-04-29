@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 Havoc-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="havoc_settings_title">Havoc Settings</string>
+
+    <!-- Categories -->
+    <string name="about_title">About</string>
+    <string name="animations_title">Animations</string>
+    <string name="buttons_title">Buttons</string>
+    <string name="display_title">Advanced Display</string>
+    <string name="gestures_title">Gestures</string>
+    <string name="ime_title">IME Settings</string>
+    <string name="interface_title">Interface</string>
+    <string name="lockscreen_title">Lock Screen</string>
+    <string name="misc_title">Miscellaneous</string>
+    <string name="navigation_title">Navigation Bar</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="panels_title">Panels</string>
+    <string name="quicksettings_title">Quick Settings</string>
+    <string name="recents_title">Recents</string>
+    <string name="statusbar_title">Status Bar</string>
+    <string name="system_title">System</string>
+    <string name="weather_title">Weather</string>
+    <string name="volume_title">Volume Rockers</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+</resources>
