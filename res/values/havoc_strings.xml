@@ -728,5 +728,9 @@
 	
     <!-- Fingerprint authentication vibration --> 
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string> 
-    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string> 	
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string> 
+
+    <!-- Data Disabled Icon --> 
+    <string name="data_disabled_icon_title">Show data disabled icon</string> 
+    <string name="data_disabled_icon_summary">Display the cross next to statusbar when data is disabled</string> 
 </resources>
