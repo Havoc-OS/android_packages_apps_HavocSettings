@@ -55,6 +55,10 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+      <!-- Notification guts kill app button --> 
+    <string name="notification_guts_kill_app_button_title">Kill app button</string> 
+    <string name="notification_guts_kill_app_button_summary">Show a kill app button in notifaction shade</string> 
+
      <!-- Edge gestures --> 
     <string name="edge_gestures_title">Edge gestures</string> 
     <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string> 

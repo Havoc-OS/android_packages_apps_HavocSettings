@@ -40,6 +40,12 @@
         android:title="@string/status_bar_notif_count_title" 
         android:summary="@string/status_bar_notif_count_summary" 
         android:defaultValue="false" /> 
+
+    <com.xtended.xtensions.preferences.SystemSettingSwitchPreference 
+        android:key="notification_guts_kill_app_button" 
+        android:title="@string/havoc.settings" 
+        android:summary="@string/notification_guts_kill_app_button_summary" 
+        android:defaultValue="false" /> 
 			
     <PreferenceCategory 
         android:key="incall_vib_options" 
