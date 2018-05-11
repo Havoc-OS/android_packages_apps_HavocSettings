@@ -812,4 +812,8 @@
     <string name="choose_app">Choose app</string>	
     <string name="dialog_delete_title">Delete</string>
     <string name="dialog_delete_message">Remove selected item?</string>	
+
+    <!-- QS footer Running Services icon -->
+    <string name="qs_footer_services_title">Show Running Services icon</string>
+    <string name="qs_footer_services_summary">Display Running Services icon in quick settings footer</string>
 </resources>

@@ -93,4 +93,9 @@
         android:summary="@string/quick_settings_vibrate_summary" 
         android:defaultValue="false"/>
 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="qs_footer_show_services" 
+        android:title="@string/qs_footer_services_title" 
+        android:summary="@string/qs_footer_services_summary" 
+        android:defaultValue="false" />		
 </PreferenceScreen>
