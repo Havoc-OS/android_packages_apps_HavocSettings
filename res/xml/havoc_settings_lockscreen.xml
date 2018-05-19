@@ -22,12 +22,30 @@
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="hide_lockscreen_clock" 
         android:title="@string/hide_lockscreen_clock_title" 
+        android:summary="@string/hide_lockscreen_clock_summary" 
         android:defaultValue="true" /> 
+	
+    <ListPreference 
+        android:key="lockscreen_clock_selection" 
+        android:title="@string/lockscreen_clock_selection_title" 
+        android:entries="@array/lockscreen_clock_selection_entries" 
+        android:entryValues="@array/lockscreen_clock_selection_values" 
+        android:defaultValue="0" 
+        android:dependency="hide_lockscreen_clock" /> 	
  
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="hide_lockscreen_date" 
         android:title="@string/hide_lockscreen_date_title" 
+        android:summary="@string/hide_lockscreen_date_summary" 
         android:defaultValue="true" />
+		
+    <ListPreference 
+        android:key="lockscreen_date_selection" 
+        android:title="@string/lockscreen_date_selection_title" 
+        android:entries="@array/lockscreen_date_selection_entries" 
+        android:entryValues="@array/lockscreen_date_selection_values" 
+        android:defaultValue="0" 
+        android:dependency="hide_lockscreen_date" />
 		
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
