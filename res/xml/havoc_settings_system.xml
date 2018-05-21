@@ -18,6 +18,11 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+        android:key="show_cpu_info"
+        android:title="@string/show_cpu_info"
+        android:summary="@string/show_cpu_info_summary" />
+		
         <Preference
             android:key="app_ops_settings"
             android:title="@string/app_ops_settings_title"
