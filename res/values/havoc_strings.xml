@@ -237,4 +237,7 @@
     <string name="smartbar_longpress_delay_long">Long delay</string>
     <string name="smartbar_custom_icon_size_title">Custom icon scaling</string>
 	
+    <!-- CPU info -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>	
 </resources>
