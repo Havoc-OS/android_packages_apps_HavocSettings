@@ -16,6 +16,10 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/statusbar_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
+
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="network_traffic_settings" />
 
 </PreferenceScreen>
