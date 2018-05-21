@@ -257,5 +257,9 @@
 	
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
-    <string name="show_fourg_icon_summary">Display 4G in signal icon instead LTE</string>	
+    <string name="show_fourg_icon_summary">Display 4G in signal icon instead LTE</string>
+	
+    <!-- Lockscreen charging  -->
+    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
+    <string name="lockscreen_battery_info_summary">Display charger max current and voltage and battery temperature on lockscreen while charging</string>	
 </resources>
