@@ -261,5 +261,9 @@
 	
     <!-- Lockscreen charging  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
-    <string name="lockscreen_battery_info_summary">Display charger max current and voltage and battery temperature on lockscreen while charging</string>	
+    <string name="lockscreen_battery_info_summary">Display charger max current and voltage and battery temperature on lockscreen while charging</string>
+	
+    <!-- Double-tap-to sleep -->
+    <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
+    <string name="double_tap_sleep_lockscreen_sumary">Double tap anywhere on the lockscreen to put phone to sleep</string>	
 </resources>
