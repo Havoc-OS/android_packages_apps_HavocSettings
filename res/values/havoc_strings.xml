@@ -390,4 +390,10 @@
     <string name="force_ambient_for_media_on">Normal</string>
     <string name="force_ambient_for_media_on_forced">Normal (forced)</string>
     <string name="force_ambient_for_media_on_forced_clean">Minimal (forced)</string>
+	
+    <!-- Quick settings brightness slider -->
+    <string name="qs_brightness_slider_title">Brightness slider</string>
+    <string name="qs_brightness_slider_hide">Hide</string> 
+    <string name="qs_brightness_slider_top">Top</string> 
+    <string name="qs_brightness_slider_bottom">Bottom</string> 	
 </resources>

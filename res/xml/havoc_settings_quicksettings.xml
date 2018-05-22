@@ -18,4 +18,12 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- QS Brightness Slider position --> 
+    <com.havoc.settings.preferences.LineageSecureSettingListPreference 
+        android:key="qs_show_brightness_slider" 
+        android:title="@string/qs_brightness_slider_title"  
+        android:entries="@array/qs_brightness_slider_entries" 
+        android:entryValues="@array/qs_brightness_slider_values" 
+        android:defaultValue="true" />
+		
 </PreferenceScreen>
