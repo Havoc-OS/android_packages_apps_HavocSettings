@@ -307,4 +307,10 @@
     <string name="font_picker_title">Font</string> 
     <string name="disable_fonts_installed_title">Custom fonts disabled</string>	
 
+    <!-- Gestures --> 
+    <string name="gestures_summary">Customize gesture settings</string>	
+	
+    <!-- Swipe FP to dismiss notifications -->
+    <string name="fp_swipe_to_dismiss_notifications_title">Swipe fingerprint left or right to dismiss notifications</string>
+    <string name="fp_swipe_to_dismiss_notifications_summary">To dismiss your notifications, swipe left or right on the fingerprint sensor on the back of your phone.</string>	
 </resources>
