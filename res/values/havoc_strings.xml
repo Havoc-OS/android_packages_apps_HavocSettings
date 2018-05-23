@@ -298,4 +298,8 @@
     <string name="alarm_blocker_reload">Reload</string> 
     <string name="alarm_blocker_warning_title">Proceed with caution</string> 
     <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string> 
+	
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Tap to sleep</string>
+    <string name="statusbar_doubletap_sleep_summary">Double-tap on the status bar to put device asleep</string>	
 </resources>
