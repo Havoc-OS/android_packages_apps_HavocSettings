@@ -16,6 +16,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/buttons_title"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform" 	
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory 
@@ -188,4 +189,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory  
+        android:key="other_keys"  
+        android:title="@string/other_keys_category" >  
+  
+        <lineageos.preference.RemotePreference  
+            android:key="additional_buttons"  
+            android:title="@string/additional_buttons_title"  
+            android:summary="@string/additional_buttons_summary"  
+            lineage:requiresAction="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS">  
+            <intent  
+                android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />  
+        </lineageos.preference.RemotePreference>  
+  
+    </PreferenceCategory>
+	
 </PreferenceScreen>
