@@ -46,12 +46,32 @@
     <PreferenceCategory 
         android:title="@string/havoc_blur_category"> 
  
-        <PreferenceScreen 
+        <Preference 
             android:key="havoc_blur" 
             android:fragment="com.havoc.settings.fragments.BlurPersonalizations" 
             android:title="@string/settings_blur_cat"  
             android:summary="@string/settings_blur_sum"/> 
+    </PreferenceCategory>
+	
+    <PreferenceCategory 
+        android:key="category_substratum" 
+        android:title="@string/substratum_title" > 
  
-    </PreferenceCategory>		
+        <Preference
+            android:key="substratum" 
+            android:title="@string/themes_title" 
+            android:summary="@string/themes_summary"> 
+                <intent 
+                    android:action="android.intent.action.MAIN" 
+                    android:targetPackage="projekt.substratum" 
+                    android:targetClass="projekt.substratum.LaunchActivity" /> 
+        </Preference> 
+ 
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference 
+            android:key="force_authorize_substratum_packages" 
+            android:title="@string/force_authorize_substratum_packages_title" 
+            android:summary="@string/force_authorize_substratum_packages_summary" 
+            android:defaultValue="false"/> 
+    </PreferenceCategory>	
 		
 </PreferenceScreen>

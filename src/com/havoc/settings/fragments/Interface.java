@@ -31,6 +31,8 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen; 
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.widget.Toast;
 
@@ -47,12 +49,15 @@ public class Interface extends SettingsPreferenceFragment {
 
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
-
+    private static final String CATEGORY_SUBSTRATUM = "category_substratum"; 
+	
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
 
     private IntentFilter mIntentFilter; 
  
+    private PreferenceCategory substratumCategory; 
+	
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() { 
         @Override 
         public void onReceive(Context context, Intent intent) { 
@@ -83,13 +88,18 @@ public class Interface extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.havoc_settings_interface);
         final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen(); 		
 
-       mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
-       mFontService = IFontService.Stub.asInterface(
+        substratumCategory = 
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_SUBSTRATUM); 
+				
+        mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
+        mFontService = IFontService.Stub.asInterface(
                 ServiceManager.getService("havocfont"));
 
         if (!isPackageInstalled(SUBS_PACKAGE, getActivity())) {
             mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+            prefScreen.removePreference(substratumCategory);		
         } else {
             mFontPreference.setSummary(getActivity().getString(
                     R.string.disable_fonts_installed_title));
