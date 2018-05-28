@@ -52,4 +52,11 @@
         android:summary="@string/roaming_indicator_icon_summary"
         android:defaultValue="true"/>
 		
+    <ListPreference 
+        android:key="quick_pulldown" 
+        android:title="@string/status_bar_quick_qs_pulldown_title" 
+        android:entries="@array/status_bar_quick_qs_pulldown_entries" 
+        android:entryValues="@array/status_bar_quick_qs_pulldown_values" 
+        android:defaultValue="0" />	
+		
 </PreferenceScreen>

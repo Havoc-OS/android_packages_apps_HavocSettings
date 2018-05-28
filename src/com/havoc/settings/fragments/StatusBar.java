@@ -21,7 +21,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -42,6 +41,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static final String TAG = "StatusBar";
 
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
+
+    private ListPreference mQuickPulldown;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,21 +52,44 @@ public class StatusBar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.havoc_settings_statusbar);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
+        int quickPulldownValue = LineageSettings.System.getInt(resolver,
+                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
+        updatePulldownSummary(quickPulldownValue);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
     }
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-
-        LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
-        LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
-        LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, 1, UserHandle.USER_CURRENT);
-        LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1, UserHandle.USER_CURRENT);
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mQuickPulldown) {
+            int quickPulldownValue = Integer.parseInt((String) newValue);
+            LineageSettings.System.putIntForUser(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    quickPulldownValue, UserHandle.USER_CURRENT);
+            updatePulldownSummary(quickPulldownValue);
+            return true;
+        }
+        return false;
     }
 
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
+        } else if (value == 3) {
+            // quick pulldown always
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_always));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.status_bar_quick_qs_pulldown_left
+                    : R.string.status_bar_quick_qs_pulldown_right);
+            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
+        }
+    }
     
     @Override 
     public boolean onPreferenceChange(Preference preference, Object newValue) { 
