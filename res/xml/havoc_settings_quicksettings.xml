@@ -26,6 +26,14 @@
         android:entryValues="@array/qs_brightness_slider_values" 
         android:defaultValue="2" />
 		
+    <lineageos.preference.LineageSecureSettingSwitchPreference
+        android:key="qs_show_auto_brightness"
+        android:title="@string/brightness_icon_title"
+        android:summary="@string/brightness_icon_summary"
+        android:dependency="qs_show_brightness_slider"
+        lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
+        android:defaultValue="true" />		
+		
     <PreferenceCategory 
         android:key="qs_layout_category" 
         android:title="@string/qs_layout_category"> 

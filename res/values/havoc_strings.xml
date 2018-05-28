@@ -478,4 +478,8 @@
     <!-- QuickSettings haptic feedback --> 
     <string name="quick_settings_vibrate_title">Vibrate on touch</string> 
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string> 	
+	
+    <!-- Quick settings brightness icon -->
+    <string name="brightness_icon_title">Brightness icon</string>
+    <string name="brightness_icon_summary">Show a brightness icon beside the brighness slider to adjust auto-brightness</string>	
 </resources>
