@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -46,12 +47,25 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
     private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
     private static final String TICKER_MODE = "status_bar_show_ticker";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
+    private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
+
+    public static final int BATTERY_STYLE_PORTRAIT = 0;
+    public static final int BATTERY_STYLE_CIRCLE = 1;
+    public static final int BATTERY_STYLE_DOTTED_CIRCLE = 2;
+    public static final int BATTERY_STYLE_SQUARE = 3;
+    public static final int BATTERY_STYLE_TEXT = 4;
+    public static final int BATTERY_STYLE_HIDDEN = 5;
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
     private SwitchPreference mDataActivityEnabled;
     private SwitchPreference mWifiActivityEnabled;
     private ListPreference mTickerMode;
+    private ListPreference mBatteryStyle;
+    private ListPreference mBatteryPercent;
+    private ListPreference mTextSymbol;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,35 +76,60 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        int quickPulldownValue = LineageSettings.System.getInt(resolver,
-                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+        int quickPulldownValue = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
         mQuickPulldown.setOnPreferenceChangeListener(this);
 
         mSmartPulldown = (ListPreference) findPreference(SMART_PULLDOWN);
-        int smartPulldown = Settings.System.getInt(resolver,
-                Settings.System.QS_SMART_PULLDOWN, 0);
+        int smartPulldown = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
         mSmartPulldown.setOnPreferenceChangeListener(this);
 
         mDataActivityEnabled = (SwitchPreference) findPreference(DATA_ACTIVITY_ARROWS);
-        boolean mActivityEnabled = Settings.System.getInt(resolver,
+        boolean mActivityEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.DATA_ACTIVITY_ARROWS,
-                showActivityDefault(getActivity())) != 0;
+                showActivityDefault(getActivity()), UserHandle.USER_CURRENT) != 0;
         mDataActivityEnabled.setChecked(mActivityEnabled);
         mDataActivityEnabled.setOnPreferenceChangeListener(this);
 
         mWifiActivityEnabled = (SwitchPreference) findPreference(WIFI_ACTIVITY_ARROWS);
-        mActivityEnabled = Settings.System.getInt(resolver,
+        mActivityEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.WIFI_ACTIVITY_ARROWS,
-                showActivityDefault(getActivity())) != 0;
+                showActivityDefault(getActivity()), UserHandle.USER_CURRENT) != 0;
         mWifiActivityEnabled.setChecked(mActivityEnabled);
         mWifiActivityEnabled.setOnPreferenceChangeListener(this);
 
         mTickerMode = (ListPreference) findPreference(TICKER_MODE);
         mTickerMode.setOnPreferenceChangeListener(this);
+
+        mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        int batterystyle = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0,
+                UserHandle.USER_CURRENT);
+        mBatteryStyle.setValue(String.valueOf(batterystyle));
+        mBatteryStyle.setSummary(mBatteryStyle.getEntry());
+        mBatteryStyle.setOnPreferenceChangeListener(this);
+
+        mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+        int batterypercent = Settings.System.getIntForUser(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0,
+                UserHandle.USER_CURRENT);
+        mBatteryPercent.setValue(String.valueOf(batterypercent));
+        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
+        mBatteryPercent.setOnPreferenceChangeListener(this);
+
+        mTextSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
+        int textsymbol = Settings.System.getIntForUser(resolver,
+                Settings.System.TEXT_CHARGING_SYMBOL, 0,
+                UserHandle.USER_CURRENT);
+        mTextSymbol.setValue(String.valueOf(textsymbol));
+        mTextSymbol.setSummary(mTextSymbol.getEntry());
+        updateBatteryOptions();
+        mTextSymbol.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -98,35 +137,73 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
-            LineageSettings.System.putInt(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    value);
+            LineageSettings.System.putIntForUser(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    value, UserHandle.USER_CURRENT);
             updatePulldownSummary(value);
             return true;
         } else if (preference == mSmartPulldown) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, value);
+            Settings.System.putIntForUser(resolver, Settings.System.QS_SMART_PULLDOWN, value, UserHandle.USER_CURRENT);
             updateSmartPulldownSummary(value);
             return true;
         } else if (preference == mDataActivityEnabled) {
             boolean showing = ((Boolean)newValue);
-            Settings.System.putInt(resolver, Settings.System.DATA_ACTIVITY_ARROWS,
-                    showing ? 1 : 0);
+            Settings.System.putIntForUser(resolver, Settings.System.DATA_ACTIVITY_ARROWS,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
             mDataActivityEnabled.setChecked(showing);
             return true;
         } else if (preference == mWifiActivityEnabled) {
             boolean showing = ((Boolean)newValue);
-            Settings.System.putInt(resolver, Settings.System.WIFI_ACTIVITY_ARROWS,
-                    showing ? 1 : 0);
+            Settings.System.putIntForUser(resolver, Settings.System.WIFI_ACTIVITY_ARROWS,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
             mWifiActivityEnabled.setChecked(showing);
             return true;
-        } else if (preference.equals(mTickerMode)) {
+        } else if (preference.equals(mTickerMode)) { 
+            int value = Integer.parseInt((String) newValue); 
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value); 
+            int index = mTickerMode.findIndexOfValue((String) newValue); 
+            mTickerMode.setSummary(mTickerMode.getEntries()[index]); 
+            return true;			
+        } else if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value);
-            int index = mTickerMode.findIndexOfValue((String) newValue);
-            mTickerMode.setSummary(mTickerMode.getEntries()[index]);
+            int index = mBatteryStyle.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.STATUS_BAR_BATTERY_STYLE, value,
+                UserHandle.USER_CURRENT);
+            mBatteryStyle.setSummary(
+                    mBatteryStyle.getEntries()[index]);
+            updateBatteryOptions();
+            return true;
+        } else if (preference == mBatteryPercent) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mBatteryPercent.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.SHOW_BATTERY_PERCENT, value,
+                UserHandle.USER_CURRENT);
+            mBatteryPercent.setSummary(
+                    mBatteryPercent.getEntries()[index]);
+            updateBatteryOptions();
+            return true;
+        } else if (preference == mTextSymbol) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mTextSymbol.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.TEXT_CHARGING_SYMBOL, value,
+                UserHandle.USER_CURRENT);
+            mTextSymbol.setSummary(
+                    mTextSymbol.getEntries()[index]);
             return true;
         }
         return false;
+    }
+
+    private void updateBatteryOptions() {
+        ContentResolver resolver = getActivity().getContentResolver();
+        int batterystyle = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 1,
+                UserHandle.USER_CURRENT);
+        mBatteryPercent.setEnabled(batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+        mTextSymbol.setEnabled(batterystyle == BATTERY_STYLE_TEXT);
     }
 
     private void updatePulldownSummary(int value) {
