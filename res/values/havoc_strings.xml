@@ -535,5 +535,12 @@
     <string name="data_activity_arrows_title">Data activity</string> 
     <string name="data_activity_arrows_summary">Display data activity arrows</string> 
     <string name="wifi_activity_arrows_title">Wifi activity</string> 
-    <string name="wifi_activity_arrows_summary">Display wifi activity arrows</string> 	
+    <string name="wifi_activity_arrows_summary">Display wifi activity arrows</string> 
+	
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Ticker</string>
+    <string name="ticker_screen_summary">Show notifications ticker-style in status bar</string>
+    <string name="ticker_disabled">No ticker</string>
+    <string name="ticker_enabled">Notification ticker</string>
+    <string name="ticker_media_enabled">Notifications and music ticker</string>	
 </resources>

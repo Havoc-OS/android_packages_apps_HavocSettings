@@ -45,11 +45,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SMART_PULLDOWN = "smart_pulldown";
     private static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
     private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
+    private static final String TICKER_MODE = "status_bar_show_ticker";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
     private SwitchPreference mDataActivityEnabled;
     private SwitchPreference mWifiActivityEnabled;
+    private ListPreference mTickerMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 showActivityDefault(getActivity())) != 0;
         mWifiActivityEnabled.setChecked(mActivityEnabled);
         mWifiActivityEnabled.setOnPreferenceChangeListener(this);
+
+        mTickerMode = (ListPreference) findPreference(TICKER_MODE);
+        mTickerMode.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -113,6 +118,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.WIFI_ACTIVITY_ARROWS,
                     showing ? 1 : 0);
             mWifiActivityEnabled.setChecked(showing);
+            return true;
+        } else if (preference.equals(mTickerMode)) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value);
+            int index = mTickerMode.findIndexOfValue((String) newValue);
+            mTickerMode.setSummary(mTickerMode.getEntries()[index]);
             return true;
         }
         return false;
