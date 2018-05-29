@@ -32,6 +32,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
 
+import lineageos.providers.LineageSettings; 
+
 public class LockScreen extends SettingsPreferenceFragment {
 
     public static final String TAG = "LockScreen";
