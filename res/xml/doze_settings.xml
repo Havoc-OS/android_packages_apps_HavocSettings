@@ -18,6 +18,18 @@
 	android:title="@string/doze_display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <lineageos.preference.RemotePreference 
+        android:key="doze_device_settings" 
+        android:title="@string/ambient_display_screen_title"> 
+        <intent 
+            android:action="org.lineageos.settings.device.DOZE_SETTINGS" /> 
+    </lineageos.preference.RemotePreference>
+
+    <com.havoc.settings.preferences.SecureSettingSwitchPreference 
+        android:key="doze_always_on" 
+        android:title="@string/doze_always_on_title" 
+        android:summary="@string/doze_always_on_summary" />
+		
     <ListPreference 
         android:key="force_ambient_for_media" 
         android:title="@string/force_ambient_for_media_title" 
