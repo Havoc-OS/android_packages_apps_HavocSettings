@@ -635,5 +635,9 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>	
 
     <string name="lockdate_font_size_title">Date font size</string> 
-    <string name="lockclock_font_size_title">Clock font size</string> 	
+    <string name="lockclock_font_size_title">Clock font size</string> 
+	
+    <!-- Advanced restart options --> 
+    <string name="advanced_reboot_title">Advanced restart</string> 
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string> 	
 </resources>

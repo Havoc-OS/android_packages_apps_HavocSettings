@@ -18,6 +18,12 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <lineageos.preference.LineageSecureSettingSwitchPreference 
+        android:key="advanced_reboot" 
+        android:title="@string/advanced_reboot_title" 
+        android:summary="@string/advanced_reboot_summary" 
+        android:defaultValue="false" /> 
+
     <SwitchPreference
         android:key="show_cpu_info"
         android:title="@string/show_cpu_info"
