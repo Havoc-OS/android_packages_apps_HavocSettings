@@ -55,6 +55,17 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+     <!-- Edge gestures --> 
+    <string name="edge_gestures_title">Edge gestures</string> 
+    <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string> 
+    <string name="edge_gestures_long_press_delay_title">Delay until long press action starts</string> 
+    <string name="edge_gestures_back_category_title">Back gesture</string> 
+    <string name="edge_gestures_back_edges_title">Trigger back gesture from</string> 
+    <string name="edge_gestures_landscape_back_edges_title">Trigger back gesture on landscape from</string> 
+    <string name="edge_gestures_back_screen_percent_title">Back gesture must start below this percentage of the screen</string> 
+    <string name="edge_gestures_back_screen_percent_summary">Trigger below % of screen</string> 
+    <string name="edge_gestures_summary">Navigate using edge gestures</string> 
+
      <!-- Notification count --> 
     <string name="status_bar_notif_count_title">Show notification count</string> 
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string> 
