@@ -102,12 +102,12 @@
             android:fragment="com.havoc.settings.fragments.Notifications"
             android:icon="@drawable/ic_settings_notifications"/>
 
-        <!-- Weather 
+        <!-- Weather -->
         <Preference
             android:key="weather_category"
             android:title="@string/weather_title"
             android:fragment="com.havoc.settings.fragments.Weather"
-            android:icon="@drawable/ic_settings_weather"/>-->
+            android:icon="@drawable/ic_settings_weather"/>
 
         <!-- Animation -->
         <Preference
@@ -140,7 +140,6 @@
             android:title="@string/ime_title"
             android:fragment="com.havoc.settings.fragments.IME"
             android:icon="@drawable/ic_settings_ime"/>
-
         
         <!-- Battery Saving -->
         <Preference
