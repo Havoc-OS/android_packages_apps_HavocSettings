@@ -61,7 +61,6 @@ public class Weather extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.havoc_settings_weather);
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.weather_icon_pack_note);
 
         mWeatherCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
@@ -197,6 +196,12 @@ public class Weather extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putStringForUser(resolver,
                 Settings.System.OMNIJAWS_WEATHER_ICON_PACK, null, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver, 
+                Settings.System.LOCK_SCREEN_SHOW_WEATHER, 0, UserHandle.USER_CURRENT); 
+        Settings.System.putIntForUser(resolver, 
+                Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, 1, UserHandle.USER_CURRENT); 
+        Settings.System.putIntForUser(resolver, 
+                Settings.System.LOCK_SCREEN_SHOW_WEATHER_LOCATION, 1, UserHandle.USER_CURRENT);				
     }
 
     @Override
