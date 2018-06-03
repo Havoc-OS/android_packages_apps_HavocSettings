@@ -54,6 +54,10 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+
+     <!-- Notification count --> 
+    <string name="status_bar_notif_count_title">Show notification count</string> 
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string> 
 	
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
