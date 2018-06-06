@@ -18,6 +18,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
+    <Preference
+        android:key="volume_steps"
+        android:title="@string/volume_steps_title"
+        android:fragment="com.havoc.settings.fragments.VolumeSteps" />
+
     <lineageos.preference.LineageSystemSettingSwitchPreference
         android:key="volume_wake_screen"
         android:title="@string/button_wake_title"
