@@ -33,6 +33,13 @@
     <Preference  
         android:title="@string/carbon_gesture_preference_title"  
         android:key="carbongestures"  
-        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" />  
+        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" /> 
+
+      <Preference
+	    	android:id="@+id/gesture_anywhere"	
+            android:key="gesture_anywhere"
+            android:fragment="com.havoc.settings.fragments.gestures.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title"
+            android:summary="@string/gesture_anywhere_summary" /> 
 
 </PreferenceScreen>

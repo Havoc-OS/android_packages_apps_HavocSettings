@@ -56,6 +56,17 @@
         <item>@string/fling_settings</item>
     </string-array>
 
+     <!-- Gesture Anywhere --> 
+    <string-array name="gesture_anywhere_position_entries" translatable="false"> 
+        <item>@string/gesture_anywhere_position_left</item> 
+        <item>@string/gesture_anywhere_position_right</item> 
+    </string-array> 
+ 
+    <string-array name="gesture_anywhere_position_values" translatable="false"> 
+        <item>3</item> 
+        <item>5</item> 
+    </string-array> 
+
      <!-- clear all recents button location --> 
     <string-array name="recents_clear_all_location_entries"> 
         <item>@string/recents_clear_all_location_top_right</item> 
