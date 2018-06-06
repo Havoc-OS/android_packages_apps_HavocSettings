@@ -24,10 +24,15 @@
         android:summary="@string/gestures_summary" 
         android:fragment="com.android.settings.gestures.GestureSettings" />
     
-     <Preference 
+    <Preference 
         android:key="edge_gestures" 
         android:title="@string/edge_gestures_title" 
         android:summary="@string/edge_gestures_summary" 
         android:fragment="com.havoc.settings.fragments.EdgeGesturesSettings"/> 
+
+    <Preference  
+        android:title="@string/carbon_gesture_preference_title"  
+        android:key="carbongestures"  
+        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" />  
 
 </PreferenceScreen>

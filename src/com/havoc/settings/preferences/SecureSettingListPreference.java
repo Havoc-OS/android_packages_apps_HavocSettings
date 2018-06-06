@@ -28,17 +28,17 @@ public class SecureSettingListPreference extends ListPreference {
  
     public SecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) { 
         super(context, attrs, defStyle); 
-        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
     } 
  
     public SecureSettingListPreference(Context context, AttributeSet attrs) { 
         super(context, attrs); 
-        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
     } 
  
     public SecureSettingListPreference(Context context) { 
         super(context); 
-        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
     } 
  
     @Override 

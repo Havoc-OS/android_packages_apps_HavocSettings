@@ -50,7 +50,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         // Screen Off Animations 
         mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION); 
         int screenOffStyle = Settings.System.getInt(resolver, 
-                 Settings.Secure.SCREEN_OFF_ANIMATION, 0); 
+                 Settings.Global.SCREEN_OFF_ANIMATION, 0); 
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle)); 
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry()); 
         mScreenOffAnimation.setOnPreferenceChangeListener(this); 
@@ -61,7 +61,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         ContentResolver resolver = getActivity().getContentResolver(); 
         if (preference == mScreenOffAnimation) { 
             Settings.System.putInt(resolver, 
-                    Settings.Secure.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
+                    Settings.Global.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
             int valueIndex = mScreenOffAnimation.findIndexOfValue((String) newValue); 
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]); 
             return true; 
