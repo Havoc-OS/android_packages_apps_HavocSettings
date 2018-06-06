@@ -24,6 +24,14 @@
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false"/>
 			
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_qqs_count"
+            android:title="@string/sysui_qqs_count_title"
+            android:max="8"
+            android:min="3"
+            android:defaultValue="6"
+            android:persistent="false" />			
+			
         <com.havoc.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/brightness_slider_title"

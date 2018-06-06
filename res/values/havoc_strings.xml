@@ -377,4 +377,5 @@
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
 
+    <string name="sysui_qqs_count_title">Small tiles</string>	
 </resources>
