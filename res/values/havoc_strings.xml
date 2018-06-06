@@ -64,6 +64,9 @@
     <string name="sensor_block_title">Sensor block per-package</string> 
     <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery.</string> 
 
+    <string name="lockscreen_alpha">Lockscreen alpha</string> 
+    <string name="lockscreen_security_alpha">Lockscreen bouncer alpha</string> 
+
      <!-- Edge gestures --> 
     <string name="edge_gestures_title">Edge gestures</string> 
     <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string> 

@@ -103,6 +103,24 @@
         settings:units=""
         android:persistent="false"
         android:dependency="lock_screen_custom_notif"/>		
+
+     <com.havoc.settings.preferences.CustomSeekBarPreference 
+        android:key="lockscreen_security_alpha" 
+        android:title="@string/lockscreen_security_alpha" 
+        android:max="100" 
+        settings:min="0" 
+        settings:interval="1" 
+        settings:units="" 
+        android:persistent="false" /> 
+ 
+    <com.havoc.settings.preferences.CustomSeekBarPreference 
+        android:key="lockscreen_alpha" 
+        android:title="@string/lockscreen_alpha" 
+        android:max="100" 
+        settings:min="0" 
+        settings:interval="1" 
+        settings:units="%" 
+        android:persistent="false" /> 
 		
     <Preference
         android:key="lockscreen_colors" 

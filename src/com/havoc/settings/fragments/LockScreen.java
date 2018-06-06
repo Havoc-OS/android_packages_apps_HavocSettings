@@ -33,6 +33,7 @@ import com.android.internal.utils.du.DUActionUtils;
 import com.havoc.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.havoc.settings.preferences.CustomSeekBarPreference; 
 
 import lineageos.providers.LineageSettings; 
 
@@ -43,9 +44,13 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private static final String KEY_LOCKSCREEN_CLOCK_SELECTION = "lockscreen_clock_selection";
     private static final String KEY_LOCKSCREEN_DATE_SELECTION = "lockscreen_date_selection";
+    private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha"; 
+    private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha"; 
 
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
+    private CustomSeekBarPreference mLsAlpha; 
+    private CustomSeekBarPreference mLsSecurityAlpha; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,18 @@ public class LockScreen extends SettingsPreferenceFragment
         mLockscreenDateSelection.setValue(String.valueOf(dateSelection));
         mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntry());
         mLockscreenDateSelection.setOnPreferenceChangeListener(this);
+
+        mLsSecurityAlpha = (CustomSeekBarPreference) findPreference(LOCKSCREEN_SECURITY_ALPHA); 
+        float alpha2 = Settings.System.getFloat(resolver, 
+                Settings.System.LOCKSCREEN_SECURITY_ALPHA, 0.75f); 
+        mLsSecurityAlpha.setValue((int)(100 * alpha2)); 
+        mLsSecurityAlpha.setOnPreferenceChangeListener(this); 
+ 
+        mLsAlpha = (CustomSeekBarPreference) findPreference(LOCKSCREEN_ALPHA); 
+        float alpha = Settings.System.getFloat(resolver, 
+                Settings.System.LOCKSCREEN_ALPHA, 0.45f); 
+        mLsAlpha.setValue((int)(100 * alpha)); 
+        mLsAlpha.setOnPreferenceChangeListener(this); 
     }
 
     @Override
@@ -88,7 +105,17 @@ public class LockScreen extends SettingsPreferenceFragment
                     Settings.System.LOCKSCREEN_DATE_SELECTION, dateSelection, UserHandle.USER_CURRENT);
             mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntries()[index]);
             return true;
-        }
+        } else if (preference == mLsSecurityAlpha) { 
+            int alpha2 = (Integer) newValue; 
+            Settings.System.putFloat(resolver, 
+                    Settings.System.LOCKSCREEN_SECURITY_ALPHA, alpha2 / 100.0f); 
+            return true; 
+        } else if (preference == mLsAlpha) { 
+            int alpha = (Integer) newValue; 
+            Settings.System.putFloat(resolver, 
+                    Settings.System.LOCKSCREEN_ALPHA, alpha / 100.0f); 
+            return true; 
+        } 
         return false;
     }
 
