@@ -34,6 +34,7 @@
     <string name="recents_title">Recents</string>
     <string name="statusbar_title">Status Bar</string>
     <string name="system_title">System</string>
+    <string name="battery_title">Battery Saving</string>
     <string name="weather_title">Weather</string>
     <string name="volume_title">Volume Rockers</string>
 
@@ -58,6 +59,10 @@
       <!-- Notification guts kill app button --> 
     <string name="notification_guts_kill_app_button_title">Kill app button</string> 
     <string name="notification_guts_kill_app_button_summary">Show a kill app button in notifaction shade</string> 
+
+     <!-- Sensor block per-package --> 
+    <string name="sensor_block_title">Sensor block per-package</string> 
+    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery.</string> 
 
      <!-- Edge gestures --> 
     <string name="edge_gestures_title">Edge gestures</string> 

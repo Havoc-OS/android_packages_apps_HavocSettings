@@ -24,22 +24,22 @@ public class SecureSettingSeekBarPreference extends CustomSeekBarPreference {
  
     public SecureSettingSeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) { 
         super(context, attrs, defStyleAttr, defStyleRes); 
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
     } 
  
     public SecureSettingSeekBarPreference(Context context, AttributeSet attrs, int defStyle) { 
         super(context, attrs, defStyle); 
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
     } 
  
     public SecureSettingSeekBarPreference(Context context, AttributeSet attrs) { 
         super(context, attrs); 
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
     } 
  
     public SecureSettingSeekBarPreference(Context context) { 
         super(context, null); 
-        setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver())); 
+        setPreferenceDataStore(new LineageSecureSettingsStore(context.getContentResolver())); 
     } 
  
     @Override 

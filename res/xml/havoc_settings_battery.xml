@@ -15,18 +15,25 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/misc_title"
+    android:title="@string/animations_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <ListPreference 
-        android:key="media_scanner_on_boot" 
-        android:title="@string/media_scanner_on_boot_title" 
-        android:entries="@array/media_scanner_on_boot_entries" 
-        android:entryValues="@array/media_scanner_on_boot_values" /> 
-
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="screenshot_sound" 
-        android:title="@string/screenshot_sound_title" 
-        android:summary="@string/screenshot_sound_summary" 
-        android:defaultValue="true" />		
+        android:key="sensor_block" 
+        android:title="@string/sensor_block_title" 
+        android:summary="@string/sensor_block_summary" 
+        android:defaultValue="false" /> 
+
+    <Preference 
+        android:key="alarm_blocker" 
+        android:fragment="com.havoc.settings.fragments.AlarmBlocker" 
+        android:title="@string/alarm_blocker" 
+        android:summary="@string/alarm_blocker_summary" />
+
+    <Preference 
+        android:key="wakelock_blocker" 
+        android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
+        android:title="@string/wakelock_blocker_title" 
+        android:summary="@string/wakelock_blocker_summary" />
+	
 </PreferenceScreen>

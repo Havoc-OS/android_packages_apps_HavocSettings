@@ -108,6 +108,13 @@
             android:title="@string/animations_title"
             android:fragment="com.havoc.settings.fragments.Animations"
             android:icon="@drawable/ic_settings_animations"/>
+        
+        <!-- Battery Saving -->
+        <Preference
+            android:key="battery_category"
+            android:title="@string/battery_title"
+            android:fragment="com.havoc.settings.fragments.Battery"
+            android:icon="@drawable/ic_settings_battery"/>
 
         <!-- System -->
         <Preference
