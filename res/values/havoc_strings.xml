@@ -36,7 +36,7 @@
     <string name="system_title">System</string>
     <string name="battery_title">Battery Saving</string>
     <string name="weather_title">Weather</string>
-    <string name="volume_title">Volume Rockers</string>
+    <string name="volume_title">Volume Keys</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -897,4 +897,21 @@
     <string name="qs_footer_services_summary">Display Running Services icon in quick settings footer</string>
 	
     <string name="sysui_qqs_count_title">Small tiles</string>	
+	
+    <!-- Volume buttons -->
+    <string name="button_wake_title">Wake device</string>
+    <string name="button_wake_summary">Wake device by pressing the button</string>
+    <string name="volume_answer_call_title">Answer call</string>
+    <string name="volume_answer_call_summary">Answer incoming calls by pressing the volume buttons</string>
+    <string name="volbtn_music_controls_title">Control playback</string>
+    <string name="volbtn_music_controls_summary">Seek music tracks by long-pressing the volume keys while the display is off</string>
+    <string name="volume_keys_control_ring_stream_title">Control ringtone volume</string>
+    <string name="volume_keys_control_ring_stream_summary_on">Volume keys control ringtone volume</string>
+    <string name="volume_keys_control_ring_stream_summary_off">Volume keys control media volume</string>
+    <string name="volbtn_cursor_control_title">Keyboard cursor control</string>
+    <string name="volbtn_cursor_control_off">Disabled</string>
+    <string name="volbtn_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+    <string name="swap_volume_buttons_title">Reorient</string>
+    <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
 </resources>
