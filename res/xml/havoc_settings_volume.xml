@@ -17,6 +17,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="volume_steps"
+        android:title="@string/volume_steps_title"
+        android:fragment="com.havoc.settings.fragments.VolumeSteps" />
+
     <ListPreference
         android:key="volume_key_cursor_control"
         android:dialogTitle="@string/volbtn_cursor_control_title"
