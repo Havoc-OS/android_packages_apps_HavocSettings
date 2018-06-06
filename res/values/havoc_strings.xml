@@ -895,4 +895,6 @@
     <!-- QS footer Running Services icon -->
     <string name="qs_footer_services_title">Show Running Services icon</string>
     <string name="qs_footer_services_summary">Display Running Services icon in quick settings footer</string>
+	
+    <string name="sysui_qqs_count_title">Small tiles</string>	
 </resources>

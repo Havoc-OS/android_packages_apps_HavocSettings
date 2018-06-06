@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.Settings.Secure;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -52,6 +53,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
     private CustomSeekBarPreference mQsPanelAlpha;
+    private CustomSeekBarPreference mSysuiQqsCount;	
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT); 
         mQsPanelAlpha.setValue(qsPanelAlpha); 
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
+
+        int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
+        mSysuiQqsCount = (CustomSeekBarPreference) findPreference("sysui_qqs_count");
+        mSysuiQqsCount.setValue(value);
+        mSysuiQqsCount.setOnPreferenceChangeListener(this);		
     }
 
     @Override
@@ -115,12 +122,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
             return true;
-
         } else if (preference == mQsPanelAlpha) { 
             int bgAlpha = (Integer) newValue; 
             Settings.System.putIntForUser(getContentResolver(), 
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha, 
                     UserHandle.USER_CURRENT); 
+            return true;
+        } else if (preference == mSysuiQqsCount) {
+            int val = (Integer) newValue;
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

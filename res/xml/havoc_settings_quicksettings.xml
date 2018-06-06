@@ -71,6 +71,14 @@
             settings:units=""
             android:persistent="false" />
 			
+        <com.havoc.settings.preferences.CustomSeekBarPreference
+            android:key="sysui_qqs_count"
+            android:title="@string/sysui_qqs_count_title"
+            android:max="8"
+            settings:min="3"
+            settings:units=""
+            android:persistent="false" />			
+			
         <com.havoc.settings.preferences.CustomSeekBarPreference 
             android:key="qs_panel_alpha" 
             android:title="@string/qs_panel_alpha_title" 
