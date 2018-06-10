@@ -215,12 +215,13 @@
     <string name="wallpaper_tint_notification_shade">Notification shade tint</string> 
     <string name="wallpaper_tint_summary">Apply a tint to the background based on the homescreen wallpaper</string> 
 
-        <!-- Screen Off animation --> 
+     <!-- Screen off animation --> 
     <string name="screen_off_animation_title">Screen off animation</string> 
-    <string name="screen_off_animation_default">Default</string> 
+    <string name="screen_off_animation_fade">Simple fade</string> 
+    <string name="screen_off_animation_color">Color fade</string> 
     <string name="screen_off_animation_crt">CRT</string> 
     <string name="screen_off_animation_scale">Scale</string> 
-	
+    
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>

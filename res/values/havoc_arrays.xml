@@ -178,9 +178,10 @@
         <item>1001</item> 
     </string-array> 
 
-        <!-- Screen off animation --> 
+    <!-- Screen off animation --> 
     <string-array name="screen_off_animation_entries"> 
-        <item>@string/screen_off_animation_default</item> 
+        <item>@string/screen_off_animation_fade</item> 
+        <item>@string/screen_off_animation_color</item> 
         <item>@string/screen_off_animation_crt</item> 
         <item>@string/screen_off_animation_scale</item> 
     </string-array> 
@@ -189,6 +190,7 @@
         <item>0</item> 
         <item>1</item> 
         <item>2</item> 
+        <item>3</item> 
     </string-array> 
 
       <!-- Edge gestures --> 

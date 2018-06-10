@@ -22,11 +22,12 @@
         android:key="system_default_animation" 
         android:title="@string/system_default_animation_title" 
         android:summary="@string/system_default_animation_summary" />
-    
-    <ListPreference 
-        android:key="screen_off_animation" 
-        android:title="@string/screen_off_animation_title" 
-        android:entries="@array/screen_off_animation_entries" 
-        android:entryValues="@array/screen_off_animation_values" /> 
+
+     <com.havoc.settings.preferences.GlobalSettingListPreference 
+            android:key="screen_off_animation" 
+            android:title="@string/screen_off_animation_title" 
+            android:entries="@array/screen_off_animation_entries" 
+            android:entryValues="@array/screen_off_animation_values" 
+            android:defaultValue="0" />  
 	
 </PreferenceScreen>
