@@ -618,6 +618,9 @@
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
     <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
 
+    <string name="qs_tile_title_visibility_title">Tile title</string> 
+    <string name="qs_tile_title_visibility_summary">Display title below each tile</string> 
+
     <string name="gesture_preference_aosp">System Gestures</string>
 	
     <!-- Statusbar Clock -->
