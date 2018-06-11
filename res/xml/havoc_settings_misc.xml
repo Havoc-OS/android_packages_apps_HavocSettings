@@ -30,6 +30,13 @@
         android:title="@string/auto_usb_mode_chooser_title" 
         android:summary="@string/auto_usb_mode_chooser_summary" 
         android:defaultValue="false" /> 
+    
+    <!-- Vibrate on plugged --> 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="vibration_on_charge_state_changed" 
+        android:title="@string/vibration_on_charge_state_changed_title" 
+        android:summary="@string/vibration_on_charge_state_changed_summary" 
+        android:defaultValue="false" /> 
 
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="screenshot_sound" 
