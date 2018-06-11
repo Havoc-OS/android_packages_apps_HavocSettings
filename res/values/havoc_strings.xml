@@ -291,6 +291,10 @@
     <string name="slim_blacklist_apps_info">Tap on the added app to remove it</string>
     <string name="slim_recents_hints_footer">To clear all apps, pinch-in with two fingers on the panel. To block an app from being cleared, long press on its icon to star it.\n\nFor additional recents features such as multiwindow or to kill an app, long press or drag an app card in the panel.</string>
    
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Force expanded notifications</string>
+    <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
+
        <!-- Dynamic Navbar -->
     <string name="navbar_dynamic_title">Dynamic navbar color</string>
     <string name="navbar_dynamic_summary">Adapt navbar color to match foreground running app</string>
