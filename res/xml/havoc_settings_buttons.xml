@@ -43,6 +43,12 @@
     <PreferenceCategory 
         android:key="hardware_keys"  
         android:title="@string/hardware_keys_category">  
+
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="anbi_enabled" 
+        android:title="@string/anbi_title" 
+        android:summary="@string/anbi_summary" 
+        android:defaultValue="false" /> 
   
         <SwitchPreference  
             android:key="hardware_keys_disable"  

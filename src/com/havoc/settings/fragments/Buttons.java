@@ -54,6 +54,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
     private static final String KEY_BUTTON_MANUAL_BRIGHTNESS_NEW = "button_manual_brightness_new";
     private static final String KEY_BUTTON_TIMEOUT = "button_timeout";
     private static final String KEY_BUTON_BACKLIGHT_OPTIONS = "button_backlight_options_category";
+    private static final String KEY_ANBI = "anbi_enabled"; 
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -70,6 +71,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
     private CustomSeekBarPreference mButtonTimoutBar;
     private CustomSeekBarPreference mManualButtonBrightness;
     private PreferenceCategory mButtonBackLightCategory;
+    private SwitchPreference mAnbi; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,8 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getContentResolver();
 
+        mAnbi = (SwitchPreference) findPreference(KEY_ANBI); 
+        
         mManualButtonBrightness = (CustomSeekBarPreference) findPreference(
                 KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);
         final int customButtonBrightness = getResources().getInteger(
