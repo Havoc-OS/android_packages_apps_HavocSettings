@@ -126,5 +126,11 @@
         android:key="lockscreen_colors" 
         android:title="@string/lockscreen_colors" 
         android:fragment="com.havoc.settings.fragments.LockColors" />
+
+    <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
+            android:key="lockscreen_enable_power_menu"  
+            android:title="@string/lockscreen_enable_power_menu_title" 
+            android:summary="@string/lockscreen_enable_power_menu_summary" 
+            android:defaultValue="true" /> 
 		
 </PreferenceScreen>

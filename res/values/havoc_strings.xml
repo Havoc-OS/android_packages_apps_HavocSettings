@@ -252,6 +252,10 @@
     <string name="one_handed_mode_title">One handed mode</string>
     <string name="one_handed_mode_summary">Allows swiping on the navigation bar to enable one handed mode</string>
 
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lock screen</string>
+
     <!-- Auto USB mode chooser --> 
     <string name="auto_usb_mode_chooser_title">Auto USB mode chooser</string> 
     <string name="auto_usb_mode_chooser_summary">Pop-up usb mode chooser when device connected to PC</string> 
