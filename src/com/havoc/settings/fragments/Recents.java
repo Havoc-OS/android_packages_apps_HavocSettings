@@ -29,6 +29,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.content.SharedPreferences; 
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
@@ -74,6 +75,7 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
     private static final String RECENTS_DISMISS_ICON = "recents_dismiss_icon"; 
     private static final String RECENTS_LOCK_ICON = "recents_lock_icon"; 
     private static final String USE_SLIM_RECENTS = "use_slim_recents"; 
+    private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
 
     private Preference mRecentsIconPack; 
     private Preference mRecentsMembar; 
@@ -81,6 +83,7 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
     private ListPreference mRecentsClearAllLocation; 
     private Preference mRecentsDismissIcon; 
     private Preference mRecentsLockIcon; 
+    private ListPreference mImmersiveRecents; 
     private Preference mSlimRecents; 
  
     private final static String[] sSupportedActions = new String[] { 
@@ -96,21 +99,21 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
  
     private AlertDialog mDialog; 
     private ListView mListView; 
+
+    private SharedPreferences mPreferences; 
+    private Context mContext; 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_recents);
 
+        mContext = getActivity().getApplicationContext(); 
         final ContentResolver resolver = getContentResolver(); 
         final PreferenceScreen prefSet = getPreferenceScreen(); 
         final Resources res = getResources(); 
  
-        mRecentsClearAll = (SwitchPreference) prefSet.findPreference(SHOW_CLEAR_ALL_RECENTS); 
-        mRecentsClearAll.setChecked(Settings.System.getIntForUser(resolver, 
-            Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT) == 1); 
-        mRecentsClearAll.setOnPreferenceChangeListener(this); 
-
         String currentIconPack =  Settings.System.getStringForUser(resolver, 
         Settings.System.RECENTS_ICON_PACK, UserHandle.USER_CURRENT); 
 
@@ -120,6 +123,12 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
         } else { 
             mRecentsIconPack.setSummary(R.string.recents_icon_pack_summary); 
         } 
+
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS); 
+        mImmersiveRecents.setValue(String.valueOf(Settings.System.getIntForUser( 
+                resolver, Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT))); 
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry()); 
+        mImmersiveRecents.setOnPreferenceChangeListener(this); 
 
         mRecentsMembar = (Preference) findPreference(RECENTS_MEMBAR); 
  
@@ -147,29 +156,40 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
 
     @Override   
     public boolean onPreferenceChange(Preference preference, Object newValue){ 
-    ContentResolver resolver = getActivity().getContentResolver(); 
-        if (preference == mRecentsClearAll) { 
-            boolean show = (Boolean) newValue; 
-            Settings.System.putIntForUser(getActivity().getContentResolver(), 
-                    Settings.System.SHOW_CLEAR_ALL_RECENTS, show ? 1 : 0, UserHandle.USER_CURRENT); 
-            return true; 
-        } else if (preference == mRecentsClearAllLocation) { 
-            int location = Integer.valueOf((String) newValue); 
-            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue); 
-            Settings.System.putIntForUser(getActivity().getContentResolver(), 
-                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT); 
-            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]); 
-            return true; 
-        } else if (preference == mSlimRecents) { 
-            boolean value = (Boolean) newValue; 
-            toggleAOSPrecents(!value); 
-            return true; 
-        } 
-        return false; 
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mImmersiveRecents) {
+            Settings.System.putIntForUser(resolver, Settings.System.IMMERSIVE_RECENTS,
+                    Integer.parseInt((String) newValue), UserHandle.USER_CURRENT);
+            mImmersiveRecents.setValue((String) newValue);
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+
+            mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
+            if (!mPreferences.getBoolean("first_info_shown", false) && newValue != null) {
+                getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("first_info_shown", true)
+                        .commit();
+                openAOSPFirstTimeWarning();
+            }
+            return true;
+         } else if (preference == mRecentsClearAllLocation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mSlimRecents) {
+            boolean value = (Boolean) newValue;
+            toggleAOSPrecents(!value);
+            return true;
+        }
+        return false;
     } 
 
     private void toggleAOSPrecents(boolean enabled) { 
         mRecentsIconPack.setEnabled(enabled); 
+        mImmersiveRecents.setEnabled(enabled); 
         mRecentsMembar.setEnabled(enabled); 
         mRecentsClearAll.setEnabled(enabled); 
         mRecentsClearAllLocation.setEnabled(enabled); 
@@ -202,6 +222,16 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
         .setNegativeButton(R.string.cancel, null) 
         .setView(createDialogView(context, supportedPackages)); 
         mDialog = builder.show(); 
+    } 
+
+    private void openAOSPFirstTimeWarning() { 
+        new AlertDialog.Builder(getActivity()) 
+                .setTitle(getResources().getString(R.string.aosp_first_time_title)) 
+                .setMessage(getResources().getString(R.string.aosp_first_time_message)) 
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() { 
+                        public void onClick(DialogInterface dialog, int whichButton) { 
+                        } 
+                }).show(); 
     } 
  
     private View createDialogView(final Context context, Map<String, IconPackInfo> supportedPackages) { 
