@@ -31,6 +31,13 @@
       android:entryValues="@array/recents_clear_all_location_values"
       android:defaultValue="3"
       android:dependency="show_clear_all_recents" />
+
+  <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+         android:key="recents_deep_clear" 
+         android:title="@string/recents_deep_clear_title" 
+         android:summary="@string/recents_deep_clear_summary" 
+         android:defaultValue="false" 
+         android:dependency="recents_dismiss_icon" /> 
     
   <com.havoc.settings.preferences.SystemSettingSwitchPreference 
      android:key="recents_dismiss_icon" 
