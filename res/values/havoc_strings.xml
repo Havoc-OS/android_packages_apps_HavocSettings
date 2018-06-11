@@ -299,7 +299,7 @@
     <string name="immersive_recents_fullscreen">Fullscreen</string>
     <string name="immersive_recents_statusbar">Statusbar only</string>
     <string name="immersive_recents_navbar">Navbar only</string>
-    
+
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
@@ -335,9 +335,6 @@
     <!-- Vibrate on plugged -->
     <string name="vibration_on_charge_state_changed_title">Vibrate on plug</string>
     <string name="vibration_on_charge_state_changed_summary">Vibrate device when device connected to power source</string>
-
-    <string name="recents_icon_pack_title">Icon Pack</string> 
-    <string name="recents_icon_pack_summary">Apply a custom icon pack for apps in the panel</string> 
 
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Choose action</string>
@@ -1059,7 +1056,13 @@
     <string name="keywords_lights_brightness_level">dim leds brightness</string> 
     <string name="notification_light_automagic">Choose colors automatically</string> 
     <string name="notification_light_automagic_summary">Choosing colors automatically</string> 
- 
+    <string name="profile_choose_app">Choose app</string>
+    <string name="restart_app_required">Restart respective app to see effect</string>
+  
+        <!-- AOSP Recents -->
+    <string name="aosp_first_time_title">AOSP recents</string>
+    <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
+
     <!-- Lights settings, LED notification --> 
     <string name="led_notification_title">Light settings</string> 
     <string name="led_notification_text">LED light enabled by settings</string> 
@@ -1067,8 +1070,14 @@
 
     <string name="add">Add</string>
     <string name="choose_app">Choose app</string>	
-    <string name="dialog_delete_title">Delete</string>
-    <string name="dialog_delete_message">Remove selected item?</string>	
+
+     <!-- Toast icon -->
+    <string name="toast_icon_title">Toast icon</string>
+    <string name="toast_icon_summary">Display icon of activity that generates toast message</string>
+
+       <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
+    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
 
     <!-- QS footer Running Services icon -->
     <string name="qs_footer_services_title">Show Running Services icon</string>

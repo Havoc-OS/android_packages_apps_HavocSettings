@@ -57,7 +57,7 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.havoc.settings.preferences.colorpicker.ColorPickerPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.havoc.settings.preferences.CustomSeekBarPreference;
 import com.havoc.settings.R;
 
