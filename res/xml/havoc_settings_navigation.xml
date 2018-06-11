@@ -22,6 +22,12 @@
         android:key="navbar_visibility"
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
+    
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="double_tap_sleep_navbar" 
+        android:title="@string/smartbar_doubletap_sleep_title" 
+        android:summary="@string/smartbar_doubletap_sleep_summary" 
+        android:defaultValue="false" /> 
 
     <PreferenceCategory
         android:key="category_navbar_interface"
