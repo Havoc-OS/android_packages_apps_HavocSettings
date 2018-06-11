@@ -272,6 +272,9 @@
     <string name="vibration_on_charge_state_changed_title">Vibrate on plug</string>
     <string name="vibration_on_charge_state_changed_summary">Vibrate device when device connected to power source</string>
 
+    <string name="recents_icon_pack_title">Icon Pack</string> 
+    <string name="recents_icon_pack_summary">Apply a custom icon pack for apps in the panel</string> 
+    
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Choose action</string>
     <string name="action_entry_default_action">Default settings</string>

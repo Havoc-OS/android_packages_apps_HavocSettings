@@ -49,5 +49,10 @@
          android:title="@string/systemui_recents_mem_display_title" 
          android:summary="@string/systemui_recents_mem_display_summary" 
          android:defaultValue="false" /> 
+        
+   <Preference 
+         android:key="recents_icon_pack" 
+         android:title="@string/recents_icon_pack_title" 
+         android:summary="@string/recents_icon_pack_summary" /> 
 
 </PreferenceScreen>
