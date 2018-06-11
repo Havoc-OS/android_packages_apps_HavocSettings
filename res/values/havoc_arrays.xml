@@ -56,6 +56,18 @@
         <item>@string/fling_settings</item>
     </string-array>
 
+     <string-array name="recent_panel_expanded_mode_entries"> 
+        <item>@string/recent_panel_expanded_mode_auto</item>  
+        <item>@string/recent_panel_expanded_mode_never</item> 
+        <!--<item>@string/recent_panel_expanded_mode_always</item>--> 
+    </string-array>
+
+      <string-array name="recent_panel_expanded_mode_values" translatable="false"> 
+        <item>0</item> 
+        <item>1</item> 
+        <!--<item>2</item>--> 
+    </string-array> 
+
      <!-- Gesture Anywhere --> 
     <string-array name="gesture_anywhere_position_entries" translatable="false"> 
         <item>@string/gesture_anywhere_position_left</item> 
