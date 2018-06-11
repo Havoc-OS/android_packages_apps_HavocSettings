@@ -78,6 +78,12 @@
         android:key="category_navbar_general"
         android:title="@string/navbar_general_title" >
 
+        <SwitchPreference
+            android:key="navbar_dynamic"
+            android:title="@string/navbar_dynamic_title"
+            android:summary="@string/navbar_dynamic_summary"
+            android:defaultValue="false"/>
+
         <PreferenceScreen
             android:key="pulse_settings"
             android:title="@string/pulse_settings"

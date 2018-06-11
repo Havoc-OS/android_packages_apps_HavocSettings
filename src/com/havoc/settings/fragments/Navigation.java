@@ -33,6 +33,7 @@ import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
+import android.widget.Toast; 
 
 import com.havoc.settings.preferences.CustomSeekBarPreference;
 import com.havoc.settings.R;
@@ -54,6 +55,7 @@ public class Navigation extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_HEIGHT_LAND = "navbar_height_landscape";
     private static final String KEY_NAVIGATION_WIDTH = "navbar_width";
     private static final String KEY_PULSE_SETTINGS = "pulse_settings";
+    private static final String NAVBAR_DYNAMIC = "navbar_dynamic";
 
     private SwitchPreference mNavbarVisibility;
     private ListPreference mNavbarMode;
@@ -66,6 +68,7 @@ public class Navigation extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mBarHeightLand;
     private CustomSeekBarPreference mBarWidth;
     private Preference mPulseSettings;
+    private SwitchPreference mNavbarDynamic; 
 
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
@@ -86,6 +89,7 @@ public class Navigation extends SettingsPreferenceFragment implements
         mFlingSettings = (Preference) findPreference(KEY_FLING_NAVBAR_SETTINGS);
         mSmartbarSettings = (Preference) findPreference(KEY_SMARTBAR_SETTINGS);
         mPulseSettings = (Preference) findPreference(KEY_PULSE_SETTINGS);
+        mNavbarDynamic = (SwitchPreference) findPreference(NAVBAR_DYNAMIC); 
 
         boolean showing = Settings.Secure.getInt(resolver,
                 Settings.Secure.NAVIGATION_BAR_VISIBLE,
@@ -123,6 +127,12 @@ public class Navigation extends SettingsPreferenceFragment implements
         }
 
         mHandler = new Handler();
+
+     
+        boolean isDynamic = Settings.System.getIntForUser(resolver,
+                Settings.System.NAVBAR_DYNAMIC, 0, UserHandle.USER_CURRENT) == 1;
+        mNavbarDynamic.setChecked(isDynamic);
+        mNavbarDynamic.setOnPreferenceChangeListener(this);
     }
 
     private void updateBarModeSettings(int mode) {
@@ -165,6 +175,7 @@ public class Navigation extends SettingsPreferenceFragment implements
         mNavbarVisibility.setChecked(showing);
         mNavInterface.setEnabled(mNavbarVisibility.isChecked());
         mNavGeneral.setEnabled(mNavbarVisibility.isChecked());
+        mNavbarDynamic.setEnabled(mNavbarVisibility.isChecked()); 
     }
 
     @Override
@@ -208,6 +219,13 @@ public class Navigation extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_WIDTH, val, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference.equals(mNavbarDynamic)) { 
+            boolean isDynamic = (Boolean) newValue; 
+            Settings.System.putIntForUser(resolver, Settings.System.NAVBAR_DYNAMIC, 
+                    isDynamic ? 1 : 0, UserHandle.USER_CURRENT); 
+            Toast.makeText(getActivity(), R.string.restart_app_required, 
+                    Toast.LENGTH_LONG).show(); 
+            return true; 
         }
         return false;
     }
