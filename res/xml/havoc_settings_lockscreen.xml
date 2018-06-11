@@ -132,5 +132,11 @@
             android:title="@string/lockscreen_enable_power_menu_title" 
             android:summary="@string/lockscreen_enable_power_menu_summary" 
             android:defaultValue="true" /> 
+    
+     <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
+               android:key="lockscreen_enable_qs" 
+               android:title="@string/lockscreen_enable_qs_title" 
+               android:summary="@string/lockscreen_enable_qs_summary" 
+               android:defaultValue="true" /> 
 		
 </PreferenceScreen>

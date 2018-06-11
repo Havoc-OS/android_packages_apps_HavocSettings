@@ -256,6 +256,10 @@
     <string name="lockscreen_enable_power_menu_title">Power menu</string>
     <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lock screen</string>
 
+    <!-- Quick settings on secure lockscreen -->
+    <string name="lockscreen_enable_qs_title">Quick settings</string>
+    <string name="lockscreen_enable_qs_summary">Allow accessing quick settings and swipe shortcuts on secure lock screen</string>
+
     <!-- Auto USB mode chooser --> 
     <string name="auto_usb_mode_chooser_title">Auto USB mode chooser</string> 
     <string name="auto_usb_mode_chooser_summary">Pop-up usb mode chooser when device connected to PC</string> 
