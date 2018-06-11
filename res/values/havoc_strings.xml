@@ -711,6 +711,9 @@
     <string name="lock_screen_weather_city_color">Weather City </string> 
     <string name="lock_screen_weather_wind_color">Weather Wind</string>
 
+    <string name="screenshot_type_title">Partial screenshot</string> 
+    <string name="screenshot_type_partial">Drag selection on the area for screenshot via volume keys</string> 
+
     <!-- Hide Lockscreen clock & date --> 
     <string name="hide_lockscreen_items_title">Lockscreen items</string> 
     <string name="hide_lockscreen_clock_title">Clock widget</string> 

@@ -37,10 +37,18 @@
         android:title="@string/vibration_on_charge_state_changed_title" 
         android:summary="@string/vibration_on_charge_state_changed_summary" 
         android:defaultValue="false" /> 
+    
+    <!-- Partial screenshot --> 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference 
+        android:key="screenshot_type" 
+        android:title="@string/screenshot_type_title" 
+        android:summary="@string/screenshot_type_partial" 
+        android:defaultValue="false" /> 
 
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="screenshot_sound" 
         android:title="@string/screenshot_sound_title" 
         android:summary="@string/screenshot_sound_summary" 
         android:defaultValue="true" />		
+    
 </PreferenceScreen>
