@@ -711,6 +711,9 @@
     <string name="lock_screen_weather_city_color">Weather City </string> 
     <string name="lock_screen_weather_wind_color">Weather Wind</string>
 
+    <string name="qs_tile_title_visibility_title">Tile title</string> 
+    <string name="qs_tile_title_visibility_summary">Display title below each tile</string> 
+
     <string name="screenshot_type_title">Partial screenshot</string> 
     <string name="screenshot_type_partial">Drag selection on the area for screenshot via volume keys</string> 
 

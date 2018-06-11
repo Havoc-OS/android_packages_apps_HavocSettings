@@ -39,7 +39,7 @@
         android:defaultValue="false" /> 
     
     <!-- Partial screenshot --> 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="screenshot_type" 
         android:title="@string/screenshot_type_title" 
         android:summary="@string/screenshot_type_partial" 
