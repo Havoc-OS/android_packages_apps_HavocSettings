@@ -66,6 +66,7 @@ public class Pulse extends SettingsPreferenceFragment implements
     CustomSeekBarPreference mSolidCount;
     CustomSeekBarPreference mSolidOpacity;
     CustomSeekBarPreference mNavButtonsOpacity;
+    SwitchPreference mAutoColor; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,11 @@ public class Pulse extends SettingsPreferenceFragment implements
         mRenderMode = (ListPreference) findPreference("pulse_render_mode");
         mRenderMode.setValue(String.valueOf(renderMode));
         mRenderMode.setOnPreferenceChangeListener(this);
+
+        mAutoColor = (SwitchPreference) findPreference("pulse_auto_color"); 
+        mAutoColor.setChecked(Settings.Secure.getIntForUser(getContentResolver(), 
+                Settings.Secure.PULSE_AUTO_COLOR, 0, UserHandle.USER_CURRENT) == 1); 
+        mAutoColor.setOnPreferenceChangeListener(this); 
 
         PreferenceCategory fadingBarsCat = (PreferenceCategory)findPreference("pulse_fading_bars_category");
         fadingBarsCat.setEnabled(renderMode == RENDER_STYLE_FADING_BARS);
@@ -259,6 +265,11 @@ public class Pulse extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.PULSE_CUSTOM_BUTTONS_OPACITY, val, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mAutoColor) { 
+                boolean enabled = (Boolean) newValue; 
+                Settings.Secure.putIntForUser(resolver, 
+                        Settings.Secure.PULSE_AUTO_COLOR, enabled ? 1 : 0, UserHandle.USER_CURRENT); 
+                return true; 
         }
         return false;
     }
