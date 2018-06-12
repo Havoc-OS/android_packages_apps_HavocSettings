@@ -602,6 +602,11 @@
 
       <!-- Volume dialog timeout -->  
     <string name="volume_dialog_timeout_title">Volume dialog timeout</string>  
+
+       <!-- Power menu and dialogs opacity --> 
+    <string name="power">Power Menu Tweaks</string> 
+    <string name="power_menu_transparency">Power/reboot menu opacity</string> 
+    <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string> 
    
     <!-- Volume dialog opacity -->  
     <string name="volume_dialog_transparency_title">Volume Dialog Tweaks</string>  
