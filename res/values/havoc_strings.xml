@@ -193,8 +193,17 @@
     <string name="animation12">Fade Out</string> 
     <string name="animation13">Fast Fade Out </string> 
     <string name="animation14">Slide Out Up </string> 
-    <string name="animation15">Fast Rotation</string> 
-    
+    <string name="animation15">Fast Rotation</string> ,
+
+        <!-- Dashboard conditions--> 
+    <string name="dashboard_category">Dashboard options</string> 
+    <string name="dashboard_conditions_title">Dashboard conditions</string> 
+    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string> 
+    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string> 
+    <string name="dashboard_suggestions_title">Dashboard suggestions</string> 
+    <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string> 
+    <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string> 
+
       <!-- Quick unlock --> 
     <string name="unlock_quick_unlock_control_title">Quick unlock</string> 
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string> 
