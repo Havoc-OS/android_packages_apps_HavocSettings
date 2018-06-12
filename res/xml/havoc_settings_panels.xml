@@ -18,4 +18,70 @@
     android:title="@string/panels_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.havoc.settings.preferencess.SystemSettingSeekBarPreference 
+        android:key="volume_dialog_timeout" 
+        android:title="@string/volume_dialog_timeout_title" 
+        android:max="10000" 
+        settings:min="100" 
+        settings:units="ms" 
+        android:persistent="false" /> 
+
+     <PreferenceCategory 
+        android:title="@string/volume_dialog_transparency_title"> 
+ 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="transparent_volume_dialog" 
+            android:title="@string/volume_dialog_transparency" 
+            android:max="255" 
+            settings:min="0" 
+            settings:units="" 
+            android:defaultValue="255" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="volume_dialog_corner_radius" 
+            android:title="@string/volume_dialog_corner_radius_title" 
+            android:max="50" 
+            settings:min="0" 
+            settings:units="px" 
+            android:defaultValue="10" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingListPreference 
+            android:key="volume_dialog_stroke" 
+            android:title="@string/volume_dialog_stroke_title" 
+            android:dialogTitle="@string/volume_dialog_stroke_title" 
+            android:entries="@array/volume_dialog_stroke_entries" 
+            android:entryValues="@array/volume_dialog_stroke_values" 
+            android:defaultValue="0" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingColorPickerPreference 
+            android:key="volume_dialog_stroke_color" 
+            android:title="@string/volume_dialog_stroke_color_title" 
+            android:defaultValue="0xffffab00" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="volume_dialog_stroke_thickness" 
+            android:title="@string/volume_dialog_stroke_thickness_title" 
+            android:max="25" 
+            settings:min="1" 
+            settings:units="px" 
+            android:defaultValue="4" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="volume_dialog_stroke_dash_width" 
+            android:title="@string/volume_dialog_dash_width_title" 
+            android:max="50" 
+            settings:min="0" 
+            settings:units="px" 
+            android:defaultValue="0" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="volume_dialog_stroke_dash_gap" 
+            android:title="@string/volume_dialog_dash_gap_title" 
+            android:max="50" 
+            settings:min="1" 
+            settings:units="px" 
+            android:defaultValue="10" /> 
+ 
+    </PreferenceCategory> 
+
 </PreferenceScreen>
