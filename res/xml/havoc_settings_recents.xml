@@ -77,6 +77,13 @@
             android:title="@string/recents_full_screen_date_title" 
             android:summary="@string/recents_full_screen_date_summary" 
             android:defaultValue="false" /> 
+        
+    
+        <PreferenceScreen 
+            android:key="recent_styles" 
+            android:title="@string/recent_styles" 
+            android:fragment="com.havoc.settings.fragments.RecentsStyles" 
+            android:summary="@string/recent_styles_summary"/> 
  
         
    <Preference 
