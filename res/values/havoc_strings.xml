@@ -194,6 +194,8 @@
     <string name="animation13">Fast Fade Out </string> 
     <string name="animation14">Slide Out Up </string> 
     <string name="animation15">Fast Rotation</string>
+
+    <string name="havoc_lockscreen_target_title">Bottom shortcuts</string> 
      
     <!-- Hide Apps from Recents --> 
     <string name="hide_apps_from_recents_title">Hidden apps</string> 

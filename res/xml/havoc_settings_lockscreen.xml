@@ -132,5 +132,14 @@
                android:title="@string/lockscreen_enable_qs_title" 
                android:summary="@string/lockscreen_enable_qs_summary" 
                android:defaultValue="true" /> 
+
+     <Preference 
+        android:key="bottom_shortcuts_category" 
+            android:title="@string/havoc_lockscreen_target_title" 
+            android:summary="@string/lockscreen_targets_summary"> 
+        <intent android:action="android.intent.action.MAIN" 
+            android:targetPackage="com.android.systemui" 
+            android:targetClass="com.android.systemui.tuner.LockscreenActivity" /> 
+    </Preference> 
 		
 </PreferenceScreen>
