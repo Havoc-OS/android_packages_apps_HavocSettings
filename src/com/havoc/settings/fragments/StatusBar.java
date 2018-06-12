@@ -48,6 +48,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
     private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
     private static final String TICKER_MODE = "status_bar_show_ticker";
+    private static final String TICKER_MODE_ANIMATION = "status_bar_ticker_animation_mode"; 
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
@@ -68,6 +69,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mDataActivityEnabled;
     private SwitchPreference mWifiActivityEnabled;
     private ListPreference mTickerMode;
+    private ListPreference mTickerModeAnimation; 
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
@@ -114,6 +116,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         mTickerMode = (ListPreference) findPreference(TICKER_MODE);
         mTickerMode.setOnPreferenceChangeListener(this);
+
+        
+        mTickerModeAnimation = (ListPreference) findPreference(TICKER_MODE_ANIMATION); 
+        int tickerMode = Settings.System.getIntForUser(resolver, 
+                Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT); 
+        mTickerModeAnimation.setEnabled(tickerMode > 0); 
 
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         int batterystyle = Settings.System.getIntForUser(resolver,
@@ -207,9 +215,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return true;
         } else if (preference.equals(mTickerMode)) { 
             int value = Integer.parseInt((String) newValue); 
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value); 
-            int index = mTickerMode.findIndexOfValue((String) newValue); 
-            mTickerMode.setSummary(mTickerMode.getEntries()[index]); 
+            mTickerModeAnimation.setEnabled(value > 0); 
             return true;			
         } else if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
