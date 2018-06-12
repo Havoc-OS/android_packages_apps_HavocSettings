@@ -60,6 +60,13 @@
         android:summaryOff="@string/heads_up_summary_disabled" 
         android:defaultValue="true" /> 
 
+          <!-- System -->
+     <Preference
+         android:key="headsup"
+         android:title="@string/heads_up_title"
+         android:fragment="com.havoc.settings.fragments.HeadsUp"/>
+        
+
      <!-- Toast Icon --> 
     <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
         android:key="toast_icon" 

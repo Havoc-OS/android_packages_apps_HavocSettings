@@ -235,11 +235,6 @@
     <string name="status_bar_notif_count_title">Show notification count</string> 
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string> 
 
-     <!-- Heads up -->  
-    <string name="heads_up_title">Heads up</string>  
-    <string name="heads_up_summary_enabled">Pop-up notifications are enabled</string>  
-    <string name="heads_up_summary_disabled">Pop-up notifications are disabled</string>  
-
     <!-- Wallpaper tint --> 
     <string name="tint_menus_all">Tint</string> 
     <string name="wallpaper_tint_power_menu">Power menu background tint</string> 
@@ -604,6 +599,46 @@
     <string name="fling_pulse_color_summary">Used also as fallback for automatic color</string>
      <string name="pulse_auto_color_title">Automatic Pulse color</string> 
     <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string> 
+    
+    <!-- Heads up -->
+    <string name="headsup_title">Heads up</string> 
+    <string name="heads_up_summary_enabled">Heads-up notifications are enabled</string>  
+    <string name="heads_up_summary_disabled">Heads-up notifications are disabled</string>  
+    <string name="heads_up_blacklist_add_package_title">Add app</string>  
+    <string name="heads_up_blacklist_add_package_summary">Disable heads-up notifications in these applications</string>  
+    <string name="heads_up_blacklist_title">Blacklist</string>  
+    <string name="heads_up_blacklist_choose_app">Select app</string>  
+    <string name="heads_up_blacklist_dialog_delete_title">Delete</string>  
+    <string name="heads_up_blacklist_dialog_delete_message">Remove selected item?</string>
+
+      <!-- Heads up timeout -->
+   <string name="heads_up_time_out_title">Time out</string>
+   <string name="heads_up_time_out_summary">Peeking notifications will show for defiend seconds</string>
+   <string name="heads_up_time_out_2sec">2 seconds</string>
+   <string name="heads_up_time_out_3sec">3 seconds</string>
+   <string name="heads_up_time_out_4sec">4 seconds</string>
+   <string name="heads_up_time_out_5sec">5 seconds</string>
+   <string name="heads_up_time_out_6sec">6 seconds</string>
+   <string name="heads_up_time_out_8sec">8 seconds</string>
+   <string name="heads_up_time_out_10sec">10 seconds</string>
+   <string name="heads_category_title">Heads Up</string>
+   <string name="heads_up_title">Advanced Heads Up Settings</string>
+   <string name="heads_up_stoplist_title">Stoplist</string>
+   <string name="add_heads_up_package">Add app</string>
+   <string name="add_heads_up_blacklist_summary">Disable heads up from these applications</string>
+  
+   <!-- Heads up snooze -->
+   <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
+   <string name="heads_up_snooze_title">Snooze timer</string>
+   <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
+   <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for defiened minutes</string>
+   <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
+   <string name="heads_up_snooze_1min">1 minute</string>
+   <string name="heads_up_snooze_3min">3 minutes</string>
+   <string name="heads_up_snooze_5min">5 minutes</string>
+   <string name="heads_up_snooze_10min">10 minutes</string>
+   <string name="heads_up_snooze_15min">15 minutes</string>
+   <string name="heads_up_snooze_20min">20 minutes</string> 
 
     <string name="headset_connect_player_title">Launch music app on headset connection</string>  
     <string name="headset_connect_player_disabled">Disabled</string>  
