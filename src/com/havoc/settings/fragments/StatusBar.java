@@ -178,7 +178,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 0, UserHandle.USER_CURRENT) != 0; 
         toggleLogo(mLogoEnabled); 
     } 
-    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {

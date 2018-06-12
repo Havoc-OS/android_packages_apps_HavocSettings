@@ -116,6 +116,23 @@
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
 
+    <!-- Status bar temperature -->
+    <string name="status_bar_weather_title">Weather</string>
+    <string name="status_bar_weather_summary">Display and customize weather on status bar</string>
+    <string name="status_bar_temperature_title">Weather</string>
+    <string name="status_bar_temperature_hidden">Hidden</string>
+    <string name="status_bar_temperature_location_title">Position</string>
+    <string name="status_bar_temperature_location_right">Show on right</string>
+    <string name="status_bar_temperature_location_left">Show on left</string>
+    <string name="status_bar_weather_color_title">Temperature color</string>
+    <string name="status_bar_weather_hidden">Hide weather</string>
+    <string name="status_bar_temperature_image_show_scale">Display image and temp with scale</string>
+    <string name="status_bar_temperature_image_hide_scale">Display image and temp without scale</string>
+    <string name="status_bar_temperature_show_scale_hide_image">Display only temp with scale</string>
+    <string name="status_bar_temperature_hide_scale_hide_image">Display only temp without scale</string>
+    <string name="status_bar_show_image">Display only condition image</string>
+    <string name="status_bar_weather_image_color_title">Condition image color</string>
+
      <!-- Gesture Anywhere --> 
     <string name="gesture_anywhere_title">Gesture Anywhere</string> 
     <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string> 
