@@ -61,8 +61,7 @@
 
     <PreferenceCategory 
         android:title="@string/immersive_recent_title"
-        android:dependency="stock_recents"
-        android:key="immersive_recent" >
+        android:key="immersive" >
 
         <ListPreference
             android:key="immersive_recents"
@@ -72,6 +71,18 @@
             android:entries="@array/immersive_recents_entries"
             android:entryValues="@array/immersive_recents_values"
             android:persistent="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="recents_full_screen_clock" 
+            android:title="@string/recents_full_screen_clock_title" 
+            android:summary="@string/recents_full_screen_clock_summary" 
+            android:defaultValue="false" /> 
+ 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="recents_full_screen_date" 
+            android:title="@string/recents_full_screen_date_title" 
+            android:summary="@string/recents_full_screen_date_summary" 
+            android:defaultValue="false" /> 
 
     </PreferenceCategory>
 

@@ -51,12 +51,16 @@ public class Recents extends SettingsPreferenceFragment implements
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
     private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
+    private static final String RECENTS_DATE = "recents_full_screen_date"; 
+    private static final String RECENTS_CLOCK = "recents_full_screen_clock"; 
 
     private ListPreference mImmersiveRecents; 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mNavbarRecentsStyle;
     private ListPreference mRecentsComponentType;
+    private SwitchPreference mClock; 
+    private SwitchPreference mDate; 
 
     private SharedPreferences mPreferences; 
     private Context mContext; 
@@ -94,11 +98,25 @@ public class Recents extends SettingsPreferenceFragment implements
         mRecentsComponentType.setOnPreferenceChangeListener(this);
 
         mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS); 
-        mImmersiveRecents.setValue(String.valueOf(Settings.System.getIntForUser( 
-                resolver, Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT))); 
+        int mode = Settings.System.getInt(getContentResolver(), 
+        Settings.System.IMMERSIVE_RECENTS, 0); 
+            mImmersiveRecents.setValue(String.valueOf(mode)); 
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry()); 
         mImmersiveRecents.setOnPreferenceChangeListener(this); 
 
+        mClock = (SwitchPreference) findPreference(RECENTS_CLOCK); 
+        mDate = (SwitchPreference) findPreference(RECENTS_DATE); 
+        updateDisablestate(mode); 
+    }
+
+    public void updateDisablestate(int mode) { 
+        if (mode == 0 || mode == 2) { 
+           mClock.setEnabled(false); 
+           mDate.setEnabled(false); 
+        } else { 
+           mClock.setEnabled(true); 
+           mDate.setEnabled(true); 
+        } 
     }
 
     @Override
@@ -145,7 +163,7 @@ public class Recents extends SettingsPreferenceFragment implements
                     Integer.parseInt((String) newValue), UserHandle.USER_CURRENT);
             mImmersiveRecents.setValue((String) newValue);
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
-
+            updateDisablestate(mode);
             mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
             if (!mPreferences.getBoolean("first_info_shown", false) && newValue != null) {
                 getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
