@@ -23,7 +23,7 @@
             android:key="selinux_switch" 
             android:title="@string/pixel_anim_title" 
             android:summary="@string/pixel_anim_warning" 
-            android:icon="@drawable/unleash_pixel_navbar_icon" 
+            android:icon="@drawable/havoc_pixel_navbar_icon" 
             android:selectable="false"/> 
  
     <com.havoc.settings.preferences.CustomSeekBarPreference 
