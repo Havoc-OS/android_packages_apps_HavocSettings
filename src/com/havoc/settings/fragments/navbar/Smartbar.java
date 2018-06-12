@@ -50,6 +50,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.preferences.CustomSeekBarPreference;
 import com.havoc.settings.R;
+import android.support.v7.preference.PreferenceScreen; 
 
 import java.io.File;
 import java.io.FileFilter;
@@ -65,6 +66,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
     private ListPreference mButtonLongpressDelay;
     private CustomSeekBarPreference mButtonsAlpha;
     private CustomSeekBarPreference mCustomButtonScaling;
+    private PreferenceScreen mPixel; 
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
