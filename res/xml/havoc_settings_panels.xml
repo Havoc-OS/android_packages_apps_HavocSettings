@@ -18,7 +18,7 @@
     android:title="@string/panels_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferencess.SystemSettingSeekBarPreference 
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="volume_dialog_timeout" 
         android:title="@string/volume_dialog_timeout_title" 
         android:max="10000" 
@@ -87,7 +87,7 @@
         <PreferenceCategory 
          android:title="@string/power"> 
   
-         <com.havoc.settings.preference.SystemSettingSeekBarPreference 
+         <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
              android:key="transparent_power_menu" 
              android:title="@string/power_menu_transparency" 
              android:max="100" 
@@ -95,7 +95,7 @@
              settings:units="%" 
              android:defaultValue="100" /> 
   
-         <com.havoc.settings.preference.SystemSettingSeekBarPreference 
+         <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
              android:key="transparent_power_dialog_dim" 
              android:title="@string/power_menu_dialog_dim" 
              android:max="100" 

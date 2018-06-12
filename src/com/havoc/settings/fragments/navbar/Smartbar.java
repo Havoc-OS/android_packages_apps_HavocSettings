@@ -50,7 +50,6 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.preferences.CustomSeekBarPreference;
 import com.havoc.settings.R;
-import android.support.v7.preference.PreferenceScreen; 
 
 import java.io.File;
 import java.io.FileFilter;
@@ -66,7 +65,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
     private ListPreference mButtonLongpressDelay;
     private CustomSeekBarPreference mButtonsAlpha;
     private CustomSeekBarPreference mCustomButtonScaling;
-    private PreferenceScreen mPixel; 
+    private Preference mPixel; 
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -92,7 +91,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.smartbar_settings);
 
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smartbar_help_policy_notice_summary);
-        mPixel = (PreferenceScreen) findPreference(PIXEL);
+        mPixel = (Preference) findPreference(PIXEL);
 
         int contextVal = Settings.Secure.getIntForUser(getContentResolver(),
                 "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
