@@ -159,6 +159,25 @@
         <item>24</item>
     </string-array>
 
+      <!-- Launch default music player on headset connection --> 
+    <string-array name="headset_connect_player_entries"> 
+        <item>@string/headset_connect_player_disabled</item> 
+        <item>@string/headset_connect_player_wired</item> 
+        <item>@string/headset_connect_player_bt_no_carkit</item> 
+        <item>@string/headset_connect_player_bt</item> 
+        <item>@string/headset_connect_player_both_no_carkit</item> 
+        <item>@string/headset_connect_player_both</item> 
+    </string-array> 
+ 
+    <string-array name="headset_connect_player_values" translatable="false"> 
+        <item>0</item> 
+        <item>1</item> 
+        <item>2</item> 
+        <item>3</item> 
+        <item>4</item> 
+        <item>5</item> 
+    </string-array> 
+
     <!-- Suppress notification sound --> 
     <string-array name="notification_sound_vib_screen_on_entries"> 
         <item>@string/notification_sound_vib_screen_on_never</item> 

@@ -604,6 +604,14 @@
     <string name="fling_pulse_color_summary">Used also as fallback for automatic color</string>
      <string name="pulse_auto_color_title">Automatic Pulse color</string> 
     <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string> 
+
+    <string name="headset_connect_player_title">Launch music app on headset connection</string>  
+    <string name="headset_connect_player_disabled">Disabled</string>  
+    <string name="headset_connect_player_wired">When wired headset is plugged in</string>  
+    <string name="headset_connect_player_bt_no_carkit">When BT headset (no carkit) is plugged in</string>  
+    <string name="headset_connect_player_bt">When BT headset is plugged in</string>  
+    <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>  
+    <string name="headset_connect_player_both">When wired or BT headset is plugged in</string> 
     
     <!-- Screen state service -->
     <string name="screen_state_toggles_title">Suspend actions</string>
