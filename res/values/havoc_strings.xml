@@ -492,6 +492,7 @@
     <string name="incall_vibrate_connect_title">Vibrate on Connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on Call Waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on Disconnect</string>
+    <string name="incall_notifications_vibrate">Vibrate for Notifications</string>
 		
     <!-- Battery light -->
     <string name="battery_light_settings">Battery charging light</string>
@@ -639,5 +640,6 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
+
 
 </resources>
