@@ -390,6 +390,12 @@
     <string name="animation_no_scroll_summary_on">Enabled</string>
     <string name="animation_no_scroll_summary_off">Disabled</string>
     
+        <!-- Clock and date immersive recents-->
+    <string name="recents_full_screen_clock_title">Show clock</string>
+    <string name="recents_full_screen_clock_summary">Shows clock at the top while in immersive</string>
+    <string name="recents_full_screen_date_title">Show date</string>
+    <string name="recents_full_screen_date_summary">Shows date at the top while in immersive</string>
+    
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
