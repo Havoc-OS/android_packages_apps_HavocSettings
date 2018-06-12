@@ -25,6 +25,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.content.res.Resources; 
 
 import com.android.internal.logging.nano.MetricsProto; 
 import com.android.settings.SettingsPreferenceFragment;
@@ -40,6 +41,14 @@ public class IME extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_ime);
+
+          // Enable or disable mStatusBarImeSwitcher based on boolean: config_show_cmIMESwitcher 
+        boolean showCmImeSwitcher = getResources().getBoolean( 
+        com.android.internal.R.bool.config_show_cmIMESwitcher); 
+        if (!showCmImeSwitcher) { 
+            getPreferenceScreen().removePreference( 
+                    findPreference(Settings.System.STATUS_BAR_IME_SWITCHER)); 
+        } 
     }
 
     @Override
