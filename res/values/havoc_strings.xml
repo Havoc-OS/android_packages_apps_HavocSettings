@@ -37,6 +37,8 @@
     <string name="battery_title">Battery Saving</string>
     <string name="weather_title">Weather</string>
     <string name="volume_title">Volume Keys</string>
+    <string name="fingerprint_title">Fingerprint</string>
+    <string name="sounds_title">Sound</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>

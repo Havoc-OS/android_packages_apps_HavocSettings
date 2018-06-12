@@ -122,6 +122,13 @@
             android:title="@string/system_title"
             android:fragment="com.havoc.settings.fragments.System"
             android:icon="@drawable/ic_settings_system"/>
+        
+         <!-- Fingerprint -->
+        <Preference
+            android:key="fingerprint_category"
+            android:title="@string/fingerprint_title"
+            android:fragment="com.havoc.settings.fragments.Fingerprint"
+            android:icon="@drawable/ic_settings_fingerprint"/>
 
         <!-- IME Settings -->
         <Preference
@@ -129,6 +136,13 @@
             android:title="@string/ime_title"
             android:fragment="com.havoc.settings.fragments.IME"
             android:icon="@drawable/ic_settings_ime"/>
+        
+       <!-- Sounds -->
+        <Preference
+            android:key="sounds_category"
+            android:title="@string/sounds_title"
+            android:fragment="com.havoc.settings.fragments.Sounds"
+            android:icon="@drawable/ic_settings_sounds"/>
 
         <!-- Misc -->
         <Preference
