@@ -36,6 +36,7 @@ import com.android.settings.Utils;
 import com.havoc.settings.preferences.CustomSeekBarPreference; 
 
 import lineageos.providers.LineageSettings; 
+import android.provider.Settings; 
 
 public class LockScreen extends SettingsPreferenceFragment
     implements Preference.OnPreferenceChangeListener {
@@ -46,7 +47,9 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String KEY_LOCKSCREEN_DATE_SELECTION = "lockscreen_date_selection";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha"; 
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha"; 
-
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts"; 
+ 
+    ListPreference mLockClockFonts; 
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
     private CustomSeekBarPreference mLsAlpha; 
@@ -86,6 +89,12 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_ALPHA, 0.45f); 
         mLsAlpha.setValue((int)(100 * alpha)); 
         mLsAlpha.setOnPreferenceChangeListener(this); 
+    
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS); 
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt( 
+                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 0))); 
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry()); 
+        mLockClockFonts.setOnPreferenceChangeListener(this); 
     }
 
     @Override
@@ -115,7 +124,13 @@ public class LockScreen extends SettingsPreferenceFragment
             Settings.System.putFloat(resolver, 
                     Settings.System.LOCKSCREEN_ALPHA, alpha / 100.0f); 
             return true; 
-        } 
+        } else  if (preference == mLockClockFonts) { 
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 
+                    Integer.valueOf((String) newValue)); 
+            mLockClockFonts.setValue(String.valueOf(newValue)); 
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry()); 
+            return true; 
+          } 
         return false;
     }
 
