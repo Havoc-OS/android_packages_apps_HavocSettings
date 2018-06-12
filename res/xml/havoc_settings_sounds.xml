@@ -42,5 +42,12 @@
             android:title="@string/headset_connect_player_title" 
             android:entries="@array/headset_connect_player_entries" 
             android:entryValues="@array/headset_connect_player_values" /> 
+
+       <com.havoc.settings.preferences.SystemSettingListPreference 
+            android:key="less_notification_sounds" 
+            android:title="@string/less_notification_sounds_title" 
+            android:summary="@string/less_notification_sounds_summary" 
+            android:entries="@array/less_notification_sounds_entries" 
+            android:entryValues="@array/less_notification_sounds_values" /> 
     
 </PreferenceScreen>
