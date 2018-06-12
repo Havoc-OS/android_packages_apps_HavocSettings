@@ -66,13 +66,13 @@
         android:entryValues="@array/immersive_recents_values"
         android:persistent="false" />
     
-     <com.android.settings.rr.Preferences.SystemSettingSwitchPreference 
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="recents_full_screen_clock" 
             android:title="@string/recents_full_screen_clock_title" 
             android:summary="@string/recents_full_screen_clock_summary" 
             android:defaultValue="false" /> 
  
-        <com.android.settings.rr.Preferences.SystemSettingSwitchPreference 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="recents_full_screen_date" 
             android:title="@string/recents_full_screen_date_title" 
             android:summary="@string/recents_full_screen_date_summary" 
@@ -84,6 +84,16 @@
             android:title="@string/recent_styles" 
             android:fragment="com.havoc.settings.fragments.RecentsStyles" 
             android:summary="@string/recent_styles_summary"/> 
+
+    
+     <PreferenceScreen 
+             android:key="hide_app_from_recents" 
+             android:title="@string/hide_apps_from_recents_title" 
+             android:summary="@string/hide_apps_from_recents_summary" > 
+             <intent android:action="android.intent.action.MAIN" 
+                 android:targetPackage="com.android.settings" 
+                 android:targetClass="com.havoc.settings.fragments.recents.hafr.HAFRAppListActivity" /> 
+     </PreferenceScreen> 
  
         
    <Preference 
