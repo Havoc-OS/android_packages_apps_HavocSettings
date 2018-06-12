@@ -145,13 +145,6 @@
             android:fragment="com.havoc.settings.fragments.Sounds"
             android:icon="@drawable/ic_settings_sounds"/>
 
-        <!-- Privacy Guard -->  
-        <org.lineageos.internal.lineageparts.LineagePartsPreference  
-           android:key="privacy_guard_manager" 
-           android:title="@string/privacy_title"  
-           android:icon="@drawable/ic_settings_privacy"
-           android:summary="@string/privacy_summary"  />  
-
          <!-- Misc -->
         <Preference
             android:key="misc_category"
