@@ -159,6 +159,19 @@
         <item>24</item>
     </string-array>
 
+    <!-- Suppress notification sound --> 
+    <string-array name="notification_sound_vib_screen_on_entries"> 
+        <item>@string/notification_sound_vib_screen_on_never</item> 
+        <item>@string/notification_sound_vib_screen_on_always</item> 
+        <item>@string/notification_sound_vib_screen_on_nomedia</item> 
+    </string-array> 
+ 
+    <string-array name="notification_sound_vib_screen_on_values" translatable="false"> 
+        <item>0</item> 
+        <item>1</item> 
+        <item>2</item> 
+    </string-array> 
+
         <!-- Status bar temperature location-->
     <string-array name="status_bar_temperature_location_entries" translatable="false">
         <item>@string/status_bar_temperature_location_left</item>
