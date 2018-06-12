@@ -36,6 +36,7 @@ import android.view.WindowManagerGlobal;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import android.provider.Settings; 
 
 import java.util.Locale;
 import android.text.TextUtils;
@@ -46,6 +47,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.havoc.settings.preferences.Utils;
+import com.havoc.settings.preferences.SystemSettingSwitchPreference;
 
 public class Notifications extends SettingsPreferenceFragment
     implements OnPreferenceChangeListener {
@@ -53,6 +55,8 @@ public class Notifications extends SettingsPreferenceFragment
     public static final String TAG = "Notifications";
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message"; 
+    private SwitchPreference mDisableIM; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,12 @@ public class Notifications extends SettingsPreferenceFragment
         if (!Utils.isVoiceCapable(getActivity())) {
         prefSet.removePreference(incallVibCategory); 
         }
+
+        mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE); 
+        mDisableIM.setOnPreferenceChangeListener(this); 
+        int DisableIM = Settings.System.getInt(getContentResolver(), 
+                DISABLE_IMMERSIVE_MESSAGE, 0); 
+        mDisableIM.setChecked(DisableIM != 0); 
     }
 
     @Override
@@ -76,6 +86,12 @@ public class Notifications extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mDisableIM) { 
+            boolean value = (Boolean) objValue; 
+            Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE, 
+                    value ? 1 : 0); 
+            return true; 
+        }  
         return false;
     }
 
