@@ -15,36 +15,83 @@
  */
 package com.havoc.settings.fragments;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
-
+import android.content.Context; 
+import android.content.ContentResolver; 
+import android.content.res.Resources; 
+import android.os.Bundle; 
+import android.os.UserHandle; 
+import android.os.PowerManager; 
+import android.preference.ListPreference; 
+import android.preference.SwitchPreference; 
+import android.preference.Preference; 
+import android.preference.PreferenceCategory; 
+import android.preference.PreferenceManager; 
+import android.preference.PreferenceScreen; 
+import android.preference.Preference.OnPreferenceChangeListener; 
+import android.provider.Settings; 
+ 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
-import com.android.settings.SettingsPreferenceFragment;
-
-import com.havoc.settings.R;
-
-public class Display extends SettingsPreferenceFragment {
-
-    public static final String TAG = "Display";
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.havoc_settings_display);
-    }
-
+import com.android.settings.R; 
+import com.android.settings.SettingsPreferenceFragment; 
+import com.android.settings.Utils; 
+import com.havoc.settings.preferences.SystemSettingSwitchPreference; 
+ 
+public class SmartPixels extends SettingsPreferenceFragment implements 
+        Preference.OnPreferenceChangeListener { 
+    private static final String TAG = "SmartPixels"; 
+ 
+    private static final String ON_POWER_SAVE = "smart_pixels_on_power_save"; 
+ 
+    private SystemSettingSwitchPreference mSmartPixelsOnPowerSave; 
+ 
+    ContentResolver resolver; 
+ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+ 
+        addPreferencesFromResource(R.xml.havoc_settings_display); 
+ 
+        resolver = getActivity().getContentResolver(); 
+ 
+        mSmartPixelsOnPowerSave = (SystemSettingSwitchPreference) findPreference(ON_POWER_SAVE); 
+ 
+        updateDependency(); 
+ 
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_pixels_footer); 
+    } 
+ 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
-}
+ 
+    @Override 
+    public void onResume() { 
+        super.onResume(); 
+    } 
+ 
+    @Override 
+    public void onPause() { 
+        super.onPause(); 
+    } 
+ 
+    public boolean onPreferenceChange(Preference preference, Object objValue) { 
+        final String key = preference.getKey(); 
+        updateDependency(); 
+        return true; 
+    } 
+ 
+    private void updateDependency() { 
+        boolean mUseOnPowerSave = (Settings.System.getIntForUser( 
+                resolver, Settings.System.SMART_PIXELS_ON_POWER_SAVE, 
+                0, UserHandle.USER_CURRENT) == 1); 
+        PowerManager pm = (PowerManager)getActivity().getSystemService(Context.POWER_SERVICE); 
+        if (pm.isPowerSaveMode() && mUseOnPowerSave) { 
+            mSmartPixelsOnPowerSave.setEnabled(false); 
+        } else { 
+            mSmartPixelsOnPowerSave.setEnabled(true); 
+        } 
+    } 
+ 
+} 
