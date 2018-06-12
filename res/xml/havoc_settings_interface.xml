@@ -52,6 +52,27 @@
             android:title="@string/settings_blur_cat"  
             android:summary="@string/settings_blur_sum"/> 
     </PreferenceCategory>
+
+   <PreferenceCategory 
+            android:title="@string/corners_category" > 
+ 
+      <com.havoc.settings.preferences.SecureSettingSwitchPreference 
+                android:key="sysui_rounded_fwvals" 
+                android:title="@string/corner_fwvals" 
+                android:summary="@string/corner_fwvals_summary" 
+                android:defaultValue="true" 
+                android:disableDependentsState="true" /> 
+ 
+     <com.havoc.settings.preferences.SecureSettingSeekBarPreference 
+          android:key="sysui_rounded_size" 
+          android:title="@string/corner_radius" 
+          android:max="25" 
+          settings:min="0" 
+          settings:units="" 
+          android:persistent="false" 
+          android:dependency="sysui_rounded_fwvals" /> 
+ 
+    </PreferenceCategory> 
 	
     <PreferenceCategory 
         android:key="category_substratum" 

@@ -227,6 +227,12 @@
    <string name="ime_switcher_notify">Selector notification</string> 
    <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
 
+    <!-- Rounded corner --> 
+    <string name="corners_category">Corners</string> 
+    <string name="corner_radius">Rounded Corner Radius</string> 
+    <string name="corner_fwvals">Use framework values</string> 
+    <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string> 
+
       <!-- Wake And Unlock --> 
     <string name="fp_wake_and_unlock_title">Fingerprint wake and unlock</string> 
     <string name="fp_wake_and_unlock_summary">Allow unlocking device using fingerprint when screen is off or dozing</string> 

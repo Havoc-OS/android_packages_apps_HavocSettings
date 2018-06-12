@@ -36,20 +36,34 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.widget.Toast;
 
+import android.content.pm.PackageInfo; 
+import android.content.pm.PackageManager; 
+import android.content.pm.PackageManager.NameNotFoundException; 
+import android.content.res.Resources; 
+import android.util.Log; 
+import android.content.Context; 
+
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.havoc.settings.fragments.ui.FontDialogPreference;
+import com.havoc.settings.preferences.SecureSettingSeekBarPreference; 
 import com.havoc.settings.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Interface extends SettingsPreferenceFragment {
+public class Interface extends SettingsPreferenceFragment implements 
+    Preference.OnPreferenceChangeListener {
 
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
     private static final String CATEGORY_SUBSTRATUM = "category_substratum"; 
+    private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size"; 
+ 
+    private Context mContext; 
+    private SecureSettingSeekBarPreference mCornerRadius; 
+    private SecureSettingSeekBarPreference mContentPadding; 
 	
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
@@ -107,7 +121,22 @@ public class Interface extends SettingsPreferenceFragment {
 
         mIntentFilter = new IntentFilter(); 
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED"); 		
+
+        // Rounded Corner Radius 
+        mCornerRadius = (SecureSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE); 
+        int cornerRadius = Settings.Secure.getInt(getContentResolver(), 
+                Settings.Secure.SYSUI_ROUNDED_SIZE, 0); 
+        mCornerRadius.setValue(cornerRadius / 1); 
+        mCornerRadius.setOnPreferenceChangeListener(this); 
     }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) { 
+        if (preference == mCornerRadius) { 
+            int value = (Integer) newValue; 
+            Settings.Secure.putInt(getContentResolver(), 
+                Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1); 
+        } return true; 
+    } 
 
     private FontInfo getCurrentFontInfo() {
         try {
