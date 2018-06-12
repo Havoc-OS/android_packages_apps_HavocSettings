@@ -35,5 +35,12 @@
         android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
         android:title="@string/wakelock_blocker_title" 
         android:summary="@string/wakelock_blocker_summary" />
+
+     <!-- Suspend actions --> 
+    <Preference
+        android:key="screenstate_category" 
+        android:title="@string/screen_state_toggles_title"  
+        android:summary="@string/screen_state_toggles_summary"  
+        android:fragment="com.havoc.settings.fragments.ScreenStateToggles" /> 
 	
 </PreferenceScreen>

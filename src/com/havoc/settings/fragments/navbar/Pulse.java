@@ -19,6 +19,8 @@ package com.havoc.settings.fragments.navbar;
 import android.app.ActionBar;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.os.UserHandle;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v14.preference.SwitchPreference;
@@ -183,6 +185,7 @@ public class Pulse extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference.equals(mRenderMode)) {
             int mode = Integer.valueOf((String) newValue);
             Settings.Secure.putIntForUser(getContentResolver(),
