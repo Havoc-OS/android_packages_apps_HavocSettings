@@ -18,4 +18,23 @@
     android:title="@string/fingerprint_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference  
+        android:key="fp_success_vibrate"  
+        android:title="@string/fprint_sucess_vib_title"  
+        android:summary="@string/fprint_sucess_vib_summary"  
+        android:defaultValue="true" /> 		
+
+    
+   <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="lockscreen_quick_unlock_control" 
+            android:title="@string/unlock_quick_unlock_control_title" 
+            android:summary="@string/unlock_quick_unlock_control_summary" /> 
+
+    
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference  
+        android:key="fp_unlock_keystore" 
+        android:title="@string/fp_unlock_keystore_title" 
+        android:summary="@string/fp_unlock_keystore_summary" 
+        android:defaultValue="false" /> 
+
 </PreferenceScreen>

@@ -118,6 +118,10 @@
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
 
+      <!-- Quick unlock --> 
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string> 
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string> 
+
     <!-- Status bar temperature -->
     <string name="status_bar_weather_title">Weather</string>
     <string name="status_bar_weather_summary">Display and customize weather on status bar</string>
