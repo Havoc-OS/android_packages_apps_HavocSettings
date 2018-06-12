@@ -227,6 +227,10 @@
    <string name="ime_switcher_notify">Selector notification</string> 
    <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
 
+    <!-- Alarm Fullscreen --> 
+    <string name="show_alarm_fullscreen_title">Full screen alarm</string> 
+    <string name="show_alarm_fullscreen_summary">Display alarm as full screen instead of heads up</string> 
+
        <string name="lock_date_font_title">Date font options</string> 
     <string name="lock_date_font_summary">Change the default font of the lockscreen date widget</string> 
     <string name="lock_date_font_dialog_title">Select lock date font</string> 
