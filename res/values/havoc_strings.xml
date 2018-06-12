@@ -195,6 +195,9 @@
     <string name="animation14">Slide Out Up </string> 
     <string name="animation15">Fast Rotation</string>
 
+    <string name="ime_switcher_notify">Selector notification</string> 
+    <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
+
     <!-- Disabling immersive mode messages -->
     <string name="disable_immersive_message_title">Disable immersive mode messages</string>
     <string name="disable_immersive_message_summary">This will hide all immersive mode messages</string>
