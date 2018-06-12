@@ -599,6 +599,7 @@
     <string name="fling_pulse_color_summary">Used also as fallback for automatic color</string>
      <string name="pulse_auto_color_title">Automatic Pulse color</string> 
     <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string> 
+    <string name="pulse_fading_blocks_opacity">Fading blocks opacity</string> 
 
     <!-- Pixel Animation Duration -->  
     <string name="pixel_anim_title">Pixel navbar animation duration</string>  

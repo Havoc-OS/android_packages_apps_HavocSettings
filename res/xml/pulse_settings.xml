@@ -94,12 +94,19 @@
             settings:units="dp"
             android:dependency="pulse_fading_bars_category"/>
 
-        <com.havoc.settings.preferences.CustomSeekBarPreference
+        <s.CustomSeekBarPreference
             android:key="pulse_custom_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="6"
             settings:min="2"
             android:dependency="pulse_fading_bars_category"/>
+        
+        <com.havoc.settings.preference.SystemSettingSeekBarPreference 
+            android:key="pulse_fading_blocks_opacity" 
+            android:title="@string/pulse_fading_blocks_opacity" 
+            android:max="200" 
+            settings:min="0" 
+            android:dependency="eos_fling_show_pulse" /> 
 
         <com.havoc.settings.preferences.CustomSeekBarPreference
             android:key="fling_pulse_lavalamp_speed"
