@@ -1345,6 +1345,12 @@
         <item>1500</item>
         <item>2000</item>
     </string-array>	
+    
+      <string-array name="slimsizer_profile_array"> 
+        <item >Load Profile</item> 
+        <item >Save Profile</item> 
+    </string-array> 
+ 
 	
     <!-- Lockscreen clock styles --> 
     <string-array name="lockscreen_clock_selection_entries" translatable="false"> 

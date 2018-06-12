@@ -28,5 +28,11 @@
         android:key="show_cpu_info"
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
+
+    <Preference 
+          android:key="systemappremover" 
+          android:title="@string/system_app_remover" 
+          android:summary="@string/system_app_remover_summary" 
+          android:fragment="com.havoc.settings.fragments.SystemappRemover" /> 
 		
 </PreferenceScreen>

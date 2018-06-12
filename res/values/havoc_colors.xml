@@ -20,4 +20,5 @@
     <color name="transparent">@android:color/transparent</color>
     <color name="ga_gesture_color">@*android:color/accent_material_dark</color>
     <color name="floating_action_button_touch_tint">#80ffffff</color>
+    <color name="theme_accent">@*android:color/accent_device_default_light</color>
 </resources>

@@ -233,6 +233,28 @@
     <string name="corner_fwvals">Use framework values</string> 
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string> 
 
+      <!-- SlimSizer  --> 
+    <string name="listsystem">list</string> 
+    <string name="sizer_title">App remover</string> 
+    <string name="caution">Caution!</string> 
+    <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string> 
+    <string name="sizer_message_delete">Are you sure?</string> 
+    <string name="sizer_message_error">Failed to uninstall, check root access</string> 
+    <string name="sizer_message_success">Success</string> 
+    <string name="btn_delete">Delete selected APPs now!</string> 
+    <string name="delete_progress_title">Deleting</string> 
+    <string name="delete_progress">Selected files are being deleted...</string> 
+    <string name="delete_success">Deleted</string> 
+    <string name="delete_fail">Unable to delete</string> 
+    <string name="btn_profile">Profile</string> 
+    <string name="sizer_message_sdnowrite">Cannot write to SD Card.</string> 
+    <string name="sizer_message_sdnoread">Cannot read SD Card.</string> 
+    <string name="sizer_message_filesuccess">Created profile.</string> 
+    <string name="sizer_message_filefail">Failed to create profile.</string> 
+    <string name="sizer_message_noselect">Nothing selected.</string> 
+    <string name="system_app_remover">System App Remover</string> 
+    <string name="system_app_remover_summary">Remove Un-needed System App</string> 
+
       <!-- Wake And Unlock --> 
     <string name="fp_wake_and_unlock_title">Fingerprint wake and unlock</string> 
     <string name="fp_wake_and_unlock_summary">Allow unlocking device using fingerprint when screen is off or dozing</string> 
