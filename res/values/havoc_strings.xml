@@ -195,7 +195,14 @@
     <string name="animation14">Slide Out Up </string> 
     <string name="animation15">Fast Rotation</string>
 
+    <!-- Disabling immersive mode messages -->
+    <string name="disable_immersive_message_title">Disable immersive mode messages</string>
+    <string name="disable_immersive_message_summary">This will hide all immersive mode messages</string>
+
+    <string name="lockscreen_targets_summary">Customize the bottom left and right shortcuts to your choice on lockscreen</string>
     <string name="havoc_lockscreen_target_title">Bottom shortcuts</string> 
+    <string name="privacy_title">Trust Center</string> 
+    <string name="privacy_summary">Privacy status and Privacy guard per app</string> 
 
     <string name="less_notification_sounds_title">Smart notification sounds</string>  
     <string name="less_notification_sounds_summary">Play the notification sound of each app only once per set time period</string>  

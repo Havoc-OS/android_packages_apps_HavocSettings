@@ -16,6 +16,7 @@
 <PreferenceScreen 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"  
     android:title="@string/havoc_settings_title" >
 
         <!-- Status Bar -->
@@ -144,12 +145,26 @@
             android:fragment="com.havoc.settings.fragments.Sounds"
             android:icon="@drawable/ic_settings_sounds"/>
 
-        <!-- Misc -->
+        <!-- Privacy Guard -->  
+        <org.lineageos.internal.lineageparts.LineagePartsPreference  
+           android:key="privacy_guard_manager" 
+           android:title="@string/privacy_title"  
+           android:icon="@drawable/ic_settings_privacy"
+           android:summary="@string/privacy_summary"  />  
+
+         <!-- Misc -->
         <Preference
             android:key="misc_category"
             android:title="@string/misc_title" 
             android:fragment="com.havoc.settings.fragments.Misc"
             android:icon="@drawable/ic_settings_misc"/>
+        
+        <!-- Trust interface -->
+         <org.lineageos.internal.lineageparts.LineagePartsPreference
+            android:key="trust_interface"
+            android:title="@string/privacy_title"  
+            android:icon="@drawable/ic_settings_trust"
+            android:summary="@string/privacy_summary" />
 
         <!-- About -->
         <Preference
