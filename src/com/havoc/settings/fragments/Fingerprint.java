@@ -18,6 +18,8 @@ package com.havoc.settings.fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ContentResolver;
+import android.os.UserHandle;
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -32,16 +34,41 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
 
-public class Fingerprint extends SettingsPreferenceFragment {
+public class Fingerprint extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Fingerprint";
+    private static final String FP_WAKE_AND_UNLOCK = "fp_wake_and_unlock"; 
+
+    private SwitchPreference mFpWakeAndUnlock; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.havoc_settings_fingerprint);
+
+        mFpWakeAndUnlock = (SwitchPreference) findPreference(FP_WAKE_AND_UNLOCK); 
+
+        mFpWakeAndUnlock.setChecked(Settings.System.getIntForUser(resolver, 
+        Settings.System.FP_WAKE_AND_UNLOCK, 1, UserHandle.USER_CURRENT) == 1); 
+        mFpWakeAndUnlock.setOnPreferenceChangeListener(this); 
     }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        if (preference == mFpWakeAndUnlock) { 
+            boolean value = (Boolean) objValue; 
+            Settings.System.putIntForUser(resolver, 
+                    Settings.System.FP_WAKE_AND_UNLOCK, value ? 1: 0, UserHandle.USER_CURRENT); 
+            return true; 
+        }
+
+        return false;
+    }
+
 
     @Override
     public int getMetricsCategory() {

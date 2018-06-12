@@ -227,6 +227,10 @@
    <string name="ime_switcher_notify">Selector notification</string> 
    <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
 
+      <!-- Wake And Unlock --> 
+    <string name="fp_wake_and_unlock_title">Fingerprint wake and unlock</string> 
+    <string name="fp_wake_and_unlock_summary">Allow unlocking device using fingerprint when screen is off or dozing</string> 
+
     <!-- Disabling immersive mode messages -->
     <string name="disable_immersive_message_title">Disable immersive mode messages</string>
     <string name="disable_immersive_message_summary">This will hide all immersive mode messages</string>
@@ -245,6 +249,7 @@
     <string name="less_notification_sounds_2m">Every 2 minutes</string>  
     <string name="incall_notifications_vibrate">Less annoying in-call notifications</string> 
     <string name="incall_notifications_vibrate_summary">Vibrate instead of playing a sound for in-call notifications</string> 
+    <string name="attention">Attention</string> 
      
     <!-- Hide Apps from Recents --> 
     <string name="hide_apps_from_recents_title">Hidden apps</string> 
