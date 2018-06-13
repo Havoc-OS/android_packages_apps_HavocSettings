@@ -49,5 +49,19 @@
             android:summary="@string/less_notification_sounds_summary" 
             android:entries="@array/less_notification_sounds_entries" 
             android:entryValues="@array/less_notification_sounds_values" /> 
+
+     <SwitchPreference  
+        android:key="camera_sounds" 
+        android:title="@string/camera_sounds_title" 
+        android:summary="@string/camera_sounds_summary" 
+        android:persistent="false" 
+        android:defaultValue="true" /> 
+ 
+    <SwitchPreference 
+        android:key="safe_headset_volume" 
+        android:title="@string/safe_headset_volume_title" 
+        android:summary="@string/safe_headset_volume_summary" 
+        android:persistent="false" 
+        android:defaultValue="true" /> 
     
 </PreferenceScreen>
