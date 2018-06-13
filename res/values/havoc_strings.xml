@@ -40,6 +40,25 @@
     <string name="fingerprint_title">Fingerprint</string>
     <string name="sounds_title">Sound</string>
 
+    <!-- About -->
+	<string name="havoc_developers_category_title">Havoc-OS Team</string>
+    <string name="maintainer_category_title">Official Devices</string>
+    <string name="zenixxx_summary">● Co-Founder \n● Core developer \n● Maintainer</string>
+    <string name="skulshady_summary">● Co-Founder \n● Core developer \n● Maintainer</string>
+    <string name="device_maintainers_title">Devices and maintainers</string>
+    <string name="device_maintainers_title_summary">List of devices and their official maintainers</string>
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="havoc_telegram_title">Telegram</string>
+    <string name="havoc_telegram_summary">Official Havoc-OS group</string>
+    <string name="havoc_source_title">Github</string>
+    <string name="havoc_source_summary">Havoc-OS source code</string>
+    <string name="havoc_donate">Donate</string>
+    <string name="havoc_donate_summary">Show your support to Havoc-OS Team</string>
+	<string name="havoc_links">Links</string>
+    <string name="website_title">Website</string>
+    <string name="website_title_summary">Download Havoc-OS</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>

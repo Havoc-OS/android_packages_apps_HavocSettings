@@ -18,4 +18,97 @@
     android:title="@string/about_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Havoc Banner -->
+    <Preference android:key="havoc_logo"
+        android:layout="@layout/havoc_logo" />
+
+    <!-- Developers -->
+    <PreferenceCategory
+        android:key="developers"
+        android:title="@string/havoc_developers_category_title">
+
+        <Preference
+            android:title="Viktor Hermann [ZeNiXxX]"
+            android:icon="@drawable/havoc_developers"
+            android:summary="@string/zenixxx_summary">
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.paypal.me/vhermann"/>
+        </Preference>
+
+        <Preference
+            android:title="Anushek Prasal [SKULSHADY]"
+            android:icon="@drawable/havoc_developers"
+            android:summary="@string/skulshady_summary">
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.paypal.me/ANUSHEK"/>
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="maintainer_category" 
+        android:title="@string/maintainer_category_title"> 
+
+        <Preference 
+            android:key="maintainers" 
+            android:icon="@drawable/havoc_maintainers" 
+            android:fragment="com.havoc.settings.fragments.DeviceMaintainersFragment" 
+            android:summary="@string/device_maintainers_title_summary" 
+            android:title="@string/device_maintainers_title" />
+    </PreferenceCategory>
+		
+    <PreferenceCategory
+        android:key="links"
+        android:title="@string/havoc_links">
+
+        <!-- Change Log -->
+        <Preference
+            android:key="changelog"
+            android:title="@string/changelog_title"
+            android:icon="@drawable/about_changelog"
+            android:summary="@string/changelog_title_summary">
+           <intent android:action="com.havoc.settings.ViewChangelog" />
+        </Preference>
+
+        <Preference
+            android:key="havoc_donate"
+            android:icon="@drawable/about_donate"
+            android:title="@string/havoc_donate"
+            android:summary="@string/havoc_donate_summary">
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.paypal.me/vhermann"/>
+        </Preference>
+
+        <Preference
+            android:key="havoc_website"
+            android:icon="@drawable/about_web"
+            android:title="@string/website_title"
+            android:summary="@string/website_title_summary">
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://sourceforge.net/projects/havoc-os/"/>
+        </Preference>
+
+        <Preference
+            android:key="havoc_telegram"
+            android:icon="@drawable/about_telegram"
+            android:title="@string/havoc_telegram_title"
+            android:summary="@string/havoc_telegram_summary">
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/havocofficial"/>
+        </Preference>
+
+        <Preference
+            android:key="havoc_source"
+            android:icon="@drawable/about_source"
+            android:title="@string/havoc_source_title"
+            android:summary="@string/havoc_source_summary">
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/Havoc-OS"/>
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>
