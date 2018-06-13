@@ -189,6 +189,18 @@
         android:summary="@string/hide_lockscreen_icon_summary" 
         android:defaultValue="false" /> 
 
+    <PreferenceScreen 
+             android:key="lockscreen_shortcuts" 
+             android:fragment="com.android.settings.slim.dslv.ActionListViewSettings" 
+             android:summary="@string/lockscreen_shortcuts_summary" 
+             android:title="@string/lockscreen_shortcuts_title"> 
+        <extra android:name="actionMode" android:value="4" /> 
+        <extra android:name="maxAllowedActions" android:value="8" /> 
+        <extra android:name="disableLongpress" android:value="true" /> 
+        <extra android:name="useAppPickerOnly" android:value="true" /> 
+        <extra android:name="fragment" android:value="com.android.settings.slim.fragments.LockscreenShortcutFragment" /> 
+    </PreferenceScreen> 
+
      <Preference 
         android:key="bottom_shortcuts_category" 
             android:title="@string/havoc_lockscreen_target_title" 
@@ -197,5 +209,7 @@
             android:targetPackage="com.android.systemui" 
             android:targetClass="com.android.systemui.tuner.LockscreenActivity" /> 
     </Preference> 
+
+
 		
 </PreferenceScreen>

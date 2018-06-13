@@ -688,6 +688,9 @@
 
     <string name="status_bar_icons_title">System Tuner</string>
     <string name="status_bar_icons_summary">Toggle statusbar icons with system tuner</string>
+    
+    <string name="lockscreen_shortcuts_title">Lockscreen Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">Add Shortcuts to lockscreen.</string>
 
 
     <string name="screenshot_edit_app">Screenshot editor</string> 
