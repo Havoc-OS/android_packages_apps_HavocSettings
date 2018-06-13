@@ -670,4 +670,11 @@
     <string name="show_carrier_statusbar">Statusbar only</string>
     <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
 
+    <!-- Screen Stabilization -->
+    <string name="screen_stabilization_title">Screen Stabilization</string>
+    <string name="screen_stabilization_enable">Enable Screen Stabilization</string>
+    <string name="screen_stabilization_enable_summary">Leave the below values as is if you don\'t understand what they mean.</string>
+    <string name="stabilization_velocity_friction_title">Velocity friction</string>
+    <string name="stabilization_position_friction_title">Position friction</string>
+    <string name="stabilization_velocity_amplitude_title">Velocity amplitude</string>
 </resources>
