@@ -55,6 +55,15 @@
         android:entryValues="@array/lockscreen_date_selection_values" 
         android:defaultValue="0" 
         android:dependency="hide_lockscreen_date" />
+    
+     <ListPreference 
+        android:key="lock_date_fonts" 
+        android:title="@string/lock_date_font_title" 
+        android:dialogTitle="@string/lock_date_font_dialog_title" 
+        android:summary="@string/lock_date_font_summary" 
+        android:entries="@array/lock_clock_fonts_entries" 
+        android:entryValues="@array/lock_clock_fonts_values" 
+        android:persistent="false" /> 
 		
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"

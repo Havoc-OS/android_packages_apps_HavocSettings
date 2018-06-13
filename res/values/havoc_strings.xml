@@ -227,6 +227,10 @@
    <string name="ime_switcher_notify">Selector notification</string> 
    <string name="ime_switcher_notify_summary">Display input method selector notification</string> 
 
+       <string name="lock_date_font_title">Date font options</string> 
+    <string name="lock_date_font_summary">Change the default font of the lockscreen date widget</string> 
+    <string name="lock_date_font_dialog_title">Select lock date font</string> 
+
       <!-- Smart Pixels --> 
     <string name="smart_pixels_title">Smart Pixels</string> 
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string> 

@@ -48,8 +48,10 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha"; 
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha"; 
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts"; 
+    private static final String LOCK_DATE_FONTS = "lock_date_fonts"; 
  
-    ListPreference mLockClockFonts; 
+    ListPreference mLockClockFonts;
+    ListPreference mLockDateFonts;  
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
     private CustomSeekBarPreference mLsAlpha; 
@@ -77,6 +79,13 @@ public class LockScreen extends SettingsPreferenceFragment
         mLockscreenDateSelection.setValue(String.valueOf(dateSelection));
         mLockscreenDateSelection.setSummary(mLockscreenDateSelection.getEntry());
         mLockscreenDateSelection.setOnPreferenceChangeListener(this);
+
+        // Lockscren Date Fonts
+        mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
+        mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_DATE_FONTS, 26)));
+        mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+        mLockDateFonts.setOnPreferenceChangeListener(this);
 
         mLsSecurityAlpha = (CustomSeekBarPreference) findPreference(LOCKSCREEN_SECURITY_ALPHA); 
         float alpha2 = Settings.System.getFloat(resolver, 
@@ -130,10 +139,15 @@ public class LockScreen extends SettingsPreferenceFragment
             mLockClockFonts.setValue(String.valueOf(newValue)); 
             mLockClockFonts.setSummary(mLockClockFonts.getEntry()); 
             return true; 
-          } 
+        }  else if (preference == mLockDateFonts) {
+                Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
+                        Integer.valueOf((String) newValue));
+                mLockDateFonts.setValue(String.valueOf(newValue));
+                mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+                return true;
+        }
         return false;
     }
-
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
