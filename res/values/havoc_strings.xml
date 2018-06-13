@@ -687,10 +687,14 @@
     <string name="immersive_recents_navbar">Navbar only</string>
 
 
-       <string name="screenshot_edit_app">Screenshot editor</string> 
+    <string name="screenshot_edit_app">Screenshot editor</string> 
     <string name="screenshot_edit_app_summary">Choose which app should be launched when tapping on the screenshot notification edit button</string> 
     <string name="screenshot_edit_app_no_editor">No image editor available</string> 
  
+    <!-- QS footer warnings --> 
+    <string name="qs_footer_warnings_title">QS footer warnings</string> 
+    <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string> 
+    
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
