@@ -51,4 +51,41 @@
         android:dialogTitle="@string/smart_pixels_shift" /> 
     </PreferenceCategory>
 
+    <PreferenceCategory
+            android:title="@string/screen_stabilization_title"
+            android:key="screen_stabilization">
+
+   <com.havoc.settings.preferences.SystemSettingSwitchPreference
+	android:key="stabilization_enable"
+	android:title="@string/screen_stabilization_enable"
+	android:summary="@string/screen_stabilization_enable_summary"
+	android:defaultValue="false" />
+	
+  <ListPreference
+	android:key="stabilization_velocity_friction"
+	android:dialogTitle="@string/stabilization_velocity_friction_title"
+	android:title="@string/stabilization_velocity_friction_title"
+	android:entries="@array/stabilization_velocity_friction_entries"
+	android:entryValues="@array/stabilization_velocity_friction_entry_values"
+	android:dependency="stabilization_enable"
+	android:persistent="false" />
+
+  <ListPreference
+	android:key="stabilization_position_friction"
+	android:dialogTitle="@string/stabilization_position_friction_title"
+	android:title="@string/stabilization_position_friction_title"
+	android:entries="@array/stabilization_position_friction_entries"
+	android:entryValues="@array/stabilization_position_friction_values"
+	android:dependency="stabilization_enable"
+	android:persistent="false" />
+	
+  <ListPreference
+	android:key="stabilization_velocity_amplitude"
+	android:dialogTitle="@string/stabilization_velocity_amplitude_title"
+	android:title="@string/stabilization_velocity_amplitude_title"
+	android:entries="@array/stabilization_velocity_amplitude_entries"
+	android:entryValues="@array/stabilization_velocity_amplitude_values"
+	android:dependency="stabilization_enable"
+	android:persistent="false" />
+</PreferenceCategory>
 </PreferenceScreen>

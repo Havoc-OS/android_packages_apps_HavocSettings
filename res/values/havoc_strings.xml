@@ -231,7 +231,15 @@
     <string name="show_alarm_fullscreen_title">Full screen alarm</string> 
     <string name="show_alarm_fullscreen_summary">Display alarm as full screen instead of heads up</string> 
 
-       <string name="lock_date_font_title">Date font options</string> 
+   <!-- Screen Stabilization -->
+   <string name="screen_stabilization_title">Screen Stabilization</string>
+   <string name="screen_stabilization_enable">Enable Screen Stabilization</string>
+   <string name="screen_stabilization_enable_summary">Leave the below values as is if you don\'t understand what they mean.</string>
+   <string name="stabilization_velocity_friction_title">Velocity friction</string>
+   <string name="stabilization_position_friction_title">Position friction</string>
+   <string name="stabilization_velocity_amplitude_title">Velocity amplitude</string>
+
+    <string name="lock_date_font_title">Date font options</string> 
     <string name="lock_date_font_summary">Change the default font of the lockscreen date widget</string> 
     <string name="lock_date_font_dialog_title">Select lock date font</string> 
 
