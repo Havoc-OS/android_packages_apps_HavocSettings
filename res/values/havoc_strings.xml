@@ -151,6 +151,10 @@
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen Shortcuts</string>
 
+      <!-- Disabling FC notifications --> 
+    <string name="disable_fc_notifications_title">Diable FC Notifications</string> 
+    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string> 
+
     <!-- Navbar tuner -->
     <string name="navbar_tuner_title">Navbar Buttons</string>
 
@@ -308,7 +312,7 @@
 
     <!-- Hide brightness slider -->
     <string name="brightness_slider_title">Brightness slider</string>
-    <string name="brightness_slider_summary">Show the brightness slider underneath quick settings</string>
+    <string name="brightness_slider_summary">Show the brightness slider in quick settings</string>
 
     <!-- Double-tap-to sleep -->
     <string name="double_tap_sleep_gesture_title">Double tap to sleep</string>

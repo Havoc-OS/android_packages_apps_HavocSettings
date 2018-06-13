@@ -23,6 +23,12 @@
         android:title="@string/heads_up_notifications"
         android:fragment="com.havoc.settings.fragments.HeadsUpSettings" />
 
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference  
+        android:key="disable_fc_notifications" 
+        android:title="@string/disable_fc_notifications_title" 
+        android:summary="@string/disable_fc_notifications_summary" 
+        android:defaultValue="false" /> 
+    
     <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
         android:key="toast_icon" 
         android:title="@string/toast_icon_title" 
