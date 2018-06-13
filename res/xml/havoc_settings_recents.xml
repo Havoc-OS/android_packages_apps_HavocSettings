@@ -100,7 +100,21 @@
          android:key="recents_icon_pack" 
          android:title="@string/recents_icon_pack_title" 
          android:summary="@string/recents_icon_pack_summary" /> 
-    
+
+     
+    <PreferenceCategory 
+        android:title="@string/stock_recents_layout"> 
+ 
+        <ListPreference 
+          android:key="recents_layout_style" 
+          android:title="@string/recents_type_title" 
+          android:dialogTitle="@string/recents_type_title" 
+          android:entries="@array/recents_type_title_entries" 
+          android:defaultValue="0" 
+          android:entryValues="@array/recents_type_title_values"/> 
+           
+    </PreferenceCategory> 
+
     <PreferenceCategory
         android:key="slim_recents"
         android:title="@string/slim_recents_title">

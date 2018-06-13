@@ -52,8 +52,8 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils; 
 
+import com.havoc.settings.preferences.Utils;
 import com.havoc.settings.R;
 
 import java.util.ArrayList; 
@@ -78,6 +78,7 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
     private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
     private static final String RECENTS_DATE = "recents_full_screen_date"; 
     private static final String RECENTS_CLOCK = "recents_full_screen_clock"; 
+    private static final String RECENTS_TYPE = "recents_layout_style"; 
 
     private Preference mRecentsIconPack; 
     private Preference mRecentsMembar; 
@@ -89,7 +90,8 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
     private Preference mSlimRecents; 
     private SwitchPreference mClock; 
     private SwitchPreference mDate; 
- 
+    private ListPreference mRecentsType; 
+
     private final static String[] sSupportedActions = new String[] { 
         "org.adw.launcher.THEMES", 
         "com.gau.go.launcherex.theme" 
@@ -134,6 +136,14 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
             mImmersiveRecents.setValue(String.valueOf(mode)); 
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry()); 
         mImmersiveRecents.setOnPreferenceChangeListener(this); 
+
+        // recents type 
+        mRecentsType = (ListPreference) findPreference(RECENTS_TYPE); 
+        int style = Settings.System.getIntForUser(getContentResolver(), 
+                Settings.System.RECENTS_LAYOUT_STYLE, 0, UserHandle.USER_CURRENT); 
+        mRecentsType.setValue(String.valueOf(style)); 
+        mRecentsType.setSummary(mRecentsType.getEntry()); 
+        mRecentsType.setOnPreferenceChangeListener(this); 
 
         mRecentsMembar = (Preference) findPreference(RECENTS_MEMBAR); 
  
@@ -203,7 +213,15 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
             boolean value = (Boolean) newValue;
             toggleAOSPrecents(!value);
             return true;
-        }
+        } else if (preference == mRecentsType) { 
+            int style = Integer.valueOf((String) newValue); 
+            int index = mRecentsType.findIndexOfValue((String) newValue); 
+            Settings.System.putIntForUser(getActivity().getContentResolver(), 
+                    Settings.System.RECENTS_LAYOUT_STYLE, style, UserHandle.USER_CURRENT); 
+            mRecentsType.setSummary(mRecentsType.getEntries()[index]); 
+            Utils.restartSystemUi(getContext()); 
+        return true; 
+        } 
         return false;
     } 
 

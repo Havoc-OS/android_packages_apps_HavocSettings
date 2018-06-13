@@ -30,6 +30,7 @@ import android.content.res.Resources.NotFoundException;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
+import android.support.v7.preference.Preference;
 import android.net.ConnectivityManager;
 import android.os.UserManager;
 import android.telephony.TelephonyManager;
@@ -37,6 +38,19 @@ import android.util.DisplayMetrics;
 import android.view.DisplayInfo;
 import android.view.Surface;
 import android.view.WindowManager;
+import android.content.DialogInterface;
+import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.app.IActivityManager;
+import android.os.AsyncTask;
+import java.io.BufferedReader;
+import java.io.File;
+import android.telephony.TelephonyManager;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import com.havoc.settings.R;
 
 public final class Utils {
     private static final String TAG = "HavocSettingsUtils";
@@ -204,5 +218,85 @@ public final class Utils {
             // Ignore
         }
         return false;
+    }
+
+     /**
+     * This can not reliably detect whether the user has root access,
+     * but it can detect some cases when the user hasn't.
+     */
+    public static boolean hasSu() {
+        Process p = null;
+        try {
+            p = Runtime.getRuntime().exec(new String[] { "which", "su" });
+            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            return br.readLine() != null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (p != null) p.destroy();
+        }
+        return false;
+    }
+
+    public static void requireRoot(Preference preference) {
+        if (!hasSu()) {
+            preference.getParent().removePreference(preference);
+        }
+    }
+
+    public static void restartSystemUi(Context context) {
+        new RestartSystemUiTask(context).execute();
+    }
+
+    public static void showSystemUiRestartDialog(Context context) {
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.systemui_restart_title)
+                .setMessage(R.string.systemui_restart_message)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        restartSystemUi(context);
+                    }
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private static class RestartSystemUiTask extends AsyncTask<Void, Void, Void> {
+        private Context mContext;
+
+        public RestartSystemUiTask(Context context) {
+            super();
+            mContext = context;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                ActivityManager am =
+                        (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+                IActivityManager ams = ActivityManager.getService();
+                for (ActivityManager.RunningAppProcessInfo app: am.getRunningAppProcesses()) {
+                    if ("com.android.systemui".equals(app.processName)) {
+                        ams.killApplicationProcess(app.processName, app.uid);
+                        break;
+                    }
+                }
+                //Class ActivityManagerNative = Class.forName("android.app.ActivityManagerNative");
+                //Method getDefault = ActivityManagerNative.getDeclaredMethod("getDefault", null);
+                //Object amn = getDefault.invoke(null, null);
+                //Method killApplicationProcess = amn.getClass().getDeclaredMethod("killApplicationProcess", String.class, int.class);
+                //mContext.stopService(new Intent().setComponent(new ComponentName("com.android.systemui", "com.android.systemui.SystemUIService")));
+                //am.killBackgroundProcesses("com.android.systemui");
+                //for (ActivityManager.RunningAppProcessInfo app : am.getRunningAppProcesses()) {
+                //    if ("com.android.systemui".equals(app.processName)) {
+                //        killApplicationProcess.invoke(amn, app.processName, app.uid);
+                //        break;
+                //    }
+                //}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 }

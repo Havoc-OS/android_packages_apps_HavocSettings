@@ -699,6 +699,13 @@
     <string name="disable_fc_notifications_title">Diable FC Notifications</string> 
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string> 
 
+        <!-- AOSP Recents Style --> 
+    <string name="recents_type_title">Recents Layout</string> 
+    <string name="recents_stock">Stock</string> 
+    <string name="recents_grid">Grid</string> 
+    <string name="stock_recents_layout">Layout</string> 
+    <string name="recents_go">Android Go</string> 
+
         <!-- Camera sound switch --> 
     <string name="camera_sounds_title">Camera shutter sound</string> 
     <string name="camera_sounds_summary">Enable system camera shutter sound</string> 
@@ -1600,6 +1607,10 @@
         <!-- AOSP Recents -->
     <string name="aosp_first_time_title">AOSP recents</string>
     <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
+
+ <string name="systemui_restart_title">SystemUI restart required</string>
+    <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
+
 
     <!-- Lights settings, LED notification --> 
     <string name="led_notification_title">Light settings</string> 
