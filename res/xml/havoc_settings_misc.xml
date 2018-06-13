@@ -45,6 +45,12 @@
         android:summary="@string/screenshot_type_partial" 
         android:defaultValue="false" /> 
     
+      <!-- Screenshot editor app -->  
+    <Preference  
+        android:key="screenshot_edit_app"  
+        android:title="@string/screenshot_edit_app"  
+        android:summary="@string/screenshot_edit_app_summary" /> 
+    
      <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="show_alarm_fullscreen" 
             android:title="@string/show_alarm_fullscreen_title" 
