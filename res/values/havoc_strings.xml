@@ -686,6 +686,9 @@
     <string name="immersive_recents_statusbar">Statusbar only</string>
     <string name="immersive_recents_navbar">Navbar only</string>
 
+    <string name="status_bar_icons_title">System Tuner</string>
+    <string name="status_bar_icons_summary">Toggle statusbar icons with system tuner</string>
+
 
     <string name="screenshot_edit_app">Screenshot editor</string> 
     <string name="screenshot_edit_app_summary">Choose which app should be launched when tapping on the screenshot notification edit button</string> 
