@@ -119,6 +119,13 @@
     <string name="scroll_disclaimer_summary">Note: Most apps need to be restarted for custom values to take effect</string>
     <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
 
+ <!-- Ambient display bottom info -->
+ <string name="ambient_display_bottom_info_title">Ambient Display bottom view</string>
+ <string name="ambient_display_bottom_info_summary">Enable to show information on the bottom while dozing</string>
+ <string name="ambient_display_bottom_info_off">Disabled</string>
+ <string name="ambient_display_bottom_info_battery">Battery percent</string>
+ <string name="ambient_display_bottom_info_weather">Brief weather info</string>
+
      <!-- CarbonGestures --> 
     <string name="carbon_gesture_preference_title">CarbonGestures</string> 
     <string name="carbon_gestures_summary">Configure custom global gestures</string> 
@@ -1161,10 +1168,6 @@
     <!-- Swipe FP to dismiss notifications -->
     <string name="fp_swipe_to_dismiss_notifications_title">Swipe fingerprint left or right to dismiss notifications</string>
     <string name="fp_swipe_to_dismiss_notifications_summary">To dismiss your notifications, swipe left or right on the fingerprint sensor on the back of your phone.</string>		
-	
-    <!-- Ambient display battery percentage --> 
-    <string name="ambient_battery_percent_title">Battery percent on Ambient Display</string> 
-    <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
 	
     <string name="doze_display_title">Ambient display</string>
     <string name="doze_display_summary">Configure settings for ambient display</string>	
