@@ -105,6 +105,12 @@
             android:entryValues="@array/values_scrollingcache"
             android:defaultValue="1" />
 
+        <PreferenceScreen
+           android:key="interface_animation_scroll"
+           android:fragment="com.havoc.settings.fragments.ScrollAnimationInterfaceSettings"
+           android:title="@string/scrolling_title"
+           android:summary="@string/scrolling_summary" /> 
+
         <!-- <PreferenceScreen
             android:key="interface_animation_scroll"
             android:title="@string/scrolling_title"

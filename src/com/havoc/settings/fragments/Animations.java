@@ -156,7 +156,6 @@ public class Animations extends SettingsPreferenceFragment
             mToast = null;
         }
 
-        setHasOptionsMenu(true); 
     }
 
     @Override

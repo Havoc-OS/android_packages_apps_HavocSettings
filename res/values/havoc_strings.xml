@@ -105,6 +105,20 @@
     <string name="edge_gestures_back_screen_percent_summary">Trigger below % of screen</string> 
     <string name="edge_gestures_summary">Navigate using edge gestures</string> 
 
+     <!-- Scrolling Animation Controls -->
+    <string name="scrolling_title">Scrolling modifiers</string>
+    <string name="scrolling_summary">View or change scrolling animations</string>
+    <string name="animation_fling_velocity_title">Fling velocity</string>
+    <string name="animation_scroll_friction_title">Scroll friction</string>
+    <string name="animation_overscroll_distance_title">Overscroll distance</string>
+    <string name="animation_overfling_distance_title">Overfling distance</string>
+    <string name="animation_duration_summary">Set duration</string>
+    <string name="animation_no_scroll_title">Customized scrolling modifiers</string>
+    <string name="animation_no_scroll_summary_on">Enabled</string>
+    <string name="animation_no_scroll_summary_off">Disabled</string>
+    <string name="scroll_disclaimer_summary">Note: Most apps need to be restarted for custom values to take effect</string>
+    <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
+
      <!-- CarbonGestures --> 
     <string name="carbon_gesture_preference_title">CarbonGestures</string> 
     <string name="carbon_gestures_summary">Configure custom global gestures</string> 
