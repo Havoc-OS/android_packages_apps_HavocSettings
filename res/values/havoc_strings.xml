@@ -49,6 +49,7 @@
     <string name="device_maintainers_title_summary">List of devices and their official maintainers</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="changelog_error">Unable to load changelog</string>
     <string name="havoc_telegram_title">Telegram</string>
     <string name="havoc_telegram_summary">Official Havoc-OS group</string>
     <string name="havoc_source_title">Github</string>

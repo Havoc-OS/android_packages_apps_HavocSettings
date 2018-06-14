@@ -67,8 +67,8 @@
             android:key="changelog"
             android:title="@string/changelog_title"
             android:icon="@drawable/about_changelog"
-            android:summary="@string/changelog_title_summary">
-           <intent android:action="com.havoc.settings.ViewChangelog" />
+            android:summary="@string/changelog_title_summary"
+            android:fragment="com.havoc.settings.fragments.Changelog">
         </Preference>
 
         <Preference
