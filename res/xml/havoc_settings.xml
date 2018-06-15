@@ -40,6 +40,13 @@
             android:fragment="com.havoc.settings.fragments.Panels"
             android:icon="@drawable/ic_settings_panels"/>
 
+        <!-- Ambient Display -->			
+        <Preference
+            android:key="doze_fragment" 
+            android:title="@string/doze_display_title" 
+            android:icon="@drawable/ic_settings_ambient"
+            android:fragment="com.havoc.settings.fragments.ui.DozeFragment" />
+
         <!-- Interface -->
         <Preference
             android:key="interface_category"
@@ -124,7 +131,7 @@
             android:fragment="com.havoc.settings.fragments.SystemSettings"
             android:icon="@drawable/ic_settings_system"/>
         
-         <!-- Fingerprint -->
+        <!-- Fingerprint -->
         <Preference
             android:key="fingerprint_category"
             android:title="@string/fingerprint_title"
@@ -138,22 +145,21 @@
             android:fragment="com.havoc.settings.fragments.IME"
             android:icon="@drawable/ic_settings_ime"/>
         
-       <!-- Sounds -->
+        <!-- Sounds -->
         <Preference
             android:key="sounds_category"
             android:title="@string/sounds_title"
             android:fragment="com.havoc.settings.fragments.Sounds"
             android:icon="@drawable/ic_settings_sounds"/>
         
-         <!-- OmniROM Event Settings --> 
+        <!-- Omni Events --> 
         <Preference 
-             android:key="event_service_settings" 
-             android:title="@string/event_service_settings_title" 
-             android:summary="@string/event_service_settings_summary" 
-             android:icon="@drawable/ic_settings_event"
-             android:fragment="com.havoc.settings.service.EventServiceSettings" /> 
+            android:key="event_service_settings" 
+            android:title="@string/event_service_settings_title" 
+            android:icon="@drawable/ic_settings_event"
+            android:fragment="com.havoc.settings.service.EventServiceSettings" /> 
 
-         <!-- Misc -->
+        <!-- Misc -->
         <Preference
             android:key="misc_category"
             android:title="@string/misc_title" 
@@ -161,7 +167,7 @@
             android:icon="@drawable/ic_settings_misc"/>
         
         <!-- Trust interface -->
-         <org.lineageos.internal.lineageparts.LineagePartsPreference
+        <org.lineageos.internal.lineageparts.LineagePartsPreference
             android:key="trust_interface"
             android:title="@string/privacy_title"  
             android:icon="@drawable/ic_settings_trust"

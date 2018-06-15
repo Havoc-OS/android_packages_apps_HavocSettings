@@ -21,7 +21,8 @@
     <string name="about_title">About</string>
     <string name="animations_title">Animations</string>
     <string name="buttons_title">Buttons</string>
-    <string name="display_title">Advanced Display</string>
+    <string name="display_title">Display Manipulation</string>
+    <string name="ambient_title">Ambient Display</string>
     <string name="gestures_title">Gestures</string>
     <string name="ime_title">IME Settings</string>
     <string name="interface_title">Interface</string>
@@ -821,6 +822,9 @@
     <string name="action_entry_default_action">Default settings</string>
     <string name="action_entry_select_app">Select application</string>
     <string name="action_entry_custom_action">Select custom action</string>
+
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
 
     <string name="action_value_default_action" translatable="false">default</string>
     <string name="action_value_select_app" translatable="false">app</string>

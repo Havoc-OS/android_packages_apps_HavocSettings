@@ -38,13 +38,7 @@
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="long_screen_settings"
         lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />
-	
-    <Preference
-        android:key="doze_fragment" 
-        android:title="@string/doze_display_title" 
-        android:summary="@string/doze_display_summary" 
-        android:fragment="com.havoc.settings.fragments.ui.DozeFragment" />
-		
+			
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings" />
 		
