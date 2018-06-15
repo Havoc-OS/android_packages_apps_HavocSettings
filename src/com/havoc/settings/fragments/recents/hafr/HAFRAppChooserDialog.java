@@ -73,7 +73,7 @@ public abstract class HAFRAppChooserDialog extends Dialog {
 
     public void show(int id) {
         mId = id;
-        // show();
+        show();
     }
 
     public abstract void onListViewItemClick(HAFRAppChooserAdapter.AppItem info, int id);

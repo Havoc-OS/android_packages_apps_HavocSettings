@@ -72,6 +72,7 @@
 
     <string name="lockscreen_alpha">Lockscreen alpha</string> 
     <string name="lockscreen_security_alpha">Lockscreen bouncer alpha</string> 
+    <string name="ambient_play_settings_title">Ambient Play</string> 
 
      <!-- Edge gestures --> 
     <string name="edge_gestures_title">Edge gestures</string> 
@@ -176,7 +177,7 @@
     <string name="button26">Timer</string> 
     <string name="button27">Resurrection</string> 
     <string name="button28">Android Stock</string> 
-    <string name="button29">Resurrection Lollipop</string> 
+    <string name="button29">Cross</string> 
     <string name="button30">Android N</string> 
     <string name="animation0">Rotation </string> 
     <string name="animation1">Recents Exit</string> 
@@ -584,18 +585,6 @@
      <!-- Force disable transition animation -->
     <string name="disable_transition_animations_title">Disable transition animations</string>
     <string name="disable_transition_animations_summary">Force disable all transition animations</string>
-
-    <!-- Scrolling Animation Controls -->
-    <string name="scrolling_title">Scrolling animation</string>
-    <string name="scrolling_summary">Customize scrolling animation parameters</string>
-    <string name="animation_fling_velocity_title">Fling velocity</string>
-    <string name="animation_scroll_friction_title">Scroll friction</string>
-    <string name="animation_overscroll_distance_title">Overscroll distance</string>
-    <string name="animation_overfling_distance_title">Overfling distance</string>
-    <string name="animation_duration_summary">Set duration</string>
-    <string name="animation_no_scroll_title">Use custom values</string>
-    <string name="scroll_disclaimer_summary">Most apps need to be restarted for custom values to take effect</string>
-    <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
     
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Scrolling cache</string>
@@ -603,15 +592,11 @@
     <string name="pref_scrollingcache_default_enable">Default enable</string>
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
-    <string name="animation_no_scroll_summary_on">Enabled</string>
-    <string name="animation_no_scroll_summary_off">Disabled</string>
-    
         <!-- Clock and date immersive recents-->
     <string name="recents_full_screen_clock_title">Show clock</string>
     <string name="recents_full_screen_clock_summary">Shows clock at the top while in immersive</string>
     <string name="recents_full_screen_date_title">Show date</string>
     <string name="recents_full_screen_date_summary">Shows date at the top while in immersive</string>
-
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
@@ -1525,10 +1510,6 @@
     <string name="filter_substratum_apps">Substratum overlays</string> 
     <string name="menu_show_substratum">Show overlays</string> 
     <string name="menu_hide_substratum">Hide overlays</string> 	
-
-    <!-- QuickSettings Panel Opacity --> 
-    <string name="qs_panel_alpha_title">Opacity</string> 
-    <string name="qs_panel_alpha_summary">Set opacity level for QS panel</string>
 
     <!-- Scroll small QS tiles -->
     <string name="qqs_scroll_title">Scroll small QS tiles</string> 

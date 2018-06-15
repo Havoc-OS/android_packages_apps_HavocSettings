@@ -121,7 +121,7 @@
         <Preference
             android:key="system_category"
             android:title="@string/system_title"
-            android:fragment="com.havoc.settings.fragments.System"
+            android:fragment="com.havoc.settings.fragments.SystemSettings"
             android:icon="@drawable/ic_settings_system"/>
         
          <!-- Fingerprint -->

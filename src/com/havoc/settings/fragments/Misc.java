@@ -109,7 +109,7 @@ public class Misc extends SettingsPreferenceFragment
    public int getDialogMetricsCategory(int dialogId) {
        switch (dialogId) {
            case DIALOG_SCREENSHOT_EDIT_APP:
-               return MetricsEvent.HAVOC_SETTINGS;
+               return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
            default:
                return 0;
        }

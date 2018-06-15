@@ -18,11 +18,6 @@
     android:title="@string/sounds_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-      android:key="volume_steps"
-      android:title="@string/volume_steps_title"
-      android:fragment="com.havoc.settings.fragments.VolumeSteps" />
-
    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="screenshot_sound" 
         android:title="@string/screenshot_sound_title" 

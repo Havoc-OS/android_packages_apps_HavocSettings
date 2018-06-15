@@ -51,6 +51,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String LOCK_DATE_FONTS = "lock_date_fonts"; 
     private static final String CLOCK_FONT_SIZE  = "lockclock_font_size"; 
 //     private static final String DATE_FONT_SIZE  = "lockdate_font_size"; 
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_config";
  
     ListPreference mLockClockFonts;
     ListPreference mLockDateFonts;  
@@ -60,6 +61,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private CustomSeekBarPreference mLsSecurityAlpha; 
     private CustomSeekBarPreference mClockFontSize; 
 //     private CustomSeekBarPreference mDateFontSize; 
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,12 @@ public class LockScreen extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getIntForUser(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
         mLockscreenClockSelection = (ListPreference) findPreference(KEY_LOCKSCREEN_CLOCK_SELECTION);
         int clockSelection = Settings.System.getIntForUser(resolver,
@@ -160,16 +168,21 @@ public class LockScreen extends SettingsPreferenceFragment
                 mLockDateFonts.setSummary(mLockDateFonts.getEntry());
                 return true;
         }   else if (preference == mClockFontSize) { 
-                int top = (Integer) newValue; 
-                Settings.System.putInt(getContentResolver(), 
-                        Settings.System.LOCKCLOCK_FONT_SIZE, top*1); 
-                return true; 
-        //     } else if (preference == mDateFontSize) {
-        //         int top = (Integer) newValue;
-        //         Settings.System.putInt(getContentResolver(),
-        //                 Settings.System.LOCKDATE_FONT_SIZE, top*1);
-        //         return true;
-            }
+            int top = (Integer) newValue; 
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1); 
+            return true; 
+  //      } else if (preference == mDateFontSize) {
+ //            int top = (Integer) newValue;
+//            Settings.System.putInt(getContentResolver(),
+//                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
+//            return true;
+        } else  if (preference == mMaxKeyguardNotifConfig) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, value);
+            return true;
+        }
         return false;
     }
     @Override

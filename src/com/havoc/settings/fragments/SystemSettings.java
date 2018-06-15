@@ -32,10 +32,10 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
 
-public class System extends SettingsPreferenceFragment
+public class SystemSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    public static final String TAG = "System";
+    public static final String TAG = "SystemSettings";
 
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
 

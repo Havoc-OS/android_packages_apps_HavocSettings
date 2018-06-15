@@ -134,7 +134,8 @@
         settings:min="0"
         settings:units=""
         android:persistent="false"
-        android:dependency="lock_screen_custom_notif"/>		
+        android:dependency="lock_screen_custom_notif"/>	
+
 
      <com.havoc.settings.preferences.CustomSeekBarPreference 
         android:key="lockscreen_security_alpha" 

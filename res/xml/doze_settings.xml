@@ -42,5 +42,18 @@
         android:title="@string/ambient_battery_percent_title" 
         android:summary="@string/ambient_battery_percent_summary" 
         android:defaultValue="false" />
+
+    <Preference 
+          android:key="ambient_play" 
+          android:title="@string/ambient_play_settings_title" 
+          android:fragment="com.android.settings.havoc.sound.AmbientPlaySettings" /> 
+
+   <PreferenceScreen 
+             android:key="ambient_play" 
+             android:fragment="com.android.settings.havoc.sound.AmbientPlaySettings" 
+             android:title="@string/ambient_play_settings_title"> 
+        <extra android:name="actionMode" android:value="4" /> 
+        <extra android:name="fragment" android:value="com.android.settings.havoc.sound.AmbientPlaySettings" /> 
+    </PreferenceScreen> 
 		
 </PreferenceScreen>
