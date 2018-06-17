@@ -62,6 +62,12 @@ public class Weather extends SettingsPreferenceFragment implements
     private static final String PREF_STATUS_BAR_WEATHER_FONT_STYLE = "status_bar_weather_font_style";
     private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
     private static final String PREF_STATUS_BAR_WEATHER_IMAGE_COLOR = "status_bar_weather_image_color";
+    private static final String TEMP_FONT_SIZE  = "locktemp_font_size";  
+    private static final String CITY_FONT_SIZE  = "lockcity_font_size";  
+    private static final String CONDITION_FONT_SIZE  = "lockcondition_font_size";  
+    private static final String LOCK_TEMP_FONTS = "lock_temp_fonts"; 
+    private static final String LOCK_CITY_FONTS = "lock_city_fonts"; 
+    private static final String LOCK_CONDITION_FONTS = "lock_condition_fonts"; 
 
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
@@ -71,6 +77,12 @@ public class Weather extends SettingsPreferenceFragment implements
     private ColorPickerPreference mStatusBarTemperatureImageColor;
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
+    private CustomSeekBarPreference mTempFontSize;  
+    private CustomSeekBarPreference mCityFontSize;  
+    private CustomSeekBarPreference mConditionFontSize;  
+    ListPreference mLockTempFonts; 
+    ListPreference mLockCityFonts; 
+    ListPreference mLockConditionFonts; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +118,42 @@ public class Weather extends SettingsPreferenceFragment implements
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
             mWeatherIconPack.setOnPreferenceChangeListener(this);
         }
+
+        // Lockscren temp Fonts 
+        mLockTempFonts = (ListPreference) findPreference(LOCK_TEMP_FONTS); 
+        mLockTempFonts.setValue(String.valueOf(Settings.System.getInt( 
+                getContentResolver(), Settings.System.LOCK_TEMP_FONTS, 8))); 
+                mLockTempFonts.setSummary(mLockTempFonts.getEntry()); 
+                mLockTempFonts.setOnPreferenceChangeListener(this); 
+
+        // Lockscren city Fonts 
+        mLockCityFonts = (ListPreference) findPreference(LOCK_CITY_FONTS); 
+        mLockCityFonts.setValue(String.valueOf(Settings.System.getInt( 
+                getContentResolver(), Settings.System.LOCK_CITY_FONTS, 8))); 
+                mLockCityFonts.setSummary(mLockCityFonts.getEntry()); 
+                mLockCityFonts.setOnPreferenceChangeListener(this); 
+
+        // Lockscren condition Fonts 
+        mLockConditionFonts = (ListPreference) findPreference(LOCK_CONDITION_FONTS); 
+        mLockConditionFonts.setValue(String.valueOf(Settings.System.getInt( 
+                getContentResolver(), Settings.System.LOCK_CONDITION_FONTS, 8))); 
+                mLockConditionFonts.setSummary(mLockConditionFonts.getEntry()); 
+                mLockConditionFonts.setOnPreferenceChangeListener(this); 
+
+        mTempFontSize = (CustomSeekBarPreference) findPreference(TEMP_FONT_SIZE); 
+        mTempFontSize.setValue(Settings.System.getInt(getContentResolver(), 
+        Settings.System.LOCKTEMP_FONT_SIZE,14)); 
+        mTempFontSize.setOnPreferenceChangeListener(this); 
+
+        mCityFontSize = (CustomSeekBarPreference) findPreference(CITY_FONT_SIZE); 
+        mCityFontSize.setValue(Settings.System.getInt(getContentResolver(), 
+        Settings.System.LOCKCITY_FONT_SIZE,14)); 
+        mCityFontSize.setOnPreferenceChangeListener(this); 
+
+        mConditionFontSize = (CustomSeekBarPreference) findPreference(CONDITION_FONT_SIZE); 
+        mConditionFontSize.setValue(Settings.System.getInt(getContentResolver(), 
+        Settings.System.LOCKCONDITION_FONT_SIZE,14)); 
+        mConditionFontSize.setOnPreferenceChangeListener(this); 
 
         int intColor;
         String hexColor;
@@ -232,6 +280,39 @@ public class Weather extends SettingsPreferenceFragment implements
                     Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value, UserHandle.USER_CURRENT);
             int valueIndex = mWeatherIconPack.findIndexOfValue(value);
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
+        } else if (preference == mTempFontSize) { 
+            int top = (Integer) newValue; 
+           Settings.System.putInt(getContentResolver(), 
+                   Settings.System.LOCKTEMP_FONT_SIZE, top*1); 
+           return true; 
+        } else if (preference == mCityFontSize) { 
+            int top = (Integer) newValue; 
+           Settings.System.putInt(getContentResolver(), 
+                   Settings.System.LOCKCITY_FONT_SIZE, top*1); 
+           return true; 
+        } else if (preference == mConditionFontSize) { 
+            int top = (Integer) newValue; 
+           Settings.System.putInt(getContentResolver(), 
+                   Settings.System.LOCKCONDITION_FONT_SIZE, top*1); 
+           return true;
+        } else if (preference == mLockTempFonts) { 
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_TEMP_FONTS, 
+                    Integer.valueOf((String) newValue)); 
+                    mLockTempFonts.setValue(String.valueOf(newValue)); 
+                    mLockTempFonts.setSummary(mLockTempFonts.getEntry()); 
+            return true;    
+         } else if (preference == mLockCityFonts) { 
+                Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CITY_FONTS, 
+                        Integer.valueOf((String) newValue)); 
+                        mLockCityFonts.setValue(String.valueOf(newValue)); 
+                        mLockCityFonts.setSummary(mLockCityFonts.getEntry()); 
+                return true; 
+        } else if (preference == mLockConditionFonts) { 
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CONDITION_FONTS, 
+                    Integer.valueOf((String) newValue)); 
+                    mLockConditionFonts.setValue(String.valueOf(newValue)); 
+                    mLockConditionFonts.setSummary(mLockConditionFonts.getEntry()); 
+            return true; 
         }
         return false;
     }
@@ -266,24 +347,6 @@ public class Weather extends SettingsPreferenceFragment implements
             mStatusBarTemperatureImageColor.setEnabled(true);
         }
     }
-
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_WEATHER_IMAGE_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_WEATHER_SIZE, 14, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_WEATHER_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);
-    }
-
 
     private boolean isOmniJawsServiceInstalled() {
         return Utils.isPackageInstalled(getActivity(), DEFAULT_WEATHER_ICON_PACKAGE);
@@ -383,7 +446,19 @@ public class Weather extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver, 
                 Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, 1, UserHandle.USER_CURRENT); 
         Settings.System.putIntForUser(resolver, 
-                Settings.System.LOCK_SCREEN_SHOW_WEATHER_LOCATION, 1, UserHandle.USER_CURRENT);				
+                Settings.System.LOCK_SCREEN_SHOW_WEATHER_LOCATION, 1, UserHandle.USER_CURRENT);		
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_WEATHER_IMAGE_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_WEATHER_SIZE, 14, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_WEATHER_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);		
     }
 
     @Override

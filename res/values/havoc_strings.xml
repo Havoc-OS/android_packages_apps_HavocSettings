@@ -755,6 +755,21 @@
     <string name="lockalarm_font_size_title">Alarm font size</string> 
     <string name="ls_alarm">Alarm</string> 
 
+    <string name="ls_city_size">City Size</string> 
+    <string name="ls_city_font">City Font</string> 
+    <string name="lock_city_font_dialog_title">Select lock City font</string>  
+    <string name="lock_city_font_summary">Change the default font of the lockscreen City widget</string>  
+
+    <string name="ls_temp_size">Temp Size</string> 
+    <string name="ls_temp_font">Temp Font</string> 
+    <string name="lock_temp_font_dialog_title">Select lock Temp font</string>  
+    <string name="lock_temp_font_summary">Change the default font of the lockscreen Temp widget</string>  
+
+    <string name="ls_condition_size">Condition Size</string> 
+    <string name="ls_condition_font">Condition Font</string> 
+    <string name="lock_condition_font_dialog_title">Select lock Conditon font</string>  
+    <string name="lock_condition_font_summary">Change the default font of the lockscreen Conditon widget</string>  
+
        <!-- Omni Event Service --> 
     <string name="choose_app">Choose app</string> 
     <string name="not_ready_summary">Resolving...</string> 
@@ -909,7 +924,10 @@
     <string name="statusbar_ticker" >Ticker</string>
     <string name="statusbar_pulldown" >Pulldown</string>
     <string name="statusbar_carrier" >Carrier</string>
-    <string name="statusbar_tuner" >Tuner</string>
+    <string name="weather_temp" >Lockscreen Temp</string>
+    <string name="weather_city" >Lockscreen City</string>
+    <string name="weather_condition" >Lockscreen Condition</string>
+    <string name="statusbar_tuner" >System Tuner Icon</string>
 
     <!-- Fling -->
     <string name="fling_settings">Fling settings</string>
