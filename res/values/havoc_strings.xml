@@ -97,6 +97,14 @@
     <string name="ambient_play_settings_title">Ambient Play</string> 
     <string name="ambient_play_settings_summary">Background music recognition</string> 
 
+        <!-- QS tiles mini mode -->
+    <string name="qs_show_mini_title">Mini mode</string>
+    <string name="qs_show_mini_summary">Allow hiding the qs header icons and create smaller header</string>
+
+    <!-- Fingerprint sensor only at screen on -->
+   <string name="fp_only_screen_on_title">Screen on fingerprint</string>
+    <string name="fp_only_screen_on_summary">Fingerprint sensor will only work when screen is on</string>
+
      <!-- Edge gestures --> 
     <string name="edge_gestures_title">Edge gestures</string> 
     <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string> 

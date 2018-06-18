@@ -27,6 +27,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.hardware.fingerprint.FingerprintManager;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
@@ -38,8 +39,11 @@ public class Fingerprint extends SettingsPreferenceFragment implements Preferenc
 
     public static final String TAG = "Fingerprint";
     private static final String FP_WAKE_AND_UNLOCK = "fp_wake_and_unlock"; 
+    private static final String FP_ONLY_SCREEN_ON = "fp_only_screen_on";
 
     private SwitchPreference mFpWakeAndUnlock; 
+    private SwitchPreference mFpOnlyScreenOn;
+    private FingerprintManager mFingerprintManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,12 +51,26 @@ public class Fingerprint extends SettingsPreferenceFragment implements Preferenc
         ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.havoc_settings_fingerprint);
+        final PreferenceScreen prefSet = getPreferenceScreen(); 
+        try {
+            mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        } catch (Exception e) {
+            //ignore
+        }
 
         mFpWakeAndUnlock = (SwitchPreference) findPreference(FP_WAKE_AND_UNLOCK); 
+
+         // Fingerprint only at screen on
+        mFpOnlyScreenOn = (SwitchPreference) prefSet.findPreference(FP_ONLY_SCREEN_ON);
 
         mFpWakeAndUnlock.setChecked(Settings.System.getIntForUser(resolver, 
         Settings.System.FP_WAKE_AND_UNLOCK, 1, UserHandle.USER_CURRENT) == 1); 
         mFpWakeAndUnlock.setOnPreferenceChangeListener(this); 
+
+        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()){
+            mFpWakeAndUnlock.getParent().removePreference(mFpWakeAndUnlock);
+            mFpOnlyScreenOn.getParent().removePreference(mFpOnlyScreenOn);
+        }
     }
 
     @Override
