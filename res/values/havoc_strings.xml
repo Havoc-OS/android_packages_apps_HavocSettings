@@ -1274,7 +1274,6 @@
     <string name="force_ambient_for_media_summary">Music track info in the Ambient Display</string> 
     <string name="force_ambient_for_media_off">Disabled</string>
     <string name="force_ambient_for_media_on">Normal</string>
-    <string name="force_ambient_for_media_on_forced">Normal (forced)</string>
     <string name="force_ambient_for_media_on_forced_clean">Minimal (forced)</string>
 	
     <!-- Quick settings brightness slider -->
