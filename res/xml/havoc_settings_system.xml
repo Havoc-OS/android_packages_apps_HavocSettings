@@ -56,6 +56,13 @@
           android:summary="@string/system_app_remover_summary" 
           android:fragment="com.havoc.settings.fragments.SystemappRemover" /> 
 
+    <Preference
+        android:key="chooser_activity_blacklist"
+        android:fragment="com.havoc.settings.fragments.ChooserActivityBlacklist"
+        android:title="@string/chooser_activity_blacklist_title"
+        android:summary="@string/chooser_activity_blacklist_summary"
+        android:persistent="false" />
+
     </PreferenceCategory>
 	
 </PreferenceScreen>
