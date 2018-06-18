@@ -185,7 +185,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT, UserHandle.USER_CURRENT);
+                Settings.System.RECENT_PANEL_GRAVITY, Gravity.END, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SLIM_RECENTS_CORNER_RADIUS, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -200,7 +200,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         if (preference == mRecentPanelGravity) {
             Settings.System.putIntForUser(getContext().getContentResolver(),
                     Settings.System.RECENT_PANEL_GRAVITY,
-                    ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT, UserHandle.USER_CURRENT);
+                    ((Boolean) newValue) ? Gravity.START : Gravity.END, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRecentPanelScale) {
             Settings.System.putIntForUser(getContext().getContentResolver(),
@@ -262,7 +262,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         }
 
         boolean recentLeftyMode = Settings.System.getIntForUser(resolver,
-                Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT, UserHandle.USER_CURRENT) == Gravity.LEFT;
+                Settings.System.RECENT_PANEL_GRAVITY, Gravity.END, UserHandle.USER_CURRENT) == Gravity.START;
         mRecentPanelGravity.setChecked(recentLeftyMode);
 
         boolean recentCornerRadius = Settings.System.getIntForUser(resolver,
