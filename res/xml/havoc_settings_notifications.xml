@@ -36,6 +36,12 @@
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </Preference>
 
+        <ListPreference
+            android:key="flashlight_on_call"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
