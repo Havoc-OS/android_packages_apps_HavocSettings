@@ -58,12 +58,6 @@
     <PreferenceCategory
         android:key="ambient_music"
         android:title="@string/ambient_music">
-        
-     <Preference  
-        android:key="ambient_play"  
-        android:title="@string/ambient_play_settings_title" 
-        android:summary="@string/ambient_play_settings_summary"  
-        android:fragment="com.android.settings.havoc.sound.AmbientPlaySettings" />  
     
     <ListPreference 
         android:key="force_ambient_for_media" 
@@ -71,6 +65,13 @@
         android:entries="@array/force_ambient_for_media_entries" 
         android:entryValues="@array/force_ambient_for_media_values" 
         android:summary="@string/force_ambient_for_media_summary" />
+
+            
+     <Preference  
+        android:key="ambient_play"  
+        android:title="@string/ambient_play_settings_title" 
+        android:summary="@string/ambient_play_settings_summary"  
+        android:fragment="com.android.settings.havoc.sound.AmbientPlaySettings" />  
 
     </PreferenceCategory>
 

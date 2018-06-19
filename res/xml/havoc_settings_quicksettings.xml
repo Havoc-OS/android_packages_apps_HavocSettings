@@ -19,36 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
-    <com.havoc.settings.preferences.SystemSettingListPreference
-       android:key="qs_clock_style"
-       android:title="@string/status_bar_clock_position_title"
-       android:entries="@array/qs_clock_position_entries"
-       android:entryValues="@array/qs_clock_position_values"
-       android:defaultValue="0" />
-
-    <!-- QS Brightness Slider position --> 
-    <com.havoc.settings.preferences.LineageSecureSettingListPreference 
-        android:key="qs_show_brightness_slider" 
-        android:title="@string/qs_brightness_slider_title"  
-        android:entries="@array/qs_brightness_slider_entries" 
-        android:entryValues="@array/qs_brightness_slider_values" 
-        android:defaultValue="2" />
-		
-    <lineageos.preference.LineageSecureSettingSwitchPreference
-        android:key="qs_show_auto_brightness"
-        android:title="@string/brightness_icon_title"
-        android:summary="@string/brightness_icon_summary"
-        android:dependency="qs_show_brightness_slider"
-        lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
-        android:defaultValue="true" />
-
-     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-            android:key="qs_tile_title_visibility" 
-            android:title="@string/qs_tile_title_visibility_title" 
-            android:summary="@string/qs_tile_title_visibility_summary" 
-            android:defaultValue="true" /> 		
-		
-    <PreferenceCategory 
+     <PreferenceCategory 
         android:key="qs_layout_category" 
         android:title="@string/qs_layout_category"> 
  
@@ -92,31 +63,29 @@
             settings:units=""
             android:persistent="false" />			
     </PreferenceCategory> 
-	
-    <com.havoc.settings.preferences.SecureSettingSwitchPreference 
-        android:key="quick_settings_vibrate" 
-        android:title="@string/quick_settings_vibrate_title" 
-        android:summary="@string/quick_settings_vibrate_summary" 
-        android:defaultValue="false"/>
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="qs_footer_show_services" 
-        android:title="@string/qs_footer_services_title" 
-        android:summary="@string/qs_footer_services_summary" 
-        android:defaultValue="false" />		
+     <PreferenceCategory 
+         android:title="@string/qs_element_title"
+         android:key="element" >
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="qs_footer_warnings" 
-        android:title="@string/qs_footer_warnings_title" 
-        android:summary="@string/qs_footer_warnings_summary" 
-        android:defaultValue="false" /> 
-    
-       <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="qs_tile_title_visibility" 
+            android:title="@string/qs_tile_title_visibility_title" 
+            android:summary="@string/qs_tile_title_visibility_summary" 
+            android:defaultValue="true" /> 	
+
+      <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="music_tile_title" 
             android:title="@string/qs_music_tile_track_optional_title" 
             android:summary="@string/qs_music_tile_track_optional_summary" 
             android:dependency="qs_tile_title_visibility" 
-            android:defaultValue="false"/> 
+            android:defaultValue="false"/> 	
+        
+      <com.havoc.settings.preferences.SecureSettingSwitchPreference 
+        android:key="quick_settings_vibrate" 
+        android:title="@string/quick_settings_vibrate_title" 
+        android:summary="@string/quick_settings_vibrate_summary" 
+        android:defaultValue="false"/>
 
 
         <!-- QS Brightness Slider position --> 

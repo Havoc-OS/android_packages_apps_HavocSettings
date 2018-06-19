@@ -54,11 +54,6 @@
             android:title="@string/gesture_anywhere_title"
             android:summary="@string/gesture_anywhere_summary" /> 
 
-        <Preference  
-        android:title="@string/carbon_gesture_preference_title"  
-        android:key="carbongestures"  
-        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" /> 
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -70,6 +65,11 @@
         android:title="@string/gestures_title" 
         android:summary="@string/gestures_summary" 
         android:fragment="com.android.settings.gestures.GestureSettings" />
+
+        <Preference  
+        android:title="@string/carbon_gesture_preference_title"  
+        android:key="carbongestures"  
+        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" /> 
 
     </PreferenceCategory>
 

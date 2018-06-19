@@ -48,7 +48,6 @@ Preference.OnPreferenceChangeListener {
     private static final String PREF_VOLUME_DIALOG_CORNER_RADIUS = "volume_dialog_corner_radius"; 
     private static final String PREF_VOLUME_DIALOG_STROKE_DASH_WIDTH = "volume_dialog_dash_width"; 
     private static final String PREF_VOLUME_DIALOG_STROKE_DASH_GAP = "volume_dialog_dash_gap"; 
-    private static final String KEY_VOLUME_DIALOG_TIMEOUT = "volume_dialog_timeout"; 
  
     private ListPreference mVolumeDialogStroke; 
     private Preference mVolumeDialogStrokeColor; 

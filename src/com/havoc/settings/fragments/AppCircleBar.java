@@ -49,7 +49,7 @@ import com.android.settings.R;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.havoc.settings.preferences.CustomSeekBarPreference;
 import com.android.settings.SettingsPreferenceFragment;
-import com.havoc.settings.preferences.AppMultiSelectListPreference;
+import com.havoc.settings.preferences.AppMultiSelectListPreferenceCircle;
 
 import java.io.File;
 import java.lang.Thread;
@@ -68,7 +68,7 @@ public class AppCircleBar extends SettingsPreferenceFragment implements
     private static final String KEY_TRIGGER_TOP = "trigger_top";
     private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
 
-    private AppMultiSelectListPreference mIncludedAppCircleBar;
+    private AppMultiSelectListPreferenceCircle mIncludedAppCircleBar;
 
     private CustomSeekBarPreference mTriggerWidthPref;
     private CustomSeekBarPreference mTriggerTopPref;
@@ -85,7 +85,7 @@ public class AppCircleBar extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
+        mIncludedAppCircleBar = (AppMultiSelectListPreferenceCircle) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
         Set<String> includedApps = getIncludedApps();
         if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
         mIncludedAppCircleBar.setOnPreferenceChangeListener(this);

@@ -83,6 +83,15 @@ public final class Utils {
                 .getUsers().size() > 1;
     }
 
+    public static boolean isPackageEnabled(String packageName, PackageManager pm) {
+        try {
+            ApplicationInfo ai = pm.getApplicationInfo(packageName, 0);
+            return ai.enabled;
+        } catch (PackageManager.NameNotFoundException notFound) {
+            return false;
+        }
+    }
+
     private static int getScreenType(Context context) {
         if (sDeviceType == -1) {
             WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

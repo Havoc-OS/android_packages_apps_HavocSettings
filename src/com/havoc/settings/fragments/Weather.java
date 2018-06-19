@@ -177,7 +177,7 @@ public class Weather extends SettingsPreferenceFragment implements
 
         mStatusBarTemperatureSize = (CustomSeekBarPreference) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
         mStatusBarTemperatureSize.setValue(Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_WEATHER_SIZE, 14,
+                Settings.System.STATUS_BAR_WEATHER_SIZE, 24,
                 UserHandle.USER_CURRENT));
         mStatusBarTemperatureSize.setOnPreferenceChangeListener(this);
 

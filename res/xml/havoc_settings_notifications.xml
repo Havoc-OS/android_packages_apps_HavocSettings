@@ -23,6 +23,12 @@
         android:key="notification_lights"
         android:title="@string/notification_lights">
 
+    <lineageos.preference.LineageSystemSettingSwitchPreference
+        android:key="allow_lights"
+        android:title="@string/zen_allow_lights"
+        android:summary="@string/zen_allow_lights_summary"
+        android:defaultValue="true" />
+
     <Preference
         android:key="battery_lights"
         android:title="@string/battery_light_title" 
@@ -74,15 +80,13 @@
     <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
         android:key="heads_up_notifications_enabled" 
         android:title="@string/heads_up_title" 
-        android:summaryOn="@string/heads_up_summary_enabled" 
-        android:summaryOff="@string/heads_up_summary_disabled" 
+        android:summary="@string/heads_up_summary" 
         android:defaultValue="true" /> 
 
-          <!-- System -->
-     <Preference
-         android:key="headsup"
-         android:title="@string/heads_up_title"
-         android:fragment="com.havoc.settings.fragments.HeadsUp"/>
+    <Preference
+        android:key="headsup"
+        android:title="@string/heads_up_title_settings"
+        android:fragment="com.havoc.settings.fragments.HeadsUp"/>
     </PreferenceCategory>
 
     <PreferenceCategory 
@@ -107,7 +111,6 @@
          <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="incall_notifications_vibrate" 
             android:title="@string/incall_notifications_vibrate" 
-            android:summary="@string/incall_notifications_vibrate_summary" 
             android:defaultValue="false" /> 
 
     </PreferenceCategory>

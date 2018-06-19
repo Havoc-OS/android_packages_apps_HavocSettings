@@ -109,7 +109,7 @@
             settings:min="0"
             android:dependency="translucent_quick_settings_pref"
             android:defaultValue="60" />
-    </PreferenceCategory-->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="blur_recents_cat"
@@ -139,5 +139,5 @@
             android:dependency="blurred_recent_app_enabled_pref"
             android:defaultValue="3" />
 
-    </PreferenceCategory>
+    </PreferenceCategory-->
 </PreferenceScreen>

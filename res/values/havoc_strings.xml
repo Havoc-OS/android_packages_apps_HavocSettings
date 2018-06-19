@@ -61,6 +61,15 @@
     <string name="website_title">Website</string>
     <string name="website_title_summary">Download Havoc-OS</string>
 
+      <!-- Activity Blacklist -->
+    <string name="chooser_activity_blacklist_title">Chooser Activity blacklist</string>
+    <string name="chooser_activity_blacklist_summary">Apps to not show when tapping on a Share button</string>
+    <string name="chooser_activity_blacklist_cat_title">Blacklist</string>
+    <string name="chooser_activity_blacklist_pref_title">Add app</string>
+    <string name="chooser_activity_blacklist_pref_summary">Tap here to add, tap on added app to remove it</string>
+
+        <!-- Ambient Play -->  
+    <string name="ambient_recognition_title">Ambient Play</string>  
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
@@ -100,6 +109,7 @@
 
     <string name="ambient_play_settings_title">Ambient Play</string> 
     <string name="ambient_play_settings_summary">Background music recognition</string> 
+    <string name="recent_explanation_summary">Before Using OmniSwitch as Recent, enable the Service in Settings.</string> 
 
         <!-- QS tiles mini mode -->
     <string name="qs_show_mini_title">Mini mode</string>
@@ -142,7 +152,7 @@
  <string name="ambient_display_bottom_info_weather">Brief weather info</string>
 
      <!-- CarbonGestures --> 
-    <string name="carbon_gesture_preference_title">CarbonGestures</string> 
+    <string name="carbon_gesture_preference_title">Screen-on gestures</string> 
     <string name="carbon_gestures_summary">Configure custom global gestures</string> 
     <string name="carbon_gestures_fingers_title">Fingers used for gesture</string> 
     <string name="carbon_gestures_right_title">Right gesture</string> 
@@ -372,7 +382,7 @@
     <string name="less_notification_sounds_30s">Every 30 seconds</string>  
     <string name="less_notification_sounds_1m">Every minute</string>  
     <string name="less_notification_sounds_2m">Every 2 minutes</string>  
-    <string name="incall_notifications_vibrate">Less annoying in-call notifications</string> 
+    <string name="incall_notifications_vibrate">Vibrate on notifications</string> 
     <string name="incall_notifications_vibrate_summary">Vibrate instead of playing a sound for in-call notifications</string> 
     <string name="attention">Attention</string> 
      
@@ -523,9 +533,9 @@
     <string name="screen_off_animation_scale">Scale</string> 
 
         <!-- OmniSwitch -->
-    <string name="recents_use_omniswitch_title">Use for recents</string>
+    <string name="recents_use_omniswitch_title">Allow using OmniSwitch for Recent</string>
     <string name="recents_use_omniswitch_summary">Use OmniSwitch instead of default recents view</string>
-    <string name="omniswitch_start_settings_title">Settings</string>
+    <string name="omniswitch_start_settings_title">OmniSwitch Settings</string>
     <string name="omniswitch_start_settings_summary">Open OmniSwitch settings</string>
     <string name="omniswitch_first_time_title">Information</string>
     <string name="omniswitch_first_time_message">Make sure you have enabled OmniSwitch. You can do this by using \"Settings\" below</string>
@@ -687,7 +697,8 @@
     <string name="smartbar_doubletap_sleep_summary">Double-tap on the navbar empty areas to put device asleep</string>
     <string name="one_handed_mode_title">One handed mode</string>
     <string name="one_handed_mode_summary">Allows swiping on the navigation bar to enable one handed mode</string>
-    
+        <string name="stock_recents_category">Stock recents</string>
+    <string name="alternative_recents_category">Alternative recents</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim recents</string>
     <string name="use_slim_recents_title">Slim recents</string>
@@ -736,7 +747,7 @@
     <string name="immersive_recents_statusbar">Statusbar only</string>
     <string name="immersive_recents_navbar">Navbar only</string>
 
-    <string name="status_bar_icons_title">System Tuner</string>
+    <string name="status_bar_icons_title">System icons</string>
     <string name="status_bar_icons_summary">Toggle statusbar icons with system tuner</string>
     
     <string name="lockscreen_shortcuts_title">Lockscreen Shortcuts</string>
@@ -919,7 +930,7 @@
     <string name="gesture_nav" >Navigation</string>
     <string name="gesture_app" >Applications</string>
     <string name="gesture_misc" >Misc</string>
-    <string name="gesture_ls" >Lockscreen</string>
+    <string name="gesture_ls" >Screen</string>
     <string name="battery_sensor" >Sensor</string>
     <string name="battery_actions" >Auto Battery Saving</string>
     <string name="battery_wakelock" >Wake and Alarm Blocker</string>
@@ -1078,8 +1089,7 @@
     
     <!-- Heads up -->
     <string name="headsup_title">Heads up</string> 
-    <string name="heads_up_summary_enabled">Heads-up notifications are enabled</string>  
-    <string name="heads_up_summary_disabled">Heads-up notifications are disabled</string>  
+    <string name="heads_up_summary">Display priority notifications in a small floating window</string>  
     <string name="heads_up_blacklist_add_package_title">Add app</string>  
     <string name="heads_up_blacklist_add_package_summary">Disable heads-up notifications in these applications</string>  
     <string name="heads_up_blacklist_title">Blacklist</string>  
@@ -1097,8 +1107,9 @@
    <string name="heads_up_time_out_6sec">6 seconds</string>
    <string name="heads_up_time_out_8sec">8 seconds</string>
    <string name="heads_up_time_out_10sec">10 seconds</string>
-   <string name="heads_category_title">Heads Up</string>
-   <string name="heads_up_title">Advanced Heads Up Settings</string>
+   <string name="heads_category_title">Heads-Up</string>
+   <string name="heads_up_title">Heads-Up</string>
+   <string name="heads_up_title_settings">Additional settings</string>
    <string name="heads_up_stoplist_title">Stoplist</string>
    <string name="add_heads_up_package">Add app</string>
    <string name="add_heads_up_blacklist_summary">Disable heads up from these applications</string>
@@ -1700,16 +1711,16 @@
 	
     <string name="lockscreen_clock_selection_title">Clock style</string> 
     <string name="lockscreen_clock_selection_digital">Default</string> 
-    <string name="lockscreen_clock_selection_digital_bold">Digital (bold)</string> 
+    <string name="lockscreen_clock_selection_digital_bold">Digital (Bold)</string> 
     <string name="lockscreen_clock_selection_analog">Analog</string> 
-    <string name="lockscreen_clock_selection_analog_deadpool">Analog (deadpool)</string> 
+    <string name="lockscreen_clock_selection_analog_deadpool">Analog (Deadpool)</string> 
     <string name="lockscreen_clock_selection_sammy">Sammy</string> 
-    <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string> 
+    <string name="lockscreen_clock_selection_sammy_bold">Sammy (Bold)</string> 
     <string name="lockscreen_date_selection_title">Date style</string> 
     <string name="lockscreen_date_selection_default_aosp">Default</string> 
     <string name="lockscreen_date_selection_default">Default (bigger size)</string> 
     <string name="lockscreen_date_selection_str_box">Semi-transparent box</string> 
-    <string name="lockscreen_date_selection_str_round">Semi-transparent box (round)</string> 	
+    <string name="lockscreen_date_selection_str_round">Semi-transparent box (Round)</string> 	
 
     <!-- Notification light dialogs --> 
     <string name="edit_light_settings">Edit light settings</string> 
@@ -1897,4 +1908,8 @@
     <string name="status_bar_logo_style_superman">Superman</string> 
 
     <string name="ambient_display_screen_summary">Device-specific doze settings</string>
+
+    <!-- Allow lights in zen mode -->
+    <string name="zen_allow_lights">Notification lights in DnD</string>
+    <string name="zen_allow_lights_summary">Permit pulsing the light when Do Not Disturb is active</string>
 </resources>

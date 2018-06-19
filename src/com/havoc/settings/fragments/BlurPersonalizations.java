@@ -130,19 +130,19 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         mQuickSettPerc.setOnPreferenceChangeListener(this);
         /*mNotSettPerc = (CustomSeekBarPreference) findPreference("notifications_transluency");
         mNotSettPerc.setValue(Settings.System.getInt(resolver, Settings.System.TRANSLUCENT_NOTIFICATIONS_PRECENTAGE_PREFERENCE_KEY, 60));
-        mNotSettPerc.setOnPreferenceChangeListener(this);*/
+        mNotSettPerc.setOnPreferenceChangeListener(this);
 
         mRecentsSett = (SwitchPreference) findPreference("blurred_recent_app_enabled_pref");
-        mRecentsSett.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+        mRecentsSett.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_APPS_ENABLED_PREFERENCE_KEY, 0) == 1));
 
         mRecentsScale = (CustomSeekBarPreference) findPreference("recents_blur_scale");
-        mRecentsScale.setValue(Settings.System.getInt(resolver, Settings.System.RECENT_APPS_SCALE_PREFERENCE_KEY, 6));
+        mRecentsScale.setValue(Settings.System.getInt(getContentResolver(), Settings.System.RECENT_APPS_SCALE_PREFERENCE_KEY, 6));
         mRecentsScale.setOnPreferenceChangeListener(this);
 
         mRecentsRadius = (CustomSeekBarPreference) findPreference("recents_blur_radius");
         mRecentsRadius.setValue(Settings.System.getInt(resolver, Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, 3));
-        mRecentsRadius.setOnPreferenceChangeListener(this);
+        mRecentsRadius.setOnPreferenceChangeListener(this);*/
 
         mLightBlurColor = (ColorPickerPreference) findPreference("blur_light_color");
         mLightBlurColor.setOnPreferenceChangeListener(this);
@@ -201,7 +201,7 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
             Settings.System.putInt(
                 resolver, Settings.System.TRANSLUCENT_NOTIFICATIONS_PRECENTAGE_PREFERENCE_KEY, value);
             return true;
-        }*/
+        }
         } else if (preference == mRecentsScale) {
             int value = ((Integer)newValue).intValue();
             Settings.System.putInt(
@@ -211,7 +211,7 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
             int value = ((Integer)newValue).intValue();
             Settings.System.putInt(
                 resolver, Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, value);
-            return true;            
+            return true;  */          
         } else if (preference == mLightBlurColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
@@ -271,11 +271,11 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
       /*  } else if (preference == mQuickSett) {
             boolean enabled = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY, enabled ? 1:0); */
+                    Settings.System.TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY, enabled ? 1:0);
         } else if (preference == mRecentsSett) {
             boolean enabled = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENT_APPS_ENABLED_PREFERENCE_KEY, enabled ? 1:0); 
+                    Settings.System.RECENT_APPS_ENABLED_PREFERENCE_KEY, enabled ? 1:0);  */
         }
         return super.onPreferenceTreeClick(preference);
     }

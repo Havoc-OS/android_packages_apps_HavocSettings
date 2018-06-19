@@ -94,7 +94,7 @@
             settings:units="dp"
             android:dependency="pulse_fading_bars_category"/>
 
-        <s.CustomSeekBarPreference
+        <com.havoc.settings.preferences.CustomSeekBarPreference
             android:key="pulse_custom_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="6"

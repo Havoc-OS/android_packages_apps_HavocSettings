@@ -26,21 +26,10 @@
 			
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings" />
-		
-    <PreferenceCategory 
-        android:title="@string/havoc_blur_category"> 
  
-        <Preference 
-            android:key="havoc_blur" 
-            android:fragment="com.havoc.settings.fragments.BlurPersonalizations" 
-            android:title="@string/settings_blur_cat"  
-            android:summary="@string/settings_blur_sum"/> 
-    </PreferenceCategory>
-	
-    <PreferenceCategory 
-        android:key="category_substratum" 
-        android:title="@string/themes_title" > 
- 
+     <PreferenceCategory 
+        android:title="@string/themes_title"> 
+
         <org.lineageos.internal.lineageparts.LineagePartsPreference  
             android:key="style" />
 		
@@ -55,6 +44,22 @@
             android:key="custom_font" 
             android:title="@string/font_picker_title" 
             android:persistent="false" />
+		
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/havoc_blur_category"> 
+ 
+        <Preference 
+            android:key="havoc_blur" 
+            android:fragment="com.havoc.settings.fragments.BlurPersonalizations" 
+            android:title="@string/settings_blur_cat"  
+            android:summary="@string/settings_blur_sum"/> 
+    </PreferenceCategory>
+	
+    <PreferenceCategory 
+        android:key="category_substratum" 
+        android:title="@string/substratum_title" > 
 
         <Preference
             android:key="substratum" 
