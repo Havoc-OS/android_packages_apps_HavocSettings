@@ -56,7 +56,10 @@ public class Notifications extends SettingsPreferenceFragment
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message"; 
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+
     private SwitchPreference mDisableIM; 
+    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,19 @@ public class Notifications extends SettingsPreferenceFragment
         int DisableIM = Settings.System.getInt(getContentResolver(), 
                 DISABLE_IMMERSIVE_MESSAGE, 0); 
         mDisableIM.setChecked(DisableIM != 0); 
+
+        
+        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        Preference FlashOnCall = findPreference("flashlight_on_call");
+        int flashlightValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.FLASHLIGHT_ON_CALL, 0);
+        mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+        mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+        mFlashlightOnCall.setOnPreferenceChangeListener(this);
+
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefSet.removePreference(FlashOnCall);
+        }
     }
 
     @Override
@@ -91,7 +107,14 @@ public class Notifications extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE, 
                     value ? 1 : 0); 
             return true; 
-        }  
+        } else if (preference == mFlashlightOnCall) {
+            int flashlightValue = Integer.parseInt(((String) objValue).toString());
+            Settings.System.putInt(getContentResolver(),
+                  Settings.System.FLASHLIGHT_ON_CALL, flashlightValue);
+            mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+            mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+            return true;
+        }
         return false;
     }
 
