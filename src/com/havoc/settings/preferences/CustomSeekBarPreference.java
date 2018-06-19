@@ -195,6 +195,11 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         persistInt(newValue);
     }
 
+    public void refresh(int newValue) {
+        // this will trigger onProgressChanged and refresh everything
+        mSeekBar.setProgress(newValue - mMin);
+    }
+
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
     }
