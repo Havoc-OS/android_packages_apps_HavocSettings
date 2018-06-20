@@ -27,6 +27,9 @@
     <!-- Shortcut picker --> 
     <dimen name="shortcut_picker_left_padding">70dip</dimen>	
 	
+    <dimen name="floating_widget_view_padding">10dp</dimen> 
+    <dimen name="floating_widget_window_padding">10dp</dimen> 
+   
     <!-- Oval preview size -->
     <dimen name="oval_notification_size">26dp</dimen>	
 

@@ -30,4 +30,8 @@
     </declare-styleable>
 
     <attr name="color_settings_icon" format="color" />
+
+     <declare-styleable name="ColorSelectPreference"> 
+        <attr name="ledPreview" format="boolean" /> 
+    </declare-styleable> 
 </resources>

@@ -17,19 +17,14 @@
  */
 package com.havoc.settings.preferences;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,28 +35,22 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.settings.R;
-import com.havoc.settings.preferences.LegacyCustomDialogPreference;
+import com.android.settings.R; 
+import com.android.settingslib.CustomDialogPreference;
 
-import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
-import android.content.DialogInterface;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
+public class AppMultiSelectListPreference extends CustomDialogPreference {
+    private static final String TAG = "AppMultiSelectList";
+    private static final boolean DEBUG = false;
 
-public class AppMultiSelectListPreference extends LegacyCustomDialogPreference {
-    private final List<MyApplicationInfo> mPackageInfoList = new ArrayList<MyApplicationInfo>();
+    private final List<PackageItem> mPackageInfoList = new ArrayList<PackageItem>();
     private AppListAdapter mAdapter;
-    private CharSequence[] mEntries;
-	private CharSequence[] mEntryValues;
-    private Set<String> mValues = new HashSet<String>();
-	private Set<String> mNewValues = new HashSet<String>();
-    private boolean mPreferenceChanged;
+    private List<String> mValues = new ArrayList<String>();
+    private PackageManager mPm;
 
     public AppMultiSelectListPreference(Context context) {
         this(context, null);
@@ -69,39 +58,32 @@ public class AppMultiSelectListPreference extends LegacyCustomDialogPreference {
 
     public AppMultiSelectListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-
         setDialogLayoutResource(R.layout.preference_app_list);
+
+        mPm = context.getPackageManager();
 
         final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-        List<ApplicationInfo> pkgs = context.getPackageManager()
-                .getInstalledApplications(PackageManager.PERMISSION_GRANTED);
-		for (int i=0; i<pkgs.size(); i++) {
-		ApplicationInfo ai = pkgs.get(i);
-            if(context.getPackageManager().getLaunchIntentForPackage(ai.packageName) == null) {
-                continue;
-		}
+        List<ResolveInfo> installedAppsInfo = getContext().getPackageManager().queryIntentActivities(
+                mainIntent, 0);
 
-            MyApplicationInfo info = new MyApplicationInfo();
-            info.info = ai;
-            info.label = info.info.loadLabel(getContext().getPackageManager()).toString();
-			mPackageInfoList.add(info);
+        for (ResolveInfo info : installedAppsInfo) {
+            ComponentName componentName = new ComponentName(
+                    info.activityInfo.applicationInfo.packageName,
+                    info.activityInfo.name);
 
-		}
-        setPositiveButtonText(android.R.string.ok);
-        setNegativeButtonText(android.R.string.cancel);
-        List<CharSequence> entries = new ArrayList<CharSequence>();
-		List<CharSequence> entryValues = new ArrayList<CharSequence>();
-        Collections.sort(mPackageInfoList, sDisplayNameComparator);
-        for (MyApplicationInfo info : mPackageInfoList) {
-            entries.add(info.label);
-            entryValues.add(info.info.packageName);
+            try {
+                final PackageItem item = new PackageItem(
+                        info.activityInfo.loadLabel(mPm), 0, componentName);
+                mPackageInfoList.add(item);
+            } catch (Exception e) {
+                if (DEBUG) Log.e(TAG, "Load installed apps", e);
+            }
         }
-        MyApplicationInfo info = new MyApplicationInfo();
-        mEntries = new CharSequence[entries.size()];
-        mEntryValues = new CharSequence[entries.size()];
-        entries.toArray(mEntries);
-		entryValues.toArray(mEntryValues);
+        Collections.sort(mPackageInfoList);
+
+        setPositiveButtonText(R.string.action_save);
+        setNegativeButtonText(android.R.string.cancel);
     }
 
     public void setValues(Collection<String> values) {
@@ -109,44 +91,9 @@ public class AppMultiSelectListPreference extends LegacyCustomDialogPreference {
         mValues.addAll(values);
     }
 
-    @Override
-    protected void onPrepareDialogBuilder(AlertDialog.Builder builder,
-            DialogInterface.OnClickListener listener) {
-            showDialog(builder, listener);
-    }
-
-    private void showDialog(AlertDialog.Builder builder,
-            DialogInterface.OnClickListener listener) {
-        builder.setPositiveButton(R.string.okay, listener);
-        builder.setNegativeButton(R.string.cancel, null);
-    }
-
-
-    public void setClearValues() {
-        mValues.clear();
-	}
-
-    public Set<String> getValues() {
+    public Collection<String> getValues() {
         return mValues;
     }
-
-
-    /**
-     * Returns the index of the given value (in the entry values array).
-     *
-     * @param value The value whose index should be returned.
-     * @return The index of the value, or -1 if not found.
-     */
-    public int findIndexOfValue(String value) {
-        if (value != null && mEntryValues != null) {
-            for (int i = mEntryValues.length - 1; i >= 0; i--) {
-                if (mEntryValues[i].equals(value)) {
-                    return i;
-                }
-            }
-        }
-        return -1;
-	}
 
     @Override
     protected void onBindDialogView(View view) {
@@ -160,11 +107,14 @@ public class AppMultiSelectListPreference extends LegacyCustomDialogPreference {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final AppViewHolder holder = (AppViewHolder) view.getTag();
                 final boolean isChecked = !holder.checkBox.isChecked();
+
                 holder.checkBox.setChecked(isChecked);
+                PackageItem info = mAdapter.getItem(position);
+
                 if (isChecked) {
-                    mPreferenceChanged |= mNewValues.add(mEntryValues[position].toString());
+                    mValues.add(info.mValue);
                 } else {
-                    mPreferenceChanged |= mNewValues.remove(mEntryValues[position].toString());
+                    mValues.remove(info.mValue);
                 }
             }
         });
@@ -173,76 +123,77 @@ public class AppMultiSelectListPreference extends LegacyCustomDialogPreference {
     @Override
     protected void onDialogClosed(boolean positiveResult) {
         super.onDialogClosed(positiveResult);
-        if (positiveResult && mPreferenceChanged) {
-            final Set<String> values = mNewValues;
-            if (callChangeListener(values)) {
-                setValues(values);
+        if (positiveResult) {
+            callChangeListener(mValues.size() > 0 ? mValues : null);
+        }
+    }
+
+    public class PackageItem implements Comparable<PackageItem> {
+        public final CharSequence mTitle;
+        public final int mAppIconResourceId;
+        public final ComponentName mComponentName;
+        public final String mValue;
+
+        PackageItem(CharSequence title, int iconResourceId, ComponentName componentName) {
+            mTitle = title;
+            mAppIconResourceId = iconResourceId;
+            mComponentName = componentName;
+            mValue = componentName.flattenToString();
+        }
+
+        PackageItem(CharSequence title, int iconResourceId, String value) {
+            mTitle = title;
+            mAppIconResourceId = iconResourceId;
+            mComponentName = null;
+            mValue = value;
+        }
+
+        @Override
+        public int compareTo(PackageItem another) {
+            return mTitle.toString().toUpperCase().compareTo(another.mTitle.toString().toUpperCase());
+        }
+
+        @Override
+        public int hashCode() {
+            return mValue.hashCode();
+        }
+
+        @Override
+        public boolean equals(Object another) {
+            if (another == null || !(another instanceof PackageItem)) {
+                return false;
             }
+            return mValue.equals(((PackageItem) another).mValue);
         }
-		mPreferenceChanged = false;
     }
 
-
-    @Override
-    protected Object onGetDefaultValue(TypedArray a, int index) {
-        final CharSequence[] defaultValues = a.getTextArray(index);
-        final int valueCount = defaultValues.length;
-        final Set<String> result = new HashSet<String>();
-
-        for (int i = 0; i < valueCount; i++) {
-            result.add(defaultValues[i].toString());
-        }
-
-        return result;
-    }
-
-
-    /*private String getResolveInfoTitle(ResolveInfo info) {
-        CharSequence label = info.loadLabel(getContext().getPackageManager());
-        if (label == null) label = info.activityInfo.name;
-        return label != null ? label.toString() : null;
-    }
-
-    private Intent getIntentForResolveInfo(ResolveInfo info, String action) {
-        Intent intent = new Intent(action);
-        ActivityInfo ai = info.activityInfo;
-        intent.setClassName(ai.packageName, ai.name);
-        return intent;
-    }*/
-
-    class MyApplicationInfo {
-        ApplicationInfo info;
-        CharSequence label;
-    }
-
-    public class AppListAdapter extends ArrayAdapter<MyApplicationInfo> {
+    public class AppListAdapter extends ArrayAdapter<PackageItem> {
         private final LayoutInflater mInflater;
 
         public AppListAdapter(Context context) {
             super(context, 0);
-            mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             addAll(mPackageInfoList);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            // A ViewHolder keeps references to children views to avoid unnecessary calls
-            // to findViewById() on each row.
             AppViewHolder holder = AppViewHolder.createOrRecycle(mInflater, convertView);
             convertView = holder.rootView;
-            MyApplicationInfo info = getItem(position);
-            holder.appName.setText(info.label);
-            if (info.info != null) {
-                holder.appIcon.setImageDrawable(info.info.loadIcon(getContext().getPackageManager()));
+            PackageItem info = getItem(position);
+            holder.appName.setText(info.mTitle);
+            if (info.mAppIconResourceId != 0) {
+                holder.appIcon.setImageResource(info.mAppIconResourceId);
             } else {
-                holder.appIcon.setImageDrawable(null);
+                Drawable d = resolveAppIcon(info);
+                holder.appIcon.setImageDrawable(d);
             }
-            holder.checkBox.setChecked(mNewValues.contains(mEntryValues[position].toString()));
+            holder.checkBox.setChecked(mValues.contains(info.mValue));
             return convertView;
         }
 
         @Override
-        public MyApplicationInfo getItem(int position) {
+        public PackageItem getItem(int position) {
             return mPackageInfoList.get(position);
         }
     }
@@ -269,18 +220,25 @@ public class AppMultiSelectListPreference extends LegacyCustomDialogPreference {
             } else {
                 // Get the ViewHolder back to get fast access to the TextView
                 // and the ImageView.
-                return (AppViewHolder)convertView.getTag();
+                return (AppViewHolder) convertView.getTag();
             }
         }
     }
 
-    private final static Comparator<MyApplicationInfo> sDisplayNameComparator
-            = new Comparator<MyApplicationInfo>() {
+    private Drawable getDefaultActivityIcon() {
+        return getContext().getResources().getDrawable(android.R.drawable.sym_def_app_icon);
+    }
 
-        private final Collator collator = Collator.getInstance();
-
-        public final int compare(MyApplicationInfo a, MyApplicationInfo b) {
-            return collator.compare(a.label, b.label);
+    private Drawable resolveAppIcon(PackageItem item) {
+        Drawable appIcon = null;
+        try {
+            appIcon = mPm.getActivityIcon(item.mComponentName);
+        } catch (PackageManager.NameNotFoundException e) {
+            if (DEBUG) Log.e(TAG, "resolveAppIcon", e);
         }
-    };
+        if (appIcon == null) {
+            appIcon = getDefaultActivityIcon();
+        }
+        return appIcon;
+    }
 }

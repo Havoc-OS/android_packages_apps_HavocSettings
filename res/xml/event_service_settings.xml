@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Copyright (C) 2018 The OmniROM Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="event_service_settings"
+    android:title="@string/event_service_settings_title">
+
+    <SwitchPreference
+        android:key="event_service_enabled"
+        android:persistent="false"
+        android:title="@string/event_service_enabled_title" />
+
+    <PreferenceCategory
+        android:key="category_media_player"
+        android:title="@string/category_media_player_title">
+
+        <Preference
+            android:dependency="event_service_enabled"
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:key="category_media_player_info"
+            android:persistent="false"
+            android:summary="@string/category_media_player_info_title" />
+
+        <com.havoc.settings.preferences.AppMultiSelectListPreference
+            android:dependency="event_service_enabled"
+            android:icon="@drawable/ic_settings_bluetooth"
+            android:key="bt_a2dp_connect_app_string"
+            android:persistent="false"
+            android:summary="@string/bt_a2dp_connect_app_list_summary"
+            android:title="@string/bt_a2dp_connect_app_list_title" />
+
+        <com.havoc.settings.preferences.ScrollAppsViewPreference
+            android:dependency="event_service_enabled"
+            android:key="a2dp_app_list"
+            android:persistent="false"
+            android:selectable="false" />
+
+        <com.havoc.settings.preferences.AppMultiSelectListPreference
+            android:dependency="event_service_enabled"
+            android:icon="@drawable/ic_headset_24dp"
+            android:key="headset_connect_app_string"
+            android:persistent="false"
+            android:summary="@string/headset_connect_app_list_summary"
+            android:title="@string/headset_connect_app_list_title" />
+
+        <com.havoc.settings.preferences.ScrollAppsViewPreference
+            android:dependency="event_service_enabled"
+            android:key="headset_app_list"
+            android:persistent="false"
+            android:selectable="false" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="event_service_enabled"
+            android:key="autorun_single_app"
+            android:persistent="false"
+            android:summary="@string/autorun_single_app_summary"
+            android:title="@string/autorun_single_app_title" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="event_service_enabled"
+            android:key="media_player_music_active"
+            android:persistent="false"
+            android:title="@string/media_player_music_active_title" />
+
+        <SwitchPreference
+            android:dependency="event_service_enabled"
+            android:key="media_player_autostart"
+            android:persistent="false"
+            android:title="@string/media_player_autostart_title" />
+
+        <com.havoc.settings.preferences.CustomSeekBarPreference 
+            android:dependency="event_service_enabled"
+            android:key="app_chooser_timeout"
+            android:max="60"
+            android:persistent="false"
+            android:title="@string/app_chooser_timeout_title"
+            settings:min="0"
+            settings:units="@string/unit_sec" />
+
+        <ListPreference
+            android:dependency="event_service_enabled"
+            android:entries="@array/app_chooser_position_entries"
+            android:entryValues="@array/app_chooser_position_values"
+            android:key="app_chooser_position"
+            android:persistent="false"
+            android:title="@string/app_chooser_position_title" />
+
+        <com.havoc.settings.preferences.CustomSeekBarPreference 
+            android:dependency="event_service_enabled"
+            android:key="wired_events_threshold"
+            android:max="6"
+            android:persistent="false"
+            android:summary="@string/wired_events_threshold_summary"
+            android:title="@string/wired_events_threshold_title"
+            settings:min="0"
+            settings:units="@string/unit_sec" />
+    </PreferenceCategory>
+</PreferenceScreen>

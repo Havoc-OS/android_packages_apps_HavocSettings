@@ -144,6 +144,14 @@
             android:title="@string/sounds_title"
             android:fragment="com.havoc.settings.fragments.Sounds"
             android:icon="@drawable/ic_settings_sounds"/>
+        
+         <!-- OmniROM Event Settings --> 
+        <Preference 
+             android:key="event_service_settings" 
+             android:title="@string/event_service_settings_title" 
+             android:summary="@string/event_service_settings_summary" 
+             android:icon="@drawable/ic_settings_event"
+             android:fragment="com.havoc.settings.service.EventServiceSettings" /> 
 
          <!-- Misc -->
         <Preference
