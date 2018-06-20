@@ -600,6 +600,10 @@
      <string name="pulse_auto_color_title">Automatic Pulse color</string> 
     <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string> 
 
+    <!-- Qs music tile --> 
+    <string name="qs_music_tile_track_optional_title">Music tile track title</string> 
+    <string name="qs_music_tile_track_optional_summary">Show the music track title as the QS tile title</string> 
+
       <!-- Volume dialog timeout -->  
     <string name="volume_dialog_timeout_title">Volume dialog timeout</string>  
 
