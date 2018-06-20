@@ -141,6 +141,24 @@
                android:title="@string/lockscreen_enable_qs_title" 
                android:summary="@string/lockscreen_enable_qs_summary" 
                android:defaultValue="true" /> 
+    
+     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="hide_lockscreen_status_bar" 
+        android:title="@string/hide_lockscreen_status_bar_title" 
+        android:summary="@string/hide_lockscreen_status_bar_summary" 
+        android:defaultValue="false" /> 
+ 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="hide_lockscreen_indicator_display" 
+        android:title="@string/hide_lockscreen_indicator_display_title" 
+        android:summary="@string/hide_lockscreen_indicator_display_summary" 
+        android:defaultValue="false" /> 
+ 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="hide_lockscreen_icon" 
+        android:title="@string/hide_lockscreen_icon_title" 
+        android:summary="@string/hide_lockscreen_icon_summary" 
+        android:defaultValue="false" /> 
 
      <Preference 
         android:key="bottom_shortcuts_category" 
