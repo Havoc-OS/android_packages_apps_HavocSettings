@@ -29,6 +29,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
@@ -50,6 +51,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
+    private static final String HAVOC_LOGO = "status_bar_havoc_logo"; 
+    private static final String HAVOC_LOGO_COLOR = "status_bar_havoc_logo_color"; 
+    private static final String HAVOC_LOGO_POSITION = "status_bar_havoc_logo_position"; 
+    private static final String HAVOC_LOGO_STYLE = "status_bar_havoc_logo_style"; 
 
     public static final int BATTERY_STYLE_PORTRAIT = 0;
     public static final int BATTERY_STYLE_CIRCLE = 1;
@@ -66,6 +71,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
+    private SwitchPreference mHavocLogo; 
+    private ColorPickerPreference mHavocLogoColor; 
+    private ListPreference mHavocLogoPosition; 
+    private ListPreference mHavocLogoStyle; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,6 +139,45 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mTextSymbol.setSummary(mTextSymbol.getEntry());
         updateBatteryOptions();
         mTextSymbol.setOnPreferenceChangeListener(this);
+
+        mHavocLogo = (SwitchPreference) findPreference(HAVOC_LOGO); 
+        mHavocLogo.setOnPreferenceChangeListener(this); 
+ 
+        mHavocLogoPosition = (ListPreference) findPreference(HAVOC_LOGO_POSITION); 
+        int havocLogoPosition = Settings.System.getIntForUser(resolver, 
+                Settings.System.STATUS_BAR_HAVOC_LOGO_POSITION, 0, 
+                UserHandle.USER_CURRENT); 
+        mHavocLogoPosition.setValue(String.valueOf(havocLogoPosition)); 
+        mHavocLogoPosition.setSummary(mHavocLogoPosition.getEntry()); 
+        mHavocLogoPosition.setOnPreferenceChangeListener(this); 
+ 
+        mHavocLogoColor = 
+                (ColorPickerPreference) findPreference(HAVOC_LOGO_COLOR); 
+        int intColor = Settings.System.getIntForUser(resolver, 
+                Settings.System.STATUS_BAR_HAVOC_LOGO_COLOR, 0xFFFFFFFF, 
+                UserHandle.USER_CURRENT); 
+        String hexColor = ColorPickerPreference.convertToARGB(intColor); 
+        mHavocLogoColor.setNewPreviewColor(intColor); 
+        if (intColor != 0xFFFFFFFF) { 
+            mHavocLogoColor.setSummary(hexColor); 
+        } else { 
+            mHavocLogoColor.setSummary(R.string.default_string); 
+        } 
+        mHavocLogoColor.setOnPreferenceChangeListener(this); 
+ 
+        mHavocLogoStyle = (ListPreference) findPreference(HAVOC_LOGO_STYLE); 
+        int havocLogoStyle = Settings.System.getIntForUser(resolver, 
+                Settings.System.STATUS_BAR_HAVOC_LOGO_STYLE, 0, 
+                UserHandle.USER_CURRENT); 
+        mHavocLogoStyle.setValue(String.valueOf(havocLogoStyle)); 
+        mHavocLogoStyle.setSummary(mHavocLogoStyle.getEntry()); 
+        mHavocLogoStyle.setOnPreferenceChangeListener(this); 
+ 
+        boolean mLogoEnabled = Settings.System.getIntForUser(resolver, 
+                Settings.System.STATUS_BAR_HAVOC_LOGO, 
+                0, UserHandle.USER_CURRENT) != 0; 
+        toggleLogo(mLogoEnabled); 
+    } 
     }
 
     @Override
@@ -193,7 +241,42 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mTextSymbol.setSummary(
                     mTextSymbol.getEntries()[index]);
             return true;
-        }
+        } else if (preference == mHavocLogo) { 
+            boolean value = (Boolean) newValue; 
+            toggleLogo(value); 
+            return true; 
+        } else if (preference == mHavocLogoColor) { 
+            String hex = ColorPickerPreference.convertToARGB( 
+                Integer.parseInt(String.valueOf(newValue))); 
+            int value = ColorPickerPreference.convertToColorInt(hex); 
+            Settings.System.putIntForUser(resolver, 
+                Settings.System.STATUS_BAR_HAVOC_LOGO_COLOR, value, 
+                UserHandle.USER_CURRENT); 
+            if (value != 0xFFFFFFFF) { 
+                mHavocLogoColor.setSummary(hex); 
+            } else { 
+                mHavocLogoColor.setSummary(R.string.default_string); 
+            } 
+            return true; 
+        } else if (preference == mHavocLogoPosition) { 
+            int value = Integer.parseInt((String) newValue); 
+            int index = mHavocLogoPosition.findIndexOfValue((String) newValue); 
+            Settings.System.putIntForUser( 
+                resolver, Settings.System.STATUS_BAR_HAVOC_LOGO_POSITION, value, 
+                UserHandle.USER_CURRENT); 
+            mHavocLogoPosition.setSummary( 
+                    mHavocLogoPosition.getEntries()[index]); 
+            return true; 
+        } else if (preference == mHavocLogoStyle) { 
+            int value = Integer.parseInt((String) newValue); 
+            int index = mHavocLogoStyle.findIndexOfValue((String) newValue); 
+            Settings.System.putIntForUser( 
+                resolver, Settings.System.STATUS_BAR_HAVOC_LOGO_STYLE, value, 
+                UserHandle.USER_CURRENT); 
+            mHavocLogoStyle.setSummary( 
+                    mHavocLogoStyle.getEntries()[index]); 
+            return true; 
+        } 
         return false;
     }
 
@@ -238,6 +321,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
         }
     }
+
+    public void toggleLogo(boolean enabled) { 
+        mHavocLogoColor.setEnabled(enabled); 
+        mHavocLogoPosition.setEnabled(enabled); 
+        mHavocLogoStyle.setEnabled(enabled); 
+    } 
 
     public static int showActivityDefault(Context context) {
 
