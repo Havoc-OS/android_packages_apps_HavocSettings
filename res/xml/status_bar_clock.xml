@@ -25,13 +25,6 @@
         android:summary="@string/status_bar_clock_seconds_summary"
         android:defaultValue="false" />
 
-   <com.havoc.settings.preferences.SystemSettingListPreference
-            android:key="statusbar_clock_style"
-            android:title="@string/status_bar_clock_position_title"
-            android:entries="@array/status_bar_clock_position_entries"
-            android:entryValues="@array/status_bar_clock_position_values"
-            android:defaultValue="0" />
-
     <ListPreference
         android:key="statusbar_clock_am_pm_style"
         android:title="@string/status_bar_am_pm_title"

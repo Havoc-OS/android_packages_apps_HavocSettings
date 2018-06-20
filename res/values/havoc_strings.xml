@@ -563,6 +563,7 @@
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
+    <string name="ticker_animation_mode_title">Ticker Animation</string>
 
   <!-- Fingerprint unlock keystore -->  
     <string name="fp_unlock_keystore_title">Fingerprint unlock</string>  

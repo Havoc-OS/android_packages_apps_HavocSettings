@@ -19,6 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
+    <com.havoc.settings.preferences.SystemSettingListPreference
+        android:key="statusbar_clock_style"
+        android:title="@string/status_bar_clock_position_title"
+        android:entries="@array/status_bar_clock_position_entries"
+        android:entryValues="@array/status_bar_clock_position_values"
+        android:defaultValue="0" />
+
     <Preference
         android:key="clock" 
         android:title="@string/status_bar_clock_title" 
@@ -135,7 +142,6 @@
 
     <com.havoc.settings.preferences.SystemSettingListPreference 
        android:key="status_bar_ticker_animation_mode" 
-       android:icon="@drawable/ic_cursor" 
        android:title="@string/ticker_animation_mode_title" 
        android:entries="@array/ticker_animation_mode_entries" 
        android:entryValues="@array/ticker_animation_mode_values" 
