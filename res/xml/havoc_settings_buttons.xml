@@ -19,6 +19,15 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform" 	
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference 
+        android:key="volume_key" 
+        android:title="@string/volume_title" 
+        android:fragment="com.havoc.settings.fragments.Volume"/>
+
+ <PreferenceCategory 
+        android:key="power"  
+        android:title="@string/power_keys_category">  
+
     <Preference  
         android:title="@string/power_menu_title"  
         android:summary="@string/power_menu_summary">  
@@ -34,12 +43,23 @@
                 android:value="@string/power_menu_title" />  
         </intent>  
     </Preference>
-	
-    <Preference 
-        android:key="volume_key" 
-        android:title="@string/volume_title" 
-        android:fragment="com.havoc.settings.fragments.Volume"/>
-		
+
+    <lineageos.preference.LineageSystemSettingSwitchPreference
+        android:key="torch_long_press_power_gesture"
+        android:title="@string/torch_long_press_power_gesture_title"
+        android:summary="@string/torch_long_press_power_gesture_summary"
+        android:defaultValue="false"/>
+
+    <lineageos.preference.LineageSystemSettingListPreference
+        android:key="torch_long_press_power_timeout"
+        android:dialogTitle="@string/torch_long_press_power_timeout_title"
+        android:title="@string/torch_long_press_power_timeout_title"
+        android:entries="@array/torch_long_press_power_timeout_entries"
+        android:entryValues="@array/torch_long_press_power_timeout_values"
+        android:dependency="torch_long_press_power_gesture"
+        android:persistent="false" />
+	 </PreferenceCategory>
+
     <PreferenceCategory 
         android:key="hardware_keys"  
         android:title="@string/hardware_keys_category">  

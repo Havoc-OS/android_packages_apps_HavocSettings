@@ -123,8 +123,19 @@
     <string name="qs_show_mini_summary">Allow hiding the qs header icons and create smaller header</string>
 
     <!-- Fingerprint sensor only at screen on -->
-   <string name="fp_only_screen_on_title">Screen on fingerprint</string>
+    <string name="fp_only_screen_on_title">Screen on fingerprint</string>
     <string name="fp_only_screen_on_summary">Fingerprint sensor will only work when screen is on</string>
+
+     <string name="torch_long_press_power_gesture_title">Long press power button for torch</string>
+     <string name="torch_long_press_power_gesture_summary">Toggles torch when power button is long pressed while display is off</string>
+     <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
+     <string name="torch_long_press_power_timeout_never">Never</string>
+     <string name="torch_long_press_power_timeout_1min">1 minute</string>
+     <string name="torch_long_press_power_timeout_2min">2 minutes</string>
+     <string name="torch_long_press_power_timeout_5min">5 minutes</string>
+     <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+
+    <string name="power_keys_category">Power Button</string>
 
      <!-- Edge gestures --> 
     <string name="edge_gestures_title">Edge gestures</string> 
