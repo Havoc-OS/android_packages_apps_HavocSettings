@@ -83,6 +83,10 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+    <!-- QS edit icon -->
+    <string name="qs_edit_title">QS edit icon</string>
+    <string name="qs_edit_summary">Disable the tile edit icon in the footer</string>
+
       <!-- Notification guts kill app button --> 
     <string name="notification_guts_kill_app_button_title">Kill app button</string> 
     <string name="notification_guts_kill_app_button_summary">Show a kill app button in notifaction shade</string> 

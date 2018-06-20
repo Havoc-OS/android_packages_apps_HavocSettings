@@ -118,4 +118,54 @@
             android:dependency="qs_tile_title_visibility" 
             android:defaultValue="false"/> 
 
+
+        <!-- QS Brightness Slider position --> 
+    <com.havoc.settings.preferences.LineageSecureSettingListPreference 
+        android:key="qs_show_brightness_slider" 
+        android:title="@string/qs_brightness_slider_title"  
+        android:entries="@array/qs_brightness_slider_entries" 
+        android:entryValues="@array/qs_brightness_slider_values" 
+        android:defaultValue="2" />
+		
+    <lineageos.preference.LineageSecureSettingSwitchPreference
+        android:key="qs_show_auto_brightness"
+        android:title="@string/brightness_icon_title"
+        android:summary="@string/brightness_icon_summary"
+        android:dependency="qs_show_brightness_slider"
+        lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
+        android:defaultValue="true" />
+
+     <com.havoc.settings.preferences.SystemSettingListPreference
+       android:key="qs_clock_style"
+       android:title="@string/status_bar_clock_position_title"
+       android:entries="@array/qs_clock_position_entries"
+       android:entryValues="@array/qs_clock_position_values"
+       android:defaultValue="0" />  
+		
+     </PreferenceCategory>
+
+    <PreferenceCategory 
+         android:title="@string/footer_title"
+         android:key="footer"  >
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="qs_footer_show_services" 
+            android:title="@string/qs_footer_services_title" 
+            android:summary="@string/qs_footer_services_summary" 
+            android:defaultValue="false" />		
+        
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+          android:key="qs_edit_toggle"
+          android:title="@string/qs_edit_title"
+          android:summary="@string/qs_edit_summary"
+          android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="qs_footer_warnings" 
+            android:title="@string/qs_footer_warnings_title" 
+            android:summary="@string/qs_footer_warnings_summary" 
+            android:defaultValue="false" /> 
+
+     </PreferenceCategory>
+
 </PreferenceScreen>
