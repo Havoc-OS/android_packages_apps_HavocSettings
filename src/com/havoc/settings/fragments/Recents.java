@@ -80,18 +80,30 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
     private static final String RECENTS_DATE = "recents_full_screen_date"; 
     private static final String RECENTS_CLOCK = "recents_full_screen_clock"; 
     private static final String RECENTS_TYPE = "recents_layout_style"; 
+    private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
+    private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
+
+     // Package name of the omnniswitch app
+    public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
+    // Intent for launching the omniswitch settings actvity
+    public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
+            .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
 
     private Preference mRecentsIconPack; 
     private Preference mRecentsMembar; 
     private Preference mRecentsClearAll; 
     private ListPreference mRecentsClearAllLocation; 
     private Preference mRecentsDismissIcon; 
+    private SwitchPreference mSlimToggle;
     private Preference mRecentsLockIcon; 
     private ListPreference mImmersiveRecents; 
     private Preference mSlimRecents; 
     private SwitchPreference mClock; 
     private SwitchPreference mDate; 
     private ListPreference mRecentsType; 
+    private SwitchPreference mRecentsUseOmniSwitch;
+    private Preference mOmniSwitchSettings;
+    private boolean mOmniSwitchInitCalled;
 
     private final static String[] sSupportedActions = new String[] { 
         "org.adw.launcher.THEMES", 
@@ -159,15 +171,30 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
  
         mRecentsDismissIcon = (Preference) findPreference(RECENTS_DISMISS_ICON); 
  
-        mRecentsLockIcon = (Preference) findPreference(RECENTS_LOCK_ICON); 
- 
-        mSlimRecents = (Preference) findPreference(USE_SLIM_RECENTS); 
-        mSlimRecents.setOnPreferenceChangeListener(this); 
- 
-        boolean mUseSlimRecents = Settings.System.getIntForUser( 
-                resolver, Settings.System.USE_SLIM_RECENTS, 0, 
-                UserHandle.USER_CURRENT) == 1; 
-        toggleAOSPrecents(!mUseSlimRecents); 
+        mRecentsLockIcon = (Preference) findPreference("recents_icon_pack");
+        mSlimToggle = (SwitchPreference) findPreference("use_slim_recents");
+        boolean enabled = Settings.System.getIntForUser(
+                resolver, Settings.System.USE_SLIM_RECENTS, 0,
+                UserHandle.USER_CURRENT) == 1;
+        mSlimToggle.setChecked(enabled);
+        mRecentsLockIcon.setEnabled(!enabled);
+        mSlimToggle.setOnPreferenceChangeListener(this);
+
+        mRecentsUseOmniSwitch = (SwitchPreference)
+                prefSet.findPreference(RECENTS_USE_OMNISWITCH);
+
+        try {
+            mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_OMNI_SWITCH_ENABLED) == 1);
+            mOmniSwitchInitCalled = true;
+        } catch(SettingNotFoundException e){
+            // if the settings value is unset
+        }
+        mRecentsUseOmniSwitch.setOnPreferenceChangeListener(this);
+
+        mOmniSwitchSettings = (Preference)
+                prefSet.findPreference(OMNISWITCH_START_SETTINGS);
+        mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
 
         mClock = (SwitchPreference) findPreference(RECENTS_CLOCK); 
         mDate = (SwitchPreference) findPreference(RECENTS_DATE); 
@@ -210,9 +237,26 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
             return true;
-        } else if (preference == mSlimRecents) {
+        } else if (preference == mSlimToggle) {
             boolean value = (Boolean) newValue;
-            toggleAOSPrecents(!value);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.USE_SLIM_RECENTS, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mSlimToggle.setChecked(value);
+            mRecentsLockIcon.setEnabled(!value);
+            return true;
+        } else if (preference == mRecentsUseOmniSwitch) {
+            boolean value = (Boolean) newValue;
+
+            // if value has never been set before
+            if (value && !mOmniSwitchInitCalled){
+                openOmniSwitchFirstTimeWarning();
+                mOmniSwitchInitCalled = true;
+            }
+
+            Settings.System.putInt(
+                    resolver, Settings.System.RECENTS_OMNI_SWITCH_ENABLED, value ? 1 : 0);
+            mOmniSwitchSettings.setEnabled(value);
             return true;
         } else if (preference == mRecentsType) { 
             int style = Integer.valueOf((String) newValue); 
@@ -241,9 +285,22 @@ Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener  {
         if (preference == mRecentsIconPack) { 
             pickIconPack(getContext()); 
             return true; 
-        } 
+        } else if (preference == mOmniSwitchSettings){
+            startActivity(INTENT_OMNISWITCH_SETTINGS);
+            return true;
+        }
         return super.onPreferenceTreeClick(preference); 
     } 
+
+    private void openOmniSwitchFirstTimeWarning() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(getResources().getString(R.string.omniswitch_first_time_title))
+                .setMessage(getResources().getString(R.string.omniswitch_first_time_message))
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        }
+                }).show();
+    }
  
     /** Recents Icon Pack Dialog **/ 
     private void pickIconPack(final Context context) { 
