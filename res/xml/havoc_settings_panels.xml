@@ -18,16 +18,16 @@
     android:title="@string/panels_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
-        android:key="volume_dialog_timeout" 
-        android:title="@string/volume_dialog_timeout_title" 
-        android:max="10000" 
-        settings:min="100" 
-        settings:units="ms" 
-        android:persistent="false" /> 
-
-     <PreferenceCategory 
+    <PreferenceCategory 
         android:title="@string/volume_dialog_transparency_title"> 
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="volume_dialog_timeout" 
+            android:title="@string/volume_dialog_timeout_title" 
+            android:max="10000" 
+            settings:min="100" 
+            settings:units="ms" 
+            android:persistent="false" /> 
  
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
             android:key="transparent_volume_dialog" 
@@ -84,25 +84,25 @@
  
     </PreferenceCategory> 
 
-        <PreferenceCategory 
-         android:title="@string/power"> 
+    <PreferenceCategory 
+        android:title="@string/power"> 
   
-         <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
-             android:key="transparent_power_menu" 
-             android:title="@string/power_menu_transparency" 
-             android:max="100" 
-             settings:min="0" 
-             settings:units="%" 
-             android:defaultValue="100" /> 
-  
-         <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
-             android:key="transparent_power_dialog_dim" 
-             android:title="@string/power_menu_dialog_dim" 
-             android:max="100" 
-             settings:min="0" 
-             settings:units="%" 
-             android:defaultValue="50" /> 
-  
-     </PreferenceCategory> 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="transparent_power_menu" 
+            android:title="@string/power_menu_transparency" 
+            android:max="100" 
+            settings:min="0" 
+            settings:units="%" 
+            android:defaultValue="100" /> 
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+            android:key="transparent_power_dialog_dim" 
+            android:title="@string/power_menu_dialog_dim" 
+            android:max="100" 
+            settings:min="0" 
+            settings:units="%" 
+            android:defaultValue="50" /> 
+
+    </PreferenceCategory> 
 
 </PreferenceScreen>

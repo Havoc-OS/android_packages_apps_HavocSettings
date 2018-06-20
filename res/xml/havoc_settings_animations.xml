@@ -17,7 +17,11 @@
     android:title="@string/animations_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.havoc.settings.preferences.GlobalSettingListPreference
+     <PreferenceCategory 
+         android:title="@string/system_keyguard_animation_title"
+         android:key="system_title"  >
+ 
+    <com.havoc.settings.preferences.GlobalSettingListPreference
             android:key="screen_off_animation"
             android:title="@string/screen_off_animation_title"
             android:entries="@array/screen_off_animation_entries"
@@ -30,12 +34,12 @@
             android:summary="@string/system_animation_summary"
             android:fragment="com.havoc.settings.fragments.ui.AnimationControls" />
 
-        <!-- <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="disable_transition_animations"
-            android:title="@string/disable_animations"
-            android:summary="@string/disable_animations_summary"
-            android:defaultValue="false" /> -->
-
+     </PreferenceCategory>
+    
+     <PreferenceCategory 
+         android:title="@string/list_animation_title"
+         android:key="list_animation"  >
+        
         <ListPreference
             android:key="listview_animation"
             android:dialogTitle="@string/listview_animation_title"
@@ -52,20 +56,11 @@
             android:entryValues="@array/listview_interpolator_values"
             android:defaultValue="0" />
 
-        <ListPreference
-            android:key="toast_animation"
-            android:title="@string/toast_animation_title"
-            android:entries="@array/toast_animation_entries"
-            android:entryValues="@array/toast_animation_values"
-            android:defaultValue="1" />
-
-        <!-- <ListPreference
-            android:key="power_menu_animation"
-            android:dialogTitle="@string/power_menu_animation_title"
-            android:title="@string/power_menu_animation_title"
-            android:entries="@array/power_menu_animation_entries"
-            android:entryValues="@array/power_menu_animation_values"
-            android:defaultValue="0" /> -->
+     </PreferenceCategory>
+ 
+     <PreferenceCategory 
+         android:title="@string/tile_animation_title"
+         android:key="tile_animation">
 
          <ListPreference
             android:key="qs_tile_animation_style"
@@ -90,32 +85,49 @@
             android:entries="@array/qs_tile_animation_interpolator_entries"
             android:entryValues="@array/qs_tile_animation_interpolator_values"
             android:defaultValue="0" />
+    
+     </PreferenceCategory>
 
-        <!-- <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_fancy_animation"
-            android:title="@string/qs_fancy_animation_title"
-            android:summary="@string/qs_fancy_animation_summary"
-            android:defaultValue="true" /> -->
+     <PreferenceCategory 
+         android:title="@string/misc_animation_title"
+         android:key="misc_animation"  >
+        
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="disable_transition_animations"
+            android:title="@string/disable_animations"
+            android:summary="@string/disable_animations_summary"
+            android:defaultValue="false" />
 
         <ListPreference
-            android:key="pref_scrollingcache"
-            android:dialogTitle="@string/pref_scrollingcache_title"
-            android:title="@string/pref_scrollingcache_title"
-            android:entries="@array/entries_scrollingcache"
-            android:entryValues="@array/values_scrollingcache"
+            android:key="toast_animation"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
             android:defaultValue="1" />
+
+     </PreferenceCategory>
+
+     <PreferenceCategory 
+         android:title="@string/scroll_title"
+         android:key="scroll" >
+
+        <ListPreference
+                android:key="pref_scrollingcache"
+                android:dialogTitle="@string/pref_scrollingcache_title"
+                android:title="@string/pref_scrollingcache_title"
+                android:entries="@array/entries_scrollingcache"
+                android:entryValues="@array/values_scrollingcache"
+                android:defaultValue="1" />
 
         <PreferenceScreen
            android:key="interface_animation_scroll"
            android:fragment="com.havoc.settings.fragments.ScrollAnimationInterfaceSettings"
            android:title="@string/scrolling_title"
+           android:persistent="false"
            android:summary="@string/scrolling_summary" /> 
+           
+     </PreferenceCategory>
 
-        <!-- <PreferenceScreen
-            android:key="interface_animation_scroll"
-            android:title="@string/scrolling_title"
-            android:summary="@string/scrolling_summary"
-            android:fragment="com.havoc.settings.fragments.ScrollAnimationInterfaceSettings"
-            android:persistent="false" /> -->
+        
 
 </PreferenceScreen>

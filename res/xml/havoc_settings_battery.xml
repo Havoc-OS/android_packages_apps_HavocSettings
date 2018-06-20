@@ -18,11 +18,21 @@
     android:title="@string/animations_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+      <PreferenceCategory
+        android:key="battery_sensor"
+        android:title="@string/battery_sensor">
+
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="sensor_block" 
         android:title="@string/sensor_block_title" 
         android:summary="@string/sensor_block_summary" 
         android:defaultValue="false" /> 
+
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="battery_wakelock"
+        android:title="@string/battery_wakelock">
 
     <Preference 
         android:key="alarm_blocker" 
@@ -36,6 +46,12 @@
         android:title="@string/wakelock_blocker_title" 
         android:summary="@string/wakelock_blocker_summary" />
 
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="battery_actions"
+        android:title="@string/battery_actions">
+
      <!-- Suspend actions --> 
     <Preference
         android:key="screenstate_category" 
@@ -43,4 +59,6 @@
         android:summary="@string/screen_state_toggles_summary"  
         android:fragment="com.havoc.settings.fragments.ScreenStateToggles" /> 
 	
+    </PreferenceCategory>
+
 </PreferenceScreen>

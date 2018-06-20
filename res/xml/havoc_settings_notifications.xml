@@ -19,6 +19,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform" >
 
+    <PreferenceCategory
+        android:key="notification_lights"
+        android:title="@string/notification_lights">
+
     <Preference
         android:key="battery_lights"
         android:title="@string/battery_light_title" 
@@ -34,6 +38,13 @@
         lineage:requiresConfig="@*android:bool/config_intrusiveNotificationLed"
         lineage:replacesKey="notification_pulse"
         android:fragment="com.havoc.settings.fragments.notifications.notificationlight.NotificationLightSettings" />
+
+    </PreferenceCategory>
+
+  
+     <PreferenceCategory
+        android:key="notification_messages"
+        android:title="@string/notification_messages">
 
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="force_expanded_notifications" 
@@ -51,18 +62,13 @@
         android:title="@string/disable_fc_notifications_title" 
         android:summary="@string/disable_fc_notifications_summary" 
         android:defaultValue="false" /> 
-    
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="status_bar_notif_count" 
-        android:title="@string/status_bar_notif_count_title" 
-        android:summary="@string/status_bar_notif_count_summary" 
-        android:defaultValue="false" /> 
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="notification_guts_kill_app_button" 
-        android:title="@string/notification_guts_kill_app_button_title" 
-        android:summary="@string/notification_guts_kill_app_button_summary" 
-        android:defaultValue="false" /> 
+    </PreferenceCategory>
+
+        
+  <PreferenceCategory
+        android:key="notification_heads"
+        android:title="@string/notification_heads">
 
      <!-- Heads Up switch --> 
     <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
@@ -77,15 +83,8 @@
          android:key="headsup"
          android:title="@string/heads_up_title"
          android:fragment="com.havoc.settings.fragments.HeadsUp"/>
-        
+    </PreferenceCategory>
 
-     <!-- Toast Icon --> 
-    <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
-        android:key="toast_icon" 
-        android:title="@string/toast_icon_title" 
-        android:summary="@string/toast_icon_summary" 
-        android:defaultValue="true" /> 
-			
     <PreferenceCategory 
         android:key="incall_vib_options" 
         android:title="@string/incall_vibration_category" > 
@@ -110,6 +109,31 @@
             android:title="@string/incall_notifications_vibrate" 
             android:summary="@string/incall_notifications_vibrate_summary" 
             android:defaultValue="false" /> 
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_misc"
+        android:title="@string/notification_misc">
+  
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="status_bar_notif_count" 
+        android:title="@string/status_bar_notif_count_title" 
+        android:summary="@string/status_bar_notif_count_summary" 
+        android:defaultValue="false" /> 
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        android:key="notification_guts_kill_app_button" 
+        android:title="@string/notification_guts_kill_app_button_title" 
+        android:summary="@string/notification_guts_kill_app_button_summary" 
+        android:defaultValue="false" /> 
+
+     <!-- Toast Icon --> 
+    <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
+        android:key="toast_icon" 
+        android:title="@string/toast_icon_title" 
+        android:summary="@string/toast_icon_summary" 
+        android:defaultValue="true" /> 
 
     </PreferenceCategory>
 	

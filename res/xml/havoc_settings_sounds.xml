@@ -18,34 +18,17 @@
     android:title="@string/sounds_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-   <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+  <PreferenceCategory
+        android:key="sound_toggles"
+        android:title="@string/sound_toggles">
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="screenshot_sound" 
         android:title="@string/screenshot_sound_title" 
         android:summary="@string/screenshot_sound_summary" 
         android:defaultValue="true" />	
 
-     <!-- Suppress notification sound --> 
-    <ListPreference 
-        android:key="notification_sound_vib_screen_on" 
-        android:title="@string/notification_sound_vib_screen_on_title" 
-        android:entries="@array/notification_sound_vib_screen_on_entries" 
-        android:entryValues="@array/notification_sound_vib_screen_on_values" 
-        android:summary="%s" /> 	
-
-     <ListPreference 
-            android:key="headset_connect_player" 
-            android:title="@string/headset_connect_player_title" 
-            android:entries="@array/headset_connect_player_entries" 
-            android:entryValues="@array/headset_connect_player_values" /> 
-
-       <com.havoc.settings.preferences.SystemSettingListPreference 
-            android:key="less_notification_sounds" 
-            android:title="@string/less_notification_sounds_title" 
-            android:summary="@string/less_notification_sounds_summary" 
-            android:entries="@array/less_notification_sounds_entries" 
-            android:entryValues="@array/less_notification_sounds_values" /> 
-
-     <SwitchPreference  
+    <SwitchPreference  
         android:key="camera_sounds" 
         android:title="@string/camera_sounds_title" 
         android:summary="@string/camera_sounds_summary" 
@@ -58,5 +41,34 @@
         android:summary="@string/safe_headset_volume_summary" 
         android:persistent="false" 
         android:defaultValue="true" /> 
-    
+
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="sound_smart"
+        android:title="@string/sound_smart">
+
+    <ListPreference 
+            android:key="headset_connect_player" 
+            android:title="@string/headset_connect_player_title" 
+            android:entries="@array/headset_connect_player_entries" 
+            android:entryValues="@array/headset_connect_player_values" /> 
+
+    <com.havoc.settings.preferences.SystemSettingListPreference 
+            android:key="less_notification_sounds" 
+            android:title="@string/less_notification_sounds_title" 
+            android:summary="@string/less_notification_sounds_summary" 
+            android:entries="@array/less_notification_sounds_entries" 
+            android:entryValues="@array/less_notification_sounds_values" /> 
+   
+    <!-- Suppress notification sound --> 
+    <ListPreference 
+        android:key="notification_sound_vib_screen_on" 
+        android:title="@string/notification_sound_vib_screen_on_title" 
+        android:entries="@array/notification_sound_vib_screen_on_entries" 
+        android:entryValues="@array/notification_sound_vib_screen_on_values" 
+        android:summary="%s" /> 	
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

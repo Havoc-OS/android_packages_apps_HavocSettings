@@ -18,6 +18,65 @@
     android:title="@string/gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="gesture_nav"
+        android:title="@string/gesture_nav">
+   
+     <Preference
+            android:key="pa_pie_control" 
+            android:title="@string/pa_pie_control_title" 
+            android:summary="@string/pa_pie_control_summary" 
+            android:fragment="com.havoc.settings.fragments.PieSettings" /> 
+
+    <Preference 
+        android:key="edge_gestures" 
+        android:title="@string/edge_gestures_title" 
+        android:summary="@string/edge_gestures_summary" 
+        android:fragment="com.havoc.settings.fragments.EdgeGesturesSettings"/> 
+
+    </PreferenceCategory>
+
+
+  <PreferenceCategory
+        android:key="gesture_app"
+        android:title="@string/gesture_app">
+       
+        <!-- App Circle Bar --> 
+        <Preference
+            android:key="app_circle_bar" 
+            android:fragment="com.havoc.settings.fragments.AppCircleBar" 
+            android:title="@string/app_circle_bar_title"/> 
+        
+        <Preference
+	    	android:id="@+id/gesture_anywhere"	
+            android:key="gesture_anywhere"
+            android:fragment="com.havoc.settings.fragments.gestures.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title"
+            android:summary="@string/gesture_anywhere_summary" /> 
+
+        <Preference  
+        android:title="@string/carbon_gesture_preference_title"  
+        android:key="carbongestures"  
+        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" /> 
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="gesture_ls"
+        android:title="@string/gesture_ls">
+
+    <Preference 
+        android:key="gesture_settings" 
+        android:title="@string/gestures_title" 
+        android:summary="@string/gestures_summary" 
+        android:fragment="com.android.settings.gestures.GestureSettings" />
+
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="gesture_misc"
+        android:title="@string/ambient_device">
+        
     <!-- Three-fingers-swipe to screenshot --> 
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="three_finger_gesture" 
@@ -25,40 +84,6 @@
         android:summary="@string/three_finger_gesture_summary" 
         android:defaultValue="false" /> 
 
-    <Preference 
-        android:key="gesture_settings" 
-        android:title="@string/gestures_title" 
-        android:summary="@string/gestures_summary" 
-        android:fragment="com.android.settings.gestures.GestureSettings" />
-    
-    <Preference 
-        android:key="edge_gestures" 
-        android:title="@string/edge_gestures_title" 
-        android:summary="@string/edge_gestures_summary" 
-        android:fragment="com.havoc.settings.fragments.EdgeGesturesSettings"/> 
-
-    <Preference  
-        android:title="@string/carbon_gesture_preference_title"  
-        android:key="carbongestures"  
-        android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" /> 
-
-      <Preference
-	    	android:id="@+id/gesture_anywhere"	
-            android:key="gesture_anywhere"
-            android:fragment="com.havoc.settings.fragments.gestures.GestureAnywhereSettings"
-            android:title="@string/gesture_anywhere_title"
-            android:summary="@string/gesture_anywhere_summary" /> 
-    
-     <Preference
-            android:key="pa_pie_control" 
-            android:title="@string/pa_pie_control_title" 
-            android:summary="@string/pa_pie_control_summary" 
-            android:fragment="com.havoc.settings.fragments.PieSettings" /> 
-       
-        <!-- App Circle Bar --> 
-        <Preference
-            android:key="app_circle_bar" 
-            android:fragment="com.havoc.settings.fragments.AppCircleBar" 
-            android:title="@string/app_circle_bar_title"/> 
+    </PreferenceCategory>
 
 </PreferenceScreen>

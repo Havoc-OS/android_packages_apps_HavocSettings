@@ -19,21 +19,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
-    <org.lineageos.internal.lineageparts.LineagePartsPreference  
-        android:key="style" />
-		
-    <com.havoc.settings.preferences.SystemSettingListPreference 
-        android:key="berry_dark_shade" 
-        android:title="@string/berry_dark_shade_title" 
-        android:entries="@array/berry_dark_shade_entries" 
-        android:entryValues="@array/berry_dark_shade_values" 
-        android:defaultValue="0" />		
-		
-    <com.havoc.settings.fragments.ui.FontDialogPreference 
-        android:key="custom_font" 
-        android:title="@string/font_picker_title" 
-        android:persistent="false" />
-
      <!-- Full screen aspect ratio -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="long_screen_settings"
@@ -51,8 +36,44 @@
             android:title="@string/settings_blur_cat"  
             android:summary="@string/settings_blur_sum"/> 
     </PreferenceCategory>
+	
+    <PreferenceCategory 
+        android:key="category_substratum" 
+        android:title="@string/themes_title" > 
+ 
+        <org.lineageos.internal.lineageparts.LineagePartsPreference  
+            android:key="style" />
+		
+        <com.havoc.settings.preferences.SystemSettingListPreference 
+            android:key="berry_dark_shade" 
+            android:title="@string/berry_dark_shade_title" 
+            android:entries="@array/berry_dark_shade_entries" 
+            android:entryValues="@array/berry_dark_shade_values" 
+            android:defaultValue="0" />		
+		
+        <com.havoc.settings.fragments.ui.FontDialogPreference 
+            android:key="custom_font" 
+            android:title="@string/font_picker_title" 
+            android:persistent="false" />
 
-   <PreferenceCategory 
+        <Preference
+            android:key="substratum" 
+            android:title="@string/substratum_title" 
+            android:summary="@string/themes_summary"> 
+                <intent 
+                    android:action="android.intent.action.MAIN" 
+                    android:targetPackage="projekt.substratum" 
+                    android:targetClass="projekt.substratum.LaunchActivity" /> 
+        </Preference> 
+ 
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference 
+            android:key="force_authorize_substratum_packages" 
+            android:title="@string/force_authorize_substratum_packages_title" 
+            android:summary="@string/force_authorize_substratum_packages_summary" 
+            android:defaultValue="false"/> 
+    </PreferenceCategory>
+
+    <PreferenceCategory 
             android:title="@string/corners_category" > 
  
       <com.havoc.settings.preferences.SecureSettingSwitchPreference 
@@ -71,28 +92,7 @@
           android:persistent="false" 
           android:dependency="sysui_rounded_fwvals" /> 
  
-    </PreferenceCategory> 
-	
-    <PreferenceCategory 
-        android:key="category_substratum" 
-        android:title="@string/substratum_title" > 
- 
-        <Preference
-            android:key="substratum" 
-            android:title="@string/themes_title" 
-            android:summary="@string/themes_summary"> 
-                <intent 
-                    android:action="android.intent.action.MAIN" 
-                    android:targetPackage="projekt.substratum" 
-                    android:targetClass="projekt.substratum.LaunchActivity" /> 
-        </Preference> 
- 
-        <com.havoc.settings.preferences.SecureSettingSwitchPreference 
-            android:key="force_authorize_substratum_packages" 
-            android:title="@string/force_authorize_substratum_packages_title" 
-            android:summary="@string/force_authorize_substratum_packages_summary" 
-            android:defaultValue="false"/> 
-    </PreferenceCategory>	
+    </PreferenceCategory> 	
 
     <PreferenceCategory 
         android:title="@string/tint_menus_all"> 

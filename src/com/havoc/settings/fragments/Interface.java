@@ -63,7 +63,6 @@ public class Interface extends SettingsPreferenceFragment implements
  
     private Context mContext; 
     private SecureSettingSeekBarPreference mCornerRadius; 
-    private SecureSettingSeekBarPreference mContentPadding; 
 	
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
@@ -135,7 +134,8 @@ public class Interface extends SettingsPreferenceFragment implements
             int value = (Integer) newValue; 
             Settings.Secure.putInt(getContentResolver(), 
                 Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1); 
-        } return true; 
+        } 
+        return true; 
     } 
 
     private FontInfo getCurrentFontInfo() {

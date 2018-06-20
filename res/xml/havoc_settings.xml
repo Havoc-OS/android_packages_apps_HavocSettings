@@ -54,33 +54,6 @@
             android:fragment="com.havoc.settings.fragments.Interface"
             android:icon="@drawable/ic_settings_int"/>
 
-        <!-- Display -->
-        <Preference
-            android:key="display_category"
-            android:title="@string/display_title"
-            android:fragment="com.havoc.settings.fragments.Display"
-            android:icon="@drawable/ic_settings_screen"/>
-
-        <!-- Buttons -->
-        <Preference
-            android:key="buttons_category"
-            android:title="@string/buttons_title"
-            android:fragment="com.havoc.settings.fragments.Buttons"
-            android:icon="@drawable/ic_settings_buttons"/>
-
-        <!-- Navigation Bar -->
-        <Preference
-            android:key="navigation_category"
-            android:title="@string/navigation_title" 
-            android:fragment="com.havoc.settings.fragments.Navigation"
-            android:icon="@drawable/ic_settings_navigation"/>
-
-        <!-- Gestures -->
-        <Preference
-            android:key="gestures_category"
-            android:title="@string/gestures_title" 
-            android:fragment="com.havoc.settings.fragments.Gestures"
-            android:icon="@drawable/ic_settings_gesture"/>
 
         <!-- Lock Screen -->
         <Preference
@@ -103,12 +76,20 @@
             android:fragment="com.havoc.settings.fragments.Notifications"
             android:icon="@drawable/ic_settings_notification"/>
 
-        <!-- Weather -->
+         <!-- Sounds -->
         <Preference
-            android:key="weather_category"
-            android:title="@string/weather_title"
-            android:fragment="com.havoc.settings.fragments.Weather"
-            android:icon="@drawable/ic_settings_weather"/>
+            android:key="sounds_category"
+            android:title="@string/sounds_title"
+            android:fragment="com.havoc.settings.fragments.Sounds"
+            android:icon="@drawable/ic_settings_sounds"/>
+        
+        <!-- Omni Events --> 
+        <Preference 
+            android:key="event_service_settings" 
+            android:title="@string/event_service_settings_title" 
+            android:icon="@drawable/ic_settings_event"
+            android:fragment="com.havoc.settings.service.EventServiceSettings" /> 
+
 
         <!-- Animations -->
         <Preference
@@ -117,20 +98,34 @@
             android:fragment="com.havoc.settings.fragments.Animations"
             android:icon="@drawable/ic_settings_animations"/>
         
-        <!-- Battery Saving -->
+         <!-- Weather -->
         <Preference
-            android:key="battery_category"
-            android:title="@string/battery_title"
-            android:fragment="com.havoc.settings.fragments.Battery"
-            android:icon="@drawable/ic_settings_battery"/>
-
-        <!-- System -->
-        <Preference
-            android:key="system_category"
-            android:title="@string/system_title"
-            android:fragment="com.havoc.settings.fragments.SystemSettings"
-            android:icon="@drawable/ic_settings_system"/>
+            android:key="weather_category"
+            android:title="@string/weather_title"
+            android:fragment="com.havoc.settings.fragments.Weather"
+            android:icon="@drawable/ic_settings_weather"/>
         
+         <!-- Buttons -->
+        <Preference
+            android:key="buttons_category"
+            android:title="@string/buttons_title"
+            android:fragment="com.havoc.settings.fragments.Buttons"
+            android:icon="@drawable/ic_settings_buttons"/>
+
+        <!-- Navigation Bar -->
+        <Preference
+            android:key="navigation_category"
+            android:title="@string/navigation_title" 
+            android:fragment="com.havoc.settings.fragments.Navigation"
+            android:icon="@drawable/ic_settings_navigation"/>
+
+        <!-- Gestures -->
+        <Preference
+            android:key="gestures_category"
+            android:title="@string/gestures_title" 
+            android:fragment="com.havoc.settings.fragments.Gestures"
+            android:icon="@drawable/ic_settings_gesture"/>
+
         <!-- Fingerprint -->
         <Preference
             android:key="fingerprint_category"
@@ -144,20 +139,27 @@
             android:title="@string/ime_title"
             android:fragment="com.havoc.settings.fragments.IME"
             android:icon="@drawable/ic_settings_ime"/>
-        
-        <!-- Sounds -->
+
+        <!-- Battery Saving -->
         <Preference
-            android:key="sounds_category"
-            android:title="@string/sounds_title"
-            android:fragment="com.havoc.settings.fragments.Sounds"
-            android:icon="@drawable/ic_settings_sounds"/>
+            android:key="battery_category"
+            android:title="@string/battery_title"
+            android:fragment="com.havoc.settings.fragments.Battery"
+            android:icon="@drawable/ic_settings_battery"/>
+       
+        <!-- Display -->
+        <Preference
+            android:key="display_category"
+            android:title="@string/display_title"
+            android:fragment="com.havoc.settings.fragments.Display"
+            android:icon="@drawable/ic_settings_screen"/>
         
-        <!-- Omni Events --> 
-        <Preference 
-            android:key="event_service_settings" 
-            android:title="@string/event_service_settings_title" 
-            android:icon="@drawable/ic_settings_event"
-            android:fragment="com.havoc.settings.service.EventServiceSettings" /> 
+         <!-- System -->
+        <Preference
+            android:key="system_category"
+            android:title="@string/system_title"
+            android:fragment="com.havoc.settings.fragments.SystemSettings"
+            android:icon="@drawable/ic_settings_system"/>
 
         <!-- Misc -->
         <Preference

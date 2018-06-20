@@ -18,12 +18,35 @@
     android:title="@string/ime_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+      <PreferenceCategory
+        android:key="ime_selector"
+        android:title="@string/ime_selector">
+
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="status_bar_ime_switcher" 
         android:title="@string/ime_switcher_notify" 
         android:summary="@string/ime_switcher_notify_summary" 
         android:defaultValue="true" />
 
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="ime_rotate"
+        android:title="@string/ime_rotate">
+
+    <SwitchPreference 
+        android:key="disable_fullscreen_keyboard" 
+        android:title="@string/disable_fullscreen_keyboard_title" 
+        android:summary="@string/disable_fullscreen_keyboard_summary" 
+        android:defaultValue="false" 
+        android:persistent="false" /> 
+ 
+    <SwitchPreference 
+        android:key="show_enter_key" 
+        android:title="@string/show_enter_key_title" 
+        android:summary="@string/show_enter_key_summary" 
+        android:persistent="false" />  
+    
      <SwitchPreference 
         android:key="keyboard_rotation_toggle" 
         android:title="@string/keyboard_rotation_toggle_title" 
@@ -39,18 +62,6 @@
         android:entries="@array/keyboard_rotation_timeout_entries" 
         android:entryValues="@array/keyboard_rotation_timeout_values" 
         android:dependency="keyboard_rotation_toggle" /> 
- 
-    <SwitchPreference 
-        android:key="disable_fullscreen_keyboard" 
-        android:title="@string/disable_fullscreen_keyboard_title" 
-        android:summary="@string/disable_fullscreen_keyboard_summary" 
-        android:defaultValue="false" 
-        android:persistent="false" /> 
- 
-    <SwitchPreference 
-        android:key="show_enter_key" 
-        android:title="@string/show_enter_key_title" 
-        android:summary="@string/show_enter_key_summary" 
-        android:persistent="false" />  
 
+    </PreferenceCategory>
 </PreferenceScreen>

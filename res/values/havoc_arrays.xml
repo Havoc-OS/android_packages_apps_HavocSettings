@@ -1501,7 +1501,6 @@
  
     <!-- Lockscreen date styles --> 
     <string-array name="lockscreen_date_selection_entries" translatable="false"> 
-        <item>@string/lockscreen_date_selection_default_aosp</item> 
         <item>@string/lockscreen_date_selection_default</item> 
         <item>@string/lockscreen_date_selection_str_box</item> 
         <item>@string/lockscreen_date_selection_str_round</item> 
@@ -1511,7 +1510,6 @@
         <item>0</item> 
         <item>1</item> 
         <item>2</item> 
-        <item>3</item>
     </string-array> 
 
     <!-- Values for the notification light pulse spinners --> 
