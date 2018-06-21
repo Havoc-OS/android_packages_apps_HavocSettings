@@ -1531,15 +1531,27 @@
  
     <!-- Lockscreen date styles --> 
     <string-array name="lockscreen_date_selection_entries" translatable="false"> 
-         <item>@string/lockscreen_date_selection_default</item>
-         <item>@string/lockscreen_date_selection_str_box</item>
-         <item>@string/lockscreen_date_selection_str_round</item>
+        <item>@string/lockscreen_date_selection_default</item>
+        <item>@string/lockscreen_date_selection_str_box</item>
+        <item>@string/lockscreen_date_selection_str_round</item>
+        <item>@string/lockscreen_date_selection_outline_box</item>
+        <item>@string/lockscreen_date_selection_outline_round</item>
+        <item>@string/lockscreen_date_selection_outline_box_black</item>
+        <item>@string/lockscreen_date_selection_outline_round_black</item>
+        <item>@string/lockscreen_date_selection_outline_box_accent</item>
+        <item>@string/lockscreen_date_selection_outline_round_accent</item>
     </string-array> 
  
     <string-array name="lockscreen_date_selection_values" translatable="false"> 
         <item>0</item> 
         <item>1</item> 
         <item>2</item> 
+        <item>3</item> 
+        <item>4</item> 
+        <item>5</item> 
+        <item>6</item> 
+        <item>7</item>
+        <item>8</item>
     </string-array> 
 
     <!-- Values for the notification light pulse spinners --> 
