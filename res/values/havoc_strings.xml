@@ -783,6 +783,11 @@
       <!-- Disabling FC notifications --> 
     <string name="disable_fc_notifications_title">Diable FC Notifications</string> 
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string> 
+    
+    <string name="havoc_density">Display</string> 
+    <string name="title_font_size">Font Size</string> 
+    <string name="screen_zoom_title">Display Size</string> 
+    <string name="developer_smallest_width">Density</string> 
 
         <!-- AOSP Recents Style --> 
     <string name="recents_type_title">Recents Layout</string> 

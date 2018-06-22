@@ -56,6 +56,25 @@
             android:title="@string/settings_blur_cat"  
             android:summary="@string/settings_blur_sum"/> 
     </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/havoc_density"> 
+ 
+      <Preference
+        android:key="font_size"
+        android:title="@string/title_font_size"
+        android:fragment="com.android.settings.accessibility.ToggleFontSizePreferenceFragment" />
+
+    <com.android.settings.display.ScreenZoomPreference
+        android:key="screen_zoom"
+        android:title="@string/screen_zoom_title"
+        settings:keywords="@string/screen_zoom_keywords" />
+
+    <com.android.settings.display.DensityPreference
+        android:key="density"
+        android:title="@string/developer_smallest_width" />
+
+    </PreferenceCategory>
 	
     <PreferenceCategory 
         android:key="category_substratum" 
