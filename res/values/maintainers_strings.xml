@@ -55,4 +55,7 @@
   
   <string name="device_z2_plus">Zuk Z2 Plus</string>
   <string name="device_z2_plus_summary">z2_plus\nAmogha Maiya - amog787</string>
+  
+  <string name="device_vince">Xiaomi Redmi 5 Plus</string>
+  <string name="device_vince_summary">vince\nJacob Allen - Blacksuan19</string>
 </resources>

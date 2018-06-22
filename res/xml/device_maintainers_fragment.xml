@@ -68,6 +68,13 @@
             android:title="@string/device_sagit" />
 
         <Preference 
+            android:id="@+id/device_vince" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_vince_summary" 
+            android:selectable="false" 
+            android:title="@string/device_vince" />
+
+        <Preference 
             android:id="@+id/device_kenzo" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_kenzo_summary" 
