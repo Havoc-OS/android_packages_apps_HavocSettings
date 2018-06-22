@@ -101,7 +101,7 @@
             settings:min="2"
             android:dependency="pulse_fading_bars_category"/>
         
-        <com.havoc.settings.preference.SystemSettingSeekBarPreference 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
             android:key="pulse_fading_blocks_opacity" 
             android:title="@string/pulse_fading_blocks_opacity" 
             android:max="200" 
