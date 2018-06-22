@@ -21,6 +21,9 @@
 
   <!-- Device Categories -->
   <string name="device_category_oneplus_title">OnePlus</string>
+  <string name="device_category_motorola_title">Motorola</string>
+  <string name="device_category_xiaomi_title">Xiaomi</string>
+  <string name="device_category_zuk_title">Zuk</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -28,4 +31,28 @@
   
   <string name="device_oneplus3t">OnePlus 3T [Unified]</string>
   <string name="device_oneplus3t_summary">oneplus3\nAnushek Prasal - SKULSHADY</string>
+  
+  <string name="device_osprey">Moto G3</string>
+  <string name="device_osprey_summary">osprey\nAnushek Prasal - SKULSHADY</string>
+  
+  <string name="device_potter">Moto G5 Plus</string>
+  <string name="device_potter_summary">potter\nDhruv Kelawala - MaXology</string>
+  
+  <string name="device_sagit">Xiaomi Mi 6</string>
+  <string name="device_sagit_summary">sagit\nArian Keller - NeoArian</string>
+  
+  <string name="device_kenzo">Xiaomi Redmi Note 3</string>
+  <string name="device_kenzo_summary">kenzo\nAmogha Maiya - amog787</string>
+  
+  <string name="device_mido">Xiaomi Redmi Note 4</string>
+  <string name="device_mido_summary">mido\nDell Schulz - Dell Schulz</string>
+  
+  <string name="device_whyred">Xiaomi Redmi Note 5 Pro</string>
+  <string name="device_whyred_summary">whyred\nRuturaj Kadam - Ruturaj Kadam</string>
+  
+  <string name="device_santoni">Xiaomi Redmi 4X</string>
+  <string name="device_santoni_summary">santoni\nSonal Singh - Skssbss</string>
+  
+  <string name="device_z2_plus">Zuk Z2 Plus</string>
+  <string name="device_z2_plus_summary">z2_plus\nAmogha Maiya - amog787</string>
 </resources>

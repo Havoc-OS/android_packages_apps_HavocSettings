@@ -23,17 +23,88 @@
         android:title="@string/device_category_oneplus_title">
 
         <Preference 
-        android:id="@+id/device_oneplus3" 
-        android:icon="@drawable/phone_tint" 
-        android:summary="@string/device_oneplus3_summary" 
-        android:selectable="false" 
-        android:title="@string/device_oneplus3" />
+            android:id="@+id/device_oneplus3" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_oneplus3_summary" 
+            android:selectable="false" 
+            android:title="@string/device_oneplus3" />
 
         <Preference 
-        android:id="@+id/device_oneplus3t" 
-        android:icon="@drawable/phone_tint" 
-        android:summary="@string/device_oneplus3t_summary" 
-        android:selectable="false" 
-        android:title="@string/device_oneplus3t" />
+            android:id="@+id/device_oneplus3t" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_oneplus3t_summary" 
+            android:selectable="false" 
+            android:title="@string/device_oneplus3t" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
+        android:id="@+id/device_category_motorola"
+        android:title="@string/device_category_motorola_title">
+
+        <Preference 
+            android:id="@+id/device_osprey" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_osprey_summary" 
+            android:selectable="false" 
+            android:title="@string/device_osprey" />
+
+        <Preference 
+            android:id="@+id/device_potter" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_potter_summary" 
+            android:selectable="false" 
+            android:title="@string/device_potter" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
+        android:id="@+id/device_category_xiaomi"
+        android:title="@string/device_category_xiaomi_title">
+
+        <Preference 
+            android:id="@+id/device_sagit" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_sagit_summary" 
+            android:selectable="false" 
+            android:title="@string/device_sagit" />
+
+        <Preference 
+            android:id="@+id/device_kenzo" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_kenzo_summary" 
+            android:selectable="false" 
+            android:title="@string/device_kenzo" />
+
+        <Preference 
+            android:id="@+id/device_mido" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_mido_summary" 
+            android:selectable="false" 
+            android:title="@string/device_mido" />
+
+        <Preference 
+            android:id="@+id/device_whyred" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_whyred_summary" 
+            android:selectable="false" 
+            android:title="@string/device_whyred" />
+
+        <Preference 
+            android:id="@+id/device_santoni" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_santoni_summary" 
+            android:selectable="false" 
+            android:title="@string/device_santoni" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
+        android:id="@+id/device_category_zuk"
+        android:title="@string/device_category_zuk_title">
+
+        <Preference 
+            android:id="@+id/device_z2_plus" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_z2_plus_summary" 
+            android:selectable="false" 
+            android:title="@string/device_z2_plus" />
     </PreferenceCategory>
 </PreferenceScreen>
