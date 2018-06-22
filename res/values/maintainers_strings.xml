@@ -58,4 +58,7 @@
   
   <string name="device_vince">Xiaomi Redmi 5 Plus</string>
   <string name="device_vince_summary">vince\nJacob Allen - Blacksuan19</string>
+  
+  <string name="device_land">Xiaomi Redmi 3S</string>
+  <string name="device_land_summary">land\nSaksham Singh - Saksham Singh</string>
 </resources>

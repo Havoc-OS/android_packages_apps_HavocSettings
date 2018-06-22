@@ -96,6 +96,13 @@
             android:title="@string/device_whyred" />
 
         <Preference 
+            android:id="@+id/device_land" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_land_summary" 
+            android:selectable="false" 
+            android:title="@string/device_land" />
+
+        <Preference 
             android:id="@+id/device_santoni" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_santoni_summary" 
