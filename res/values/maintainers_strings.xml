@@ -24,6 +24,7 @@
   <string name="device_category_motorola_title">Motorola</string>
   <string name="device_category_xiaomi_title">Xiaomi</string>
   <string name="device_category_zuk_title">Zuk</string>
+  <string name="device_category_lenovo_title">Lenovo</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -61,4 +62,7 @@
   
   <string name="device_land">Xiaomi Redmi 3S</string>
   <string name="device_land_summary">land\nSaksham Singh - Saksham Singh</string>
+  
+  <string name="device_a6020">Lenovo Vibe K5</string>
+  <string name="device_a6020_summary">a6020\nChaitanaya Mittal - Professional_Guider</string>
 </resources>

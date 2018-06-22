@@ -111,6 +111,18 @@
     </PreferenceCategory>
 	
     <PreferenceCategory
+        android:id="@+id/device_category_lenovo"
+        android:title="@string/device_category_lenovo_title">
+
+        <Preference 
+            android:id="@+id/device_a6020" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_a6020_summary" 
+            android:selectable="false" 
+            android:title="@string/device_a6020" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
         android:id="@+id/device_category_zuk"
         android:title="@string/device_category_zuk_title">
 
