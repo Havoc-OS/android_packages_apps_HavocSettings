@@ -115,8 +115,8 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
         int keysDisabled = 0;
         if (!needsNavbar) {
             mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
-            keysDisabled = Settings.Secure.getIntForUser(getContentResolver(),
-                    Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
+            keysDisabled = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.HARDWARE_KEYS_DISABLE, 0,
                     UserHandle.USER_CURRENT);
             mHwKeyDisable.setChecked(keysDisabled != 0);
             mHwKeyDisable.setOnPreferenceChangeListener(this);
@@ -189,7 +189,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mHwKeyDisable) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
+            Settings.Secure.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
         } else if (preference == mButtonTimoutBar) {

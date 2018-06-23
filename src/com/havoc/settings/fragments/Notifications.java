@@ -57,7 +57,9 @@ public class Notifications extends SettingsPreferenceFragment
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message"; 
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String DISABLE_FC_NOTIFICATIONs = "disable_fc_notifications";
 
+    private SwitchPreference mDisableFCN;
     private SwitchPreference mDisableIM; 
     private ListPreference mFlashlightOnCall;
 
@@ -74,6 +76,11 @@ public class Notifications extends SettingsPreferenceFragment
         if (!Utils.isVoiceCapable(getActivity())) {
         prefSet.removePreference(incallVibCategory); 
         }
+
+        mDisableFCN = (SwitchPreference) findPreference(DISABLE_FC_NOTIFICATIONs); 
+        mDisableFCN.setChecked(Settings.System.getIntForUser(resolver, 
+        Settings.System.DISABLE_FC_NOTIFICATIONS, 1, UserHandle.USER_CURRENT) == 1); 
+        mDisableFCN.setOnPreferenceChangeListener(this); 
 
         mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE); 
         mDisableIM.setOnPreferenceChangeListener(this); 
@@ -102,6 +109,7 @@ public class Notifications extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        final ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mDisableIM) { 
             boolean value = (Boolean) objValue; 
             Settings.System.putInt(getContentResolver(), DISABLE_IMMERSIVE_MESSAGE, 
@@ -114,6 +122,11 @@ public class Notifications extends SettingsPreferenceFragment
             mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
             mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
             return true;
+        } else if (preference == mDisableFCN) { 
+            boolean value = (Boolean) objValue; 
+            Settings.System.putIntForUser(resolver, 
+                    Settings.System.DISABLE_FC_NOTIFICATIONS, value ? 1: 0, UserHandle.USER_CURRENT); 
+            return true; 
         }
         return false;
     }
