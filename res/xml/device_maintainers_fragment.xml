@@ -38,6 +38,18 @@
     </PreferenceCategory>
 	
     <PreferenceCategory
+        android:id="@+id/device_category_google"
+        android:title="@string/device_category_google_title">
+
+        <Preference 
+            android:id="@+id/device_marlin" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_marlin_summary" 
+            android:selectable="false" 
+            android:title="@string/device_marlin" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
         android:id="@+id/device_category_motorola"
         android:title="@string/device_category_motorola_title">
 

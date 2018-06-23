@@ -26,6 +26,7 @@
   <string name="device_category_zuk_title">Zuk</string>
   <string name="device_category_lenovo_title">Lenovo</string>
   <string name="device_category_leeco_title">LeEco</string>
+  <string name="device_category_google_title">Google</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -69,4 +70,7 @@
   
   <string name="device_s2">LeEco Le 2</string>
   <string name="device_s2_summary">s2\nSahil Ashraff - sahilashraff9</string>
+  
+  <string name="device_marlin">Google Pixel XL</string>
+  <string name="device_marlin_summary">marlin\nJoe Pacino - joe_pacino</string>
 </resources>
