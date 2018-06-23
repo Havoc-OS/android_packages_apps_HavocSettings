@@ -25,6 +25,7 @@
   <string name="device_category_xiaomi_title">Xiaomi</string>
   <string name="device_category_zuk_title">Zuk</string>
   <string name="device_category_lenovo_title">Lenovo</string>
+  <string name="device_category_leeco_title">LeEco</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -65,4 +66,7 @@
   
   <string name="device_a6020">Lenovo Vibe K5</string>
   <string name="device_a6020_summary">a6020\nChaitanaya Mittal - Professional_Guider</string>
+  
+  <string name="device_s2">LeEco Le 2</string>
+  <string name="device_s2_summary">s2\nSahil Ashraff - sahilashraff9</string>
 </resources>
