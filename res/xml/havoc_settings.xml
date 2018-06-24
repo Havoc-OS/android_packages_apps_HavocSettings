@@ -145,7 +145,7 @@
             android:key="battery_category"
             android:title="@string/battery_title"
             android:fragment="com.havoc.settings.fragments.Battery"
-            android:icon="@drawable/ic_settings_battery"/>
+            android:icon="@drawable/ic_settings_batterysave"/>
        
         <!-- Display -->
         <Preference
@@ -180,6 +180,6 @@
             android:key="about_category"
             android:title="@string/about_title"
             android:fragment="com.havoc.settings.fragments.About"
-            android:icon="@drawable/ic_settings_about"/>
+            android:icon="@drawable/ic_settings_info"/>
 
 </PreferenceScreen>
