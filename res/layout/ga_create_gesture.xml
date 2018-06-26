@@ -44,7 +44,7 @@
 
     </LinearLayout>
 
-    <com.havoc.settings.fragements.gestures.GestureAnywhereGestureOverlayView
+    <com.havoc.settings.fragments.gestures.GestureAnywhereGestureOverlayView
         android:id="@+id/gestures_overlay"
         android:layout_width="match_parent"
         android:layout_height="0dip"
