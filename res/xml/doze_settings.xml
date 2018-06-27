@@ -71,7 +71,7 @@
         android:key="ambient_play"  
         android:title="@string/ambient_play_settings_title" 
         android:summary="@string/ambient_play_settings_summary"  
-        android:fragment="com.android.settings.havoc.sound.AmbientPlaySettings" />  
+        android:fragment="com.android.settings.display.AmbientDisplaySettings" />  
 
     </PreferenceCategory>
 
