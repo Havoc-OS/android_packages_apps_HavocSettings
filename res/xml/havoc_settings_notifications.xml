@@ -62,7 +62,8 @@
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="force_expanded_notifications" 
         android:title="@string/force_expanded_notifications_title" 
-        android:summary="@string/force_expanded_notifications_summary" /> 
+        android:summary="@string/force_expanded_notifications_summary" 
+        android:defaultValue="false" /> 
     
     <com.havoc.settings.preferences.SystemSettingSwitchPreference 
         android:key="disable_immersive_message" 
@@ -74,6 +75,7 @@
         android:key="disable_fc_notifications" 
         android:title="@string/disable_fc_notifications_title" 
         android:summary="@string/disable_fc_notifications_summary" 
+        android:persistent="false"
         android:defaultValue="false" /> 
 
     </PreferenceCategory>
@@ -92,6 +94,7 @@
 
     <Preference
         android:key="headsup"
+        android:dependency="heads_up_notifications_enabled"
         android:title="@string/heads_up_title_settings"
         android:fragment="com.havoc.settings.fragments.HeadsUp"/>
     </PreferenceCategory>

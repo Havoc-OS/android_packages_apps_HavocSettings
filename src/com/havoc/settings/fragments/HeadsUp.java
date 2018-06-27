@@ -14,74 +14,54 @@
  * limitations under the License.
  */
 package com.havoc.settings.fragments; 
- 
-import android.app.ActivityManagerNative;
-import android.content.Context;
-import android.content.ContentResolver;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Resources;
-import android.os.Bundle;
-import android.os.UserHandle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.support.v14.preference.SwitchPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.PreferenceGroup;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.provider.Settings;
-import android.util.Log;
-import android.view.WindowManagerGlobal;
-import android.view.IWindowManager;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-import android.view.ViewGroup;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.PreferenceViewHolder;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup; 
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+
+import com.android.internal.logging.nano.MetricsProto;
+import com.havoc.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.settings.preferences.PackageListAdapter;
 import com.havoc.settings.preferences.PackageListAdapter.PackageItem;
-import com.havoc.settings.preferences.AppMultiSelectListPreference;
+import android.provider.Settings;
 
-import java.util.Locale;
-import android.text.TextUtils;
-import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
-
-import com.havoc.settings.preferences.Utils;
-
 public class HeadsUp extends SettingsPreferenceFragment
-    implements  Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
- 
-    public static final String TAG = "HeadsUp";
-    private static final int DIALOG_BLACKLIST_APPS = 1;
+        implements Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
+
     private static final int DIALOG_STOPLIST_APPS = 0;
+    private static final int DIALOG_BLACKLIST_APPS = 1;
     private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
     private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
 
     private PackageListAdapter mPackageAdapter;
     private PackageManager mPackageManager;
-    private PreferenceGroup mBlacklistPrefList;
     private PreferenceGroup mStoplistPrefList;
-    private AppMultiSelectListPreference mAddBlacklistPref;
-    private AppMultiSelectListPreference mAddStoplistPref;
+    private PreferenceGroup mBlacklistPrefList;
+    private Preference mAddStoplistPref;
+    private Preference mAddBlacklistPref;
     private ListPreference mHeadsUpTimeOut;
     private ListPreference mHeadsUpSnoozeTime;
 
@@ -90,45 +70,38 @@ public class HeadsUp extends SettingsPreferenceFragment
     private Map<String, Package> mStoplistPackages;
     private Map<String, Package> mBlacklistPackages;
 
-  
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // Get launch-able applications
         addPreferencesFromResource(R.xml.havoc_settings_headsup);
-
-        final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefSet = getPreferenceScreen();
-
-        getActivity().getActionBar().setTitle(R.string.heads_up_title);
-
-        mPackageManager = getActivity().getPackageManager();
+        mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
-        mStoplistPrefList = getPreferenceScreen();
+        mStoplistPrefList = (PreferenceGroup) findPreference("stoplist_applications");
         mStoplistPrefList.setOrderingAsAdded(false);
 
-        mBlacklistPrefList = getPreferenceScreen();
+        mBlacklistPrefList = (PreferenceGroup) findPreference("blacklist_applications");
         mBlacklistPrefList.setOrderingAsAdded(false);
 
         mStoplistPackages = new HashMap<String, Package>();
         mBlacklistPackages = new HashMap<String, Package>();
 
-        mAddStoplistPref =  (AppMultiSelectListPreference)  findPreference("add_stoplist_packages");
-        mAddBlacklistPref =  (AppMultiSelectListPreference) findPreference("add_blacklist_packages");
+        mAddStoplistPref = findPreference("add_stoplist_packages");
+        mAddBlacklistPref = findPreference("add_blacklist_packages");
 
         mAddStoplistPref.setOnPreferenceClickListener(this);
         mAddBlacklistPref.setOnPreferenceClickListener(this);
 
         Resources systemUiResources;
         try {
-            systemUiResources = getActivity().getPackageManager().getResourcesForApplication("com.android.systemui");
+            systemUiResources = getPackageManager().getResourcesForApplication("com.android.systemui");
         } catch (Exception e) {
             return;
         }
 
         int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-            "com.android.systemui:integer/heads_up_notification_decay", null, null));
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
         mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
         mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
         int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
@@ -144,27 +117,25 @@ public class HeadsUp extends SettingsPreferenceFragment
                 Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, defaultSnooze);
         mHeadsUpSnoozeTime.setValue(String.valueOf(headsUpSnooze));
         updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
-
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mHeadsUpTimeOut) {
-            int headsUpTimeOut = Integer.valueOf((String) objValue);
+            int headsUpTimeOut = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HEADS_UP_TIMEOUT,
                     headsUpTimeOut);
             updateHeadsUpTimeOutSummary(headsUpTimeOut);
             return true;
         } else if (preference == mHeadsUpSnoozeTime) {
-            int headsUpSnooze = Integer.valueOf((String) objValue);
+            int headsUpSnooze = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
                     headsUpSnooze);
             updateHeadsUpSnoozeTimeSummary(headsUpSnooze);
             return true;
         }
-
         return false;
     }
 
@@ -191,9 +162,15 @@ public class HeadsUp extends SettingsPreferenceFragment
         refreshCustomApplicationPrefs();
     }
 
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
+    }
+
+    @Override
     public int getDialogMetricsCategory(int dialogId) {
         if (dialogId == DIALOG_STOPLIST_APPS || dialogId == DIALOG_BLACKLIST_APPS ) {
-            return  MetricsProto.MetricsEvent.HAVOC_SETTINGS; 
+            return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
         }
         return 0;
     }
@@ -201,6 +178,7 @@ public class HeadsUp extends SettingsPreferenceFragment
     /**
      * Utility classes and supporting methods
      */
+    @Override
     public Dialog onCreateDialog(int id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final Dialog dialog;
@@ -311,9 +289,9 @@ public class HeadsUp extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceClick(Preference preference) {
         if (preference == mAddStoplistPref) {
-            getActivity().showDialog(DIALOG_STOPLIST_APPS);
+            showDialog(DIALOG_STOPLIST_APPS);
         } else if (preference == mAddBlacklistPref) {
-            getActivity().showDialog(DIALOG_BLACKLIST_APPS);
+            showDialog(DIALOG_BLACKLIST_APPS);
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.dialog_delete_title)
@@ -428,10 +406,5 @@ public class HeadsUp extends SettingsPreferenceFragment
         }
         Settings.System.putString(getContentResolver(),
                 setting, value);
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
 }
