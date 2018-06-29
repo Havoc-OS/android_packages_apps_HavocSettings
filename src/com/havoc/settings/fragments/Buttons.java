@@ -189,7 +189,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mHwKeyDisable) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
+            Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
         } else if (preference == mButtonTimoutBar) {
