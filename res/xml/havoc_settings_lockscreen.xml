@@ -101,7 +101,7 @@
         android:key="ls_alarm"
         android:title="@string/ls_alarm">
 
-    <com.havoc.settings.preferences.SecureSettingSwitchPreference 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference   
         android:key="hide_lockscreen_alarm" 
         android:title="@string/hide_lockscreen_alarm_title" 
         android:summary="@string/hide_lockscreen_alarm_summary" 

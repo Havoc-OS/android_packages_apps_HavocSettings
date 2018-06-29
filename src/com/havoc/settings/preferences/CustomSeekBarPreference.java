@@ -38,7 +38,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     private int mInterval = 1;
     private int mCurrentValue;
     private int mDefaultValue = -1;
-    private int mMax = 255;
+    private int mMax = 100;
     private String mUnits = "";
     private String mDefaultText = "";
     private SeekBar mSeekBar;
@@ -51,14 +51,14 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.CustomSeekBarPreference);
 
-        mMax = attrs.getAttributeIntValue(ANDROIDNS, "max", 255);
+        mMax = attrs.getAttributeIntValue(ANDROIDNS, "max", 100);
         mMin = attrs.getAttributeIntValue(SETTINGS_NS, "min", 0);
         mDefaultValue = attrs.getAttributeIntValue(ANDROIDNS, "defaultValue", -1);
         if (mDefaultValue > mMax) {
             mDefaultValue = mMax;
         }
         mUnits = getAttributeStringValue(attrs, SETTINGS_NS, "units", "");
-        mDefaultText = getAttributeStringValue(attrs, SETTINGS_NS, "defaultText", "Def");
+        mDefaultText = getAttributeStringValue(attrs, SETTINGS_NS, "defaultText", context.getResources().getString(R.string.custom_seekbar_default_text));
 
         Integer id = a.getResourceId(R.styleable.CustomSeekBarPreference_units, 0);
         if (id > 0) {

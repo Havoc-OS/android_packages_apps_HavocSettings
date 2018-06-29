@@ -41,6 +41,8 @@
     <string name="fingerprint_title">Fingerprint</string>
     <string name="sounds_title">Sound</string>
 
+    <string name="custom_seekbar_default_text">Default</string> 
+
     <!-- About -->
 	<string name="havoc_developers_category_title">Havoc-OS Team</string>
     <string name="maintainer_category_title">Official Devices</string>
