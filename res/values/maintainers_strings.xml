@@ -76,4 +76,7 @@
   
   <string name="device_sanders">Moto G5S Plus</string>
   <string name="device_sanders_summary">sanders\nChirayu Agrawal - Chirayu19091997</string>
+  
+  <string name="device_rolex">Xiaomi Redmi 4A</string>
+  <string name="device_rolex_summary">rolex\nAryan Patidar - AryanPatidar</string>
 </resources>
