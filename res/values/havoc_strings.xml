@@ -101,6 +101,8 @@
     <string name="set">Set</string>
     <string name="color_default">Default</string>
 
+     <string name="volume_dialog_dim">Volume dialog dim background amount</string>  
+
     <!-- QS edit icon -->
     <string name="qs_edit_title">QS edit icon</string>
     <string name="qs_edit_summary">Disable the tile edit icon in the footer</string>
