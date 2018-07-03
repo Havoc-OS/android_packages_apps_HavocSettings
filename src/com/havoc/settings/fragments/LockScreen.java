@@ -53,9 +53,12 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String DATE_FONT_SIZE  = "lockdate_font_size"; 
     private static final String ALARM_FONT_SIZE  = "lockalarm_font_size"; 
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_config";
+    private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts"; 
+    private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size"; 
  
     ListPreference mLockClockFonts;
     ListPreference mLockDateFonts;  
+    ListPreference mLockOwnerInfoFonts; 
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
     private CustomSeekBarPreference mLsAlpha; 
@@ -64,6 +67,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private CustomSeekBarPreference mDateFontSize; 
     private CustomSeekBarPreference mAlarmFontSize; 
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
+    private CustomSeekBarPreference mOwnerInfoFontSize; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -133,6 +137,19 @@ public class LockScreen extends SettingsPreferenceFragment
         mAlarmFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKALARM_FONT_SIZE,14));
                 mAlarmFontSize.setOnPreferenceChangeListener(this);
+
+                 // Lockscren OwnerInfo Fonts 
+        mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS); 
+        mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt( 
+                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 26))); 
+        mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry()); 
+        mLockOwnerInfoFonts.setOnPreferenceChangeListener(this); 
+ 
+        // Lockscren OwnerInfo Size 
+        mOwnerInfoFontSize = (CustomSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE); 
+        mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(), 
+                Settings.System.LOCKOWNER_FONT_SIZE,21)); 
+        mOwnerInfoFontSize.setOnPreferenceChangeListener(this); 
     }
 
     @Override
@@ -194,7 +211,18 @@ public class LockScreen extends SettingsPreferenceFragment
                Settings.System.putInt(getContentResolver(),
                        Settings.System.LOCKALARM_FONT_SIZE, top*1);
                return true;
-           }
+        } else if (preference == mLockOwnerInfoFonts) { 
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 
+                    Integer.valueOf((String) newValue)); 
+            mLockOwnerInfoFonts.setValue(String.valueOf(newValue)); 
+            mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry()); 
+            return true; 
+        } else if (preference == mOwnerInfoFontSize) { 
+            int top = (Integer) newValue; 
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.LOCKOWNER_FONT_SIZE, top*1); 
+            return true; 
+        } 
         return false;
     }
     @Override

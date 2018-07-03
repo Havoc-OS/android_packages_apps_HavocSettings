@@ -103,6 +103,13 @@
 
      <string name="volume_dialog_dim">Volume dialog dim background amount</string>  
 
+        <!-- LS OwnerInfo Font & Size --> 
+    <string name="lock_ownerinfo_font_title">OwnerInfo font options</string> 
+    <string name="lock_ownerinfo_font_summary">Change the default font of the lockscreen owner info</string> 
+    <string name="lock_ownerinfo_font_dialog_title">Select lock ownerinfo font</string> 
+    <string name="lockowner_font_size_title">Owner info font size</string> 
+    <string name="ls_owner">OwnerInfo Style</string> 
+
     <!-- QS edit icon -->
     <string name="qs_edit_title">QS edit icon</string>
     <string name="qs_edit_summary">Disable the tile edit icon in the footer</string>

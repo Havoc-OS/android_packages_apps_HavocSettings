@@ -119,6 +119,30 @@
 
     </PreferenceCategory>
 
+     <PreferenceCategory
+        android:key="ls_owner"
+        android:title="@string/ls_owner">
+
+    <ListPreference 
+        android:key="lock_ownerinfo_fonts" 
+        android:title="@string/lock_ownerinfo_font_title" 
+        android:dialogTitle="@string/lock_ownerinfo_font_dialog_title" 
+        android:summary="@string/lock_ownerinfo_font_summary" 
+        android:entries="@array/lock_clock_fonts_entries" 
+        android:entryValues="@array/lock_clock_fonts_values" 
+        android:persistent="false" /> 
+    
+    <com.havoc.settings.preferences.CustomSeekBarPreference 
+        android:key="lockowner_font_size" 
+        android:title="@string/lockowner_font_size_title" 
+        android:max="25" 
+        settings:min="1" 
+        settings:units="sp" 
+        android:defaultValue="24" 
+        android:persistent="false" /> 
+
+    </PreferenceCategory>
+
   <PreferenceCategory
         android:key="ls_colors"
         android:title="@string/ls_colors">
@@ -162,7 +186,7 @@
         android:key="lock_screen_custom_notif"
         android:title="@string/lockscreen_maxnotif_title"
         android:summary="@string/lockscreen_maxnotif_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <com.havoc.settings.preferences.CustomSeekBarPreference
         android:key="lockscreen_max_notif_config"
