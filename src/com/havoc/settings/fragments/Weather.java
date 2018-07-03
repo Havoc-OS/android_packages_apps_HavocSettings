@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import android.util.Log;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 
 public class Weather extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -71,15 +71,15 @@ public class Weather extends SettingsPreferenceFragment implements
 
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
-    private CustomSeekBarPreference mStatusBarTemperatureSize;
+    private SystemSettingSeekBarPreference mStatusBarTemperatureSize;
     private ListPreference mStatusBarTemperatureFontStyle;
     private ColorPickerPreference mStatusBarTemperatureColor;
     private ColorPickerPreference mStatusBarTemperatureImageColor;
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
-    private CustomSeekBarPreference mTempFontSize;  
-    private CustomSeekBarPreference mCityFontSize;  
-    private CustomSeekBarPreference mConditionFontSize;  
+    private SystemSettingSeekBarPreference mTempFontSize;  
+    private SystemSettingSeekBarPreference mCityFontSize;  
+    private SystemSettingSeekBarPreference mConditionFontSize;  
     ListPreference mLockTempFonts; 
     ListPreference mLockCityFonts; 
     ListPreference mLockConditionFonts; 
@@ -140,17 +140,17 @@ public class Weather extends SettingsPreferenceFragment implements
                 mLockConditionFonts.setSummary(mLockConditionFonts.getEntry()); 
                 mLockConditionFonts.setOnPreferenceChangeListener(this); 
 
-        mTempFontSize = (CustomSeekBarPreference) findPreference(TEMP_FONT_SIZE); 
+        mTempFontSize = (SystemSettingSeekBarPreference) findPreference(TEMP_FONT_SIZE); 
         mTempFontSize.setValue(Settings.System.getInt(getContentResolver(), 
         Settings.System.LOCKTEMP_FONT_SIZE,14)); 
         mTempFontSize.setOnPreferenceChangeListener(this); 
 
-        mCityFontSize = (CustomSeekBarPreference) findPreference(CITY_FONT_SIZE); 
+        mCityFontSize = (SystemSettingSeekBarPreference) findPreference(CITY_FONT_SIZE); 
         mCityFontSize.setValue(Settings.System.getInt(getContentResolver(), 
         Settings.System.LOCKCITY_FONT_SIZE,14)); 
         mCityFontSize.setOnPreferenceChangeListener(this); 
 
-        mConditionFontSize = (CustomSeekBarPreference) findPreference(CONDITION_FONT_SIZE); 
+        mConditionFontSize = (SystemSettingSeekBarPreference) findPreference(CONDITION_FONT_SIZE); 
         mConditionFontSize.setValue(Settings.System.getInt(getContentResolver(), 
         Settings.System.LOCKCONDITION_FONT_SIZE,14)); 
         mConditionFontSize.setOnPreferenceChangeListener(this); 
@@ -175,7 +175,7 @@ public class Weather extends SettingsPreferenceFragment implements
         mStatusBarTemperatureStyle.setSummary(mStatusBarTemperatureStyle.getEntry());
         mStatusBarTemperatureStyle.setOnPreferenceChangeListener(this);
 
-        mStatusBarTemperatureSize = (CustomSeekBarPreference) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
+        mStatusBarTemperatureSize = (SystemSettingSeekBarPreference) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
         mStatusBarTemperatureSize.setValue(Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_WEATHER_SIZE, 24,
                 UserHandle.USER_CURRENT));

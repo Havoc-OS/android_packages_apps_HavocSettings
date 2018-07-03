@@ -92,7 +92,7 @@
             android:dependency="button_backlight_enable"  
             android:disableDependentsState="true" />  
   
-        <com.havoc.settings.preferences.CustomSeekBarPreference  
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
             android:key="button_manual_brightness_new"  
             android:title="@string/button_manual_brightness"  
             android:max="255"  
@@ -100,7 +100,7 @@
             android:persistent="false"  
             android:dependency="custom_button_use_screen_brightness" />  
   
-        <com.havoc.settings.preferences.CustomSeekBarPreference  
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
             android:key="button_timeout"  
             android:title="@string/button_timeout_title"  
             android:max="30"  

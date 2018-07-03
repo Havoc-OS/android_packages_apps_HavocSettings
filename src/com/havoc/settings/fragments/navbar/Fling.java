@@ -39,7 +39,7 @@ import com.android.internal.utils.du.Config.ButtonConfig;
 import com.havoc.settings.fragments.navbar.IconPickHelper;
 import com.havoc.settings.preferences.ActionPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.R;
 
 import java.util.ArrayList;
@@ -57,16 +57,16 @@ public class Fling extends ActionFragment implements
     SwitchPreference mShowRipple;
     SwitchPreference mKbCursors;
 
-    CustomSeekBarPreference mLogoOpacity;
+    SystemSettingSeekBarPreference mLogoOpacity;
 
-    CustomSeekBarPreference mLongPressTimeout;
+    SystemSettingSeekBarPreference mLongPressTimeout;
 
-    CustomSeekBarPreference mSwipePortRight;
-    CustomSeekBarPreference mSwipePortLeft;
-    CustomSeekBarPreference mSwipeLandRight;
-    CustomSeekBarPreference mSwipeLandLeft;
-    CustomSeekBarPreference mSwipeVertUp;
-    CustomSeekBarPreference mSwipeVertDown;
+    SystemSettingSeekBarPreference mSwipePortRight;
+    SystemSettingSeekBarPreference mSwipePortLeft;
+    SystemSettingSeekBarPreference mSwipeLandRight;
+    SystemSettingSeekBarPreference mSwipeLandLeft;
+    SystemSettingSeekBarPreference mSwipeVertUp;
+    SystemSettingSeekBarPreference mSwipeVertDown;
 
     ColorPickerPreference mRippleColor;
 
@@ -104,7 +104,7 @@ public class Fling extends ActionFragment implements
         // NOTE: we display to the user actual timeouts starting from touch event
         // but framework wants the value less tap timeout, which is 100ms
         // so we always write 100ms less but display 100ms more
-        mLongPressTimeout = (CustomSeekBarPreference) findPreference("du_fling_longpress_pref");
+        mLongPressTimeout = (SystemSettingSeekBarPreference) findPreference("du_fling_longpress_pref");
         int val = Settings.Secure.getIntForUser(getContentResolver(),
                 Settings.Secure.FLING_LONGPRESS_TIMEOUT, 250, UserHandle.USER_CURRENT);
         val += 100;
@@ -113,24 +113,24 @@ public class Fling extends ActionFragment implements
 
         final boolean isTablet = !DUActionUtils.navigationBarCanMove();
 
-        mSwipePortRight = (CustomSeekBarPreference) findPreference("du_fling_longswipe_port_right");
+        mSwipePortRight = (SystemSettingSeekBarPreference) findPreference("du_fling_longswipe_port_right");
         val = Settings.Secure.getIntForUser(
                 getContentResolver(), Settings.Secure.FLING_LONGSWIPE_THRESHOLD_RIGHT_PORT,
                 isTablet ? 30 : 40, UserHandle.USER_CURRENT);
         mSwipePortRight.setValue(val);
         mSwipePortRight.setOnPreferenceChangeListener(this);
 
-        mSwipePortLeft = (CustomSeekBarPreference) findPreference("du_fling_longswipe_port_left");
+        mSwipePortLeft = (SystemSettingSeekBarPreference) findPreference("du_fling_longswipe_port_left");
         val = Settings.Secure.getIntForUser(
                 getContentResolver(), Settings.Secure.FLING_LONGSWIPE_THRESHOLD_LEFT_PORT,
                 isTablet ? 30 : 40, UserHandle.USER_CURRENT);
         mSwipePortLeft.setValue(val);
         mSwipePortLeft.setOnPreferenceChangeListener(this);
 
-        mSwipeLandRight = (CustomSeekBarPreference) findPreference("du_fling_longswipe_land_right");
-        mSwipeLandLeft = (CustomSeekBarPreference) findPreference("du_fling_longswipe_land_left");
-        mSwipeVertUp = (CustomSeekBarPreference) findPreference("du_fling_longswipe_vert_up");
-        mSwipeVertDown = (CustomSeekBarPreference) findPreference("du_fling_longswipe_vert_down");
+        mSwipeLandRight = (SystemSettingSeekBarPreference) findPreference("du_fling_longswipe_land_right");
+        mSwipeLandLeft = (SystemSettingSeekBarPreference) findPreference("du_fling_longswipe_land_left");
+        mSwipeVertUp = (SystemSettingSeekBarPreference) findPreference("du_fling_longswipe_vert_up");
+        mSwipeVertDown = (SystemSettingSeekBarPreference) findPreference("du_fling_longswipe_vert_down");
 
         PreferenceCategory longSwipeCategory = (PreferenceCategory) getPreferenceScreen()
                 .findPreference("eos_long_swipe_category");
@@ -171,7 +171,7 @@ public class Fling extends ActionFragment implements
                 UserHandle.USER_CURRENT) == 1);
         mKbCursors.setOnPreferenceChangeListener(this);
 
-        mLogoOpacity = (CustomSeekBarPreference) findPreference("fling_logo_opacity");
+        mLogoOpacity = (SystemSettingSeekBarPreference) findPreference("fling_logo_opacity");
         int alpha = Settings.Secure.getIntForUser(getContentResolver(),
                 Settings.Secure.FLING_LOGO_OPACITY, 255,
                 UserHandle.USER_CURRENT);

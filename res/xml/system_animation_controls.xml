@@ -21,7 +21,7 @@
             android:title="@string/disable_transition_animations_title"
             android:summary="@string/disable_transition_animations_summary" />
 
-        <com.havoc.settings.preferences.CustomSeekBarPreference
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="animation_controls_duration"
             android:title="@string/animation_duration_title"
             android:max="400"

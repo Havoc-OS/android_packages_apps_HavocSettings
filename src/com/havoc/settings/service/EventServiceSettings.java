@@ -39,7 +39,7 @@ import com.android.settings.search.Indexable;
 
 import com.havoc.settings.preferences.AppMultiSelectListPreference; 
 import com.havoc.settings.preferences.ScrollAppsViewPreference; 
-import com.havoc.settings.preferences.CustomSeekBarPreference; 
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference; 
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -75,12 +75,12 @@ public class EventServiceSettings extends SettingsPreferenceFragment implements 
     private SwitchPreference mAutoStart;
     private SwitchPreference mMusicActive;
     private SwitchPreference mAutorun;
-    private CustomSeekBarPreference mChooserTimeout;
+    private SystemSettingSeekBarPreference mChooserTimeout;
     private ListPreference mChooserPosition;
     private Handler mHandler = new Handler();
     private String mServiceRunning;
     private String mServiceStopped;
-    private CustomSeekBarPreference mWiredThresholdTimeout;
+    private SystemSettingSeekBarPreference mWiredThresholdTimeout;
 
     @Override
     public int getMetricsCategory() {
@@ -132,11 +132,11 @@ public class EventServiceSettings extends SettingsPreferenceFragment implements 
         mAutorun.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_AUTORUN_SINGLE, true));
         mAutorun.setOnPreferenceChangeListener(this);
 
-        mChooserTimeout = (CustomSeekBarPreference) findPreference(APP_CHOOSER_TIMEOUT);
+        mChooserTimeout = (SystemSettingSeekBarPreference) findPreference(APP_CHOOSER_TIMEOUT);
         mChooserTimeout.setValue(getPrefs().getInt(EventServiceSettings.APP_CHOOSER_TIMEOUT, 15));
         mChooserTimeout.setOnPreferenceChangeListener(this);
 
-        mWiredThresholdTimeout = (CustomSeekBarPreference) findPreference(WIRED_EVENTS_THRESHOLD);
+        mWiredThresholdTimeout = (SystemSettingSeekBarPreference) findPreference(WIRED_EVENTS_THRESHOLD);
         mWiredThresholdTimeout.setValue(getPrefs().getInt(EventServiceSettings.WIRED_EVENTS_THRESHOLD, 0));
         mWiredThresholdTimeout.setOnPreferenceChangeListener(this);
 

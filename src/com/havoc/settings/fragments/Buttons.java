@@ -37,7 +37,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.DUActionUtils;
 import com.havoc.settings.preferences.ActionFragment;
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 
 public class Buttons extends ActionFragment implements Preference.OnPreferenceChangeListener {
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
@@ -68,8 +68,8 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
 
     private SwitchPreference mHwKeyDisable;
 
-    private CustomSeekBarPreference mButtonTimoutBar;
-    private CustomSeekBarPreference mManualButtonBrightness;
+    private SystemSettingSeekBarPreference mButtonTimoutBar;
+    private SystemSettingSeekBarPreference mManualButtonBrightness;
     private PreferenceCategory mButtonBackLightCategory;
     private SwitchPreference mAnbi; 
 
@@ -83,7 +83,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
 
         mAnbi = (SwitchPreference) findPreference(KEY_ANBI); 
         
-        mManualButtonBrightness = (CustomSeekBarPreference) findPreference(
+        mManualButtonBrightness = (SystemSettingSeekBarPreference) findPreference(
                 KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);
         final int customButtonBrightness = getResources().getInteger(
                 com.android.internal.R.integer.config_button_brightness_default);
@@ -94,7 +94,7 @@ public class Buttons extends ActionFragment implements Preference.OnPreferenceCh
         mManualButtonBrightness.setValue(currentBrightness);
         mManualButtonBrightness.setOnPreferenceChangeListener(this);
 
-        mButtonTimoutBar = (CustomSeekBarPreference) findPreference(KEY_BUTTON_TIMEOUT);
+        mButtonTimoutBar = (SystemSettingSeekBarPreference) findPreference(KEY_BUTTON_TIMEOUT);
         int currentTimeout = Settings.System.getInt(resolver,
                 Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 0);
         mButtonTimoutBar.setValue(currentTimeout);

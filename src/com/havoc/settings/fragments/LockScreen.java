@@ -33,7 +33,7 @@ import com.android.internal.utils.du.DUActionUtils;
 import com.havoc.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.havoc.settings.preferences.CustomSeekBarPreference; 
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference; 
 
 import lineageos.providers.LineageSettings; 
 import android.provider.Settings; 
@@ -61,13 +61,13 @@ public class LockScreen extends SettingsPreferenceFragment
     ListPreference mLockOwnerInfoFonts; 
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
-    private CustomSeekBarPreference mLsAlpha; 
-    private CustomSeekBarPreference mLsSecurityAlpha; 
-    private CustomSeekBarPreference mClockFontSize; 
-    private CustomSeekBarPreference mDateFontSize; 
-    private CustomSeekBarPreference mAlarmFontSize; 
-    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
-    private CustomSeekBarPreference mOwnerInfoFontSize; 
+    private SystemSettingSeekBarPreference mLsAlpha; 
+    private SystemSettingSeekBarPreference mLsSecurityAlpha; 
+    private SystemSettingSeekBarPreference mClockFontSize; 
+    private SystemSettingSeekBarPreference mDateFontSize; 
+    private SystemSettingSeekBarPreference mAlarmFontSize; 
+    private SystemSettingSeekBarPreference mMaxKeyguardNotifConfig;
+    private SystemSettingSeekBarPreference mOwnerInfoFontSize; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        mMaxKeyguardNotifConfig = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
         int kgconf = Settings.System.getIntForUser(resolver,
                 Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
         mMaxKeyguardNotifConfig.setValue(kgconf);
@@ -105,13 +105,13 @@ public class LockScreen extends SettingsPreferenceFragment
         mLockDateFonts.setSummary(mLockDateFonts.getEntry());
         mLockDateFonts.setOnPreferenceChangeListener(this);
 
-        mLsSecurityAlpha = (CustomSeekBarPreference) findPreference(LOCKSCREEN_SECURITY_ALPHA); 
+        mLsSecurityAlpha = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_SECURITY_ALPHA); 
         float alpha2 = Settings.System.getFloat(resolver, 
                 Settings.System.LOCKSCREEN_SECURITY_ALPHA, 0.75f); 
         mLsSecurityAlpha.setValue((int)(100 * alpha2)); 
         mLsSecurityAlpha.setOnPreferenceChangeListener(this); 
  
-        mLsAlpha = (CustomSeekBarPreference) findPreference(LOCKSCREEN_ALPHA); 
+        mLsAlpha = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_ALPHA); 
         float alpha = Settings.System.getFloat(resolver, 
                 Settings.System.LOCKSCREEN_ALPHA, 0.45f); 
         mLsAlpha.setValue((int)(100 * alpha)); 
@@ -123,17 +123,17 @@ public class LockScreen extends SettingsPreferenceFragment
         mLockClockFonts.setSummary(mLockClockFonts.getEntry()); 
         mLockClockFonts.setOnPreferenceChangeListener(this); 
 
-        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE); 
+        mClockFontSize = (SystemSettingSeekBarPreference) findPreference(CLOCK_FONT_SIZE); 
         mClockFontSize.setValue(Settings.System.getInt(getContentResolver(), 
                 Settings.System.LOCKCLOCK_FONT_SIZE, 78)); 
         mClockFontSize.setOnPreferenceChangeListener(this); 
          
-        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
+        mDateFontSize = (SystemSettingSeekBarPreference) findPreference(DATE_FONT_SIZE);
         mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKDATE_FONT_SIZE,14));
         mDateFontSize.setOnPreferenceChangeListener(this);
 
-        mAlarmFontSize = (CustomSeekBarPreference) findPreference(ALARM_FONT_SIZE);
+        mAlarmFontSize = (SystemSettingSeekBarPreference) findPreference(ALARM_FONT_SIZE);
         mAlarmFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKALARM_FONT_SIZE,14));
                 mAlarmFontSize.setOnPreferenceChangeListener(this);
@@ -146,7 +146,7 @@ public class LockScreen extends SettingsPreferenceFragment
         mLockOwnerInfoFonts.setOnPreferenceChangeListener(this); 
  
         // Lockscren OwnerInfo Size 
-        mOwnerInfoFontSize = (CustomSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE); 
+        mOwnerInfoFontSize = (SystemSettingSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE); 
         mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(), 
                 Settings.System.LOCKOWNER_FONT_SIZE,21)); 
         mOwnerInfoFontSize.setOnPreferenceChangeListener(this); 

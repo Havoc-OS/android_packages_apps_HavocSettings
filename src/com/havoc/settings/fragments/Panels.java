@@ -35,7 +35,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings; 
  
 import net.margaritov.preference.colorpicker.ColorPickerPreference; 
-import com.havoc.settings.preferences.CustomSeekBarPreference; 
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference; 
 
 public class Panels extends SettingsPreferenceFragment implements 
 Preference.OnPreferenceChangeListener {

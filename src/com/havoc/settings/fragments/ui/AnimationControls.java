@@ -33,7 +33,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.havoc.AwesomeAnimationHelper;
 
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.R;
 
 import java.util.Arrays;
@@ -53,7 +53,7 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
     private static final String TASK_OPEN_BEHIND = "task_open_behind";
 
-    private CustomSeekBarPreference mAnimDuration;
+    private SystemSettingSeekBarPreference mAnimDuration;
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
@@ -77,7 +77,7 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
         addPreferencesFromResource(R.xml.system_animation_controls);
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mAnimDuration = (CustomSeekBarPreference) findPreference(ANIMATION_DURATION);
+        mAnimDuration = (SystemSettingSeekBarPreference) findPreference(ANIMATION_DURATION);
         int animdef = Settings.System.getIntForUser(resolver,
                 Settings.System.ANIMATION_CONTROLS_DURATION, 0, UserHandle.USER_CURRENT);
         mAnimDuration.setValue(animdef);

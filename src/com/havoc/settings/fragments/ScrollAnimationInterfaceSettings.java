@@ -43,7 +43,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.havoc.settings.preferences.CustomSeekBarPreference;  
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;  
 
 public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -58,10 +58,10 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
 
     private static final int MENU_RESET = Menu.FIRST;
 
-    private CustomSeekBarPreference mAnimationFling;
-    private CustomSeekBarPreference mAnimationScroll;
-    private CustomSeekBarPreference mAnimationOverScroll;
-    private CustomSeekBarPreference mAnimationOverFling;
+    private SystemSettingSeekBarPreference mAnimationFling;
+    private SystemSettingSeekBarPreference mAnimationScroll;
+    private SystemSettingSeekBarPreference mAnimationOverScroll;
+    private SystemSettingSeekBarPreference mAnimationOverFling;
     private SwitchPreference mAnimNoScroll;
 
     @Override
@@ -84,25 +84,25 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
 
         float defaultScroll = Settings.System.getFloat(resolver,
                 Settings.System.CUSTOM_SCROLL_FRICTION, ViewConfiguration.DEFAULT_SCROLL_FRICTION);
-        mAnimationScroll = (CustomSeekBarPreference) prefSet.findPreference(ANIMATION_SCROLL_FRICTION);
+        mAnimationScroll = (SystemSettingSeekBarPreference) prefSet.findPreference(ANIMATION_SCROLL_FRICTION);
         mAnimationScroll.setValue((int) (defaultScroll * MULTIPLIER_SCROLL_FRICTION));
         mAnimationScroll.setOnPreferenceChangeListener(this);
 
         int defaultFling = Settings.System.getInt(resolver,
                 Settings.System.CUSTOM_FLING_VELOCITY, ViewConfiguration.DEFAULT_MAXIMUM_FLING_VELOCITY);
-        mAnimationFling = (CustomSeekBarPreference) prefSet.findPreference(ANIMATION_FLING_VELOCITY);
+        mAnimationFling = (SystemSettingSeekBarPreference) prefSet.findPreference(ANIMATION_FLING_VELOCITY);
         mAnimationFling.setValue(defaultFling);
         mAnimationFling.setOnPreferenceChangeListener(this);
 
         int defaultOverScroll = Settings.System.getInt(resolver,
                 Settings.System.CUSTOM_OVERSCROLL_DISTANCE, ViewConfiguration.DEFAULT_OVERSCROLL_DISTANCE);
-        mAnimationOverScroll = (CustomSeekBarPreference) prefSet.findPreference(ANIMATION_OVERSCROLL_DISTANCE);
+        mAnimationOverScroll = (SystemSettingSeekBarPreference) prefSet.findPreference(ANIMATION_OVERSCROLL_DISTANCE);
         mAnimationOverScroll.setValue(defaultOverScroll);
         mAnimationOverScroll.setOnPreferenceChangeListener(this);
 
         int defaultOverFling = Settings.System.getInt(resolver,
                 Settings.System.CUSTOM_OVERFLING_DISTANCE, ViewConfiguration.DEFAULT_OVERFLING_DISTANCE);
-        mAnimationOverFling = (CustomSeekBarPreference) prefSet.findPreference(ANIMATION_OVERFLING_DISTANCE);
+        mAnimationOverFling = (SystemSettingSeekBarPreference) prefSet.findPreference(ANIMATION_OVERFLING_DISTANCE);
         mAnimationOverFling.setValue(defaultOverFling);
         mAnimationOverFling.setOnPreferenceChangeListener(this);
 

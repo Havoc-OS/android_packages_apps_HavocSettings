@@ -35,7 +35,7 @@ import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import android.widget.Toast; 
 
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.R;
 
 public class Navigation extends SettingsPreferenceFragment implements
@@ -64,9 +64,9 @@ public class Navigation extends SettingsPreferenceFragment implements
     private PreferenceCategory mNavGeneral;
     private Preference mSmartbarSettings;
     //private Preference mDefaultSettings;
-    private CustomSeekBarPreference mBarHeightPort;
-    private CustomSeekBarPreference mBarHeightLand;
-    private CustomSeekBarPreference mBarWidth;
+    private SystemSettingSeekBarPreference mBarHeightPort;
+    private SystemSettingSeekBarPreference mBarHeightLand;
+    private SystemSettingSeekBarPreference mBarWidth;
     private Preference mPulseSettings;
     private SwitchPreference mNavbarDynamic; 
 
@@ -105,7 +105,7 @@ public class Navigation extends SettingsPreferenceFragment implements
 
         int size = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.NAVIGATION_BAR_HEIGHT, 100, UserHandle.USER_CURRENT);
-        mBarHeightPort = (CustomSeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_PORT);
+        mBarHeightPort = (SystemSettingSeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_PORT);
         mBarHeightPort.setValue(size);
         mBarHeightPort.setOnPreferenceChangeListener(this);
 
@@ -114,14 +114,14 @@ public class Navigation extends SettingsPreferenceFragment implements
             mNavInterface.removePreference(findPreference(KEY_NAVIGATION_HEIGHT_LAND));
             size = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_WIDTH, 100, UserHandle.USER_CURRENT);
-            mBarWidth = (CustomSeekBarPreference) findPreference(KEY_NAVIGATION_WIDTH);
+            mBarWidth = (SystemSettingSeekBarPreference) findPreference(KEY_NAVIGATION_WIDTH);
             mBarWidth.setValue(size);
             mBarWidth.setOnPreferenceChangeListener(this);
         } else {
             mNavInterface.removePreference(findPreference(KEY_NAVIGATION_WIDTH));
             size = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, 100, UserHandle.USER_CURRENT);
-            mBarHeightLand = (CustomSeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_LAND);
+            mBarHeightLand = (SystemSettingSeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_LAND);
             mBarHeightLand.setValue(size);
             mBarHeightLand.setOnPreferenceChangeListener(this);
         }

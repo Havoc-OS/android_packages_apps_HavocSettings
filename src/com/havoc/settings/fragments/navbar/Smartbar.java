@@ -48,7 +48,7 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.R;
 
 import java.io.File;
@@ -63,8 +63,8 @@ public class Smartbar extends SettingsPreferenceFragment implements
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
     private ListPreference mButtonLongpressDelay;
-    private CustomSeekBarPreference mButtonsAlpha;
-    private CustomSeekBarPreference mCustomButtonScaling;
+    private SystemSettingSeekBarPreference mButtonsAlpha;
+    private SystemSettingSeekBarPreference mCustomButtonScaling;
     private Preference mPixel; 
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -112,7 +112,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
         mButtonAnim.setOnPreferenceChangeListener(this);
 
         mButtonsAlpha =
-                (CustomSeekBarPreference) findPreference(PREF_NAVBAR_BUTTONS_ALPHA);
+                (SystemSettingSeekBarPreference) findPreference(PREF_NAVBAR_BUTTONS_ALPHA);
         int bAlpha = Settings.Secure.getIntForUser(getContentResolver(),
                 "navbar_buttons_alpha", 255, UserHandle.USER_CURRENT);
         mButtonsAlpha.setValue(bAlpha / 1);
@@ -125,7 +125,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
         mButtonLongpressDelay.setOnPreferenceChangeListener(this);
 
         mCustomButtonScaling =
-                (CustomSeekBarPreference) findPreference(PREF_SMARTBAR_CUSTOM_ICON_SIZE);
+                (SystemSettingSeekBarPreference) findPreference(PREF_SMARTBAR_CUSTOM_ICON_SIZE);
         int size = Settings.Secure.getIntForUser(getContentResolver(),
                 "smartbar_custom_icon_size", 60, UserHandle.USER_CURRENT);
         mCustomButtonScaling.setValue(size);

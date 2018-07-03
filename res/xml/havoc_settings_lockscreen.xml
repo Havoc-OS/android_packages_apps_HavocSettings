@@ -46,7 +46,7 @@
          android:summary="@string/lock_clock_font_summary" 
          android:persistent="false" /> 
     
-     <com.havoc.settings.preferences.CustomSeekBarPreference 
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockclock_font_size" 
         android:title="@string/lockclock_font_size_title" 
         android:max="108" 
@@ -85,7 +85,7 @@
         android:entryValues="@array/lock_clock_fonts_values" 
         android:persistent="false" /> 
     
-    <com.havoc.settings.preferences.CustomSeekBarPreference 
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockdate_font_size" 
         android:title="@string/lockdate_font_size_title" 
         android:max="25" 
@@ -107,7 +107,7 @@
         android:summary="@string/hide_lockscreen_alarm_summary" 
         android:defaultValue="true" /> 
     
-    <com.havoc.settings.preferences.CustomSeekBarPreference 
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockalarm_font_size" 
         android:title="@string/lockalarm_font_size_title" 
         android:max="25" 
@@ -132,7 +132,7 @@
         android:entryValues="@array/lock_clock_fonts_values" 
         android:persistent="false" /> 
     
-    <com.havoc.settings.preferences.CustomSeekBarPreference 
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockowner_font_size" 
         android:title="@string/lockowner_font_size_title" 
         android:max="25" 
@@ -158,7 +158,7 @@
         android:key="ls_aplha"
         android:title="@string/ls_aplha">
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference 
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockscreen_security_alpha" 
         android:title="@string/lockscreen_security_alpha" 
         android:max="100" 
@@ -167,7 +167,7 @@
         settings:units="" 
         android:persistent="false" /> 
  
-    <com.havoc.settings.preferences.CustomSeekBarPreference 
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockscreen_alpha" 
         android:title="@string/lockscreen_alpha" 
         android:max="100" 
@@ -186,9 +186,9 @@
         android:key="lock_screen_custom_notif"
         android:title="@string/lockscreen_maxnotif_title"
         android:summary="@string/lockscreen_maxnotif_summary"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="lockscreen_max_notif_config"
         android:title="@string/lockscreen_maxnotif_config"
         android:max="8"

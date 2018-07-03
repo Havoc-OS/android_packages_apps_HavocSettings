@@ -62,7 +62,7 @@
         android:entryValues="@array/font_style_values"
         android:title="@string/font_style_title" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="status_bar_weather_size"
         android:title="@string/font_size_title"
         android:max="23"
@@ -119,7 +119,7 @@
         android:entryValues="@array/lock_clock_fonts_values"  
         android:persistent="false" />  
 
-     <com.havoc.settings.preferences.CustomSeekBarPreference  
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
         android:key="locktemp_font_size"  
         android:title="@string/ls_temp_size"  
         android:max="25"  
@@ -144,7 +144,7 @@
         android:entryValues="@array/lock_clock_fonts_values"  
         android:persistent="false" />  
  
-     <com.havoc.settings.preferences.CustomSeekBarPreference  
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
         android:key="lockcity_font_size"  
         android:title="@string/ls_city_size"  
         android:max="25"  
@@ -169,7 +169,7 @@
         android:entryValues="@array/lock_clock_fonts_values"  
         android:persistent="false" />  
 
-     <com.havoc.settings.preferences.CustomSeekBarPreference  
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
         android:key="lockcondition_font_size"  
         android:title="@string/ls_condition_size"  
         android:max="25"  

@@ -57,7 +57,7 @@
         android:entries="@array/battery_bar_style_entries"
         android:entryValues="@array/battery_bar_style_values" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="statusbar_battery_bar_thickness"
         android:title="@string/battery_bar_thickness_title"
         android:max="4"

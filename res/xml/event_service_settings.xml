@@ -86,7 +86,7 @@
             android:persistent="false"
             android:title="@string/media_player_autostart_title" />
 
-        <com.havoc.settings.preferences.CustomSeekBarPreference 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
             android:dependency="event_service_enabled"
             android:key="app_chooser_timeout"
             android:max="60"
@@ -103,7 +103,7 @@
             android:persistent="false"
             android:title="@string/app_chooser_position_title" />
 
-        <com.havoc.settings.preferences.CustomSeekBarPreference 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
             android:dependency="event_service_enabled"
             android:key="wired_events_threshold"
             android:max="6"

@@ -31,7 +31,7 @@
         android:summary="@string/app_circle_bar_included_apps_summary"
         android:dependency="enable_app_circle_bar" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="trigger_width"
         android:title="@string/trigger_width_title"
         android:summary="@string/trigger_width_summary"
@@ -41,7 +41,7 @@
         settings:units="px"
         android:dependency="enable_app_circle_bar" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="trigger_top"
         android:title="@string/trigger_top_title"
         android:summary="@string/trigger_top_summary"
@@ -51,7 +51,7 @@
         settings:units="%"
         android:dependency="enable_app_circle_bar" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="trigger_bottom"
         android:title="@string/trigger_bottom_title"
         android:summary="@string/trigger_bottom_summary"

@@ -56,7 +56,7 @@ public class CarrierLabel extends SettingsPreferenceFragment
 //    private ListPreference mShowCarrierLabel;
     private String mCustomCarrierLabelText;
 /*
-    private CustomSeekBarPreference mStatusBarCarrierSize;
+    private SystemSettingSeekBarPreference mStatusBarCarrierSize;
     private ColorPickerPreference mCarrierColorPicker;
 */
 
@@ -83,7 +83,7 @@ public class CarrierLabel extends SettingsPreferenceFragment
         mCustomCarrierLabel = (Preference) findPreference(CUSTOM_CARRIER_LABEL);
 
 /*
-        mStatusBarCarrierSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
+        mStatusBarCarrierSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
         mStatusBarCarrierSize.setValue(Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14));
         mStatusBarCarrierSize.setOnPreferenceChangeListener(this);

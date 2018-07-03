@@ -32,7 +32,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.R;
 
 public class BatteryBar extends SettingsPreferenceFragment
@@ -53,7 +53,7 @@ public class BatteryBar extends SettingsPreferenceFragment
     private ListPreference mBatteryBar;
     private ListPreference mBatteryBarNoNavbar;
     private ListPreference mBatteryBarStyle;
-    private CustomSeekBarPreference mBatteryBarThickness;
+    private SystemSettingSeekBarPreference mBatteryBarThickness;
     private SwitchPreference mBatteryBarChargingAnimation;
     private SwitchPreference mBatteryBarUseChargingColor;
     private SwitchPreference mBatteryBarBlendColor;
@@ -114,7 +114,7 @@ public class BatteryBar extends SettingsPreferenceFragment
             Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, 0) == 1);
         mBatteryBarChargingAnimation.setOnPreferenceChangeListener(this);
 
-        mBatteryBarThickness = (CustomSeekBarPreference) prefSet.findPreference(PREF_BATT_BAR_WIDTH);
+        mBatteryBarThickness = (SystemSettingSeekBarPreference) prefSet.findPreference(PREF_BATT_BAR_WIDTH);
         mBatteryBarThickness.setValue(Settings.System.getInt(resolver,
             Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1));
         mBatteryBarThickness.setOnPreferenceChangeListener(this);

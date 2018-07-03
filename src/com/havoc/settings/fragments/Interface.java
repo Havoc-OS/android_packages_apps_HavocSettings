@@ -47,7 +47,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.havoc.settings.fragments.ui.FontDialogPreference;
-import com.havoc.settings.preferences.SecureSettingSeekBarPreference; 
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference; 
 import com.havoc.settings.R;
 
 import java.util.ArrayList;
@@ -62,7 +62,7 @@ public class Interface extends SettingsPreferenceFragment implements
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size"; 
  
     private Context mContext; 
-    private SecureSettingSeekBarPreference mCornerRadius; 
+    private SystemSettingSeekBarPreference mCornerRadius; 
 	
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
@@ -122,7 +122,7 @@ public class Interface extends SettingsPreferenceFragment implements
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED"); 		
 
         // Rounded Corner Radius 
-        mCornerRadius = (SecureSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE); 
+        mCornerRadius = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE); 
         int cornerRadius = Settings.Secure.getInt(getContentResolver(), 
                 Settings.Secure.SYSUI_ROUNDED_SIZE, 0); 
         mCornerRadius.setValue(cornerRadius / 1); 

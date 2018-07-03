@@ -58,7 +58,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.havoc.settings.preferences.CustomSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.R;
 
 import java.util.ArrayList;
@@ -104,9 +104,9 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
     private static final int DIALOG_RESET_CONFIRM = 1;
 
     private Preference mRecentsIconPack;
-    private CustomSeekBarPreference mMaxApps;
+    private SystemSettingSeekBarPreference mMaxApps;
     private SwitchPreference mRecentPanelGravity;
-    private CustomSeekBarPreference mRecentPanelScale;
+    private SystemSettingSeekBarPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
     private ColorPickerPreference mRecentPanelBgColor;
     private ColorPickerPreference mRecentCardBgColor;
@@ -310,7 +310,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
                 (SwitchPreference) findPreference(RECENT_PANEL_GRAVITY);
         mRecentPanelGravity.setOnPreferenceChangeListener(this);
 
-        mMaxApps = (CustomSeekBarPreference) findPreference(RECENTS_MAX_APPS);
+        mMaxApps = (SystemSettingSeekBarPreference) findPreference(RECENTS_MAX_APPS);
         mMaxApps.setOnPreferenceChangeListener(this);
 
         // Recent panel background color
@@ -324,7 +324,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         mRecentCardBgColor.setOnPreferenceChangeListener(this);
 
         mRecentPanelScale =
-                (CustomSeekBarPreference) findPreference(RECENT_PANEL_SCALE);
+                (SystemSettingSeekBarPreference) findPreference(RECENT_PANEL_SCALE);
         mRecentPanelScale.setOnPreferenceChangeListener(this);
 
         mRecentPanelExpandedMode =

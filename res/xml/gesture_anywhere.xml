@@ -41,7 +41,7 @@
     <PreferenceCategory
         android:title="@string/trigger_category" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="gesture_anywhere_trigger_width"
         android:title="@string/trigger_width_title"
         android:defaultValue="4"
@@ -50,7 +50,7 @@
         settings:units="px"
         android:dependency="gesture_anywhere_enabled" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="gesture_anywhere_trigger_top"
         android:title="@string/trigger_top_title"
         android:defaultValue="0"
@@ -59,7 +59,7 @@
         settings:units="%"
         android:dependency="gesture_anywhere_enabled" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="gesture_anywhere_trigger_bottom"
         android:title="@string/trigger_bottom_title"
         android:defaultValue="100"
