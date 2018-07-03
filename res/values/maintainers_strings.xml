@@ -79,4 +79,7 @@
   
   <string name="device_rolex">Xiaomi Redmi 4A</string>
   <string name="device_rolex_summary">rolex\nAryan Patidar - AryanPatidar</string>
+  
+  <string name="device_tissot">Xiaomi Mi A1</string>
+  <string name="device_tissot_summary">tissot\nBoris Borisov - mdeejay</string>
 </resources>
