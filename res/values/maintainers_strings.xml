@@ -27,6 +27,7 @@
   <string name="device_category_lenovo_title">Lenovo</string>
   <string name="device_category_leeco_title">LeEco</string>
   <string name="device_category_google_title">Google</string>
+  <string name="device_category_samsung_title">Samsung</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -82,4 +83,10 @@
   
   <string name="device_tissot">Xiaomi Mi A1</string>
   <string name="device_tissot_summary">tissot\nBoris Borisov - mdeejay</string>
+  
+  <string name="device_starlte">Samsung Galaxy S9</string>
+  <string name="device_starlte_summary">SM-G960F/FD/N\nMohamad Afix - saxmydix</string>
+  
+  <string name="device_star2lte">Samsung Galaxy S9+</string>
+  <string name="device_star2lte_summary">SM-G965F/FD/N\nMohamad Afix - saxmydix</string>
 </resources>

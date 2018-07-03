@@ -50,6 +50,25 @@
     </PreferenceCategory>
 	
     <PreferenceCategory
+        android:id="@+id/device_category_samsung"
+        android:title="@string/device_category_samsung_title">
+
+        <Preference 
+            android:id="@+id/device_starlte" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_starlte_summary" 
+            android:selectable="false" 
+            android:title="@string/device_starlte" />
+
+        <Preference 
+            android:id="@+id/device_star2lte" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_star2lte_summary" 
+            android:selectable="false" 
+            android:title="@string/device_star2lte" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
         android:id="@+id/device_category_motorola"
         android:title="@string/device_category_motorola_title">
 
