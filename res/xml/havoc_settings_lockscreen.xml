@@ -186,7 +186,7 @@
         android:key="lock_screen_custom_notif"
         android:title="@string/lockscreen_maxnotif_title"
         android:summary="@string/lockscreen_maxnotif_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="lockscreen_max_notif_config"
