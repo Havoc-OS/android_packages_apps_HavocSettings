@@ -28,6 +28,7 @@
   <string name="device_category_leeco_title">LeEco</string>
   <string name="device_category_google_title">Google</string>
   <string name="device_category_samsung_title">Samsung</string>
+  <string name="device_category_huawei_title">Huawei</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -89,4 +90,7 @@
   
   <string name="device_star2lte">Samsung Galaxy S9+</string>
   <string name="device_star2lte_summary">SM-G965F/FD/N\nMohamad Afix - saxmydix</string>
+  
+  <string name="device_hi6250">Huawei P9 Lite</string>
+  <string name="device_hi6250_summary">HI6250\nValerio - Askuccio_DROID</string>
 </resources>

@@ -187,6 +187,18 @@
     </PreferenceCategory>
 	
     <PreferenceCategory
+        android:id="@+id/device_category_huawei"
+        android:title="@string/device_category_huawei_title">
+
+        <Preference 
+            android:id="@+id/device_hi6250" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_hi6250_summary" 
+            android:selectable="false" 
+            android:title="@string/device_hi6250" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
         android:id="@+id/device_category_leeco"
         android:title="@string/device_category_leeco_title">
 
