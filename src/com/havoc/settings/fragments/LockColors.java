@@ -63,7 +63,6 @@ public class LockColors extends SettingsPreferenceFragment implements Preference
     private static final String LOCKSCREEN_ALARM_COLOR = "lockscreen_alarm_color";
     private static final String LOCKSCREEN_TEMP_COLOR = "lock_screen_weather_temp_color";
     private static final String LOCKSCREEN_CONDITION_COLOR = "lock_screen_weather_con_color";
-    private static final String PREF_ICON_COLOR = "weather_icon_color";
     private static final String LOCKSCREEN_CITY_COLOR = "lock_screen_weather_city_color";
 
     private static final int MONOCHROME_ICON = 0;
@@ -86,7 +85,6 @@ public class LockColors extends SettingsPreferenceFragment implements Preference
     private ColorPickerPreference mStampColor;
     private ColorPickerPreference mConditionColor;
     private ColorPickerPreference mHumidityColor;
-    private ColorPickerPreference mIconColor;
     private ColorPickerPreference mCityColor;
 
     @Override
@@ -196,19 +194,6 @@ public class LockColors extends SettingsPreferenceFragment implements Preference
        hexColor = String.format("#%08x", (0xffffffff & intColor));
        mCityColor.setSummary(hexColor);
        mCityColor.setNewPreviewColor(intColor);
-       
-       mIconColor = (ColorPickerPreference) findPreference(PREF_ICON_COLOR);
-       intColor = Settings.System.getInt(resolver,
-                Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR, -2);
-            if (intColor == -2) {
-                intColor = 0xffffffff;
-                mIconColor.setSummary(getResources().getString(R.string.default_string));
-            } else {
-                hexColor = String.format("#%08x", (0xffffffff & intColor));
-                mIconColor.setSummary(hexColor);
-            }
-       mIconColor.setNewPreviewColor(intColor);
-       mIconColor.setOnPreferenceChangeListener(this);
 
        setHasOptionsMenu(true);
     }
@@ -311,15 +296,6 @@ public class LockColors extends SettingsPreferenceFragment implements Preference
                   Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                           Settings.System.LOCK_SCREEN_WEATHER_CITY_COLOR, intHex);
                   return true;
-          } else if (preference == mIconColor) {
-	        int intHex;	
-            String hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
-            intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(resolver,
-                    Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR, intHex);
-            preference.setSummary(hex);
-            return true;
         } 
          return false;
     }
@@ -392,10 +368,7 @@ public class LockColors extends SettingsPreferenceFragment implements Preference
         Settings.System.putInt(resolver,
                  Settings.System.LOCKSCREEN_ALARM_COLOR, DEFAULT);
         mLockscreenAlarmColorPicker.setNewPreviewColor(DEFAULT);
-        mLockscreenAlarmColorPicker.setSummary(R.string.default_string);    
-	Settings.System.putInt(resolver,
-                 Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR, -2);
-        mIconColor.setNewPreviewColor(-2);
+        mLockscreenAlarmColorPicker.setSummary(R.string.default_string); 
           Settings.System.putInt(resolver,
                    Settings.System.LOCK_SCREEN_WEATHER_TEMP_COLOR, DEFAULT);
           mTempColor.setNewPreviewColor(DEFAULT);
