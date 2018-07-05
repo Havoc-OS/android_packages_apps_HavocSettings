@@ -53,6 +53,20 @@
         android:id="@+id/device_category_samsung"
         android:title="@string/device_category_samsung_title">
 
+        <Preference  
+            android:id="@+id/device_herolte"  
+            android:icon="@drawable/phone_tint"  
+            android:summary="@string/device_herolte_summary"  
+            android:selectable="false"  
+            android:title="@string/device_herolte" /> 
+ 
+        <Preference  
+            android:id="@+id/device_hero2lte"  
+            android:icon="@drawable/phone_tint"  
+            android:summary="@string/device_hero2lte_summary"  
+            android:selectable="false"  
+            android:title="@string/device_hero2lte" /> 
+
         <Preference 
             android:id="@+id/device_starlte" 
             android:icon="@drawable/phone_tint" 

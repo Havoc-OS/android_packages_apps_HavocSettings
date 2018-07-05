@@ -93,4 +93,10 @@
   
   <string name="device_hi6250">Huawei P9 Lite</string>
   <string name="device_hi6250_summary">HI6250\nValerio - Askuccio_DROID</string>
+  
+  <string name="device_herolte">Samsung Galaxy S7</string>
+  <string name="device_herolte_summary">SM-G930F/FD/W8/S/K/L\nGibran Mather - gibranm</string>
+  
+  <string name="device_hero2lte">Samsung Galaxy S7 Edge</string>
+  <string name="device_hero2lte_summary">SM-G935F/FD/W8/S/K/L\nGibran Mather - gibranm</string>
 </resources>
