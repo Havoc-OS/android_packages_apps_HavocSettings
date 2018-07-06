@@ -141,7 +141,7 @@ public class LockScreen extends SettingsPreferenceFragment
                  // Lockscren OwnerInfo Fonts 
         mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS); 
         mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt( 
-                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 26))); 
+                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 14))); 
         mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry()); 
         mLockOwnerInfoFonts.setOnPreferenceChangeListener(this); 
  
