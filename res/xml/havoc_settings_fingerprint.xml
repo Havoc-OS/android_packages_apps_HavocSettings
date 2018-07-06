@@ -44,10 +44,9 @@
         android:summary="@string/fp_unlock_keystore_summary" 
         android:defaultValue="false" />
     
-     <SwitchPreference
-        android:key="gesture_swipe_dismiss_fingerprint"
-        android:title="@string/fp_swipe_to_dismiss_notifications_title"
-        android:summary="@string/fp_swipe_to_dismiss_notifications_summary"
-        app:keywords="@string/keywords_gesture"/>
+    <Preference
+        android:key="gesture_swipe_down_fingerprint_input_summary"
+        android:title="@string/fingerprint_swipe_for_notifications_title"
+        android:fragment="com.android.settings.gestures.SwipeToNotificationSettings" />
 
 </PreferenceScreen>

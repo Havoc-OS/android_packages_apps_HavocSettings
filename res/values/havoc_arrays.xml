@@ -288,7 +288,6 @@
     <item>@string/button24</item> 
     <item>@string/button25</item> 
     <item>@string/button26</item> 
-    <item>@string/button27</item> 
     <item>@string/button28</item> 
     <item>@string/button29</item> 
     <item>@string/button30</item> 
@@ -325,7 +324,6 @@
     <item>27</item> 
     <item>28</item> 
     <item>29</item> 
-    <item>30</item> 
      </string-array> 
      
    <!-- Less Notifications --> 

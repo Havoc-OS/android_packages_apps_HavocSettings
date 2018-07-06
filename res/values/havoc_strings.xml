@@ -1318,11 +1318,7 @@
 
     <!-- Gestures --> 
     <string name="gestures_summary">Customize gesture settings</string>	
-	
-    <!-- Swipe FP to dismiss notifications -->
-    <string name="fp_swipe_to_dismiss_notifications_title">Swipe fingerprint left or right to dismiss notifications</string>
-    <string name="fp_swipe_to_dismiss_notifications_summary">To dismiss your notifications, swipe left or right on the fingerprint sensor on the back of your phone.</string>		
-	
+
     <string name="doze_display_title">Ambient display</string>
     <string name="doze_display_summary">Configure settings for ambient display</string>	
 	
