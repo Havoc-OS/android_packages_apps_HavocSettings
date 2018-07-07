@@ -28,5 +28,11 @@
         android:title="@string/toast_icon_title" 
         android:summary="@string/toast_icon_summary" 
         android:defaultValue="true" /> 
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="battery_fully_charged_notif"
+        android:title="@string/battery_fully_charged_notif_title"
+        android:summary="@string/battery_fully_charged_notif_summary"
+        android:defaultValue="false" />
 			
 </PreferenceScreen>
