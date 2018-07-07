@@ -110,6 +110,9 @@
     <string name="lockowner_font_size_title">Owner info font size</string> 
     <string name="ls_owner">OwnerInfo Style</string> 
 
+    <string name="lock_alarm_font_title">Alarm font options</string> 
+    <string name="lock_alarm_font_summary">Change the default font of the lockscreen alarm</string> 
+
     <!-- QS edit icon -->
     <string name="qs_edit_title">QS edit icon</string>
     <string name="qs_edit_summary">Disable the tile edit icon in the footer</string>
@@ -338,6 +341,7 @@
     <string name="lock_date_font_title">Date font options</string> 
     <string name="lock_date_font_summary">Change the default font of the lockscreen date widget</string> 
     <string name="lock_date_font_dialog_title">Select lock date font</string> 
+    <string name="lock_alarm_font_dialog_title">Select lock Alarm font</string> 
 
       <!-- Smart Pixels --> 
     <string name="smart_pixels_title">Smart Pixels</string> 

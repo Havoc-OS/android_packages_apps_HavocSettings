@@ -55,7 +55,9 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_config";
     private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts"; 
     private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size"; 
- 
+    private static final String LOCK_ALARM_FONTS = "lock_alarm_fonts";  
+
+    ListPreference mLockAlarmFonts;  
     ListPreference mLockClockFonts;
     ListPreference mLockDateFonts;  
     ListPreference mLockOwnerInfoFonts; 
@@ -137,6 +139,13 @@ public class LockScreen extends SettingsPreferenceFragment
         mAlarmFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKALARM_FONT_SIZE,14));
                 mAlarmFontSize.setOnPreferenceChangeListener(this);
+
+        // Lockscren Alarm Fonts  
+        mLockAlarmFonts = (ListPreference) findPreference(LOCK_ALARM_FONTS);  
+        mLockAlarmFonts.setValue(String.valueOf(Settings.System.getInt(  
+                getContentResolver(), Settings.System.LOCK_ALARM_FONTS, 26)));  
+                mLockAlarmFonts.setSummary(mLockAlarmFonts.getEntry());  
+                mLockAlarmFonts.setOnPreferenceChangeListener(this);  
 
                  // Lockscren OwnerInfo Fonts 
         mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS); 
@@ -222,6 +231,12 @@ public class LockScreen extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(), 
                     Settings.System.LOCKOWNER_FONT_SIZE, top*1); 
             return true; 
+        } else if (preference == mLockAlarmFonts) {  
+             Settings.System.putInt(getContentResolver(), Settings.System.LOCK_ALARM_FONTS,  
+                     Integer.valueOf((String) newValue));  
+                     mLockAlarmFonts.setValue(String.valueOf(newValue));  
+             mLockAlarmFonts.setSummary(mLockAlarmFonts.getEntry());  
+             return true;  
         } 
         return false;
     }

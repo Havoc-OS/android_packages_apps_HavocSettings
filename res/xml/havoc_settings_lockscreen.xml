@@ -106,6 +106,15 @@
         android:title="@string/hide_lockscreen_alarm_title" 
         android:summary="@string/hide_lockscreen_alarm_summary" 
         android:defaultValue="true" /> 
+
+    <ListPreference  
+        android:key="lock_alarm_fonts"  
+        android:title="@string/lock_alarm_font_title"  
+        android:dialogTitle="@string/lock_alarm_font_dialog_title"  
+        android:summary="@string/lock_alarm_font_summary"  
+        android:entries="@array/lock_clock_fonts_entries"  
+        android:entryValues="@array/lock_clock_fonts_values"  
+        android:persistent="false" />  
     
     <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
         android:key="lockalarm_font_size" 
