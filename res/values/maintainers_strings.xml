@@ -99,4 +99,7 @@
   
   <string name="device_hero2lte">Samsung Galaxy S7 Edge</string>
   <string name="device_hero2lte_summary">SM-G935F/FD/W8/S/K/L\nGibran Mather - gibranm</string>
+  
+  <string name="device_athene">Moto G4</string>
+  <string name="device_athene_summary">athene\nDustin Brindley - DizzyBinary</string>
 </resources>

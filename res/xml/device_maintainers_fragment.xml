@@ -94,6 +94,13 @@
             android:title="@string/device_osprey" />
 
         <Preference 
+            android:id="@+id/device_athene" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_athene_summary" 
+            android:selectable="false" 
+            android:title="@string/device_athene" />
+
+        <Preference 
             android:id="@+id/device_potter" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_potter_summary" 
