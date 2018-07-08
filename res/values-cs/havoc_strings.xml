@@ -376,9 +376,9 @@
   <string name="hide_apps_from_recents_summary">Vyberte aplikace, které chcete vyloučit z panelu nedávných</string>
   <!-- Dashboard conditions-->
   <string name="dashboard_category">Možnosti hlavního panelu</string>
-  <string name="dashboard_conditions_title">Návrhy hlavního panelu</string>
-  <string name="summary_dashboard_conditions_enabled">Návrhy hlavního panelu jsou povoleny</string>
-  <string name="summary_dashboard_conditions_disabled">Návrhy hlavního panelu jsou zakázány</string>
+  <string name="dashboard_conditions_title">Podmínky hlavního panelu</string>
+  <string name="summary_dashboard_conditions_enabled">Podmínky hlavního panelu jsou povoleny</string>
+  <string name="summary_dashboard_conditions_disabled">Podmínky hlavního panelu jsou zakázány</string>
   <string name="dashboard_suggestions_title">Návrhy hlavního panelu</string>
   <string name="summary_dashboard_suggestions_enabled">Návrhy hlavního panelu jsou povoleny</string>
   <string name="summary_dashboard_suggestions_disabled">Návrhy hlavního panelu jsou zakázány</string>
