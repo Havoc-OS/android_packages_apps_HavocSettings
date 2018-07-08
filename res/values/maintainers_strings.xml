@@ -102,4 +102,7 @@
   
   <string name="device_athene">Moto G4</string>
   <string name="device_athene_summary">athene\nDustin Brindley - DizzyBinary</string>
+
+  <string name="device_oneplus2">OnePlus Two</string>
+  <string name="device_oneplus2_summary">oneplus2\nJef - simplyjeevs</string>
 </resources>
