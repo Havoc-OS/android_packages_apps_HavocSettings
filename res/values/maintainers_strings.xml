@@ -105,4 +105,7 @@
 
   <string name="device_oneplus2">OnePlus Two</string>
   <string name="device_oneplus2_summary">oneplus2\nJef - simplyjeevs</string>
+  
+  <string name="device_j5xnlte">Samsung Galaxy J5</string>
+  <string name="device_j5xnlte_summary">SM-J510F/FN/GN/MN\nJacopo Del Vivo - JakoDel</string>
 </resources>

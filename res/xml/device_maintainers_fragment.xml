@@ -61,6 +61,13 @@
         android:title="@string/device_category_samsung_title">
 
         <Preference  
+            android:id="@+id/device_j5xnlte"  
+            android:icon="@drawable/phone_tint"  
+            android:summary="@string/device_j5xnlte_summary"  
+            android:selectable="false"  
+            android:title="@string/device_j5xnlte" /> 
+
+        <Preference  
             android:id="@+id/device_herolte"  
             android:icon="@drawable/phone_tint"  
             android:summary="@string/device_herolte_summary"  
