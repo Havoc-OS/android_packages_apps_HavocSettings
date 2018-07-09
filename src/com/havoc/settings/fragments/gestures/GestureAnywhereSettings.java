@@ -59,8 +59,8 @@ public class GestureAnywhereSettings extends SettingsPreferenceFragment implemen
         addPreferencesFromResource(R.xml.gesture_anywhere);
 
         mEnabledPref = (SwitchPreference) findPreference(KEY_ENABLED);
-        mEnabledPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.GESTURE_ANYWHERE_ENABLED, 0) == 1));
+        mEnabledPref.setChecked((Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.GESTURE_ANYWHERE_ENABLED, 0) == 1));
         mEnabledPref.setOnPreferenceChangeListener(this);
 
         PreferenceScreen prefSet = getPreferenceScreen();
@@ -115,8 +115,8 @@ public class GestureAnywhereSettings extends SettingsPreferenceFragment implemen
             updatePositionSummary(position);
             return true;
         } else if (preference == mEnabledPref) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.GESTURE_ANYWHERE_ENABLED,
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.GESTURE_ANYWHERE_ENABLED,
                     ((Boolean) newValue).booleanValue() ? 1 : 0);
             return true;
         } else if (preference == mTriggerWidthPref) {

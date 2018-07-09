@@ -78,8 +78,8 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
         mEnableScreenStateToggles = (SwitchPreference) findPreference(
                 SCREEN_STATE_TOGGLES_ENABLE);
 
-        int enabled = Settings.System.getIntForUser(resolver,
-                Settings.System.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
+        int enabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
 
         mEnableScreenStateToggles.setChecked(enabled != 0);
         mEnableScreenStateToggles.setOnPreferenceChangeListener(this);
@@ -156,8 +156,8 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
 
         if (preference == mEnableScreenStateToggles) {
             boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.START_SCREEN_STATE_SERVICE, value ? 1 : 0, UserHandle.USER_CURRENT);
+            Settings.Secure.putIntForUser(resolver,
+                    Settings.Secure.START_SCREEN_STATE_SERVICE, value ? 1 : 0, UserHandle.USER_CURRENT);
 
             Intent service = (new Intent())
                 .setClassName("com.android.systemui", "com.android.systemui.havoc.screenstate.ScreenStateService");
@@ -213,8 +213,8 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREEN_STATE_OFF_DELAY, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
