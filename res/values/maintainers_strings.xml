@@ -114,4 +114,7 @@
   
   <string name="device_oneplus5t">OnePlus 5T</string>
   <string name="device_oneplus5t_summary">dumpling\nSoufiane Boulbayem - Eliminater</string>
+  
+  <string name="device_falcon">Moto G</string>
+  <string name="device_falcon_summary">falcon\nAnushek Prasal - SKULSHADY</string>
 </resources>
