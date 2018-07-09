@@ -108,4 +108,10 @@
   
   <string name="device_j5xnlte">Samsung Galaxy J5</string>
   <string name="device_j5xnlte_summary">SM-J510F/FN/GN/MN\nJacopo Del Vivo - JakoDel</string>
+
+  <string name="device_oneplus5">OnePlus 5</string>
+  <string name="device_oneplus5_summary">cheeseburger\nSoufiane Boulbayem - Eliminater</string>
+  
+  <string name="device_oneplus5t">OnePlus 5T</string>
+  <string name="device_oneplus5t_summary">dumpling\nSoufiane Boulbayem - Eliminater</string>
 </resources>

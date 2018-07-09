@@ -42,6 +42,20 @@
             android:summary="@string/device_oneplus3t_summary" 
             android:selectable="false" 
             android:title="@string/device_oneplus3t" />
+
+        <Preference 
+            android:id="@+id/device_oneplus5" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_oneplus5_summary" 
+            android:selectable="false" 
+            android:title="@string/device_oneplus5" />
+
+        <Preference 
+            android:id="@+id/device_oneplus5t" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_oneplus5t_summary" 
+            android:selectable="false" 
+            android:title="@string/device_oneplus5t" />
     </PreferenceCategory>
 	
     <PreferenceCategory
