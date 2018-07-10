@@ -41,7 +41,7 @@
   <string name="device_osprey_summary">osprey\nAnushek Prasal - SKULSHADY</string>
   
   <string name="device_potter">Moto G5 Plus</string>
-  <string name="device_potter_summary">potter\nDhruv Kelawala - MaXology</string>
+  <string name="device_potter_summary">potter\nAkhil Menon - Akhil_dev</string>
   
   <string name="device_sagit">Xiaomi Mi 6</string>
   <string name="device_sagit_summary">sagit\nArian Keller - NeoArian</string>
@@ -117,4 +117,7 @@
   
   <string name="device_falcon">Moto G</string>
   <string name="device_falcon_summary">falcon\nAnushek Prasal - SKULSHADY</string>
+  
+  <string name="device_oxygen">Xiaomi Mi Max 2</string>
+  <string name="device_oxygen_summary">oxygen\nJohn Evans - eva0034</string>
 </resources>

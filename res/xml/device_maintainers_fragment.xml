@@ -155,6 +155,13 @@
         android:title="@string/device_category_xiaomi_title">
 
         <Preference 
+            android:id="@+id/device_sagit" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_sagit_summary" 
+            android:selectable="false" 
+            android:title="@string/device_sagit" />
+
+        <Preference 
             android:id="@+id/device_tissot" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_tissot_summary" 
@@ -162,11 +169,11 @@
             android:title="@string/device_tissot" />
 
         <Preference 
-            android:id="@+id/device_sagit" 
+            android:id="@+id/device_oxygen" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_sagit_summary" 
+            android:summary="@string/device_oxygen_summary" 
             android:selectable="false" 
-            android:title="@string/device_sagit" />
+            android:title="@string/device_oxygen" />
 
         <Preference 
             android:id="@+id/device_vince" 
