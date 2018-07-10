@@ -31,6 +31,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.util.Log;
+import com.android.internal.utils.du.DUActionUtils; 
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.havoc.Utils;
@@ -68,6 +69,7 @@ public class Weather extends SettingsPreferenceFragment implements
     private static final String LOCK_TEMP_FONTS = "lock_temp_fonts"; 
     private static final String LOCK_CITY_FONTS = "lock_city_fonts"; 
     private static final String LOCK_CONDITION_FONTS = "lock_condition_fonts"; 
+    private static final String KEY_LOCKSCREEN_WEATHER_SELECTION = "lockscreen_weather_selection"; 
 
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
@@ -80,6 +82,7 @@ public class Weather extends SettingsPreferenceFragment implements
     private SystemSettingSeekBarPreference mTempFontSize;  
     private SystemSettingSeekBarPreference mCityFontSize;  
     private SystemSettingSeekBarPreference mConditionFontSize;  
+    private ListPreference mLockscreenWeatherSelection; 
     ListPreference mLockTempFonts; 
     ListPreference mLockCityFonts; 
     ListPreference mLockConditionFonts; 
@@ -89,6 +92,7 @@ public class Weather extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.havoc_settings_weather);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mWeatherCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
@@ -118,6 +122,13 @@ public class Weather extends SettingsPreferenceFragment implements
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
             mWeatherIconPack.setOnPreferenceChangeListener(this);
         }
+
+        mLockscreenWeatherSelection = (ListPreference) findPreference(KEY_LOCKSCREEN_WEATHER_SELECTION); 
+        int weatherSelection = Settings.System.getIntForUser(resolver, 
+                Settings.System.LOCKSCREEN_WEATHER_SELECTION, 0, UserHandle.USER_CURRENT); 
+                mLockscreenWeatherSelection.setValue(String.valueOf(weatherSelection)); 
+                mLockscreenWeatherSelection.setSummary(mLockscreenWeatherSelection.getEntry()); 
+                mLockscreenWeatherSelection.setOnPreferenceChangeListener(this); 
 
         // Lockscren temp Fonts 
         mLockTempFonts = (ListPreference) findPreference(LOCK_TEMP_FONTS); 
@@ -158,7 +169,6 @@ public class Weather extends SettingsPreferenceFragment implements
         int intColor;
         String hexColor;
 
-        ContentResolver resolver = getActivity().getContentResolver();
         mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE);
         int temperatureShow = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
@@ -313,7 +323,14 @@ public class Weather extends SettingsPreferenceFragment implements
                     mLockConditionFonts.setValue(String.valueOf(newValue)); 
                     mLockConditionFonts.setSummary(mLockConditionFonts.getEntry()); 
             return true; 
-        }
+        } else if (preference == mLockscreenWeatherSelection) { 
+            int weatherSelection = Integer.valueOf((String) newValue); 
+            int index = mLockscreenWeatherSelection.findIndexOfValue((String) newValue); 
+            Settings.System.putIntForUser(resolver, 
+                    Settings.System.LOCKSCREEN_WEATHER_SELECTION, weatherSelection, UserHandle.USER_CURRENT); 
+                    mLockscreenWeatherSelection.setSummary(mLockscreenWeatherSelection.getEntries()[index]); 
+            return true; 
+        } 
         return false;
     }
 

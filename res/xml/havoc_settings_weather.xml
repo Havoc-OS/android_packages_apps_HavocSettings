@@ -38,6 +38,117 @@
 
     </PreferenceCategory>
 
+
+    
+    <PreferenceCategory	
+        android:title="@string/lock_screen_weather_category" >
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_show_weather"
+            android:title="@string/lock_screen_weather_title"
+            android:summary="@string/lock_screen_weather_summary" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_show_weather_location"
+            android:title="@string/lock_screen_location_title"
+            android:summary="@string/lock_screen_location_summary"
+            android:defaultValue="true"
+            android:dependency="lock_screen_show_weather" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_weather_condition_icon"
+            android:title="@string/lock_screen_weather_condition_icon_title"
+            android:summary="@string/lock_screen_weather_condition_icon_summary"
+            android:defaultValue="true"
+            android:dependency="lock_screen_show_weather" />
+
+       <ListPreference 
+            android:key="lockscreen_weather_selection" 
+            android:title="@string/lockscreen_weather_selection_title" 
+            android:entries="@array/lockscreen_date_selection_entries" 
+            android:entryValues="@array/lockscreen_date_selection_values" 
+            android:defaultValue="0" 
+            android:dependency="lock_screen_show_weather" />
+ 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="weather_temp"
+        android:dependency="lock_screen_show_weather"
+        android:title="@string/weather_temp">
+
+      <ListPreference  
+        android:key="lock_temp_fonts"  
+        android:title="@string/ls_temp_font"  
+        android:dialogTitle="@string/lock_temp_font_dialog_title"  
+        android:summary="@string/lock_temp_font_summary"  
+        android:entries="@array/lock_clock_fonts_entries"  
+        android:entryValues="@array/lock_clock_fonts_values"  
+        android:persistent="false" />  
+
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
+        android:key="locktemp_font_size"  
+        android:title="@string/ls_temp_size"  
+        android:max="25"  
+        settings:min="1" 
+        settings:units="sp" 
+        android:defaultValue="14"  
+        android:persistent="false"  
+        android:dependency="lock_screen_show_weather" />  
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="weather_city"
+        android:dependency="lock_screen_show_weather"
+        android:title="@string/weather_city">
+
+       <ListPreference  
+        android:key="lock_city_fonts"  
+        android:title="@string/ls_city_font"  
+        android:dialogTitle="@string/lock_city_font_dialog_title"  
+        android:summary="@string/lock_city_font_summary"  
+        android:entries="@array/lock_clock_fonts_entries"  
+        android:entryValues="@array/lock_clock_fonts_values"  
+        android:persistent="false" />  
+ 
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
+        android:key="lockcity_font_size"  
+        android:title="@string/ls_city_size"  
+        android:max="25"  
+        settings:min="1" 
+        settings:units="sp" 
+        android:defaultValue="14"  
+        android:persistent="false"  
+        android:dependency="lock_screen_show_weather" />  
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="weather_condition"
+        android:dependency="lock_screen_show_weather"
+        android:title="@string/weather_condition">
+
+      <ListPreference  
+        android:key="lock_condition_fonts"  
+        android:title="@string/ls_condition_font"  
+        android:dialogTitle="@string/lock_condition_font_dialog_title"  
+        android:summary="@string/lock_condition_font_summary"  
+        android:entries="@array/lock_clock_fonts_entries"  
+        android:entryValues="@array/lock_clock_fonts_values"  
+        android:persistent="false" />  
+
+     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
+        android:key="lockcondition_font_size"  
+        android:title="@string/ls_condition_size"  
+        android:max="25"  
+        settings:min="1" 
+        settings:units="sp" 
+        android:defaultValue="14"  
+        android:persistent="false"  
+        android:dependency="lock_screen_show_weather" />  
+    </PreferenceCategory>
+
   <PreferenceCategory
         android:key="weather_statusbar"
         android:title="@string/weather_statusbar">
@@ -82,102 +193,5 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory	
-        android:title="@string/lock_screen_weather_category" >
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="lock_screen_show_weather"
-            android:title="@string/lock_screen_weather_title"
-            android:summary="@string/lock_screen_weather_summary" />
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="lock_screen_show_weather_location"
-            android:title="@string/lock_screen_location_title"
-            android:summary="@string/lock_screen_location_summary"
-            android:defaultValue="true"
-            android:dependency="lock_screen_show_weather" />
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="lock_screen_weather_condition_icon"
-            android:title="@string/lock_screen_weather_condition_icon_title"
-            android:summary="@string/lock_screen_weather_condition_icon_summary"
-            android:defaultValue="true"
-            android:dependency="lock_screen_show_weather" />
- 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="weather_temp"
-        android:title="@string/weather_temp">
-
-      <ListPreference  
-        android:key="lock_temp_fonts"  
-        android:title="@string/ls_temp_font"  
-        android:dialogTitle="@string/lock_temp_font_dialog_title"  
-        android:summary="@string/lock_temp_font_summary"  
-        android:entries="@array/lock_clock_fonts_entries"  
-        android:entryValues="@array/lock_clock_fonts_values"  
-        android:persistent="false" />  
-
-     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
-        android:key="locktemp_font_size"  
-        android:title="@string/ls_temp_size"  
-        android:max="25"  
-        settings:min="1" 
-        settings:units="sp" 
-        android:defaultValue="14"  
-        android:persistent="false"  
-        android:dependency="lock_screen_show_weather" />  
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="weather_city"
-        android:title="@string/weather_city">
-
-       <ListPreference  
-        android:key="lock_city_fonts"  
-        android:title="@string/ls_city_font"  
-        android:dialogTitle="@string/lock_city_font_dialog_title"  
-        android:summary="@string/lock_city_font_summary"  
-        android:entries="@array/lock_clock_fonts_entries"  
-        android:entryValues="@array/lock_clock_fonts_values"  
-        android:persistent="false" />  
- 
-     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
-        android:key="lockcity_font_size"  
-        android:title="@string/ls_city_size"  
-        android:max="25"  
-        settings:min="1" 
-        settings:units="sp" 
-        android:defaultValue="14"  
-        android:persistent="false"  
-        android:dependency="lock_screen_show_weather" />  
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="weather_condition"
-        android:title="@string/weather_condition">
-
-      <ListPreference  
-        android:key="lock_condition_fonts"  
-        android:title="@string/ls_condition_font"  
-        android:dialogTitle="@string/lock_condition_font_dialog_title"  
-        android:summary="@string/lock_condition_font_summary"  
-        android:entries="@array/lock_clock_fonts_entries"  
-        android:entryValues="@array/lock_clock_fonts_values"  
-        android:persistent="false" />  
-
-     <com.havoc.settings.preferences.SystemSettingSeekBarPreference  
-        android:key="lockcondition_font_size"  
-        android:title="@string/ls_condition_size"  
-        android:max="25"  
-        settings:min="1" 
-        settings:units="sp" 
-        android:defaultValue="14"  
-        android:persistent="false"  
-        android:dependency="lock_screen_show_weather" />  
-    </PreferenceCategory>
 	
 </PreferenceScreen>

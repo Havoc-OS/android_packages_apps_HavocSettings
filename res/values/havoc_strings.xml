@@ -1751,6 +1751,7 @@
     <string name="lockscreen_clock_selection_sammy">Sammy</string> 
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (Bold)</string> 
     <string name="lockscreen_date_selection_title">Date style</string> 
+    <string name="lockscreen_weather_selection_title">Weather style</string> 
     <string name="lockscreen_date_selection_default_aosp">Default</string> 
     <string name="lockscreen_date_selection_default">Default (bigger size)</string> 
     <string name="lockscreen_date_selection_str_box">Semi-transparent box</string> 
