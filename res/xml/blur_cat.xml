@@ -64,7 +64,7 @@
             android:title="@string/blurred_scale"
             android:summary="@string/blurred_scale_summary"
             android:max="20"
-            settings:min="1"
+            android:min="1"
             android:dependency="blurred_status_bar_expanded_enabled_pref"
             android:defaultValue="10" />
 
@@ -73,7 +73,7 @@
             android:title="@string/blurred_radius"
             android:summary="@string/blurred_radius_summary"
             android:max="25"
-            settings:min="1"
+            android:min="1"
             android:dependency="blurred_status_bar_expanded_enabled_pref"
             android:defaultValue="5" />
     </PreferenceCategory>
@@ -90,7 +90,7 @@
             android:key="notifications_transluency"
             android:title="@string/transluency_level_universal"
             android:max="100"
-            settings:min="0"
+            android:min="0"
             android:dependency="translucent_notifications_pref"
             android:defaultValue="60" />
     </PreferenceCategory>>
@@ -106,7 +106,7 @@
             android:key="quick_settings_transluency"
             android:title="@string/transluency_level_universal"
             android:max="100"
-            settings:min="0"
+            android:min="0"
             android:dependency="translucent_quick_settings_pref"
             android:defaultValue="60" />
     </PreferenceCategory>
@@ -126,7 +126,7 @@
             android:title="@string/blurred_scale"
             android:summary="@string/blurred_scale_summary"
             android:max="20"
-            settings:min="1"
+            android:min="1"
             android:dependency="blurred_recent_app_enabled_pref"
             android:defaultValue="6" />
 
@@ -135,7 +135,7 @@
             android:title="@string/blurred_radius"
             android:summary="@string/blurred_radius_summary"
             android:max="25"
-            settings:min="1"
+            android:min="1"
             android:dependency="blurred_recent_app_enabled_pref"
             android:defaultValue="3" />
 

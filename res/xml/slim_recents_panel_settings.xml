@@ -41,7 +41,7 @@
         android:key="recents_max_apps"
         android:title="@string/recents_max_apps_title"
         android:max="30"
-        settings:min="5"
+        android:min="5"
         android:persistent="false" />
 
     <ListPreference
@@ -67,7 +67,7 @@
         android:key="recent_panel_scale"
         android:title="@string/recent_panel_scale_title"
         android:max="160"
-        settings:min="60"
+        android:min="60"
         settings:interval="5"
         settings:units="%"
         android:persistent="false" />

@@ -92,7 +92,7 @@
             android:max="60"
             android:persistent="false"
             android:title="@string/app_chooser_timeout_title"
-            settings:min="0"
+            android:min="0"
             settings:units="@string/unit_sec" />
 
         <ListPreference
@@ -110,7 +110,7 @@
             android:persistent="false"
             android:summary="@string/wired_events_threshold_summary"
             android:title="@string/wired_events_threshold_title"
-            settings:min="0"
+            android:min="0"
             settings:units="@string/unit_sec" />
     </PreferenceCategory>
 </PreferenceScreen>

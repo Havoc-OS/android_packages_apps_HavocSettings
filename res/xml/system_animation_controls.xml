@@ -25,7 +25,7 @@
             android:key="animation_controls_duration"
             android:title="@string/animation_duration_title"
             android:max="400"
-            settings:min="0"
+            android:min="0"
             settings:interval="8"
             settings:units="ms"
             android:persistent="false" />

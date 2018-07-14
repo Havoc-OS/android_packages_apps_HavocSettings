@@ -25,7 +25,7 @@
              android:key="transparent_volume_dialog_dim"  
              android:title="@string/volume_dialog_dim"  
              android:max="100"  
-             settings:min="0"  
+             android:min="0"  
              settings:units="%"  
              android:defaultValue="50" />  
  
@@ -33,7 +33,7 @@
             android:key="transparent_volume_dialog" 
             android:title="@string/volume_dialog_transparency" 
             android:max="255" 
-            settings:min="0" 
+            android:min="0" 
             settings:units="" 
             android:defaultValue="255" /> 
  
@@ -41,7 +41,7 @@
             android:key="volume_dialog_corner_radius" 
             android:title="@string/volume_dialog_corner_radius_title" 
             android:max="50" 
-            settings:min="0" 
+            android:min="0" 
             settings:units="px" 
             android:defaultValue="10" /> 
  
@@ -62,7 +62,7 @@
             android:key="volume_dialog_stroke_thickness" 
             android:title="@string/volume_dialog_stroke_thickness_title" 
             android:max="25" 
-            settings:min="1" 
+            android:min="1" 
             settings:units="px" 
             android:defaultValue="4" /> 
  
@@ -70,7 +70,7 @@
             android:key="volume_dialog_stroke_dash_width" 
             android:title="@string/volume_dialog_dash_width_title" 
             android:max="50" 
-            settings:min="0" 
+            android:min="0" 
             settings:units="px" 
             android:defaultValue="0" /> 
  
@@ -78,7 +78,7 @@
             android:key="volume_dialog_stroke_dash_gap" 
             android:title="@string/volume_dialog_dash_gap_title" 
             android:max="50" 
-            settings:min="1" 
+            android:min="1" 
             settings:units="px" 
             android:defaultValue="10" /> 
  
@@ -91,7 +91,7 @@
             android:key="transparent_power_menu" 
             android:title="@string/power_menu_transparency" 
             android:max="100" 
-            settings:min="0" 
+            android:min="0" 
             settings:units="%" 
             android:defaultValue="100" /> 
 
@@ -99,7 +99,7 @@
             android:key="transparent_power_dialog_dim" 
             android:title="@string/power_menu_dialog_dim" 
             android:max="100" 
-            settings:min="0" 
+            android:min="0" 
             settings:units="%" 
             android:defaultValue="50" /> 
 

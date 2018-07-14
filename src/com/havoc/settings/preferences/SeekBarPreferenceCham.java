@@ -66,10 +66,7 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
     private int mThumbDefaultValueColor;
 
     private TextView mStatusText;
-    private TextView mPopupValue;
     private boolean mTrackingTouch = false;
-    private boolean mPopupAdded = false;
-    private int mPopupWidth = 0;
     private boolean initialised = false;
 
     public SeekBarPreferenceCham(Context context, AttributeSet attrs) {
@@ -212,18 +209,6 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
 
         LayoutInflater mInflater = (LayoutInflater) getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mPopupValue = (TextView) mInflater.inflate(R.layout.seek_bar_value_popup, null, false);
-        mPopupValue.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    int width = mPopupValue.getWidth();
-                    if (width != mPopupWidth) {
-                        mPopupWidth = mPopupValue.getWidth();
-                        startUpdateViewValue();
-                    }
-                }
-        });
-
         initialised = true;
         updateView();
         mSeekBar.setOnSeekBarChangeListener(this);
@@ -270,12 +255,6 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
         mCurrentValue = newValue;
         updateCurrentValueText();
 
-        if (fromUser) {
-            startUpdateViewValue();
-        } else {
-            stopUpdateViewValue();
-        }
-
         persistInt(newValue);
     }
 
@@ -299,19 +278,17 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
     }
 
     @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-        startUpdateViewValue();
-        mTrackingTouch = true;
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-        notifyChanged();
-        stopUpdateViewValue();
-        mTrackingTouch = false;
-    }
-
-    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) { 
+        mTrackingTouch = true; 
+    } 
+ 
+    @Override 
+    public void onStopTrackingTouch(SeekBar seekBar) { 
+        notifyChanged(); 
+        mTrackingTouch = false; 
+    } 
+ 
+    @Override 
     protected Object onGetDefaultValue(TypedArray ta, int index){
         int defaultValue = ta.getInt(index, DEFAULT_VALUE);
         return defaultValue;
@@ -354,37 +331,6 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
         } else {
             mainContentView.getLocationInWindow(offsetPos);
         }
-        mPopupValue.setText(mUnitsLeft + mCurrentValue + mUnitsRight);
-        WindowManager.LayoutParams wp = new WindowManager.LayoutParams(
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_APPLICATION,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                PixelFormat.TRANSLUCENT);
-        wp.gravity = Gravity.LEFT | Gravity.TOP;
-        wp.x = thumbRect.centerX() + seekbarPos[0] - offsetPos[0] - (mPopupWidth-thumbRect.width()) / 2 +
-                (int) getContext().getResources()
-                        .getDimension(R.dimen.seek_bar_preference_cham_value_x_offset);
-        wp.y = seekbarPos[1] - offsetPos[1] +
-                (int) getContext().getResources()
-                        .getDimension(R.dimen.seek_bar_preference_cham_value_y_offset);
-        mPopupValue.setLayoutParams(wp);
-        if (mPopupAdded) {
-            wp = (WindowManager.LayoutParams) mPopupValue.getLayoutParams();
-            ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE))
-                    .updateViewLayout(mPopupValue, wp);
-        } else {
-            ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE))
-                    .addView(mPopupValue, wp);
-            mPopupAdded = true;
-        }
-        mPopupValue.setVisibility(View.VISIBLE);
-    }
-
-    private void stopUpdateViewValue() {
-        if (!mPopupAdded) return;
-        ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).removeView(mPopupValue);
-        mPopupAdded = false;
     }
 
     public void setMax(int max) {

@@ -30,7 +30,7 @@
         android:key="opa_anim_duration_x" 
         android:title="@string/pixel_anim_x_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -39,7 +39,7 @@
         android:key="opa_anim_duration_y" 
         android:title="@string/pixel_anim_y_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -47,7 +47,7 @@
         android:key="collapse_anim_duration_ry" 
         android:title="@string/collapse_anim_duration_ry_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -56,7 +56,7 @@
         android:key="collapse_anim_duration_bg" 
         android:title="@string/collapse_anim_duration_bg_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -64,7 +64,7 @@
         android:key="retract_anim_duration" 
         android:title="@string/retract_anim_duration_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -73,7 +73,7 @@
         android:key="diamond_anim_duration" 
         android:title="@string/diamond_anim_duration_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -81,7 +81,7 @@
         android:key="dots_anim_duration" 
         android:title="@string/dots_anim_duration_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
  
@@ -90,7 +90,7 @@
         android:key="home_resize_anim_duration" 
         android:title="@string/home_resize_anim_duration_title" 
         android:max="1000" 
-        settings:min="50"
+        android:min="50"
         settings:units="ms" 
         android:persistent="false" /> 
 

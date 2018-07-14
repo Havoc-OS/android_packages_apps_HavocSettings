@@ -60,7 +60,7 @@
             android:summary="%s"
             android:defaultValue="5" />
 
-    <com.havoc.settings.preferences.CustomSeekBarPreference
+    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="edge_gestures_back_screen_percent"
             android:title="@string/edge_gestures_back_screen_percent_summary"
             android:min="0"

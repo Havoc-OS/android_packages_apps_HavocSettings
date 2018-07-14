@@ -54,7 +54,7 @@
         android:key="pulse_custom_buttons_opacity"
         android:title="@string/pulse_custom_buttons_opacity_title"
         android:max="255"
-        settings:min="0"
+        android:min="0"
         android:dependency="eos_fling_show_pulse"/>
 
     <PreferenceCategory
@@ -65,7 +65,7 @@
             android:key="pulse_custom_dimen"
             android:title="@string/pulse_custom_dimen"
             android:max="30"
-            settings:min="1"
+            android:min="1"
             settings:units="dp"
             android:dependency="pulse_fading_bars_category"/>
 
@@ -73,7 +73,7 @@
             android:key="pulse_custom_div"
             android:title="@string/pulse_custom_div"
             android:max="44"
-            settings:min="2"
+            android:min="2"
             settings:interval="2"
             settings:units="dp"
             android:dependency="pulse_fading_bars_category"/>
@@ -82,7 +82,7 @@
             android:key="pulse_filled_block_size"
             android:title="@string/pulse_filled_block_size"
             android:max="8"
-            settings:min="4"
+            android:min="4"
             settings:units="dp"
             android:dependency="pulse_fading_bars_category"/>
 
@@ -90,7 +90,7 @@
             android:key="pulse_empty_block_size"
             android:title="@string/pulse_empty_block_size"
             android:max="4"
-            settings:min="0"
+            android:min="0"
             settings:units="dp"
             android:dependency="pulse_fading_bars_category"/>
 
@@ -98,21 +98,21 @@
             android:key="pulse_custom_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="6"
-            settings:min="2"
+            android:min="2"
             android:dependency="pulse_fading_bars_category"/>
         
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
             android:key="pulse_fading_blocks_opacity" 
             android:title="@string/pulse_fading_blocks_opacity" 
             android:max="200" 
-            settings:min="0" 
+            android:min="0" 
             android:dependency="eos_fling_show_pulse" /> 
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="fling_pulse_lavalamp_speed"
             android:title="@string/lavamp_solid_speed_title"
             android:max="30000"
-            settings:min="200"
+            android:min="200"
             settings:interval="200"
             settings:units="ms"
             android:dependency="pulse_fading_bars_category"/>
@@ -138,14 +138,14 @@
             android:key="pulse_solid_units_opacity"
             android:title="@string/pulse_solid_units_opacity"
             android:max="255"
-            settings:min="0"
+            android:min="0"
             android:dependency="pulse_2"/>
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="pulse_solid_units_count"
             android:title="@string/pulse_solid_units_count"
             android:max="128"
-            settings:min="32"
+            android:min="32"
             settings:interval="16"
             android:dependency="pulse_2"/>
 
@@ -153,14 +153,14 @@
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="7"
-            settings:min="2"
+            android:min="2"
             android:dependency="pulse_2"/>
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="lavamp_solid_speed"
             android:title="@string/lavamp_solid_speed_title"
             android:max="30000"
-            settings:min="200"
+            android:min="200"
             settings:interval="200"
             settings:units="ms"
             android:dependency="pulse_2"/>

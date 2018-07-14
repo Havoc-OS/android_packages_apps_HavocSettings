@@ -37,7 +37,7 @@
         android:summary="@string/trigger_width_summary"
         android:defaultValue="4"
         android:max="64"
-        settings:min="4"
+        android:min="4"
         settings:units="px"
         android:dependency="enable_app_circle_bar" />
 
@@ -47,7 +47,7 @@
         android:summary="@string/trigger_top_summary"
         android:defaultValue="0"
         android:max="99"
-        settings:min="0"
+        android:min="0"
         settings:units="%"
         android:dependency="enable_app_circle_bar" />
 
@@ -57,7 +57,7 @@
         android:summary="@string/trigger_bottom_summary"
         android:defaultValue="100"
         android:max="100"
-        settings:min="1"
+        android:min="1"
         settings:units="%"
         android:dependency="enable_app_circle_bar" />
 

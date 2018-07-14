@@ -46,7 +46,7 @@
         android:title="@string/trigger_width_title"
         android:defaultValue="4"
         android:max="64"
-        settings:min="4"
+        android:min="4"
         settings:units="px"
         android:dependency="gesture_anywhere_enabled" />
 
@@ -55,7 +55,7 @@
         android:title="@string/trigger_top_title"
         android:defaultValue="0"
         android:max="99"
-        settings:min="0"
+        android:min="0"
         settings:units="%"
         android:dependency="gesture_anywhere_enabled" />
 
@@ -64,7 +64,7 @@
         android:title="@string/trigger_bottom_title"
         android:defaultValue="100"
         android:max="100"
-        settings:min="1"
+        android:min="1"
         settings:units="%"
         android:dependency="gesture_anywhere_enabled" />
 
