@@ -58,9 +58,7 @@ public class Display extends SettingsPreferenceFragment implements
  
         mSmartPixelsOnPowerSave = (SystemSettingSwitchPreference) findPreference(ON_POWER_SAVE); 
  
-        updateDependency(); 
- 
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_pixels_footer); 
+        updateDependency();
 
         float velFriction = Settings.System.getFloatForUser(resolver,
                     Settings.System.STABILIZATION_VELOCITY_FRICTION,
