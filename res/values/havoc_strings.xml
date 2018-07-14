@@ -1953,4 +1953,8 @@
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Notification lights in DnD</string>
     <string name="zen_allow_lights_summary">Permit pulsing the light when Do Not Disturb is active</string>
+	
+    <!-- Battery saver color -->
+    <string name="battery_saver_color_title">Battery Saver color</string>
+    <string name="battery_saver_color_summary">Enable orange status - navigation bars when battery saver is activated</string>
 </resources>
