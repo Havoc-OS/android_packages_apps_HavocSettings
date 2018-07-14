@@ -91,7 +91,7 @@
         android:max="25" 
         android:min="1"
         settings:units="sp"
-        android:defaultValue="14" 
+        android:defaultValue="18" 
         android:persistent="false" 
         android:dependency="hide_lockscreen_date" /> 
 
