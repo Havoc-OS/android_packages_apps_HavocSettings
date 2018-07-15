@@ -65,7 +65,6 @@
             android:title="@string/edge_gestures_back_screen_percent_summary"
             android:min="0"
             android:max="90"
-            settings:defaultText="60 %"
             settings:units="%"
             android:defaultValue="60" />
 

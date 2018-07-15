@@ -310,6 +310,10 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
         updateView();
     }
 
+    public void setIntervalValue(int value) {
+        mInterval = value;
+    }
+
     private Drawable getSeekBarThumb() {
         return mProgressThumb;
     }
