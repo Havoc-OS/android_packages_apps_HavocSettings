@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 The Xperia Open Source Project
+     Copyright (C) 2016-2018 Havoc OS
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -53,91 +56,96 @@
             android:summary="@string/blur_notice_summary"
             android:selectable="false" />
 
-        <SwitchPreference
-            android:key="blurred_status_bar_expanded_enabled_pref"
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="blur_statusbar_enabled"
             android:title="@string/blurred_status_bar_expanded_enabled_pref"
             android:summary="@string/blurred_status_bar_expanded_enabled_pref_summary"
             android:defaultValue="false" />
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="statusbar_blur_scale"
+            android:key="blur_statusbar_scale"
             android:title="@string/blurred_scale"
             android:summary="@string/blurred_scale_summary"
             android:max="20"
-            android:min="1"
-            android:dependency="blurred_status_bar_expanded_enabled_pref"
+            settings:min="1"
+            android:dependency="blur_statusbar_enabled"
             android:defaultValue="10" />
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="statusbar_blur_radius"
+            android:key="blur_statusbar_radius"
             android:title="@string/blurred_radius"
             android:summary="@string/blurred_radius_summary"
             android:max="25"
-            android:min="1"
-            android:dependency="blurred_status_bar_expanded_enabled_pref"
+            settings:min="1"
+            android:dependency="blur_statusbar_enabled"
             android:defaultValue="5" />
     </PreferenceCategory>
 
     <!--<PreferenceCategory
         android:key="blur_notifications_cat"
         android:title="@string/blur_notifications_cat" >   
-        <SwitchPreference
-            android:key="translucent_notifications_pref"
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="blur_notifications_enabled"
             android:title="@string/translucent_notifications_pref"
             android:summary="@string/translucent_notifications_pref_summary"
             android:defaultValue="false" />
+
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="notifications_transluency"
+            android:key="blur_notifications_percentage"
             android:title="@string/transluency_level_universal"
             android:max="100"
-            android:min="0"
-            android:dependency="translucent_notifications_pref"
-            android:defaultValue="60" />
-    </PreferenceCategory>>
+            settings:min="0"
+            android:dependency="blur_notifications_enabled"
+            android:defaultValue="70" />
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="blur_qs_cat"
         android:title="@string/blur_qs_cat" >
-        <SwitchPreference
-            android:key="translucent_quick_settings_pref"
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="blur_quicksettings_enabled"
             android:title="@string/translucent_quick_settings_pref"
             android:summary="@string/translucent_quick_settings_pref_summary"
             android:defaultValue="false" />
+
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="quick_settings_transluency"
+            android:key="blur_quicksettings_percentage"
             android:title="@string/transluency_level_universal"
             android:max="100"
-            android:min="0"
-            android:dependency="translucent_quick_settings_pref"
+            settings:min="0"
+            android:dependency="blur_quicksettings_enabled"
             android:defaultValue="60" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="blur_recents_cat"
         android:title="@string/blur_recents_cat" >
 
-        <SwitchPreference
-            android:key="blurred_recent_app_enabled_pref"
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="blur_recent_enabled"
             android:title="@string/blurred_recent_app_enabled_pref"
             android:summary="@string/blurred_recent_app_enabled_pref_summary"
             android:defaultValue="false" />
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="recents_blur_scale"
+            android:key="blur_recent_scale"
             android:title="@string/blurred_scale"
             android:summary="@string/blurred_scale_summary"
             android:max="20"
-            android:min="1"
-            android:dependency="blurred_recent_app_enabled_pref"
+            settings:min="1"
+            android:dependency="blur_recent_enabled"
             android:defaultValue="6" />
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="recents_blur_radius"
+            android:key="blur_recent_radius"
             android:title="@string/blurred_radius"
             android:summary="@string/blurred_radius_summary"
             android:max="25"
-            android:min="1"
-            android:dependency="blurred_recent_app_enabled_pref"
+            settings:min="1"
+            android:dependency="blur_recent_enabled"
             android:defaultValue="3" />
 
-    </PreferenceCategory-->
+    </PreferenceCategory>
 </PreferenceScreen>

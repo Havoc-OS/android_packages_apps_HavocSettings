@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2016 The Xperia Open Source Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,64 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.havoc.settings.fragments;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.ContentResolver;
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
-import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.graphics.Color;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
-import android.text.format.DateFormat;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.havoc.settings.R;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.havoc.settings.R;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference; 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class BlurPersonalizations extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
-   //Switch Preferences
-    private SwitchPreference mExpand;
-    private SwitchPreference mNotiTrans;
-    private SwitchPreference mQuickSett;
-    private SwitchPreference mRecentsSett;
-    
     //Transluency,Radius and Scale
     private SystemSettingSeekBarPreference mScale;
     private SystemSettingSeekBarPreference mRadius;
     private SystemSettingSeekBarPreference mRecentsRadius;
     private SystemSettingSeekBarPreference mRecentsScale;
-    private SystemSettingSeekBarPreference mQuickSettPerc;
-    private SystemSettingSeekBarPreference mNotSettPerc;
+    //private SystemSettingSeekBarPreference mQuickSettPerc;
+    //private SystemSettingSeekBarPreference mNotSettPerc;
 
     //Colors
     private ColorPickerPreference mDarkBlurColor;
@@ -81,25 +53,14 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
     public static int BLUR_MIXED_COLOR_PREFERENCE_DEFAULT = Color.GRAY;
     public static int BLUR_DARK_COLOR_PREFERENCE_DEFAULT = Color.LTGRAY;
 
-    private static final int MENU_RESET = Menu.FIRST;
-    private static final int DLG_RESET = 0;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createCustomView();
-     }
-
-    public void createCustomView() { 
-        PreferenceScreen prefSet = getPreferenceScreen();
-        if (prefSet != null) {
-            prefSet.removeAll();
-        }
         addPreferencesFromResource(R.xml.blur_cat);
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        //Some help here
         int intLightColor;
         int intDarkColor;
         int intMixedColor;
@@ -107,75 +68,52 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         String hexDarkColor;
         String hexMixedColor;
 
-        mExpand = (SwitchPreference) findPreference("blurred_status_bar_expanded_enabled_pref");
-        mExpand.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_EXPANDED_ENABLED_PREFERENCE_KEY, 0) == 1));
-
-        mScale = (SystemSettingSeekBarPreference) findPreference("statusbar_blur_scale");
-        mScale.setValue(Settings.System.getInt(resolver, Settings.System.BLUR_SCALE_PREFERENCE_KEY, 10));
+        mScale = (SystemSettingSeekBarPreference) findPreference("blur_statusbar_scale");
+        mScale.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_STATUSBAR_SCALE, 10, UserHandle.USER_CURRENT));
         mScale.setOnPreferenceChangeListener(this);
 
-        mRadius = (SystemSettingSeekBarPreference) findPreference("statusbar_blur_radius");
-        mRadius.setValue(Settings.System.getInt(resolver, Settings.System.BLUR_RADIUS_PREFERENCE_KEY, 5));
+        mRadius = (SystemSettingSeekBarPreference) findPreference("blur_statusbar_radius");
+        mRadius.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_STATUSBAR_RADIUS, 5, UserHandle.USER_CURRENT));
         mRadius.setOnPreferenceChangeListener(this);
 
-        /*mNotiTrans = (SwitchPreference) prefSet.findPreference("translucent_notifications_pref");
-        mNotiTrans.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.TRANSLUCENT_NOTIFICATIONS_PREFERENCE_KEY, 0) == 1));
-        mQuickSett = (SwitchPreference) findPreference("translucent_quick_settings_pref");
-        mQuickSett.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY, 0) == 1));
-        mQuickSettPerc = (SystemSettingSeekBarPreference) findPreference("quick_settings_transluency");
-        mQuickSettPerc.setValue(Settings.System.getInt(resolver, Settings.System.TRANSLUCENT_QUICK_SETTINGS_PRECENTAGE_PREFERENCE_KEY, 60));
-        mQuickSettPerc.setOnPreferenceChangeListener(this);
-        /*mNotSettPerc = (SystemSettingSeekBarPreference) findPreference("notifications_transluency");
-        mNotSettPerc.setValue(Settings.System.getInt(resolver, Settings.System.TRANSLUCENT_NOTIFICATIONS_PRECENTAGE_PREFERENCE_KEY, 60));
+/*
+        mNotSettPerc = (SystemSettingSeekBarPreference) findPreference("blur_notifications_percentage");
+        mNotSettPerc.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_NOTIFICATIONS_PERCENTAGE, 60, UserHandle.USER_CURRENT));
         mNotSettPerc.setOnPreferenceChangeListener(this);
 
-        mRecentsSett = (SwitchPreference) findPreference("blurred_recent_app_enabled_pref");
-        mRecentsSett.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.RECENT_APPS_ENABLED_PREFERENCE_KEY, 0) == 1));
 
-        mRecentsScale = (SystemSettingSeekBarPreference) findPreference("recents_blur_scale");
-        mRecentsScale.setValue(Settings.System.getInt(getContentResolver(), Settings.System.RECENT_APPS_SCALE_PREFERENCE_KEY, 6));
+        mQuickSettPerc = (SystemSettingSeekBarPreference) findPreference("blur_quicksettings_percentage");
+        mQuickSettPerc.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_QUICKSETTINGS_PERCENTAGE, 60, UserHandle.USER_CURRENT));
+        mQuickSettPerc.setOnPreferenceChangeListener(this);
+*/
+        mRecentsScale = (SystemSettingSeekBarPreference) findPreference("blur_recent_scale");
+        mRecentsScale.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_RECENT_SCALE, 6, UserHandle.USER_CURRENT));
         mRecentsScale.setOnPreferenceChangeListener(this);
 
-        mRecentsRadius = (SystemSettingSeekBarPreference) findPreference("recents_blur_radius");
-        mRecentsRadius.setValue(Settings.System.getInt(resolver, Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, 3));
-        mRecentsRadius.setOnPreferenceChangeListener(this);*/
+        mRecentsRadius = (SystemSettingSeekBarPreference) findPreference("blur_recent_radius");
+        mRecentsRadius.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_RECENT_RADIUS, 3, UserHandle.USER_CURRENT));
+        mRecentsRadius.setOnPreferenceChangeListener(this);
 
         mLightBlurColor = (ColorPickerPreference) findPreference("blur_light_color");
-        mLightBlurColor.setOnPreferenceChangeListener(this);
-        intLightColor = Settings.System.getInt(getContentResolver(), Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY, BLUR_LIGHT_COLOR_PREFERENCE_DEFAULT);
+        intLightColor = Settings.System.getIntForUser(resolver, Settings.System.BLUR_LIGHT_COLOR, BLUR_LIGHT_COLOR_PREFERENCE_DEFAULT, UserHandle.USER_CURRENT);
         hexLightColor = String.format("#%08x", (0xffffffff & intLightColor));
         mLightBlurColor.setSummary(hexLightColor);
         mLightBlurColor.setNewPreviewColor(intLightColor);
+        mLightBlurColor.setOnPreferenceChangeListener(this);
 
         mDarkBlurColor = (ColorPickerPreference) findPreference("blur_dark_color");
-        mDarkBlurColor.setOnPreferenceChangeListener(this);
-        intDarkColor = Settings.System.getInt(getContentResolver(), Settings.System.BLUR_DARK_COLOR_PREFERENCE_KEY, BLUR_DARK_COLOR_PREFERENCE_DEFAULT);
+        intDarkColor = Settings.System.getIntForUser(resolver, Settings.System.BLUR_DARK_COLOR, BLUR_DARK_COLOR_PREFERENCE_DEFAULT, UserHandle.USER_CURRENT);
         hexDarkColor = String.format("#%08x", (0xffffffff & intDarkColor));
         mDarkBlurColor.setSummary(hexDarkColor);
         mDarkBlurColor.setNewPreviewColor(intDarkColor);
+        mDarkBlurColor.setOnPreferenceChangeListener(this);
 
         mMixedBlurColor = (ColorPickerPreference) findPreference("blur_mixed_color");
-        mMixedBlurColor.setOnPreferenceChangeListener(this);
-        intMixedColor = Settings.System.getInt(getContentResolver(), Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY, BLUR_MIXED_COLOR_PREFERENCE_DEFAULT);
+        intMixedColor = Settings.System.getIntForUser(resolver, Settings.System.BLUR_MIXED_COLOR, BLUR_MIXED_COLOR_PREFERENCE_DEFAULT, UserHandle.USER_CURRENT);
         hexMixedColor = String.format("#%08x", (0xffffffff & intMixedColor));
         mMixedBlurColor.setSummary(hexMixedColor);
         mMixedBlurColor.setNewPreviewColor(intMixedColor);
-
-        setHasOptionsMenu(true);
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.HAVOC_SETTINGS;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
+        mMixedBlurColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -183,152 +121,99 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mScale) {
             int value = ((Integer)newValue).intValue();
-            Settings.System.putInt(
-                resolver, Settings.System.BLUR_SCALE_PREFERENCE_KEY, value);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_STATUSBAR_SCALE, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRadius) {
             int value = ((Integer)newValue).intValue();
-            Settings.System.putInt(
-                resolver, Settings.System.BLUR_RADIUS_PREFERENCE_KEY, value);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_STATUSBAR_RADIUS, value, UserHandle.USER_CURRENT);
             return true;
-       /* } else if (preference == mQuickSettPerc) {
+/*        } else if (preference == mQuickSettPerc) {
             int value = ((Integer)newValue).intValue();
-            Settings.System.putInt(
-                resolver, Settings.System.TRANSLUCENT_QUICK_SETTINGS_PRECENTAGE_PREFERENCE_KEY, value);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_QUICKSETTINGS_PERCENTAGE, value, UserHandle.USER_CURRENT);
             return true;
+
         } else if (preference == mNotSettPerc) {
             int value = ((Integer)newValue).intValue();
-            Settings.System.putInt(
-                resolver, Settings.System.TRANSLUCENT_NOTIFICATIONS_PRECENTAGE_PREFERENCE_KEY, value);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_NOTIFICATIONS_PERCENTAGE, value, UserHandle.USER_CURRENT);
             return true;
-        }
+*/
         } else if (preference == mRecentsScale) {
             int value = ((Integer)newValue).intValue();
-            Settings.System.putInt(
-                resolver, Settings.System.RECENT_APPS_SCALE_PREFERENCE_KEY, value);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_RECENT_SCALE, value, UserHandle.USER_CURRENT);
             return true;
         } else if(preference == mRecentsRadius) {
             int value = ((Integer)newValue).intValue();
-            Settings.System.putInt(
-                resolver, Settings.System.RECENT_APPS_RADIUS_PREFERENCE_KEY, value);
-            return true;  */          
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_RECENT_RADIUS, value, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mLightBlurColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
+                    Integer.parseInt(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY, intHex);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.BLUR_LIGHT_COLOR, intHex, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mDarkBlurColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
+                    Integer.parseInt(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.BLUR_DARK_COLOR_PREFERENCE_KEY, intHex);
-            return true;           
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.BLUR_DARK_COLOR, intHex, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mMixedBlurColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
+                    Integer.parseInt(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY, intHex);
-            return true;               
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.BLUR_MIXED_COLOR, intHex, UserHandle.USER_CURRENT);
+            return true;
         }
         return false;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, R.string.reset)
-                .setIcon(com.android.internal.R.drawable.ic_menu_refresh)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_STATUSBAR_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_STATUSBAR_SCALE, 10, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_STATUSBAR_RADIUS, 5, UserHandle.USER_CURRENT);
+/*
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_NOTIFICATIONS_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_NOTIFICATIONS_PERCENTAGE, 70, UserHandle.USER_CURRENT);
+
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_QUICKSETTINGS_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_QUICKSETTINGS_PERCENTAGE, 60, UserHandle.USER_CURRENT);
+*/
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_RECENT_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_RECENT_SCALE, 6, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_RECENT_RADIUS, 3, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_DARK_COLOR, Color.LTGRAY, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_LIGHT_COLOR, Color.DKGRAY, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_MIXED_COLOR, Color.GRAY, UserHandle.USER_CURRENT);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case MENU_RESET:
-                showDialogInner(DLG_RESET);
-                return true;
-             default:
-                return super.onContextItemSelected(item);
-        }
-  }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if  (preference == mExpand) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_EXPANDED_ENABLED_PREFERENCE_KEY, enabled ? 1:0);
-        } else if (preference == mNotiTrans) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.TRANSLUCENT_NOTIFICATIONS_PREFERENCE_KEY, enabled ? 1:0);     
-      /*  } else if (preference == mQuickSett) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY, enabled ? 1:0);
-        } else if (preference == mRecentsSett) {
-            boolean enabled = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENT_APPS_ENABLED_PREFERENCE_KEY, enabled ? 1:0);  */
-        }
-        return super.onPreferenceTreeClick(preference);
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
-
-    private void showDialogInner(int id) {
-        DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
-        newFragment.setTargetFragment(this, 0);
-        newFragment.show(getFragmentManager(), "dialog " + id);
-    }
-
-    public static class MyAlertDialogFragment extends DialogFragment {
-
-        public static MyAlertDialogFragment newInstance(int id) {
-            MyAlertDialogFragment frag = new MyAlertDialogFragment();
-            Bundle args = new Bundle();
-            args.putInt("id", id);
-            frag.setArguments(args);
-            return frag;
-        }
-
-        BlurPersonalizations getOwner() {
-            return (BlurPersonalizations) getTargetFragment();
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            int id = getArguments().getInt("id");
-            switch (id) {
-                case DLG_RESET:
-                    return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.reset)
-                    .setMessage(R.string.reset_message)
-                    .setNegativeButton(R.string.cancel, null)
-                    .setPositiveButton(R.string.dlg_ok,
-                        new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getActivity().getContentResolver(),
-                                Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY, BLUR_LIGHT_COLOR_PREFERENCE_DEFAULT);
-                            Settings.System.putInt(getActivity().getContentResolver(),
-                                Settings.System.BLUR_DARK_COLOR_PREFERENCE_KEY, BLUR_DARK_COLOR_PREFERENCE_DEFAULT);
-                            Settings.System.putInt(getActivity().getContentResolver(),
-                                Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY, BLUR_MIXED_COLOR_PREFERENCE_DEFAULT);
-                            getOwner().createCustomView();
-                        }
-                    })
-                    .create();
-            }
-            throw new IllegalArgumentException("unknown id " + id);
-        }
-
-        @Override
-        public void onCancel(DialogInterface dialog) {
-
-        	}
-     };
 }
