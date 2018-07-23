@@ -73,17 +73,4 @@
 
     </PreferenceCategory>
 
-  <PreferenceCategory
-        android:key="gesture_misc"
-        android:title="@string/ambient_device">
-        
-    <!-- Three-fingers-swipe to screenshot --> 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="three_finger_gesture" 
-        android:title="@string/three_finger_gesture" 
-        android:summary="@string/three_finger_gesture_summary" 
-        android:defaultValue="false" /> 
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
