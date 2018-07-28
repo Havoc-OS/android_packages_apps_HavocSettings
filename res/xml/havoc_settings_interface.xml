@@ -44,6 +44,12 @@
             android:key="custom_font" 
             android:title="@string/font_picker_title" 
             android:persistent="false" />
+ 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="qs_tile_circle" 
+            android:title="@string/oreo_qs_title" 
+            android:summary="@string/oreo_qs_summary" 
+            android:defaultValue="true" /> 
 		
     </PreferenceCategory>
 

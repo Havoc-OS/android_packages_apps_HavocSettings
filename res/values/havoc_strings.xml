@@ -1957,4 +1957,8 @@
     <!-- Battery saver color -->
     <string name="battery_saver_color_title">Battery Saver color</string>
     <string name="battery_saver_color_summary">Enable orange status - navigation bars when battery saver is activated</string>
+
+    <!-- Oreo QS -->
+    <string name="oreo_qs_title">Android P QS Tiles</string>
+    <string name="oreo_qs_summary">Disable to switch back to Oreo QS tiles</string>
 </resources>
