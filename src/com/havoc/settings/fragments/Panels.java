@@ -37,70 +37,14 @@ import android.provider.Settings;
 import net.margaritov.preference.colorpicker.ColorPickerPreference; 
 import com.havoc.settings.preferences.SystemSettingSeekBarPreference; 
 
-public class Panels extends SettingsPreferenceFragment implements 
-Preference.OnPreferenceChangeListener {
-
-    public static final String TAG = "Panels";
-    private static final String PREF_TRANSPARENT_VOLUME_DIALOG = "transparent_volume_dialog"; 
-    private static final String PREF_VOLUME_DIALOG_STROKE = "volume_dialog_stroke"; 
-    private static final String PREF_VOLUME_DIALOG_STROKE_COLOR = "volume_dialog_stroke_color"; 
-    private static final String PREF_VOLUME_DIALOG_STROKE_THICKNESS = "volume_dialog_stroke_thickness"; 
-    private static final String PREF_VOLUME_DIALOG_CORNER_RADIUS = "volume_dialog_corner_radius"; 
-    private static final String PREF_VOLUME_DIALOG_STROKE_DASH_WIDTH = "volume_dialog_dash_width"; 
-    private static final String PREF_VOLUME_DIALOG_STROKE_DASH_GAP = "volume_dialog_dash_gap"; 
- 
-    private ListPreference mVolumeDialogStroke; 
-    private Preference mVolumeDialogStrokeColor; 
-    private Preference mVolumeDialogStrokeThickness; 
-    private Preference mVolumeDialogDashWidth; 
-    private Preference mVolumeDialogDashGap; 
- 
-    static final int DEFAULT_VOLUME_DIALOG_STROKE_COLOR = 0xFF80CBC4; 
+public class Panels extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_panels);
-
-        mVolumeDialogStroke = 
-        (ListPreference) findPreference(Settings.System.VOLUME_DIALOG_STROKE); 
-        mVolumeDialogStroke.setOnPreferenceChangeListener(this); 
-        mVolumeDialogStrokeColor = findPreference(Settings.System.VOLUME_DIALOG_STROKE_COLOR); 
-        mVolumeDialogStrokeThickness = findPreference(Settings.System.VOLUME_DIALOG_STROKE_THICKNESS); 
-        mVolumeDialogDashWidth = findPreference(Settings.System.VOLUME_DIALOG_STROKE_DASH_WIDTH); 
-        mVolumeDialogDashGap = findPreference(Settings.System.VOLUME_DIALOG_STROKE_DASH_GAP); 
-        updateVolumeDialogDependencies(mVolumeDialogStroke.getValue()); 
     }
-
-    @Override 
-    public boolean onPreferenceChange(Preference preference, Object newValue) { 
-        if (preference == mVolumeDialogStroke) { 
-            updateVolumeDialogDependencies((String) newValue); 
-            return true; 
-        } else { 
-            return false; 
-        } 
-    } 
-
-    private void updateVolumeDialogDependencies(String volumeDialogStroke) { 
-        if (volumeDialogStroke.equals("0")) { 
-            mVolumeDialogStrokeColor.setEnabled(false); 
-            mVolumeDialogStrokeThickness.setEnabled(false); 
-            mVolumeDialogDashWidth.setEnabled(false); 
-            mVolumeDialogDashGap.setEnabled(false); 
-        } else if (volumeDialogStroke.equals("1")) { 
-            mVolumeDialogStrokeColor.setEnabled(false); 
-            mVolumeDialogStrokeThickness.setEnabled(true); 
-            mVolumeDialogDashWidth.setEnabled(true); 
-            mVolumeDialogDashGap.setEnabled(true); 
-        } else { 
-            mVolumeDialogStrokeColor.setEnabled(true); 
-            mVolumeDialogStrokeThickness.setEnabled(true); 
-            mVolumeDialogDashWidth.setEnabled(true); 
-            mVolumeDialogDashGap.setEnabled(true); 
-        } 
-    } 
 
     @Override
     public int getMetricsCategory() {
