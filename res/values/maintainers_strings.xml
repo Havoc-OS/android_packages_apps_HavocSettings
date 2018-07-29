@@ -29,6 +29,7 @@
   <string name="device_category_google_title">Google</string>
   <string name="device_category_samsung_title">Samsung</string>
   <string name="device_category_huawei_title">Huawei</string>
+  <string name="device_category_generic_title">Generic</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -120,4 +121,13 @@
   
   <string name="device_oxygen">Xiaomi Mi Max 2</string>
   <string name="device_oxygen_summary">oxygen\nJohn Evans - eva0034</string>
+
+  <string name="device_genericarm64aonly">Generic System Image</string>
+  <string name="device_genericarm64aonly_summary">ARM64 A-Only\Enes Sastim - EnesSastim</string>
+
+  <string name="device_genericarm64ab">Generic System Image</string>
+  <string name="device_genericarm64ab_summary">ARM64 AB\Enes Sastim - EnesSastim</string>
+
+  <string name="device_genericarmaonly">Generic System Image</string>
+  <string name="device_genericarmaonly_summary">ARM A-Only\Enes Sastim - EnesSastim</string>
 </resources>

@@ -17,6 +17,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.havoc.settings"
     android:title="@string/device_maintainers_title">
+	
+	<PreferenceCategory
+        android:id="@+id/device_category_generic"
+        android:title="@string/device_category_generic_title">
+
+        <Preference 
+            android:id="@+id/device_genericarm64aonly"
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_genericarm64aonly_summary" 
+            android:selectable="false" 
+            android:title="@string/device_genericarm64aonly" />
+
+        <Preference 
+            android:id="@+id/device_genericarm64ab"
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_genericarm64ab_summary" 
+            android:selectable="false" 
+            android:title="@string/device_genericarm64ab" />
+
+        <Preference 
+            android:id="@+id/device_genericarmaonly"
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_genericarmaonly_summary" 
+            android:selectable="false" 
+            android:title="@string/device_genericarmaonly" />
+    </PreferenceCategory>
  
     <PreferenceCategory
         android:id="@+id/device_category_oneplus"
