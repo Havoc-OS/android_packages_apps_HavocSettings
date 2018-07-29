@@ -30,6 +30,7 @@
   <string name="device_category_samsung_title">Samsung</string>
   <string name="device_category_huawei_title">Huawei</string>
   <string name="device_category_generic_title">Generic</string>
+  <string name="device_category_asus_title">Asus</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -133,4 +134,7 @@
 
   <string name="device_kuntao">Lenovo P2</string>
   <string name="device_kuntao_summary">kuntao\nHareesh Reddy - Hareesh25</string>
+
+  <string name="device_x00td">Asus Zenfone Max Pro M1</string>
+  <string name="device_x00td_summary">X00TD\nPavan Nayak - bukyapavankumar</string>
 </resources>
