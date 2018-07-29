@@ -261,6 +261,13 @@
             android:summary="@string/device_a6020_summary" 
             android:selectable="false" 
             android:title="@string/device_a6020" />
+
+        <Preference 
+            android:id="@+id/device_kuntao" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_kuntao_summary" 
+            android:selectable="false" 
+            android:title="@string/device_kuntao" />
     </PreferenceCategory>
 	
     <PreferenceCategory

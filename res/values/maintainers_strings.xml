@@ -123,11 +123,14 @@
   <string name="device_oxygen_summary">oxygen\nJohn Evans - eva0034</string>
 
   <string name="device_genericarm64aonly">Generic System Image</string>
-  <string name="device_genericarm64aonly_summary">ARM64 A-Only\Enes Sastim - EnesSastim</string>
+  <string name="device_genericarm64aonly_summary">ARM64 A-Only\nEnes Sastim - EnesSastim</string>
 
   <string name="device_genericarm64ab">Generic System Image</string>
   <string name="device_genericarm64ab_summary">ARM64 AB\Enes Sastim - EnesSastim</string>
 
   <string name="device_genericarmaonly">Generic System Image</string>
   <string name="device_genericarmaonly_summary">ARM A-Only\Enes Sastim - EnesSastim</string>
+
+  <string name="device_kuntao">Lenovo P2</string>
+  <string name="device_kuntao_summary">kuntao\nHareesh Reddy - Hareesh25</string>
 </resources>
