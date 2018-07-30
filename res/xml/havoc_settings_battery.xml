@@ -58,7 +58,25 @@
         android:title="@string/screen_state_toggles_title"  
         android:summary="@string/screen_state_toggles_summary"  
         android:fragment="com.havoc.settings.fragments.ScreenStateToggles" /> 
+
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="battery_actions"
+        android:title="@string/advanced_doze_settings">
 	
+        <Preference 
+             android:key="time_in_state" 
+             android:title="@string/time_in_state_title" 
+             android:summary="@string/time_in_state_summary" 
+             android:fragment="com.havoc.settings.fragments.TimeInState" /> 
+ 
+        <Preference 
+             android:key="doze_settings" 
+             android:title="@string/doze_settings_title" 
+             android:summary="@string/doze_settings_summary" 
+             android:fragment="com.havoc.settings.fragments.DozeSettings" /> 
+
     </PreferenceCategory>
 
 </PreferenceScreen>
