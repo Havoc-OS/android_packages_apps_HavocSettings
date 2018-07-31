@@ -1825,7 +1825,7 @@
     <string name="aosp_first_time_title">AOSP recents</string>
     <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
 
- <string name="systemui_restart_title">SystemUI restart required</string>
+    <string name="systemui_restart_title">SystemUI restart required</string>
     <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
 
 

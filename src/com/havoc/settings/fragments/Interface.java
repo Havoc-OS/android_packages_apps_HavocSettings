@@ -35,6 +35,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.widget.Toast;
+import android.support.v14.preference.SwitchPreference; 
 
 import android.content.pm.PackageInfo; 
 import android.content.pm.PackageManager; 
@@ -42,6 +43,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources; 
 import android.util.Log; 
 import android.content.Context; 
+import com.havoc.settings.preferences.Utils;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -60,7 +62,10 @@ public class Interface extends SettingsPreferenceFragment implements
     private static final String SUBS_PACKAGE = "projekt.substratum";
     private static final String CATEGORY_SUBSTRATUM = "category_substratum"; 
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size"; 
- 
+    private static final String QS_TILE_CIRCLE = "qs_tile_circle"; 
+
+    private SwitchPreference mQsTileCircle; 
+
     private Context mContext; 
     private SystemSettingSeekBarPreference mCornerRadius; 
 	
@@ -118,6 +123,12 @@ public class Interface extends SettingsPreferenceFragment implements
                     R.string.disable_fonts_installed_title));
         }
 
+        mQsTileCircle = 
+            (SwitchPreference) findPreference(QS_TILE_CIRCLE); 
+            mQsTileCircle.setChecked(Settings.System.getInt(getContentResolver(), 
+                Settings.System.QS_TILE_CIRCLE, 1) == 1); 
+                mQsTileCircle.setOnPreferenceChangeListener(this); 
+
         mIntentFilter = new IntentFilter(); 
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED"); 		
 
@@ -130,11 +141,17 @@ public class Interface extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) { 
+        final Context context = getActivity(); 
         if (preference == mCornerRadius) { 
             int value = (Integer) newValue; 
             Settings.Secure.putInt(getContentResolver(), 
                 Settings.Secure.SYSUI_ROUNDED_SIZE, value * 1); 
-        } 
+        } else if (preference == mQsTileCircle) { 
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.QS_TILE_CIRCLE,  (Boolean) newValue ? 1 : 0); 
+                    Utils.showSystemUiRestartDialog(context);
+            return true; 
+        }
         return true; 
     } 
 
