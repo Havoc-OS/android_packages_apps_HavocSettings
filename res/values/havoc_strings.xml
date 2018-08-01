@@ -2085,4 +2085,7 @@
     <string name="mt_reset">Reset</string> 
     <string name="time_in_state_title">Time in state</string> 
     <string name="time_in_state_summary">Show CPU frequency statistics</string> 
+	
+    <string name="edge_gestures_back_show_ui_feedback_title">Back gesture animation</string> 
+    <string name="edge_gestures_back_show_ui_feedback_summary">Show animated feedback on edges when back gesture is used</string>
 </resources>
