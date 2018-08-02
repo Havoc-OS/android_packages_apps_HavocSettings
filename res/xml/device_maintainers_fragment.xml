@@ -108,6 +108,13 @@
             android:title="@string/device_j5xnlte" /> 
 
         <Preference  
+            android:id="@+id/device_on7xelte"  
+            android:icon="@drawable/phone_tint"  
+            android:summary="@string/device_on7xelte_summary"  
+            android:selectable="false"  
+            android:title="@string/device_on7xelte" /> 
+
+        <Preference  
             android:id="@+id/device_herolte"  
             android:icon="@drawable/phone_tint"  
             android:summary="@string/device_herolte_summary"  
@@ -186,6 +193,13 @@
             android:summary="@string/device_sagit_summary" 
             android:selectable="false" 
             android:title="@string/device_sagit" />
+
+        <Preference 
+            android:id="@+id/device_wayne" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_wayne_summary" 
+            android:selectable="false" 
+            android:title="@string/device_wayne" />
 
         <Preference 
             android:id="@+id/device_tissot" 
@@ -316,5 +330,12 @@
             android:summary="@string/device_x00td_summary" 
             android:selectable="false" 
             android:title="@string/device_x00td" />
+
+        <Preference 
+            android:id="@+id/device_zenfone3" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_zenfone3_summary" 
+            android:selectable="false" 
+            android:title="@string/device_zenfone3" />
     </PreferenceCategory>
 </PreferenceScreen>

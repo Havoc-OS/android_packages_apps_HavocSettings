@@ -52,7 +52,7 @@
   <string name="device_kenzo_summary">kenzo\nAmogha Maiya - amog787</string>
   
   <string name="device_mido">Xiaomi Redmi Note 4</string>
-  <string name="device_mido_summary">mido\nDell Schulz - Dell Schulz</string>
+  <string name="device_mido_summary">mido\nSagar Rokade - sagar.rokade.982</string>
   
   <string name="device_whyred">Xiaomi Redmi Note 5 Pro</string>
   <string name="device_whyred_summary">whyred\nRuturaj Kadam - Ruturaj Kadam</string>
@@ -137,4 +137,13 @@
 
   <string name="device_x00td">Asus Zenfone Max Pro M1</string>
   <string name="device_x00td_summary">X00TD\nPavan Nayak - bukyapavankumar</string>
+  
+  <string name="device_wayne">Xiaomi Mi 6X</string>
+  <string name="device_wayne_summary">wayne\nFatesay - xda dmf</string>
+  
+  <string name="device_on7xelte">Samsung Galaxy J7 Prime</string>
+  <string name="device_on7xelte_summary">SM-G610M/F\nDouglas Gomes - Dougl@s123</string>
+
+  <string name="device_zenfone3">Asus Zenfone 3 (ZE520KL/ZE552KL)</string>
+  <string name="device_zenfone3_summary">zenfone3\nAbhay Kshatriya - vegeto1806</string>
 </resources>
