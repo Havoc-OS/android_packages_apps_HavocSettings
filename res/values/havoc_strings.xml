@@ -75,7 +75,11 @@
     <string name="ambient_recognition_title">Ambient Play</string>  
 
     <string name="screenshot_delay_title">Screenshot delay</string> 
-    
+
+      <!-- Bottom Navigations --> 
+   <string name="use_bottom_gesture_title">Use swipe up gestures for navigation</string> 
+   <string name="use_bottom_gesture_summary">Works only with navigation bar disable</string> 
+   
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>

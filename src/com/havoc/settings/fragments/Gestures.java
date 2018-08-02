@@ -25,6 +25,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.content.ContentResolver;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
@@ -32,15 +33,37 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
 
-public class Gestures extends SettingsPreferenceFragment {
+public class Gestures extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Gestures";
+    private static final String USE_GESTURE_NAVIGATION = "use_bottom_gesture"; 
+
+    private SwitchPreference mGestureNavigation; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        final ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.havoc_settings_gestures);
+        
+        mGestureNavigation = (SwitchPreference) findPreference(USE_GESTURE_NAVIGATION); 
+        mGestureNavigation.setChecked(Settings.System.getInt(resolver, 
+               Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, 0) == 1); 
+        mGestureNavigation.setOnPreferenceChangeListener(this); 
+ 
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mGestureNavigation) { 
+            boolean value = (Boolean) objValue; 
+            Settings.System.putInt(getActivity().getContentResolver(), 
+                    Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, value ? 1 : 0); 
+            return true; 
+        } 
+
+        return false;
     }
 
     @Override

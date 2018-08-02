@@ -59,6 +59,12 @@
     <PreferenceCategory
         android:key="gesture_ls"
         android:title="@string/gesture_ls">
+    
+    <SwitchPreference 
+        android:key="use_bottom_gesture" 
+        android:title="@string/use_bottom_gesture_title" 
+        android:summary="@string/use_bottom_gesture_summary" 
+        android:persistent="false" /> 
 
     <Preference 
         android:key="gesture_settings" 
