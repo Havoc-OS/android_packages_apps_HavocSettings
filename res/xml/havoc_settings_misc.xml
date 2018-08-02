@@ -16,7 +16,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
 	android:title="@string/misc_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
 
     
   <PreferenceCategory
@@ -72,6 +73,15 @@
         android:key="screenshot_edit_app"  
         android:title="@string/screenshot_edit_app"  
         android:summary="@string/screenshot_edit_app_summary" /> 
+ 
+   <com.havoc.settings.preferences.SystemSettingSeekBarPreference 
+       android:key="screenshot_delay" 
+       android:title="@string/screenshot_delay_title" 
+       android:max="10000" 
+       android:min="100" 
+       havocsettings:interval="100" 
+       android:defaultValue="100" 
+       settings:units="ms"/> 
 
     </PreferenceCategory>
 

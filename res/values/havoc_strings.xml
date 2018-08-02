@@ -73,6 +73,9 @@
 
         <!-- Ambient Play -->  
     <string name="ambient_recognition_title">Ambient Play</string>  
+
+    <string name="screenshot_delay_title">Screenshot delay</string> 
+    
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
