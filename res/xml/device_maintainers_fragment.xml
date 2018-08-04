@@ -82,6 +82,13 @@
             android:summary="@string/device_oneplus5t_summary" 
             android:selectable="false" 
             android:title="@string/device_oneplus5t" />
+
+        <Preference 
+            android:id="@+id/device_oneplus6" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_oneplus6_summary" 
+            android:selectable="false" 
+            android:title="@string/device_oneplus6" />
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -94,6 +101,18 @@
             android:summary="@string/device_marlin_summary" 
             android:selectable="false" 
             android:title="@string/device_marlin" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_lg"
+        android:title="@string/device_category_lg_title">
+
+        <Preference 
+            android:id="@+id/device_bullhead" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_bullhead_summary" 
+            android:selectable="false" 
+            android:title="@string/device_bullhead" />
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -337,5 +356,17 @@
             android:summary="@string/device_zenfone3_summary" 
             android:selectable="false" 
             android:title="@string/device_zenfone3" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_nextbit"
+        android:title="@string/device_category_nextbit_title">
+
+        <Preference 
+            android:id="@+id/device_ether" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_ether_summary" 
+            android:selectable="false" 
+            android:title="@string/device_ether" />
     </PreferenceCategory>
 </PreferenceScreen>

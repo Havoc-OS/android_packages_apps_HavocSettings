@@ -31,6 +31,8 @@
   <string name="device_category_huawei_title">Huawei</string>
   <string name="device_category_generic_title">Generic</string>
   <string name="device_category_asus_title">Asus</string>
+  <string name="device_category_lg_title">LG</string>
+  <string name="device_category_nextbit_title">Nextbit</string>
 
   <!-- Devices & Maintainers -->
   <string name="device_oneplus3">OnePlus 3 [Unified]</string>
@@ -146,4 +148,13 @@
 
   <string name="device_zenfone3">Asus Zenfone 3 (ZE520KL/ZE552KL)</string>
   <string name="device_zenfone3_summary">zenfone3\nAbhay Kshatriya - vegeto1806</string>
+
+  <string name="device_oneplus6">OnePlus 6</string>
+  <string name="device_oneplus6_summary">enchilada\nSoufiane Boulbayem - Eliminater</string>
+  
+  <string name="device_bullhead">LG Nexus 5X</string>
+  <string name="device_bullhead_summary">bullhead\nAnierin Bliss - anierinb</string>
+  
+  <string name="device_ether">Nextbit Robin</string>
+  <string name="device_ether_summary">ether\nAnierin Bliss - anierinb</string>
 </resources>
