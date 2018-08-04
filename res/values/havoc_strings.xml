@@ -48,6 +48,8 @@
     <string name="maintainer_category_title">Official Devices</string>
     <string name="zenixxx_summary">● Co-Founder \n● Core developer \n● Maintainer</string>
     <string name="skulshady_summary">● Co-Founder \n● Core developer \n● Maintainer</string>
+    <string name="eliminator_summary">● Developer \n● Maintainer</string>
+    <string name="filippo_summary">● PR Manager</string>
     <string name="device_maintainers_title">Devices and maintainers</string>
     <string name="device_maintainers_title_summary">List of devices and their official maintainers</string>
     <string name="changelog_title">Changelog</string>

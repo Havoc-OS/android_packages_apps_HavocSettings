@@ -44,6 +44,17 @@
             android:action="android.intent.action.VIEW"
             android:data="https://www.paypal.me/ANUSHEK"/>
         </Preference>
+
+        <Preference
+            android:title="Soufiane Boulbayem [Eliminater]"
+            android:icon="@drawable/havoc_developers"
+            android:summary="@string/eliminator_summary"/>
+
+        <Preference
+            android:title="Filippo Roggi [zzkW35]"
+            android:icon="@drawable/havoc_pr"
+            android:summary="@string/filippo_summary"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
