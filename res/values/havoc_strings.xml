@@ -1764,10 +1764,12 @@
     <string name="lockscreen_clock_selection_analog_deadpool">Analog (Deadpool)</string> 
     <string name="lockscreen_clock_selection_sammy">Sammy</string> 
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (Bold)</string> 
+    <string name="lockscreen_clock_selection_sammy_accent">Sammy Accent</string>
+    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy Accent (Alternate)</string>
     <string name="lockscreen_date_selection_title">Date style</string> 
     <string name="lockscreen_weather_selection_title">Weather style</string> 
     <string name="lockscreen_date_selection_default_aosp">Default</string> 
-    <string name="lockscreen_date_selection_default">Default (bigger size)</string> 
+    <string name="lockscreen_date_selection_default">Default</string> 
     <string name="lockscreen_date_selection_str_box">Semi-transparent box</string> 
     <string name="lockscreen_date_selection_str_round">Semi-transparent box (Round)</string> 	
     <string name="lockscreen_date_selection_outline_box">White outline</string> 

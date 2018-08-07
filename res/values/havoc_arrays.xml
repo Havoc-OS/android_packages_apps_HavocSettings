@@ -1514,6 +1514,8 @@
         <item>@string/lockscreen_clock_selection_analog</item> 
         <item>@string/lockscreen_clock_selection_sammy</item> 
         <item>@string/lockscreen_clock_selection_sammy_bold</item> 
+        <item>@string/lockscreen_clock_selection_sammy_accent</item>
+        <item>@string/lockscreen_clock_selection_sammy_accent_alt</item>
     </string-array> 
  
     <string-array name="lockscreen_clock_selection_values" translatable="false"> 
@@ -1522,6 +1524,8 @@
         <item>2</item> 
         <item>3</item> 
         <item>4</item> 
+        <item>5</item>
+        <item>6</item>
     </string-array> 
  
     <!-- Lockscreen date styles --> 
