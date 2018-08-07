@@ -26,22 +26,31 @@
             android:id="@+id/device_genericarm64aonly"
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_genericarm64aonly_summary" 
-            android:selectable="false" 
-            android:title="@string/device_genericarm64aonly" />
+            android:title="@string/device_genericarm64aonly" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/EnesSastim"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_genericarm64ab"
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_genericarm64ab_summary" 
-            android:selectable="false" 
-            android:title="@string/device_genericarm64ab" />
+            android:title="@string/device_genericarm64ab" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/EnesSastim"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_genericarmaonly"
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_genericarmaonly_summary" 
-            android:selectable="false" 
-            android:title="@string/device_genericarmaonly" />
+            android:title="@string/device_genericarmaonly" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/EnesSastim"/>
+        </Preference>
     </PreferenceCategory>
  
     <PreferenceCategory
@@ -52,43 +61,61 @@
             android:id="@+id/device_oneplus2" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_oneplus2_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oneplus2" />
+            android:title="@string/device_oneplus2" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/SimplyJeevS"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_oneplus3" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_oneplus3_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oneplus3" />
+            android:title="@string/device_oneplus3" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/ZeNiXxXx"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_oneplus3t" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_oneplus3t_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oneplus3t" />
+            android:title="@string/device_oneplus3t" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/SKULSHADY"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_oneplus5" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_oneplus5_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oneplus5" />
+            android:title="@string/device_oneplus5" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Boulous"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_oneplus5t" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_oneplus5t_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oneplus5t" />
+            android:title="@string/device_oneplus5t" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Boulous"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_oneplus6" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_oneplus6_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oneplus6" />
+            android:title="@string/device_oneplus6" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Boulous"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -99,8 +126,11 @@
             android:id="@+id/device_marlin" 
             android:icon="@drawable/phone_tint" 
             android:summary="@string/device_marlin_summary" 
-            android:selectable="false" 
-            android:title="@string/device_marlin" />
+            android:title="@string/device_marlin" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Joe_pacino"/>
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -110,9 +140,12 @@
         <Preference 
             android:id="@+id/device_bullhead" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_bullhead_summary" 
-            android:selectable="false" 
-            android:title="@string/device_bullhead" />
+            android:summary="@string/device_bullhead_summary"  
+            android:title="@string/device_bullhead" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Anierin"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -122,44 +155,62 @@
         <Preference  
             android:id="@+id/device_j5xnlte"  
             android:icon="@drawable/phone_tint"  
-            android:summary="@string/device_j5xnlte_summary"  
-            android:selectable="false"  
-            android:title="@string/device_j5xnlte" /> 
+            android:summary="@string/device_j5xnlte_summary"    
+            android:title="@string/device_j5xnlte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/JakyDel"/>
+        </Preference> 
 
         <Preference  
             android:id="@+id/device_on7xelte"  
             android:icon="@drawable/phone_tint"  
-            android:summary="@string/device_on7xelte_summary"  
-            android:selectable="false"  
-            android:title="@string/device_on7xelte" /> 
+            android:summary="@string/device_on7xelte_summary"    
+            android:title="@string/device_on7xelte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Douglas_DG"/>
+        </Preference> 
 
         <Preference  
             android:id="@+id/device_herolte"  
             android:icon="@drawable/phone_tint"  
-            android:summary="@string/device_herolte_summary"  
-            android:selectable="false"  
-            android:title="@string/device_herolte" /> 
+            android:summary="@string/device_herolte_summary"    
+            android:title="@string/device_herolte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Giblyat"/>
+        </Preference> 
  
         <Preference  
             android:id="@+id/device_hero2lte"  
             android:icon="@drawable/phone_tint"  
-            android:summary="@string/device_hero2lte_summary"  
-            android:selectable="false"  
-            android:title="@string/device_hero2lte" /> 
+            android:summary="@string/device_hero2lte_summary"    
+            android:title="@string/device_hero2lte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Giblyat"/>
+        </Preference> 
 
         <Preference 
             android:id="@+id/device_starlte" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_starlte_summary" 
-            android:selectable="false" 
-            android:title="@string/device_starlte" />
+            android:summary="@string/device_starlte_summary"  
+            android:title="@string/device_starlte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/AaFiX"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_star2lte" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_star2lte_summary" 
-            android:selectable="false" 
-            android:title="@string/device_star2lte" />
+            android:summary="@string/device_star2lte_summary"  
+            android:title="@string/device_star2lte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/AaFiX"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -169,37 +220,52 @@
         <Preference 
             android:id="@+id/device_falcon" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_falcon_summary" 
-            android:selectable="false" 
-            android:title="@string/device_falcon" />
+            android:summary="@string/device_falcon_summary"  
+            android:title="@string/device_falcon" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/SKULSHADY"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_osprey" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_osprey_summary" 
-            android:selectable="false" 
-            android:title="@string/device_osprey" />
+            android:summary="@string/device_osprey_summary"  
+            android:title="@string/device_osprey" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/SKULSHADY"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_athene" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_athene_summary" 
-            android:selectable="false" 
-            android:title="@string/device_athene" />
+            android:summary="@string/device_athene_summary"  
+            android:title="@string/device_athene" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/DizzyBinary"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_potter" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_potter_summary" 
-            android:selectable="false" 
-            android:title="@string/device_potter" />
+            android:summary="@string/device_potter_summary"  
+            android:title="@string/device_potter" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Akh18"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_sanders" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_sanders_summary" 
-            android:selectable="false" 
-            android:title="@string/device_sanders" />
+            android:summary="@string/device_sanders_summary"  
+            android:title="@string/device_sanders" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Chirayu19091997"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -209,79 +275,112 @@
         <Preference 
             android:id="@+id/device_sagit" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_sagit_summary" 
-            android:selectable="false" 
-            android:title="@string/device_sagit" />
+            android:summary="@string/device_sagit_summary"  
+            android:title="@string/device_sagit" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/ArianK16a"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_wayne" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_wayne_summary" 
-            android:selectable="false" 
-            android:title="@string/device_wayne" />
+            android:summary="@string/device_wayne_summary"  
+            android:title="@string/device_wayne" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Fatesay"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_tissot" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_tissot_summary" 
-            android:selectable="false" 
-            android:title="@string/device_tissot" />
+            android:summary="@string/device_tissot_summary"  
+            android:title="@string/device_tissot" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/mdeejay"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_oxygen" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_oxygen_summary" 
-            android:selectable="false" 
-            android:title="@string/device_oxygen" />
+            android:summary="@string/device_oxygen_summary"  
+            android:title="@string/device_oxygen" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/eva0034"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_vince" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_vince_summary" 
-            android:selectable="false" 
-            android:title="@string/device_vince" />
+            android:summary="@string/device_vince_summary"  
+            android:title="@string/device_vince" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/blacksuan19"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_kenzo" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_kenzo_summary" 
-            android:selectable="false" 
-            android:title="@string/device_kenzo" />
+            android:summary="@string/device_kenzo_summary"  
+            android:title="@string/device_kenzo" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/amog787"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_mido" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_mido_summary" 
-            android:selectable="false" 
-            android:title="@string/device_mido" />
+            android:summary="@string/device_mido_summary"  
+            android:title="@string/device_mido" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Sagarrokade006"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_whyred" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_whyred_summary" 
-            android:selectable="false" 
-            android:title="@string/device_whyred" />
+            android:summary="@string/device_whyred_summary"  
+            android:title="@string/device_whyred" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/notallowedontelegram"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_land" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_land_summary" 
-            android:selectable="false" 
-            android:title="@string/device_land" />
+            android:summary="@string/device_land_summary"  
+            android:title="@string/device_land" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Saks_Ham"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_rolex" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_rolex_summary" 
-            android:selectable="false" 
-            android:title="@string/device_rolex" />
+            android:summary="@string/device_rolex_summary"  
+            android:title="@string/device_rolex" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/AryanPatidar"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_santoni" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_santoni_summary" 
-            android:selectable="false" 
-            android:title="@string/device_santoni" />
+            android:summary="@string/device_santoni_summary"  
+            android:title="@string/device_santoni" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Sksbss"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -291,16 +390,22 @@
         <Preference 
             android:id="@+id/device_a6020" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_a6020_summary" 
-            android:selectable="false" 
-            android:title="@string/device_a6020" />
+            android:summary="@string/device_a6020_summary"  
+            android:title="@string/device_a6020" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Professional_Guider"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_kuntao" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_kuntao_summary" 
-            android:selectable="false" 
-            android:title="@string/device_kuntao" />
+            android:summary="@string/device_kuntao_summary"  
+            android:title="@string/device_kuntao" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Hareesh25"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -310,9 +415,12 @@
         <Preference 
             android:id="@+id/device_z2_plus" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_z2_plus_summary" 
-            android:selectable="false" 
-            android:title="@string/device_z2_plus" />
+            android:summary="@string/device_z2_plus_summary"  
+            android:title="@string/device_z2_plus" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/amog787"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -322,9 +430,22 @@
         <Preference 
             android:id="@+id/device_hi6250" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_hi6250_summary" 
-            android:selectable="false" 
-            android:title="@string/device_hi6250" />
+            android:summary="@string/device_hi6250_summary"  
+            android:title="@string/device_hi6250" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Askuccio"/>
+        </Preference>
+
+        <Preference 
+            android:id="@+id/device_hi3660" 
+            android:icon="@drawable/phone_tint" 
+            android:summary="@string/device_hi3660_summary"  
+            android:title="@string/device_hi3660" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/wirmpolter"/>
+        </Preference>
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -334,9 +455,12 @@
         <Preference 
             android:id="@+id/device_s2" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_s2_summary" 
-            android:selectable="false" 
-            android:title="@string/device_s2" />
+            android:summary="@string/device_s2_summary"  
+            android:title="@string/device_s2" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/sahilashraff9"/>
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -346,16 +470,22 @@
         <Preference 
             android:id="@+id/device_x00td" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_x00td_summary" 
-            android:selectable="false" 
-            android:title="@string/device_x00td" />
+            android:summary="@string/device_x00td_summary"  
+            android:title="@string/device_x00td" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/whiteddevil"/>
+        </Preference>
 
         <Preference 
             android:id="@+id/device_zenfone3" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_zenfone3_summary" 
-            android:selectable="false" 
-            android:title="@string/device_zenfone3" />
+            android:summary="@string/device_zenfone3_summary"  
+            android:title="@string/device_zenfone3" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/vegeto1806"/>
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -365,8 +495,11 @@
         <Preference 
             android:id="@+id/device_ether" 
             android:icon="@drawable/phone_tint" 
-            android:summary="@string/device_ether_summary" 
-            android:selectable="false" 
-            android:title="@string/device_ether" />
+            android:summary="@string/device_ether_summary"  
+            android:title="@string/device_ether" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/Anierin"/>
+        </Preference>
     </PreferenceCategory>
 </PreferenceScreen>
