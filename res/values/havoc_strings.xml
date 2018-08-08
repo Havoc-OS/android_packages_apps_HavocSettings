@@ -1417,6 +1417,8 @@
     <string name="translucent_notifications_pref_summary">Set the background of notifications translucent</string>  
     <string name="translucent_quick_settings_pref">Transparent expanded status bar</string>  
     <string name="translucent_quick_settings_pref_summary">Make the background of quick settings transparent</string>  
+    <string name="translucent_volume_dialog_pref">Blurred volume panel</string>
+    <string name="translucent_volume_dialog_pref_summary">Blur the volume dialog panel</string>
     <string name="transluency_level_universal">Transluency level</string>  
     <string name="blurred_recent_app_enabled_pref">Blurred recent apps</string>  
     <string name="blurred_recent_app_enabled_pref_summary">Blur the background of recent apps activity</string>  
@@ -1433,6 +1435,7 @@
     <string name="blur_expstatus_cat">Expanded status bar </string>  
     <string name="blur_notifications_cat">Notifications</string>  
     <string name="blur_qs_cat">Quick settings</string>  
+    <string name="blur_vd_cat">Volume panel</string>
     <string name="blur_recents_cat">Recent apps</string>   
     <string name="blur_colors_cat">Blur color filters</string>  
     <string name="blur_notices_cat">Notices</string>  
