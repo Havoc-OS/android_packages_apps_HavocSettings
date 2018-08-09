@@ -77,7 +77,19 @@
     <SwitchPreference
         android:key="swap_volume_buttons"
         android:title="@string/swap_volume_buttons_title"
-        android:summary="@string/swap_volume_buttons_summary" />	
+        android:summary="@string/swap_volume_buttons_summary" />
+
+    <com.havoc.settings.preferences.SecureSettingSwitchPreference
+        android:key="sysui_volume_up_silent"
+        android:title="@string/volbtn_up_zen_title"
+        android:summary="@string/volbtn_up_zen_summary"
+        android:defaultValue="true"/>
+
+    <com.havoc.settings.preferences.SecureSettingSwitchPreference
+        android:key="sysui_volume_down_silent"
+        android:title="@string/volbtn_down_zen_title"
+        android:summary="@string/volbtn_down_zen_summary"
+        android:defaultValue="true"/>		
 
     </PreferenceCategory>
 </PreferenceScreen>
