@@ -40,10 +40,12 @@ public class Fingerprint extends SettingsPreferenceFragment implements Preferenc
     public static final String TAG = "Fingerprint";
     private static final String FP_WAKE_AND_UNLOCK = "fp_wake_and_unlock"; 
     private static final String FP_ONLY_SCREEN_ON = "fp_only_screen_on";
+    private static final String GESTURE_SWIPE_DOWN_FINGERPRINT_INPUT_SUMMARY = "gesture_swipe_down_fingerprint_input_summary";
 
     private SwitchPreference mFpWakeAndUnlock; 
     private SwitchPreference mFpOnlyScreenOn;
     private FingerprintManager mFingerprintManager;
+    private Preference mFingerprintGesture;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,12 @@ public class Fingerprint extends SettingsPreferenceFragment implements Preferenc
             mFpWakeAndUnlock.getParent().removePreference(mFpWakeAndUnlock);
             mFpOnlyScreenOn.getParent().removePreference(mFpOnlyScreenOn);
         }
+		
+        mFingerprintGesture = (Preference) prefSet.findPreference(GESTURE_SWIPE_DOWN_FINGERPRINT_INPUT_SUMMARY); 
+        boolean mFingerprintGestureSupported = getResources().getBoolean( 
+                com.android.internal.R.bool.config_supportSystemNavigationKeys); 
+        if (!mFingerprintGestureSupported) 
+            prefSet.removePreference(mFingerprintGesture);
     }
 
     @Override
