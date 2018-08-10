@@ -845,34 +845,9 @@
     <string name="lock_condition_font_dialog_title">Select lock Conditon font</string>  
     <string name="lock_condition_font_summary">Change the default font of the lockscreen Conditon widget</string>  
 
-       <!-- Omni Event Service --> 
-    <string name="choose_app">Choose app</string> 
-    <string name="not_ready_summary">Resolving...</string> 
-    <string name="resolve_failed_summary">Resolving app failed</string> 
-    <string name="disabled_entry">Disabled</string> 
-    <string name="unit_sec">sec</string> 
-    <string name="unit_msec">ms</string> 
+    <!-- OmniBrain Activity --> 
     <string name="event_service_settings_title">Events</string> 
     <string name="event_service_settings_summary">OmniEvents Setting Menu</string> 
-    <string name="category_media_player_title">Media player</string> 
-    <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP connect</string> 
-    <string name="headset_connect_app_list_title">Wired headset connect</string> 
-    <string name="event_service_enabled_title">Enable event service</string> 
-    <string name="event_service_running">Service is running</string> 
-    <string name="event_service_stopped">Service is not running</string> 
-    <string name="category_media_player_info_title">App selection</string> 
-    <string name="media_player_autostart_title">Send media play event after start</string> 
-    <string name="media_player_music_active_title">Do not start event on playback</string> 
-    <string name="autorun_single_app_title">Autorun single app</string> 
-    <string name="autorun_single_app_summary">Dont show app selection dialog</string> 
-    <string name="bt_a2dp_connect_app_list_summary">App(s) to be listed when an A2DP event is triggered, such as connecting a Bluetooth headset</string> 
-    <string name="headset_connect_app_list_summary">App(s) to be listed when a wired headset is connected</string> 
-    <string name="app_chooser_left">Left</string> 
-    <string name="app_chooser_right">Right</string> 
-    <string name="app_chooser_timeout_title">App chooser dialog timeout</string> 
-    <string name="app_chooser_position_title">App chooser dialog position</string> 
-    <string name="wired_events_threshold_title">Wired headset event threshold</string> 
-    <string name="wired_events_threshold_summary">Ignore headset events if they are within threshold time</string> 
 
         <!-- Camera sound switch --> 
     <string name="camera_sounds_title">Camera shutter sound</string> 

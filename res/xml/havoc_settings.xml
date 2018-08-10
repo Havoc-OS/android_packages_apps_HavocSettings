@@ -83,13 +83,16 @@
             android:fragment="com.havoc.settings.fragments.Sounds"
             android:icon="@drawable/ic_settings_sounds"/>
         
-        <!-- Omni Events --> 
+        <!-- OmniBrain Activity --> 
         <Preference 
             android:key="event_service_settings" 
             android:title="@string/event_service_settings_title" 
-            android:icon="@drawable/ic_settings_event"
-            android:fragment="com.havoc.settings.service.EventServiceSettings" /> 
-
+            android:icon="@drawable/ic_settings_event" >
+            <intent 
+               android:action="android.intent.action.MAIN" 
+               android:targetPackage="org.omnirom.omnibrain" 
+               android:targetClass="org.omnirom.omnibrain.OmniBrainActivity" /> 
+        </Preference>
 
         <!-- Animations -->
         <Preference
