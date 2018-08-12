@@ -171,6 +171,26 @@
             android:action="android.intent.action.VIEW"
             android:data="https://t.me/Douglas_DG"/>
         </Preference> 
+ 
+        <Preference  
+            android:id="@+id/device_hlte"  
+            android:icon="@drawable/phone_tint"  
+            android:summary="@string/device_hlte_summary"    
+            android:title="@string/device_hlte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/jprimero15"/>
+        </Preference> 
+ 
+        <Preference  
+            android:id="@+id/device_klte"  
+            android:icon="@drawable/phone_tint"  
+            android:summary="@string/device_klte_summary"    
+            android:title="@string/device_klte" >
+            <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://t.me/brunowp8"/>
+        </Preference> 
 
         <Preference  
             android:id="@+id/device_herolte"  
@@ -404,7 +424,7 @@
             android:title="@string/device_kuntao" >
             <intent
             android:action="android.intent.action.VIEW"
-            android:data="https://t.me/Hareesh25"/>
+            android:data="https://t.me/AdvaithBhat"/>
         </Preference>
     </PreferenceCategory>
 	
