@@ -26,8 +26,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
+import com.android.internal.logging.nano.MetricsProto; 
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;

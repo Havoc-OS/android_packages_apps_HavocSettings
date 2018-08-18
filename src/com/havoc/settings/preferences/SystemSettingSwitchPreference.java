@@ -18,7 +18,6 @@ package com.havoc.settings.preferences;
 
 import android.content.Context;
 import android.provider.Settings;
-import android.os.UserHandle;
 import android.support.v14.preference.SwitchPreference;
 import android.util.AttributeSet;
 
@@ -42,8 +41,7 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
                 // It's already there, so the same as persisting
                 return true;
             }
-            Settings.System.putIntForUser(getContext().getContentResolver(),
-                getKey(), value ? 1 : 0, UserHandle.USER_CURRENT);
+            Settings.System.putInt(getContext().getContentResolver(), getKey(), value ? 1 : 0);
             return true;
         }
         return false;
@@ -54,12 +52,13 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
         if (!shouldPersist()) {
             return defaultReturnValue;
         }
-        return Settings.System.getIntForUser(getContext().getContentResolver(),
-                getKey(), defaultReturnValue ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+        return Settings.System.getInt(getContext().getContentResolver(),
+                getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
 
     @Override
-    protected boolean isPersisted() {
-        return Settings.System.getString(getContext().getContentResolver(), getKey()) != null;
+    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+        setChecked(Settings.System.getString(getContext().getContentResolver(), getKey()) != null ? getPersistedBoolean(isChecked())
+                : (Boolean) defaultValue);
     }
 }

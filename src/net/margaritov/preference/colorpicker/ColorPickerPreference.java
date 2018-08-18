@@ -61,8 +61,6 @@ public class ColorPickerPreference extends Preference implements
     boolean mUsesDefaultButton = false;
     int mDefValue = -1;
 
-    private boolean mShowLedPreview;
-
     private EditText mEditText;
 
     public ColorPickerPreference(Context context) {
@@ -100,7 +98,6 @@ public class ColorPickerPreference extends Preference implements
                 mUsesDefaultButton =  true;
                 mDefValue = defVal;
             }
-            mShowLedPreview = attrs.getAttributeBooleanValue(null, "ledPreview", false);
         }
     }
 
@@ -254,7 +251,7 @@ public class ColorPickerPreference extends Preference implements
     }
 
     protected void showDialog(Bundle state) {
-        mDialog = new ColorPickerDialog(getContext(), mValue, mShowLedPreview);
+        mDialog = new ColorPickerDialog(getContext(), mValue);
         mDialog.setOnColorChangedListener(this);
         if (mAlphaSliderEnabled) {
             mDialog.setAlphaSliderVisible(true);
