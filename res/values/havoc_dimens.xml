@@ -17,4 +17,7 @@
     <dimen name="picker_circle_preview_size">26dp</dimen>
 	
     <dimen name="alert_dialog_padding_material">20dp</dimen>	
+	
+    <!-- Shortcut picker -->
+    <dimen name="shortcut_picker_left_padding">70dip</dimen>
 </resources>
