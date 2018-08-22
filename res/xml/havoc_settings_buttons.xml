@@ -36,7 +36,7 @@
             android:key="hardware_keys_disable"
             android:title="@string/hardware_keys_disable_title" />
 
-        <com.havoc.settings.preferences.CustomSeekBarPreference
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="button_brightness"
             android:title="@string/button_brightness_title"
             android:max="255"
