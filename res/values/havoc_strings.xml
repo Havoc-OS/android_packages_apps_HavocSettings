@@ -331,4 +331,8 @@
     <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
 	
     <string name="doze_display_title">Ambient Display</string>
+
+    <!-- Wakeup options -->
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
 </resources>
