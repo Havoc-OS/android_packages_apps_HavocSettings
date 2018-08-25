@@ -18,9 +18,9 @@
         android:minWidth="60dp"
         android:gravity="start|center_vertical"
         android:orientation="horizontal"
-        android:paddingEnd="12dp"
+        android:paddingEnd="0dp"
         android:paddingTop="4dp"
-        android:paddingBottom="4dp">
+        android:paddingBottom="0dp">
         <com.android.internal.widget.PreferenceImageView
             android:id="@android:id/icon"
             android:layout_width="wrap_content"
@@ -56,6 +56,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="-4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="-4dp"
             android:layout_below="@android:id/summary" >
 
             <ImageView
