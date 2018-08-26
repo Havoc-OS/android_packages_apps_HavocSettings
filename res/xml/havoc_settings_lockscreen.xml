@@ -66,6 +66,12 @@
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference  
+        android:key="fp_unlock_keystore" 
+        android:title="@string/fp_unlock_keystore_title" 
+        android:summary="@string/fp_unlock_keystore_summary" 
+        android:defaultValue="false" /> 
+
     <Preference
             android:title="@string/lockscreen_tuner_title" >
             <intent android:action="android.intent.action.MAIN"
