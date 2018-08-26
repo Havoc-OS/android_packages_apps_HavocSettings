@@ -23,6 +23,12 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 		
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="sensor_block"
+            android:title="@string/sensor_block_title"
+            android:summary="@string/sensor_block_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="app_ops_settings"
             android:title="@string/app_ops_settings_title"
