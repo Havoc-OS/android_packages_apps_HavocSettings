@@ -27,4 +27,10 @@
                 android:targetClass="com.android.settings.applications.appops.AppOpsSummary" />
         </Preference>
 
+    <Preference 
+        android:key="wakelock_blocker" 
+        android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
+        android:title="@string/wakelock_blocker_title" 
+        android:summary="@string/wakelock_blocker_summary" />
+
 </PreferenceScreen>
