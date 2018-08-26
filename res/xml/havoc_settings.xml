@@ -32,12 +32,12 @@
             android:fragment="com.havoc.settings.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
-        <!-- Panels -->
+        <!-- Panels 
         <Preference
             android:key="panels_category"
             android:title="@string/panels_title"
             android:fragment="com.havoc.settings.fragments.Panels"
-            android:icon="@drawable/ic_settings_panels"/>
+            android:icon="@drawable/ic_settings_panels"/>-->
 
         <!-- Interface -->
         <Preference
@@ -102,19 +102,19 @@
             android:fragment="com.havoc.settings.fragments.Notifications"
             android:icon="@drawable/ic_settings_notifications"/>
 
-        <!-- Weather -->
+        <!-- Weather 
         <Preference
             android:key="weather_category"
             android:title="@string/weather_title"
             android:fragment="com.havoc.settings.fragments.Weather"
-            android:icon="@drawable/ic_settings_weather"/>
+            android:icon="@drawable/ic_settings_weather"/>-->
 
-        <!-- Animations -->
+        <!-- Animations 
         <Preference
             android:key="animations_category"
             android:title="@string/animations_title"
             android:fragment="com.havoc.settings.fragments.Animations"
-            android:icon="@drawable/ic_settings_animations"/>
+            android:icon="@drawable/ic_settings_animations"/>-->
 
         <!-- System -->
         <Preference
@@ -148,11 +148,11 @@
             android:fragment="com.havoc.settings.fragments.Misc"
             android:icon="@drawable/ic_settings_misc"/>
 
-        <!-- About -->
+        <!-- About 
         <Preference
             android:key="about_category"
             android:title="@string/about_title"
             android:fragment="com.havoc.settings.fragments.About"
-            android:icon="@drawable/ic_settings_about"/>
+            android:icon="@drawable/ic_settings_about"/>-->
 
 </PreferenceScreen>
