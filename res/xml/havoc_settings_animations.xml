@@ -29,7 +29,11 @@
         android:entryValues="@array/screen_off_animation_values"
         android:defaultValue="0" /> 
 
- 
+         <PreferenceScreen
+            android:key="system_animation"
+            android:title="@string/system_animation_title"
+            android:summary="@string/system_animation_summary"
+            android:fragment="com.havoc.settings.fragments.ui.AnimationControls" />
 
      </PreferenceCategory>
     
