@@ -37,7 +37,7 @@
     <string name="weather_title">Weather</string>
     <string name="volume_title">Volume Rockers</string>
     <string name="device_part_title">Device</string>
-y
+    
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
@@ -181,7 +181,17 @@ y
     <string name="qs_tile_animation_duration_fast">fast</string>
     <string name="qs_set_animation_style">Animation is set to %1$s</string>
     <string name="qs_set_animation_duration">Animation duration is set to %1$s</string>
-    
+    <string name="qs_tile_animation_interpolator_title">Animation interpolator</string> 
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_set_animation_interpolator">%1$s</string>
+
     <!-- Incall Home button behavior-->
     <string name="allow_incall_home_title">Home button when ringing</string>
     <string name="allow_incall_home_summary">Allow to use Home button when device is ringing</string>
