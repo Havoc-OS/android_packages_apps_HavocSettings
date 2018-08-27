@@ -22,12 +22,6 @@
         android:key="show_cpu_info"
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
-		
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="sensor_block"
-            android:title="@string/sensor_block_title"
-            android:summary="@string/sensor_block_summary"
-            android:defaultValue="false" />
 
         <Preference
             android:key="app_ops_settings"
@@ -37,24 +31,6 @@
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.applications.appops.AppOpsSummary" />
         </Preference>
-
-    <Preference 
-        android:key="alarm_blocker" 
-        android:fragment="com.havoc.settings.fragments.AlarmBlocker" 
-        android:title="@string/alarm_blocker" 
-        android:summary="@string/alarm_blocker_summary" />
-
-    <Preference 
-        android:key="wakelock_blocker" 
-        android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
-        android:title="@string/wakelock_blocker_title" 
-        android:summary="@string/wakelock_blocker_summary" />
-
-    <Preference
-        android:key="screenstate_category" 
-        android:title="@string/screen_state_toggles_title"  
-        android:summary="@string/screen_state_toggles_summary"  
-        android:fragment="com.havoc.settings.fragments.ScreenStateToggles" /> 
 
     <Preference
         android:key="chooser_activity_blacklist"

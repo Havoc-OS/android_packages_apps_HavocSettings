@@ -109,12 +109,11 @@
             android:fragment="com.havoc.settings.fragments.Weather"
             android:icon="@drawable/ic_settings_weather"/>-->
 
-        <!-- Animations 
         <Preference
             android:key="animations_category"
             android:title="@string/animations_title"
             android:fragment="com.havoc.settings.fragments.Animations"
-            android:icon="@drawable/ic_settings_animations"/>-->
+            android:icon="@drawable/ic_settings_animations"/>
 
         <!-- System -->
         <Preference
@@ -140,6 +139,14 @@
             android:title="@string/ime_title"
             android:fragment="com.havoc.settings.fragments.IME"
             android:icon="@drawable/ic_settings_ime"/>
+
+        
+        <!-- Battery Saving -->
+        <Preference
+            android:key="battery_category"
+            android:title="@string/battery_title"
+            android:fragment="com.havoc.settings.fragments.Battery"
+            android:icon="@drawable/ic_settings_batterysave"/>
 
         <!-- Misc -->
         <Preference
