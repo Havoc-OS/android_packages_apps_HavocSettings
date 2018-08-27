@@ -109,6 +109,7 @@
             android:fragment="com.havoc.settings.fragments.Weather"
             android:icon="@drawable/ic_settings_weather"/>-->
 
+        <!-- Animation -->
         <Preference
             android:key="animations_category"
             android:title="@string/animations_title"

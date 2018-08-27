@@ -50,6 +50,11 @@
     <string name="battery_actions" >Auto Battery Saving</string>
     <string name="battery_wakelock" >Wake and Alarm Blocker</string>
     <string name="battery_title">Battery Saving</string>
+    <string name="scroll_title" >Scroll</string>
+    <string name="misc_animation_title" >Misc Animation</string>
+    <string name="tile_animation_title" >Tile Animation</string>
+    <string name="list_animation_title" >ListView Animation</string>
+    <string name="system_keyguard_animation_title" >System and Keyguard Animation</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

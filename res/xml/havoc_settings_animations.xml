@@ -18,4 +18,39 @@
     android:title="@string/animations_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+      <PreferenceCategory 
+         android:title="@string/system_keyguard_animation_title"
+         android:key="system_title"  >
+ 
+
+     </PreferenceCategory>
+    
+     <PreferenceCategory 
+         android:title="@string/list_animation_title"
+         android:key="list_animation"  >
+        
+
+     </PreferenceCategory>
+ 
+     <PreferenceCategory 
+         android:title="@string/tile_animation_title"
+         android:key="tile_animation">
+
+    
+     </PreferenceCategory>
+
+     <PreferenceCategory 
+         android:title="@string/misc_animation_title"
+         android:key="misc_animation"  >
+        
+
+     </PreferenceCategory>
+
+     <PreferenceCategory 
+         android:title="@string/scroll_title"
+         android:key="scroll" >
+
+
+     </PreferenceCategory>
+
 </PreferenceScreen>
