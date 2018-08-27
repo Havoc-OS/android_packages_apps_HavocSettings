@@ -63,7 +63,20 @@
      <PreferenceCategory 
          android:title="@string/tile_animation_title"
          android:key="tile_animation">
+         
+        <ListPreference
+             android:key="qs_tile_animation_style"
+             android:title="@string/qs_tile_animation_style_title"
+             android:entries="@array/qs_tile_animation_style_entries"
+             android:entryValues="@array/qs_tile_animation_style_values"
+             android:persistent="false" />
 
+        <ListPreference
+            android:key="qs_tile_animation_duration"
+            android:title="@string/qs_tile_animation_duration_title"
+            android:entries="@array/qs_tile_animation_duration_entries"
+            android:entryValues="@array/qs_tile_animation_duration_values"
+            android:persistent="false" />
     
      </PreferenceCategory>
 
@@ -91,7 +104,7 @@
 	    android:summary="@string/pref_scrollingcache_summary"
 	    android:entries="@array/entries_scrollingcache"
 	    android:entryValues="@array/values_scrollingcache" />
-        
+
      </PreferenceCategory>
 
 </PreferenceScreen>

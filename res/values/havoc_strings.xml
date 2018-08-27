@@ -55,6 +55,7 @@ y
     <string name="tile_animation_title" >Tile Animation</string>
     <string name="list_animation_title" >ListView Animation</string>
     <string name="system_keyguard_animation_title" >System and Keyguard Animation</string>
+    <string name="animation_duration_custom">Custom</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -168,6 +169,19 @@ y
     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
     <string name="animation_duration_default">Default</string>
 
+    <!-- Tiles animation style  -->
+    <string name="qs_tile_animation_category">QS tiles animations</string>
+    <string name="qs_tile_animation_style_title">QS tiles animation style</string>
+    <string name="qs_tile_animation_duration_title">QS tiles animation duration</string>
+    <string name="qs_tile_animation_style_off">no animation</string>
+    <string name="qs_tile_animation_style_flip">flip</string>
+    <string name="qs_tile_animation_style_rotate">rotate</string>
+    <string name="qs_tile_animation_duration_low">low</string>
+    <string name="qs_tile_animation_duration_default">default</string>
+    <string name="qs_tile_animation_duration_fast">fast</string>
+    <string name="qs_set_animation_style">Animation is set to %1$s</string>
+    <string name="qs_set_animation_duration">Animation duration is set to %1$s</string>
+    
     <!-- Incall Home button behavior-->
     <string name="allow_incall_home_title">Home button when ringing</string>
     <string name="allow_incall_home_summary">Allow to use Home button when device is ringing</string>
