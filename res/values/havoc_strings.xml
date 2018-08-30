@@ -111,6 +111,7 @@
 
     <!-- Power Menu -->
     <string name="powermenu_title">Power Menu</string>
+    <string name="powermenu_summary">Customize elements to be displayed in power menu</string>
     <string name="powermenu_torch">Flashlight</string>
     <string name="advanced_power_menu">Power menu options</string>
     <string name="arrow_reboot_menu">Advanced reboot menu</string>
@@ -641,5 +642,14 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
 
+    <string name="hardware_keys_power_category">Power Button</string>
+    <string name="torch_long_press_power_gesture_title">Screen off power button torch</string>
+    <string name="torch_long_press_power_gesture_desc">Long press power button while the screen is off to turn on the flashlight</string>
+    <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
+    <string name="torch_long_press_power_timeout_never">Never</string>
+    <string name="torch_long_press_power_timeout_1min">1 minute</string>
+    <string name="torch_long_press_power_timeout_2min">2 minutes</string>
+    <string name="torch_long_press_power_timeout_5min">5 minutes</string>
+    <string name="torch_long_press_power_timeout_10min">10 minutes</string>
 
 </resources>

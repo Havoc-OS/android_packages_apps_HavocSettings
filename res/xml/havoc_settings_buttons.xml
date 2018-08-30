@@ -23,10 +23,33 @@
         android:fragment="com.havoc.settings.fragments.Volume"
         android:title="@string/volume_title" />
 
-    <Preference
-        android:key="power_menu"
-        android:title="@string/powermenu_title"
-        android:fragment="com.havoc.settings.fragments.PowerMenu" />
+    <PreferenceCategory
+        android:key="hardware_keys_power"
+        android:title="@string/hardware_keys_power_category" >
+
+        <Preference
+            android:key="power_menu"
+            android:title="@string/powermenu_title"
+            android:summary="@string/powermenu_summary"
+            android:fragment="com.havoc.settings.fragments.PowerMenu" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="torch_long_press_power_gesture"
+            android:title="@string/torch_long_press_power_gesture_title"
+            android:summary="@string/torch_long_press_power_gesture_desc"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="torch_long_press_power_timeout"
+            android:dialogTitle="@string/torch_long_press_power_timeout_title"
+            android:title="@string/torch_long_press_power_timeout_title"
+            android:summary="%s"
+            android:entries="@array/torch_long_press_power_timeout_entries"
+            android:entryValues="@array/torch_long_press_power_timeout_values"
+            android:dependency="torch_long_press_power_gesture"
+            android:persistent="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="hardware_keys"
