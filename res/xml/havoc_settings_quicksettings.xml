@@ -43,6 +43,13 @@
             android:defaultValue="true"/>
 
         <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_brightness_position_bottom"
+            android:title="@string/qs_brightness_position_bottom_title"
+            android:summary="@string/qs_brightness_position_bottom_summary"
+            android:defaultValue="false"
+            android:dependency="qs_show_brightness_slider" />
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
