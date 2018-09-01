@@ -18,33 +18,57 @@
 	android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="heads_up_notifications"
-        android:title="@string/heads_up_notifications"
-        android:fragment="com.havoc.settings.fragments.HeadsUpSettings" />
-
-     <com.havoc.settings.preferences.SystemSettingSwitchPreference  
-        android:key="disable_fc_notifications" 
-        android:title="@string/disable_fc_notifications_title" 
-        android:summary="@string/disable_fc_notifications_summary" 
-        android:defaultValue="false" /> 
-    
-    <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
-        android:key="toast_icon" 
-        android:title="@string/toast_icon_title" 
-        android:summary="@string/toast_icon_summary" 
-        android:defaultValue="true" /> 
-
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
-        android:key="battery_fully_charged_notif"
-        android:title="@string/battery_fully_charged_notif_title"
-        android:summary="@string/battery_fully_charged_notif_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:key="notification_lights"
+        android:title="@string/notification_lights">
 		
-    <Preference
-        android:key="charging_light"
-        android:fragment="com.havoc.settings.BatteryLightSettings"
-        android:title="@string/battery_light_settings" />
+        <Preference
+            android:key="charging_light"
+            android:fragment="com.havoc.settings.BatteryLightSettings"
+            android:title="@string/battery_light_settings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_messages"
+        android:title="@string/notification_messages">
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="battery_fully_charged_notif"
+            android:title="@string/battery_fully_charged_notif_title"
+            android:summary="@string/battery_fully_charged_notif_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference  
+            android:key="disable_fc_notifications" 
+            android:title="@string/disable_fc_notifications_title" 
+            android:summary="@string/disable_fc_notifications_summary" 
+            android:defaultValue="false" /> 
+    
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_heads"
+        android:title="@string/notification_heads">
+
+        <Preference
+            android:key="heads_up_notifications"
+            android:title="@string/heads_up_notifications"
+            android:fragment="com.havoc.settings.fragments.HeadsUpSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_misc"
+        android:title="@string/notification_misc">
+    
+        <com.havoc.settings.preferences.GlobalSettingSwitchPreference 
+            android:key="toast_icon" 
+            android:title="@string/toast_icon_title" 
+            android:summary="@string/toast_icon_summary" 
+            android:defaultValue="true" /> 
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="incall_vib_options"

@@ -18,10 +18,33 @@
     android:title="@string/gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-        android:key="three_finger_gesture" 
-        android:title="@string/three_finger_gesture" 
-        android:summary="@string/three_finger_gesture_summary" 
-        android:defaultValue="false" /> 
+    <PreferenceCategory
+        android:key="gesture_misc"
+        android:title="@string/gesture_misc">
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+            android:key="three_finger_gesture" 
+            android:title="@string/three_finger_gesture" 
+            android:summary="@string/three_finger_gesture_summary" 
+            android:defaultValue="false" /> 
+
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory
+        android:key="gesture_nav"
+        android:title="@string/gesture_nav">
+
+
+    <PreferenceCategory
+        android:key="gesture_app"
+        android:title="@string/gesture_app">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="gesture_ls"
+        android:title="@string/gesture_ls">
+
+    </PreferenceCategory>-->
 
 </PreferenceScreen>
