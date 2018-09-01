@@ -36,11 +36,17 @@
 
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="statusbar_clock"
         android:title="@string/statusbar_clock">
 
-    </PreferenceCategory>-->
+        <Preference
+            android:key="status_bar_clock_settings"
+            android:fragment="com.havoc.settings.fragments.StatusbarClockSettings" 
+            android:title="@string/status_bar_clock_title"
+            android:summary="@string/status_bar_clock_summary" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="statusbar_battery"
