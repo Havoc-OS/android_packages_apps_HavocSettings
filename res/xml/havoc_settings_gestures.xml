@@ -18,6 +18,12 @@
     android:title="@string/gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="gesture_settings"
+        android:title="@string/gesture_preference_aosp"
+        android:fragment="com.android.settings.gestures.GestureSettings"
+        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
+
     <PreferenceCategory
         android:key="gesture_misc"
         android:title="@string/gesture_misc">
