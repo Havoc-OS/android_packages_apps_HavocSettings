@@ -52,11 +52,19 @@
         android:key="statusbar_battery"
         android:title="@string/statusbar_battery">
 
-        <Preference
-            android:key="battery_settings"
-            android:title="@string/battery_style_category_title"
-            android:summary="@string/battery_style_category_summary"
-            android:fragment="com.havoc.settings.fragments.StatusBarBattery" />
+        <ListPreference
+            android:key="status_bar_battery_style"
+            android:dialogTitle="@string/status_bar_battery_style_title"
+            android:title="@string/status_bar_battery_style_title"
+            android:entries="@array/entries_status_bar_battery"
+            android:entryValues="@array/values_status_bar_battery" />
+
+        <ListPreference
+            android:key="status_bar_show_battery_percent"
+            android:title="@string/status_bar_battery_percentage_title"
+            android:dialogTitle="@string/status_bar_battery_percentage_title"
+            android:entries="@array/status_bar_battery_percentage_entries"
+            android:entryValues="@array/status_bar_battery_percentage_values" />
 
     </PreferenceCategory>
 
