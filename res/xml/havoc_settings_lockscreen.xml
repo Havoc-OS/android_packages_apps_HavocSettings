@@ -30,11 +30,31 @@
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 		
-    <com.havoc.settings.preferences.SecureSettingSwitchPreference
-        android:key="lockscreen_visualizer_enabled"
-        android:title="@string/lockscreen_visualizer_title"
-        android:summary="@string/lockscreen_visualizer_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:key="lockscreen_visualizer"
+        android:title="@string/lockscreen_visualizer_category" >
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_visualizer_enabled"
+            android:title="@string/lockscreen_visualizer_enable"
+            android:summary="@string/lockscreen_visualizer_enable_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_visualizer_use_custom_color"
+            android:title="@string/lockscreen_visualizer_enable_custom"
+            android:summary="@string/lockscreen_visualizer_enable_custom_summary"
+            android:dependency="lockscreen_visualizer_enabled"
+            android:defaultValue="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lock_screen_visualizer_custom_color"
+            android:title="@string/lockscreen_visualizer_custom_color"
+            android:dependency="lock_screen_visualizer_use_custom_color"
+            android:defaultValue="0xffffffff"
+            android:dialogTitle="@string/lockscreen_visualizer_custom_color" />
+
+    </PreferenceCategory>
 
     <!--<PreferenceCategory
         android:key="ls_clock"
