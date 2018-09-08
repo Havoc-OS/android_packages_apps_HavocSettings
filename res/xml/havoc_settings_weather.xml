@@ -31,4 +31,10 @@
         android:title="@string/weather_icon_pack_title"
         android:persistent="false" />
 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_weather_enabled"
+        android:title="@string/lockscreen_weather_title"
+        android:summary="@string/lockscreen_weather_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

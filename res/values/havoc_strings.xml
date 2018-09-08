@@ -718,4 +718,9 @@
     <string name="header_weather_summary">Enable notification panel header weather display</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
     <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
+
+    <!-- Lockscreen weather settings -->
+    <string name="lockscreen_weather_title">Lockscreen weather</string>
+    <string name="lockscreen_weather_summary">Show current weather condition and temperature on lockscreen</string>
+    <string name="lockscreen_items_aod_info_title">This visibility configuration also applies to the ambient display</string>
 </resources>
