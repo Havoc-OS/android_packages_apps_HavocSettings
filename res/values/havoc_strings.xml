@@ -21,7 +21,7 @@
     <string name="about_title">About</string>
     <string name="animations_title">Animations</string>
     <string name="buttons_title">Buttons</string>
-    <string name="display_title">Advanced Display</string>
+    <string name="display_title">Screen</string>
     <string name="gestures_title">Gestures</string>
     <string name="ime_title">IME Settings</string>
     <string name="interface_title">Interface</string>
@@ -689,4 +689,8 @@
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Volume keys answer</string>
     <string name="volume_answer_call_summary">Answer the call when volume keys pressed</string>
+	
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Launch music app</string>
+    <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
 </resources>
