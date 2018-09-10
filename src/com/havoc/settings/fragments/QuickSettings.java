@@ -41,7 +41,16 @@ public class QuickSettings extends SettingsPreferenceFragment
 
     public static final String TAG = "QuickSettings";
 
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
+    private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
+    private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
+
     private SystemSettingSeekBarPreference mSysuiQqsCount;	
+    private SystemSettingSeekBarPreference mRowsPortrait;
+    private SystemSettingSeekBarPreference mRowsLandscape;
+    private SystemSettingSeekBarPreference mQsColumnsPortrait;
+    private SystemSettingSeekBarPreference mQsColumnsLandscape;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +64,30 @@ public class QuickSettings extends SettingsPreferenceFragment
         mSysuiQqsCount = (SystemSettingSeekBarPreference) findPreference("sysui_qqs_count");
         mSysuiQqsCount.setValue(value);
         mSysuiQqsCount.setOnPreferenceChangeListener(this);		
+
+        mRowsPortrait = (SystemSettingSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
+        mRowsPortrait.setValue(rowsPortrait);
+        mRowsPortrait.setOnPreferenceChangeListener(this);
+
+        mRowsLandscape = (SystemSettingSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        int rowsLandscape = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+        mRowsLandscape.setValue(rowsLandscape);
+        mRowsLandscape.setOnPreferenceChangeListener(this);
+
+        mQsColumnsPortrait = (SystemSettingSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
+        int columnsQs = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_COLUMNS_PORTRAIT, 3, UserHandle.USER_CURRENT);
+        mQsColumnsPortrait.setValue(columnsQs);
+        mQsColumnsPortrait.setOnPreferenceChangeListener(this);
+
+        mQsColumnsLandscape = (SystemSettingSeekBarPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
+        columnsQs = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_COLUMNS_LANDSCAPE, 5, UserHandle.USER_CURRENT);
+        mQsColumnsLandscape.setValue(columnsQs);
+        mQsColumnsLandscape.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -64,6 +97,26 @@ public class QuickSettings extends SettingsPreferenceFragment
             int val = (Integer) newValue;
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRowsPortrait) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_ROWS_PORTRAIT, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRowsLandscape) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsColumnsPortrait) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_COLUMNS_PORTRAIT, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsColumnsLandscape) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
