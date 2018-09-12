@@ -66,6 +66,12 @@
             android:entries="@array/status_bar_battery_percentage_entries"
             android:entryValues="@array/status_bar_battery_percentage_values" />
 
+        <Preference
+            android:key="batterybar_settings"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.havoc.settings.fragments.BatterybarSettings" />
+
     </PreferenceCategory>
 
     <!--<PreferenceCategory
