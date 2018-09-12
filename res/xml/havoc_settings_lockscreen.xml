@@ -56,13 +56,21 @@
 
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="ls_clock"
         android:title="@string/ls_clock">
 
+        <ListPreference
+            android:key="lock_clock_fonts"
+            android:title="@string/lock_clock_font_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:defaultValue="0"
+            android:persistent="false" />
+
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="ls_date"
         android:title="@string/ls_date">
 

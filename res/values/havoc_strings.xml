@@ -786,9 +786,7 @@
     <string name="screenshot_type_partial">Partial screenshots</string>
 
     <!-- Lock Clock Fonts -->
-    <string name="lock_clock_font_title">Clock font options</string>
-    <string name="lock_clock_font_summary">Change the default font of the lockscreen clock widget</string>
-    <string name="lock_clock_font_dialog_title">Select lock clock font</string>
+    <string name="lock_clock_font_title">Clock font style</string>
     <string name="lock_clock_font_stock">Normal (Default)</string>
     <string name="lock_clock_font_bold">Bold</string>
     <string name="lock_clock_font_italic">Italic</string>
