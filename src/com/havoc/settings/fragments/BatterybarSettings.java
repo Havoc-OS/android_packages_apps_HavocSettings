@@ -46,6 +46,8 @@ public class BatterybarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_BATT_BAR = "battery_bar_list";
     private static final String PREF_BATT_BAR_STYLE = "battery_bar_style";
     private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
+    private static final String PREF_BATT_BAR_CHARGING_COLOR = "battery_bar_charging_color";
+    private static final String PREF_BATT_BAR_BATTERY_LOW_COLOR = "battery_bar_battery_low_color";
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
 
@@ -54,6 +56,8 @@ public class BatterybarSettings extends SettingsPreferenceFragment implements
     private ListPreference mBatteryBarThickness;
     private SwitchPreference mBatteryBarChargingAnimation;
     private ColorPickerPreference mBatteryBarColor;
+    private ColorPickerPreference mBatteryBarChargingColor;
+    private ColorPickerPreference mBatteryBarBatteryLowColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -85,6 +89,24 @@ public class BatterybarSettings extends SettingsPreferenceFragment implements
         mBatteryBarColor.setNewPreviewColor(intColor);
         mBatteryBarColor.setAlphaSliderEnabled(true);
 
+        mBatteryBarChargingColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_CHARGING_COLOR);
+        mBatteryBarChargingColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(resolver,
+                "battery_bar_charging_color", 0xFF00FF00);
+        hexColor = String.format("#%08x", (0xFF00FF00 & intColor));
+        mBatteryBarChargingColor.setSummary(hexColor);
+        mBatteryBarChargingColor.setNewPreviewColor(intColor);
+        mBatteryBarChargingColor.setAlphaSliderVisible(true);
+
+        mBatteryBarBatteryLowColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_BATTERY_LOW_COLOR);
+        mBatteryBarBatteryLowColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(resolver,
+                 "battery_bar_battery_low_color", 0xFFFF6600);
+        hexColor = String.format("#%08x", (0xFFFF6600 & intColor));
+        mBatteryBarBatteryLowColor.setSummary(hexColor);
+        mBatteryBarBatteryLowColor.setNewPreviewColor(intColor);
+        mBatteryBarBatteryLowColor.setAlphaSliderVisible(true);
+
         mBatteryBarChargingAnimation = (SwitchPreference) findPreference(PREF_BATT_ANIMATE);
         mBatteryBarChargingAnimation.setChecked(Settings.System.getInt(resolver,
                 Settings.System.BATTERY_BAR_ANIMATE, 0) == 1);
@@ -107,6 +129,22 @@ public class BatterybarSettings extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                     "battery_bar_color", intHex);
+            return true;
+        } else if (preference == mBatteryBarChargingColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    "battery_bar_charging_color", intHex);
+            return true;
+        } else if (preference == mBatteryBarBatteryLowColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    "battery_bar_battery_low_color", intHex);
             return true;
         } else if (preference == mBatteryBar) {
             int val = Integer.valueOf((String) newValue);
@@ -147,11 +185,15 @@ public class BatterybarSettings extends SettingsPreferenceFragment implements
             mBatteryBarThickness.setEnabled(false);
             mBatteryBarChargingAnimation.setEnabled(false);
             mBatteryBarColor.setEnabled(false);
+            mBatteryBarChargingColor.setEnabled(false);
+            mBatteryBarBatteryLowColor.setEnabled(false);
         } else {
             mBatteryBarStyle.setEnabled(true);
             mBatteryBarThickness.setEnabled(true);
             mBatteryBarChargingAnimation.setEnabled(true);
             mBatteryBarColor.setEnabled(true);
+            mBatteryBarChargingColor.setEnabled(true);
+            mBatteryBarBatteryLowColor.setEnabled(true);
         }
     }
 
