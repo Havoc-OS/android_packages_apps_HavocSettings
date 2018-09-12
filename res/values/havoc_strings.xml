@@ -744,5 +744,9 @@
     <string name="battery_bar_reg">Regular</string>
     <string name="battery_bar_center">Center-mirrored</string>
     <string name="battery_bar_reversed">Reversed</string>
+    <string name="battery_bar_use_gradient_color">Use gradient color</string>
+    <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
+    <string name="battery_bar_high_color">High level color"</string>
+    <string name="battery_bar_low_color">Low level color"</string>
 
 </resources>
