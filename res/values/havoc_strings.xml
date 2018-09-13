@@ -46,6 +46,7 @@
     <string name="attention">Attention</string>
     <string name="action_save">Save</string>
     <string name="action_cancel">Cancel</string>
+    <string name="enabled">Enabled</string>
 
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">On</string>
@@ -106,6 +107,7 @@
     <string name="qs_element_title" >Elements</string>
     <string name="footer_title" >Footer</string>
     <string name="animation_duration_custom">Custom</string>
+    <string name="ambient_element">Bottom elements</string>
 
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Blink Flashlight on call</string>
@@ -522,7 +524,7 @@
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
 	
     <!-- Ambient display battery percentage --> 
-    <string name="ambient_battery_percent_title">Battery level on bottom</string> 
+    <string name="ambient_battery_percent_title">Battery level</string> 
     <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
 	
     <string name="doze_display_title">Ambient Display</string>
@@ -945,4 +947,22 @@
     <string name="omniswitch_dialog_running_new">OmniSwitch is currently not enabled. Please enable it in the app settings.</string>
     <string name="omniswitch_dialog_unavail">OmniSwitch is not installed.</string>
     <string name="omniswitch_title">Recents style</string>
+
+    <!-- Doze: switches -->
+    <string name="doze_display_summary">Configure settings for ambient display</string>
+    <string name="tilt_sensor_title">Tilt sensor</string>
+    <string name="pickup_sensor_title">Pick up sensor</string>
+    <string name="proximity_sensor_title">Proximity sensor</string>
+    <string name="tilt_title">Tilt</string>
+    <string name="tilt_summary">Pulse notifications on tilt</string>
+    <string name="pickup_title">Pick up</string>
+    <string name="pickup_summary">Pulse notifications on pick up</string>
+    <string name="handwave_title">Hand wave</string>
+    <string name="handwave_summary">Pulse notifications on hand wave</string>
+    <string name="pocket_title">Pocket</string>
+    <string name="pocket_summary">Pulse notifications on removal from pocket</string>
+    <string name="doze_vibrate">Vibrate</string>
+    <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
+    <string name="sensor_warning_title">Caution</string>
+    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
 </resources>
