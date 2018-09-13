@@ -91,7 +91,7 @@
     <string name="statusbar_ticker" >Ticker</string>
     <string name="statusbar_pulldown" >Pulldown</string>
     <string name="statusbar_carrier" >Carrier</string>
-    <string name="statusbar_tuner" >System UI Tuner</string>
+    <string name="statusbar_tuner" >Statusbar Icons</string>
     <string name="statusbar_logo_cat">Logo</string> 
     <string name="hafr_title" >Hide Apps from Recent</string>
     <string name="immersive_recent_title" >Immersive Recent</string>
@@ -780,4 +780,8 @@
     <string name="lock_clock_font_medium_italic">Medium Italic</string>
     <string name="lock_clock_font_black">Black</string>
     <string name="lock_clock_font_black_italic">Black Italic</string> 
+	
+    <string name="use_old_mobiletype_title">Use old mobile type style</string>
+    <string name="use_old_mobiletype_summary">Merge signal and type icons</string>
+
 </resources>
