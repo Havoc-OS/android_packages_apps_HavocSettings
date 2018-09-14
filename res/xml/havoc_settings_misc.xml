@@ -36,10 +36,16 @@
         android:summary="@string/headset_connect_player_summary"
         android:defaultValue="false" />
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="misc_screenshot"
         android:title="@string/misc_screenshot">
 
-    </PreferenceCategory>-->
+        <com.havoc.settings.preferences.SystemSettingListPreference
+            android:key="screenshot_type"
+            android:entries="@array/screenshot_type_entries"
+            android:entryValues="@array/screenshot_type_values"
+            android:title="@string/screenshot_type_title" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
