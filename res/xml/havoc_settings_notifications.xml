@@ -48,12 +48,6 @@
         android:key="notification_messages"
         android:title="@string/notification_messages">
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="battery_fully_charged_notif"
-            android:title="@string/battery_fully_charged_notif_title"
-            android:summary="@string/battery_fully_charged_notif_summary"
-            android:defaultValue="false" />
-
         <com.havoc.settings.preferences.SystemSettingSwitchPreference  
             android:key="disable_fc_notifications" 
             android:title="@string/disable_fc_notifications_title" 

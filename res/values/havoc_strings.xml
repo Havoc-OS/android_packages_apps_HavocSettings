@@ -483,10 +483,6 @@
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift">Prevent burn-in by shifting pixels every</string>
 
-    <!-- Battery fully charged -->
-    <string name="battery_fully_charged_notif_title">Battery fully charged</string>
-    <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
-
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>	
