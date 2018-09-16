@@ -121,18 +121,11 @@
         android:key="statusbar_carrier"
         android:title="@string/statusbar_carrier">
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
-            android:key="status_bar_show_carrier"
-            android:title="@string/show_carrier_title"
-            android:dialogTitle="@string/show_carrier_title"
-            android:entries="@array/carrier_label_entries"
-            android:entryValues="@array/carrier_label_values"
-            android:summary="%s"
-            android:defaultValue="1" />
-
-        <PreferenceScreen
-            android:key="custom_carrier_label"
-            android:title="@string/custom_carrier_label_title" />
+        <Preference
+            android:key="carrierlabel_settings"
+            android:title="@string/carrier_label_category_title"
+            android:summary="@string/carrier_label_category_summary"
+            android:fragment="com.havoc.settings.fragments.CarrierLabelSettings" />
 
     </PreferenceCategory>
 

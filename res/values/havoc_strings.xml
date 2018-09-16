@@ -668,6 +668,8 @@
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>	
 	
     <!-- Custom carrier label and position -->
+    <string name="carrier_label_category_title">Carrier Label</string>
+    <string name="carrier_label_category_summary">Customize statusbar carrier label</string>
     <string name="carrier_label_settings_title">Carrier Label</string>
     <string name="carrier_label_settings_summary">Customize the carrier label</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
@@ -678,6 +680,8 @@
     <string name="show_carrier_keyguard">Lockscreen only</string>
     <string name="show_carrier_statusbar">Statusbar only</string>
     <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
+    <string name="status_bar_carrier_size">Carrier label size</string>
+    <string name="status_bar_carrier_font_style_title">Carrier label font</string>
 
     <!-- Screen Stabilization -->
     <string name="screen_stabilization_title">Screen Stabilization</string>
@@ -752,4 +756,27 @@
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Fullscreen screenshots</string>
     <string name="screenshot_type_partial">Partial screenshots</string>
+
+    <!-- Lock Clock Fonts -->
+    <string name="lock_clock_font_title">Clock font options</string>
+    <string name="lock_clock_font_summary">Change the default font of the lockscreen clock widget</string>
+    <string name="lock_clock_font_dialog_title">Select lock clock font</string>
+    <string name="lock_clock_font_stock">Normal (Default)</string>
+    <string name="lock_clock_font_bold">Bold</string>
+    <string name="lock_clock_font_italic">Italic</string>
+    <string name="lock_clock_font_bold_italic">Bold Italic</string>
+    <string name="lock_clock_font_light_italic">Light Italic</string>
+    <string name="lock_clock_font_thin_italic">Thin Italic</string>
+    <string name="lock_clock_font_light">Light</string>
+    <string name="lock_clock_font_thin">Thin</string>
+    <string name="lock_clock_font_condensed_normal">Condensed</string>
+    <string name="lock_clock_font_condensed_italic">Condensed Italic</string>
+    <string name="lock_clock_font_condensed_bold">Condensed Bold</string>
+    <string name="lock_clock_font_condensed_bold_italic">Condensed Bold Italic</string>
+    <string name="lock_clock_font_condensed_light">Condensed Light</string>
+    <string name="lock_clock_font_condensed_light_italic">Condensed Light Italic</string> 
+    <string name="lock_clock_font_medium_normal">Medium</string>
+    <string name="lock_clock_font_medium_italic">Medium Italic</string>
+    <string name="lock_clock_font_black">Black</string>
+    <string name="lock_clock_font_black_italic">Black Italic</string> 
 </resources>

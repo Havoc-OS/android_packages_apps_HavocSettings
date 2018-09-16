@@ -17,17 +17,12 @@ package com.havoc.settings.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.UserHandle;
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -37,11 +32,7 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
-import android.telephony.TelephonyManager;
-import android.text.Spannable;
-import android.text.TextUtils;
 import android.provider.Settings;
-import android.widget.EditText;
 import com.android.settings.R;
 
 import java.util.Locale;
@@ -61,9 +52,7 @@ import java.util.HashMap;
 import java.util.Collections;
 
 public class StatusBar extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
-
-    private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+        OnPreferenceChangeListener {
 
     private static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -73,8 +62,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private SystemSettingSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
-    private PreferenceScreen mCustomCarrierLabel;
-    private String mCustomCarrierLabelText;
     private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
 
@@ -99,10 +86,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
-
-        // custom carrier label
-        mCustomCarrierLabel = (PreferenceScreen) findPreference(CUSTOM_CARRIER_LABEL);
-        updateCustomLabelTextSummary();
 
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
@@ -157,46 +140,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
-    }
-
-    public boolean onPreferenceTreeClick(Preference preference) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        boolean value;
-        if (preference == mCustomCarrierLabel) {
-            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-            alert.setTitle(R.string.custom_carrier_label_title);
-            alert.setMessage(R.string.custom_carrier_label_explain);
-            // Set an EditText view to get user input
-            final EditText input = new EditText(getActivity());
-            input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
-            input.setSelection(input.getText().length());
-            alert.setView(input);
-            alert.setPositiveButton(getString(android.R.string.ok),
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            String value = ((Spannable) input.getText()).toString().trim();
-                            Settings.System.putString(resolver, Settings.System.CUSTOM_CARRIER_LABEL, value);
-                            updateCustomLabelTextSummary();
-                            Intent i = new Intent();
-                            i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
-                            getActivity().sendBroadcast(i);
-                }
-            });
-            alert.setNegativeButton(getString(android.R.string.cancel), null);
-            alert.show();
-            return true;
-        }
-        return false;
-    }
-
-    private void updateCustomLabelTextSummary() {
-        mCustomCarrierLabelText = Settings.System.getString(
-            getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
-        if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
-            mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
-        } else {
-            mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
-        }
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
