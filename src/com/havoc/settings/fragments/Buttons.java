@@ -37,6 +37,7 @@ import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.havoc.settings.preferences.ActionFragment;
 import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.settings.preferences.SystemSettingSwitchPreference;
 
 public class Buttons extends ActionFragment implements OnPreferenceChangeListener {
 
@@ -47,6 +48,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_BUTTON_SWAP_KEYS = "swap_navigation_keys";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -73,6 +75,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
     private ListPreference mTorchLongPressPowerTimeout;
+    private SystemSettingSwitchPreference mSwapKeysPreference;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -103,6 +106,9 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                     UserHandle.USER_CURRENT);
             mHwKeyDisable.setChecked(keysDisabled != 0);
             mHwKeyDisable.setOnPreferenceChangeListener(this);
+
+            mSwapKeysPreference = (SystemSettingSwitchPreference) prefScreen.findPreference(
+                KEY_BUTTON_SWAP_KEYS);
 
             final boolean variableBrightness = getResources().getBoolean(
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);

@@ -906,4 +906,8 @@
     <string name="mt_reset">Reset</string> 
     <string name="time_in_state_title">Time in state</string> 
     <string name="time_in_state_summary">Show CPU frequency statistics</string> 
+
+    <!-- Swap navigation keys -->
+    <string name="swap_navigation_keys_title">Swap keys</string>
+    <string name="swap_navigation_keys_title_summary">Swap back and recents hardware keys</string>
 </resources>
