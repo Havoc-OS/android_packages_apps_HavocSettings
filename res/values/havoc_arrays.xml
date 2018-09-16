@@ -15,7 +15,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-        <!-- Screen off animation --> 
+    <!-- Screen off animation --> 
     <string-array name="screen_off_animation_entries"> 
         <item>@string/screen_off_animation_fade</item> 
         <item>@string/screen_off_animation_color</item> 

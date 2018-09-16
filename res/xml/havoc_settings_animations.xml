@@ -18,30 +18,65 @@
     android:title="@string/animations_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-      <PreferenceCategory 
-         android:title="@string/system_keyguard_animation_title"
-         android:key="system_title"  >
-          
-       <ListPreference 
-        android:key="screen_off_animation" 
-        android:title="@string/screen_off_animation_title" 
-        android:entries="@array/screen_off_animation_entries" 
-        android:entryValues="@array/screen_off_animation_values"
-        android:defaultValue="0" /> 
+    <PreferenceCategory
+        android:title="@string/system_animation_title">
 
-         <PreferenceScreen
-            android:key="system_animation"
-            android:title="@string/system_animation_title"
-            android:summary="@string/system_animation_summary"
-            android:fragment="com.havoc.settings.fragments.ui.AnimationControls" />
+        <SwitchPreference
+            android:key="animation_no_override"
+            android:title="@string/title_animation_no_override"
+            android:summary="@string/summary_animation_no_override" />
 
-     </PreferenceCategory>
+        <ListPreference
+            android:key="activity_open"
+            android:title="@string/activity_open_title" />
+
+        <ListPreference
+            android:key="activity_close"
+            android:title="@string/activity_close_title" />
+
+        <ListPreference
+            android:key="task_open"
+            android:title="@string/task_open_title" />
+
+        <ListPreference
+            android:key="task_open_behind"
+            android:title="@string/task_open_behind_title" />
+
+        <ListPreference
+            android:key="task_close"
+            android:title="@string/task_close_title" />
+
+        <ListPreference
+            android:key="task_move_to_front"
+            android:title="@string/task_move_to_front_title" />
+
+        <ListPreference
+            android:key="task_move_to_back"
+            android:title="@string/task_move_to_back_title" />
+
+        <ListPreference
+            android:key="wallpaper_open"
+            android:title="@string/wallpaper_open_title" />
+
+        <ListPreference
+            android:key="wallpaper_close"
+            android:title="@string/wallpaper_close_title" />
+
+        <ListPreference
+            android:key="wallpaper_intra_open"
+            android:title="@string/wallpaper_intra_open_title" />
+
+        <ListPreference
+            android:key="wallpaper_intra_close"
+            android:title="@string/wallpaper_intra_close_title" />
+
+    </PreferenceCategory>
     
-     <PreferenceCategory 
-         android:title="@string/list_animation_title"
-         android:key="list_animation"  >
+    <PreferenceCategory 
+        android:title="@string/list_animation_title"
+        android:key="list_animation"  >
 
-          <ListPreference
+        <ListPreference
             android:key="listview_animation"
             android:dialogTitle="@string/listview_animation_title"
             android:title="@string/listview_animation_title"
@@ -56,20 +91,19 @@
             android:entries="@array/listview_interpolator_entries"
             android:entryValues="@array/listview_interpolator_values"
             android:defaultValue="0" />
-        
 
-     </PreferenceCategory>
+    </PreferenceCategory>
  
-     <PreferenceCategory 
+    <PreferenceCategory 
          android:title="@string/tile_animation_title"
          android:key="tile_animation">
 
         <ListPreference
-             android:key="qs_tile_animation_style"
-             android:title="@string/qs_tile_animation_style_title"
-             android:entries="@array/qs_tile_animation_style_entries"
-             android:entryValues="@array/qs_tile_animation_style_values"
-             android:persistent="false" />
+            android:key="qs_tile_animation_style"
+            android:title="@string/qs_tile_animation_style_title"
+            android:entries="@array/qs_tile_animation_style_entries"
+            android:entryValues="@array/qs_tile_animation_style_values"
+            android:persistent="false" />
 
         <ListPreference
             android:key="qs_tile_animation_duration"
@@ -85,33 +119,40 @@
             android:entryValues="@array/qs_tile_animation_interpolator_values"
             android:persistent="false" />
     
-     </PreferenceCategory>
+    </PreferenceCategory>
 
-     <PreferenceCategory 
-         android:title="@string/misc_animation_title"
-         android:key="misc_animation"  >
+    <PreferenceCategory 
+        android:title="@string/misc_animation_title"
+        android:key="misc_animation"  >
+          
+        <ListPreference 
+            android:key="screen_off_animation" 
+            android:title="@string/screen_off_animation_title" 
+            android:entries="@array/screen_off_animation_entries" 
+            android:entryValues="@array/screen_off_animation_values"
+            android:defaultValue="0" />
 
-          <ListPreference
+        <ListPreference
             android:key="toast_animation"
             android:title="@string/toast_animation_title"
             android:entries="@array/toast_animation_entries"
             android:entryValues="@array/toast_animation_values"
             android:persistent="false" />
         
-     </PreferenceCategory>
+    </PreferenceCategory>
 
-     <PreferenceCategory 
-         android:title="@string/scroll_title"
-         android:key="scroll" >
+    <PreferenceCategory 
+        android:title="@string/scroll_title"
+        android:key="scroll" >
 
-	<ListPreference
-	    android:key="pref_scrollingcache"
-	    android:dialogTitle="@string/pref_scrollingcache_title"
-	    android:title="@string/pref_scrollingcache_title"
-	    android:summary="@string/pref_scrollingcache_summary"
-	    android:entries="@array/entries_scrollingcache"
-	    android:entryValues="@array/values_scrollingcache" />
+	    <ListPreference
+            android:key="pref_scrollingcache"
+            android:dialogTitle="@string/pref_scrollingcache_title"
+            android:title="@string/pref_scrollingcache_title"
+            android:summary="@string/pref_scrollingcache_summary"
+            android:entries="@array/entries_scrollingcache"
+            android:entryValues="@array/values_scrollingcache" />
 
-     </PreferenceCategory>
+    </PreferenceCategory>
 
 </PreferenceScreen>
