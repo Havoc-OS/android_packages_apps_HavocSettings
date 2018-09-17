@@ -39,4 +39,21 @@
         android:summary="@string/chooser_activity_blacklist_summary"
         android:persistent="false" />
 
+    <PreferenceCategory
+        android:key="navigation_burnin"
+        android:title="@string/navigation_burnin_category" >
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="burn_in_protection"
+            android:title="@string/burn_in_protection_title"
+            android:summary="@string/burn_in_protection_summary"
+            android:defaultValue="true" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="burn_in_protection_interval"
+            android:title="@string/burn_in_protection_interval_title"
+            android:max="90"
+            android:min="45"
+            android:persistent="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
