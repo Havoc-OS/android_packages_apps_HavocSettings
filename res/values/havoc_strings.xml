@@ -128,6 +128,7 @@
     <string name="powermenu_title">Power Menu</string>
     <string name="powermenu_summary">Customize elements to be displayed in power menu</string>
     <string name="powermenu_torch">Flashlight</string>
+    <string name="powermenu_lockdown">Lockdown</string>
     <string name="advanced_power_menu">Power menu options</string>
     <string name="arrow_reboot_menu">Advanced reboot menu</string>
     <string name="powermenu_reboot_title">Reboot</string>

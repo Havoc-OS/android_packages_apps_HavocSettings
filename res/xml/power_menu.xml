@@ -31,6 +31,11 @@
         android:defaultValue="false" />
 
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       android:key="powermenu_lockdown"
+       android:title="@string/powermenu_lockdown"
+       android:defaultValue="false" />
+
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="powermenu_screenshot"
         android:title="@string/powermenu_screenshot_title"
         android:defaultValue="false" />
