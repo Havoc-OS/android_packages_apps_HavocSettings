@@ -69,8 +69,8 @@
             android:key="button_brightness"
             android:title="@string/button_brightness_title"
             android:max="255"
-            settings:min="0"
-            settings:units=""
+            android:min="0"
+	        android:defaultValue="255"
             android:persistent="false" />
 
         <SwitchPreference

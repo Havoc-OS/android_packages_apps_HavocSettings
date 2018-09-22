@@ -102,7 +102,7 @@
             android:title="@string/network_traffic_autohide_threshold_title"
             android:max="10"
             android:min="0"
-            settings:units="" />
+            android:defaultValue="1" />
 
     </PreferenceCategory>
 
