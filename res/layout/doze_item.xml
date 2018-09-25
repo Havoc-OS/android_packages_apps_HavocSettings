@@ -39,8 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/idle_config_image"
             android:paddingLeft="5dp"
-            android:layout_centerVertical="true"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:layout_centerVertical="true" />
 
         <EditText
             android:id="@+id/idle_config_edit"

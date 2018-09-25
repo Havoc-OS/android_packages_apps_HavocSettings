@@ -64,7 +64,7 @@ public class Profiles {
 
     public static void initProfiles() {
         mSysteProfileList.clear();
-        mSysteProfileList.add(new Profile("aggressive", "light_after_inactive_to=60000,light_pre_idle_to=60000,light_idle_to=120000,light_idle_factor=2.0,light_max_idle_to=900000,light_idle_maintenance_min_budget=60000,light_idle_maintenance_max_budget=300000,min_light_maintenance_time=5000,min_deep_maintenance_time=30000,inactive_to=120000,sensing_to=0,locating_to=30000,location_accuracy=20.0,motion_inactive_to=60000,idle_after_inactive_to=0,idle_pending_to=120000,max_idle_pending_to=120000,idle_pending_factor=2.0,idle_to=3600000,max_idle_to=21600000,idle_factor=2.0,min_time_to_alarm=3600000,max_temp_app_whitelist_duration=30000,mms_temp_app_whitelist_duration=30000,sms_temp_app_whitelist_duration=20000"));
+        mSysteProfileList.add(new Profile("aggressive", "light_after_inactive_to=30000,light_pre_idle_to=30000,light_idle_to=30000,light_idle_factor=2.0,light_max_idle_to=60000,light_idle_maintenance_min_budget=30000,light_idle_maintenance_max_budget=60000,min_light_maintenance_time=5000,min_deep_maintenance_time=10000,inactive_to=60000,sensing_to=0,locating_to=10000,location_accuracy=20.0,motion_inactive_to=60000,idle_after_inactive_to=0,idle_pending_to=30000,max_idle_pending_to=60000,idle_pending_factor=2.0,idle_to=3600000,max_idle_to=21600000,idle_factor=2.0,min_time_to_alarm=3600000,max_temp_app_whitelist_duration=20000,mms_temp_app_whitelist_duration=20000,sms_temp_app_whitelist_duration=20000,notification_whitelist_duration=20000"));
     }
 
     public static List<Profile> getUserProfileList() {
