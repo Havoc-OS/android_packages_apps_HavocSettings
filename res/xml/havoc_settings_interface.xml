@@ -18,6 +18,11 @@
     android:title="@string/interface_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+	<Preference
+        android:key="expanded_desktop"
+        android:title="@string/expanded_desktop_pref_title"
+        android:fragment="com.havoc.settings.fragments.ExpandedDesktopPreferenceFragment" />
+
     <!--<PreferenceCategory 
         android:title="@string/themes_title">  
 
