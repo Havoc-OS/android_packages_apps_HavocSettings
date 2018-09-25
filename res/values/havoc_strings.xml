@@ -240,6 +240,8 @@
     <string name="title_animation_no_override">Prevent app overrides</string>
     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
     <string name="animation_duration_default">Default</string>
+    <string name="disable_transition_animations_title">Disable transition animations</string>
+    <string name="disable_transition_animations_summary">Force disable all transitions</string>
 
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_category">QS tiles animations</string>
@@ -253,7 +255,7 @@
     <string name="qs_tile_animation_duration_fast">Fast</string>
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_tile_animation_interpolator_title">Animation interpolator</string> 
+    <string name="qs_tile_animation_interpolator_title">QS tiles animation interpolator</string> 
     <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
