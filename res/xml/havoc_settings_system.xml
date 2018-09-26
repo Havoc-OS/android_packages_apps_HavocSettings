@@ -18,6 +18,12 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.havoc.settings.preferences.GlobalSettingSwitchPreference
+        android:key="allow_signature_fake"
+        android:title="@string/allow_signature_fake"
+        android:summary="@string/allow_signature_fake_summary"
+        android:defaultValue="false" />
+
     <SwitchPreference
         android:key="show_cpu_info"
         android:title="@string/show_cpu_info"
