@@ -21,6 +21,7 @@
     <Preference
         android:key="gesture_settings"
         android:title="@string/gesture_preference_aosp"
+        android:summary="@string/gesture_preference_aosp_summary"
         android:fragment="com.android.settings.gestures.GestureSettings"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 

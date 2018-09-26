@@ -20,10 +20,12 @@
 
     <SwitchPreference
         android:key="navbar_visibility"
-        android:title="@string/navbar_visibility" />
+        android:title="@string/navbar_visibility"
+        android:summary="@string/navbar_visibility_summary" />
 
     <Preference
-            android:title="@string/navbar_tuner_title" >
+            android:title="@string/navbar_tuner_title"
+            android:summary="@string/navbar_tuner_summary" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.NavBarActivity" />

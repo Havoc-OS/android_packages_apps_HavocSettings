@@ -15,11 +15,13 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/volume_title">
 
     <Preference
         android:key="volume_steps"
         android:title="@string/volume_steps_title"
+        android:summary="@string/volume_steps_summary"
         android:fragment="com.havoc.settings.fragments.VolumeSteps" />
 
     <ListPreference

@@ -21,6 +21,7 @@
 	<Preference
         android:key="expanded_desktop"
         android:title="@string/expanded_desktop_pref_title"
+        android:summary="@string/expanded_desktop_pref_summary"
         android:fragment="com.havoc.settings.fragments.ExpandedDesktopPreferenceFragment" />
 
     <!--<PreferenceCategory 

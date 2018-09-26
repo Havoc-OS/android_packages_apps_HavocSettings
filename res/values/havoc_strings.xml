@@ -60,9 +60,9 @@
     <string name="battery_wakelock" >Wake and Alarm Blocker</string>
     <string name="battery_title">Battery Saving</string>
     <string name="scroll_title" >Scroll</string>
-    <string name="misc_animation_title" >Misc Animation</string>
-    <string name="tile_animation_title" >Tile Animation</string>
-    <string name="list_animation_title" >ListView Animation</string>
+    <string name="misc_animation_title" >Misc</string>
+    <string name="tile_animation_title" >QS Tiles</string>
+    <string name="list_animation_title" >ListView</string>
     <string name="system_keyguard_animation_title" >System and Keyguard Animation</string>
     <string name="gesture_nav" >Navigation</string>
     <string name="gesture_app" >Applications</string>
@@ -223,7 +223,7 @@
     <string name="listview_bounce_interpolator">Bounce</string>
 
     <!-- AOKP custom system animations -->
-    <string name="system_animation_title">System animations</string>
+    <string name="system_animation_title">System</string>
     <string name="system_animation_summary">Customize the animations of each window in system</string>
     <string name="activity_open_title">Activity open animation</string>
     <string name="activity_close_title">Activity close animation</string>
@@ -329,6 +329,7 @@
     <string name="hardware_keys_double_tap_title">Double tap action</string>
     <string name="hardware_keys_category">Hardware keys</string>
     <string name="hardware_keys_disable_title">Disable keys</string>
+    <string name="hardware_keys_disable_summary">Disable the device hardware keys</string>
 
     <!-- ANBI -->
     <string name="anbi_title">Accidental touch</string>
@@ -336,18 +337,22 @@
 
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusbar Icons</string>
+    <string name="statusbar_items_summary">Toggle visibility of icons in statusbar</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen Shortcuts</string>
+    <string name="lockscreen_tuner_summary">Change the bottom lockscreen shortcuts</string>
 
-      <!-- Disabling FC notifications --> 
-    <string name="disable_fc_notifications_title">Diable FC Notifications</string> 
-    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string> 
+    <!-- Disabling FC notifications -->
+    <string name="disable_fc_notifications_title">Disable FC Notifications</string> 
+    <string name="disable_fc_notifications_summary">This will hide all force close notifications</string> 
 
     <!-- Navbar tuner -->
     <string name="navbar_tuner_title">Navbar Buttons</string>
+    <string name="navbar_tuner_summary">Customize the buttons displayed on Navbar</string>
 
-    <string name="navbar_visibility">Allow Navigation Bar</string>
+    <string name="navbar_visibility">Navigation Bar</string>
+    <string name="navbar_visibility_summary">Enable to display the navbar</string>
 
     <!-- Recents panel settings -->
     <string name="show_clear_all_recents_button_title">Clear all button</string>
@@ -383,6 +388,7 @@
     <string name="volbtn_cursor_control_off">Disabled</string>
     <string name="volbtn_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+    <string name="volume_summary">Customize settings for volume buttons</string>
 	
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Hide apps from recents</string>
@@ -406,6 +412,7 @@
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Volume steps</string>
+    <string name="volume_steps_summary">Set custom volume steps for sounds</string>
     <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
     <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
     <string name="volume_steps_music_title">Volume steps: Music</string>
@@ -439,6 +446,7 @@
 
     <!-- Heads up -->
     <string name="heads_up_notifications">Heads Up</string>
+    <string name="heads_up_notifications_summary">Customize the additional settings for Heads Up</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
     <string name="add_heads_up_package">Add app</string>
@@ -617,7 +625,7 @@
     <string name="network_traffic_hidearrow">Hide arrows</string>
     <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
 	
-    <string name="use_bottom_gesture_title">Use swipe up gestures for navigation</string>
+    <string name="use_bottom_gesture_title">Swipe up gestures</string>
     <string name="use_bottom_gesture_summary">Must hide navbar. Swipe up from left/right is back. Swipe up center is home. Swipe up and hold is recents</string>
 
     <!-- Quick Settings brightness slider -->
@@ -628,6 +636,7 @@
     <string name="qs_tile_title_visibility_summary">Display title below each tile</string> 
 
     <string name="gesture_preference_aosp">System Gestures</string>
+    <string name="gesture_preference_aosp_summary">Access the device specific system gestures</string>
 	
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">Clock settings</string>
@@ -654,11 +663,13 @@
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="clock_date_format">Date format</string>
+    <string name="clock_date_format_summary">%1$s</string>
     <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
     <string name="date_cat">Date</string>
     <string name="clock_cat">Clock</string>
     <string name="status_bar_clock_font_style_title">Font style</string>
+    <string name="status_bar_clock_font_style_summary">%1$s</string>
     <string name="status_bar_clock_font_size_title">Font size</string>
 
     <!-- QS footer warnings -->
@@ -801,7 +812,7 @@
     <string name="navigation_burnin_category">Burn-in Protection</string>
     <string name="burn_in_protection_title">Burn-in Protection</string>
     <string name="burn_in_protection_summary">Shift navbar and statusbar icons to prevent burn-in</string>
-    <string name="burn_in_protection_interval_title">Interval of shift</string>
+    <string name="burn_in_protection_interval_title">Shift interval</string>
 
     <!-- Hide statusbar on lockscreen -->
     <string name="lockscreen_hide_status_bar_title">Disable Statusbar</string>
@@ -998,6 +1009,7 @@
 
     <!-- Expanded desktop -->
     <string name="expanded_desktop_pref_title">Expanded desktop</string>
+    <string name="expanded_desktop_pref_summary">Hide statusbar and navbar in some apps</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
     <string name="expanded_hide_status">Hide status bar</string>
     <string name="expanded_hide_navigation">Hide navigation bar</string>

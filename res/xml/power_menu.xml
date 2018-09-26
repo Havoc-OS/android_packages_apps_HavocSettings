@@ -26,7 +26,6 @@
     <com.havoc.settings.preferences.SystemSettingSwitchPreference
         android:key="powermenu_advanced_reboot"
         android:title="@string/powermenu_advanced_reboot_title"
-        android:summary="@string/powermenu_advanced_reboot_summary"
         android:dependency="powermenu_reboot"
         android:defaultValue="false" />
 
