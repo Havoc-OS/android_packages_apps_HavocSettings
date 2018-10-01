@@ -15,35 +15,49 @@
  */
 package com.havoc.settings.fragments;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
-import com.android.internal.logging.nano.MetricsProto; 
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.display.AccentPickerPreferenceController;
+import com.android.settings.display.DarkUIPreferenceController;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 
 import com.havoc.settings.R;
 
-public class Interface extends SettingsPreferenceFragment {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static final String TAG = "Interface";
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.havoc_settings_interface);
-    }
+public class Interface extends DashboardFragment {
+    private static final String TAG = "Interface";
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
+        return MetricsEvent.HAVOC_SETTINGS;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.havoc_settings_interface;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getLifecycle(), this);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, Lifecycle lifecycle, Fragment fragment) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
+        controllers.add(new DarkUIPreferenceController(context));
+        return controllers;
     }
 }
