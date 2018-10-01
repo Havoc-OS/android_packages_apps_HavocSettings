@@ -34,6 +34,7 @@
         <ListPreference
             android:key="battery_bar_thickness"
             android:title="@string/battery_bar_thickness_title"
+            android:summary="@string/battery_bar_thickness_summary"
             android:entries="@array/battery_bar_thickness_entries"
             android:entryValues="@array/battery_bar_thickness_values" />
 
