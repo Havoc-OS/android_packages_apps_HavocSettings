@@ -16,9 +16,11 @@
 package com.havoc.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -30,6 +32,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
+import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 
 public class System extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -37,19 +40,28 @@ public class System extends SettingsPreferenceFragment
     public static final String TAG = "System";
 
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+    private static final String BURN_INTERVAL_KEY = "burn_in_protection_interval";
 
     private SwitchPreference mShowCpuInfo;
+    private SystemSettingSeekBarPreference mBurnInterval;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_system);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
         mShowCpuInfo.setChecked(Settings.Global.getInt(getActivity().getContentResolver(),
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
+
+        mBurnInterval = (SystemSettingSeekBarPreference) findPreference(BURN_INTERVAL_KEY);
+        int burninterval = Settings.System.getInt(resolver,
+                Settings.System.BURN_IN_PROTECTION_INTERVAL, 60);
+        mBurnInterval.setValue(burninterval);
+        mBurnInterval.setOnPreferenceChangeListener(this);
     }
 
     private void writeCpuInfoOptions(boolean value) {
@@ -66,8 +78,14 @@ public class System extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mShowCpuInfo) {
             writeCpuInfoOptions((Boolean) newValue);
+            return true;
+        } else if (preference == mBurnInterval) {
+            int interval = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.BURN_IN_PROTECTION_INTERVAL, interval, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
