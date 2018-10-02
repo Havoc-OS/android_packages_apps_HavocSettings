@@ -43,6 +43,7 @@ import com.android.settings.Utils;
 
 import com.havoc.settings.preferences.SystemSettingSwitchPreference;
 import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.Date;
@@ -57,12 +58,14 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private static final String STATUS_BAR_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String STATUS_BAR_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String STATUS_BAR_CLOCK_DATE_FORMAT = "clock_date_format";
+    private static final String STATUS_BAR_CLOCK_COLOR = "status_bar_clock_color";
     private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
     private static final String STATUS_BAR_CLOCK_FONT_STYLE  = "status_bar_clock_font_style";
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
     private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
+    static final int DEFAULT_STATUS_CLOCK_COLOR = 0xffffffff;
 
     private SystemSettingSwitchPreference mStatusBarClockShow;
     private SystemSettingSwitchPreference mStatusBarSecondsShow;
@@ -71,6 +74,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private ColorPickerPreference mClockColor;
     private SystemSettingSeekBarPreference mClockSize;
     private ListPreference mClockFontStyle;
     private ListPreference mClockDatePosition;
@@ -83,6 +87,9 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        int intColor;
+        String hexColor;
 
 	// clock settings
         mStatusBarClockShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK);
@@ -106,6 +113,14 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         mStatusBarClock.setValue(String.valueOf(clockStyle));
         mStatusBarClock.setSummary(mStatusBarClock.getEntry());
         mStatusBarClock.setOnPreferenceChangeListener(this);
+
+        mClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
+        mClockColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mClockColor.setSummary(hexColor);
+        mClockColor.setNewPreviewColor(intColor);
 
         mClockSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
         int clockSize = Settings.System.getInt(resolver,
@@ -211,6 +226,14 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
                     Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, statusBarAmPm);
             mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
             return true;
+        } else if (preference == mClockColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(resolver,
+                        Settings.System.STATUS_BAR_CLOCK_COLOR, intHex);
+                return true;
         }  else if (preference == mClockSize) {
             int width = ((Integer)newValue).intValue();
             Settings.System.putInt(resolver,
