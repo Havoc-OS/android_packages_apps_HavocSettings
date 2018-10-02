@@ -109,26 +109,29 @@
          android:title="@string/tile_animation_title"
          android:key="tile_animation">
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
-            android:key="anim_tile_style"
+        <ListPreference
+            android:key="qs_tile_animation_style"
             android:title="@string/qs_tile_animation_style_title"
             android:entries="@array/qs_tile_animation_style_entries"
             android:entryValues="@array/qs_tile_animation_style_values"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            android:persistent="false" />
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
-            android:key="anim_tile_duration"
+        <ListPreference
+            android:key="qs_tile_animation_duration"
             android:title="@string/qs_tile_animation_duration_title"
             android:entries="@array/qs_tile_animation_duration_entries"
             android:entryValues="@array/qs_tile_animation_duration_values"
-            android:defaultValue="2000" />
+            android:defaultValue="2000"
+            android:persistent="false" />
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
-            android:key="anim_tile_interpolator"
+        <ListPreference
+            android:key="qs_tile_animation_interpolator"
             android:title="@string/qs_tile_animation_interpolator_title"
             android:entries="@array/qs_tile_animation_interpolator_entries"
             android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            android:persistent="false" />
     
     </PreferenceCategory>
 
