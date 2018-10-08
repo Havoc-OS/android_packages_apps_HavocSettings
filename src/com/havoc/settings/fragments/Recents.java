@@ -31,6 +31,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.havoc.HavocUtils;
 import com.android.internal.util.havoc.OmniSwitchConstants;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.R;
@@ -47,9 +48,11 @@ public class Recents extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+    private static final String RECENTS_COMPONENT_TYPE = "recents_component";
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mNavbarRecentsStyle;
+    private ListPreference mRecentsComponentType;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,6 +77,13 @@ public class Recents extends SettingsPreferenceFragment implements
         mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
         mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
+        // recents component type
+        mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
+        int type = Settings.System.getInt(resolver,
+                Settings.System.RECENTS_COMPONENT, 0);
+        mRecentsComponentType.setValue(String.valueOf(type));
+        mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
+        mRecentsComponentType.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -102,6 +112,18 @@ public class Recents extends SettingsPreferenceFragment implements
             int index = mNavbarRecentsStyle.findIndexOfValue((String) objValue);
             mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
             Settings.System.putInt(getContentResolver(), Settings.System.OMNI_NAVIGATION_BAR_RECENTS, value);
+            return true;
+        } else if (preference == mRecentsComponentType) {
+            int type = Integer.valueOf((String) objValue);
+            int index = mRecentsComponentType.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_COMPONENT, type);
+            mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
+            if (type == 1) { // Disable swipe up gesture, if oreo type selected
+               Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+            }
+            HavocUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;

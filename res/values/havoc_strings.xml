@@ -1061,4 +1061,9 @@
     <!-- Bluetooth battery status --> 
     <string name="bluetooth_battery_title">Bluetooth battery status</string> 
     <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
+	
+    <!-- AOSP Recents component Style -->
+    <string name="recents_component_type_title">Stock Recents Style</string>
+    <string name="recents_pie">Pie</string>
+    <string name="recents_oreo">Oreo</string>
 </resources>
