@@ -35,6 +35,12 @@
             android:summary="@string/three_finger_gesture_summary" 
             android:defaultValue="false" /> 
 
+        <Preference  
+            android:title="@string/carbon_gesture_preference_title"  
+            android:summary="@string/carbon_gestures_summary"
+            android:key="carbongestures"  
+            android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" />  
+
     </PreferenceCategory>
 
     <PreferenceCategory
