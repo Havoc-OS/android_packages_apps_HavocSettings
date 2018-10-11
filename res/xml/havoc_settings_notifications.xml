@@ -73,12 +73,6 @@
         android:title="@string/notification_misc">
     
         <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-            android:key="toast_icon" 
-            android:title="@string/toast_icon_title" 
-            android:summary="@string/toast_icon_summary" 
-            android:defaultValue="true" /> 
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="force_expanded_notifications" 
             android:title="@string/force_expanded_notifications_title" 
             android:summary="@string/force_expanded_notifications_summary" /> 
