@@ -67,4 +67,11 @@
 
     </PreferenceCategory>-->
 
+      <!-- App Circle Bar -->
+      <PreferenceScreen
+          android:key="app_circle_bar"
+          android:title="@string/app_circle_bar_title"
+          android:summary="@string/app_circle_bar_summary"
+          android:fragment="com.havoc.settings.fragments.AppCircleBar" />
+
 </PreferenceScreen>
