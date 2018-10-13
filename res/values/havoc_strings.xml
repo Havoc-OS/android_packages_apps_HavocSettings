@@ -157,7 +157,7 @@
     <string name="face_auto_unlock_title">Face auto unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen after face unlocking</string>
     
-            <!-- Screen Off animation --> 
+    <!-- Screen Off animation --> 
     <string name="screen_off_animation_title">Screen off animation</string> 
     <string name="screen_off_animation_summary">%1$s</string> 
     <string name="screen_off_animation_fade">Simple fade</string> 
@@ -1081,5 +1081,18 @@
     <string name="statusbar_notch">Notch</string>
     <string name="hide_notch_title">Hide notch</string>
     <string name="hide_notch_summary">If enabled it hides notch and fills in side gaps</string>
+    
+     <!-- AOSP Recents -->
+    <string name="aosp_first_time_title">AOSP recents</string>
+    <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
+
+     <!-- Immersive Recents -->
+    <string name="immersive_recents_title">Immersive recents</string>
+    <string name="immersive_recents_summary">Change the view of the recents screen</string>
+    <string name="immersive_recents_dialog_title">Select recents view</string>
+    <string name="immersive_recents_default">Default</string>
+    <string name="immersive_recents_fullscreen">Fullscreen</string>
+    <string name="immersive_recents_statusbar">Statusbar only</string>
+    <string name="immersive_recents_navbar">Navbar only</string>
     
 </resources>

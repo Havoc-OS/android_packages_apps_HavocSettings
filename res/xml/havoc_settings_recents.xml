@@ -53,12 +53,21 @@
 		
     </PreferenceCategory>
 
-    <!--<PreferenceCategory 
+    <PreferenceCategory 
         android:title="@string/immersive_recent_title"
         android:dependency="stock_recents"
         android:key="immersive_recent" >
 
-    </PreferenceCategory>-->
+        <ListPreference
+            android:key="immersive_recents"
+            android:title="@string/immersive_recents_title"
+            android:summary="@string/immersive_recents_summary"
+            android:dialogTitle="@string/immersive_recents_dialog_title"
+            android:entries="@array/immersive_recents_entries"
+            android:entryValues="@array/immersive_recents_values"
+            android:persistent="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory 
         android:title="@string/hafr_title"
