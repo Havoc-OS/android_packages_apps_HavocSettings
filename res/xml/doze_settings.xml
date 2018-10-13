@@ -19,6 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
 
+    <Preference
+        android:key="ambient_play_cat"
+        android:title="@string/ambient_play_cat"
+        android:summary="@string/ambient_recognition_summary"
+        android:fragment="com.android.settings.AmbientPlaySettings" />
+
     <PreferenceCategory
         android:key="ambient_element"
         android:title="@string/ambient_element" >
