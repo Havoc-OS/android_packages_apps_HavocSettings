@@ -1192,4 +1192,8 @@
 
     <string name="hide_lockscreen_icon_title">Hide lock screen icon</string>
     <string name="hide_lockscreen_icon_summary">Change the lock screen icon visibility</string>
+
+	<!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel animation</string>
+    <string name="pixel_navbar_anim_summary">Toggle home button animation</string>
 </resources>

@@ -23,6 +23,13 @@
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
 
+	<com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="pixel_nav_animation"
+        android:title="@string/pixel_navbar_anim_title"
+        android:summary="@string/pixel_navbar_anim_summary"
+        android:dependency="navbar_visibility"
+        android:defaultValue="true" />
+
     <Preference
             android:title="@string/navbar_tuner_title"
             android:summary="@string/navbar_tuner_summary" >
