@@ -1221,4 +1221,15 @@
     <string name="pa_pie_gravity_bottom">Bottom</string> 
     <string name="pa_pie_gravity_right">Right</string> 
     <string name="pa_pie_gravity_left">Left</string> 
+
+    <!-- Edge gestures --> 
+    <string name="edge_gestures_title">Edge gestures</string> 
+    <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string> 
+    <string name="edge_gestures_long_press_delay_title">Delay until long press action starts</string> 
+    <string name="edge_gestures_back_category_title">Back gesture</string> 
+    <string name="edge_gestures_back_edges_title">Trigger back gesture from</string> 
+    <string name="edge_gestures_landscape_back_edges_title">Trigger back gesture on landscape from</string> 
+    <string name="edge_gestures_back_screen_percent_title">Back gesture must start below this percentage of the screen</string> 
+    <string name="edge_gestures_back_screen_percent_summary">Trigger below % of screen</string> 
+    <string name="edge_gestures_summary">Navigate using edge gestures</string> 
 </resources>

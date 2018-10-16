@@ -53,6 +53,12 @@
         android:summary="@string/use_bottom_gesture_summary"
         android:defaultValue="false" />
 
+    <Preference 
+        android:key="edge_gestures" 
+        android:title="@string/edge_gestures_title" 
+        android:summary="@string/edge_gestures_summary" 
+        android:fragment="com.havoc.settings.fragments.EdgeGesturesSettings"/>
+
     </PreferenceCategory>
 
     <!--<PreferenceCategory
