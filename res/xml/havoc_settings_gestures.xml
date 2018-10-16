@@ -90,4 +90,10 @@
 
     </PreferenceCategory>-->
 
+    <PreferenceScreen 
+        android:key="pa_pie_control" 
+        android:title="@string/pa_pie_control_title" 
+        android:summary="@string/pa_pie_control_summary" 
+        android:fragment="com.havoc.settings.fragments.PieSettings" /> 
+
 </PreferenceScreen>
