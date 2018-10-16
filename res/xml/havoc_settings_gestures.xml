@@ -67,11 +67,16 @@
 
     </PreferenceCategory>-->
 
-      <!-- App Circle Bar -->
-      <PreferenceScreen
-          android:key="app_circle_bar"
-          android:title="@string/app_circle_bar_title"
-          android:summary="@string/app_circle_bar_summary"
-          android:fragment="com.havoc.settings.fragments.AppCircleBar" />
+    <PreferenceScreen
+        android:key="app_circle_bar"
+        android:title="@string/app_circle_bar_title"
+        android:summary="@string/app_circle_bar_summary"
+        android:fragment="com.havoc.settings.fragments.AppCircleBar" />
+
+    <PreferenceScreen 
+        android:key="pa_pie_control" 
+        android:title="@string/pa_pie_control_title" 
+        android:summary="@string/pa_pie_control_summary" 
+        android:fragment="com.havoc.settings.fragments.PieSettings" /> 
 
 </PreferenceScreen>
