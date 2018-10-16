@@ -70,6 +70,12 @@
             android:persistent="false"
             android:dependency="use_bottom_gesture_navigation" />
 
+        <Preference
+            android:key="edge_gestures"
+            android:title="@string/edge_gestures_title"
+            android:summary="@string/edge_gestures_summary"
+            android:fragment="com.havoc.settings.fragments.EdgeGesturesSettings" />
+
     </PreferenceCategory>
 
     <!--<PreferenceCategory
