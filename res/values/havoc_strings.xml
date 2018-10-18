@@ -1234,4 +1234,11 @@
     <string name="edge_gestures_summary">Navigate using edge gestures</string> 
     <string name="edge_gestures_back_show_ui_feedback_title">Back gesture animation</string> 
     <string name="edge_gestures_back_show_ui_feedback_summary">Show animated feedback on edges when back gesture is used</string>
+
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">QS Tile Style</string>
+    <string name="qstile_default">Default</string>
+    <string name="qstile_circle_trim">Circle with trim</string>
+    <string name="qstile_dual_tone_circle">Dual-toned circle</string>
+    <string name="qstile_squircle_trim">Squircle with trim</string>
 </resources>
