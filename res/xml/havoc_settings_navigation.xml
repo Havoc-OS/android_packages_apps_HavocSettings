@@ -30,6 +30,13 @@
         android:dependency="navbar_visibility"
         android:defaultValue="true" />
 
+	<com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="one_hand_mode_enabled"
+        android:title="@string/one_hand_mode_title"
+        android:summary="@string/one_hand_mode_summary"
+        android:dependency="navbar_visibility"
+        android:defaultValue="false" />
+
     <Preference
             android:title="@string/navbar_tuner_title"
             android:summary="@string/navbar_tuner_summary" >

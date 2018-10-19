@@ -1241,4 +1241,8 @@
     <string name="qstile_circle_trim">Circle with trim</string>
     <string name="qstile_dual_tone_circle">Dual-toned circle</string>
     <string name="qstile_squircle_trim">Squircle with trim</string>
+
+	<!-- Onehand UI mode -->
+    <string name="one_hand_mode_title">One-handed Mode</string>
+    <string name="one_hand_mode_summary">Allow swiping across right or left on navbar to enable</string>
 </resources>
