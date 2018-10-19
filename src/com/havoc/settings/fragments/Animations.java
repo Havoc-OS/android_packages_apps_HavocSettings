@@ -110,8 +110,8 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
 
         // Screen Off Animations 
         mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION); 
-        int screenOffStyle = Settings.System.getInt(resolver, 
-                 Settings.System.SCREEN_OFF_ANIMATION, 0); 
+        int screenOffStyle = Settings.Global.getInt(resolver, 
+                 Settings.Global.SCREEN_OFF_ANIMATION, 0); 
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle)); 
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry()); 
         mScreenOffAnimation.setOnPreferenceChangeListener(this); 
@@ -262,8 +262,8 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mScreenOffAnimation) { 
-            Settings.System.putInt(getContentResolver(), 
-                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
+            Settings.Global.putInt(getContentResolver(), 
+                    Settings.Global.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
             int valueIndex = mScreenOffAnimation.findIndexOfValue((String) newValue); 
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]); 
             return true;
@@ -448,7 +448,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putInt(resolver,
-                Settings.System.SCREEN_OFF_ANIMATION, 0);
+                Settings.Global.SCREEN_OFF_ANIMATION, 0);
         Settings.System.putInt(resolver,
                 Settings.System.TOAST_ANIMATION, 1);
         Settings.System.putInt(resolver,
@@ -462,7 +462,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putInt(resolver,
-                Settings.System.DISABLE_TRANSITION_ANIMATIONS, 0);
+                Settings.Global.DISABLE_TRANSITION_ANIMATIONS, 0);
         Settings.System.putInt(resolver,
                 Settings.System.ANIMATION_CONTROLS_DURATION, 0);
         Settings.System.putInt(resolver,

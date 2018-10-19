@@ -22,7 +22,7 @@
     <PreferenceCategory
         android:title="@string/system_animation_title">
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.settings.preferences.GlobalSettingSwitchPreference
             android:key="disable_transition_animations"
             android:title="@string/disable_transition_animations_title"
             android:summary="@string/disable_transition_animations_summary"
