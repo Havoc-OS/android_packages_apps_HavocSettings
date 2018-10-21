@@ -74,7 +74,7 @@
     <string name="themes_title">Themes</string> 
     <string name="havoc_density">Display</string> 
     <string name="corners_category">Corners</string> 
-    <string name="ls_clock" >Clock Styles</string>
+    <string name="ls_clock" >Widget Styles</string>
     <string name="ls_date" >Date Styles</string>
     <string name="ls_shortcuts" >Shortcuts</string>
     <string name="ls_bot_elements" >Bottom Icons</string>
@@ -1336,4 +1336,7 @@
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     <string name="ticker_tick_duration_title">Ticker duration</string>
+
+    <!-- Lock Date Fonts -->
+    <string name="lock_date_font_title">Date font style</string>
 </resources>
