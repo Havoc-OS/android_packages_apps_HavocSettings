@@ -375,7 +375,7 @@
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
     <!-- Disable OS on lockscreen -->
-    <string name="block_on_secure_keyguard_title">Disable quick settings</string>
+    <string name="block_on_secure_keyguard_title">Disable Quick settings</string>
     <string name="block_on_secure_keyguard_summary">Disables quick settings on secure lockscreen</string>
 
     <!-- On-The-Go -->
@@ -1247,4 +1247,8 @@
 	<!-- Onehand UI mode -->
     <string name="one_hand_mode_title">One-handed Mode</string>
     <string name="one_hand_mode_summary">Allow swiping across right or left on navbar to enable</string>
+
+    <!-- Show VoLTE icon on statusbar -->
+    <string name="volte_icon_title">VoLTE icon</string>
+    <string name="volte_icon_summary">Display VoLTE icon in statusbar</string>
 </resources>
