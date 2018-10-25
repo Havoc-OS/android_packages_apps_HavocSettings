@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 Havoc-OS
+<!-- Copyright (C) 2009 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,17 +13,19 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <dimen name="picker_circle_preview_size">26dp</dimen>
-	
-    <dimen name="alert_dialog_padding_material">20dp</dimen>	
-	
-    <!-- Shortcut picker -->
-    <dimen name="shortcut_picker_left_padding">70dip</dimen>
 
-    <dimen name="fab_line_width">2dp</dimen>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-          <!-- Gesture Anywhere -->
-    <dimen name="ga_gesture_thumbnail_inset">8dip</dimen>
-    <dimen name="ga_gesture_thumbnail_size">64dip</dimen>
-</resources>
+    android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+
+    android:drawablePadding="12dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
+
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:textAppearance="?android:attr/textAppearanceLarge" />
