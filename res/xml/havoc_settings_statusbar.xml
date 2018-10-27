@@ -150,18 +150,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="statusbar_notch"
-        android:title="@string/statusbar_notch">
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_hide_notch"
-            android:title="@string/hide_notch_title"
-            android:summary="@string/hide_notch_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="statusbar_tuner"
         android:title="@string/statusbar_tuner">
 
