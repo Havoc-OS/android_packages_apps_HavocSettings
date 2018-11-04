@@ -1342,4 +1342,8 @@
     <string name="pulse_blacklist_apps_summary">Apps to not show in the panel</string>
     <string name="pulse_blacklist_add_apps_title">Add app</string>
     <string name="pulse_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
+
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 </resources>
