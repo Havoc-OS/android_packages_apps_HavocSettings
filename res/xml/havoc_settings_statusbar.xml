@@ -117,6 +117,12 @@
             android:min="0"
             android:defaultValue="1" />
 
+	    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_show_wifi_activity"
+            android:title="@string/statusbar_show_wifi_activity_title"
+            android:summary="@string/statusbar_show_wifi_activity_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
  	
