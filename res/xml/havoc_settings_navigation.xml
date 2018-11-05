@@ -37,6 +37,12 @@
         android:dependency="navbar_visibility"
         android:defaultValue="false" />
 
+	<Preference
+        android:key="pulse_settings"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary"
+        android:fragment="com.havoc.settings.fragments.PulseSettings" />
+
     <Preference
             android:title="@string/navbar_tuner_title"
             android:summary="@string/navbar_tuner_summary" >
