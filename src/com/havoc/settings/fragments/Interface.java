@@ -20,11 +20,12 @@ import android.content.Context;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.display.AccentPickerPreferenceController;
-import com.android.settings.display.DarkUIPreferenceController;
-import com.havoc.settings.display.QsTileStylePreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.havoc.settings.display.AccentPickerPreferenceController;
+import com.havoc.settings.display.AutoDarkUIPreferenceController;
+import com.havoc.settings.display.DarkUIPreferenceController;
+import com.havoc.settings.display.QsTileStylePreferenceController;
 
 import com.havoc.settings.R;
 
@@ -58,6 +59,7 @@ public class Interface extends DashboardFragment {
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
+	    controllers.add(new AutoDarkUIPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
