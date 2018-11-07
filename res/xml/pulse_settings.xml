@@ -132,6 +132,14 @@
             android:dependency="pulse_fading_bars_category"/>
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="pulse_fading_blocks_opacity"
+            android:title="@string/pulse_fading_blocks_opacity"
+            android:max="255"
+            android:min="0"
+            android:defaultValue="200"
+            android:dependency="eos_fling_show_pulse" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="fling_pulse_lavalamp_speed"
             android:title="@string/lavamp_solid_speed_title"
             android:max="30000"
