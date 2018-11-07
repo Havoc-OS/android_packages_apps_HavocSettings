@@ -56,6 +56,8 @@ public class RoundedCornersPreferenceController extends AbstractPreferenceContro
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
+
+        float displayDensity = mContext.getResources().getDisplayMetrics().density;
         mCornerRadius = (SystemSettingSeekBarPreference) screen.findPreference(SYSUI_ROUNDED_SIZE);
         Resources res = null;
         try {
@@ -66,7 +68,7 @@ public class RoundedCornersPreferenceController extends AbstractPreferenceContro
         int resourceId = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
         int cornerRadius = Settings.Secure.getInt(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_SIZE,
-                    res.getDimensionPixelSize(resourceId));
+                    (int) (res.getDimension(resourceId)/displayDensity));
                 mCornerRadius.setValue(cornerRadius / 1);
                 mCornerRadius.setOnPreferenceChangeListener(this);
     }

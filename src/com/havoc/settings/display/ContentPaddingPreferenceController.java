@@ -56,6 +56,8 @@ public class ContentPaddingPreferenceController extends AbstractPreferenceContro
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
+
+        float displayDensity = mContext.getResources().getDisplayMetrics().density;
         mContentPadding = (SystemSettingSeekBarPreference) screen.findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
         Resources res = null;
         try {
@@ -66,7 +68,7 @@ public class ContentPaddingPreferenceController extends AbstractPreferenceContro
         int resourceId = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
         int contentPadding = Settings.Secure.getInt(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
-                    res.getDimensionPixelSize(resourceId));
+                    (int) (res.getDimension(resourceId)/displayDensity));
                 mContentPadding.setValue(contentPadding / 1);
                 mContentPadding.setOnPreferenceChangeListener(this);
     }
