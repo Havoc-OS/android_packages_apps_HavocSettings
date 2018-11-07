@@ -24,8 +24,10 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.havoc.settings.display.AccentPickerPreferenceController;
 import com.havoc.settings.display.AutoDarkUIPreferenceController;
+import com.havoc.settings.display.ContentPaddingPreferenceController;
 import com.havoc.settings.display.DarkUIPreferenceController;
 import com.havoc.settings.display.QsTileStylePreferenceController;
+import com.havoc.settings.display.RoundedCornersPreferenceController;
 
 import com.havoc.settings.R;
 
@@ -60,8 +62,10 @@ public class Interface extends DashboardFragment {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
 	    controllers.add(new AutoDarkUIPreferenceController(context));
+        controllers.add(new ContentPaddingPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
+        controllers.add(new RoundedCornersPreferenceController(context));
         return controllers;
     }
 }

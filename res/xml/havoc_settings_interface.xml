@@ -76,10 +76,26 @@
 
     </PreferenceCategory>
 
-    <!--<PreferenceCategory 
+    <PreferenceCategory 
         android:title="@string/corners_category" > 
 
-    </PreferenceCategory>-->
+	    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="25"
+            android:min="0"
+            settings:units=""
+            android:persistent="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="10"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory 
         android:key="dashboard_category" 
