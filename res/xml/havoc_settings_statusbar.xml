@@ -125,14 +125,7 @@
 
     </PreferenceCategory>
 
- 	
     <!--<PreferenceCategory
-        android:key="statusbar_ticker"
-        android:title="@string/statusbar_ticker">
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="statusbar_pulldown"
         android:title="@string/statusbar_pulldown">
 

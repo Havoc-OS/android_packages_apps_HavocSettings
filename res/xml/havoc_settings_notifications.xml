@@ -16,7 +16,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
 	android:title="@string/notifications_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         android:key="notification_lights"
@@ -65,6 +66,35 @@
             android:title="@string/heads_up_notifications"
             android:summary="@string/heads_up_notifications_summary"
             android:fragment="com.havoc.settings.fragments.HeadsUpSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="statusbar_ticker"
+        android:title="@string/statusbar_ticker">
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="status_bar_show_ticker"
+            android:title="@string/status_bar_show_ticker_title"
+            android:summary="@string/status_bar_show_ticker_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingIntListPreference
+            android:key="status_bar_ticker_animation_mode"
+            android:title="@string/ticker_animation_mode_title"
+            android:entries="@array/ticker_animation_mode_entries"
+            android:entryValues="@array/ticker_animation_mode_values"
+            android:defaultValue="0"
+            android:dependency="status_bar_show_ticker" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="status_bar_ticker_tick_duration"
+            android:title="@string/ticker_tick_duration_title"
+            android:min="500"
+            android:max="10000"
+            android:defaultValue="3000"
+            havocsettings:interval="100"
+            android:dependency="status_bar_show_ticker" />
 
     </PreferenceCategory>
 
