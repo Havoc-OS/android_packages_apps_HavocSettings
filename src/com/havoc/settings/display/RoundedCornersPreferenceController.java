@@ -15,6 +15,9 @@ package com.havoc.settings.display;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.content.pm.PackageManager.NameNotFoundException;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.support.v7.preference.Preference;
@@ -54,8 +57,16 @@ public class RoundedCornersPreferenceController extends AbstractPreferenceContro
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mCornerRadius = (SystemSettingSeekBarPreference) screen.findPreference(SYSUI_ROUNDED_SIZE);
+        Resources res = null;
+        try {
+            res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        int resourceId = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
         int cornerRadius = Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.SYSUI_ROUNDED_SIZE, 25);
+                Settings.Secure.SYSUI_ROUNDED_SIZE,
+                    res.getDimensionPixelSize(resourceId));
                 mCornerRadius.setValue(cornerRadius / 1);
                 mCornerRadius.setOnPreferenceChangeListener(this);
     }
