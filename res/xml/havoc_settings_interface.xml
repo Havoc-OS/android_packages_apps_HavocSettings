@@ -82,7 +82,7 @@
 	    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="sysui_rounded_size"
             android:title="@string/corner_radius"
-            android:max="25"
+            android:max="60"
             android:min="0"
             settings:units=""
             android:persistent="false" />
