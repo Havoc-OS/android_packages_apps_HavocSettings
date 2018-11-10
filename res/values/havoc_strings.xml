@@ -1260,7 +1260,7 @@
     <string name="edge_gestures_back_show_ui_feedback_summary">Show animated feedback on edges when back gesture is used</string>
 
     <!-- QS tile styles -->
-    <string name="qs_tile_style_title">QS Tile Style</string>
+    <string name="qs_tile_style_title">QS Tile style</string>
     <string name="qstile_default">Default</string>
     <string name="qstile_circle_trim">Circle (Trim)</string>
     <string name="qstile_dual_tone_circle">Dual-Toned Circle (Trim)</string>
@@ -1343,4 +1343,10 @@
     <!-- Rounded corners -->
     <string name="corner_radius">Rounded Corner Radius</string>
     <string name="content_padding">Corner Content Padding</string>
+
+    <!-- Notification styles -->
+    <string name="notification_style_title">Notification color</string>
+    <string name="notification_light">Light</string>
+    <string name="notification_dark">Dark</string>
+    <string name="notification_black">Black</string>
 </resources>
