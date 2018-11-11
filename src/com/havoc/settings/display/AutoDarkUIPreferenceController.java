@@ -18,13 +18,17 @@ package com.havoc.settings.display;
 
 import android.app.UiModeManager;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settingslib.development.DeveloperOptionsPreferenceController;
+import com.android.settingslib.drawer.SettingsDrawerActivity;
 
 public class AutoDarkUIPreferenceController extends DeveloperOptionsPreferenceController
         implements Preference.OnPreferenceChangeListener, PreferenceControllerMixin {
@@ -51,7 +55,32 @@ public class AutoDarkUIPreferenceController extends DeveloperOptionsPreferenceCo
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         mUiModeManager.setNightMode(modeToInt((String) newValue));
         updateSummary(preference);
+        try {
+            reload();
+        }catch (Exception ignored){
+        }
         return true;
+    }
+
+    private void reload(){
+        Intent intent2 = new Intent(Intent.ACTION_MAIN);
+        intent2.addCategory(Intent.CATEGORY_HOME);
+        intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent2);
+        Toast.makeText(mContext, R.string.applying_theme_toast, Toast.LENGTH_SHORT).show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.android.settings",
+                        "com.android.settings.Settings$InterfaceSettingsActivity");
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.putExtra(SettingsDrawerActivity.EXTRA_SHOW_MENU, true);
+                mContext.startActivity(intent);
+                Toast.makeText(mContext, R.string.theme_applied_toast, Toast.LENGTH_SHORT).show();
+            }
+        }, 2000);
     }
 
     @Override
