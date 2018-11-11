@@ -16,6 +16,8 @@ package com.havoc.settings.display;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.ServiceManager;
+import android.os.RemoteException;
 import android.text.TextUtils;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -24,6 +26,7 @@ import android.provider.Settings;
 
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
+import com.android.internal.statusbar.IStatusBarService;
 
 import libcore.util.Objects;
 import java.util.ArrayList;
@@ -39,6 +42,7 @@ public class DarkUIPreferenceController extends AbstractPreferenceController imp
 
     private static final String SYSTEM_UI_THEME = "systemui_theme_style";
     private ListPreference mSystemUiThemeStyle;
+    private IStatusBarService mStatusBarService;
 
     public DarkUIPreferenceController(Context context) {
         super(context);
@@ -65,7 +69,6 @@ public class DarkUIPreferenceController extends AbstractPreferenceController imp
         mSystemUiThemeStyle.setSummary(mSystemUiThemeStyle.getEntry());
         mSystemUiThemeStyle.setOnPreferenceChangeListener(this);
     }
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mSystemUiThemeStyle) {
@@ -73,32 +76,16 @@ public class DarkUIPreferenceController extends AbstractPreferenceController imp
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.SYSTEM_UI_THEME, Integer.valueOf(value));
             int valueIndex = mSystemUiThemeStyle.findIndexOfValue(value);
             mSystemUiThemeStyle.setSummary(mSystemUiThemeStyle.getEntries()[valueIndex]);
-            try {
-                reload();
-            }catch (Exception ignored){
+
+            IStatusBarService statusBarService = IStatusBarService.Stub.asInterface(ServiceManager.checkService(Context.STATUS_BAR_SERVICE));
+            if (statusBarService != null) {
+                try {
+                    statusBarService.restartUI();
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
             }
         }
         return true;
-    }
-
-    private void reload(){
-        Intent intent2 = new Intent(Intent.ACTION_MAIN);
-        intent2.addCategory(Intent.CATEGORY_HOME);
-        intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent2);
-        Toast.makeText(mContext, R.string.applying_theme_toast, Toast.LENGTH_SHORT).show();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setClassName("com.android.settings",
-                        "com.android.settings.Settings$InterfaceSettingsActivity");
-                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                intent.putExtra(SettingsDrawerActivity.EXTRA_SHOW_MENU, true);
-                mContext.startActivity(intent);
-                Toast.makeText(mContext, R.string.theme_applied_toast, Toast.LENGTH_SHORT).show();
-            }
-        }, 2000);
     }
 }
