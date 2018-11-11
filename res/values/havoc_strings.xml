@@ -1349,4 +1349,12 @@
     <string name="notification_light">Light</string>
     <string name="notification_dark">Dark</string>
     <string name="notification_black">Black</string>
+
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">QS Header style</string>
+    <string name="qs_header_black">Black</string>
+    <string name="qs_header_grey">Grey</string>
+    <string name="qs_header_lightgrey">Light Grey</string>
+    <string name="qs_header_accent">Accent Based</string>
+    <string name="qs_header_transparent">Transparent</string>
 </resources>

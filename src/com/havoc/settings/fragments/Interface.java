@@ -27,6 +27,7 @@ import com.havoc.settings.display.AutoDarkUIPreferenceController;
 import com.havoc.settings.display.ContentPaddingPreferenceController;
 import com.havoc.settings.display.DarkUIPreferenceController;
 import com.havoc.settings.display.NotificationStylePreferenceController;
+import com.havoc.settings.display.QsHeaderStylePreferenceController;
 import com.havoc.settings.display.QsTileStylePreferenceController;
 import com.havoc.settings.display.RoundedCornersPreferenceController;
 
@@ -66,6 +67,7 @@ public class Interface extends DashboardFragment {
         controllers.add(new ContentPaddingPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
         controllers.add(new NotificationStylePreferenceController(context));
+        controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new RoundedCornersPreferenceController(context));
         return controllers;

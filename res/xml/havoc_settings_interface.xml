@@ -53,6 +53,13 @@
             android:persistent="false" />
 
 	    <ListPreference
+            android:key="qs_header_style"
+            android:title="@string/qs_header_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_header_style_entries"
+            android:entryValues="@array/qs_header_style_values" />
+
+	    <ListPreference
             android:key="qs_tile_style"
             android:title="@string/qs_tile_style_title"
             android:persistent="false"
