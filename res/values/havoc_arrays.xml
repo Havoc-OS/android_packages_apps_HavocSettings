@@ -1119,12 +1119,19 @@
     <!-- QS tile styles -->
     <string-array name="qs_selector_entries" translatable="false">
         <item>@string/qstile_default</item>
+        <item>@string/qstile_circle_gradient</item>
         <item>@string/qstile_circle_trim</item>
+        <item>@string/qstile_dottedcircle</item>
+        <item>@string/qstile_circle_dualtone</item>
         <item>@string/qstile_dual_tone_circle</item>
+        <item>@string/qstile_mountain</item>
+        <item>@string/qstile_ninja</item>
         <item>@string/qstile_oreo</item>
         <item>@string/qstile_oreo_circle_trim</item>
         <item>@string/qstile_oreo_squircle_trim</item>
+        <item>@string/qstile_pokesign</item>
         <item>@string/qstile_squircle_trim</item>
+        <item>@string/qstile_wavey</item>
     </string-array>
     <string-array name="qs_selector_values" translatable="false">
         <item>0</item>
@@ -1134,6 +1141,13 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
     </string-array>
 
     <!-- Pulse config -->
