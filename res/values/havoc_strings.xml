@@ -1361,4 +1361,8 @@
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Less boring heads up</string>
     <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app</string>
+
+    <!-- Hide header -->
+    <string name="tuner_show_info_header_title">Information header</string>
+    <string name="tuner_show_info_header_category">Shows information on top of the QS panel</string>
 </resources>

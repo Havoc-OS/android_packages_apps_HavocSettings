@@ -104,17 +104,17 @@
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false"/>
 
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+	        android:key="qs_show_info_header"
+	        android:title="@string/tuner_show_info_header_title"
+	        android:summary="@string/tuner_show_info_header_category"
+	        android:defaultValue="true" />
+
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="bluetooth_qs_show_battery"
-            android:title="@string/bluetooth_battery_title"
-            android:summary="@string/bluetooth_battery_summary"
-            android:defaultValue="true"/>
 
     </PreferenceCategory>
 
