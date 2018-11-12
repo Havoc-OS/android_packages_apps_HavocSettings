@@ -60,12 +60,28 @@
         android:key="ls_clock"
         android:title="@string/ls_clock">
 
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="lockclock_font_size"
+            android:title="@string/lockclock_font_size_title"
+            android:max="120"
+            android:min="50"
+            android:persistent="false"
+            android:defaultValue="64" />
+
         <ListPreference
             android:key="lock_clock_fonts"
             android:title="@string/lock_clock_font_title"
             android:entries="@array/lock_clock_fonts_entries"
             android:entryValues="@array/lock_clock_fonts_values"
             android:defaultValue="0"
+            android:persistent="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="lockdate_font_size"
+            android:title="@string/lockdate_font_size_title"
+            android:max="40"
+            android:min="10"
+            android:defaultValue="16"
             android:persistent="false" />
 
         <ListPreference
