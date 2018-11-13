@@ -121,7 +121,7 @@
             android:key="statusbar_show_wifi_activity"
             android:title="@string/statusbar_show_wifi_activity_title"
             android:summary="@string/statusbar_show_wifi_activity_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
