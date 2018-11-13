@@ -18,16 +18,39 @@
 	android:title="@string/doze_display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
-
-    <Preference
+    
+    <PreferenceCategory
         android:key="ambient_play"
-        android:title="@string/ambient_play_title"
-        android:summary="@string/ambient_play_summary"
-        android:fragment="com.android.settings.AmbientPlaySettings" />
+        android:title="@string/ambient_play" >
+
+        <Preference
+            android:key="ambient_play"
+            android:title="@string/ambient_play_title"
+            android:summary="@string/ambient_play_summary"
+            android:fragment="com.android.settings.AmbientPlaySettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="ambient_display_category_when_to_show"
+        android:title="@string/ambient_display_category_triggers">
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_enabled"
+            android:title="@string/doze_title"
+            android:summary="@string/doze_summary"
+            android:persistent="false" />
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_always_on"
+            android:title="@string/doze_always_on_title"
+            android:summary="@string/doze_always_on_summary"
+            android:dependency="doze_enabled" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="ambient_element"
-        android:title="@string/ambient_element" >
+        android:title="@string/ambient_element"
+        android:dependency="doze_enabled" >
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="ambient_battery_percent" 
@@ -35,26 +58,11 @@
             android:summary="@string/ambient_battery_percent_summary" 
             android:defaultValue="false" />
     </PreferenceCategory>
-		
-    <PreferenceCategory
-        android:key="ambient_display_category_when_to_show"
-        android:title="@string/ambient_display_category_triggers">
-
-        <com.havoc.settings.preferences.SecureSettingSwitchPreference
-            android:key="doze_always_on"
-            android:title="@string/doze_always_on_title"
-            android:summary="@string/doze_always_on_summary" />
-
-        <com.havoc.settings.preferences.SecureSettingSwitchPreference
-            android:key="doze_enabled"
-            android:title="@string/doze_title"
-            android:summary="@string/doze_summary"
-            android:persistent="false" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="tilt_sensor"
-        android:title="@string/tilt_sensor_title" >
+        android:title="@string/tilt_sensor_title"
+        android:dependency="doze_enabled" >
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="doze_trigger_tilt"
@@ -77,7 +85,8 @@
 
     <PreferenceCategory
         android:key="pickup"
-        android:title="@string/pickup_sensor_title" >
+        android:title="@string/pickup_sensor_title"
+        android:dependency="doze_enabled" >
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="doze_trigger_pickup"
@@ -100,7 +109,8 @@
 
     <PreferenceCategory
         android:key="proximity_sensor"
-        android:title="@string/proximity_sensor_title" >
+        android:title="@string/proximity_sensor_title" 
+        android:dependency="doze_enabled">
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="doze_trigger_handwave"

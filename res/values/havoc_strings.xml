@@ -1380,4 +1380,6 @@
     <!-- Lock Clock & Date Size -->
     <string name="lockdate_font_size_title">Date font size</string>
     <string name="lockclock_font_size_title">Clock font size</string>
+    
+    <string name="ambient_play">Music</string>
 </resources>
