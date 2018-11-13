@@ -1372,4 +1372,8 @@
     <!-- Hide header -->
     <string name="tuner_show_info_header_title">Information header</string>
     <string name="tuner_show_info_header_category">Shows information on top of the QS panel</string>
+
+    <!-- Drag handle -->
+    <string name="tuner_show_drag_handle_title">Drag handle</string>
+    <string name="tuner_show_drag_handle_summary">Shows a drag handle at the bottom of QS</string>
 </resources>
