@@ -101,7 +101,15 @@
             android:key="network_traffic_state"
             android:title="@string/network_traffic_state_title"
             android:summary="@string/network_traffic_state_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="network_traffic_type"
+            android:title="@string/network_traffic_type"
+            android:entries="@array/show_network_traffic_type_entries"
+            android:entryValues="@array/show_network_traffic_type_values"
+            android:dependency="network_traffic_state"
+            android:persistent="false" />
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="network_traffic_hidearrow"
