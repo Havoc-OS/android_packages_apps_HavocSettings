@@ -29,14 +29,11 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
-        <Preference
-            android:key="app_ops_settings"
-            android:title="@string/app_ops_settings_title"
-            android:summary="@string/app_ops_settings_summary" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.applications.appops.AppOpsSummary" />
-        </Preference>
+	<Preference
+        android:key="privacy_guard_manager"
+        android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+        android:title="@string/app_ops_settings_title"
+        android:summary="@string/app_ops_settings_summary" />
 
     <Preference
         android:key="chooser_activity_blacklist"
