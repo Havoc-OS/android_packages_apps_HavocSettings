@@ -54,6 +54,12 @@
             android:title="@string/disable_fc_notifications_title" 
             android:summary="@string/disable_fc_notifications_summary" 
             android:defaultValue="false" /> 
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="disable_immersive_message"
+            android:title="@string/disable_immersive_message_title"
+            android:summary="@string/disable_immersive_message_summary"
+            android:defaultValue="false" />
     
     </PreferenceCategory>
 

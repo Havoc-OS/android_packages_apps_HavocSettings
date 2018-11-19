@@ -1424,4 +1424,9 @@
     <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
     <string name="voicemail_breath_title">Breathing Voicemail</string>
     <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
+
+    <!-- Disabling immersive mode messages -->
+    <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
+    <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
+
 </resources>
