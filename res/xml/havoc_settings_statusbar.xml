@@ -61,6 +61,27 @@
 
     </PreferenceCategory>
 
+     <PreferenceCategory
+        android:title="@string/breathing_notifications_category" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="sms_breath"
+            android:title="@string/sms_breath_title"
+            android:summary="@string/sms_breath_summary"
+            android:persistent="false"/>
+            
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="missed_call_breath"
+            android:title="@string/missed_call_breath_title"
+            android:summary="@string/missed_call_breath_summary"
+            android:persistent="false"/>
+            
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="voicemail_breath"
+            android:title="@string/voicemail_breath_title"
+            android:summary="@string/voicemail_breath_summary"
+            android:persistent="false"/>
+
     <PreferenceCategory
         android:key="statusbar_battery"
         android:title="@string/statusbar_battery">
