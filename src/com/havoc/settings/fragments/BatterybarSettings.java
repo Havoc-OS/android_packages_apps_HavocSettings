@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD:src/com/havoc/settings/fragments/BatterybarSettings.java
  * Copyright (C) 2018 Havoc-OS
-=======
- * Copyright (C) 2017 Benzo Rom
->>>>>>> 042b8ca... BatteryBar: Gradient color [2/2]:src/com/msm/xtended/fragments/BatterybarSettings.java
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

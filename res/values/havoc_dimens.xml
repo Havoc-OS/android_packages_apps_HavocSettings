@@ -16,13 +16,6 @@
 <resources>
 
     <dimen name="picker_circle_preview_size">26dp</dimen>
-	
-    <dimen name="alert_dialog_padding_material">20dp</dimen>	
-	
-    <!-- Shortcut picker -->
-    <dimen name="shortcut_picker_left_padding">70dip</dimen>
-
-    <dimen name="fab_line_width">2dp</dimen>
 
     <!-- Color Blend -->
     <dimen name="color_blend_preview_size">36dp</dimen>
