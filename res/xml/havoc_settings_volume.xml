@@ -19,6 +19,12 @@
     xmlns:havocsettings="http://schemas.android.com/apk/res-auto"
     android:title="@string/volume_title">
 
+    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        android:key="volume_keys_control_ring_tone"
+        android:title="@string/volume_keys_control_ring_tone_title"
+        android:summary="@string/volume_keys_control_ring_tone_summary"
+        android:defaultValue="false" />
+
     <com.havoc.settings.preferences.SystemSettingSeekBarPreference
         android:key="volume_dialog_timeout"
         android:title="@string/volume_dialog_timeout_title"
