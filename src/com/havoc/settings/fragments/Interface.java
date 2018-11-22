@@ -16,12 +16,17 @@
 package com.havoc.settings.fragments;
 
 import android.app.Fragment;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settings.display.FontPickerPreferenceController;
 import com.havoc.settings.display.AccentPickerPreferenceController;
 import com.havoc.settings.display.AutoDarkUIPreferenceController;
 import com.havoc.settings.display.ContentPaddingPreferenceController;
@@ -38,6 +43,37 @@ import java.util.List;
 
 public class Interface extends DashboardFragment {
     private static final String TAG = "Interface";
+
+ 	private IntentFilter mIntentFilter;
+    private static FontPickerPreferenceController mFontPickerPreference;
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals("com.android.server.ACTION_FONT_CHANGED")) {
+                mFontPickerPreference.stopProgress();
+            }
+        }
+    };
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mIntentFilter = new IntentFilter();
+        mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        final Context context = getActivity();
+        context.registerReceiver(mIntentReceiver, mIntentFilter);
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        final Context context = getActivity();
+        context.unregisterReceiver(mIntentReceiver);
+        mFontPickerPreference.stopProgress();
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -66,6 +102,7 @@ public class Interface extends DashboardFragment {
 	    controllers.add(new AutoDarkUIPreferenceController(context));
         controllers.add(new ContentPaddingPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
+		controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle, fragment));
         controllers.add(new NotificationStylePreferenceController(context));
         controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
