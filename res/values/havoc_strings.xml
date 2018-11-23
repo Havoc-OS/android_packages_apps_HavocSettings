@@ -143,6 +143,7 @@
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
     <string name="powermenu_advanced_reboot_summary">Enables the advanced reboot menu for rebooting options</string>
     <string name="powermenu_screenshot_title">Screenshot</string>
+    <string name="powermenu_screenrecord_title">Screenrecord</string>
     <string name="powermenu_category_visibility">Lockscreen options</string>
     <string name="powermenu_lockscreen_title">Visibility on the lockscreen</string>
     <string name="powermenu_lockscreen_summary">Enable the ability to show and use the power menu dialog while on the lockscreen</string>
