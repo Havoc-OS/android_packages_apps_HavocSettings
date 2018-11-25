@@ -126,6 +126,12 @@
             android:summary="@string/force_expanded_notifications_summary" /> 
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_guts_kill_app_button"
+            android:title="@string/notification_guts_kill_app_button_title"
+            android:summary="@string/notification_guts_kill_app_button_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
             android:title="@string/notification_sound_vib_screen_on_title"
             android:summary="@string/notification_sound_vib_screen_on_summary"
