@@ -862,7 +862,7 @@
     <!-- Burn-in Protection -->
     <string name="navigation_burnin_category">Burn-in Protection</string>
     <string name="burn_in_protection_title">Burn-in Protection</string>
-    <string name="burn_in_protection_summary">Shift navbar and statusbar icons to prevent burn-in</string>
+    <string name="burn_in_protection_summary">Shift statusbar icons to prevent burn-in</string>
     <string name="burn_in_protection_interval_title">Shift interval</string>
 
     <!-- Hide statusbar on lockscreen -->
@@ -1222,10 +1222,6 @@
     <string name="hide_lockscreen_icon_title">Hide lock screen icon</string>
     <string name="hide_lockscreen_icon_summary">Change the lock screen icon visibility</string>
 
-	<!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel animation</string>
-    <string name="pixel_navbar_anim_summary">Toggle home button animation</string>
-
     <!-- Pie --> 
     <string name="pa_pie_control_summary">Edge shortcuts and navigation controls</string>
     <string name="pie_enable_title">Enable pie control</string> 
@@ -1286,62 +1282,12 @@
     <string name="qstile_teardrop">Teardrop</string>
     <string name="qstile_wavey">Wavey</string>
 
-	<!-- Onehand UI mode -->
-    <string name="one_hand_mode_title">One-handed Mode</string>
-    <string name="one_hand_mode_summary">Allow swiping across right or left on navbar to enable</string>
-
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon in statusbar</string>
 
     <string name="statusbar_show_wifi_activity_title">Show Wi-Fi data indicators</string>
     <string name="statusbar_show_wifi_activity_summary">Show indicators when Wi-Fi is sending/receiving data like mobile</string>
-
-    <!-- Pulse navigation bar music visualizer -->
-    <string name="pulse_help_policy_notice_summary">Pulse does not work with some audio sources when listening on device speaker</string>
-    <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Navigation bar audio graphic equalizer</string>
-    <string name="fling_show_pulse_title">Allow Pulse</string>
-    <string name="fling_show_pulse_summary">Audio graphic equalizer on the navigation bar</string>
-    <string name="pulse_render_mode_title">Render mode</string>
-    <string name="pulse_render_mode_summary">%1$s</string>
-    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
-    <string name="pulse_fading_blocks_opacity">Fading blocks opacity</string>
-    <string name="pulse_render_mode_solid_lines">Solid lines</string>
-    <string name="fling_pulse_color">Pulse color</string>
-    <string name="fling_pulse_color_summary">Used also as fallback for automatic color</string>
-    <string name="fling_smoothing_enabled_title">Turn on smoothing</string>
-    <string name="fling_smoothing_enabled_summary">Each bar is animated more smoothly</string>
-    <string name="eos_fling_lavalamp_title">Turn on Lava Lamp</string>
-    <string name="eos_fling_lavalamp_summary">Pulse animates a smooth lava lamp style color blend</string>
-    <string name="pulse_advanced_category">Advanced</string>
-    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
-    <string name="pulse_custom_fudge_factor">Sanity level</string>
-    <string name="lavamp_solid_speed_title">Lava Lamp speed</string>
-    <string name="pulse_solid_units_count">Solid lines count</string>
-    <string name="pulse_solid_lines_count">Solid lines count</string>
-    <string name="pulse_solid_units_opacity">Solid lines opacity</string>
-    <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
-    <string name="pulse_custom_buttons_opacity_title">Smartbar buttons opacity on Pulse</string>
-    <string name="pulse_auto_color_title">Automatic Pulse color</string>
-    <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string>
-    <string name="fling_lavalamp_color_from">Lava Lamp start color</string>
-    <string name="fling_lavalamp_color_to">Lava Lamp end color</string>
-    <string name="pulse_colors_reset_title">Reset pulse colors</string>
-    <string name="pulse_colors_reset_message">Are you sure you want to reset these colors to default?</string>
-
-    <!-- Pulse config -->
-    <string name="pulse_custom_dimen">Bar width</string>
-    <string name="pulse_custom_div">Bar spacing</string>
-    <string name="pulse_filled_block_size">Block size</string>
-    <string name="pulse_empty_block_size">Block spacing</string>
-    <string name="pulse_blacklist_title">Apps blacklist</string>
-    <string name="pulse_blacklist_summary">Apps to be skipped for Pulse</string>
-    <string name="pulse_blacklist_apps_cat_title">Blacklist</string>
-    <string name="pulse_blacklist_apps_title">Apps blacklist</string>
-    <string name="pulse_blacklist_apps_summary">Apps to not show in the panel</string>
-    <string name="pulse_blacklist_add_apps_title">Add app</string>
-    <string name="pulse_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
 
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
