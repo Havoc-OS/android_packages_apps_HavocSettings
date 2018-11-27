@@ -1040,9 +1040,11 @@
     <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
 	
     <!-- AOSP Recents component Style -->
-    <string name="recents_component_type_title">Stock Recents Style</string>
-    <string name="recents_pie">Pie</string>
-    <string name="recents_oreo">Oreo</string>
+    <string name="recents_component_type_title">Recents Style</string>
+    <string name="recents_quickstep">Quickstep</string>
+    <string name="recents_stock">Stock</string>
+    <string name="recents_grid">Grid</string>
+    <string name="recents_go">Android Go</string>
     
      <!-- AOSP Recents -->
     <string name="aosp_first_time_title">AOSP recents</string>
