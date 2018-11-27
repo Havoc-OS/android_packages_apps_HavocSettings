@@ -20,17 +20,19 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
+import android.content.SharedPreferences; 
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.content.SharedPreferences; 
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
+
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.havoc.HavocUtils;
 import com.android.settings.dashboard.SummaryLoader;
@@ -46,12 +48,18 @@ import java.util.List;
 public class Recents extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String KEY_CATEGORY_STOCK = "stock_recents";
+    private static final String KEY_CATEGORY_IMMERSIVE = "immersive";
+    private static final String KEY_CATEGORY_HAFR = "hafr";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_LAYOUT_STYLE_PREF = "recents_layout_style";
     private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
     private static final String RECENTS_DATE = "recents_full_screen_date"; 
     private static final String RECENTS_CLOCK = "recents_full_screen_clock"; 
 
+    private PreferenceCategory mStockCat;
+    private PreferenceCategory mImmersiveCat;
+    private PreferenceCategory mHafrCat;
     private ListPreference mImmersiveRecents; 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
@@ -94,9 +102,26 @@ public class Recents extends SettingsPreferenceFragment implements
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry()); 
         mImmersiveRecents.setOnPreferenceChangeListener(this); 
 
+        mStockCat = (PreferenceCategory) findPreference(KEY_CATEGORY_STOCK);
+        mImmersiveCat = (PreferenceCategory) findPreference(KEY_CATEGORY_IMMERSIVE);
+        mHafrCat = (PreferenceCategory) findPreference(KEY_CATEGORY_HAFR);
+        updateRecentsState(type); 
+
         mClock = (SwitchPreference) findPreference(RECENTS_CLOCK); 
         mDate = (SwitchPreference) findPreference(RECENTS_DATE); 
         updateDisablestate(mode); 
+    }
+
+    public void updateRecentsState(int type) {
+        if (type == 0) {
+           mStockCat.setEnabled(false);
+           mImmersiveCat.setEnabled(false);
+           mHafrCat.setEnabled(false);
+        } else {
+           mStockCat.setEnabled(true);
+           mImmersiveCat.setEnabled(true);
+           mHafrCat.setEnabled(true);
+        }
     }
 
     public void updateDisablestate(int mode) { 
@@ -124,6 +149,7 @@ public class Recents extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENTS_LAYOUT_STYLE, type);
             mRecentsLayoutStylePref.setSummary(mRecentsLayoutStylePref.getEntries()[index]);
+            updateRecentsState(type); 
             if (type != 0) { // Disable swipe up gesture, if oreo type selected
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);

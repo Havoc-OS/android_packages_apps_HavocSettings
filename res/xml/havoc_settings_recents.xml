@@ -18,17 +18,17 @@
     android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <ListPreference
+        android:key="recents_layout_style"
+        android:title="@string/recents_component_type_title"
+        android:dialogTitle="@string/recents_component_type_title"
+        android:entries="@array/recents_type_title_entries"
+        android:defaultValue="0"
+        android:entryValues="@array/recents_type_title_values"/>
+
     <PreferenceCategory 
         android:title="@string/recent_button_title"
-        android:key="stock_recents"  >
-
-        <ListPreference
-            android:key="recents_layout_style"
-            android:title="@string/recents_component_type_title"
-            android:dialogTitle="@string/recents_component_type_title"
-            android:entries="@array/recents_type_title_entries"
-            android:defaultValue="0"
-            android:entryValues="@array/recents_type_title_values"/>
+        android:key="stock_recents" >
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="show_clear_all_recents"
