@@ -18,13 +18,6 @@
     android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <ListPreference
-        android:key="navbar_recents_style"
-        android:title="@string/navbar_recents_style_title"
-        android:entries="@array/navbar_recents_style_entries"
-        android:entryValues="@array/navbar_recents_style_values"
-        android:persistent="false"/>
-
     <PreferenceCategory 
         android:title="@string/recent_button_title"
         android:key="stock_recents"  >

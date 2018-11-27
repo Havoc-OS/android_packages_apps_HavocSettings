@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+
     <dimen name="picker_circle_preview_size">26dp</dimen>
 	
     <dimen name="alert_dialog_padding_material">20dp</dimen>	
@@ -23,7 +24,4 @@
 
     <dimen name="fab_line_width">2dp</dimen>
 
-          <!-- Gesture Anywhere -->
-    <dimen name="ga_gesture_thumbnail_inset">8dip</dimen>
-    <dimen name="ga_gesture_thumbnail_size">64dip</dimen>
 </resources>

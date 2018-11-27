@@ -43,8 +43,7 @@
         <com.havoc.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_always_on"
             android:title="@string/doze_always_on_title"
-            android:summary="@string/doze_always_on_summary"
-            android:dependency="doze_enabled" />
+            android:summary="@string/doze_always_on_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
