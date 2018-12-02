@@ -122,6 +122,13 @@
         android:key="dashboard_category" 
         android:title="@string/dashboard_category">
 
+        <com.havoc.settings.preferences.SystemSettingIntListPreference
+            android:key="theming_settings_dashboard_icons"
+            android:title="@string/theming_settings_dashboard_icons_title"
+            android:entries="@array/theming_settings_dashboard_icons_entries"
+            android:entryValues="@array/theming_settings_dashboard_icons_values"
+            android:defaultValue="0" />
+
         <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="enable_conditions" 
             android:title="@string/dashboard_conditions_title" 
