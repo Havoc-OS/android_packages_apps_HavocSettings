@@ -869,15 +869,15 @@
     <string-array name="recents_type_title_entries">
         <item>@string/recents_quickstep</item>
         <item>@string/recents_stock</item>
-        <item>@string/recents_grid</item>
         <item>@string/recents_go</item>
+        <!--<item>@string/recents_grid</item>-->
     </string-array>
 
     <string-array name="recents_type_title_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
+        <!--<item>3</item>-->
     </string-array>
 
     <!-- Immersive Recents -->
