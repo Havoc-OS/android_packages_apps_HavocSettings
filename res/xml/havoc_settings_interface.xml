@@ -25,7 +25,14 @@
         android:fragment="com.havoc.settings.fragments.ExpandedDesktopPreferenceFragment" />
 
     <PreferenceCategory 
-        android:title="@string/themes_title">  
+        android:title="@string/themes_title">
+
+	    <ListPreference
+            android:key="ui_style"
+            android:title="@string/ui_style_title"
+            android:persistent="false"
+            android:entries="@array/ui_style_entries"
+            android:entryValues="@array/ui_style_values" />
 
         <ListPreference
             android:key="systemui_theme_style"

@@ -35,6 +35,7 @@ import com.havoc.settings.display.NotificationStylePreferenceController;
 import com.havoc.settings.display.QsHeaderStylePreferenceController;
 import com.havoc.settings.display.QsTileStylePreferenceController;
 import com.havoc.settings.display.RoundedCornersPreferenceController;
+import com.havoc.settings.display.UiStylePreferenceController;
 
 import com.havoc.settings.R;
 
@@ -107,6 +108,7 @@ public class Interface extends DashboardFragment {
         controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new RoundedCornersPreferenceController(context));
+        controllers.add(new UiStylePreferenceController(context));
         return controllers;
     }
 }

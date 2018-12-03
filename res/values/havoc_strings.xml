@@ -1285,4 +1285,9 @@
     <string name="theming_settings_dashboard_icons_default_accent">Round (Accent)</string>
     <string name="theming_settings_dashboard_icons_plain">Oreo</string>
     <string name="theming_settings_dashboard_icons_plain_accent">Oreo (Accent)</string>
+
+    <!-- UI styles -->
+    <string name="ui_style_title">UI style</string>
+    <string name="ui_pixel">Pixel</string>
+    <string name="ui_aosp">AOSP</string>
 </resources>
