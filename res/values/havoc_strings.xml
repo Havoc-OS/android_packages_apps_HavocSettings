@@ -109,6 +109,7 @@
     <string name="footer_title" >Footer</string>
     <string name="animation_duration_custom">Custom</string>
     <string name="ambient_element">Bottom elements</string>
+    <string name="brightness_category_title">Brightness Slider</string>
 
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Blink Flashlight on call</string>
@@ -640,7 +641,7 @@
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
-    <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
+    <string name="qs_brightness_position_bottom_summary">Show brightness slider at the bottom of QS panel</string>
 
     <string name="qs_tile_title_visibility_title">Tile title</string> 
     <string name="qs_tile_title_visibility_summary">Display title below each tile</string> 
@@ -754,8 +755,12 @@
     <string name="qs_columns_portrait_title">Columns (Portrait)</string>
     <string name="qs_columns_landscape_title">Columns (Landscape)</string>
 
-    <string name="brightness_icon_title">Auto Brightness Icon</string>
-    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+    <string name="brightness_icon_title">Auto brightness icon</string>
+    <string name="brightness_icon_summary">Show an icon to toggle auto-brightness</string>
+    <string name="qs_auto_brightness_right_title">Auto brightness icon on right</string>
+    <string name="qs_auto_brightness_right_summary">Show the icon on right of the brightness slider</string>
+    <string name="qs_show_brightness_buttons_title">Brightness control buttons</string>
+    <string name="qs_show_brightness_buttons_summary">Show buttons beside the brightness slider to adjust brightness</string>
 	
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>

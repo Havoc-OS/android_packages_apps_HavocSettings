@@ -69,28 +69,48 @@
     </PreferenceCategory> 
 
     <PreferenceCategory 
-        android:title="@string/qs_element_title"
-        android:key="element" >
+        android:title="@string/brightness_category_title"
+        android:key="brightness_slider_cat" >
 			
         <com.havoc.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_brightness_slider"
+            android:key="qs_show_brightness"
             android:title="@string/brightness_slider_title"
             android:summary="@string/brightness_slider_summary"
             android:defaultValue="true"/>
-
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_show_brightness_icon"
-            android:title="@string/brightness_icon_title"
-            android:summary="@string/brightness_icon_summary"
-            android:dependency="qs_show_brightness_slider"
-            android:defaultValue="false"/>
 
         <com.havoc.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_brightness_position_bottom"
             android:title="@string/qs_brightness_position_bottom_title"
             android:summary="@string/qs_brightness_position_bottom_summary"
-            android:defaultValue="false"
-            android:dependency="qs_show_brightness_slider" />
+            android:dependency="qs_show_brightness" 
+            android:defaultValue="false"/>
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_auto_brightness"
+            android:title="@string/brightness_icon_title"
+            android:summary="@string/brightness_icon_summary"
+            android:dependency="qs_show_brightness"
+            android:defaultValue="false"/>
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_auto_brightness_right"
+            android:title="@string/qs_auto_brightness_right_title"
+            android:summary="@string/qs_auto_brightness_right_summary"
+            android:dependency="qs_show_auto_brightness"
+            android:defaultValue="true"/>
+
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_buttons"
+            android:title="@string/qs_show_brightness_buttons_title"
+            android:summary="@string/qs_show_brightness_buttons_summary"
+            android:dependency="qs_show_brightness"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/qs_element_title"
+        android:key="element" >
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="qs_tile_title_visibility" 
@@ -116,8 +136,8 @@
 	        android:summary="@string/tuner_show_drag_handle_summary"
 	        android:defaultValue="true" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_footer_warnings"
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_secure"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
