@@ -110,6 +110,7 @@
     <string name="animation_duration_custom">Custom</string>
     <string name="ambient_element">Bottom elements</string>
     <string name="brightness_category_title">Brightness Slider</string>
+    <string name="volume_key_title">Volume keys</string>
 
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Blink Flashlight on call</string>
@@ -691,7 +692,7 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
 
-    <string name="hardware_keys_power_category">Power Button</string>
+    <string name="hardware_keys_power_category">Power button</string>
     <string name="torch_long_press_power_gesture_title">Screen off power button torch</string>
     <string name="torch_long_press_power_gesture_desc">Long press power button while the screen is off to turn on the flashlight</string>
     <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
