@@ -787,9 +787,9 @@
     <string name="battery_bar_low_color">Low level color"</string>
 
     <!-- Screenshot -->
-    <string name="screenshot_type_title">Screenshot type</string>
-    <string name="screenshot_type_fullscreen">Fullscreen screenshots</string>
-    <string name="screenshot_type_partial">Partial screenshots</string>
+    <string name="screenshot_type_title">Screenshot Type</string>
+    <string name="screenshot_type_fullscreen">Full</string>
+    <string name="screenshot_type_partial">Partial</string>
 
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Clock font style</string>
@@ -1295,4 +1295,12 @@
     <string name="ui_style_title">UI style</string>
     <string name="ui_pixel">Pixel</string>
     <string name="ui_aosp">AOSP</string>
+
+   <!-- ScreenRecord Shortcut -->
+    <string name="screen_record_shortcut">Screenrecord Shortcut</string>
+    <string name="screen_record_shortcut_summary">Power + Volume Up triggers Screenrecord when enabled</string>
+
+    <!-- ScreenShot Shortcut -->
+    <string name="screen_shot_shortcut">Screenshot Shortcut</string>
+    <string name="screen_shot_shortcut_summary">Power + Volume Down triggers screenshot when enabled</string>
 </resources>

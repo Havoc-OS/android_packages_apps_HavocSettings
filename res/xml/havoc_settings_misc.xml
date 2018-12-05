@@ -40,6 +40,18 @@
         android:key="misc_screenshot"
         android:title="@string/misc_screenshot">
 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="screen_record_shortcut"
+            android:title="@string/screen_record_shortcut"
+            android:summary="@string/screen_record_shortcut_summary"
+            android:defaultValue="true" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="screen_shot_shortcut"
+            android:title="@string/screen_shot_shortcut"
+            android:summary="@string/screen_shot_shortcut_summary"
+            android:defaultValue="true" />
+
         <com.havoc.settings.preferences.SystemSettingListPreference
             android:key="screenshot_type"
             android:entries="@array/screenshot_type_entries"
