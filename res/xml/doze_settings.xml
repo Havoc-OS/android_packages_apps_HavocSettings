@@ -48,8 +48,7 @@
 
     <PreferenceCategory
         android:key="ambient_element"
-        android:title="@string/ambient_element"
-        android:dependency="doze_enabled" >
+        android:title="@string/ambient_element" >
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference 
             android:key="ambient_battery_percent" 
