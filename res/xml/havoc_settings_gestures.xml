@@ -47,11 +47,28 @@
         android:key="gesture_nav"
         android:title="@string/gesture_nav">
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
-        android:key="use_bottom_gesture_navigation"
-        android:title="@string/use_bottom_gesture_title"
-        android:summary="@string/use_bottom_gesture_summary"
-        android:defaultValue="false" />
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_bottom_gesture_navigation"
+            android:title="@string/use_bottom_gesture_title"
+            android:summary="@string/use_bottom_gesture_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="gesture_swipe_length"
+            android:title="@string/gesture_swipe_length_title"
+            android:max="250"
+            android:min="40"
+            android:persistent="false"
+            android:dependency="use_bottom_gesture_navigation" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="gesture_swipe_timeout"
+            android:title="@string/gesture_action_timeout_title"
+            android:max="500"
+            android:min="100"
+            android:defaultValue="250"
+            android:persistent="false"
+            android:dependency="use_bottom_gesture_navigation" />
 
     </PreferenceCategory>
 

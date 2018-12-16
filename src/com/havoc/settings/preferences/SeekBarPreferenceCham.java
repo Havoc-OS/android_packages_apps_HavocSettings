@@ -289,6 +289,20 @@ public class SeekBarPreferenceCham extends Preference implements SeekBar.OnSeekB
         updateView();
     }
 
+    public void setMaxValue(int value) {
+        mMaxValue = value;
+        if (mSeekBar != null) {
+            mSeekBar.setMax(mMaxValue - mMinValue);
+        }
+    }
+
+    public void setMinValue(int value) {
+        mMinValue = value;
+        if (mSeekBar != null) {
+            mSeekBar.setMax(mMaxValue - mMinValue);
+        }
+    }
+
     private Drawable getSeekBarThumb() {
         return mProgressThumb;
     }
