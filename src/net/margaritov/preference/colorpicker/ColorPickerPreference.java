@@ -274,6 +274,35 @@ public class ColorPickerPreference extends Preference implements
         mDefValue = color;
     }
 
+    public static String convertToARGB(int color, boolean disableAlpha) {
+        String alpha = Integer.toHexString(Color.alpha(color));
+        String red = Integer.toHexString(Color.red(color));
+        String green = Integer.toHexString(Color.green(color));
+        String blue = Integer.toHexString(Color.blue(color));
+
+        if (alpha.length() == 1) {
+            alpha = "0" + alpha;
+        }
+
+        if (red.length() == 1) {
+            red = "0" + red;
+        }
+
+        if (green.length() == 1) {
+            green = "0" + green;
+        }
+
+        if (blue.length() == 1) {
+            blue = "0" + blue;
+        }
+
+        if (disableAlpha) {
+            alpha = "";
+        }
+
+        return "#" + alpha + red + green + blue;
+    }
+
     /**
      * For custom purposes. Not used by ColorPickerPreferrence
      *

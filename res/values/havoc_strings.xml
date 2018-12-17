@@ -1315,4 +1315,13 @@
     <string name="fast_charging_led_enabled_summary">When fast charging, use different color till 90% charged</string>
     <string name="fast_charging_light_color_title">Color</string>
     <string name="fast_charging_light_color_summary"></string>
+
+    <!-- Color Blend Preference -->
+    <string name="color_blend_ok">@android:string/ok</string>
+    <string name="color_blend_cancel">@android:string/cancel</string>
+    <string name="color_blend_reset">Reset</string>
+    <string name="color_blend_preview">Preview: %1$d%%</string>
+    <string name="color_preview_start">Start</string>
+    <string name="color_preview_end">End</string>
+    <string name="color_preview_between">Between</string>
 </resources>

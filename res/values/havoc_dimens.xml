@@ -24,4 +24,7 @@
 
     <dimen name="fab_line_width">2dp</dimen>
 
+    <!-- Color Blend -->
+    <dimen name="color_blend_preview_size">36dp</dimen>
+
 </resources>

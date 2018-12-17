@@ -28,4 +28,20 @@
         <attr name="ledPreview" format="boolean" />
         <attr name="alphaSlider" format="boolean" />
     </declare-styleable>
+
+    <!-- Color Blend Preference -->
+    <declare-styleable name="ColorBlendPreference">
+        <!-- Preference keys -->
+        <attr name="keyColorStart" format="string" />
+        <attr name="keyColorEnd" format="string" />
+        <attr name="keyBlendReverse" format="string" />
+        <!-- Default values -->
+        <attr name="defaultValueColorStart" format="color" />
+        <attr name="defaultValueColorEnd" format="color" />
+        <attr name="defaultValueBlendReverse" format="boolean" />
+        <!-- Preview strings -->
+        <attr name="previewStartText" format="string" />
+        <attr name="previewEndText" format="string" />
+        <attr name="previewBetweenText" format="string" />
+    </declare-styleable>
 </resources>
