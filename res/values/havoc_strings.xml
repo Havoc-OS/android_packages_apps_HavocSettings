@@ -1324,4 +1324,14 @@
     <string name="color_preview_start">Start</string>
     <string name="color_preview_end">End</string>
     <string name="color_preview_between">Between</string>
+
+    <!-- Battery Color Blend -->
+    <string name="battery_light_blend_category">Blend colors</string>
+    <string name="battery_light_blend_title">Enable color blend</string>
+    <string name="battery_light_blend_summary">Gradually change colors between full and empty</string>
+    <string name="battery_light_blend_colors_title">Color selection</string>
+    <string name="battery_light_blend_colors_summary">Color range used when blending colors</string>
+    <string name="battery_blend_start">Empty</string>
+    <string name="battery_blend_end">Full</string>
+    <string name="battery_blend_between">Between</string>
 </resources>

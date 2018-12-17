@@ -61,9 +61,32 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="blend_category"
+	    android:title="@string/battery_light_blend_category">
+		
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="battery_light_blend"
+            android:title="@string/battery_light_blend_title"
+            android:summary="@string/battery_light_blend_summary"
+            android:defaultValue="false" />
+			
+        <com.havoc.settings.preferences.SystemSettingColorBlendPreference
+            android:title="@string/battery_light_blend_colors_title"
+            android:summary="@string/battery_light_blend_colors_summary"
+            android:dependency="battery_light_blend"
+            keyColorStart="battery_light_blend_empty_color"
+            keyColorEnd="battery_light_blend_full_color"
+            keyBlendReverse="battery_light_blend_reverse"
+            defaultValueColorStart="#ffff0000"
+            defaultValueColorEnd="#ff00ff00"
+            previewStartText="@string/battery_blend_start"
+            previewBetweenText="@string/battery_blend_between"
+            previewEndText="@string/battery_blend_end" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="fast_color_cat"
-        android:title="@string/fast_color_cat_title"
-        android:dependency="battery_light_only_fully_charged">
+	    android:title="@string/fast_color_cat_title">
 		
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="fast_charging_led_enabled"

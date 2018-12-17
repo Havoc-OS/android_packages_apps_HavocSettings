@@ -43,9 +43,11 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mFastColor;
     private SystemSettingSwitchPreference mLowBatteryBlinking;
     private SystemSettingSwitchPreference mFastChargeEnable;
+    private SystemSettingSwitchPreference mBatteryBlend;
 
     private PreferenceCategory mColorCategory;
     private PreferenceCategory mFastColorCategory;
+    private PreferenceCategory mColorBlendCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
         mFastColorCategory = (PreferenceCategory) findPreference("fast_color_cat");
+        mColorBlendCategory = (PreferenceCategory) findPreference("blend_category");
 
         mLowBatteryBlinking = (SystemSettingSwitchPreference)prefSet.findPreference("battery_light_low_blinking");
         if (getResources().getBoolean(
@@ -99,8 +102,11 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mReallyFullColor.setNewPreviewColor(color);
             mReallyFullColor.setOnPreferenceChangeListener(this);
 
+            mBatteryBlend = (SystemSettingSwitchPreference) findPreference(Settings.System.BATTERY_LIGHT_BLEND);
+            mBatteryBlend.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(mColorCategory);
+            prefSet.removePreference(mColorBlendCategory);
         }
 
         if (getResources().getBoolean(com.android.internal.R.bool.config_FastChargingLedSupported)) {
@@ -169,6 +175,13 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.FAST_BATTERY_LIGHT_COLOR, color,
                     UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mBatteryBlend) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_LIGHT_BLEND, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mBatteryBlend.setChecked(value);
             return true;
         }
         return false;
