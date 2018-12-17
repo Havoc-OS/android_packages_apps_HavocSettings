@@ -1064,6 +1064,7 @@
 
     <!-- Notification styles -->
     <string-array name="notification_style_entries" translatable="false">
+        <item>@string/notification_auto</item>
         <item>@string/notification_light</item>
         <item>@string/notification_dark</item>
         <item>@string/notification_black</item>
@@ -1072,6 +1073,7 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- QS header styles -->

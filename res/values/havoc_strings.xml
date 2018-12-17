@@ -1216,6 +1216,7 @@
 
     <!-- Notification styles -->
     <string name="notification_style_title">Notification color</string>
+    <string name="notification_auto">Automatic (Theme based)</string>
     <string name="notification_light">Light</string>
     <string name="notification_dark">Dark</string>
     <string name="notification_black">Black</string>
