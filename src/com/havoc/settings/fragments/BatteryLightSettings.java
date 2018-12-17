@@ -40,9 +40,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mMediumColor;
     private ColorPickerPreference mFullColor;
     private ColorPickerPreference mReallyFullColor;
+    private ColorPickerPreference mFastColor;
     private SystemSettingSwitchPreference mLowBatteryBlinking;
+    private SystemSettingSwitchPreference mFastChargeEnable;
 
     private PreferenceCategory mColorCategory;
+    private PreferenceCategory mFastColorCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
+        mFastColorCategory = (PreferenceCategory) findPreference("fast_color_cat");
 
         mLowBatteryBlinking = (SystemSettingSwitchPreference)prefSet.findPreference("battery_light_low_blinking");
         if (getResources().getBoolean(
@@ -94,8 +98,25 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mReallyFullColor.setAlphaSliderEnabled(false);
             mReallyFullColor.setNewPreviewColor(color);
             mReallyFullColor.setOnPreferenceChangeListener(this);
+
         } else {
             prefSet.removePreference(mColorCategory);
+        }
+
+        if (getResources().getBoolean(com.android.internal.R.bool.config_FastChargingLedSupported)) {
+            mFastChargeEnable = (SystemSettingSwitchPreference)
+                    findPreference(Settings.System.FAST_CHARGING_LED_ENABLED);
+            mFastChargeEnable.setOnPreferenceChangeListener(this);
+
+            int color = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.FAST_BATTERY_LIGHT_COLOR, 0xFF0000FF,
+                            UserHandle.USER_CURRENT);
+            mFastColor = (ColorPickerPreference) findPreference("fast_battery_light_color");
+            mFastColor.setAlphaSliderEnabled(false);
+            mFastColor.setNewPreviewColor(color);
+            mFastColor.setOnPreferenceChangeListener(this);
+        } else {
+            prefSet.removePreference(mFastColorCategory);
         }
     }
 
@@ -135,6 +156,19 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                     Settings.System.BATTERY_LIGHT_LOW_BLINKING, value ? 1 : 0,
                     UserHandle.USER_CURRENT);
             mLowBatteryBlinking.setChecked(value);
+            return true;
+        } else if (preference == mFastChargeEnable) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.FAST_CHARGING_LED_ENABLED, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mFastChargeEnable.setChecked(value);
+            return true;
+        } else if (preference.equals(mFastColor)) {
+            int color = ((Integer) newValue).intValue();
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.FAST_BATTERY_LIGHT_COLOR, color,
+                    UserHandle.USER_CURRENT);
             return true;
         }
         return false;
