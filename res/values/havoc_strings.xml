@@ -1343,4 +1343,8 @@
     <string name="audio_panel_view_alarm_title">Alarm</string>
     <string name="audio_panel_view_voice_title">Voice</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
+
+    <!-- Volume Panel on Left -->
+    <string name="volume_panel_on_left_title">Volume Panel on Left</string>
+    <string name="volume_panel_on_left_summary">Show volume panel on the left side of the screen</string>
 </resources>
