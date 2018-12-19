@@ -1347,4 +1347,10 @@
     <!-- Volume Panel on Left -->
     <string name="volume_panel_on_left_title">Volume Panel on Left</string>
     <string name="volume_panel_on_left_summary">Show volume panel on the left side of the screen</string>
+
+    <!-- Screenrecord quality -->
+    <string name="screenrecord_quality_title">Screenrecord Quality</string>
+    <string name="screenrecord_quality_low">Low</string>
+    <string name="screenrecord_quality_medium">Medium</string>
+    <string name="screenrecord_quality_high">High</string>
 </resources>
