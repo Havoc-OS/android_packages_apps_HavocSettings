@@ -50,7 +50,7 @@ public class Recents extends SettingsPreferenceFragment implements
 
     private static final String KEY_CATEGORY_STOCK = "stock_recents";
     private static final String KEY_CATEGORY_IMMERSIVE = "immersive";
-    private static final String KEY_CATEGORY_HAFR = "hafr";
+    private static final String KEY_CATEGORY_SLIM = "slim_recents_category";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_LAYOUT_STYLE_PREF = "recents_layout_style";
     private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
@@ -59,7 +59,7 @@ public class Recents extends SettingsPreferenceFragment implements
 
     private PreferenceCategory mStockCat;
     private PreferenceCategory mImmersiveCat;
-    private PreferenceCategory mHafrCat;
+    private PreferenceCategory mSlimCat;
     private ListPreference mImmersiveRecents; 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
@@ -103,8 +103,8 @@ public class Recents extends SettingsPreferenceFragment implements
         mImmersiveRecents.setOnPreferenceChangeListener(this); 
 
         mStockCat = (PreferenceCategory) findPreference(KEY_CATEGORY_STOCK);
+        mSlimCat = (PreferenceCategory) findPreference(KEY_CATEGORY_SLIM);
         mImmersiveCat = (PreferenceCategory) findPreference(KEY_CATEGORY_IMMERSIVE);
-        mHafrCat = (PreferenceCategory) findPreference(KEY_CATEGORY_HAFR);
         updateRecentsState(type); 
 
         mClock = (SwitchPreference) findPreference(RECENTS_CLOCK); 
@@ -113,14 +113,37 @@ public class Recents extends SettingsPreferenceFragment implements
     }
 
     public void updateRecentsState(int type) {
-        if (type == 0) {
-           mStockCat.setEnabled(false);
-           mImmersiveCat.setEnabled(false);
-           mHafrCat.setEnabled(false);
-        } else {
-           mStockCat.setEnabled(true);
-           mImmersiveCat.setEnabled(true);
-           mHafrCat.setEnabled(true);
+        switch(type){ 
+            case 0: 
+                mStockCat.setEnabled(false);
+                mImmersiveCat.setEnabled(false);
+                mSlimCat.setEnabled(false);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 0);
+                break; 
+            case 1: 
+                mStockCat.setEnabled(true);
+                mImmersiveCat.setEnabled(true);
+                mSlimCat.setEnabled(false);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 0);
+                break; 
+            case 2: 
+                mStockCat.setEnabled(true);
+                mImmersiveCat.setEnabled(true);
+                mSlimCat.setEnabled(false);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 0);
+                break; 
+            case 3: 
+                mStockCat.setEnabled(false);
+                mImmersiveCat.setEnabled(false);
+                mSlimCat.setEnabled(true);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 1);
+                break; 
+            default: 
+                break;
         }
     }
 

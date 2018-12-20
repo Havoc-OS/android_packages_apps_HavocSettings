@@ -1053,6 +1053,7 @@
     <string name="recents_stock">Stock</string>
     <string name="recents_grid">Grid</string>
     <string name="recents_go">Android Go</string>
+    <string name="recents_slim">Slim</string>
     
      <!-- AOSP Recents -->
     <string name="aosp_first_time_title">AOSP recents</string>
