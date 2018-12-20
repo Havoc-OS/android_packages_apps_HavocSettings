@@ -98,4 +98,22 @@
                 android:targetClass="com.havoc.settings.hideappfromrecents.HAFRAppListActivity" />
         </Preference>
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="slim_recents_category"
+        android:title="@string/slim_recents_title">
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_slim_recents"
+            android:title="@string/slim_recents_title"
+            android:summary="@string/slim_recents_summary"
+            android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:key="slim_recents_fragment"
+            android:fragment="com.havoc.settings.fragments.SlimRecents"
+            android:title="@string/slim_recents_fragment_title"
+            android:summary="@string/slim_recents_fragment_summary"
+            android:dependency="use_slim_recents" />
+    </PreferenceCategory>
 </PreferenceScreen>
