@@ -1418,4 +1418,8 @@
 
     <string name="usb_default_config_title">USB configuration</string>
     <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
+
+    <!-- Ambient music ticker -->
+    <string name="force_ambient_for_media_title">Music ticker</string>
+    <string name="force_ambient_for_media_summary">Display the playing music track info within Ambient display</string>
 </resources>

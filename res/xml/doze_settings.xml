@@ -19,11 +19,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
     
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="ambient_play"
         android:title="@string/ambient_play" >
 
-    </PreferenceCategory>-->
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="force_ambient_for_media"
+            android:title="@string/force_ambient_for_media_title"
+            android:summary="@string/force_ambient_for_media_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="ambient_display_category_when_to_show"
