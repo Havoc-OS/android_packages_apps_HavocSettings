@@ -24,6 +24,12 @@
         android:entries="@array/media_scanner_on_boot_entries" 
         android:entryValues="@array/media_scanner_on_boot_values" /> 
 
+    <Preference
+        android:key="default_usb_configuration"
+        android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
+        android:title="@string/usb_default_config_title"
+        android:summary="@string/usb_default_config_summary"/>
+
     <com.havoc.settings.preferences.GlobalSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wakeup_when_plugged_unplugged_title"

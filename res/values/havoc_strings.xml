@@ -1415,4 +1415,7 @@
     <string name="slim_recents_mem_display_summaryOff">Memory bar disabled</string>
     <string name="slim_recents_mem_display_color">Memory bar color</string>
     <string name="slim_recents_mem_display_text_color">Memory bar text color</string>
+
+    <string name="usb_default_config_title">USB configuration</string>
+    <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
 </resources>
