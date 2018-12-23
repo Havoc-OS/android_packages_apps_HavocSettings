@@ -1422,4 +1422,7 @@
     <!-- Ambient music ticker -->
     <string name="force_ambient_for_media_title">Music ticker</string>
     <string name="force_ambient_for_media_summary">Display the playing music track info within Ambient display</string>
+
+    <!-- QS background opacity -->
+    <string name="qs_panel_alpha_title">Opacity</string>
 </resources>

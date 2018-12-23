@@ -45,12 +45,14 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
+    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
 
     private SystemSettingSeekBarPreference mSysuiQqsCount;	
     private SystemSettingSeekBarPreference mRowsPortrait;
     private SystemSettingSeekBarPreference mRowsLandscape;
     private SystemSettingSeekBarPreference mQsColumnsPortrait;
     private SystemSettingSeekBarPreference mQsColumnsLandscape;
+    private SystemSettingSeekBarPreference mQsPanelAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,12 @@ public class QuickSettings extends SettingsPreferenceFragment
                 Settings.System.QS_COLUMNS_LANDSCAPE, 5, UserHandle.USER_CURRENT);
         mQsColumnsLandscape.setValue(columnsQs);
         mQsColumnsLandscape.setOnPreferenceChangeListener(this);
+
+        mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(QS_PANEL_ALPHA);
+        int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+        mQsPanelAlpha.setValue(qsPanelAlpha);
+        mQsPanelAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -117,6 +125,11 @@ public class QuickSettings extends SettingsPreferenceFragment
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsPanelAlpha) {
+            int bgAlpha = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_PANEL_BG_ALPHA, bgAlpha, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
