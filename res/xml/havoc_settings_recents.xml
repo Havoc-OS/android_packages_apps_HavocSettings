@@ -61,12 +61,17 @@
             android:summary="@string/systemui_recents_mem_display_summary" 
             android:defaultValue="false" /> 
 
-         <PreferenceScreen 
+        <PreferenceScreen 
             android:key="recent_styles" 
             android:title="@string/recent_styles" 
             android:fragment="com.havoc.settings.fragments.RecentsStyles" 
             android:summary="@string/recent_styles_summary"/> 
-		
+
+        <Preference
+            android:key="recents_icon_pack"
+            android:title="@string/recents_icon_pack_title"
+            android:summary="@string/recents_icon_pack_summary" />
+
         <Preference
             android:key="hide_app_from_recents"
             android:title="@string/hide_apps_from_recents_title"

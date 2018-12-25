@@ -1425,4 +1425,8 @@
 
     <!-- QS background opacity -->
     <string name="qs_panel_alpha_title">Opacity</string>
+
+    <!-- Recents icon pack -->
+    <string name="recents_icon_pack_title">Icon Pack</string>
+    <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
 </resources>
