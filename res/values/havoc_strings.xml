@@ -90,7 +90,7 @@
     <string name="statusbar_battery" >Battery</string>
     <string name="statusbar_gestures" >Gestures</string>
     <string name="statusbar_icons" >Icons</string>
-    <string name="statusbar_ntraffic" >Traffic</string>
+    <string name="statusbar_ntraffic" >Network Traffic</string>
     <string name="statusbar_networkicon" >Network Icons</string>
     <string name="statusbar_ticker" >Ticker</string>
     <string name="statusbar_pulldown" >Pulldown</string>
@@ -627,15 +627,17 @@
     <string name="notification_light_settings">Notifications light</string>
 
     <!-- Statusbar net monitor -->
-    <string name="network_traffic_state_title">Network traffic</string>
-    <string name="network_traffic_state_summary">Show net activity in statusbar</string>
-    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
-    <string name="network_traffic_hidearrow">Hide arrows</string>
-    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
-    <string name="network_traffic_type">Select net activity type</string>
-    <string name="show_network_traffic_up">Uplink</string>
-    <string name="show_network_traffic_down">Downlink</string>
-    <string name="show_network_traffic_all">Uplink and Downlink</string>
+    <string name="network_traffic_state_title">Network traffic location</string>
+    <string name="network_traffic_autohide_threshold_title">Network activity autohide threshold</string>
+    <string name="network_traffic_hidearrow">Network activity arrows</string>
+    <string name="network_traffic_hidearrow_summary">Show the network traffic indicator arrows</string>
+    <string name="network_traffic_type">Network activity type</string>
+    <string name="show_network_traffic_up">Upload</string>
+    <string name="show_network_traffic_down">Download</string>
+    <string name="show_network_traffic_all">Both</string>
+    <string name="traffic_disabled">Disabled</string>
+    <string name="traffic_statusbar">Statusbar</string>
+    <string name="traffic_expanded_statusbar">Expanded Statusbar</string>
 	
     <string name="use_bottom_gesture_title">Swipe up gestures</string>
     <string name="use_bottom_gesture_summary">Must hide navbar. Swipe up from left/right is back. Swipe up center is home. Swipe up and hold is recents</string>
@@ -1187,7 +1189,7 @@
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon in statusbar</string>
 
-    <string name="statusbar_show_wifi_activity_title">Show Wi-Fi data indicators</string>
+    <string name="statusbar_show_wifi_activity_title">Wi-Fi data indicators</string>
     <string name="statusbar_show_wifi_activity_summary">Show indicators when Wi-Fi is sending/receiving data like mobile</string>
 
     <!-- Notification count -->

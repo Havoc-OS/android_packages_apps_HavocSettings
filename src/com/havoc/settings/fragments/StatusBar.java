@@ -63,6 +63,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SMS_BREATH = "sms_breath";
     private static final String MISSED_CALL_BREATH = "missed_call_breath";
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
+    private static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
+    private static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
 
     private SwitchPreference mSmsBreath;
     private SwitchPreference mMissedCallBreath;
@@ -73,6 +75,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private SystemSettingSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
+    private SystemSettingSwitchPreference mHideArrows;
+    private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficType;
     private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
@@ -88,44 +92,37 @@ public class StatusBar extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-           // Breathing Notifications
-           mSmsBreath = (SwitchPreference) findPreference(SMS_BREATH);
-           mMissedCallBreath = (SwitchPreference) findPreference(MISSED_CALL_BREATH);
-           mVoicemailBreath = (SwitchPreference) findPreference(VOICEMAIL_BREATH);
+        // Breathing Notifications
+        mSmsBreath = (SwitchPreference) findPreference(SMS_BREATH);
+        mMissedCallBreath = (SwitchPreference) findPreference(MISSED_CALL_BREATH);
+        mVoicemailBreath = (SwitchPreference) findPreference(VOICEMAIL_BREATH);
 
-           ConnectivityManager cm = (ConnectivityManager)
-                   getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager)
+                getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-           if (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
-               mSmsBreath.setChecked(Settings.Global.getInt(resolver,
-                       Settings.Global.KEY_SMS_BREATH, 0) == 1);
-               mSmsBreath.setOnPreferenceChangeListener(this);
+        if (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+            mSmsBreath.setChecked(Settings.Global.getInt(resolver,
+                    Settings.Global.KEY_SMS_BREATH, 0) == 1);
+            mSmsBreath.setOnPreferenceChangeListener(this);
 
-               mMissedCallBreath.setChecked(Settings.Global.getInt(resolver,
-                       Settings.Global.KEY_MISSED_CALL_BREATH, 0) == 1);
-               mMissedCallBreath.setOnPreferenceChangeListener(this);
+            mMissedCallBreath.setChecked(Settings.Global.getInt(resolver,
+                    Settings.Global.KEY_MISSED_CALL_BREATH, 0) == 1);
+            mMissedCallBreath.setOnPreferenceChangeListener(this);
 
-               mVoicemailBreath.setChecked(Settings.System.getInt(resolver,
-                       Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
-               mVoicemailBreath.setOnPreferenceChangeListener(this);
-           } else {
-               prefSet.removePreference(mSmsBreath);
-               prefSet.removePreference(mMissedCallBreath);
-               prefSet.removePreference(mVoicemailBreath);
-           }
-
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
+            mVoicemailBreath.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
+            mVoicemailBreath.setOnPreferenceChangeListener(this);
+        } else {
+            prefSet.removePreference(mSmsBreath);
+            prefSet.removePreference(mMissedCallBreath);
+            prefSet.removePreference(mVoicemailBreath);
+        }
 
         int value = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
         mThreshold = (SystemSettingSeekBarPreference) findPreference("network_traffic_autohide_threshold");
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
-        mThreshold.setEnabled(isNetMonitorEnabled);
 
         int nettype = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
@@ -133,7 +130,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mNetTrafficType.setValue(String.valueOf(nettype));
         mNetTrafficType.setSummary(mNetTrafficType.getEntry());
         mNetTrafficType.setOnPreferenceChangeListener(this);
-        mNetTrafficType.setEnabled(isNetMonitorEnabled);
 
         mStatusBarBatteryShowPercent =
                 (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
@@ -165,19 +161,29 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.QS_SMART_PULLDOWN, 0);
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
+
+        mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
+        int location = Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_LOCATION, 0);
+        mNetTrafficLocation.setValue(String.valueOf(location));
+        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
+        mNetTrafficLocation.setOnPreferenceChangeListener(this);
+
+        mHideArrows = (SystemSettingSwitchPreference) findPreference(NETWORK_TRAFFIC_HIDEARROW);
+
+		updateTrafficLocation(location);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mNetTrafficType.setEnabled(value);
-            mThreshold.setEnabled(value);
+        if (preference == mNetTrafficLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mNetTrafficLocation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_LOCATION, location);
+            mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
+            updateTrafficLocation(location);
             return true;
         } else if (preference == mNetTrafficType) {
             int val = Integer.valueOf((String) newValue);
@@ -234,6 +240,40 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return true;
 		}
         return false;
+    }
+
+    public void updateTrafficLocation(int location) {
+        switch(location){ 
+            case 0:
+                mNetTrafficType.setEnabled(false);
+                mThreshold.setEnabled(false);
+                mHideArrows.setEnabled(false);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, 0);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_EXPANDED_STATUS_BAR_STATE, 0);
+                break;
+            case 1:
+                mNetTrafficType.setEnabled(true);
+                mThreshold.setEnabled(true);
+                mHideArrows.setEnabled(true);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, 1);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_EXPANDED_STATUS_BAR_STATE, 0);
+                break;
+            case 2:
+                mNetTrafficType.setEnabled(true);
+                mThreshold.setEnabled(true);
+                mHideArrows.setEnabled(true);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, 0);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_EXPANDED_STATUS_BAR_STATE, 1);
+                break;
+            default: 
+                break;
+        }
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
