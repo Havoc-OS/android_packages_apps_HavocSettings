@@ -64,15 +64,6 @@
             android:max="8"
             android:min="3"
             android:defaultValue="6"
-            android:persistent="false" />
-
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_panel_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:max="255"
-            android:min="100"
-            android:defaultValue="255"
-            settings:units=""
             android:persistent="false" />			
 			
     </PreferenceCategory> 
