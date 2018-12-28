@@ -25,7 +25,7 @@
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_rows_portrait"
             android:title="@string/qs_rows_portrait_title"
-            android:max="7"
+            android:max="6"
             android:min="1"
             settings:units=""
             android:defaultValue="3"
@@ -34,7 +34,7 @@
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_rows_landscape"
             android:title="@string/qs_rows_landscape_title"
-            android:max="3"
+            android:max="4"
             android:min="1"
             settings:units=""
             android:defaultValue="2"
@@ -43,8 +43,8 @@
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_columns_portrait"
             android:title="@string/qs_columns_portrait_title"
-            android:max="10"
-            android:min="1"
+            android:max="8"
+            android:min="3"
             settings:units=""
             android:defaultValue="3"
             android:persistent="false" />
@@ -52,17 +52,17 @@
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_columns_landscape"
             android:title="@string/qs_columns_landscape_title"
-            android:max="10"
-            android:min="1"
+            android:max="8"
+            android:min="3"
             settings:units=""
-            android:defaultValue="5"
+            android:defaultValue="4"
             android:persistent="false" />
 			
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="sysui_qqs_count"
+            android:key="qs_columns_quickbar"
             android:title="@string/sysui_qqs_count_title"
             android:max="8"
-            android:min="3"
+            android:min="6"
             android:defaultValue="6"
             android:persistent="false" />			
 			

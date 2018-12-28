@@ -22,7 +22,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.provider.Settings.Secure;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -45,12 +44,13 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
+    private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
 
-    private SystemSettingSeekBarPreference mSysuiQqsCount;	
     private SystemSettingSeekBarPreference mRowsPortrait;
     private SystemSettingSeekBarPreference mRowsLandscape;
     private SystemSettingSeekBarPreference mQsColumnsPortrait;
     private SystemSettingSeekBarPreference mQsColumnsLandscape;
+    private SystemSettingSeekBarPreference mQsColumnsQuickbar;	
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,63 +60,64 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
-        mSysuiQqsCount = (SystemSettingSeekBarPreference) findPreference("sysui_qqs_count");
-        mSysuiQqsCount.setValue(value);
-        mSysuiQqsCount.setOnPreferenceChangeListener(this);		
+        mQsColumnsQuickbar = (SystemSettingSeekBarPreference) findPreference(PREF_COLUMNS_QUICKBAR);
+        int columnsQuickbar = Settings.System.getInt(resolver,
+                Settings.System.QS_QUICKBAR_COLUMNS, 6);
+        mQsColumnsQuickbar.setValue(columnsQuickbar);
+        mQsColumnsQuickbar.setOnPreferenceChangeListener(this);		
 
         mRowsPortrait = (SystemSettingSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
         int rowsPortrait = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
+                Settings.System.QS_LAYOUT_ROWS, 3, UserHandle.USER_CURRENT);
         mRowsPortrait.setValue(rowsPortrait);
         mRowsPortrait.setOnPreferenceChangeListener(this);
 
         mRowsLandscape = (SystemSettingSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
         int rowsLandscape = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+                Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         mRowsLandscape.setValue(rowsLandscape);
         mRowsLandscape.setOnPreferenceChangeListener(this);
 
         mQsColumnsPortrait = (SystemSettingSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
-        int columnsQs = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_PORTRAIT, 3, UserHandle.USER_CURRENT);
-        mQsColumnsPortrait.setValue(columnsQs);
+        int columnsPortrait = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_COLUMNS, 3, UserHandle.USER_CURRENT);
+        mQsColumnsPortrait.setValue(columnsPortrait);
         mQsColumnsPortrait.setOnPreferenceChangeListener(this);
 
         mQsColumnsLandscape = (SystemSettingSeekBarPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
-        columnsQs = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_LANDSCAPE, 5, UserHandle.USER_CURRENT);
-        mQsColumnsLandscape.setValue(columnsQs);
+        int columnsLandscape = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
+        mQsColumnsLandscape.setValue(columnsLandscape);
         mQsColumnsLandscape.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mSysuiQqsCount) {
-            int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                    Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
+        if (preference == mQsColumnsQuickbar) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_QUICKBAR_COLUMNS, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRowsPortrait) {
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
-                    Settings.System.QS_ROWS_PORTRAIT, value, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_ROWS, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRowsLandscape) {
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
-                    Settings.System.QS_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQsColumnsPortrait) {
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
-                    Settings.System.QS_COLUMNS_PORTRAIT, value, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_COLUMNS, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQsColumnsLandscape) {
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
-                    Settings.System.QS_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+                    Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

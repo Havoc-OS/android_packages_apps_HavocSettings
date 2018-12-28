@@ -587,7 +587,7 @@
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
 
-    <string name="sysui_qqs_count_title">Small tiles</string>	
+    <string name="sysui_qqs_count_title">Columns (Quickbar)</string>
 
     <!-- CPU info -->
     <string name="show_cpu_info">Show CPU info</string>
