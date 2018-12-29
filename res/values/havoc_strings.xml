@@ -291,7 +291,7 @@
     <string name="backlight_timeout_30s">30 sec</string>
 
     <!-- Dashboard conditions--> 
-    <string name="dashboard_category">Settings Dashboard</string> 
+    <string name="dashboard_category">Settings</string> 
     <string name="dashboard_conditions_title">Dashboard conditions</string> 
     <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string> 
     <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string> 
@@ -1439,4 +1439,10 @@
     <string name="qs_bg_wall_summary">Set QS background color from Wallpaper</string>
     <string name="qs_bg_use_fw">Use default colors</string>
     <string name="qs_bg_use_fw_summary">Disable custom QS styles for external theme engines</string>
+
+    <!-- Switch styles -->
+    <string name="switch_style_title">Switch appearance</string>
+    <string name="switch_default">Default</string>
+    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_oneplus">OnePlus</string>
 </resources>

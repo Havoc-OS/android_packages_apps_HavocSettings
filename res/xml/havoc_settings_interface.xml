@@ -165,6 +165,13 @@
         android:key="dashboard_category" 
         android:title="@string/dashboard_category">
 
+	    <ListPreference
+            android:key="switch_style"
+            android:title="@string/switch_style_title"
+            android:persistent="false"
+            android:entries="@array/switch_style_entries"
+            android:entryValues="@array/switch_style_values" />
+
         <com.havoc.settings.preferences.SystemSettingIntListPreference
             android:key="theming_settings_dashboard_icons"
             android:title="@string/theming_settings_dashboard_icons_title"
