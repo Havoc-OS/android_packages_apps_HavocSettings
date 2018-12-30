@@ -36,6 +36,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.havoc.settings.preferences.SecureSettingSwitchPreference;
 import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
 import com.havoc.settings.preferences.SystemSettingSwitchPreference;
 
@@ -46,6 +47,7 @@ public class Display extends SettingsPreferenceFragment implements
 
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String ON_POWER_SAVE = "smart_pixels_on_power_save";
+    private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
 
@@ -54,6 +56,7 @@ public class Display extends SettingsPreferenceFragment implements
     private ListPreference mVelocityFriction;
     private ListPreference mPositionFriction;
     private ListPreference mVelocityAmplitude;
+    private SecureSettingSwitchPreference mRoundedFwvals;
     private SystemSettingSeekBarPreference mCornerRadius;
     private SystemSettingSeekBarPreference mContentPadding;
 
@@ -99,33 +102,36 @@ public class Display extends SettingsPreferenceFragment implements
         updateDependency();
 
         Resources res = null;
-        Context mContext = getContext();
+        Context ctx = getContext();
+        float density = Resources.getSystem().getDisplayMetrics().density;
 
         try {
-            res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+            res = ctx.getPackageManager().getResourcesForApplication("com.android.systemui");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
 
-        float displayDensity = getResources().getDisplayMetrics().density;
-
         // Rounded Corner Radius
-        int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
         mCornerRadius = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
-        int cornerRadius = Settings.Secure.getInt(mContext.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
-                (int) (res.getDimension(resourceIdRadius) / displayDensity));
-        mCornerRadius.setValue(cornerRadius / 1);
         mCornerRadius.setOnPreferenceChangeListener(this);
+        int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
+        int cornerRadius = Settings.Secure.getInt(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
+                (int) (res.getDimension(resourceIdRadius) / density));
+        mCornerRadius.setValue(cornerRadius / 1);
 
         // Rounded Content Padding
+        mContentPadding = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+        mContentPadding.setOnPreferenceChangeListener(this);
         int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
                 null);
-        mContentPadding = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
-        int contentPadding = Settings.Secure.getInt(mContext.getContentResolver(),
+        int contentPadding = Settings.Secure.getInt(ctx.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
-                (int) (res.getDimension(resourceIdPadding) / displayDensity));
+                (int) (res.getDimension(resourceIdPadding) / density));
         mContentPadding.setValue(contentPadding / 1);
-        mContentPadding.setOnPreferenceChangeListener(this);
+
+        // Rounded use Framework Values
+        mRoundedFwvals = (SecureSettingSwitchPreference) findPreference(SYSUI_ROUNDED_FWVALS);
+        mRoundedFwvals.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) { 
@@ -150,6 +156,8 @@ public class Display extends SettingsPreferenceFragment implements
         } else if (preference == mContentPadding) {
             Settings.Secure.putInt(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
                     ((int) objValue) * 1);
+        } else if (preference == mRoundedFwvals) {
+            restoreCorners();
         }
         updateDependency();
         return true; 
@@ -189,6 +197,23 @@ public class Display extends SettingsPreferenceFragment implements
         } else {
             mSmartPixelsOnPowerSave.setEnabled(true);
         }
+    }
+
+    private void restoreCorners() {
+        Resources res = null;
+        float density = Resources.getSystem().getDisplayMetrics().density;
+
+        try {
+            res = getContext().getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
+        int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
+                null);
+        mCornerRadius.setValue((int) (res.getDimension(resourceIdRadius) / density));
+        mContentPadding.setValue((int) (res.getDimension(resourceIdPadding) / density));
     }
 
     @Override
