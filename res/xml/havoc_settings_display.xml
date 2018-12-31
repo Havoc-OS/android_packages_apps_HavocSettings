@@ -21,6 +21,13 @@
     <PreferenceCategory 
         android:title="@string/corners_category" > 
 
+        <com.havoc.settings.preferences.SecureSettingSwitchPreference
+            android:key="sysui_rounded_fwvals"
+            android:title="@string/corner_fwvals"
+            android:summary="@string/corner_fwvals_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
+
 	    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="sysui_rounded_size"
             android:title="@string/corner_radius"
@@ -28,7 +35,8 @@
             android:min="0"
             settings:units=""
             android:defaultValue="0"
-            android:persistent="false" />
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="sysui_rounded_content_padding"
@@ -37,7 +45,8 @@
             android:min="0"
             settings:units=""
             android:defaultValue="0"
-            android:persistent="false" />
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -1214,6 +1214,8 @@
     <string name="lock_date_font_title">Date font style</string>
 
     <!-- Rounded corners -->
+    <string name="corner_fwvals">Use framework values</string>
+    <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="corner_radius">Rounded Corner Radius</string>
     <string name="content_padding">Corner Content Padding</string>
 
