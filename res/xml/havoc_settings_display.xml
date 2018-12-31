@@ -17,16 +17,68 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-		
-        <Preference
-            android:key="smart_pixels"
-            android:title="@string/smart_pixels_title"
-            android:summary="@string/smart_pixels_summary"
-            android:fragment="com.havoc.settings.fragments.SmartPixels" />
+
+    <PreferenceCategory 
+        android:title="@string/corners_category" > 
+
+	    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="80"
+            android:min="0"
+            settings:units=""
+            android:defaultValue="0"
+            android:persistent="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="20"
+            android:min="0"
+            settings:units=""
+            android:defaultValue="0"
+            android:persistent="false" />
+    </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="@string/screen_stabilization_title"
-            android:key="screen_stabilization">
+        android:key="smart_pixels"
+        android:title="@string/smart_pixels_title" >
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="smart_pixels_enable"
+            android:title="@string/smart_pixels_enable_title"
+            android:summary="@string/smart_pixels_enable_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="smart_pixels_on_power_save"
+            android:title="@string/smart_pixels_on_power_save_title"
+            android:summary="@string/smart_pixels_on_power_save_summary"
+            android:defaultValue="false"
+            android:dependency="smart_pixels_enable" />
+
+        <com.havoc.settings.preferences.SystemSettingListPreference
+            android:key="smart_pixels_pattern"
+            android:entries="@array/smart_pixels_percent_strings"
+            android:entryValues="@array/smart_pixels_percent_values"
+            android:defaultValue="3"
+            android:title="@string/smart_pixels_percent"
+            android:dialogTitle="@string/smart_pixels_percent"
+            android:dependency="smart_pixels_enable" />
+
+        <com.havoc.settings.preferences.SystemSettingListPreference
+            android:key="smart_pixels_shift_timeout"
+            android:entries="@array/smart_pixels_shift_times"
+            android:entryValues="@array/smart_pixels_shift_values"
+            android:defaultValue="5"
+            android:title="@string/smart_pixels_shift"
+            android:dialogTitle="@string/smart_pixels_shift"
+            android:dependency="smart_pixels_enable" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/screen_stabilization_title"
+        android:key="screen_stabilization">
 
         <com.havoc.settings.preferences.SystemSettingSwitchPreference
             android:key="stabilization_enable"

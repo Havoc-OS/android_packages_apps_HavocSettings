@@ -32,11 +32,11 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.settings.Utils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.provider.Settings;
-import com.android.internal.util.weather.WeatherClient;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -110,7 +110,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         final PreferenceCategory weatherCategory = (PreferenceCategory) prefScreen
                 .findPreference(WEATHER_LS_CAT);
 
-        if (!WeatherClient.isAvailable(getContext())) {
+        if (!Utils.isPackageInstalled(getContext(), "com.android.providers.weather")) {
             prefScreen.removePreference(weatherCategory);
         }
 

@@ -18,12 +18,6 @@
     android:title="@string/interface_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-	<Preference
-        android:key="expanded_desktop"
-        android:title="@string/expanded_desktop_pref_title"
-        android:summary="@string/expanded_desktop_pref_summary"
-        android:fragment="com.havoc.settings.fragments.ExpandedDesktopPreferenceFragment" />
-
     <PreferenceCategory 
         android:title="@string/themes_title">
 
@@ -135,29 +129,6 @@
         <com.android.settings.display.DensityPreference
             android:key="density"
             android:title="@string/developer_smallest_width" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory 
-        android:title="@string/corners_category" > 
-
-	    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="sysui_rounded_size"
-            android:title="@string/corner_radius"
-            android:max="60"
-            android:min="1"
-            settings:units=""
-            android:defaultValue="1"
-            android:persistent="false" />
-
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
-            android:key="sysui_rounded_content_padding"
-            android:title="@string/content_padding"
-            android:max="18"
-            android:min="0"
-            settings:units=""
-            android:defaultValue="0"
-            android:persistent="false" />
 
     </PreferenceCategory>
 

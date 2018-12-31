@@ -279,7 +279,7 @@
     <string name="allow_incall_home_summary">Allow to use Home button when device is ringing</string>
 
     <!-- Buttons backlight timeout -->
-    <string name="backlight_timeout_title">Buttons backlight timeout</string>
+    <string name="backlight_timeout_title">Button backlight timeout</string>
     <string name="backlight_timeout_on">Enabled always</string>
     <string name="backlight_timeout_default">0.5 sec</string>
     <string name="backlight_timeout_1s">1 sec</string>
@@ -300,10 +300,10 @@
     <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string> 
 
     <!-- Enable keys backlight-->
-    <string name="button_brightness_title">Backlight</string>
+    <string name="button_brightness_title">Button backlight brightness</string>
     <!-- Enable keys backlight-->
     <string name="button_brightness_sw_title">Enable backlight</string>
-    <string name="button_backlight_on_touch_only_title">Button touch</string>
+    <string name="button_backlight_on_touch_only_title">Button backlight on touch</string>
     <string name="button_backlight_on_touch_only_summary">Enable backlight with timeout only on button touch</string>
 
     <!-- HW Keys customization -->
