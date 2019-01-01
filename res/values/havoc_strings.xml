@@ -1447,4 +1447,8 @@
     <string name="switch_default">Default</string>
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_oneplus">OnePlus</string>
+
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Show on Ambient Display</string>
+    <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display</string>
 </resources>
