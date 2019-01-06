@@ -171,12 +171,6 @@
             android:title="@string/fp_unlock_keystore_title" 
             android:summary="@string/fp_unlock_keystore_summary" 
             android:defaultValue="false" /> 
-		
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
-            android:key="pocket_judge" 
-            android:title="@string/pocket_judge_title" 
-            android:summary="@string/pocket_judge_summary" 
-            android:defaultValue="false" />	
 
     </PreferenceCategory>
 
