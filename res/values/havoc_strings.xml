@@ -1447,4 +1447,11 @@
     <!-- Ambient visualizer -->
     <string name="ambient_visualizer_title">Show on Ambient Display</string>
     <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display</string>
+    
+    <!-- Lockscreen items -->
+    <string name="lockscreen_clock_title">Clock widget</string>
+    <string name="lockscreen_clock_summary">Show the clock widget on the lockscreen</string>
+    <string name="lockscreen_info_title">Items underneath the clock</string>
+    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+
 </resources>

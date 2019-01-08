@@ -67,11 +67,18 @@
         android:key="ls_clock"
         android:title="@string/ls_clock">
 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_clock"
+            android:title="@string/lockscreen_clock_title"
+            android:summary="@string/lockscreen_clock_summary"
+            android:defaultValue="true" />
+
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="lockclock_font_size"
             android:title="@string/lockclock_font_size_title"
             android:max="120"
             android:min="50"
+            android:dependency="lockscreen_clock"
             android:persistent="false"
             android:defaultValue="64" />
 
@@ -80,8 +87,15 @@
             android:title="@string/lock_clock_font_title"
             android:entries="@array/lock_clock_fonts_entries"
             android:entryValues="@array/lock_clock_fonts_values"
+            android:dependency="lockscreen_clock"
             android:defaultValue="0"
             android:persistent="false" />
+
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_info"
+            android:title="@string/lockscreen_info_title"
+            android:summary="@string/lockscreen_info_summary"
+            android:defaultValue="true" />
 
         <com.havoc.settings.preferences.SystemSettingSeekBarPreference
             android:key="lockdate_font_size"
@@ -89,6 +103,7 @@
             android:max="40"
             android:min="10"
             android:defaultValue="16"
+            android:dependency="lockscreen_info"
             android:persistent="false" />
 
         <ListPreference
@@ -96,6 +111,7 @@
             android:title="@string/lock_date_font_title"
             android:entries="@array/lock_clock_fonts_entries"
             android:entryValues="@array/lock_clock_fonts_values"
+            android:dependency="lockscreen_info"
             android:defaultValue="0"
             android:persistent="false" />
 
