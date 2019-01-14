@@ -1471,4 +1471,7 @@
     <string name="display_cutout_style_hide">Hide</string>
     <string name="stock_statusbar_in_hide">Stock statusbar height</string>
     <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
+
+    <string name="qs_edit_title">Edit icon</string>
+    <string name="qs_edit_summary">Display the tile edit icon in quick settings footer</string>
 </resources>

@@ -160,6 +160,12 @@
             android:summary="@string/qs_footer_services_summary"
             android:defaultValue="false" />
 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_edit_toggle"
+            android:title="@string/qs_edit_title"
+            android:summary="@string/qs_edit_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
