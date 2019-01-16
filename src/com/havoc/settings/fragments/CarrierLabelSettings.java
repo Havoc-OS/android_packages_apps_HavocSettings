@@ -103,7 +103,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
 
         mCarrierFontStyle = (ListPreference) findPreference(CARRIER_FONT_STYLE);
         int showCarrierFont = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CARRIER_FONT_STYLE, 0);
+                Settings.System.STATUS_BAR_CARRIER_FONT_STYLE, 14);
         mCarrierFontStyle.setValue(String.valueOf(showCarrierFont));
         mCarrierFontStyle.setOnPreferenceChangeListener(this);
     }

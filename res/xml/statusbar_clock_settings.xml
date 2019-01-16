@@ -64,7 +64,7 @@
         android:entries="@array/lock_clock_fonts_entries"
         android:entryValues="@array/lock_clock_fonts_values"
         android:summary="@string/status_bar_clock_font_style_summary"
-        android:defaultValue="0"
+        android:defaultValue="14"
         android:dependency="status_bar_clock" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
