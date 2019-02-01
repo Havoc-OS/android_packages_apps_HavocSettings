@@ -1216,20 +1216,36 @@
     <string-array name="lockscreen_clock_selection_entries" translatable="false">
         <item>@string/lockscreen_clock_selection_digital</item>
         <item>@string/lockscreen_clock_selection_digital_bold</item>
-        <item>@string/lockscreen_clock_selection_analog</item>
+        <item>@string/lockscreen_clock_selection_digital_accent</item>
+        <item>@string/lockscreen_clock_selection_digital_accent_hour</item>
+        <item>@string/lockscreen_clock_selection_digital_accent_min</item>
         <item>@string/lockscreen_clock_selection_sammy</item>
         <item>@string/lockscreen_clock_selection_sammy_bold</item>
         <item>@string/lockscreen_clock_selection_sammy_accent</item>
         <item>@string/lockscreen_clock_selection_sammy_accent_alt</item>
+        <item>@string/lockscreen_clock_selection_analog</item>
+        <item>@string/lockscreen_clock_selection_analog_num</item>
+        <item>@string/lockscreen_clock_selection_spidey</item>
+        <item>@string/lockscreen_clock_selection_dot</item>
+        <item>@string/lockscreen_clock_selection_spectrum</item>
+        <item>@string/lockscreen_clock_selection_sneeky</item>
     </string-array>
     <string-array name="lockscreen_clock_selection_values" translatable="false">
         <item>0</item>
         <item>1</item>
-        <item>2</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>2</item>
+        <item>8</item>
+        <item>7</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
     </string-array>
 
     <string-array name="display_cutout_style_entries" translatable="false">
