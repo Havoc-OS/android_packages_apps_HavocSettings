@@ -36,6 +36,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
+import android.text.InputFilter;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -124,7 +125,6 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
 
      public boolean onPreferenceChange(Preference preference, Object newValue) {
  		ContentResolver resolver = getActivity().getContentResolver();
-
         if (preference == mStatusBarCarrierSize) {
             int width = ((Integer)newValue).intValue();
             Settings.System.putInt(resolver,
@@ -142,14 +142,14 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
             return true;
-        }  else if (preference == mCarrierFontStyle) {
+        } else if (preference == mCarrierFontStyle) {
             int showCarrierFont = Integer.valueOf((String) newValue);
             int index = mCarrierFontStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.
                 STATUS_BAR_CARRIER_FONT_STYLE, showCarrierFont);
             return true;
         }
-         return false;
+        return false;
     }
 
     public boolean onPreferenceTreeClick(Preference preference) {
@@ -161,7 +161,9 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
             alert.setMessage(R.string.custom_carrier_label_explain);
             // Set an EditText view to get user input
             final EditText input = new EditText(getActivity());
+            int maxLength = 25;
             input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
+            input.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
             input.setSelection(input.getText().length());
             alert.setView(input);
             alert.setPositiveButton(getString(android.R.string.ok),
