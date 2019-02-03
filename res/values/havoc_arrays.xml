@@ -1003,6 +1003,7 @@
         <item>@string/qstile_default</item>
         <item>@string/qstile_circle_gradient</item>
         <item>@string/qstile_circle_trim</item>
+        <item>@string/qstile_cookie</item>
         <item>@string/qstile_dottedcircle</item>
         <item>@string/qstile_circle_dualtone</item>
         <item>@string/qstile_dual_tone_circle</item>
@@ -1040,6 +1041,7 @@
         <item>16</item>
         <item>17</item>
         <item>18</item>
+        <item>19</item>
     </string-array>
 
     <!-- Weather -->
