@@ -96,6 +96,19 @@
             android:entries="@array/qs_header_style_entries"
             android:entryValues="@array/qs_header_style_values" />
 
+        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+            android:key="status_bar_custom_header"
+            android:title="@string/status_bar_custom_header_title"
+            android:summary="@string/status_bar_custom_header_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="qs_header_image"
+            android:title="@string/header_image"
+            android:summary="@string/header_image_summary"
+            android:fragment="com.havoc.settings.fragments.QsHeader"
+            android:dependency="status_bar_custom_header" />
+
 	    <ListPreference
             android:key="qs_tile_style"
             android:title="@string/qs_tile_style_title"
