@@ -1528,4 +1528,8 @@
     <string name="pa_pie_gravity_bottom">Bottom</string> 
     <string name="pa_pie_gravity_right">Right</string> 
     <string name="pa_pie_gravity_left">Left</string> 
+
+    <!-- Ambient category -->
+    <string name="custom_ambient_display_title">Ambient options</string>
+    <string name="custom_ambient_display_summary">Configure advanced ambient display behaviour</string>
 </resources>

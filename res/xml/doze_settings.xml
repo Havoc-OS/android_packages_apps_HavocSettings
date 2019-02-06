@@ -18,7 +18,17 @@
 	android:title="@string/doze_display_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
-    
+
+    <Preference
+        android:key="ambient_display_custom"
+        android:persistent="false"
+        android:title="@string/custom_ambient_display_title"
+        android:summary="@string/custom_ambient_display_summary" >
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.custom.ambient.display"
+            android:targetClass="com.custom.ambient.display.DozeSettings"/>
+    </Preference>
+
     <PreferenceCategory
         android:key="ambient_play"
         android:title="@string/ambient_play" >
