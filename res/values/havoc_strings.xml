@@ -953,24 +953,6 @@
     <string name="data_disabled_icon_title">Show data disabled icon</string>
     <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
 
-    <!-- Doze: switches -->
-    <string name="doze_display_summary">Configure settings for ambient display</string>
-    <string name="tilt_sensor_title">Tilt sensor</string>
-    <string name="pickup_sensor_title">Pick up sensor</string>
-    <string name="proximity_sensor_title">Proximity sensor</string>
-    <string name="tilt_title">Tilt</string>
-    <string name="tilt_summary">Pulse notifications on tilt</string>
-    <string name="pickup_title">Pick up</string>
-    <string name="pickup_summary">Pulse notifications on pick up</string>
-    <string name="handwave_title">Hand wave</string>
-    <string name="handwave_summary">Pulse notifications on hand wave</string>
-    <string name="pocket_title">Pocket</string>
-    <string name="pocket_summary">Pulse notifications on removal from pocket</string>
-    <string name="doze_vibrate">Vibrate</string>
-    <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
-    <string name="sensor_warning_title">Caution</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
-
     <!-- Quick pull down-->
     <string name="quick_pulldown_title">Quick pulldown</string>
     <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
