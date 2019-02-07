@@ -41,8 +41,8 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.settings.R;
-import com.havoc.settings.preferences.PackageListAdapter;
-import com.havoc.settings.preferences.PackageListAdapter.PackageItem;
+import com.havoc.support.preferences.PackageListAdapter;
+import com.havoc.support.preferences.PackageListAdapter.PackageItem;
 
 import java.util.ArrayList;
 import java.util.Comparator;

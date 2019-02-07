@@ -41,9 +41,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.colorpicker.ColorPickerPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.Date;
@@ -75,7 +75,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
     private ColorPickerPreference mClockColor;
-    private SystemSettingSeekBarPreference mClockSize;
+    private CustomSeekBarPreference mClockSize;
     private ListPreference mClockFontStyle;
     private ListPreference mClockDatePosition;
 
@@ -122,7 +122,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         mClockColor.setSummary(hexColor);
         mClockColor.setNewPreviewColor(intColor);
 
-        mClockSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
         int clockSize = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
         mClockSize.setValue(clockSize / 1);

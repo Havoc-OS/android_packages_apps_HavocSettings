@@ -31,10 +31,10 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.settings.Utils;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.havoc.support.colorpicker.ColorPickerPreference;
 
 import android.provider.Settings;
 import com.android.settings.R;
@@ -56,8 +56,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SwitchPreference mFingerprintVib;
     ListPreference mLockClockFonts;
     ListPreference mLockDateFonts;
-    private SystemSettingSeekBarPreference mClockFontSize;
-    private SystemSettingSeekBarPreference mDateFontSize;
+    private CustomSeekBarPreference mClockFontSize;
+    private CustomSeekBarPreference mDateFontSize;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -89,13 +89,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mVisualizerColor.setOnPreferenceChangeListener(this);
 
         // Lock Clock Size
-        mClockFontSize = (SystemSettingSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
+        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
         mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKCLOCK_FONT_SIZE, 64));
         mClockFontSize.setOnPreferenceChangeListener(this);
 
          // Lock Date Size
-        mDateFontSize = (SystemSettingSeekBarPreference) findPreference(DATE_FONT_SIZE);
+        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
         mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKDATE_FONT_SIZE,16));
         mDateFontSize.setOnPreferenceChangeListener(this);

@@ -30,7 +30,7 @@ import android.provider.Settings;
 import com.android.internal.logging.nano.MetricsProto; 
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.havoc.settings.preferences.Utils;
+import com.havoc.settings.Utils;
 
 import com.havoc.settings.R;
 

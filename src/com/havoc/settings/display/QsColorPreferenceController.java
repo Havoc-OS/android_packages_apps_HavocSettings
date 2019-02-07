@@ -26,7 +26,7 @@ import android.provider.Settings;
 
 import com.android.settingslib.core.AbstractPreferenceController;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.havoc.support.colorpicker.ColorPickerPreference;
 
 import libcore.util.Objects;
 import java.util.ArrayList;

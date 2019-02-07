@@ -48,9 +48,9 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.colorpicker.ColorPickerPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.ArrayList;
@@ -70,7 +70,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mCustomCarrierLabel;
     private String mCustomCarrierLabelText;
     private ColorPickerPreference mCarrierColorPicker;
-    private SystemSettingSeekBarPreference mStatusBarCarrierSize;
+    private CustomSeekBarPreference mStatusBarCarrierSize;
     private ListPreference mCarrierFontStyle;
 
     @Override
@@ -95,7 +95,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
         mCarrierColorPicker.setSummary(hexColor);
         mCarrierColorPicker.setNewPreviewColor(intColor);
 
-        mStatusBarCarrierSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
+        mStatusBarCarrierSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
         int StatusBarCarrierSize = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14);
         mStatusBarCarrierSize.setValue(StatusBarCarrierSize / 1);

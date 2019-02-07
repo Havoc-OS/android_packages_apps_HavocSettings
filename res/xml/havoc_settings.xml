@@ -32,13 +32,6 @@
             android:fragment="com.havoc.settings.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
-        <!-- Panels 
-        <Preference
-            android:key="panels_category"
-            android:title="@string/panels_title"
-            android:fragment="com.havoc.settings.fragments.Panels"
-            android:icon="@drawable/ic_settings_panels"/>-->
-
         <!-- Interface -->
         <Preference
             android:key="interface_category"
@@ -51,7 +44,7 @@
             android:key="doze_fragment" 
             android:title="@string/doze_display_title" 
             android:icon="@drawable/ic_settings_ambient"
-            android:fragment="com.havoc.settings.fragments.ui.DozeFragment" />
+            android:fragment="com.havoc.settings.fragments.DozeFragment" />
 
         <!-- Display -->
         <Preference

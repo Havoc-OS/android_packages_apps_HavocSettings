@@ -17,17 +17,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="battery_light_enabled"
         android:title="@string/battery_light_enable"
         android:defaultValue="true" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="battery_light_allow_on_dnd"
         android:title="@string/battery_light_allow_on_dnd_title"
         android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="battery_light_low_blinking"
         android:title="@string/battery_light_low_blinking_title"
         android:defaultValue="false" />
@@ -35,25 +35,25 @@
     <PreferenceCategory
         android:key="battery_light_cat"
         android:title="@string/battery_light_cat">
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_light_low_color"
             android:title="@string/battery_light_low_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFF0000" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_light_medium_color"
             android:title="@string/battery_light_medium_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFFFF00" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_light_full_color"
             android:title="@string/battery_light_full_color"
             ledPreview="true"
             settings:defaultColorValue="0xFFFFFF00" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_light_reallyfull_color"
             android:title="@string/battery_light_reallyfull_color"
             ledPreview="true"
@@ -64,13 +64,13 @@
         android:key="blend_category"
 	    android:title="@string/battery_light_blend_category">
 		
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="battery_light_blend"
             android:title="@string/battery_light_blend_title"
             android:summary="@string/battery_light_blend_summary"
             android:defaultValue="false" />
 			
-        <com.havoc.settings.preferences.SystemSettingColorBlendPreference
+        <com.havoc.support.preferences.SystemSettingColorBlendPreference
             android:title="@string/battery_light_blend_colors_title"
             android:summary="@string/battery_light_blend_colors_summary"
             android:dependency="battery_light_blend"
@@ -88,13 +88,13 @@
         android:key="fast_color_cat"
 	    android:title="@string/fast_color_cat_title">
 		
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="fast_charging_led_enabled"
             android:title="@string/fast_charging_led_enabled_title"
             android:summary="@string/fast_charging_led_enabled_summary"
             android:defaultValue="false" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="fast_battery_light_color"
             ledPreview="true"
             android:title="@string/fast_charging_light_color_title"

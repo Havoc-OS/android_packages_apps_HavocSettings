@@ -41,7 +41,7 @@ import android.util.Log;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent; 
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment; 
-import net.margaritov.preference.colorpicker.ColorPickerPreference; 
+import com.havoc.support.colorpicker.ColorPickerPreference; 
  
 import java.util.List; 
 import java.util.ArrayList; 

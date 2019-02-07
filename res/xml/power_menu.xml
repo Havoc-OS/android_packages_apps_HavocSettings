@@ -18,33 +18,33 @@
     android:title="@string/powermenu_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="powermenu_reboot"
         android:title="@string/powermenu_reboot_title"
         android:defaultValue="true" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="powermenu_advanced_reboot"
         android:title="@string/powermenu_advanced_reboot_title"
         android:dependency="powermenu_reboot"
         android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
        android:key="powermenu_lockdown"
        android:title="@string/powermenu_lockdown"
        android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="powermenu_screenshot"
         android:title="@string/powermenu_screenshot_title"
         android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="global_actions_screenrecord"
         android:title="@string/powermenu_screenrecord_title"
         android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="global_actions_onthego"
         android:title="@string/global_actions_onthego_title"
         android:defaultValue="false" />
@@ -54,7 +54,7 @@
         android:title="@string/powermenu_torch"
         android:persistent="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="powermenu_airplane"
         android:title="@string/powermenu_airplane_title"
         android:defaultValue="false" />

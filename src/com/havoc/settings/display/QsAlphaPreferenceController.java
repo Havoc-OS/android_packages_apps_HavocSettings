@@ -25,7 +25,7 @@ import android.provider.Settings;
 
 import com.android.settingslib.core.AbstractPreferenceController;
 
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 
 import libcore.util.Objects;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class QsAlphaPreferenceController extends AbstractPreferenceController im
 
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
 
-    private SystemSettingSeekBarPreference mQsPanelAlpha;
+    private CustomSeekBarPreference mQsPanelAlpha;
 
     public QsAlphaPreferenceController(Context context) {
         super(context);
@@ -55,7 +55,7 @@ public class QsAlphaPreferenceController extends AbstractPreferenceController im
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        mQsPanelAlpha = (SystemSettingSeekBarPreference) screen.findPreference(QS_PANEL_ALPHA);
+        mQsPanelAlpha = (CustomSeekBarPreference) screen.findPreference(QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         mQsPanelAlpha.setValue(qsPanelAlpha);

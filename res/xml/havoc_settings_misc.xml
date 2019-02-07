@@ -30,13 +30,13 @@
         android:title="@string/usb_default_config_title"
         android:summary="@string/usb_default_config_summary"/>
 
-    <com.havoc.settings.preferences.GlobalSettingSwitchPreference
+    <com.havoc.support.preferences.GlobalSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wakeup_when_plugged_unplugged_title"
         android:summary="@string/wakeup_when_plugged_unplugged_summary"
         android:defaultValue="true" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
@@ -46,26 +46,26 @@
         android:key="misc_screenshot"
         android:title="@string/misc_screenshot">
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="screen_record_shortcut"
             android:title="@string/screen_record_shortcut"
             android:summary="@string/screen_record_shortcut_summary"
             android:defaultValue="true" />
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
+        <com.havoc.support.preferences.SystemSettingListPreference
             android:key="screenrecord_quality_mode"
             android:entries="@array/screenrecord_quality_entries"
             android:entryValues="@array/screenrecord_quality_values"
             android:title="@string/screenrecord_quality_title"
             android:defaultValue="2" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="screen_shot_shortcut"
             android:title="@string/screen_shot_shortcut"
             android:summary="@string/screen_shot_shortcut_summary"
             android:defaultValue="true" />
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
+        <com.havoc.support.preferences.SystemSettingListPreference
             android:key="screenshot_type"
             android:entries="@array/screenshot_type_entries"
             android:entryValues="@array/screenshot_type_values"

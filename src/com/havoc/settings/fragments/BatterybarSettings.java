@@ -35,10 +35,10 @@ import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.havoc.support.colorpicker.ColorPickerPreference;
 
 public class BatterybarSettings extends SettingsPreferenceFragment implements
          OnPreferenceChangeListener {

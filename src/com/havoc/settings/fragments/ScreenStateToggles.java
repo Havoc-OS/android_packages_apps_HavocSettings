@@ -37,7 +37,7 @@ import android.util.Log;
 import android.net.ConnectivityManager;
 
 import com.havoc.settings.R;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -61,8 +61,8 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
     private SwitchPreference mEnableScreenStateTogglesTwoG;
     private SwitchPreference mEnableScreenStateTogglesGps;
     private SwitchPreference mEnableScreenStateTogglesMobileData;
-    private SystemSettingSeekBarPreference mSecondsOffDelay;
-    private SystemSettingSeekBarPreference mSecondsOnDelay;
+    private CustomSeekBarPreference mSecondsOffDelay;
+    private CustomSeekBarPreference mSecondsOnDelay;
     private PreferenceCategory mMobileDateCategory;
     private PreferenceCategory mLocationCategory;
 
@@ -84,13 +84,13 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
         mEnableScreenStateToggles.setChecked(enabled != 0);
         mEnableScreenStateToggles.setOnPreferenceChangeListener(this);
 
-        mSecondsOffDelay = (SystemSettingSeekBarPreference) findPreference(SCREEN_STATE_OFF_DELAY);
+        mSecondsOffDelay = (CustomSeekBarPreference) findPreference(SCREEN_STATE_OFF_DELAY);
         int offd = Settings.System.getIntForUser(resolver,
                 Settings.System.SCREEN_STATE_OFF_DELAY, 0, UserHandle.USER_CURRENT);
         mSecondsOffDelay.setValue(offd);
         mSecondsOffDelay.setOnPreferenceChangeListener(this);
 
-        mSecondsOnDelay = (SystemSettingSeekBarPreference) findPreference(SCREEN_STATE_ON_DELAY);
+        mSecondsOnDelay = (CustomSeekBarPreference) findPreference(SCREEN_STATE_ON_DELAY);
         int ond = Settings.System.getIntForUser(resolver,
                 Settings.System.SCREEN_STATE_ON_DELAY, 0, UserHandle.USER_CURRENT);
         mSecondsOnDelay.setValue(ond);

@@ -38,8 +38,8 @@ import java.util.Map;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 public class QsHeader extends SettingsPreferenceFragment 
@@ -55,7 +55,7 @@ public class QsHeader extends SettingsPreferenceFragment
 
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
-    private SystemSettingSeekBarPreference mHeaderShadow;
+    private CustomSeekBarPreference mHeaderShadow;
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private Preference mFileHeader;
@@ -91,7 +91,7 @@ public class QsHeader extends SettingsPreferenceFragment
         updateHeaderProviderSummary(headerEnabled);
         mDaylightHeaderPack.setOnPreferenceChangeListener(this);
 
-        mHeaderShadow = (SystemSettingSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        mHeaderShadow = (CustomSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
         final int headerShadow = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));

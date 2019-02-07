@@ -59,28 +59,28 @@
         android:key="qs_category"
         android:title="@string/qs_themes_category_title" >
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_fw"
             android:title="@string/qs_bg_use_fw"
             android:summary="@string/qs_bg_use_fw_summary"
             android:defaultValue="true"
             android:disableDependentsState="true" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_wall"
             android:title="@string/qs_bg_wall_title"
             android:summary="@string/qs_bg_wall_summary"
             android:defaultValue="false"
             android:dependency="qs_panel_bg_use_fw" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="qs_panel_color"
             android:title="@string/qs_panel_color_title"
             android:defaultValue="0xffffff"
             android:persistent="false"
             android:dependency="qs_panel_bg_use_fw" />
 
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+        <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="qs_panel_alpha"
             android:title="@string/qs_panel_alpha_title"
             android:max="255"
@@ -96,7 +96,7 @@
             android:entries="@array/qs_header_style_entries"
             android:entryValues="@array/qs_header_style_values" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="status_bar_custom_header"
             android:title="@string/status_bar_custom_header_title"
             android:summary="@string/status_bar_custom_header_summary"
@@ -156,21 +156,21 @@
             android:entries="@array/switch_style_entries"
             android:entryValues="@array/switch_style_values" />
 
-        <com.havoc.settings.preferences.SystemSettingIntListPreference
+        <com.havoc.support.preferences.SystemSettingListPreference
             android:key="theming_settings_dashboard_icons"
             android:title="@string/theming_settings_dashboard_icons_title"
             android:entries="@array/theming_settings_dashboard_icons_entries"
             android:entryValues="@array/theming_settings_dashboard_icons_values"
             android:defaultValue="0" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        <com.havoc.support.preferences.SystemSettingSwitchPreference 
             android:key="enable_conditions" 
             android:title="@string/dashboard_conditions_title" 
             android:summaryOn="@string/summary_dashboard_conditions_enabled" 
             android:summaryOff="@string/summary_dashboard_conditions_disabled" 
             android:defaultValue="true" /> 
         
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        <com.havoc.support.preferences.SystemSettingSwitchPreference 
             android:key="enable_suggestions" 
             android:title="@string/dashboard_suggestions_title" 
             android:summaryOn="@string/summary_dashboard_suggestions_enabled" 

@@ -40,8 +40,8 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.havoc.settings.preferences.PackageListAdapter;
-import com.havoc.settings.preferences.PackageListAdapter.PackageItem;
+import com.havoc.support.preferences.PackageListAdapter;
+import com.havoc.support.preferences.PackageListAdapter.PackageItem;
 import android.provider.Settings;
 
 import java.util.ArrayList;

@@ -26,7 +26,7 @@ import android.os.Bundle;
 import android.view.Surface;
 import android.preference.Preference;
 import com.android.settings.R;
-import com.havoc.settings.preferences.Utils;
+import com.havoc.settings.Utils;
 
 import com.android.settings.SettingsPreferenceFragment;
 

@@ -44,8 +44,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-import com.havoc.settings.preferences.PackageListAdapter;
-import com.havoc.settings.preferences.PackageListAdapter.PackageItem;
+import com.havoc.support.preferences.PackageListAdapter;
+import com.havoc.support.preferences.PackageListAdapter.PackageItem;
 import com.android.internal.logging.nano.MetricsProto;
 import com.havoc.settings.R;
 import com.android.settings.SettingsPreferenceFragment;

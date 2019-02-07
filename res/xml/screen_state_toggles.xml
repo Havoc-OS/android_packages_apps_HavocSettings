@@ -10,7 +10,7 @@
         android:summary="@string/screen_state_toggles_enable_summary"
         android:defaultValue="false"/>
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="screen_state_off_delay"
         android:title="@string/screen_state_off_delay_title"
         android:summary="@string/screen_state_off_delay_summary"
@@ -20,7 +20,7 @@
         android:persistent="false"
         android:dependency="screen_state_toggles_enable_key"/>
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="screen_state_on_delay"
         android:title="@string/screen_state_on_delay_title"
         android:summary="@string/screen_state_on_delay_summary"
@@ -34,13 +34,13 @@
         android:key="screen_state_toggles_mobile_key"
         android:title="@string/screen_state_toggles_mobile_title">
 
-       <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="screen_state_toggles_twog"
             android:title="@string/screen_state_toggles_twog"
             android:summary="@string/screen_state_toggles_twog_summary"
             android:defaultValue="false"/>
 
-       <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="screen_state_toggles_mobile_data"
             android:title="@string/screen_state_toggles_mobile_data"
             android:summary="@string/screen_state_toggles_mobile_data_summary"
@@ -51,7 +51,7 @@
         android:key="screen_state_toggles_location_key"
         android:title="@string/screen_state_toggles_location_title">
 
-       <com.havoc.settings.preferences.SystemSettingSwitchPreference
+       <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="screen_state_toggles_gps"
             android:title="@string/screen_state_toggles_gps"
             android:summary="@string/screen_state_toggles_gps_summary"

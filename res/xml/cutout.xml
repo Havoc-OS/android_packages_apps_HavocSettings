@@ -25,7 +25,7 @@
         android:entries="@array/display_cutout_style_entries"
         android:entryValues="@array/display_cutout_style_values" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="stock_statusbar_in_hide"
         android:title="@string/stock_statusbar_in_hide"
         android:summary="@string/stock_statusbar_in_hide_summary"

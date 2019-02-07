@@ -35,7 +35,7 @@ import android.support.annotation.NonNull;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.havoc.settings.preferences.Utils;
+import com.havoc.settings.Utils;
 
 import java.util.Arrays;
 import java.util.ArrayList;

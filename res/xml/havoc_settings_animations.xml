@@ -16,24 +16,23 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/animations_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
         android:title="@string/system_animation_title">
 
-        <com.havoc.settings.preferences.GlobalSettingSwitchPreference
+        <com.havoc.support.preferences.GlobalSettingSwitchPreference
             android:key="disable_transition_animations"
             android:title="@string/disable_transition_animations_title"
             android:summary="@string/disable_transition_animations_summary"
             android:defaultValue="false" />
 
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+        <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="animation_controls_duration"
             android:title="@string/animation_duration_title"
             android:max="400"
             android:min="0"
-            havocsettings:interval="10"
+            settings:interval="10"
             android:defaultValue="0"
             android:persistent="false" />
 

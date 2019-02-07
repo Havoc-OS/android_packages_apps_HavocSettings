@@ -11,7 +11,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionUtils; 
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment; 
-import com.havoc.settings.preferences.SecureSettingSeekBarPreference; 
+import com.havoc.support.preferences.CustomSeekBarPreference; 
  
 public class EdgeGesturesSettings extends SettingsPreferenceFragment implements 
         Preference.OnPreferenceChangeListener { 
@@ -22,7 +22,7 @@ public class EdgeGesturesSettings extends SettingsPreferenceFragment implements
     private String previousTitle; 
  
     private SwitchPreference enabledPreference; 
-    private SecureSettingSeekBarPreference screenPercentPreference; 
+    private CustomSeekBarPreference screenPercentPreference; 
  
     @Override 
     public void onCreate(Bundle savedInstanceState) { 
@@ -35,7 +35,7 @@ public class EdgeGesturesSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.EDGE_GESTURES_ENABLED, 0) == 1));*/ 
         enabledPreference.setOnPreferenceChangeListener(this); 
  
-        screenPercentPreference = (SecureSettingSeekBarPreference) findPreference(EDGE_GESTURES_SCREEN_PERCENT); 
+        screenPercentPreference = (CustomSeekBarPreference) findPreference(EDGE_GESTURES_SCREEN_PERCENT); 
         int percent = Settings.Secure.getIntForUser(getContentResolver(), Settings.Secure.EDGE_GESTURES_BACK_SCREEN_PERCENT, 60, UserHandle.USER_CURRENT); 
         screenPercentPreference.setValue(percent); 
     } 

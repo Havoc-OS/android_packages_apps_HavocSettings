@@ -36,14 +36,14 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
 
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.settings.preferences.AppChooserAdapter.AppItem;
 import com.havoc.settings.preferences.AppChooserDialog;
 
 public class CarbonGesturesSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "CarbonGestures";
-    private SystemSettingSeekBarPreference mCarbonGestureFingers;
+    private CustomSeekBarPreference mCarbonGestureFingers;
     private ListPreference mCarbonGestureRight;
     private ListPreference mCarbonGestureLeft;
     private ListPreference mCarbonGestureUp;
@@ -57,7 +57,7 @@ public class CarbonGesturesSettings extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mCarbonGestureFingers = (SystemSettingSeekBarPreference) findPreference("carbon_gestures_fingers");
+        mCarbonGestureFingers = (CustomSeekBarPreference) findPreference("carbon_gestures_fingers");
         mCarbonGestureFingers.setOnPreferenceChangeListener(this);
         int carbonGestureFingers = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.CARBON_CUSTOM_GESTURE_FINGERS, 2, UserHandle.USER_CURRENT);

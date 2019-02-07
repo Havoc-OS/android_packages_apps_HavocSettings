@@ -32,7 +32,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 
 public class System extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -43,7 +43,7 @@ public class System extends SettingsPreferenceFragment
     private static final String BURN_INTERVAL_KEY = "burn_in_protection_interval";
 
     private SwitchPreference mShowCpuInfo;
-    private SystemSettingSeekBarPreference mBurnInterval;
+    private CustomSeekBarPreference mBurnInterval;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class System extends SettingsPreferenceFragment
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
 
-        mBurnInterval = (SystemSettingSeekBarPreference) findPreference(BURN_INTERVAL_KEY);
+        mBurnInterval = (CustomSeekBarPreference) findPreference(BURN_INTERVAL_KEY);
         int burninterval = Settings.System.getInt(resolver,
                 Settings.System.BURN_IN_PROTECTION_INTERVAL, 60);
         mBurnInterval.setValue(burninterval);

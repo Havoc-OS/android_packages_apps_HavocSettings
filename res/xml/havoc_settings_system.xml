@@ -18,7 +18,7 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferences.GlobalSettingSwitchPreference
+    <com.havoc.support.preferences.GlobalSettingSwitchPreference
         android:key="allow_signature_fake"
         android:title="@string/allow_signature_fake"
         android:summary="@string/allow_signature_fake_summary"
@@ -46,13 +46,13 @@
         android:key="navigation_burnin"
         android:title="@string/navigation_burnin_category" >
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="burn_in_protection"
             android:title="@string/burn_in_protection_title"
             android:summary="@string/burn_in_protection_summary"
             android:defaultValue="true" />
 
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+        <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="burn_in_protection_interval"
             android:title="@string/burn_in_protection_interval_title"
             android:max="90"

@@ -16,8 +16,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
 	android:title="@string/doze_display_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    xmlns:havocsettings="http://schemas.android.com/apk/res-auto">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <Preference
         android:key="ambient_display_custom"
@@ -33,7 +32,7 @@
         android:key="ambient_play"
         android:title="@string/ambient_play" >
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="force_ambient_for_media"
             android:title="@string/force_ambient_for_media_title"
             android:summary="@string/force_ambient_for_media_summary"
@@ -45,7 +44,7 @@
         android:key="ambient_element"
         android:title="@string/ambient_element" >
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+        <com.havoc.support.preferences.SystemSettingSwitchPreference 
             android:key="ambient_battery_percent" 
             android:title="@string/ambient_battery_percent_title" 
             android:summary="@string/ambient_battery_percent_summary" 

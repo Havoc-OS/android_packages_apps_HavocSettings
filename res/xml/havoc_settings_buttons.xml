@@ -27,13 +27,13 @@
             android:title="@string/hardware_keys_disable_title"
             android:summary="@string/hardware_keys_disable_summary" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="swap_navigation_keys"
             android:title="@string/swap_navigation_keys_title"
             android:summary="@string/swap_navigation_keys_title_summary"
 	        android:defaultValue="false" />
 
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+        <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="button_brightness"
             android:title="@string/button_brightness_title"
             android:max="255"
@@ -54,13 +54,13 @@
             android:persistent="false"
             android:title="@string/backlight_timeout_title" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="button_backlight_on_touch_only"
             android:title="@string/button_backlight_on_touch_only_title"
             android:summary="@string/button_backlight_on_touch_only_summary"
             android:defaultValue="false" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="anbi_enabled_option"
             android:title="@string/anbi_title"
             android:summary="@string/anbi_summary"
@@ -78,7 +78,7 @@
             android:summary="@string/powermenu_summary"
             android:fragment="com.havoc.settings.fragments.PowerMenu" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="torch_long_press_power_gesture"
             android:title="@string/torch_long_press_power_gesture_title"
             android:summary="@string/torch_long_press_power_gesture_desc"
@@ -153,7 +153,7 @@
             android:title="@string/hardware_keys_double_tap_title" >
         </com.havoc.settings.preferences.ActionPreference>
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="allow_incall_home"
             android:title="@string/allow_incall_home_title"
             android:summary="@string/allow_incall_home_summary"

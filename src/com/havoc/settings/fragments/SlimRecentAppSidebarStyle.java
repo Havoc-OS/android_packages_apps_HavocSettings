@@ -25,7 +25,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.havoc.support.colorpicker.ColorPickerPreference;
 
 public class SlimRecentAppSidebarStyle extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {

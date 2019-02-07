@@ -18,31 +18,31 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:havocsettings="http://schemas.android.com/apk/res-auto"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/slim_recents_title">
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="recent_panel_scale_factor"
         android:title="@string/recent_panel_scale_title"
         android:min="60"
         android:max="160"
         android:defaultValue="100"
-        havocsettings:interval="5"
-        havocsettings:unitsRight="%" />
+        settings:interval="5"
+        settings:units="%" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
+    <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="recent_panel_bg_color"
         android:title="@string/recent_panel_bg_color_title"
         android:defaultValue="0x00ffffff"
         alphaSlider="true" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
+    <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="recent_card_bg_color"
         android:title="@string/recent_card_bg_color_title"
         android:defaultValue="0x00ffffff"
         alphaSlider="true" />
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="recents_max_apps"
         android:title="@string/recents_max_apps_title"
         android:defaultValue="15"
@@ -55,16 +55,15 @@
         android:summary="@string/recent_panel_lefty_mode_summary"
         android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="slim_recents_corner_radius"
         android:title="@string/slim_recents_corner_radius_title"
         android:min="0"
         android:max="20"
         android:defaultValue="8"
-        havocsettings:interval="1"
-        havocsettings:unitsRight="dp" />
+        settings:units="dp" />
 
-    <com.havoc.settings.preferences.SystemSettingIntListPreference
+    <com.havoc.support.preferences.SystemSettingListPreference
         android:key="recent_panel_expanded_mode"
         android:entries="@array/recent_panel_expanded_mode_entries"
         android:entryValues="@array/recent_panel_expanded_mode_values"
@@ -83,7 +82,7 @@
         android:title="@string/slim_blacklist_apps_cat_title"
         android:summary="@string/slim_blacklist_apps_summary" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="use_recent_app_sidebar"
         android:title="@string/recent_app_sidebar_title"
         android:summary="@string/recent_app_sidebar_summary"
@@ -111,27 +110,27 @@
     <PreferenceCategory
         android:title="@string/slim_recents_mem_display_category_title">
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="slim_recents_mem_display"
             android:title="@string/slim_recents_mem_display_title"
             android:summaryOn="@string/slim_recents_mem_display_summaryOn"
             android:summaryOff="@string/slim_recents_mem_display_summaryOff"
             android:defaultValue="false" />
 
-        <com.havoc.settings.preferences.SystemSettingSwitchPreference
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="slim_recents_mem_display_long_click_clear"
             android:title="@string/slim_recents_mem_display_long_click_clear_title"
             android:summary="@string/slim_recents_mem_display_long_click_clear_summary"
             android:defaultValue="false"
             android:dependency="slim_recents_mem_display" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="slim_mem_bar_color"
             android:title="@string/slim_recents_mem_display_color"
             android:defaultValue="0xffffffff"
             android:dependency="slim_recents_mem_display"/>
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="slim_mem_text_color"
             android:title="@string/slim_recents_mem_display_text_color"
             android:defaultValue="0xffffffff"

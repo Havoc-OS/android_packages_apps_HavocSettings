@@ -42,8 +42,8 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.android.settings.SettingsPreferenceFragment;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
 import com.android.settings.Utils;
 import android.util.Log;
 
@@ -73,7 +73,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 3;
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
 
-    private SystemSettingSeekBarPreference mThreshold;
+    private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
     private SystemSettingSwitchPreference mHideArrows;
     private ListPreference mNetTrafficLocation;
@@ -120,7 +120,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         int value = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (SystemSettingSeekBarPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
 

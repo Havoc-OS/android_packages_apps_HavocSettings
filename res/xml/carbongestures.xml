@@ -19,7 +19,7 @@
     android:title="@string/carbon_gesture_preference_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="carbon_gestures_fingers"
         android:title="@string/carbon_gestures_fingers_title"
         android:max="4"

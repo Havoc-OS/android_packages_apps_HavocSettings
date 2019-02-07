@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/carrier_label_settings_title" >
 
-        <com.havoc.settings.preferences.SystemSettingListPreference
+        <com.havoc.support.preferences.SystemSettingListPreference
             android:key="status_bar_show_carrier"
             android:title="@string/show_carrier_title"
             android:dialogTitle="@string/show_carrier_title"
@@ -32,7 +32,7 @@
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />
 
-        <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+        <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="status_bar_carrier_font_size"
             android:title="@string/status_bar_carrier_size"
             android:max="23"
@@ -49,7 +49,7 @@
             android:entryValues="@array/lock_clock_fonts_values"
             android:defaultValue="14" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="status_bar_carrier_color"
             android:title="@string/status_bar_carrier_color"
             android:defaultValue="0xffffffff" />

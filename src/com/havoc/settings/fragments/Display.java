@@ -36,9 +36,9 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.havoc.settings.preferences.SecureSettingSwitchPreference;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.SecureSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
 
 public class Display extends SettingsPreferenceFragment implements 
         Preference.OnPreferenceChangeListener {
@@ -58,8 +58,8 @@ public class Display extends SettingsPreferenceFragment implements
     private ListPreference mPositionFriction;
     private ListPreference mVelocityAmplitude;
     private SecureSettingSwitchPreference mRoundedFwvals;
-    private SystemSettingSeekBarPreference mCornerRadius;
-    private SystemSettingSeekBarPreference mContentPadding;
+    private CustomSeekBarPreference mCornerRadius;
+    private CustomSeekBarPreference mContentPadding;
 
     ContentResolver resolver; 
 
@@ -113,7 +113,7 @@ public class Display extends SettingsPreferenceFragment implements
         }
 
         // Rounded Corner Radius
-        mCornerRadius = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
+        mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
         mCornerRadius.setOnPreferenceChangeListener(this);
         int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
         int cornerRadius = Settings.Secure.getInt(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
@@ -121,7 +121,7 @@ public class Display extends SettingsPreferenceFragment implements
         mCornerRadius.setValue(cornerRadius / 1);
 
         // Rounded Content Padding
-        mContentPadding = (SystemSettingSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+        mContentPadding = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
         mContentPadding.setOnPreferenceChangeListener(this);
         int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
                 null);

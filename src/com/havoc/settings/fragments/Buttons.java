@@ -36,8 +36,8 @@ import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.havoc.settings.preferences.ActionFragment;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
 
 public class Buttons extends ActionFragment implements OnPreferenceChangeListener {
 
@@ -71,7 +71,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     public static final int KEY_MASK_VOLUME = 0x40;
 
     private ListPreference mBacklightTimeout;
-    private SystemSettingSeekBarPreference mButtonBrightness;
+    private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
     private ListPreference mTorchLongPressPowerTimeout;
@@ -117,7 +117,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                     (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
 
             mButtonBrightness =
-                    (SystemSettingSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
+                    (CustomSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
 
             mButtonBrightness_sw =
                     (SwitchPreference) findPreference(KEY_BUTTON_BRIGHTNESS_SW);

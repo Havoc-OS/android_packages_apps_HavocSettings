@@ -22,7 +22,7 @@
         android:key="clock_cat"
         android:title="@string/clock_cat">
 		
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="status_bar_clock"
         android:title="@string/status_bar_clock_show"
         android:defaultValue="true" />
@@ -43,13 +43,13 @@
         android:entryValues="@array/status_bar_am_pm_values"
         android:dependency="status_bar_clock" />
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="status_bar_clock_seconds"
         android:title="@string/clock_seconds_display"
         android:dependency="status_bar_clock"
         android:defaultValue="false" />
 
-    <com.havoc.settings.preferences.SystemSettingSeekBarPreference
+    <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="status_bar_clock_size"
         android:title="@string/status_bar_clock_font_size_title"
         android:max="23"
@@ -67,7 +67,7 @@
         android:defaultValue="14"
         android:dependency="status_bar_clock" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
+    <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="status_bar_clock_color"
         android:title="@string/status_bar_clock_color_title"
         android:defaultValue="0xffffffff"

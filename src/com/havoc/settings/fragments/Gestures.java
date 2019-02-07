@@ -37,8 +37,8 @@ import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.havoc.settings.preferences.SystemSettingSeekBarPreference;
-import com.havoc.settings.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -50,8 +50,8 @@ public class Gestures extends SettingsPreferenceFragment implements
     private static final String KEY_SWIPE_TIMEOUT = "gesture_swipe_timeout";
 
     private SystemSettingSwitchPreference mUseBottomGestureNavigation;
-    private SystemSettingSeekBarPreference mSwipeTriggerLength;
-    private SystemSettingSeekBarPreference mSwipeTriggerTimeout;
+    private CustomSeekBarPreference mSwipeTriggerLength;
+    private CustomSeekBarPreference mSwipeTriggerTimeout;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -67,13 +67,13 @@ public class Gestures extends SettingsPreferenceFragment implements
                 USE_BOTTOM_GESTURE_NAVIGATION, 0);
         mUseBottomGestureNavigation.setChecked(useBottomGestureNavigation != 0);
 
-        mSwipeTriggerLength = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
+        mSwipeTriggerLength = (CustomSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
         int triggerLength = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT,
                 getSwipeLengthInPixel(getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_min_length)));
         mSwipeTriggerLength.setValue(triggerLength);
         mSwipeTriggerLength.setOnPreferenceChangeListener(this);
 
-        mSwipeTriggerTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
+        mSwipeTriggerTimeout = (CustomSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
         int triggerTimeout = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT,
                 getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_timout));
         mSwipeTriggerTimeout.setValue(triggerTimeout);

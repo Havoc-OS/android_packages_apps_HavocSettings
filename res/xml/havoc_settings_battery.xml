@@ -22,7 +22,7 @@
         android:key="battery_sensor"
         android:title="@string/battery_sensor">
 
-    <com.havoc.settings.preferences.SystemSettingSwitchPreference 
+    <com.havoc.support.preferences.SystemSettingSwitchPreference 
         android:key="sensor_block" 
         android:title="@string/sensor_block_title" 
         android:summary="@string/sensor_block_summary" 
