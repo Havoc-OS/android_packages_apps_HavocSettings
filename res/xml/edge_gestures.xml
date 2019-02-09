@@ -15,12 +15,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.havoc.support.preferences.SecureSettingSwitchPreference
-        android:key="edge_gestures_enabled"
-        android:title="@string/edge_gestures_title"
-        android:summary="@string/edge_gestures_summary"
-        android:defaultValue="false" />
-
     <com.havoc.support.preferences.SecureSettingListPreference
         android:key="edge_gestures_feedback_duration"
         android:entries="@array/edge_gestures_feedback_time_labels"

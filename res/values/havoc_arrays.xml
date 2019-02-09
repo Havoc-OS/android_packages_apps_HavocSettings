@@ -15,21 +15,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Screen off animation --> 
-    <string-array name="screen_off_animation_entries"> 
-        <item>@string/screen_off_animation_fade</item> 
-        <item>@string/screen_off_animation_color</item> 
-        <item>@string/screen_off_animation_crt</item> 
-        <item>@string/screen_off_animation_scale</item> 
-    </string-array> 
- 
-    <string-array name="screen_off_animation_values" translatable="false"> 
-        <item>0</item> 
-        <item>1</item> 
-        <item>2</item> 
-        <item>3</item> 
-    </string-array> 
-
     <!--- Buttons backlight timeout -->
     <string-array name="backlight_timeout_entries">
         <item>@string/backlight_timeout_on</item>
@@ -92,9 +77,9 @@
         <item>13</item>
         <item>14</item>
         <item>15</item>
-     </string-array>
+    </string-array>
 
-         <!-- Listview Interpolator -->
+    <!-- Listview Interpolator -->
     <string-array name="listview_interpolator_entries" translatable="false">
         <item>@string/listview_off</item>
         <item>@string/listview_accelerate_interpolator</item>
@@ -117,7 +102,7 @@
         <item>7</item>
     </string-array>
 
-        <!-- Tiles animation style -->
+    <!-- Tiles animation style -->
     <string-array name="qs_tile_animation_style_entries" translatable="false">
         <item>@string/qs_tile_animation_style_off</item>
         <item>@string/qs_tile_animation_style_flip</item>
@@ -143,7 +128,7 @@
         <item>1500</item>
     </string-array>
 
-        <!-- Tiles animation interpolator -->
+    <!-- Tiles animation interpolator -->
     <string-array name="qs_tile_animation_interpolator_entries" translatable="false">
         <item>@string/qs_tile_animation_interpolator_linearInterpolator</item>
         <item>@string/qs_tile_animation_interpolator_accelerateInterpolator</item>
@@ -166,7 +151,7 @@
         <item>7</item>
     </string-array>
 
-        <!-- Option to enable/disable scrolling cache -->
+    <!-- Option to enable/disable scrolling cache -->
     <string-array name="entries_scrollingcache" translatable="false">
         <item>@string/pref_scrollingcache_force_enable</item>
         <item>@string/pref_scrollingcache_default_enable</item>
@@ -216,21 +201,21 @@
         <item>@string/action_entry_custom_action</item>
         <item>@string/action_entry_select_app</item>
     </string-array>
-     <string-array name="action_dialog_values" translatable="false">
+    <string-array name="action_dialog_values" translatable="false">
         <item>@string/action_value_default_action</item>
         <item>@string/action_value_custom_action</item>
         <item>@string/action_value_select_app</item>
     </string-array>
-     <string-array name="action_dialog_no_default_entries">
+    <string-array name="action_dialog_no_default_entries">
         <item>@string/action_entry_custom_action</item>
         <item>@string/action_entry_select_app</item>
     </string-array>
-     <string-array name="action_dialog_no_default_values" translatable="false">
+    <string-array name="action_dialog_no_default_values" translatable="false">
         <item>@string/action_value_custom_action</item>
         <item>@string/action_value_select_app</item>
     </string-array>
 
-   <!-- clear all recents button location -->
+    <!-- clear all recents button location -->
     <string-array name="recents_clear_all_location_entries" translatable="false">
         <item>@string/recents_clear_all_location_top_right</item>
         <item>@string/recents_clear_all_location_top_left</item>
@@ -262,24 +247,24 @@
         <item>2</item>
     </string-array>
 
-    <!-- Auto keyboard rotation --> 
-    <string-array name="keyboard_rotation_timeout_entries" translatable="false"> 
-        <item>2s</item> 
-        <item>5s</item> 
-        <item>10s</item> 
-        <item>20s</item> 
-        <item>30s</item> 
-        <item>60s</item> 
-    </string-array> 
+    <!-- Auto keyboard rotation -->
+    <string-array name="keyboard_rotation_timeout_entries" translatable="false">
+        <item>2s</item>
+        <item>5s</item>
+        <item>10s</item>
+        <item>20s</item>
+        <item>30s</item>
+        <item>60s</item>
+    </string-array>
  
-    <string-array name="keyboard_rotation_timeout_values" translatable="false"> 
-        <item>2000</item> 
-        <item>5000</item> 
-        <item>10000</item> 
-        <item>20000</item> 
-        <item>30000</item> 
-        <item>60000</item> 
-    </string-array> 
+    <string-array name="keyboard_rotation_timeout_values" translatable="false">
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>60000</item>
+    </string-array>
 	
     <!-- Volume step options. -->
     <string-array name="volume_steps_entries" translatable="false">
@@ -289,7 +274,7 @@
         <item>@string/volume_steps_15</item>
         <item>@string/volume_steps_7</item>
         <item>@string/volume_steps_5</item>
-    </string-array>	
+    </string-array>
 
     <!-- Heads up timeout -->
     <string-array name="heads_up_time_out_entries" translatable="false">
@@ -379,7 +364,7 @@
         <item>@string/status_bar_battery_percentage_text_next</item>
         <item>@string/status_bar_battery_percentage_text_inside</item>
     </string-array>
-     <string-array name="status_bar_battery_percentage_values" translatable="false">
+    <string-array name="status_bar_battery_percentage_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -392,7 +377,7 @@
         <item>@string/status_bar_battery_style_text</item>
         <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
-     <string-array name="values_status_bar_battery" translatable="false">
+    <string-array name="values_status_bar_battery" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -496,18 +481,18 @@
         <item>600</item>
     </string-array>
 	
-    <!-- MediaScanner behavior on boot --> 
-    <string-array name="media_scanner_on_boot_entries"> 
-        <item>@string/media_scanner_on_boot_enabled</item> 
-        <item>@string/media_scanner_on_boot_ask</item> 
-        <item>@string/media_scanner_on_boot_disabled</item> 
-    </string-array> 
+    <!-- MediaScanner behavior on boot -->
+    <string-array name="media_scanner_on_boot_entries">
+        <item>@string/media_scanner_on_boot_enabled</item>
+        <item>@string/media_scanner_on_boot_ask</item>
+        <item>@string/media_scanner_on_boot_disabled</item>
+    </string-array>
  
-    <string-array name="media_scanner_on_boot_values" translatable="false"> 
-        <item>0</item> 
-        <item>1</item> 
-        <item>2</item> 
-    </string-array> 	
+    <string-array name="media_scanner_on_boot_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 	
     <!-- Carrier Label -->
     <string-array name="carrier_label_entries" translatable="false">
@@ -529,10 +514,10 @@
         <item>0.01x</item>
         <item>0.05x</item>
         <item>0.1x</item>
-        <item>0.2x(Default)</item>
+        <item>0.2x (Default)</item>
         <item>0.3x</item>
         <item>0.4x</item>
-    </string-array> 
+    </string-array>
     <string-array name="stabilization_velocity_friction_entry_values" translatable="false">
         <item>0.01</item>
         <item>0.05</item>
@@ -540,15 +525,16 @@
         <item>0.2</item>
         <item>0.3</item>
         <item>0.4</item>
-        
-    </string-array><string-array name="stabilization_position_friction_entries" translatable="false">
+    </string-array>
+
+    <string-array name="stabilization_position_friction_entries" translatable="false">
         <item>0.01x</item>
         <item>0.05x</item>
-        <item>0.1x(Default)</item>
+        <item>0.1x (Default)</item>
         <item>0.2x</item>
         <item>0.3x</item>
         <item>0.4x</item>
-    </string-array> 
+    </string-array>
     <string-array name="stabilization_position_friction_values" translatable="false">
         <item>0.01</item>
         <item>0.05</item>
@@ -561,11 +547,11 @@
     <string-array name="stabilization_velocity_amplitude_entries" translatable="false">
         <item>0.5x</item>
         <item>0.75x</item>
-        <item>1x(Default)</item>
+        <item>1x (Default)</item>
         <item>1.25x</item>
         <item>1.5x</item>
         <item>2x</item>
-    </string-array> 
+    </string-array>
     <string-array name="stabilization_velocity_amplitude_values" translatable="false">
         <item>4000</item>
         <item>6000</item>
@@ -575,20 +561,20 @@
         <item>16000</item>
     </string-array>
 
-   <!-- Blink flashlight for incoming calls -->
-   <string-array name="flashlight_on_call_entries">
-      <item>@string/flashlight_on_call_disabled</item>
-      <item>@string/flashlight_on_call_not_dnd</item>
-      <item>@string/flashlight_on_call_dnd</item>
-      <item>@string/flashlight_on_call_always</item>
-   </string-array>
+    <!-- Blink flashlight for incoming calls -->
+    <string-array name="flashlight_on_call_entries">
+        <item>@string/flashlight_on_call_disabled</item>
+        <item>@string/flashlight_on_call_not_dnd</item>
+        <item>@string/flashlight_on_call_dnd</item>
+        <item>@string/flashlight_on_call_always</item>
+    </string-array>
 
-   <string-array name="flashlight_on_call_values">
-       <item>0</item>
-       <item>1</item>
-       <item>2</item>
-       <item>3</item>
-   </string-array>
+    <string-array name="flashlight_on_call_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
     <!-- Battery Bar -->
     <string-array name="battery_bar_entries" translatable="false">
@@ -618,10 +604,10 @@
     </string-array>
 
     <string-array name="battery_bar_thickness_entries" translatable="false">
-        <item>1 dp</item>
-        <item>2 dp</item>
-        <item>3 dp</item>
-        <item>4 dp</item>
+        <item>1dp</item>
+        <item>2dp</item>
+        <item>3dp</item>
+        <item>4dp</item>
     </string-array>
 
     <string-array name="battery_bar_thickness_values" translatable="false">
@@ -833,37 +819,37 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="carbon_gestures_button_entries" translatable="false"> 
-        <item>@string/carbon_gesture_disabled</item> 
-        <item>@string/carbon_gesture_back</item> 
-        <item>@string/carbon_gesture_home</item> 
-        <item>@string/carbon_gesture_recents</item> 
-        <item>@string/carbon_gesture_power</item> 
-        <item>@string/carbon_gesture_volume_down</item> 
-        <item>@string/carbon_gesture_volume_up</item> 
-        <item>@string/carbon_gesture_volume_mute</item> 
-        <item>@string/carbon_gesture_screenshot</item> 
-        <item>@string/carbon_gesture_media_play_pause</item> 
-        <item>@string/carbon_gesture_media_skip</item> 
-        <item>@string/carbon_gesture_media_previous</item> 
-        <item>@string/carbon_gesture_customapp</item> 
-    </string-array> 
+    <string-array name="carbon_gestures_button_entries" translatable="false">
+        <item>@string/carbon_gesture_disabled</item>
+        <item>@string/carbon_gesture_back</item>
+        <item>@string/carbon_gesture_home</item>
+        <item>@string/carbon_gesture_recents</item>
+        <item>@string/carbon_gesture_power</item>
+        <item>@string/carbon_gesture_volume_down</item>
+        <item>@string/carbon_gesture_volume_up</item>
+        <item>@string/carbon_gesture_volume_mute</item>
+        <item>@string/carbon_gesture_screenshot</item>
+        <item>@string/carbon_gesture_media_play_pause</item>
+        <item>@string/carbon_gesture_media_skip</item>
+        <item>@string/carbon_gesture_media_previous</item>
+        <item>@string/carbon_gesture_customapp</item>
+    </string-array>
  
-    <string-array name="carbon_gestures_button_values" translatable="false"> 
-        <item>0</item> 
-        <item>4</item> 
-        <item>3</item> 
-        <item>187</item> 
-        <item>26</item> 
-        <item>25</item> 
-        <item>24</item> 
-        <item>164</item> 
-        <item>1000</item> 
-        <item>85</item> 
-        <item>87</item> 
-        <item>88</item> 
-        <item>1001</item> 
-    </string-array> 
+    <string-array name="carbon_gestures_button_values" translatable="false">
+        <item>0</item>
+        <item>4</item>
+        <item>3</item>
+        <item>187</item>
+        <item>26</item>
+        <item>25</item>
+        <item>24</item>
+        <item>164</item>
+        <item>1000</item>
+        <item>85</item>
+        <item>87</item>
+        <item>88</item>
+        <item>1001</item>
+    </string-array>
 
     <!-- Pie and Oreo recents -->
     <string-array name="recents_type_title_entries">
@@ -895,108 +881,108 @@
         <item>3</item>
     </string-array>
 
-      <!-- Recents Clear All Button Style --> 
-     <string-array name="recents_button_style" translatable="false"> 
-    <item>@string/button1</item> 
-    <item>@string/button2</item> 
-    <item>@string/button3</item> 
-    <item>@string/button4</item> 
-    <item>@string/button5</item> 
-    <item>@string/button6</item> 
-    <item>@string/button7</item> 
-    <item>@string/button8</item> 
-    <item>@string/button9</item> 
-    <item>@string/button10</item> 
-    <item>@string/button11</item> 
-    <item>@string/button12</item> 
-    <item>@string/button13</item> 
-    <item>@string/button14</item> 
-    <item>@string/button15</item> 
-    <item>@string/button16</item> 
-    <item>@string/button17</item> 
-    <item>@string/button18</item> 
-    <item>@string/button19</item> 
-    <item>@string/button20</item> 
-    <item>@string/button21</item> 
-    <item>@string/button22</item> 
-    <item>@string/button23</item> 
-    <item>@string/button24</item> 
-    <item>@string/button25</item> 
-    <item>@string/button26</item> 
-    <item>@string/button27</item> 
-    <item>@string/button28</item> 
-     </string-array> 
+    <!-- Recents Clear All Button Style -->
+    <string-array name="recents_button_style" translatable="false">
+        <item>@string/button1</item>
+        <item>@string/button2</item>
+        <item>@string/button3</item>
+        <item>@string/button4</item>
+        <item>@string/button5</item>
+        <item>@string/button6</item>
+        <item>@string/button7</item>
+        <item>@string/button8</item>
+        <item>@string/button9</item>
+        <item>@string/button10</item>
+        <item>@string/button11</item>
+        <item>@string/button12</item>
+        <item>@string/button13</item>
+        <item>@string/button14</item>
+        <item>@string/button15</item>
+        <item>@string/button16</item>
+        <item>@string/button17</item>
+        <item>@string/button18</item>
+        <item>@string/button19</item>
+        <item>@string/button20</item>
+        <item>@string/button21</item>
+        <item>@string/button22</item>
+        <item>@string/button23</item>
+        <item>@string/button24</item>
+        <item>@string/button25</item>
+        <item>@string/button26</item>
+        <item>@string/button27</item>
+        <item>@string/button28</item>
+    </string-array>
   
-     <string-array name="recents_button_style_values" translatable="false"> 
-    <item>0</item> 
-    <item>1</item> 
-    <item>2</item> 
-    <item>3</item> 
-    <item>4</item> 
-    <item>5</item> 
-    <item>6</item> 
-    <item>7</item> 
-    <item>8</item> 
-    <item>9</item> 
-    <item>10</item> 
-    <item>11</item> 
-    <item>12</item> 
-    <item>13</item> 
-    <item>14</item> 
-    <item>15</item> 
-    <item>16</item> 
-    <item>17</item> 
-    <item>18</item> 
-    <item>19</item> 
-    <item>20</item> 
-    <item>21</item> 
-    <item>22</item> 
-    <item>23</item> 
-    <item>24</item> 
-    <item>25</item> 
-    <item>26</item> 
-    <item>27</item> 
-    <item>28</item> 
-     </string-array> 
+    <string-array name="recents_button_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+    </string-array>
  
-    <!-- Recents Animations  --> 
-    <string-array name="fab_animation_style_entries"> 
-        <item>@string/animation0</item> 
-        <item>@string/animation1</item> 
-        <item>@string/animation2</item> 
-        <item>@string/animation3</item> 
-        <item>@string/animation4</item> 
-        <item>@string/animation5</item> 
-        <item>@string/animation6</item> 
-        <item>@string/animation7</item> 
-        <item>@string/animation8</item> 
-        <item>@string/animation9</item> 
-        <item>@string/animation10</item> 
-        <item>@string/animation11</item> 
-        <item>@string/animation12</item> 
-        <item>@string/animation13</item> 
-        <item>@string/animation14</item> 
-        <item>@string/animation15</item> 
-    </string-array> 
+    <!-- Recents Animations  -->
+    <string-array name="fab_animation_style_entries">
+        <item>@string/animation0</item>
+        <item>@string/animation1</item>
+        <item>@string/animation2</item>
+        <item>@string/animation3</item>
+        <item>@string/animation4</item>
+        <item>@string/animation5</item>
+        <item>@string/animation6</item>
+        <item>@string/animation7</item>
+        <item>@string/animation8</item>
+        <item>@string/animation9</item>
+        <item>@string/animation10</item>
+        <item>@string/animation11</item>
+        <item>@string/animation12</item>
+        <item>@string/animation13</item>
+        <item>@string/animation14</item>
+        <item>@string/animation15</item>
+    </string-array>
  
-    <string-array name="fab_animation_style_values" translatable="false"> 
-    <item>0</item> 
-    <item>1</item> 
-    <item>2</item> 
-    <item>3</item> 
-    <item>4</item> 
-    <item>5</item> 
-    <item>6</item> 
-    <item>7</item> 
-    <item>8</item> 
-    <item>9</item> 
-    <item>10</item> 
-    <item>11</item> 
-    <item>12</item> 
-    <item>13</item> 
-    <item>14</item> 
-    <item>15</item> 
-    </string-array> 
+    <string-array name="fab_animation_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
 
     <!-- QS tile styles -->
     <string-array name="qs_selector_entries" translatable="false">
@@ -1269,23 +1255,23 @@
         <item>250</item>
     </string-array>
     <string-array name="edge_gestures_feedback_time_labels">
-        <item>0 ms</item>
-        <item>50 ms</item>
-        <item>100 ms</item>
-        <item>150 ms</item>
-        <item>200 ms</item>
-        <item>250 ms</item>
+        <item>0ms</item>
+        <item>50ms</item>
+        <item>100ms</item>
+        <item>150ms</item>
+        <item>200ms</item>
+        <item>250ms</item>
     </string-array>
 
     <string-array name="edge_gestures_long_press_time_labels">
-        <item>50 ms</item>
-        <item>100 ms</item>
-        <item>250 ms</item>
-        <item>500 ms</item>
-        <item>750 ms</item>
-        <item>1000 ms</item>
-        <item>1500 ms</item>
-        <item>2000 ms</item>
+        <item>50ms</item>
+        <item>100ms</item>
+        <item>250ms</item>
+        <item>500ms</item>
+        <item>750ms</item>
+        <item>1000ms</item>
+        <item>1500ms</item>
+        <item>2000ms</item>
     </string-array>
     <string-array name="edge_gestures_long_press_time" translatable="false">
         <item>50</item>
@@ -1306,7 +1292,7 @@
     <string-array name="edge_gestures_back_edges_labels">
         <item>Left</item>
         <item>Right</item>
-        <item>Both sides</item>
+        <item>Both</item>
     </string-array>
 
     <string-array name="custom_header_provider_entries" translatable="false">
@@ -1318,7 +1304,7 @@
         <item>@string/file_header_provider</item>
     </string-array>
 
-    <!-- PIE --> 
+    <!-- PIE -->
     <string-array name="pie_theme_mode_entries">
         <item>@string/pie_auto</item>
         <item>@string/pie_white</item>
@@ -1328,7 +1314,7 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
-    </string-array> 
+    </string-array>
 
     <string-array name="pie_battery_mode_entries">
         <item>@string/pie_battery_text</item>

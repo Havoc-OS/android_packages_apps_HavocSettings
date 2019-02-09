@@ -77,6 +77,7 @@ public class TimeInState extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+        getActivity().getActionBar().setTitle(R.string.time_in_state_title);
         boolean statsInMsecs = getResources().getBoolean(R.bool.config_cpufreq_msecs);
 
         mShowCpus = new ArrayList<Integer>();

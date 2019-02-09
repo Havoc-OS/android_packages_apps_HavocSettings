@@ -21,16 +21,19 @@
     <PreferenceCategory
         android:key="notification_lights"
         android:title="@string/notification_lights">
-		
-        <Preference
-            android:key="charging_light"
-            android:fragment="com.havoc.settings.BatteryLightSettings"
-            android:title="@string/battery_light_settings" />
+
+        <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="battery_light_enabled"
+            android:fragment="com.havoc.settings.fragments.BatteryLightSettings"
+            android:title="@string/battery_light_settings"
+            android:summary="@string/battery_light_settings_summary"
+            android:defaultValue="true" />
 
         <Preference
             android:key="notification_light"
             android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:title="@string/notification_light_settings" >
+            android:title="@string/notification_light_settings"
+            android:summary="@string/notification_light_settings_summary" >
             <extra
                 android:name="classname"
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
@@ -41,6 +44,26 @@
             android:title="@string/flashlight_on_call_title"
             android:entries="@array/flashlight_on_call_entries"
             android:entryValues="@array/flashlight_on_call_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_stat"
+        android:title="@string/notification_stat">
+
+        <com.havoc.support.preferences.GlobalSettingMasterSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:fragment="com.havoc.settings.fragments.HeadsUpSettings"
+            android:title="@string/heads_up_notifications"
+            android:summary="@string/heads_up_notifications_summary"
+            android:defaultValue="true" />
+
+        <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_show_ticker"
+            android:fragment="com.havoc.settings.fragments.TickerSettings"
+            android:title="@string/status_bar_show_ticker_title"
+            android:summary="@string/status_bar_show_ticker_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
@@ -59,53 +82,6 @@
             android:title="@string/disable_immersive_message_title"
             android:summary="@string/disable_immersive_message_summary"
             android:defaultValue="false" />
-    
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="notification_heads"
-        android:title="@string/notification_heads">
-
-        <Preference
-            android:key="heads_up_notifications"
-            android:title="@string/heads_up_notifications"
-            android:summary="@string/heads_up_notifications_summary"
-            android:fragment="com.havoc.settings.fragments.HeadsUpSettings" />
-
-	    <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="less_boring_heads_up"
-            android:title="@string/less_boring_heads_up_title"
-            android:summary="@string/less_boring_heads_up_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="statusbar_ticker"
-        android:title="@string/statusbar_ticker">
-
-        <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="status_bar_show_ticker"
-            android:title="@string/status_bar_show_ticker_title"
-            android:summary="@string/status_bar_show_ticker_summary"
-            android:defaultValue="false" />
-
-        <com.havoc.support.preferences.SystemSettingListPreference
-            android:key="status_bar_ticker_animation_mode"
-            android:title="@string/ticker_animation_mode_title"
-            android:entries="@array/ticker_animation_mode_entries"
-            android:entryValues="@array/ticker_animation_mode_values"
-            android:defaultValue="0"
-            android:dependency="status_bar_show_ticker" />
-
-        <com.havoc.support.preferences.CustomSeekBarPreference
-            android:key="status_bar_ticker_tick_duration"
-            android:title="@string/ticker_tick_duration_title"
-            android:min="500"
-            android:max="10000"
-            android:defaultValue="3000"
-            settings:interval="100"
-            android:dependency="status_bar_show_ticker" />
 
     </PreferenceCategory>
 
@@ -162,5 +138,4 @@
             android:title="@string/incall_notifications_vibrate" 
             android:defaultValue="false" /> 
     </PreferenceCategory>
-			
 </PreferenceScreen>

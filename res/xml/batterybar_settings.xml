@@ -41,19 +41,19 @@
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_bar_color"
             android:title="@string/battery_bar_color"
-            android:defaultValue="0xffffffff"
-            android:dialogTitle="@string/battery_bar_color" />
-
-        <com.havoc.support.colorpicker.ColorPickerPreference
-            android:key="battery_bar_charging_color"
-            android:title="@string/battery_bar_charging_color"
-            android:defaultValue="0xFF00FF00"
+            settings:defaultColorValue="0xFFFFFFFF"
             android:dialogTitle="@string/battery_bar_color" />
 
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_bar_battery_low_color_warning"
             android:title="@string/battery_bar_battery_low_color"
-            android:defaultValue="0xFFFF6600"
+            settings:defaultColorValue="0xFFFF6600"
+            android:dialogTitle="@string/battery_bar_color" />
+
+        <com.havoc.support.colorpicker.ColorPickerPreference
+            android:key="battery_bar_charging_color"
+            android:title="@string/battery_bar_charging_color"
+            settings:defaultColorValue="0xFF00FF00"
             android:dialogTitle="@string/battery_bar_color" />
 
         <SwitchPreference
@@ -69,13 +69,15 @@
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_bar_low_color"
             android:title="@string/battery_bar_low_color"
-            android:defaultValue="0xffff4444"
-            android:dialogTitle="@string/battery_bar_color" />
+            settings:defaultColorValue="0xFFFF4444"
+            android:dialogTitle="@string/battery_bar_color"
+            android:dependency="battery_bar_use_gradient_color" />
 
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_bar_high_color"
             android:title="@string/battery_bar_high_color"
-            android:defaultValue="0xff99CC00"
-            android:dialogTitle="@string/battery_bar_color" />
+            settings:defaultColorValue="0xFF99CC00"
+            android:dialogTitle="@string/battery_bar_color"
+            android:dependency="battery_bar_use_gradient_color" />
 
 </PreferenceScreen>

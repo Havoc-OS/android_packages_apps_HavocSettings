@@ -13,14 +13,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <com.havoc.support.preferences.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled"
-            android:defaultValue="true" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/heads_up_notifications">
 
     <ListPreference
         android:key="heads_up_time_out"
@@ -36,10 +30,15 @@
         android:entryValues="@array/heads_up_snooze_values"
         android:persistent="false" />
 
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
+        android:key="less_boring_heads_up"
+        android:title="@string/less_boring_heads_up_title"
+        android:summary="@string/less_boring_heads_up_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
             android:title="@string/heads_up_stoplist_title"
-            android:key="stoplist_applications"
-            android:dependency="heads_up_notifications_enabled" >
+            android:key="stoplist_applications" >
         <Preference
             android:key="add_stoplist_packages"
             android:icon="@drawable/ic_menu_add"
@@ -49,8 +48,7 @@
 
     <PreferenceCategory
             android:title="@string/heads_up_blacklist_title"
-            android:key="blacklist_applications"
-            android:dependency="heads_up_notifications_enabled" >
+            android:key="blacklist_applications" >
         <Preference
             android:key="add_blacklist_packages"
             android:icon="@drawable/ic_menu_add"

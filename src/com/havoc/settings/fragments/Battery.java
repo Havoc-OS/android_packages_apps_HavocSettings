@@ -16,9 +16,11 @@
 package com.havoc.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -30,16 +32,49 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
+import com.havoc.support.preferences.SecureSettingMasterSwitchPreference;
 
-public class Battery extends SettingsPreferenceFragment {
+public class Battery extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener {
 
     public static final String TAG = "Battery";
+    private static final String SCREEN_STATE_TOGGLES_ENABLE = "screen_state_toggles_enable_key";
+
+    private SecureSettingMasterSwitchPreference mEnableScreenStateToggles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_battery);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mEnableScreenStateToggles = (SecureSettingMasterSwitchPreference) findPreference(SCREEN_STATE_TOGGLES_ENABLE);
+        int enabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
+        mEnableScreenStateToggles.setChecked(enabled != 0);
+        mEnableScreenStateToggles.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mEnableScreenStateToggles) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver,
+                    Settings.Secure.START_SCREEN_STATE_SERVICE, value ? 1 : 0, UserHandle.USER_CURRENT);
+            Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.havoc.screenstate.ScreenStateService");
+            if (value) {
+                getActivity().stopService(service);
+                getActivity().startService(service);
+            } else {
+                getActivity().stopService(service);
+            }
+            return true;
+        }
+        return false;
     }
 
     @Override

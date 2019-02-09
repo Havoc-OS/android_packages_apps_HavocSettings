@@ -39,24 +39,22 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.support.preferences.SecureSettingSwitchPreference;
 import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.support.preferences.SystemSettingSwitchPreference;
+import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
 
 public class Display extends SettingsPreferenceFragment implements 
         Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Display";
 
-    private static final String SMART_PIXELS = "smart_pixels";
-    private static final String ON_POWER_SAVE = "smart_pixels_on_power_save";
+    private static final String SMART_PIXELS_ENABLED = "smart_pixels_enable";
+    private static final String STABILIZATION_ENABLE = "stabilization_enable";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
-    private PreferenceCategory mSmartPixelsCategory; 
-    private SystemSettingSwitchPreference mSmartPixelsOnPowerSave;
-    private ListPreference mVelocityFriction;
-    private ListPreference mPositionFriction;
-    private ListPreference mVelocityAmplitude;
+    private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
+    private SystemSettingMasterSwitchPreference mStabilizationEnabled;
     private SecureSettingSwitchPreference mRoundedFwvals;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
@@ -68,39 +66,23 @@ public class Display extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_display);
+        resolver = getActivity().getContentResolver();
 
-        resolver = getActivity().getContentResolver(); 
+        mSmartPixelsEnabled = (SystemSettingMasterSwitchPreference) findPreference(SMART_PIXELS_ENABLED);
+        mSmartPixelsEnabled.setOnPreferenceChangeListener(this);
+        int smartPixelsEnabled = Settings.System.getInt(getContentResolver(),
+                SMART_PIXELS_ENABLED, 0);
+        mSmartPixelsEnabled.setChecked(smartPixelsEnabled != 0);
 
-        float velFriction = Settings.System.getFloatForUser(resolver,
-                    Settings.System.STABILIZATION_VELOCITY_FRICTION,
-                    0.1f,
-                    UserHandle.USER_CURRENT);
-        mVelocityFriction = (ListPreference) findPreference("stabilization_velocity_friction");
-    	mVelocityFriction.setValue(Float.toString(velFriction));
-    	mVelocityFriction.setSummary(mVelocityFriction.getEntry());
-    	mVelocityFriction.setOnPreferenceChangeListener(this);
-    	
-    	float posFriction = Settings.System.getFloatForUser(resolver,
-                    Settings.System.STABILIZATION_POSITION_FRICTION,
-                    0.1f,
-                    UserHandle.USER_CURRENT);
-        mPositionFriction = (ListPreference) findPreference("stabilization_position_friction");
-    	mPositionFriction.setValue(Float.toString(posFriction));
-    	mPositionFriction.setSummary(mPositionFriction.getEntry());
-    	mPositionFriction.setOnPreferenceChangeListener(this);
-    
-    	int velAmplitude = Settings.System.getIntForUser(resolver,
-                    Settings.System.STABILIZATION_VELOCITY_AMPLITUDE,
-                    8000,
-                    UserHandle.USER_CURRENT);
-        mVelocityAmplitude = (ListPreference) findPreference("stabilization_velocity_amplitude");
-    	mVelocityAmplitude.setValue(Integer.toString(velAmplitude));
-    	mVelocityAmplitude.setSummary(mVelocityAmplitude.getEntry());
-    	mVelocityAmplitude.setOnPreferenceChangeListener(this);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
+            getPreferenceScreen().removePreference(mSmartPixelsEnabled);
+        }
 
-        mSmartPixelsOnPowerSave = (SystemSettingSwitchPreference) findPreference(ON_POWER_SAVE);
-        updateSmartPixelsPreference();
-        updateDependency();
+        mStabilizationEnabled = (SystemSettingMasterSwitchPreference) findPreference(STABILIZATION_ENABLE);
+        mStabilizationEnabled.setOnPreferenceChangeListener(this);
+        int stabilizationEnabled = Settings.System.getInt(getContentResolver(),
+                STABILIZATION_ENABLE, 0);
+        mStabilizationEnabled.setChecked(stabilizationEnabled != 0);
 
         Resources res = null;
         Context ctx = getContext();
@@ -140,23 +122,8 @@ public class Display extends SettingsPreferenceFragment implements
         }
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) { 
-        final String key = preference.getKey(); 
-        final String setting = getSystemPreferenceString(preference);
-        if (preference != null && preference instanceof ListPreference) {
-               ListPreference listPref = (ListPreference) preference;
-               String value = (String) objValue;
-               int index = listPref.findIndexOfValue(value);
-               listPref.setSummary(listPref.getEntries()[index]);
-    	    listPref.setValue(value);
-    	    if(preference != mVelocityAmplitude){
-    		Settings.System.putFloatForUser(getContentResolver(), setting, Float.valueOf(value),
-    			UserHandle.USER_CURRENT);
-    	    }else {
-    		Settings.System.putIntForUser(getContentResolver(), setting, Integer.valueOf(value),
-    			UserHandle.USER_CURRENT);
-    	    }
-    	} else if (preference == mCornerRadius) {
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mCornerRadius) {
             Settings.Secure.putInt(getContext().getContentResolver(),Settings.Secure.SYSUI_ROUNDED_SIZE,
                     ((int) objValue) * 1);
         } else if (preference == mContentPadding) {
@@ -164,45 +131,16 @@ public class Display extends SettingsPreferenceFragment implements
                     ((int) objValue) * 1);
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
+        } else if (preference == mSmartPixelsEnabled) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+		            SMART_PIXELS_ENABLED, value ? 1 : 0);
+        } else if (preference == mStabilizationEnabled) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+		            STABILIZATION_ENABLE, value ? 1 : 0);
         }
-        updateDependency();
         return true; 
-    }
-
-    private String getSystemPreferenceString(Preference preference) {
-        if (preference == null) {
-                return "";
-        } else if(preference == mVelocityFriction){
-            return Settings.System.STABILIZATION_VELOCITY_FRICTION;
-        } else if(preference == mPositionFriction){
-            return Settings.System.STABILIZATION_POSITION_FRICTION;
-        } else if(preference == mVelocityAmplitude){
-            return Settings.System.STABILIZATION_VELOCITY_AMPLITUDE;
-        }  
-        return "";
-    }
-
-    private void updateSmartPixelsPreference() {
-        PreferenceScreen prefSet = getPreferenceScreen();
-        boolean enableSmartPixels = getContext().getResources().
-                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
-        mSmartPixelsCategory = (PreferenceCategory) prefSet.findPreference(SMART_PIXELS);
-
-        if (!enableSmartPixels){
-            prefSet.removePreference(mSmartPixelsCategory);
-        }
-    }
-
-    private void updateDependency() {
-        boolean mUseOnPowerSave = (Settings.System.getIntForUser(
-                resolver, Settings.System.SMART_PIXELS_ON_POWER_SAVE,
-                0, UserHandle.USER_CURRENT) == 1);
-        PowerManager pm = (PowerManager)getActivity().getSystemService(Context.POWER_SERVICE);
-        if (pm.isPowerSaveMode() && mUseOnPowerSave) {
-            mSmartPixelsOnPowerSave.setEnabled(false);
-        } else {
-            mSmartPixelsOnPowerSave.setEnabled(true);
-        }
     }
 
     private void restoreCorners() {

@@ -35,8 +35,8 @@
     <string name="shortcut_picker_icon_type_custom_title">Gallery</string>
 
     <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Mid-screen shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">Customize custom lock screen shortcuts</string>
     <string name="lockscreen_shorcuts_launch_type_title">Shortcut click type</string>
     <string name="lockscreen_shortcuts_single_tap">Click</string>
     <string name="lockscreen_shortcuts_double_tap">Double tap</string>

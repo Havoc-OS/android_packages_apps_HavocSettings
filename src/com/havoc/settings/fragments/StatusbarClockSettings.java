@@ -51,7 +51,6 @@ import java.util.Date;
 public class StatusbarClockSettings extends SettingsPreferenceFragment implements
 	OnPreferenceChangeListener {
 
-    private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
     private static final String STATUS_BAR_CLOCK_STYLE = "statusbar_clock_style";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
@@ -65,9 +64,8 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
     private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
-    static final int DEFAULT_STATUS_CLOCK_COLOR = 0xffffffff;
+    static final int DEFAULT_STATUS_CLOCK_COLOR = 0xFFFFFFFF;
 
-    private SystemSettingSwitchPreference mStatusBarClockShow;
     private SystemSettingSwitchPreference mStatusBarSecondsShow;
     private ListPreference mStatusBarClock;
     private ListPreference mStatusBarAmPm;
@@ -91,18 +89,12 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         int intColor;
         String hexColor;
 
-	// clock settings
-        mStatusBarClockShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK);
         mStatusBarSecondsShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
         mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
         mClockDateDisplay = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
         mClockDateStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_STYLE);
         mClockDatePosition = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_POSITION);
-
-        mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CLOCK, 1) == 1));
-        mStatusBarClockShow.setOnPreferenceChangeListener(this);
 
         mStatusBarSecondsShow.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK_SECONDS, 0) == 1));
@@ -118,8 +110,12 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         mClockColor.setOnPreferenceChangeListener(this);
         intColor = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mClockColor.setSummary(hexColor);
+        hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
+        if (hexColor.equals("#ffffffff")) {
+            mClockColor.setSummary(R.string.default_string);
+        } else {
+            mClockColor.setSummary(hexColor);
+        }
         mClockColor.setNewPreviewColor(intColor);
 
         mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
@@ -202,12 +198,7 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         AlertDialog dialog;
 	    ContentResolver resolver = getActivity().getContentResolver();
 
-        if (preference == mStatusBarClockShow) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarSecondsShow) {
+        if (preference == mStatusBarSecondsShow) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK_SECONDS, value ? 1 : 0);
@@ -227,13 +218,17 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
             mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
             return true;
         } else if (preference == mClockColor) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
                 preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(resolver,
-                        Settings.System.STATUS_BAR_CLOCK_COLOR, intHex);
-                return true;
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_COLOR, intHex);
+            return true;
         }  else if (preference == mClockSize) {
             int width = ((Integer)newValue).intValue();
             Settings.System.putInt(resolver,

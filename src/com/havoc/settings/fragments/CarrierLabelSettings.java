@@ -65,7 +65,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
     private static final String CARRIER_FONT_STYLE  = "status_bar_carrier_font_style";
 
-    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xFFFFFFFF;
 
     private PreferenceScreen mCustomCarrierLabel;
     private String mCustomCarrierLabelText;
@@ -91,8 +91,12 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
         mCarrierColorPicker.setOnPreferenceChangeListener(this);
         intColor = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mCarrierColorPicker.setSummary(hexColor);
+        hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
+        if (hexColor.equals("#ffffffff")) {
+            mCarrierColorPicker.setSummary(R.string.default_string);
+        } else {
+            mCarrierColorPicker.setSummary(hexColor);
+        }
         mCarrierColorPicker.setNewPreviewColor(intColor);
 
         mStatusBarCarrierSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
@@ -128,8 +132,12 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mCarrierColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(
-            Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
@@ -184,5 +192,3 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
         }
     }
 }
-
-

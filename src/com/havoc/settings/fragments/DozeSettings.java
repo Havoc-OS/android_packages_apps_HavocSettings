@@ -120,6 +120,7 @@ public class DozeSettings extends SettingsPreferenceFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup root,
             Bundle savedInstanceState) {
         super.onCreateView(inflater, root, savedInstanceState);
+        getActivity().getActionBar().setTitle(R.string.doze_settings_title);
 
         mShowAdvanced = getPrefs().getBoolean(KEY_SHOW_ADVANCED, false);
         View view = inflater.inflate(R.layout.doze_settings, root, false);

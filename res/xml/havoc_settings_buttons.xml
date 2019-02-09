@@ -78,6 +78,12 @@
             android:summary="@string/powermenu_summary"
             android:fragment="com.havoc.settings.fragments.PowerMenu" />
 
+        <SwitchPreference
+            android:key="power_end_call"
+            android:title="@string/power_end_call_title"
+            android:summary="@string/power_end_call_summary"
+            android:persistent="false"/>
+
         <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="torch_long_press_power_gesture"
             android:title="@string/torch_long_press_power_gesture_title"
@@ -98,7 +104,7 @@
 
     <PreferenceCategory
         android:key="vol_key"
-        android:title="@string/volume_key_title" >
+        android:title="@string/hardware_keys_volume_keys_title" >
 
         <Preference
             android:key="volume_key"

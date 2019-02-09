@@ -19,51 +19,39 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:key="battery_sensor"
-        android:title="@string/battery_sensor">
-
-    <com.havoc.support.preferences.SystemSettingSwitchPreference 
-        android:key="sensor_block" 
-        android:title="@string/sensor_block_title" 
-        android:summary="@string/sensor_block_summary" 
-        android:defaultValue="false" /> 
-
-    </PreferenceCategory>
-
-  <PreferenceCategory
         android:key="battery_wakelock"
         android:title="@string/battery_wakelock">
 
-    <Preference 
-        android:key="alarm_blocker" 
-        android:fragment="com.havoc.settings.fragments.AlarmBlocker" 
-        android:title="@string/alarm_blocker_title" 
-        android:summary="@string/alarm_blocker_summary" />
+        <com.havoc.support.preferences.SystemSettingSwitchPreference 
+            android:key="sensor_block" 
+            android:title="@string/sensor_block_title" 
+            android:summary="@string/sensor_block_summary" 
+            android:defaultValue="false" />
 
-    <Preference 
-        android:key="wakelock_blocker" 
-        android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
-        android:title="@string/wakelock_blocker_title" 
-        android:summary="@string/wakelock_blocker_summary" />
+        <Preference 
+            android:key="alarm_blocker" 
+            android:fragment="com.havoc.settings.fragments.AlarmBlocker" 
+            android:title="@string/alarm_blocker_title" 
+            android:summary="@string/alarm_blocker_summary" />
 
-    </PreferenceCategory>
-
-  <PreferenceCategory
-        android:key="battery_actions"
-        android:title="@string/battery_actions">
-
-     <!-- Suspend actions --> 
-    <Preference
-        android:key="screenstate_category" 
-        android:title="@string/screen_state_toggles_title"  
-        android:summary="@string/screen_state_toggles_summary"  
-        android:fragment="com.havoc.settings.fragments.ScreenStateToggles" /> 
+        <Preference 
+            android:key="wakelock_blocker" 
+            android:fragment="com.havoc.settings.fragments.WakeLockBlocker" 
+            android:title="@string/wakelock_blocker_title" 
+            android:summary="@string/wakelock_blocker_summary" />
 
     </PreferenceCategory>
 
-   <PreferenceCategory
+    <PreferenceCategory
         android:key="battery_actions"
         android:title="@string/advanced_doze_settings">
+
+        <com.havoc.support.preferences.SecureSettingMasterSwitchPreference
+            android:key="screen_state_toggles_enable_key"
+            android:fragment="com.havoc.settings.fragments.ScreenStateToggles"
+            android:title="@string/screen_state_toggles_title"
+            android:summary="@string/screen_state_toggles_summary"
+            android:defaultValue="false" />
 	
         <Preference 
             android:key="time_in_state" 

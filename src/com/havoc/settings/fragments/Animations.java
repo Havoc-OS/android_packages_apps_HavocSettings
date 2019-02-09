@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -49,7 +48,6 @@ import java.util.List;
 
 public class Animations extends SettingsPreferenceFragment  implements Preference.OnPreferenceChangeListener {
 
-    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String ANIMATION_DURATION = "animation_controls_duration";
     private static final String ACTIVITY_OPEN = "activity_open";
     private static final String ACTIVITY_CLOSE = "activity_close";
@@ -65,17 +63,12 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
-    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
-    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
-    private static final String SCROLLINGCACHE_DEFAULT = "1";
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
 
-    private ListPreference mScreenOffAnimation; 
     private ListPreference mToastAnimation;
-    private ListPreference mScrollingCachePref;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
     private ListPreference mTileAnimationStyle;
@@ -110,14 +103,6 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        // Screen Off Animations 
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION); 
-        int screenOffStyle = Settings.Global.getInt(resolver, 
-                 Settings.Global.SCREEN_OFF_ANIMATION, 0); 
-        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle)); 
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry()); 
-        mScreenOffAnimation.setOnPreferenceChangeListener(this); 
-
         // Toast animation
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
         int toastanimation = Settings.System.getInt(resolver,
@@ -141,13 +126,6 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setEnabled(listviewanimation > 0);
         mListViewInterpolator.setOnPreferenceChangeListener(this);
-
-        // Scrolling cache
-        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
-        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
-                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
-        mScrollingCachePref.setSummary(mScrollingCachePref.getEntry());
-        mScrollingCachePref.setOnPreferenceChangeListener(this);
 
         // QS animation
         mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
@@ -269,13 +247,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mScreenOffAnimation) { 
-            Settings.Global.putInt(getContentResolver(), 
-                    Settings.Global.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
-            int valueIndex = mScreenOffAnimation.findIndexOfValue((String) newValue); 
-            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]); 
-            return true;
-        } else if (preference == mToastAnimation) {
+        if (preference == mToastAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mToastAnimation.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
@@ -302,12 +274,6 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
             Settings.System.putInt(resolver,
                     Settings.System.LISTVIEW_INTERPOLATOR, value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
-            return true;
-        } else if (preference == mScrollingCachePref) {
-            String value = (String) newValue;
-            int index = mScrollingCachePref.findIndexOfValue(value);
-            SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, value);
-            mScrollingCachePref.setSummary(mScrollingCachePref.getEntries()[index]);
             return true;
         } else if (preference == mTileAnimationStyle) {
             int tileAnimationStyle = Integer.valueOf((String) newValue);
@@ -457,52 +423,6 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         int mNum = Settings.System.getInt(getActivity().getContentResolver(),
                     mString, 0);
         return mAnimationsStrings[mNum];
-    }
-
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putInt(resolver,
-                Settings.Global.SCREEN_OFF_ANIMATION, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.TOAST_ANIMATION, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.LISTVIEW_ANIMATION, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.LISTVIEW_INTERPOLATOR, 0);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
-        Settings.System.putInt(resolver,
-                Settings.Global.DISABLE_TRANSITION_ANIMATIONS, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ANIMATION_CONTROLS_DURATION, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[0], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[1], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[2], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[3], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[4], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[5], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[6], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[7], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[8], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[9], 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], 0);
-        Animations.reset(mContext);
-        SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
     }
 
     @Override

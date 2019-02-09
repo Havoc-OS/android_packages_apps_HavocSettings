@@ -35,23 +35,25 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManagerGlobal;
 
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.hwkeys.ActionUtils; 
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.support.preferences.CustomSeekBarPreference;
-import com.havoc.support.preferences.SystemSettingSwitchPreference;
-
-import com.android.internal.logging.nano.MetricsProto;
+import com.havoc.support.preferences.SecureSettingMasterSwitchPreference;
+import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
 
 public class Gestures extends SettingsPreferenceFragment implements
          OnPreferenceChangeListener {
 
     private static final String USE_BOTTOM_GESTURE_NAVIGATION = "use_bottom_gesture_navigation";
-    private static final String KEY_SWIPE_LENGTH = "gesture_swipe_length";
-    private static final String KEY_SWIPE_TIMEOUT = "gesture_swipe_timeout";
+    private static final String EDGE_GESTURES_ENABLED = "edge_gestures_enabled";
+    private static final String PIE_STATE = "pie_state";
 
-    private SystemSettingSwitchPreference mUseBottomGestureNavigation;
-    private CustomSeekBarPreference mSwipeTriggerLength;
-    private CustomSeekBarPreference mSwipeTriggerTimeout;
+    private SystemSettingMasterSwitchPreference mUseBottomGestureNavigation;
+    private SecureSettingMasterSwitchPreference mEdgeGesturesEnabled; 
+    private SecureSettingMasterSwitchPreference mPieGestureEnabled; 
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -60,24 +62,22 @@ public class Gestures extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        // use bottom gestures
-        mUseBottomGestureNavigation = (SystemSettingSwitchPreference) findPreference(USE_BOTTOM_GESTURE_NAVIGATION);
+        mUseBottomGestureNavigation = (SystemSettingMasterSwitchPreference) findPreference(USE_BOTTOM_GESTURE_NAVIGATION);
         mUseBottomGestureNavigation.setOnPreferenceChangeListener(this);
         int useBottomGestureNavigation = Settings.System.getInt(getContentResolver(),
                 USE_BOTTOM_GESTURE_NAVIGATION, 0);
         mUseBottomGestureNavigation.setChecked(useBottomGestureNavigation != 0);
 
-        mSwipeTriggerLength = (CustomSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
-        int triggerLength = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT,
-                getSwipeLengthInPixel(getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_min_length)));
-        mSwipeTriggerLength.setValue(triggerLength);
-        mSwipeTriggerLength.setOnPreferenceChangeListener(this);
+        mEdgeGesturesEnabled = (SecureSettingMasterSwitchPreference) findPreference(EDGE_GESTURES_ENABLED);
+        mEdgeGesturesEnabled.setChecked((Settings.Secure.getInt(resolver,
+                Settings.Secure.EDGE_GESTURES_ENABLED, 0) == 1));
+        mEdgeGesturesEnabled.setOnPreferenceChangeListener(this);
 
-        mSwipeTriggerTimeout = (CustomSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
-        int triggerTimeout = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT,
-                getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_timout));
-        mSwipeTriggerTimeout.setValue(triggerTimeout);
-        mSwipeTriggerTimeout.setOnPreferenceChangeListener(this);
+        mPieGestureEnabled = (SecureSettingMasterSwitchPreference) findPreference(PIE_STATE);
+        mPieGestureEnabled.setOnPreferenceChangeListener(this);
+        int usePieGestures = Settings.Secure.getInt(resolver, PIE_STATE, 0);
+        mPieGestureEnabled.setChecked(usePieGestures != 0);
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -87,22 +87,28 @@ public class Gestures extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
 		            USE_BOTTOM_GESTURE_NAVIGATION, value ? 1 : 0);
             return true;
-        } else if (preference == mSwipeTriggerLength) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT, value);
-            return true;
-        } else if (preference == mSwipeTriggerTimeout) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
+        } else if (preference == mEdgeGesturesEnabled) { 
+            int enabled = ((boolean) newValue) ? 1 : 0; 
+            Settings.Secure.putIntForUser(resolver,
+                    Settings.Secure.EDGE_GESTURES_ENABLED, enabled, UserHandle.USER_CURRENT); 
+            if (enabled == 1) { 
+                Settings.Secure.putInt(resolver, 
+                        Settings.Secure.NAVIGATION_BAR_VISIBLE, 
+                        0); 
+            } else { 
+                if (ActionUtils.hasNavbarByDefault(getPrefContext())) { 
+                    Settings.Secure.putInt(resolver, 
+                            Settings.Secure.NAVIGATION_BAR_VISIBLE, 
+                            1); 
+                } 
+            } 
+            return true; 
+        } else if (preference == mPieGestureEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(resolver, PIE_STATE, value ? 1 : 0);
             return true;
         }
         return false;
-    }
-
-    private int getSwipeLengthInPixel(int value) {
-        return Math.round(value * getResources().getDisplayMetrics().density);
     }
 
     @Override

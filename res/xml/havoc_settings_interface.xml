@@ -78,7 +78,8 @@
             android:title="@string/qs_panel_color_title"
             android:defaultValue="0xffffff"
             android:persistent="false"
-            android:dependency="qs_panel_bg_use_fw" />
+            android:dependency="qs_panel_bg_use_fw"
+            settings:defaultColorValue="0xFFFFFFFF" />
 
         <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="qs_panel_alpha"
@@ -86,8 +87,7 @@
             android:max="255"
             android:min="100"
             android:defaultValue="255"
-            android:persistent="false"
-            android:dependency="qs_panel_bg_use_fw" />
+            android:persistent="false" />
 
 	    <ListPreference
             android:key="qs_header_style"

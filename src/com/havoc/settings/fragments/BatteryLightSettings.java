@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.havoc.settings;
+package com.havoc.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -76,6 +76,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mLowColor = (ColorPickerPreference) findPreference("battery_light_low_color");
             mLowColor.setAlphaSliderEnabled(false);
             mLowColor.setNewPreviewColor(color);
+            String hexLowColor = String.format("#%08x", (0xFFFF0000 & color));
+            if (hexLowColor.equals("#ffff0000")) {
+                mLowColor.setSummary(R.string.default_string);
+            } else {
+                mLowColor.setSummary(hexLowColor);
+            }
             mLowColor.setOnPreferenceChangeListener(this);
 
             color = Settings.System.getIntForUser(getContentResolver(),
@@ -84,6 +90,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mMediumColor = (ColorPickerPreference) findPreference("battery_light_medium_color");
             mMediumColor.setAlphaSliderEnabled(false);
             mMediumColor.setNewPreviewColor(color);
+            String hexMediumColor = String.format("#%08x", (0xFFFFFF00 & color));
+            if (hexMediumColor.equals("#ffffff00")) {
+                mMediumColor.setSummary(R.string.default_string);
+            } else {
+                mMediumColor.setSummary(hexMediumColor);
+            }
             mMediumColor.setOnPreferenceChangeListener(this);
 
             color = Settings.System.getIntForUser(getContentResolver(),
@@ -92,6 +104,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mFullColor = (ColorPickerPreference) findPreference("battery_light_full_color");
             mFullColor.setAlphaSliderEnabled(false);
             mFullColor.setNewPreviewColor(color);
+            String hexFullColor = String.format("#%08x", (0xFFFFFF00 & color));
+            if (hexFullColor.equals("#ffffff00")) {
+                mFullColor.setSummary(R.string.default_string);
+            } else {
+                mFullColor.setSummary(hexFullColor);
+            }
             mFullColor.setOnPreferenceChangeListener(this);
 
             color = Settings.System.getIntForUser(getContentResolver(),
@@ -100,6 +118,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mReallyFullColor = (ColorPickerPreference) findPreference("battery_light_reallyfull_color");
             mReallyFullColor.setAlphaSliderEnabled(false);
             mReallyFullColor.setNewPreviewColor(color);
+            String hexReallyFullColor = String.format("#%08x", (0xFF00FF00 & color));
+            if (hexReallyFullColor.equals("#ff00ff00")) {
+                mReallyFullColor.setSummary(R.string.default_string);
+            } else {
+                mReallyFullColor.setSummary(hexReallyFullColor);
+            }
             mReallyFullColor.setOnPreferenceChangeListener(this);
 
             mBatteryBlend = (SystemSettingSwitchPreference) findPreference(Settings.System.BATTERY_LIGHT_BLEND);
@@ -120,6 +144,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mFastColor = (ColorPickerPreference) findPreference("fast_battery_light_color");
             mFastColor.setAlphaSliderEnabled(false);
             mFastColor.setNewPreviewColor(color);
+            String hexFastColor = String.format("#%08x", (0xFF0000FF & color));
+            if (hexFastColor.equals("#ff0000ff")) {
+                mFastColor.setSummary(R.string.default_string);
+            } else {
+                mFastColor.setSummary(hexFastColor);
+            }
             mFastColor.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(mFastColorCategory);
@@ -131,27 +161,61 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference.equals(mLowColor)) {
-            int color = ((Integer) newValue).intValue();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffff0000")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int color = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_LOW_COLOR, color,
                     UserHandle.USER_CURRENT);
             return true;
         } else if (preference.equals(mMediumColor)) {
-            int color = ((Integer) newValue).intValue();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffffff00")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int color = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_MEDIUM_COLOR, color,
                     UserHandle.USER_CURRENT);
             return true;
         } else if (preference.equals(mFullColor)) {
-            int color = ((Integer) newValue).intValue();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffffff00")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int color = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_FULL_COLOR, color,
                     UserHandle.USER_CURRENT);
             return true;
         } else if (preference.equals(mReallyFullColor)) {
-            int color = ((Integer) newValue).intValue();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff00ff00")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int color = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_REALLYFULL_COLOR, color,
                     UserHandle.USER_CURRENT);
@@ -171,7 +235,14 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mFastChargeEnable.setChecked(value);
             return true;
         } else if (preference.equals(mFastColor)) {
-            int color = ((Integer) newValue).intValue();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff0000ff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int color = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.FAST_BATTERY_LIGHT_COLOR, color,
                     UserHandle.USER_CURRENT);

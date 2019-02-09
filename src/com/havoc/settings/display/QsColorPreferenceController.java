@@ -24,6 +24,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
 
+import com.android.settings.R;
 import com.android.settingslib.core.AbstractPreferenceController;
 
 import com.havoc.support.colorpicker.ColorPickerPreference;
@@ -57,15 +58,17 @@ public class QsColorPreferenceController extends AbstractPreferenceController im
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        int intColor;
-        String hexColor;
 
         mQsPanelColor = (ColorPickerPreference) screen.findPreference(QS_PANEL_COLOR);
         mQsPanelColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getIntForUser(mContext.getContentResolver(),
+        int intColor = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.QS_PANEL_BG_COLOR, DEFAULT_QS_PANEL_COLOR, UserHandle.USER_CURRENT);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mQsPanelColor.setSummary(hexColor);
+        String hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
+        if (hexColor.equals("#ffffffff")) {
+            mQsPanelColor.setSummary(R.string.default_string);
+        } else {
+            mQsPanelColor.setSummary(hexColor);
+        }
         mQsPanelColor.setNewPreviewColor(intColor);
     }
 
@@ -74,7 +77,11 @@ public class QsColorPreferenceController extends AbstractPreferenceController im
         if (preference == mQsPanelColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.QS_PANEL_BG_COLOR, intHex, UserHandle.USER_CURRENT);

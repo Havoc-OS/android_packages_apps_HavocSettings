@@ -135,7 +135,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory 
-         android:title="@string/power_menu_animation_title"
+         android:title="@string/power_menu_category"
          android:key="power_animation">
 
      <ListPreference
@@ -150,15 +150,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory 
-        android:title="@string/misc_animation_title"
-        android:key="misc_animation"  >
-          
-        <ListPreference 
-            android:key="screen_off_animation" 
-            android:title="@string/screen_off_animation_title" 
-            android:entries="@array/screen_off_animation_entries" 
-            android:entryValues="@array/screen_off_animation_values"
-            android:defaultValue="0" />
+        android:title="@string/toast_animation_cat_title"
+        android:key="toast_animation_cat" >
 
         <ListPreference
             android:key="toast_animation"
@@ -166,14 +159,6 @@
             android:entries="@array/toast_animation_entries"
             android:entryValues="@array/toast_animation_values"
             android:persistent="false" />
-
-	    <ListPreference
-            android:key="pref_scrollingcache"
-            android:dialogTitle="@string/pref_scrollingcache_title"
-            android:title="@string/pref_scrollingcache_title"
-            android:summary="@string/pref_scrollingcache_summary"
-            android:entries="@array/entries_scrollingcache"
-            android:entryValues="@array/values_scrollingcache" />
 
     </PreferenceCategory>
 

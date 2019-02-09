@@ -136,17 +136,17 @@
 	        android:summary="@string/tuner_show_drag_handle_summary"
 	        android:defaultValue="true" />
 
-        <com.havoc.support.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_secure"
-            android:title="@string/qs_footer_warnings_title"
-            android:summary="@string/qs_footer_warnings_summary"
-            android:defaultValue="true" />
-
     </PreferenceCategory>
 
     <PreferenceCategory 
         android:title="@string/footer_title"
         android:key="footer" >
+
+        <com.havoc.support.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_secure"
+            android:title="@string/qs_footer_warnings_title"
+            android:summary="@string/qs_footer_warnings_summary"
+            android:defaultValue="true" />
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_show_settings"

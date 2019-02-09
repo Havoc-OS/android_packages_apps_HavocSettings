@@ -15,26 +15,25 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="battery_light_enabled"
-        android:title="@string/battery_light_enable"
-        android:defaultValue="true" />
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+	    android:title="@string/battery_light_settings">
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="battery_light_allow_on_dnd"
         android:title="@string/battery_light_allow_on_dnd_title"
+        android:summary="@string/battery_light_allow_on_dnd_summary"
         android:defaultValue="false" />
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="battery_light_low_blinking"
         android:title="@string/battery_light_low_blinking_title"
+        android:summary="@string/battery_light_low_blinking_summary"
         android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="battery_light_cat"
         android:title="@string/battery_light_cat">
+
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="battery_light_low_color"
             android:title="@string/battery_light_low_color"
@@ -58,11 +57,6 @@
             android:title="@string/battery_light_reallyfull_color"
             ledPreview="true"
             settings:defaultColorValue="0xFF00FF00" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="blend_category"
-	    android:title="@string/battery_light_blend_category">
 		
         <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="battery_light_blend"
@@ -97,6 +91,7 @@
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="fast_battery_light_color"
             ledPreview="true"
+            settings:defaultColorValue="0xFF0000FF"
             android:title="@string/fast_charging_light_color_title"
             android:summary="@string/fast_charging_light_color_summary"
             android:dependency="fast_charging_led_enabled"

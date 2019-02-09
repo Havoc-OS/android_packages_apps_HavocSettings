@@ -24,20 +24,13 @@
         android:summary="@string/volume_panel_on_left_summary"
         android:defaultValue="false" />
 
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="volume_keys_control_ring_tone"
-        android:title="@string/volume_keys_control_ring_tone_title"
-        android:summary="@string/volume_keys_control_ring_tone_summary"
-        android:defaultValue="false" />
-
-    <com.havoc.support.preferences.CustomSeekBarPreference
+    <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="volume_dialog_timeout"
         android:title="@string/volume_dialog_timeout_title"
-        android:min="500"
-        android:max="10000"
-        android:defaultValue="3000"
-        settings:interval="100"
-        settings:units="ms" />
+        android:min="1"
+        android:max="10"
+        android:defaultValue="3"
+        settings:units="sec" />
 
     <Preference
         android:key="volume_steps"
@@ -58,7 +51,13 @@
         android:title="@string/swap_volume_buttons_title"
         android:summary="@string/swap_volume_buttons_summary"
         android:defaultValue="false" />
-		
+
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
+        android:key="volume_keys_control_ring_tone"
+        android:title="@string/volume_keys_control_ring_tone_title"
+        android:summary="@string/volume_keys_control_ring_tone_summary"
+        android:defaultValue="false" />
+
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="volume_button_music_control"
         android:summary="@string/volume_rocker_music_controls_summary"
