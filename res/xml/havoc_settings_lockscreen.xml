@@ -113,19 +113,19 @@
         android:title="@string/ls_disable_elements">
 		
         <com.havoc.support.preferences.SecureSettingSwitchPreference
-            android:key="status_bar_locked_on_secure_keyguard"
+            android:key="status_bar_on_secure_keyguard"
             android:title="@string/block_on_secure_keyguard_title"
             android:summary="@string/block_on_secure_keyguard_summary"
-            android:defaultValue="false"/>
+            android:defaultValue="true"/>
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="hide_lockscreen_status_bar"
+            android:key="show_lockscreen_status_bar"
             android:title="@string/lockscreen_hide_status_bar_title"
             android:summary="@string/lockscreen_hide_status_bar_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference 
-            android:key="hide_lockscreen_indicator_display" 
+            android:key="show_lockscreen_indicator_display" 
             android:title="@string/hide_lockscreen_indicator_display_title" 
             android:summary="@string/hide_lockscreen_indicator_display_summary" 
             android:defaultValue="false" /> 
@@ -135,19 +135,19 @@
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true"
-            android:dependency="hide_lockscreen_indicator_display" />
+            android:dependency="show_lockscreen_indicator_display" />
     
         <com.havoc.support.preferences.SecureSettingSwitchPreference 
-            android:key="hide_lock_shortcuts" 
+            android:key="show_lock_shortcuts" 
             android:title="@string/lockscreen_hide_shortcuts_title" 
             android:summary="@string/lockscreen_hide_shortcuts_summary" 
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference 
-            android:key="hide_lockscreen_icon" 
+            android:key="show_lockscreen_icon" 
             android:title="@string/hide_lockscreen_icon_title" 
             android:summary="@string/hide_lockscreen_icon_summary" 
-            android:defaultValue="false" /> 
+            android:defaultValue="true" /> 
 
     </PreferenceCategory>
 

@@ -22,10 +22,10 @@
         android:title="@string/system_animation_title">
 
         <com.havoc.support.preferences.GlobalSettingSwitchPreference
-            android:key="disable_transition_animations"
+            android:key="enable_transition_animations"
             android:title="@string/disable_transition_animations_title"
             android:summary="@string/disable_transition_animations_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="animation_controls_duration"

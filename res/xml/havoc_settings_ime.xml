@@ -40,10 +40,10 @@
         android:dependency="keyboard_rotation_toggle" />
 
     <SwitchPreference
-        android:key="disable_fullscreen_keyboard"
+        android:key="enable_fullscreen_keyboard"
         android:title="@string/disable_fullscreen_keyboard_title"
         android:summary="@string/disable_fullscreen_keyboard_summary"
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:persistent="false" />
 
     <SwitchPreference

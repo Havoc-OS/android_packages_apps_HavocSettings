@@ -226,8 +226,8 @@
     <string name="title_animation_no_override">Prevent app overrides</string>
     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
     <string name="animation_duration_default">Default</string>
-    <string name="disable_transition_animations_title">Disable transition animations</string>
-    <string name="disable_transition_animations_summary">Force disable all transitions</string>
+    <string name="disable_transition_animations_title">Transition animations</string>
+    <string name="disable_transition_animations_summary">Enable all system animations</string>
 
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_category">QS tiles animations</string>
@@ -330,9 +330,9 @@
     <string name="lockscreen_tuner_title">Bottom shortcuts</string>
     <string name="lockscreen_tuner_summary">Change the bottom left/right shortcuts</string>
 
-    <!-- Disabling FC notifications -->
-    <string name="disable_fc_notifications_title">Disable FC Notifications</string> 
-    <string name="disable_fc_notifications_summary">This will hide all force close notifications</string> 
+    <!-- FC notifications -->
+    <string name="disable_fc_notifications_title">Force close notifications</string>
+    <string name="disable_fc_notifications_summary">Show a dialog when an app crashes</string>
 
     <!-- Navbar tuner -->
     <string name="navbar_tuner_title">Navbar Buttons</string>
@@ -356,9 +356,9 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
-    <!-- Disable OS on lockscreen -->
-    <string name="block_on_secure_keyguard_title">Disable Quick settings</string>
-    <string name="block_on_secure_keyguard_summary">Disables quick settings on secure lockscreen</string>
+    <!-- Show QS on lockscreen -->
+    <string name="block_on_secure_keyguard_title">Quick settings</string>
+    <string name="block_on_secure_keyguard_summary">Show quick settings on secure lockscreen</string>
 
     <!-- On-The-Go -->
     <string name="onthego_title">On-The-Go Mode</string>
@@ -383,8 +383,8 @@
     <string name="hide_apps_from_recents_summary">Select certian apps to hide in recents</string>
 
     <!-- Keyboard and IME  -->
-    <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string> 
-    <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string> 
+    <string name="disable_fullscreen_keyboard_title">Fullscreen keyboard</string>
+    <string name="disable_fullscreen_keyboard_summary">Allow keyboard to take up entire screen in landscape</string>
     <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string>
     <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string>
     <string name="keyboard_rotation_timeout_title">Auto-rotate timeout</string>
@@ -799,9 +799,9 @@
     <string name="burn_in_protection_summary">Shift statusbar icons to prevent burn-in</string>
     <string name="burn_in_protection_interval_title">Shift interval</string>
 
-    <!-- Hide statusbar on lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Disable Statusbar</string>
-    <string name="lockscreen_hide_status_bar_summary">When enabled the statusbar will be hidden on lockscreen</string>
+    <!-- Show statusbar on lockscreen -->
+    <string name="lockscreen_hide_status_bar_title">Statusbar</string>
+    <string name="lockscreen_hide_status_bar_summary">Show statusbar on the lockscreen</string>
 
     <!-- Doze settings editor -->
     <string name="advanced_doze_settings">Advanced Doze</string>
@@ -1104,15 +1104,15 @@
 
     <string name="reset_message">Reset all entries to default?</string>
 
-    <!-- Hide Lockscreen shortcuts on secure Lockscreen --> 
-    <string name="lockscreen_hide_shortcuts_title">Hide Bottom Shortcuts</string> 
-    <string name="lockscreen_hide_shortcuts_summary">Hide Left-Right Shortcuts on secure lock screens</string> 
+    <!-- Lockscreen shortcuts on secure Lockscreen -->
+    <string name="lockscreen_hide_shortcuts_title">Shortcuts</string>
+    <string name="lockscreen_hide_shortcuts_summary">Show left/right shortcuts on secure lock screens</string>
 
-    <string name="hide_lockscreen_indicator_display_title">Hide bottom status text</string>
-    <string name="hide_lockscreen_indicator_display_summary">Hide charging information and unlock hints</string>
+    <string name="hide_lockscreen_indicator_display_title">Status text</string>
+    <string name="hide_lockscreen_indicator_display_summary">Show charging information and unlock hints</string>
 
-    <string name="hide_lockscreen_icon_title">Hide lock screen icon</string>
-    <string name="hide_lockscreen_icon_summary">Change the lock screen icon visibility</string>
+    <string name="hide_lockscreen_icon_title">Lock icon</string>
+    <string name="hide_lockscreen_icon_summary">Show lock icon on the bottom</string>
 
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">QS Tile style</string>
@@ -1229,9 +1229,9 @@
     <string name="voicemail_breath_title">Breathing Voicemail</string>
     <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
 
-    <!-- Disabling immersive mode messages -->
-    <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
-    <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
+    <!-- Immersive mode messages -->
+    <string name="disable_immersive_message_title">Immersive mode messages</string>
+    <string name="disable_immersive_message_summary">Show all fullscreen messages</string>
 
     <!-- Volume dialog timeout -->
     <string name="volume_dialog_timeout_title">Volume dialog timeout</string>

@@ -67,14 +67,14 @@ public class IME extends SettingsPreferenceFragment
  
     private static final int DLG_KEYBOARD_ROTATION = 0; 
  
-    private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard"; 
+    private static final String PREF_ENABLE_FULLSCREEN_KEYBOARD = "enable_fullscreen_keyboard"; 
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle"; 
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout"; 
     private static final String SHOW_ENTER_KEY = "show_enter_key"; 
  
     private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s 
  
-    private SwitchPreference mDisableFullscreenKeyboard; 
+    private SwitchPreference mEnableFullscreenKeyboard; 
     private SwitchPreference mKeyboardRotationToggle; 
     private ListPreference mKeyboardRotationTimeout; 
     private SwitchPreference mShowEnterKey; 
@@ -84,11 +84,11 @@ public class IME extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState); 
         addPreferencesFromResource(R.xml.havoc_settings_ime); 
-        mDisableFullscreenKeyboard = 
-            (SwitchPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD); 
-        mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getContentResolver(), 
-                Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1); 
-        mDisableFullscreenKeyboard.setOnPreferenceChangeListener(this); 
+        mEnableFullscreenKeyboard = 
+            (SwitchPreference) findPreference(PREF_ENABLE_FULLSCREEN_KEYBOARD); 
+        mEnableFullscreenKeyboard.setChecked(Settings.System.getInt(getContentResolver(), 
+                Settings.System.ENABLE_FULLSCREEN_KEYBOARD, 0) == 1); 
+        mEnableFullscreenKeyboard.setOnPreferenceChangeListener(this); 
       
         mKeyboardRotationToggle = (SwitchPreference) findPreference(KEYBOARD_ROTATION_TOGGLE); 
         mKeyboardRotationToggle.setChecked(Settings.System.getInt(getContentResolver(), 
@@ -130,9 +130,9 @@ public class IME extends SettingsPreferenceFragment
                super.onResume(); 
     } 
     public boolean onPreferenceChange(Preference preference, Object objValue) { 
-        if (preference == mDisableFullscreenKeyboard) { 
+        if (preference == mEnableFullscreenKeyboard) { 
             Settings.System.putInt(getContentResolver(), 
-                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD,  (Boolean) objValue ? 1 : 0); 
+                    Settings.System.ENABLE_FULLSCREEN_KEYBOARD, (Boolean) objValue ? 1 : 0); 
             return true; 
         } else if (preference == mKeyboardRotationToggle) { 
             boolean isAutoRotate = (Settings.System.getIntForUser(getContentResolver(), 
