@@ -1175,6 +1175,8 @@
     <string name="systemui_theme_style_auto">Automatic (Wallpaper based)</string>
     <string name="systemui_theme_style_light">Light</string>
     <string name="systemui_theme_style_dark">Dark</string>
+    <string name="systemui_theme_style_shady">Shady</string>
+    <string name="systemui_theme_style_glassy">Glassy</string>
 
     <string name="applying_theme_toast">Applying theme, please wait...</string>
     <string name="theme_applied_toast">Theme applied!</string>
@@ -1494,4 +1496,9 @@
     <!-- Ambient category -->
     <string name="custom_ambient_display_title">Ambient options</string>
     <string name="custom_ambient_display_summary">Configure advanced ambient display behaviour</string>
+
+    <!-- Theme picker -->
+    <string name="theme_picker_title">Theme color</string>
+    <string name="theme_picker_summary">Select color for Shady/Glassy themes</string>
+    <string name="theme_picker_dialog_title">Select a theme color</string>
 </resources>

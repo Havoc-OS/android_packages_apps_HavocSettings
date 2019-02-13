@@ -36,6 +36,10 @@
             android:persistent="false" />
 
         <Preference
+            android:key="theme_picker"
+            android:title="@string/theme_picker_title" />
+
+        <Preference
             android:key="accent_picker"
             android:title="@string/theme_accent_picker_title" />
 
