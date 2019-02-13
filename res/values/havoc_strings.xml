@@ -1170,12 +1170,14 @@
     <string name="corner_radius">Rounded Corner Radius</string>
     <string name="content_padding">Corner Content Padding</string>
 
-    <!-- Notification styles -->
-    <string name="notification_style_title">Notification color</string>
-    <string name="notification_auto">Automatic (Theme based)</string>
-    <string name="notification_light">Light</string>
-    <string name="notification_dark">Dark</string>
-    <string name="notification_black">Black</string>
+    <!-- SystemUI theme -->
+    <string name="systemui_theme_style_title">SystemUI Theme</string>
+    <string name="systemui_theme_style_auto">Automatic (Wallpaper based)</string>
+    <string name="systemui_theme_style_light">Light</string>
+    <string name="systemui_theme_style_dark">Dark</string>
+
+    <string name="applying_theme_toast">Applying theme, please wait...</string>
+    <string name="theme_applied_toast">Theme applied!</string>
 
     <!-- QS header styles -->
     <string name="qs_header_style_title">QS Header style</string>

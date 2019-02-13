@@ -1050,18 +1050,17 @@
         <item>1</item>
     </string-array>
 
-    <!-- Notification styles -->
-    <string-array name="notification_style_entries" translatable="false">
-        <item>@string/notification_auto</item>
-        <item>@string/notification_light</item>
-        <item>@string/notification_dark</item>
-        <item>@string/notification_black</item>
+    <!-- SystemUI theme -->
+    <string-array name="systemui_theme_style_entries" translatable="false">
+        <item>@string/systemui_theme_style_auto</item>
+        <item>@string/systemui_theme_style_light</item>
+        <item>@string/systemui_theme_style_dark</item>
     </string-array>
-    <string-array name="notification_style_values" translatable="false">
+
+    <string-array name="systemui_theme_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </string-array>
 
     <!-- QS header styles -->

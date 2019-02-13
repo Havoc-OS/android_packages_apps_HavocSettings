@@ -30,7 +30,6 @@ import com.android.settings.display.FontPickerPreferenceController;
 import com.havoc.settings.display.AccentPickerPreferenceController;
 import com.havoc.settings.display.AutoDarkUIPreferenceController;
 import com.havoc.settings.display.DarkUIPreferenceController;
-import com.havoc.settings.display.NotificationStylePreferenceController;
 import com.havoc.settings.display.QsAlphaPreferenceController;
 import com.havoc.settings.display.QsColorPreferenceController;
 import com.havoc.settings.display.QsHeaderStylePreferenceController;
@@ -104,7 +103,6 @@ public class Interface extends DashboardFragment {
 	    controllers.add(new AutoDarkUIPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
 		controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle, fragment));
-        controllers.add(new NotificationStylePreferenceController(context));
         controllers.add(new QsAlphaPreferenceController(context));
         controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsHeaderStylePreferenceController(context));
