@@ -25,6 +25,12 @@
         android:fragment="com.android.settings.gestures.GestureSettings"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
+    <Preference
+        android:key="active_edge_category"
+        android:title="@string/active_edge_title"
+        android:summary="@string/active_edge_summary"
+        android:fragment="com.havoc.settings.fragments.ActiveEdge" />
+
     <PreferenceCategory
         android:key="gesture_misc"
         android:title="@string/gesture_misc">

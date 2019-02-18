@@ -1374,4 +1374,33 @@
         <item>200ms</item> 
         <item>250ms</item> 
     </string-array> 
+
+    <!-- Active edge actions -->
+    <string-array name="active_edge_actions_entries" translatable="false">
+        <item>@string/action_nothing</item>
+        <item>@string/action_search</item>
+        <item>@string/action_voice_search</item>
+        <item>@string/action_launch_camera</item>
+        <item>@string/action_flashlight</item>
+        <item>@string/action_clear_notifications</item>
+        <item>@string/action_volume_panel</item>
+        <item>@string/action_screen_off</item>
+        <item>@string/action_notifications</item>
+        <item>@string/action_screenshot</item>
+        <item>@string/action_qs_panel</item>
+    </string-array>
+
+    <string-array name="active_edge_actions_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 </resources>

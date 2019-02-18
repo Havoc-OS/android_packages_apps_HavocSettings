@@ -50,6 +50,7 @@ public class Gestures extends SettingsPreferenceFragment implements
     private static final String USE_BOTTOM_GESTURE_NAVIGATION = "use_bottom_gesture_navigation";
     private static final String EDGE_GESTURES_ENABLED = "edge_gestures_enabled";
     private static final String PIE_STATE = "pie_state";
+    private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
 
     private SystemSettingMasterSwitchPreference mUseBottomGestureNavigation;
     private SecureSettingMasterSwitchPreference mEdgeGesturesEnabled; 
@@ -77,6 +78,16 @@ public class Gestures extends SettingsPreferenceFragment implements
         mPieGestureEnabled.setOnPreferenceChangeListener(this);
         int usePieGestures = Settings.Secure.getInt(resolver, PIE_STATE, 0);
         mPieGestureEnabled.setChecked(usePieGestures != 0);
+
+        Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+            getPreferenceScreen().removePreference(ActiveEdge);
+        } else {
+            if (!getContext().getPackageManager().hasSystemFeature(
+                    "android.hardware.sensor.assist")) {
+                getPreferenceScreen().removePreference(ActiveEdge);
+            }
+        }
 
     }
 
