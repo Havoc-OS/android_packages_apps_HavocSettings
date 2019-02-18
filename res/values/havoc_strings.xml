@@ -1170,6 +1170,7 @@
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="corner_radius">Rounded Corner Radius</string>
     <string name="content_padding">Corner Content Padding</string>
+    <string name="status_bar_padding">Statusbar Padding</string>
 
     <!-- SystemUI theme -->
     <string name="systemui_theme_style_title">SystemUI Theme</string>

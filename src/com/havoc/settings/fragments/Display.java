@@ -51,6 +51,7 @@ public class Display extends SettingsPreferenceFragment implements
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
+    private static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
     private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
@@ -58,6 +59,7 @@ public class Display extends SettingsPreferenceFragment implements
     private SecureSettingSwitchPreference mRoundedFwvals;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
+    private CustomSeekBarPreference mSBPadding;
 
     ContentResolver resolver; 
 
@@ -98,8 +100,8 @@ public class Display extends SettingsPreferenceFragment implements
         mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
         mCornerRadius.setOnPreferenceChangeListener(this);
         int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
-        int cornerRadius = Settings.Secure.getInt(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
-                (int) (res.getDimension(resourceIdRadius) / density));
+        int cornerRadius = Settings.Secure.getIntForUser(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
+                (int) (res.getDimension(resourceIdRadius) / density), UserHandle.USER_CURRENT);
         mCornerRadius.setValue(cornerRadius / 1);
 
         // Rounded Content Padding
@@ -107,10 +109,20 @@ public class Display extends SettingsPreferenceFragment implements
         mContentPadding.setOnPreferenceChangeListener(this);
         int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
                 null);
-        int contentPadding = Settings.Secure.getInt(ctx.getContentResolver(),
+        int contentPadding = Settings.Secure.getIntForUser(ctx.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
-                (int) (res.getDimension(resourceIdPadding) / density));
+                (int) (res.getDimension(resourceIdPadding) / density), UserHandle.USER_CURRENT);
         mContentPadding.setValue(contentPadding / 1);
+
+        // Status Bar Content Padding
+        mSBPadding = (CustomSeekBarPreference) findPreference(SYSUI_STATUS_BAR_PADDING);
+        int resourceIdSBPadding = res.getIdentifier("com.android.systemui:dimen/status_bar_extra_padding", null,
+                null);
+        int sbPadding = Settings.Secure.getIntForUser(ctx.getContentResolver(),
+                Settings.Secure.SYSUI_STATUS_BAR_PADDING,
+                (int) (res.getDimension(resourceIdSBPadding) / density), UserHandle.USER_CURRENT);
+        mSBPadding.setValue(sbPadding);
+        mSBPadding.setOnPreferenceChangeListener(this);
 
         // Rounded use Framework Values
         mRoundedFwvals = (SecureSettingSwitchPreference) findPreference(SYSUI_ROUNDED_FWVALS);
@@ -124,11 +136,14 @@ public class Display extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mCornerRadius) {
-            Settings.Secure.putInt(getContext().getContentResolver(),Settings.Secure.SYSUI_ROUNDED_SIZE,
-                    ((int) objValue) * 1);
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),Settings.Secure.SYSUI_ROUNDED_SIZE,
+                    ((int) objValue) * 1, UserHandle.USER_CURRENT);
         } else if (preference == mContentPadding) {
-            Settings.Secure.putInt(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
-                    ((int) objValue) * 1);
+            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
+                    ((int) objValue) * 1, UserHandle.USER_CURRENT);
+        } else if (preference == mSBPadding) {
+            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_STATUS_BAR_PADDING,
+                    (int) objValue, UserHandle.USER_CURRENT);
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
         } else if (preference == mSmartPixelsEnabled) {
@@ -156,8 +171,11 @@ public class Display extends SettingsPreferenceFragment implements
         int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
         int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
                 null);
+        int resourceIdSBPadding = res.getIdentifier("com.android.systemui:dimen/status_bar_extra_padding", null,
+                null);
         mCornerRadius.setValue((int) (res.getDimension(resourceIdRadius) / density));
         mContentPadding.setValue((int) (res.getDimension(resourceIdPadding) / density));
+        mSBPadding.setValue((int) (res.getDimension(resourceIdSBPadding) / density));
     }
 
     private static boolean hasPhysicalDisplayCutout(Context context) {
