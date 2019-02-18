@@ -45,4 +45,7 @@
         android:summary="@string/active_edge_wake_summary"
         android:defaultValue="true" />
 
+    <com.android.settingslib.widget.FooterPreference
+        android:title="@string/active_edge_footer_info" />
+
 </PreferenceScreen>
