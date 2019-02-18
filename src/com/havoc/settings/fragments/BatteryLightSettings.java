@@ -129,8 +129,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             mBatteryBlend = (SystemSettingSwitchPreference) findPreference(Settings.System.BATTERY_LIGHT_BLEND);
             mBatteryBlend.setOnPreferenceChangeListener(this);
         } else {
-            prefSet.removePreference(mColorCategory);
-            prefSet.removePreference(mColorBlendCategory);
+            if (mColorCategory != null) {
+                prefSet.removePreference(mColorCategory);
+            }
+            if (mColorBlendCategory != null) {
+                prefSet.removePreference(mColorBlendCategory);
+            }
         }
 
         if (getResources().getBoolean(com.android.internal.R.bool.config_FastChargingLedSupported)) {
