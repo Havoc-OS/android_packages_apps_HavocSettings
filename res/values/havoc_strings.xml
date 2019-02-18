@@ -1530,4 +1530,8 @@
     <string name="action_power_menu">Power menu</string>
     <string name="action_screenshot">Screenshot</string>
     <string name="action_qs_panel">QS panel</string>
+
+    <!-- Keyguard multiuser switch -->
+    <string name="keyguard_multiuser_switch_title">Multiuser switch</string>
+    <string name="keyguard_multiuser_switch_summary">Show multiuser switch on the statusbar</string>
 </resources>

@@ -124,6 +124,12 @@
             android:summary="@string/lockscreen_hide_status_bar_summary"
             android:defaultValue="true" />
 
+        <com.havoc.support.preferences.SecureSettingSwitchPreference
+            android:key="keyguard_multiuser_switch"
+            android:title="@string/keyguard_multiuser_switch_title"
+            android:summary="@string/keyguard_multiuser_switch_summary"
+            android:defaultValue="true"/>
+
         <com.havoc.support.preferences.SystemSettingSwitchPreference 
             android:key="show_lockscreen_indicator_display" 
             android:title="@string/hide_lockscreen_indicator_display_title" 
