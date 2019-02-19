@@ -37,7 +37,7 @@
         android:summary="@string/active_edge_app_select_summary">
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
-            android:targetClass="com.google.android.systemui.elmyra.actions.AppPicker" />
+            android:targetClass="com.google.android.systemui.elmyra.actions.SqueezeCustomApp" />
     </Preference>
 
     <com.havoc.support.preferences.CustomSeekBarPreference
