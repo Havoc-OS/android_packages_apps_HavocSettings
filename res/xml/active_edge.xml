@@ -31,6 +31,15 @@
         android:entryValues="@array/active_edge_actions_values"
         android:defaultValue="0" />
 
+    <Preference
+        android:key="squeeze_app_selection"
+        android:title="@string/active_edge_app_select_title"
+        android:summary="@string/active_edge_app_select_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.google.android.systemui.elmyra.actions.AppPicker" />
+    </Preference>
+
     <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="gesture_assist_sensitivity"
         android:title="@string/active_edge_sensitivity_title"

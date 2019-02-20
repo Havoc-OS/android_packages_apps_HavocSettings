@@ -34,7 +34,6 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.widget.VideoPreference;
 
 import com.havoc.support.preferences.CustomSeekBarPreference;
 
@@ -44,15 +43,14 @@ import java.util.List;
 public class ActiveEdge extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_SQUEEZE_VIDEO = "squeeze_video";
-    private static final String KEY_VIDEO_PAUSED = "key_video_paused";
+    private static final String KEY_SQUEEZE_APP_SELECTION = "squeeze_app_selection";
 
-    private boolean mVideoPaused;
+    private int activeEdgeActions;
 
     private CustomSeekBarPreference mActiveEdgeSensitivity;
     private ListPreference mActiveEdgeActions;
+    private Preference mActiveEdgeAppSelection;
     private SwitchPreference mActiveEdgeWake;
-    private VideoPreference mVideoPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,13 +59,7 @@ public class ActiveEdge extends SettingsPreferenceFragment
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        if (savedInstanceState != null) {
-            mVideoPaused = savedInstanceState.getBoolean(KEY_VIDEO_PAUSED, false);
-        }
-
-        mVideoPreference = (VideoPreference) findPreference(KEY_SQUEEZE_VIDEO);
-
-        int activeEdgeActions = Settings.Secure.getIntForUser(resolver,
+        activeEdgeActions = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.SQUEEZE_SELECTION, 0,
                 UserHandle.USER_CURRENT);
         mActiveEdgeActions = (ListPreference) findPreference("squeeze_selection");
@@ -86,40 +78,24 @@ public class ActiveEdge extends SettingsPreferenceFragment
                 Settings.Secure.ASSIST_GESTURE_WAKE_ENABLED, 1,
                 UserHandle.USER_CURRENT) == 1));
         mActiveEdgeWake.setOnPreferenceChangeListener(this);
+
+        mActiveEdgeAppSelection = (Preference) findPreference(KEY_SQUEEZE_APP_SELECTION);
+
+        mActiveEdgeAppSelection.setEnabled(mActiveEdgeActions.getEntryValues()
+                [activeEdgeActions].equals("11"));
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putBoolean(KEY_VIDEO_PAUSED, mVideoPaused);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mVideoPreference != null) {
-            mVideoPaused = mVideoPreference.isVideoPaused();
-            mVideoPreference.onViewInvisible();
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (mVideoPreference != null) {
-            mVideoPreference.onViewVisible(mVideoPaused);
-        }
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mActiveEdgeActions) {
-            int value = Integer.valueOf((String) newValue);
+            int activeEdgeActions = Integer.valueOf((String) newValue);
             Settings.Secure.putIntForUser(getContentResolver(),
-                    Settings.Secure.SQUEEZE_SELECTION, value,
+                    Settings.Secure.SQUEEZE_SELECTION, activeEdgeActions,
                     UserHandle.USER_CURRENT);
             int index = mActiveEdgeActions.findIndexOfValue((String) newValue);
             mActiveEdgeActions.setSummary(
                     mActiveEdgeActions.getEntries()[index]);
+            mActiveEdgeAppSelection.setEnabled(mActiveEdgeActions.getEntryValues()
+                    [activeEdgeActions].equals("11"));
             return true;
         } else if (preference == mActiveEdgeSensitivity) {
             int val = (Integer) newValue;

@@ -1388,6 +1388,7 @@
         <item>@string/action_notifications</item>
         <item>@string/action_screenshot</item>
         <item>@string/action_qs_panel</item>
+        <item>@string/action_app_action</item>
     </string-array>
 
     <string-array name="active_edge_actions_values" translatable="false">
@@ -1402,5 +1403,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+        <item>11</item>
     </string-array>
 </resources>
