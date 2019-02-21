@@ -1530,4 +1530,10 @@
     <!-- Keyguard multiuser switch -->
     <string name="keyguard_multiuser_switch_title">Multiuser switch</string>
     <string name="keyguard_multiuser_switch_summary">Show multiuser switch on the statusbar</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_gesture_title">Screen off torch</string>
+    <string name="power_button_torch_gesture_none">Disabled</string>
+    <string name="power_button_torch_gesture_dt">Double tap power button</string>
+    <string name="power_button_torch_gesture_lp">Long press power button</string>
 </resources>

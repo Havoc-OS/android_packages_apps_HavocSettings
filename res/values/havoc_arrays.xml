@@ -1391,4 +1391,16 @@
         <item>11</item>
         <item>12</item>
     </string-array>
+
+    <!-- Torch Power button gestures -->
+    <string-array name="power_button_torch_gesture_entries">
+        <item>@string/power_button_torch_gesture_none</item>
+        <item>@string/power_button_torch_gesture_dt</item>
+        <item>@string/power_button_torch_gesture_lp</item>
+    </string-array>
+    <string-array name="power_button_torch_gesture_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

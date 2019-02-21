@@ -84,6 +84,12 @@
             android:summary="@string/power_end_call_summary"
             android:persistent="false"/>
 
+        <ListPreference
+            android:key="torch_power_button_gesture"
+            android:title="@string/power_button_torch_gesture_title"
+            android:entries="@array/power_button_torch_gesture_entries"
+            android:entryValues="@array/power_button_torch_gesture_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

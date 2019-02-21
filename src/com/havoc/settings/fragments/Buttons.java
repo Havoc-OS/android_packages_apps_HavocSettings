@@ -49,6 +49,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_BUTTON_SWAP_KEYS = "swap_navigation_keys";
     private static final String KEY_POWER_END_CALL = "power_end_call";
+    private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -76,6 +77,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private SwitchPreference mHwKeyDisable;
     private SystemSettingSwitchPreference mSwapKeysPreference;
     private SwitchPreference mPowerEndCall;
+    private ListPreference mTorchPowerButton;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -202,6 +204,20 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
+
+        if (!Utils.deviceSupportsFlashLight(getContext())) {
+            Preference powerTorch = prefScreen.findPreference(TORCH_POWER_BUTTON_GESTURE);
+            if (powerTorch != null) {
+                prefScreen.removePreference(powerTorch);
+            }
+        } else {
+            mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
+            int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
+                    Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
+            mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
+            mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
+            mTorchPowerButton.setOnPreferenceChangeListener(this);
+        }
     }
 
     @Override
@@ -253,6 +269,18 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
+            return true;
+        } else if (preference == mTorchPowerButton) {
+            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
+            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
+            mTorchPowerButton.setSummary(
+                    mTorchPowerButton.getEntries()[index]);
+            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
+                    mTorchPowerButtonValue);
+            if (mTorchPowerButtonValue == 1) {
+                //if doubletap for torch is enabled, switch off double tap for camera
+                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1);
+            }
             return true;
         }
         return false;
