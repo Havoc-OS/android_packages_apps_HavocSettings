@@ -150,35 +150,42 @@ public class Recents extends SettingsPreferenceFragment implements
 
     public void updateRecentsState(int type) {
         switch(type){ 
-            case 0: 
+            case 0:
                 mStockCat.setEnabled(false);
                 mImmersiveCat.setEnabled(false);
                 mSlimCat.setEnabled(false);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.USE_SLIM_RECENTS, 0);
-                break; 
-            case 1: 
+                break;
+            case 1:
                 mStockCat.setEnabled(true);
                 mImmersiveCat.setEnabled(true);
                 mSlimCat.setEnabled(false);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.USE_SLIM_RECENTS, 0);
-                break; 
-            case 2: 
+                break;
+            case 2:
                 mStockCat.setEnabled(true);
                 mImmersiveCat.setEnabled(true);
                 mSlimCat.setEnabled(false);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.USE_SLIM_RECENTS, 0);
-                break; 
-            case 3: 
+                break;
+            case 3:
+                mStockCat.setEnabled(true);
+                mImmersiveCat.setEnabled(true);
+                mSlimCat.setEnabled(false);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 0);
+                break;
+            case 4:
                 mStockCat.setEnabled(false);
                 mImmersiveCat.setEnabled(false);
                 mSlimCat.setEnabled(true);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.USE_SLIM_RECENTS, 1);
-                break; 
-            default: 
+                break;
+            default:
                 break;
         }
     }
