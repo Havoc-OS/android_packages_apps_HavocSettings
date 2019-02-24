@@ -55,10 +55,10 @@
         <com.havoc.support.preferences.CustomSeekBarPreference
             android:key="sysui_rounded_content_padding"
             android:title="@string/content_padding"
-            android:max="20"
+            android:max="30"
             android:min="0"
             settings:units="dp"
-            android:defaultValue="0"
+            android:defaultValue="16"
             android:persistent="false"
             android:dependency="sysui_rounded_fwvals" />
 
@@ -68,6 +68,7 @@
             android:max="30"
             settings:min="0"
             settings:units="dp"
+            android:defaultValue="0"
             android:persistent="false"
             android:dependency="sysui_rounded_fwvals" />
 
