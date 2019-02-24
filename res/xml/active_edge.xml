@@ -25,19 +25,35 @@
         app:preview="@drawable/gesture_assist" />
 
     <ListPreference
-        android:key="squeeze_selection"
-        android:title="@string/active_edge_actions_title"
+        android:key="short_squeeze_selection"
+        android:title="@string/active_edge_short_actions_title"
         android:entries="@array/active_edge_actions_entries"
         android:entryValues="@array/active_edge_actions_values"
         android:defaultValue="0" />
 
     <Preference
-        android:key="squeeze_app_selection"
-        android:title="@string/active_edge_app_select_title"
+        android:key="short_squeeze_app_selection"
+        android:title="@string/active_edge_ss_app_select_title"
         android:summary="@string/active_edge_app_select_summary">
         <intent android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.systemui"
-            android:targetClass="com.google.android.systemui.elmyra.actions.SqueezeCustomApp" />
+            android:targetClass="com.google.android.systemui.elmyra.actions.ShortSqueezeCustomApp" />
+    </Preference>
+
+    <ListPreference
+        android:key="long_squeeze_selection"
+        android:title="@string/active_edge_long_actions_title"
+        android:entries="@array/active_edge_actions_entries"
+        android:entryValues="@array/active_edge_actions_values"
+        android:defaultValue="0" />
+
+    <Preference
+        android:key="long_squeeze_app_selection"
+        android:title="@string/active_edge_ls_app_select_title"
+        android:summary="@string/active_edge_app_select_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.google.android.systemui.elmyra.actions.LongSqueezeCustomApp" />
     </Preference>
 
     <com.havoc.support.preferences.CustomSeekBarPreference

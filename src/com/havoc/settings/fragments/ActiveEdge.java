@@ -43,13 +43,17 @@ import java.util.List;
 public class ActiveEdge extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_SQUEEZE_APP_SELECTION = "squeeze_app_selection";
+    private static final String KEY_SHORT_SQUEEZE_APP_SELECTION = "short_squeeze_app_selection";
+    private static final String KEY_LONG_SQUEEZE_APP_SELECTION = "long_squeeze_app_selection";
 
-    private int activeEdgeActions;
+    private int shortSqueezeActions;
+    private int longSqueezeActions;
 
     private CustomSeekBarPreference mActiveEdgeSensitivity;
-    private ListPreference mActiveEdgeActions;
-    private Preference mActiveEdgeAppSelection;
+    private ListPreference mShortSqueezeActions;
+    private ListPreference mLongSqueezeActions;
+    private Preference mShortSqueezeAppSelection;
+    private Preference mLongSqueezeAppSelection;
     private SwitchPreference mActiveEdgeWake;
 
     @Override
@@ -59,13 +63,21 @@ public class ActiveEdge extends SettingsPreferenceFragment
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        activeEdgeActions = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.SQUEEZE_SELECTION, 0,
+        shortSqueezeActions = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.SHORT_SQUEEZE_SELECTION, 0,
                 UserHandle.USER_CURRENT);
-        mActiveEdgeActions = (ListPreference) findPreference("squeeze_selection");
-        mActiveEdgeActions.setValue(Integer.toString(activeEdgeActions));
-        mActiveEdgeActions.setSummary(mActiveEdgeActions.getEntry());
-        mActiveEdgeActions.setOnPreferenceChangeListener(this);
+        mShortSqueezeActions = (ListPreference) findPreference("short_squeeze_selection");
+        mShortSqueezeActions.setValue(Integer.toString(shortSqueezeActions));
+        mShortSqueezeActions.setSummary(mShortSqueezeActions.getEntry());
+        mShortSqueezeActions.setOnPreferenceChangeListener(this);
+
+        longSqueezeActions = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.LONG_SQUEEZE_SELECTION, 0,
+                UserHandle.USER_CURRENT);
+        mLongSqueezeActions = (ListPreference) findPreference("long_squeeze_selection");
+        mLongSqueezeActions.setValue(Integer.toString(longSqueezeActions));
+        mLongSqueezeActions.setSummary(mLongSqueezeActions.getEntry());
+        mLongSqueezeActions.setOnPreferenceChangeListener(this);
 
         int sensitivity = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.ASSIST_GESTURE_SENSITIVITY, 2, UserHandle.USER_CURRENT);
@@ -79,25 +91,40 @@ public class ActiveEdge extends SettingsPreferenceFragment
                 UserHandle.USER_CURRENT) == 1));
         mActiveEdgeWake.setOnPreferenceChangeListener(this);
 
-        mActiveEdgeAppSelection = (Preference) findPreference(KEY_SQUEEZE_APP_SELECTION);
+        mShortSqueezeAppSelection = (Preference) findPreference(KEY_SHORT_SQUEEZE_APP_SELECTION);
+        mLongSqueezeAppSelection = (Preference) findPreference(KEY_LONG_SQUEEZE_APP_SELECTION);
 
         customAppCheck();
-        mActiveEdgeAppSelection.setEnabled(mActiveEdgeActions.getEntryValues()
-                [activeEdgeActions].equals("11"));
+        mShortSqueezeAppSelection.setEnabled(mShortSqueezeActions.getEntryValues()
+                [shortSqueezeActions].equals("11"));
+        mLongSqueezeAppSelection.setEnabled(mLongSqueezeActions.getEntryValues()
+                [longSqueezeActions].equals("11"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mActiveEdgeActions) {
-            int activeEdgeActions = Integer.valueOf((String) newValue);
+        if (preference == mShortSqueezeActions) {
+            int shortSqueezeActions = Integer.valueOf((String) newValue);
             Settings.Secure.putIntForUser(getContentResolver(),
-                    Settings.Secure.SQUEEZE_SELECTION, activeEdgeActions,
+                    Settings.Secure.SHORT_SQUEEZE_SELECTION, shortSqueezeActions,
                     UserHandle.USER_CURRENT);
-            int index = mActiveEdgeActions.findIndexOfValue((String) newValue);
-            mActiveEdgeActions.setSummary(
-                    mActiveEdgeActions.getEntries()[index]);
+            int index = mShortSqueezeActions.findIndexOfValue((String) newValue);
+            mShortSqueezeActions.setSummary(
+                    mShortSqueezeActions.getEntries()[index]);
             customAppCheck();
-            mActiveEdgeAppSelection.setEnabled(mActiveEdgeActions.getEntryValues()
-                    [activeEdgeActions].equals("11"));
+            mShortSqueezeAppSelection.setEnabled(mShortSqueezeActions.getEntryValues()
+                    [shortSqueezeActions].equals("11"));
+            return true;
+        } else if (preference == mLongSqueezeActions) {
+            int longSqueezeActions = Integer.valueOf((String) newValue);
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.LONG_SQUEEZE_SELECTION, longSqueezeActions,
+                    UserHandle.USER_CURRENT);
+            int index = mLongSqueezeActions.findIndexOfValue((String) newValue);
+            mLongSqueezeActions.setSummary(
+                    mLongSqueezeActions.getEntries()[index]);
+            customAppCheck();
+            mLongSqueezeAppSelection.setEnabled(mLongSqueezeActions.getEntryValues()
+                    [longSqueezeActions].equals("11"));
             return true;
         } else if (preference == mActiveEdgeSensitivity) {
             int val = (Integer) newValue;
@@ -128,8 +155,10 @@ public class ActiveEdge extends SettingsPreferenceFragment
     }
 
     private void customAppCheck() {
-        mActiveEdgeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
-                String.valueOf(Settings.Secure.SQUEEZE_CUSTOM_APP_FR_NAME)));
+        mShortSqueezeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
+                String.valueOf(Settings.Secure.SHORT_SQUEEZE_CUSTOM_APP_FR_NAME)));
+        mLongSqueezeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
+                String.valueOf(Settings.Secure.LONG_SQUEEZE_CUSTOM_APP_FR_NAME)));
     }
 
     @Override
