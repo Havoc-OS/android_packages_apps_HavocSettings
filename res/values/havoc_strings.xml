@@ -1525,7 +1525,7 @@
     <string name="active_edge_ss_app_select_title">Select short squeeze app</string>
     <string name="active_edge_ls_app_select_title">Select long squeeze app</string>
     <string name="active_edge_app_select_summary">Select an app to launch with the squeeze action</string>
-    <string name="active_edge_footer_info">Not all squeeze actions within Active Edge have the capability to activate the display</string>
+    <string name="active_edge_footer_info">Not all squeeze actions within Active Edge have the capability to activate the display.\n\nLong press on apps in the Select App menu to show and choose a specific activity.</string>
     <string name="action_nothing">No action</string>
     <string name="action_menu">Menu</string>
     <string name="action_app_switch">Recents</string>
