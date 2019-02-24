@@ -33,6 +33,12 @@
         android:entryValues="@array/show_network_traffic_type_values"
         android:persistent="false" />
 
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
+        android:key="network_traffic_hidearrow"
+        android:title="@string/network_traffic_hidearrow"
+        android:summary="@string/network_traffic_hidearrow_summary"
+        android:defaultValue="true" />
+
     <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="network_traffic_autohide_threshold"
         android:title="@string/network_traffic_autohide_threshold_title"
@@ -41,10 +47,12 @@
         android:defaultValue="1"
         settings:units="KB/s" />
 
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="network_traffic_hidearrow"
-        android:title="@string/network_traffic_hidearrow"
-        android:summary="@string/network_traffic_hidearrow_summary"
-        android:defaultValue="true" />
+    <com.havoc.support.preferences.CustomSeekBarPreference
+        android:key="network_traffic_refresh_interval"
+        android:title="@string/network_traffic_refresh_interval_title"
+        android:max="10"
+        android:min="1"
+        android:defaultValue="2"
+        settings:units="sec" />
 
 </PreferenceScreen>

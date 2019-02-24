@@ -600,17 +600,18 @@
     <!-- Statusbar net monitor -->
     <string name="net_traffic_title">Network Traffic</string>
     <string name="net_traffic_summary">Network speed indicator in statusbar</string>
-    <string name="network_traffic_state_title">Network traffic location</string>
-    <string name="network_traffic_autohide_threshold_title">Network activity autohide threshold</string>
-    <string name="network_traffic_hidearrow">Network activity arrows</string>
+    <string name="network_traffic_state_title">Location</string>
+    <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
+    <string name="network_traffic_hidearrow">Activity arrows</string>
     <string name="network_traffic_hidearrow_summary">Show the network traffic indicator arrows</string>
-    <string name="network_traffic_type">Network activity type</string>
+    <string name="network_traffic_type">Activity type</string>
     <string name="show_network_traffic_up">Upload</string>
     <string name="show_network_traffic_down">Download</string>
     <string name="show_network_traffic_all">Both</string>
     <string name="traffic_disabled">Disabled</string>
     <string name="traffic_statusbar">Statusbar</string>
     <string name="traffic_expanded_statusbar">Expanded Statusbar</string>
+    <string name="network_traffic_refresh_interval_title">Refresh interval</string>
 	
     <string name="use_bottom_gesture_title">OnePlus Gestures</string>
     <string name="use_bottom_gesture_summary">Use swipe up gestures for navigation</string>

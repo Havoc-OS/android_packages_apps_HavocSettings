@@ -46,12 +46,14 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
     private static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
     private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
     private static final String NETWORK_TRAFFIC_TYPE = "network_traffic_type";
+    private static final String NETWORK_TRAFFIC_REFRESH_INTERVAL = "network_traffic_refresh_interval";
 
     private SystemSettingSwitchPreference mNetMonitor;
     private SystemSettingSwitchPreference mHideArrows;
     private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficType;
     private CustomSeekBarPreference mThreshold;
+    private CustomSeekBarPreference mNetTrafficRefreshInterval;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,12 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
 
         mHideArrows = (SystemSettingSwitchPreference) findPreference(NETWORK_TRAFFIC_HIDEARROW);
 
+        mNetTrafficRefreshInterval = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_REFRESH_INTERVAL);
+        int interval = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL, 2, UserHandle.USER_CURRENT);
+        mNetTrafficRefreshInterval.setValue(interval);
+        mNetTrafficRefreshInterval.setOnPreferenceChangeListener(this);
+
 		updateTrafficLocation(location);     
     }
 
@@ -108,6 +116,11 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver,
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, value, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mNetTrafficRefreshInterval) {
+            int interval = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL, interval, UserHandle.USER_CURRENT);
+            return true;
         } 
         return false; 
     }
@@ -118,6 +131,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
                 mNetTrafficType.setEnabled(false);
                 mThreshold.setEnabled(false);
                 mHideArrows.setEnabled(false);
+                mNetTrafficRefreshInterval.setEnabled(false);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_STATE, 0);
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -127,6 +141,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
                 mNetTrafficType.setEnabled(true);
                 mThreshold.setEnabled(true);
                 mHideArrows.setEnabled(true);
+                mNetTrafficRefreshInterval.setEnabled(true);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_STATE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -136,6 +151,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
                 mNetTrafficType.setEnabled(true);
                 mThreshold.setEnabled(true);
                 mHideArrows.setEnabled(true);
+                mNetTrafficRefreshInterval.setEnabled(true);
                 Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_STATE, 0);
                 Settings.System.putInt(getActivity().getContentResolver(),
