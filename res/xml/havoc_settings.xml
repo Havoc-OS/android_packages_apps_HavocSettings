@@ -141,11 +141,11 @@
             android:fragment="com.havoc.settings.fragments.Misc"
             android:icon="@drawable/ic_settings_misc"/>
 
-        <!-- About 
+        <!-- About -->
         <Preference
             android:key="about_category"
             android:title="@string/about_title"
             android:fragment="com.havoc.settings.fragments.About"
-            android:icon="@drawable/ic_settings_about"/>-->
+            android:icon="@drawable/ic_settings_about"/>
 
 </PreferenceScreen>

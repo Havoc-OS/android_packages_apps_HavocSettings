@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (C) 2018 Havoc-OS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Device Categories -->
+    <string name="device_category_generic_title" translatable="false">Generic</string>
+    <string name="device_category_oneplus_title" translatable="false">OnePlus</string>
+    <string name="device_category_google_title" translatable="false">Google</string>
+    <string name="device_category_samsung_title" translatable="false">Samsung</string>
+    <string name="device_category_motorola_title" translatable="false">Motorola</string>
+    <string name="device_category_xiaomi_title" translatable="false">Xiaomi</string>
+    <string name="device_category_lenovo_title" translatable="false">Lenovo</string>
+    <string name="device_category_asus_title" translatable="false">Asus</string>
+    <string name="device_category_leeco_title" translatable="false">LeEco</string>
+    <string name="device_category_nextbit_title" translatable="false">Nextbit</string>
+
+    <!-- Devices & Maintainers -->
+    <string name="device_genericarmaonly" translatable="false">Generic System Image</string>
+    <string name="device_genericarmaonly_summary" translatable="false">arm-aonly\nMountaser Halak</string>
+
+    <string name="device_genericarm64aonly" translatable="false">Generic System Image</string>
+    <string name="device_genericarm64aonly_summary" translatable="false">arm64-aonly\nMountaser Halak</string>
+
+    <string name="device_genericarm64ab" translatable="false">Generic System Image</string>
+    <string name="device_genericarm64ab_summary" translatable="false">arm64-ab\nMountaser Halak</string>
+
+    <string name="device_oneplus2" translatable="false">OnePlus 2</string>
+    <string name="device_oneplus2_summary" translatable="false">oneplus2\nJef (SimplyJeevS)</string>
+
+    <string name="device_oneplus3" translatable="false">OnePlus 3/T [Unified]</string>
+    <string name="device_oneplus3_summary" translatable="false">oneplus3\nAnushek Prasal (SKULSHADY)</string>
+
+    <string name="device_oneplus5" translatable="false">OnePlus 5</string>
+    <string name="device_oneplus5_summary" translatable="false">cheeseburger\nTilak Sidduram (tilaksidduram)</string>
+
+    <string name="device_oneplus5t" translatable="false">OnePlus 5T</string>
+    <string name="device_oneplus5t_summary" translatable="false">dumpling\nTilak Sidduram (tilaksidduram)</string>
+
+    <string name="device_oneplus6" translatable="false">OnePlus 6</string>
+    <string name="device_oneplus6_summary" translatable="false">enchilada\nSoufiane Boulbayem (Eliminater)\nTim Wall (Linuxpenguin)</string>
+
+    <string name="device_oneplus6t" translatable="false">OnePlus 6T</string>
+    <string name="device_oneplus6t_summary" translatable="false">fajita\nSoufiane Boulbayem (Eliminater)\nTim Wall (Linuxpenguin)</string>
+
+    <string name="device_taimen" translatable="false">Google Pixel 2 XL</string>
+    <string name="device_taimen_summary" translatable="false">taimen\nSteve Provancal (slothdabski)</string>
+
+    <string name="device_on7xelte" translatable="false">Samsung Galaxy J7 Prime</string>
+    <string name="device_on7xelte_summary" translatable="false">SM-G610M/F\nDouglas Gomes</string>
+
+    <string name="device_hlte" translatable="false">Samsung Galaxy Note 3</string>
+    <string name="device_hlte_summary" translatable="false">hlte\nJoshua Primero (jprimero15)</string>
+
+    <string name="device_ks01ltex" translatable="false">Samsung Galaxy S4 i9506</string>
+    <string name="device_ks01ltex_summary" translatable="false">ks01ltex\nKhalvat-M (khalvat)</string>
+
+    <string name="device_klte" translatable="false">Samsung Galaxy S5</string>
+    <string name="device_klte_summary" translatable="false">klte\nBruno Santos (Brunowp8)</string>
+
+    <string name="device_sanders" translatable="false">Moto G5S Plus</string>
+    <string name="device_sanders_summary" translatable="false">sanders\nRonax (ronaxdevil)</string>
+
+    <string name="device_evert" translatable="false">Moto G6 Plus</string>
+    <string name="device_evert_summary" translatable="false">evert\nFrancisco Santiago (JSFrank)</string>
+
+    <string name="device_payton" translatable="false">Moto X4</string>
+    <string name="device_payton_summary" translatable="false">payton\nAndrew Hexen (SyberHexen)</string>
+
+    <string name="device_wayne" translatable="false">Xiaomi Mi 6X</string>
+    <string name="device_wayne_summary" translatable="false">wayne\nMax Weffers (rcstar6696)</string>
+
+    <string name="device_dipper" translatable="false">Xiaomi Mi 8</string>
+    <string name="device_dipper_summary" translatable="false">dipper\nViktor Hermann (ZeNiXxX)</string>
+
+    <string name="device_platina" translatable="false">Xiaomi Mi 8 Lite</string>
+    <string name="device_platina_summary" translatable="false">platina\nYuhan (rsyhan)\nYuanyi (GeorgeYuan233)</string>
+
+    <string name="device_tissot" translatable="false">Xiaomi Mi A1</string>
+    <string name="device_tissot_summary" translatable="false">tissot\nMountaser Halak</string>
+
+    <string name="device_jasminie_sprout" translatable="false">Xiaomi Mi A2</string>
+    <string name="device_jasminie_sprout_summary" translatable="false">jasminie_sprout\nMax Weffers (rcstar6696)</string>
+
+    <string name="device_oxygen" translatable="false">Xiaomi Mi Max 2</string>
+    <string name="device_oxygen_summary" translatable="false">oxygen\nRakesh Roshan (Hard_Rocks83)</string>
+
+    <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
+    <string name="device_chiron_summary" translatable="false">chiron\nRishi Shukla (lightvortex)</string>
+
+    <string name="device_clover" translatable="false">Xiaomi Mi Pad 4/4 Plus</string>
+    <string name="device_clover_summary" translatable="false">clover\nMax Weffers (rcstar6696)</string>
+
+    <string name="device_beryllium" translatable="false">Xiaomi Poco F1</string>
+    <string name="device_beryllium_summary" translatable="false">beryllium\nWajid Khan (wajidkh08)</string>
+
+    <string name="device_land" translatable="false">Xiaomi Redmi 3S</string>
+    <string name="device_land_summary" translatable="false">land\nSaksham Singh</string>
+
+    <string name="device_markw" translatable="false">Xiaomi Redmi 4 Prime</string>
+    <string name="device_markw_summary" translatable="false">markw\nAggelos Savvopoulos (DarkAngelGR)</string>
+
+    <string name="device_rolex" translatable="false">Xiaomi Redmi 4A</string>
+    <string name="device_rolex_summary" translatable="false">rolex\nAnkan Ghosh (Ankan005)</string>
+
+    <string name="device_santoni" translatable="false">Xiaomi Redmi 4X</string>
+    <string name="device_santoni_summary" translatable="false">santoni\nViraj Patil (Stargazer19)</string>
+
+    <string name="device_vince" translatable="false">Xiaomi Redmi 5 Plus</string>
+    <string name="device_vince_summary" translatable="false">vince\nAbubakar Yagoub (Blacksuan19)</string>
+
+    <string name="device_kenzo" translatable="false">Xiaomi Redmi Note 3</string>
+    <string name="device_kenzo_summary" translatable="false">kenzo\nPratik Pithore (pratik@2799)</string>
+
+    <string name="device_whyred" translatable="false">Xiaomi Redmi Note 5 Pro</string>
+    <string name="device_whyred_summary" translatable="false">whyred\nRuturaj Kadam</string>
+
+    <string name="device_tulip" translatable="false">Xiaomi Redmi Note 6 Pro</string>
+    <string name="device_tulip_summary" translatable="false">tulip\nPavan Patel (Pavanpatel)</string>
+
+    <string name="device_kuntao" translatable="false">Lenovo P2</string>
+    <string name="device_kuntao_summary" translatable="false">kuntao\nAdvaith Bhat (advaithbhat)</string>
+
+    <string name="device_x00t" translatable="false">Asus Zenfone Max Pro M1</string>
+    <string name="device_x00t_summary" translatable="false">X00T\nRizky Benggolo (travarilo)</string>
+
+    <string name="device_x01bd" translatable="false">Asus Zenfone Max Pro M2</string>
+    <string name="device_x01bd_summary" translatable="false">X01BD\nSonal Singh (Skssbss)</string>
+
+    <string name="device_s2" translatable="false">LeEco Le 2</string>
+    <string name="device_s2_summary" translatable="false">s2\nHimanshu Kumar (Hk26)</string>
+
+    <string name="device_ether" translatable="false">Nextbit Robin</string>
+    <string name="device_ether_summary" translatable="false">ether\nAnierin Bliss (anierinb)</string>
+
+</resources>
