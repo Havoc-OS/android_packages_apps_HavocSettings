@@ -145,20 +145,49 @@ public class ActiveEdge extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
+        // Ensure preferences sensible to change get updated
+        actionPreferenceReload();
         customAppCheck();
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        // Ensure preferences sensible to change gets updated
+        actionPreferenceReload();
         customAppCheck();
     }
 
     private void customAppCheck() {
-        mShortSqueezeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
-                String.valueOf(Settings.Secure.SHORT_SQUEEZE_CUSTOM_APP_FR_NAME)));
-        mLongSqueezeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
-                String.valueOf(Settings.Secure.LONG_SQUEEZE_CUSTOM_APP_FR_NAME)));
+        mShortSqueezeAppSelection.setSummary(Settings.Secure.getStringForUser(getActivity().getContentResolver(),
+                String.valueOf(Settings.Secure.SHORT_SQUEEZE_CUSTOM_APP_FR_NAME), UserHandle.USER_CURRENT));
+        mLongSqueezeAppSelection.setSummary(Settings.Secure.getStringForUser(getActivity().getContentResolver(),
+                String.valueOf(Settings.Secure.LONG_SQUEEZE_CUSTOM_APP_FR_NAME), UserHandle.USER_CURRENT));
+    }
+
+    /* Helper for reloading both short and long gesture as they might change on
+       package uninstallation */
+    private void actionPreferenceReload() {
+        int shortSqueezeActions = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.SHORT_SQUEEZE_SELECTION, 0,
+                UserHandle.USER_CURRENT);
+
+        int longSqueezeActions = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.LONG_SQUEEZE_SELECTION, 0,
+                UserHandle.USER_CURRENT);
+
+        // Reload the action preferences
+        mShortSqueezeActions.setValue(Integer.toString(shortSqueezeActions));
+        mShortSqueezeActions.setSummary(mShortSqueezeActions.getEntry());
+
+        mLongSqueezeActions.setValue(Integer.toString(longSqueezeActions));
+        mLongSqueezeActions.setSummary(mLongSqueezeActions.getEntry());
+
+        // Also ensure that the application chooser gets disabled when needed
+        mShortSqueezeAppSelection.setEnabled(mShortSqueezeActions.getEntryValues()
+        [shortSqueezeActions].equals("11"));
+        mLongSqueezeAppSelection.setEnabled(mLongSqueezeActions.getEntryValues()
+        [longSqueezeActions].equals("11"));
     }
 
     @Override
