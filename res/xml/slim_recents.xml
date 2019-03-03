@@ -27,7 +27,6 @@
         android:min="60"
         android:max="160"
         android:defaultValue="100"
-        settings:interval="5"
         settings:units="%" />
 
     <com.havoc.support.colorpicker.ColorPickerPreference

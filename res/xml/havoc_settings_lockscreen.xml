@@ -134,7 +134,7 @@
             android:key="show_lockscreen_indicator_display" 
             android:title="@string/hide_lockscreen_indicator_display_title" 
             android:summary="@string/hide_lockscreen_indicator_display_summary" 
-            android:defaultValue="false" /> 
+            android:defaultValue="true" /> 
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"

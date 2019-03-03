@@ -91,7 +91,8 @@
             android:max="255"
             android:min="100"
             android:defaultValue="255"
-            android:persistent="false" />
+            android:persistent="false"
+            android:dependency="qs_panel_bg_use_fw" />
 
 	    <ListPreference
             android:key="qs_header_style"
