@@ -467,4 +467,19 @@
                 android:data="https://t.me/AnierinB" />
         </Preference>
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_yu"
+        android:title="@string/device_category_yu_title" >
+
+        <Preference
+            android:id="@+id/device_lettuce"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_lettuce_summary"
+            android:title="@string/device_lettuce" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/gaurav24" />
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>

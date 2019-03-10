@@ -30,6 +30,7 @@
     <string name="device_category_asus_title" translatable="false">Asus</string>
     <string name="device_category_leeco_title" translatable="false">LeEco</string>
     <string name="device_category_nextbit_title" translatable="false">Nextbit</string>
+    <string name="device_category_yu_title" translatable="false">YU</string>
 
     <!-- Devices & Maintainers -->
     <string name="device_genericarmaonly" translatable="false">Generic System Image</string>
@@ -151,5 +152,8 @@
 
     <string name="device_ether" translatable="false">Nextbit Robin</string>
     <string name="device_ether_summary" translatable="false">ether\nAnierin Bliss (anierinb)</string>
+
+    <string name="device_lettuce" translatable="false">YU Yuphoria</string>
+    <string name="device_lettuce_summary" translatable="false">lettuce\nGaurav Kumar (Gaurav24)</string>
 
 </resources>
