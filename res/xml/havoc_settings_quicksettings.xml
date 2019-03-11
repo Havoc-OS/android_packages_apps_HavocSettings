@@ -161,9 +161,15 @@
             android:defaultValue="false" />
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="qs_edit_toggle"
+            android:key="qs_footer_show_edit"
             android:title="@string/qs_edit_title"
             android:summary="@string/qs_edit_summary"
+            android:defaultValue="true" />
+
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_user"
+            android:title="@string/qs_footer_user_title"
+            android:summary="@string/qs_footer_user_summary"
             android:defaultValue="true" />
 
     </PreferenceCategory>
