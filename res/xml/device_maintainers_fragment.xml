@@ -228,6 +228,16 @@
         android:title="@string/device_category_xiaomi_title" >
 
         <Preference
+            android:id="@+id/device_sagit"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_sagit_summary"
+            android:title="@string/device_sagit" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/EnderXH" />
+        </Preference> 
+
+        <Preference
             android:id="@+id/device_wayne"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_wayne_summary"
@@ -449,7 +459,7 @@
             android:title="@string/device_s2" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/Wanttobillionaire" />
+                android:data="https://t.me/techyhk" />
         </Preference>
     </PreferenceCategory>
 
