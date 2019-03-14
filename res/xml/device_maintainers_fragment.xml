@@ -228,6 +228,16 @@
         android:title="@string/device_category_xiaomi_title" >
 
         <Preference
+            android:id="@+id/device_cancro"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_cancro_summary"
+            android:title="@string/device_cancro" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/rawStamiuy" />
+        </Preference> 
+
+        <Preference
             android:id="@+id/device_sagit"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_sagit_summary"

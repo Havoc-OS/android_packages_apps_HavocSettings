@@ -87,6 +87,9 @@
     <string name="device_payton" translatable="false">Moto X4</string>
     <string name="device_payton_summary" translatable="false">payton\nAndrew Hexen (SyberHexen)</string>
 
+    <string name="device_cancro" translatable="false">Xiaomi Mi 4</string>
+    <string name="device_cancro_summary" translatable="false">cancro\rawStamiuy (Ratoriku)</string>
+
     <string name="device_sagit" translatable="false">Xiaomi Mi 6</string>
     <string name="device_sagit_summary" translatable="false">sagit\nAfanasev Denis (EnderXH)</string>
 
