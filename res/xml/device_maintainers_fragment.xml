@@ -398,6 +398,16 @@
         </Preference>
 
         <Preference
+            android:id="@+id/device_mido"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_mido_summary"
+            android:title="@string/device_mido" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/hungphan2001" />
+        </Preference>
+		
+        <Preference
             android:id="@+id/device_whyred"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_whyred_summary"
