@@ -174,7 +174,13 @@
 
     <string name="face_auto_unlock_title">Face Unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen automatically after face is recognized</string>
-   
+
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_fade">Fade</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>

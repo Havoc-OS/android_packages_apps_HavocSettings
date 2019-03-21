@@ -15,6 +15,18 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Screen off animation -->
+    <string-array name="screen_off_animation_entries">
+        <item>@string/screen_off_animation_fade</item>
+        <item>@string/screen_off_animation_crt</item>
+        <item>@string/screen_off_animation_scale</item>
+    </string-array>
+    <string-array name="screen_off_animation_values" translatable="false">
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!--- Buttons backlight timeout -->
     <string-array name="backlight_timeout_entries">
         <item>@string/backlight_timeout_on</item>

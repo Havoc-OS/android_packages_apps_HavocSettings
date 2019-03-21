@@ -48,6 +48,7 @@ import java.util.List;
 
 public class Animations extends SettingsPreferenceFragment  implements Preference.OnPreferenceChangeListener {
 
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String ANIMATION_DURATION = "animation_controls_duration";
     private static final String ACTIVITY_OPEN = "activity_open";
     private static final String ACTIVITY_CLOSE = "activity_close";
@@ -68,6 +69,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
 
+    private ListPreference mScreenOffAnimation; 
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
@@ -102,6 +104,14 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // Screen Off animation
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        int screenOffAnimation = Settings.Global.getInt(getContentResolver(),
+                Settings.Global.SCREEN_OFF_ANIMATION, 0);
+        mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
         // Toast animation
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
@@ -247,7 +257,13 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mToastAnimation) {
+        if (preference == mScreenOffAnimation) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
+            Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
+            return true;
+        } else if (preference == mToastAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mToastAnimation.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
