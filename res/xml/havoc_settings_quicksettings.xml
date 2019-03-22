@@ -130,12 +130,6 @@
 	        android:summary="@string/tuner_show_info_header_category"
 	        android:defaultValue="true" />
 
-        <com.havoc.support.preferences.SecureSettingSwitchPreference
-	        android:key="qs_show_drag_handle"
-	        android:title="@string/tuner_show_drag_handle_title"
-	        android:summary="@string/tuner_show_drag_handle_summary"
-	        android:defaultValue="true" />
-
     </PreferenceCategory>
 
     <PreferenceCategory 
