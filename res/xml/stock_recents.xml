@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Havoc-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/stock_recents_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
+        android:key="show_clear_all_recents"
+        android:title="@string/show_clear_all_recents_button_title"
+        android:summary="@string/show_clear_all_recents_button_summary"
+        android:defaultValue="true" />
+
+    <ListPreference
+        android:key="recents_clear_all_location"
+        android:title="@string/recents_clear_all_location_title"
+        android:entries="@array/recents_clear_all_location_entries"
+        android:entryValues="@array/recents_clear_all_location_values"
+        android:defaultValue="3"
+        android:dependency="show_clear_all_recents" />
+
+    <ListPreference
+        android:key="clear_recents_style"
+        android:title="@string/clear_recents_style"
+        android:entries="@array/recents_button_style"
+        android:entryValues="@array/recents_button_style_values"
+        android:defaultValue="0"
+        android:dependency="show_clear_all_recents" />
+
+    <com.havoc.support.preferences.SystemSettingSwitchPreference 
+        android:key="systemui_recents_mem_display" 
+        android:title="@string/systemui_recents_mem_display_title" 
+        android:summary="@string/systemui_recents_mem_display_summary" 
+        android:defaultValue="false" /> 
+
+    <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="clear_recents_style_enable"
+        android:fragment="com.havoc.settings.fragments.RecentsStyles" 
+        android:title="@string/recent_styles"
+        android:summary="@string/recent_styles_summary"
+        android:defaultValue="false" />
+
+    <Preference
+        android:key="recents_icon_pack"
+        android:title="@string/recents_icon_pack_title"
+        android:summary="@string/recents_icon_pack_summary" />
+
+    <Preference
+        android:key="hide_app_from_recents"
+        android:title="@string/hide_apps_from_recents_title"
+        android:summary="@string/hide_apps_from_recents_summary" >
+        <intent android:action="android.intent.action.MAIN"
+        android:targetPackage="com.android.settings"
+        android:targetClass="com.havoc.settings.hideappfromrecents.HAFRAppListActivity" />
+    </Preference>
+
+    <ListPreference
+        android:key="immersive_recents"
+        android:title="@string/immersive_recents_title"
+        android:summary="@string/immersive_recents_summary"
+        android:entries="@array/immersive_recents_entries"
+        android:entryValues="@array/immersive_recents_values"
+        android:persistent="false" />
+
+    <com.havoc.support.preferences.SystemSettingSwitchPreference 
+        android:key="recents_full_screen_clock" 
+        android:title="@string/recents_full_screen_clock_title" 
+        android:summary="@string/recents_full_screen_clock_summary" 
+        android:defaultValue="false" /> 
+ 
+    <com.havoc.support.preferences.SystemSettingSwitchPreference 
+        android:key="recents_full_screen_date" 
+        android:title="@string/recents_full_screen_date_title" 
+        android:summary="@string/recents_full_screen_date_summary" 
+        android:defaultValue="false" />
+</PreferenceScreen>

@@ -118,7 +118,6 @@
     <string name="statusbar_logo_cat">Logo</string>
     <string name="hafr_title">Hide Apps from Recent</string>
     <string name="immersive_recent_title">Immersive Recent</string>
-    <string name="recent_button_title">Stock Recents</string>
     <string name="notification_lights">Lights</string>
     <string name="notification_messages">System</string>
     <string name="notification_stat">Statusbar</string>
@@ -140,8 +139,8 @@
     <string name="flashlight_on_call_always">Always</string>
 
     <!-- Recents Membar -->
-    <string name="systemui_recents_mem_display_title">Show Memory Bar</string>
-    <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string>
+    <string name="systemui_recents_mem_display_title">Memory Bar</string>
+    <string name="systemui_recents_mem_display_summary">Show a progress bar displaying RAM</string>
 
     <!-- Power Menu -->
     <string name="powermenu_title">Power Menu</string>
@@ -373,8 +372,8 @@
 
     <!-- Recents panel settings -->
     <string name="show_clear_all_recents_button_title">Clear all button</string>
-    <string name="show_clear_all_recents_button_summary">Show clear all button</string>
-    <string name="recents_clear_all_location_title">Clear all location</string>
+    <string name="show_clear_all_recents_button_summary">Display a clear all button in recents</string>
+    <string name="recents_clear_all_location_title">Clear all button location</string>
     <string name="recents_clear_all_location_top_right">Top right</string>
     <string name="recents_clear_all_location_top_left">Top left</string>
     <string name="recents_clear_all_location_top_center">Top center</string>
@@ -408,7 +407,7 @@
     <string name="volume_summary">Customize settings for volume buttons</string>
 	
     <!-- Hide Apps from Recents -->
-    <string name="hide_apps_from_recents_title">Hide apps from recents</string>
+    <string name="hide_apps_from_recents_title">Apps blacklist</string>
     <string name="hide_from_recents_add_app">Add App</string>
     <string name="hide_apps_from_recents_summary">Select certian apps to hide in recents</string>
 
@@ -581,7 +580,7 @@
     <string name="screen_state_toggles_summary">Actions executed on screen off</string>
     <string name="screen_state_toggles_enable_title">Enable</string>
     <string name="screen_state_toggles_enable_summary">Actions will be executed on screen off. On screen on the previous state will be restored.</string>
-    <string name="screen_state_toggles_mobile_title">Mobile networks</string>
+    <string name="screen_state_toggles_mobile_title">Mobile Network</string>
     <string name="screen_state_toggles_location_title">Location</string>
     <string name="screen_state_toggles_twog">Switch to 2G</string>
     <string name="screen_state_toggles_twog_summary">Network mode will be switched to 2G on screen off</string>
@@ -1043,13 +1042,12 @@
     <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
 
     <!-- Immersive Recents -->
-    <string name="immersive_recents_title">Immersive recents</string>
+    <string name="immersive_recents_title">Immersive mode</string>
     <string name="immersive_recents_summary">Change the view of the recents screen</string>
-    <string name="immersive_recents_dialog_title">Select recents view</string>
     <string name="immersive_recents_default">Default</string>
     <string name="immersive_recents_fullscreen">Fullscreen</string>
-    <string name="immersive_recents_statusbar">Statusbar only</string>
-    <string name="immersive_recents_navbar">Navbar only</string>
+    <string name="immersive_recents_statusbar">Statusbar</string>
+    <string name="immersive_recents_navbar">Navbar</string>
     
     <!-- Clock and date immersive recents-->
     <string name="recents_full_screen_clock_title">Show clock</string>
@@ -1058,11 +1056,11 @@
     <string name="recents_full_screen_date_summary">Shows date at the top while in immersive</string>
 
     <string name="clear_recents_style">Button style</string>
-    <string name="fab_button_color">Clear all background color</string>
-    <string name="kill_app_button_color">Clear all icon color</string>
-    <string name="mem_bar_color">Memory bar</string>
-    <string name="recents_clock_color">Full screen recents clock text</string>
-    <string name="recents_date_color">Full screen recents date text</string>
+    <string name="fab_button_color">FAB background color</string>
+    <string name="kill_app_button_color">FAB icon color</string>
+    <string name="mem_bar_color">Memory bar color</string>
+    <string name="recents_clock_color">Immersive clock text color</string>
+    <string name="recents_date_color">Immersive date text color</string>
     <string name="recents_styles_1">Styles</string>
     <string name="recents_colors">Styles</string>
     <string name="recents_style_2">Colors</string>
@@ -1072,21 +1070,15 @@
     <string name="float_button_color">Floating button</string>
     <string name="tv_app_color">App Icon fill (Fills entire icon)</string>
     <string name="tv_app_text_color">App description text</string>
-    <string name="recent_styles">Recent styles </string>
-    <string name="recent_styles_summary">Customize various elements in recents </string>
-    <string name="mem_text_color">Membar text</string>
+    <string name="recent_styles">Custom styles</string>
+    <string name="recent_styles_summary">Customize various elements in recents</string>
+    <string name="mem_text_color">Membar text color</string>
     <string name="clear_button_color">Clear all</string>
     <string name="clear_recents_style_enable">Custom recents style</string>
     <string name="clear_recents_style_enable_summary">Enable / disable custom styling of recent apps view</string>
-    <string name="recents_rotate_fab">Animate FAB</string>
-    <string name="recents_rotate_fab_summary">Enable / disable rotation of clear all button</string>
-    <string name="recents_fab_vibrate">Vibrate clear all button on press</string>
-    <string name="recents_fab_vibrate_summary">Enable / disable haptic feedback of dismiss all button</string>
-    <string name="fab_animation_style">Floating button animation</string>
-    <string name="recents_fab_lp">Enable longpress on FAB</string>
-    <string name="recents_fab_lp_summary">Longpress updates memory bar if present</string>
-    <string name="recents_fab_lp_anim">Long press FAB animations</string>
-    <string name="clear_animation_style">Clear all animation</string>
+    <string name="recents_rotate_fab">FAB animation</string>
+    <string name="recents_rotate_fab_summary">Enable animation for the clear all button</string>
+    <string name="fab_animation_style">FAB animation style</string>
     <string name="button1">Default</string>
     <string name="button2">Square Checkbox</string>
     <string name="button3">Graph</string>
@@ -1322,6 +1314,11 @@
     <string name="screenrecord_quality_medium">Medium</string>
     <string name="screenrecord_quality_high">High</string>
 
+    <!-- Stock recents -->
+    <string name="recents_settings_title">Settings</string>
+    <string name="stock_recents_title">Stock Recents</string>
+    <string name="stock_recents_summary">Customize the additional settings for stock recents</string>
+
     <!-- Slim recents -->
     <string name="slim_recents_title">Slim Recents</string>
     <string name="slim_recents_summary">Enable to use an alternative recents screen</string>
@@ -1331,13 +1328,13 @@
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_expanded_mode_title">Expanded mode</string>
     <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
-    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
+    <string name="recent_panel_expanded_mode_auto">Auto (Default)</string>
     <string name="recent_panel_expanded_mode_always">Always</string>
     <string name="recent_panel_expanded_mode_never">Never</string>
     <string name="recent_panel_expanded_mode_disabled">Disabled</string>
     <string name="recent_panel_bg_color_title">Panel background color</string>
     <string name="recent_card_bg_color_title">Card background color</string>
-    <string name="slim_recents_mem_display_long_click_clear_title">Memory bar longpress</string>
+    <string name="slim_recents_mem_display_long_click_clear_title">Memory bar longpress gesture</string>
     <string name="slim_recents_mem_display_long_click_clear_summary">Clear recents by long-pressing the memory bar</string>
     <string name="slim_icon_pack_title">Icon Pack</string>
     <string name="slim_icon_pack_summary">Apply a custom icon pack for apps in the panel</string>
@@ -1345,11 +1342,9 @@
     <string name="dialog_pick_iconpack_title">Pick icon pack</string>
     <string name="default_iconpack_title">Default icons</string>
     <string name="slim_recents_corner_radius_title">Card corner radius</string>
-    <string name="slim_recents_aicp_empty_drawable_title">AICP empty recents</string>
-    <string name="slim_recents_aicp_empty_drawable_summary">Image to show when no recent apps</string>
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
-    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
+    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge of the screen</string>
     <string name="slim_blacklist_apps_cat_title">Blacklist</string>
     <string name="slim_blacklist_apps_title">Apps blacklist</string>
     <string name="slim_blacklist_apps_summary">Apps to not show in the panel</string>
@@ -1357,14 +1352,11 @@
     <string name="slim_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
 
     <!-- Slim Recent App Sidebar  -->
+    <string name="recent_app_sidebar_cat_title">App Sidebar</string>
     <string name="recent_app_sidebar_title">Recents app sidebar</string>
     <string name="recent_app_sidebar_summary">Show app shortcuts on the other edge</string>
-    <string name="use_recent_app_sidebar_title">Enable app sidebar</string>
-    <string name="use_recent_app_sidebar_summary">Show app shortcuts on the other edge</string>
     <string name="recent_app_sidebar_picker_title">Sidebar shortcuts</string>
     <string name="recent_app_sidebar_picker_summary">Choose apps to show in the sidebar</string>
-    <string name="recent_app_sidebar_content_title">Sidebar content</string>
-    <string name="recent_app_sidebar_content_summary">Configure the content of the app sidebar</string>
     <string name="recent_app_sidebar_style_title">Sidebar style</string>
     <string name="recent_app_sidebar_style_summary">Change the look of the sidebar</string>
     <string name="recent_app_sidebar_hide_labels_title">Hide icon labels</string>
@@ -1376,10 +1368,9 @@
     <string name="default_auto_string">Default (App based)</string>
 
     <!-- Slim recents membar -->
-    <string name="slim_recents_mem_display_category_title">Memory bar</string>
-    <string name="slim_recents_mem_display_title">Show memory bar</string>
-    <string name="slim_recents_mem_display_summaryOn">Memory bar enabled</string>
-    <string name="slim_recents_mem_display_summaryOff">Memory bar disabled</string>
+    <string name="slim_recents_mem_display_category_title">Memory Bar</string>
+    <string name="slim_recents_mem_display_title">Memory bar</string>
+    <string name="slim_recents_mem_display_summary">Show a progress bar displaying RAM</string>
     <string name="slim_recents_mem_display_color">Memory bar color</string>
     <string name="slim_recents_mem_display_text_color">Memory bar text color</string>
 
@@ -1459,7 +1450,7 @@
     <string name="edge_gestures_summary">Use edge gestures for navigation</string>
     <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string>
     <string name="edge_gestures_long_press_delay_title">Long press action delay</string>
-    <string name="edge_gestures_back_category_title">Back gesture</string>
+    <string name="edge_gestures_back_category_title">Back Gesture</string>
     <string name="edge_gestures_back_edges_title">Back gesture trigger</string>
     <string name="edge_gestures_landscape_back_edges_title">Back gesture trigger (Landscape)</string>
     <string name="edge_gestures_back_screen_percent_title">Back gesture must start below this percentage of the screen</string>

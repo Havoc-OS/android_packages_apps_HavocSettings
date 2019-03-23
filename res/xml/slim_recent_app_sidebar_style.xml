@@ -21,13 +21,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/recent_app_sidebar_style_title">
 
-    <com.havoc.support.preferences.CustomSeekBarPreference
+    <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="recent_app_sidebar_scale_factor"
         android:title="@string/recent_app_sidebar_scale_title"
         android:defaultValue="100"
         android:min="60"
         android:max="160"
-        settings:interval="5"
         settings:units="%" />
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference
@@ -39,14 +38,14 @@
     <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="recent_app_sidebar_text_color"
         android:title="@string/recent_app_sidebar_label_color_title"
-        android:defaultValue="0xffffffff"
+        settings:defaultColorValue="0xffffffff"
         alphaSlider="false"
         android:dependency="recent_app_sidebar_disable_labels" />
 
     <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="recent_app_sidebar_bg_color"
         android:title="@string/recent_app_sidebar_bg_color_title"
-        android:defaultValue="0x00ffffff"
+        settings:defaultColorValue="0x00ffffff"
         alphaSlider="true" />
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference

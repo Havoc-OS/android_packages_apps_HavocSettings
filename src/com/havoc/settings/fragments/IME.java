@@ -87,7 +87,7 @@ public class IME extends SettingsPreferenceFragment
         mEnableFullscreenKeyboard = 
             (SwitchPreference) findPreference(PREF_ENABLE_FULLSCREEN_KEYBOARD); 
         mEnableFullscreenKeyboard.setChecked(Settings.System.getInt(getContentResolver(), 
-                Settings.System.ENABLE_FULLSCREEN_KEYBOARD, 0) == 1); 
+                Settings.System.ENABLE_FULLSCREEN_KEYBOARD, 1) == 1); 
         mEnableFullscreenKeyboard.setOnPreferenceChangeListener(this); 
       
         mKeyboardRotationToggle = (SwitchPreference) findPreference(KEYBOARD_ROTATION_TOGGLE); 

@@ -21,7 +21,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/slim_recents_title">
 
-    <com.havoc.support.preferences.CustomSeekBarPreference
+    <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="recent_panel_scale_factor"
         android:title="@string/recent_panel_scale_title"
         android:min="60"
@@ -32,16 +32,16 @@
     <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="recent_panel_bg_color"
         android:title="@string/recent_panel_bg_color_title"
-        android:defaultValue="0x00ffffff"
+        settings:defaultColorValue="0x00ffffff"
         alphaSlider="true" />
 
     <com.havoc.support.colorpicker.ColorPickerPreference
         android:key="recent_card_bg_color"
         android:title="@string/recent_card_bg_color_title"
-        android:defaultValue="0x00ffffff"
+        settings:defaultColorValue="0x00ffffff"
         alphaSlider="true" />
 
-    <com.havoc.support.preferences.CustomSeekBarPreference
+    <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="recents_max_apps"
         android:title="@string/recents_max_apps_title"
         android:defaultValue="15"
@@ -54,7 +54,7 @@
         android:summary="@string/recent_panel_lefty_mode_summary"
         android:defaultValue="false" />
 
-    <com.havoc.support.preferences.CustomSeekBarPreference
+    <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="slim_recents_corner_radius"
         android:title="@string/slim_recents_corner_radius_title"
         android:min="0"
@@ -78,33 +78,37 @@
     <PreferenceScreen
         android:key="blacklist_fragment"
         android:fragment="com.havoc.settings.fragments.SlimRecentsBlacklist"
-        android:title="@string/slim_blacklist_apps_cat_title"
+        android:title="@string/slim_blacklist_apps_title"
         android:summary="@string/slim_blacklist_apps_summary" />
 
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="use_recent_app_sidebar"
-        android:title="@string/recent_app_sidebar_title"
-        android:summary="@string/recent_app_sidebar_summary"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:title="@string/recent_app_sidebar_cat_title">
 
-    <PreferenceScreen
-        android:key="recent_app_sidebar"
-        android:title="@string/recent_app_sidebar_picker_title"
-        android:summary="@string/recent_app_sidebar_picker_summary"
-        android:fragment="com.havoc.settings.preferences.dslv.ActionListViewSettings"
-        android:dependency="use_recent_app_sidebar" >
-        <extra android:name="actionMode" android:value="7" />
-        <extra android:name="maxAllowedActions" android:value="-1" />
-        <extra android:name="useAppPickerOnly" android:value="true" />
-        <extra android:name="fragment" android:value="com.havoc.settings.fragments.SlimRecentAppSidebar" />
-    </PreferenceScreen>
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="use_recent_app_sidebar"
+            android:title="@string/recent_app_sidebar_title"
+            android:summary="@string/recent_app_sidebar_summary"
+            android:defaultValue="true" />
 
-    <PreferenceScreen
-        android:key="recent_app_sidebar_fragment"
-        android:fragment="com.havoc.settings.fragments.SlimRecentAppSidebarStyle"
-        android:title="@string/recent_app_sidebar_style_title"
-        android:summary="@string/recent_app_sidebar_style_summary"
-        android:dependency="use_recent_app_sidebar" />
+        <PreferenceScreen
+            android:key="recent_app_sidebar"
+            android:title="@string/recent_app_sidebar_picker_title"
+            android:summary="@string/recent_app_sidebar_picker_summary"
+            android:fragment="com.havoc.settings.preferences.dslv.ActionListViewSettings"
+            android:dependency="use_recent_app_sidebar" >
+            <extra android:name="actionMode" android:value="7" />
+            <extra android:name="maxAllowedActions" android:value="-1" />
+            <extra android:name="useAppPickerOnly" android:value="true" />
+            <extra android:name="fragment" android:value="com.havoc.settings.fragments.SlimRecentAppSidebar" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="recent_app_sidebar_fragment"
+            android:fragment="com.havoc.settings.fragments.SlimRecentAppSidebarStyle"
+            android:title="@string/recent_app_sidebar_style_title"
+            android:summary="@string/recent_app_sidebar_style_summary"
+            android:dependency="use_recent_app_sidebar" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/slim_recents_mem_display_category_title">
@@ -112,8 +116,7 @@
         <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="slim_recents_mem_display"
             android:title="@string/slim_recents_mem_display_title"
-            android:summaryOn="@string/slim_recents_mem_display_summaryOn"
-            android:summaryOff="@string/slim_recents_mem_display_summaryOff"
+            android:summary="@string/slim_recents_mem_display_summary"
             android:defaultValue="false" />
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference
@@ -126,13 +129,13 @@
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="slim_mem_bar_color"
             android:title="@string/slim_recents_mem_display_color"
-            android:defaultValue="0xffffffff"
+            settings:defaultColorValue="0xffffffff"
             android:dependency="slim_recents_mem_display"/>
 
         <com.havoc.support.colorpicker.ColorPickerPreference
             android:key="slim_mem_text_color"
             android:title="@string/slim_recents_mem_display_text_color"
-            android:defaultValue="0xffffffff"
+            settings:defaultColorValue="0xffffffff"
             android:dependency="slim_recents_mem_display"/>
 
     </PreferenceCategory>

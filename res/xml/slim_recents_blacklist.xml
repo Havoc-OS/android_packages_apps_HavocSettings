@@ -17,7 +17,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/slim_blacklist_apps_cat_title">
+    android:title="@string/slim_blacklist_apps_title">
 
     <Preference
         android:key="add_blacklist_packages"

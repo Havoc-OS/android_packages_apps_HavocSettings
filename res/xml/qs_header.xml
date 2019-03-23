@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen 
-    android:title="@string/header_image" 
+    android:title="@string/status_bar_custom_header_title" 
     xmlns:android="http://schemas.android.com/apk/res/android" 
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"> 
 
@@ -36,9 +36,9 @@
     <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="status_bar_custom_header_shadow"
         android:title="@string/status_bar_custom_header_shadow_title"
-        android:summary="@string/status_bar_custom_header_shadow_summary"
         android:max="100"
         android:min="0"
+        android:defaultValue="0"
         settings:units="%" />
 
 </PreferenceScreen>

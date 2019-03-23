@@ -96,6 +96,7 @@ public class ExpandedDesktopPreferenceFragment extends SettingsPreferenceFragmen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActivity().getActionBar().setTitle(R.string.expanded_desktop_pref_title);
         mApplicationsState = ApplicationsState.getInstance(getActivity().getApplication());
         mSession = mApplicationsState.newSession(this);
         mSession.onResume();

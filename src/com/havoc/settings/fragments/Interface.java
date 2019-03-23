@@ -28,10 +28,10 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settings.display.FontPickerPreferenceController;
 import com.havoc.settings.display.AccentPickerPreferenceController;
-import com.havoc.settings.display.AutoDarkUIPreferenceController;
 import com.havoc.settings.display.DarkUIPreferenceController;
 import com.havoc.settings.display.QsAlphaPreferenceController;
 import com.havoc.settings.display.QsColorPreferenceController;
+import com.havoc.settings.display.QsCustomHeaderPreferenceController;
 import com.havoc.settings.display.QsHeaderStylePreferenceController;
 import com.havoc.settings.display.QsTileStylePreferenceController;
 import com.havoc.settings.display.SwitchStylePreferenceController;
@@ -101,11 +101,11 @@ public class Interface extends DashboardFragment {
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
-	    controllers.add(new AutoDarkUIPreferenceController(context));
         controllers.add(new DarkUIPreferenceController(context));
 		controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle, fragment));
         controllers.add(new QsAlphaPreferenceController(context));
         controllers.add(new QsColorPreferenceController(context));
+        controllers.add(new QsCustomHeaderPreferenceController(context));
         controllers.add(new QsHeaderStylePreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new SwitchStylePreferenceController(context));

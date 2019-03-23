@@ -216,9 +216,6 @@ public class TimeInState extends SettingsPreferenceFragment {
         case MENU_REFRESH:
             refreshData();
             break;
-        case R.id.reset:
-            createResetPoint();
-            break;
         case MENU_SHARE:
             if (mShareIntent != null) {
                 Intent intent = Intent.createChooser(mShareIntent, null);
@@ -228,19 +225,6 @@ public class TimeInState extends SettingsPreferenceFragment {
             break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void createResetPoint() {
-        try {
-            monitor.setOffsets();
-        } catch (Exception e) {
-            // not good
-        }
-        saveOffsets();
-        if (mPeriodType == 1) {
-            monitor.removeOffsets();
-        }
-        refreshData();
     }
 
     public void updateView() {

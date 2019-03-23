@@ -27,86 +27,19 @@
         android:entryValues="@array/recents_type_title_values"/>
 
     <PreferenceCategory
-        android:key="slim_recents_category"
-        android:title="@string/slim_recents_title">
+        android:key="recents_settings_category"
+        android:title="@string/recents_settings_title">
+
+        <PreferenceScreen
+            android:key="stock_recents_fragment"
+            android:fragment="com.havoc.settings.fragments.StockRecents"
+            android:title="@string/stock_recents_title"
+            android:summary="@string/stock_recents_summary" />
 
         <PreferenceScreen
             android:key="slim_recents_fragment"
             android:fragment="com.havoc.settings.fragments.SlimRecents"
-            android:title="@string/slim_recents_fragment_title"
+            android:title="@string/slim_recents_title"
             android:summary="@string/slim_recents_fragment_summary" />
-    </PreferenceCategory>
-
-    <PreferenceCategory 
-        android:title="@string/recent_button_title"
-        android:key="stock_recents" >
-
-        <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="show_clear_all_recents"
-            android:title="@string/show_clear_all_recents_button_title"
-            android:summary="@string/show_clear_all_recents_button_summary"
-            android:defaultValue="true" />
-
-        <ListPreference
-            android:key="recents_clear_all_location"
-            android:title="@string/recents_clear_all_location_title"
-            android:entries="@array/recents_clear_all_location_entries"
-            android:entryValues="@array/recents_clear_all_location_values"
-            android:defaultValue="3"
-            android:dependency="show_clear_all_recents" />
-
-        <com.havoc.support.preferences.SystemSettingSwitchPreference 
-            android:key="systemui_recents_mem_display" 
-            android:title="@string/systemui_recents_mem_display_title" 
-            android:summary="@string/systemui_recents_mem_display_summary" 
-            android:defaultValue="false" /> 
-
-        <PreferenceScreen 
-            android:key="recent_styles" 
-            android:title="@string/recent_styles" 
-            android:fragment="com.havoc.settings.fragments.RecentsStyles" 
-            android:summary="@string/recent_styles_summary"/> 
-
-        <Preference
-            android:key="recents_icon_pack"
-            android:title="@string/recents_icon_pack_title"
-            android:summary="@string/recents_icon_pack_summary" />
-
-        <Preference
-            android:key="hide_app_from_recents"
-            android:title="@string/hide_apps_from_recents_title"
-            android:summary="@string/hide_apps_from_recents_summary" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.settings"
-                android:targetClass="com.havoc.settings.hideappfromrecents.HAFRAppListActivity" />
-        </Preference>
-		
-    </PreferenceCategory>
-
-    <PreferenceCategory 
-        android:title="@string/immersive_recent_title"
-        android:key="immersive" >
-
-        <ListPreference
-            android:key="immersive_recents"
-            android:title="@string/immersive_recents_title"
-            android:summary="@string/immersive_recents_summary"
-            android:dialogTitle="@string/immersive_recents_dialog_title"
-            android:entries="@array/immersive_recents_entries"
-            android:entryValues="@array/immersive_recents_values"
-            android:persistent="false" />
-
-        <com.havoc.support.preferences.SystemSettingSwitchPreference 
-            android:key="recents_full_screen_clock" 
-            android:title="@string/recents_full_screen_clock_title" 
-            android:summary="@string/recents_full_screen_clock_summary" 
-            android:defaultValue="false" /> 
- 
-        <com.havoc.support.preferences.SystemSettingSwitchPreference 
-            android:key="recents_full_screen_date" 
-            android:title="@string/recents_full_screen_date_title" 
-            android:summary="@string/recents_full_screen_date_summary" 
-            android:defaultValue="false" /> 
-
     </PreferenceCategory>
 </PreferenceScreen>
