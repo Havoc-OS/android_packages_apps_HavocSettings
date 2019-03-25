@@ -44,9 +44,11 @@ import com.android.settings.havoc.AccentPicker;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 
 import com.havoc.settings.R;
+import com.havoc.settings.Utils;
 import com.havoc.settings.fragments.ThemePicker;
 import com.havoc.support.colorpicker.ColorPickerPreference;
 import com.havoc.support.preferences.CustomSeekBarPreference;
+import com.havoc.support.preferences.SystemPropListPreference;
 import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.List;
@@ -68,6 +70,7 @@ public class Interface extends SettingsPreferenceFragment implements
     private static final String QS_TILE_STYLE = "qs_tile_style";
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SWITCH_STYLE = "switch_style";
+    private static final String KEY_ICON_SHAPE = "persist.system.iconshape";
     static final int DEFAULT_QS_PANEL_COLOR = 0xFFFFFFFF;
 
     private ColorPickerPreference mQsPanelColor;
@@ -79,6 +82,7 @@ public class Interface extends SettingsPreferenceFragment implements
     private ListPreference mSwitchStyle;
     private Preference mAccentPicker;
     private Preference mThemePicker;
+    private SystemPropListPreference mIconShape;
     private SystemSettingMasterSwitchPreference mCustomHeader;
     private FontDialogPreference mFontPreference;
 
@@ -165,6 +169,9 @@ public class Interface extends SettingsPreferenceFragment implements
         mFontPreference = (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
         mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
 
+        mIconShape = (SystemPropListPreference) findPreference(KEY_ICON_SHAPE);
+        mIconShape.setOnPreferenceChangeListener(this);
+
         updateThemePicker(systemuiThemeStyle);
     }
 
@@ -246,6 +253,10 @@ public class Interface extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.SWITCH_STYLE, Integer.valueOf(value));
             int valueIndex = mSwitchStyle.findIndexOfValue(value);
             mSwitchStyle.setSummary(mSwitchStyle.getEntries()[valueIndex]);
+            return true;
+        } else if (preference == mIconShape) {
+            Utils.showRebootDialog(getActivity(), getString(R.string.icon_shape_changed_title),
+                    getString(R.string.icon_shape_changed_message));
             return true;
         }
         return false;

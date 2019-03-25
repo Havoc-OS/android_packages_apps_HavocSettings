@@ -1551,4 +1551,18 @@
     <string name="power_button_torch_gesture_none">Disabled</string>
     <string name="power_button_torch_gesture_dt">Double tap power button</string>
     <string name="power_button_torch_gesture_lp">Long press power button</string>
+
+    <!-- Adaptive icon shape -->
+    <string name="icon_shape_title">App icon shape</string>
+    <string name="icon_shape_system_default">System default</string>
+    <string name="icon_shape_square">Square</string>
+    <string name="icon_shape_rounded_square">Rounded square</string>
+    <string name="icon_shape_squircle">Squircle</string>
+    <string name="icon_shape_circle">Circle</string>
+    <string name="icon_shape_teardrop">Teardrop</string>
+    <string name="icon_shape_hexagon">Hexagon</string>
+    <string name="icon_shape_changed_title">Update icon shape</string>
+    <string name="icon_shape_changed_message">Changing the icon shape will only affect new started apps. Thus, it is recommended to reboot your device to fully apply this setting. If some apps still use the old shape after that, try clearing their app cache.</string>
+    <string name="reboot_dialog_ok">Reboot</string>
+    <string name="reboot_dialog_cancel">@string/cancel</string>
 </resources>

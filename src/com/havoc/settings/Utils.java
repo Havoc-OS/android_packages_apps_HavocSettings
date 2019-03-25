@@ -16,7 +16,9 @@
 package com.havoc.settings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -30,6 +32,7 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.net.ConnectivityManager;
+import android.os.PowerManager;
 import android.os.UserManager;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
@@ -37,7 +40,8 @@ import android.view.DisplayInfo;
 import android.view.Surface;
 import android.view.WindowManager;
 
-public final class Utils {
+public abstract class Utils {
+
     private static final String TAG = "Utils";
 
     // Device types
@@ -235,5 +239,29 @@ public final class Utils {
         } catch (NameNotFoundException e) {
             return false;
         }
+    }
+
+    public static void rebootSystem(Context context) {
+        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        pm.reboot(null);
+    }
+
+    public static void showRebootDialog(Context context, String title, String message) {
+        new AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(R.string.reboot_dialog_ok,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                rebootSystem(context);
+                            }
+                })
+                .setNegativeButton(R.string.reboot_dialog_cancel,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // Only close dialog
+                            }
+                })
+                .show();
     }
 }

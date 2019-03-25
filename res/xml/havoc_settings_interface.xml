@@ -50,6 +50,13 @@
             android:title="@string/font_picker_title"
             android:persistent="false" />
 
+        <com.havoc.support.preferences.SystemPropListPreference
+            android:key="persist.system.iconshape"
+            android:title="@string/icon_shape_title"
+            android:entries="@array/icon_shape_entries"
+            android:entryValues="@array/icon_shape_values"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
