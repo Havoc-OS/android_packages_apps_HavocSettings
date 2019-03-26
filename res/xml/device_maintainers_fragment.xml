@@ -417,7 +417,7 @@
                 android:data="https://t.me/notallowedontelegram" />
         </Preference>
 
-        <Preference
+        <!--<Preference
             android:id="@+id/device_tulip"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_tulip_summary"
@@ -425,7 +425,7 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Advertpavan" />
-        </Preference>
+        </Preference>-->
     </PreferenceCategory>
 
     <PreferenceCategory
