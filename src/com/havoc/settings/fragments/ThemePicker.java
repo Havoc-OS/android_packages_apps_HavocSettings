@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.havoc.settings.display;
+package com.havoc.settings.fragments;
 
 import android.app.ActivityManager;
 import android.app.AlertDialog;
