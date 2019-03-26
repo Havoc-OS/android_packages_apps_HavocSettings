@@ -23,6 +23,7 @@
     <string name="maintainers_category_title">Maintainers</string>
     <string name="havoc_developers_skulshady" translatable="false">• Co-Founder \n• Core Developer \n• UI/UX Designer\n• Maintainer</string>
     <string name="havoc_developers_zenixxx" translatable="false">• Co-Founder \n• Core Developer\n• Maintainer</string>
+    <string name="havoc_support_tushar" translatable="false">• Graphics Designer\n• Support Group Moderator</string>
     <string name="havoc_support_summary" translatable="false">• Support Group Moderator</string>
     <string name="device_maintainers_title">Official Devices</string>
     <string name="device_maintainers_title_summary">List of official devices and their maintainers</string>

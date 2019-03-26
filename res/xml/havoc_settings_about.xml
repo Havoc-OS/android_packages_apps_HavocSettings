@@ -48,7 +48,7 @@
 
         <Preference
             android:title="Tushar Jain (theoj22)"
-            android:summary="@string/havoc_support_summary"
+            android:summary="@string/havoc_support_tushar"
             android:icon="@drawable/havoc_support"/>
 
         <Preference
