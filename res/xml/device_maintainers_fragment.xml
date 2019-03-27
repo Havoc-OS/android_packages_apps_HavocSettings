@@ -238,6 +238,16 @@
         </Preference> 
 
         <Preference
+            android:id="@+id/device_natrium"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_natrium_summary"
+            android:title="@string/device_natrium" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/hacker1024" />
+        </Preference> 
+
+        <Preference
             android:id="@+id/device_sagit"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_sagit_summary"
