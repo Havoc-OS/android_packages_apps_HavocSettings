@@ -31,7 +31,7 @@
     <string name="changelog_title_summary">View recent changes in ROM</string>
     <string name="changelog_error">Unable to load changelog</string>
     <string name="havoc_announcements_title">Announcements</string>
-    <string name="havoc_announcements_summary">Official anouncements channel</string>
+    <string name="havoc_announcements_summary">Official announcements channel</string>
     <string name="havoc_telegram_title">Telegram</string>
     <string name="havoc_telegram_summary">Support group for Official builds</string>
     <string name="havoc_source_title">Github</string>
@@ -410,7 +410,7 @@
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Apps blacklist</string>
     <string name="hide_from_recents_add_app">Add App</string>
-    <string name="hide_apps_from_recents_summary">Select certian apps to hide in recents</string>
+    <string name="hide_apps_from_recents_summary">Select certain apps to hide in recents</string>
 
     <!-- Keyboard and IME  -->
     <string name="disable_fullscreen_keyboard_title">Fullscreen keyboard</string>
@@ -865,7 +865,7 @@
     <string name="DESC_LIGHT_PRE_IDLE_TIMEOUT">This is amount of time we will wait from the point where we decide we would like to go idle until we actually do, while waiting for jobs and other current activity to finish</string>
     <string name="DESC_LIGHT_IDLE_TIMEOUT">This is the initial time that we will run in idle maintenance mode</string>
     <string name="DESC_LIGHT_IDLE_FACTOR">Scaling factor to apply to the light idle mode time each time we complete a cycle</string>
-    <string name="DESC_LIGHT_MAX_IDLE_TIMEOUT">This is the maximum time we will run in idle maintenence mode</string>
+    <string name="DESC_LIGHT_MAX_IDLE_TIMEOUT">This is the maximum time we will run in idle maintenance mode</string>
     <string name="DESC_LIGHT_IDLE_MAINTENANCE_MIN_BUDGET">This is the minimum amount of time we want to make available for maintenance mode when lightly idling</string>
     <string name="DESC_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">This is the maximum amount of time we want to make available for maintenance mode when lightly idling</string>
     <string name="DESC_MIN_LIGHT_MAINTENANCE_TIME">This is the minimum amount of time that we will stay in maintenance mode after a light doze</string>
@@ -969,7 +969,7 @@
     <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
     <string name="smart_pulldown_off">Off</string>
     <string name="smart_pulldown_none">No notifications</string>
-    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_dismissable">No dismissible</string>
     <string name="smart_pulldown_ongoing">No ongoing</string>
 
     <!-- QS footer icons -->
@@ -1110,8 +1110,8 @@
     <string name="button28">Android Stock</string>
     <string name="animation0">Rotation </string>
     <string name="animation1">Recents Exit</string>
-    <string name="animation2">Transluscent Exit </string>
-    <string name="animation3">Transluscent Exit Ribbon</string>
+    <string name="animation2">Translucent Exit </string>
+    <string name="animation3">Translucent Exit Ribbon</string>
     <string name="animation4">Toast Exit</string>
     <string name="animation5">Slide Out Down </string>
     <string name="animation6">Xylon Exit </string>
