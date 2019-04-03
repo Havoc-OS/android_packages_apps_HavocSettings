@@ -28,7 +28,7 @@
         android:key="smart_pixels_pattern"
         android:entries="@array/smart_pixels_percent_strings"
         android:entryValues="@array/smart_pixels_percent_values"
-        android:defaultValue="3"
+        android:defaultValue="5"
         android:title="@string/smart_pixels_percent" />
 
     <com.havoc.support.preferences.SystemSettingListPreference

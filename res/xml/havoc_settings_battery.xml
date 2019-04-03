@@ -46,6 +46,12 @@
         android:key="battery_actions"
         android:title="@string/advanced_doze_settings">
 
+        <Preference
+            android:key="aggressive_battery"
+            android:title="@string/aggressive_battery_title"
+            android:summary="@string/aggressive_battery_summary"
+            android:fragment="com.havoc.settings.fragments.AggressiveBattery" />
+
         <com.havoc.support.preferences.SecureSettingMasterSwitchPreference
             android:key="screen_state_toggles_enable_key"
             android:fragment="com.havoc.settings.fragments.ScreenStateToggles"
