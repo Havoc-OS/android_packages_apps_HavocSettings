@@ -113,6 +113,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="statusbar_logo"
+        android:title="@string/statusbar_logo">
+
+        <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_logo"
+            android:fragment="com.havoc.settings.fragments.StatusbarLogo"
+            android:title="@string/status_bar_logo_title"
+            android:summary="@string/status_bar_logo_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="statusbar_tuner"
         android:title="@string/statusbar_items_category">
 

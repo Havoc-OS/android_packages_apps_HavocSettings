@@ -65,6 +65,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String MISSED_CALL_BREATH = "missed_call_breath";
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
+    private static final String STATUS_BAR_LOGO = "status_bar_logo";
 
     private SwitchPreference mSmsBreath;
     private SwitchPreference mMissedCallBreath;
@@ -74,6 +75,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
 
     private SystemSettingMasterSwitchPreference mStatusBarClockShow;
+    private SystemSettingMasterSwitchPreference mStatusBarLogo;
     private ListPreference mStatusBarBatteryShowPercent;
     private ListPreference mStatusBarBattery;
     private ListPreference mQuickPulldown;
@@ -149,6 +151,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
         mStatusBarClockShow.setOnPreferenceChangeListener(this);
+
+        mStatusBarLogo = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_LOGO);
+        mStatusBarLogo.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_LOGO, 0) == 1));
+        mStatusBarLogo.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -197,6 +204,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
+            return true;
+		} else if (preference == mStatusBarLogo) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LOGO, value ? 1 : 0);
             return true;
 		}
         return false;
