@@ -29,6 +29,15 @@
         android:background="#1e1f22" />
 
     <Button
+        android:id="@+id/userThemeThirtyThree"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:background="#1b2831" />
+
+    <Button
         android:id="@+id/userThemeThirtyOne"
         android:layout_width="70dp"
         android:layout_height="70dp"
