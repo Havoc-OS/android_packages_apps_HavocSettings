@@ -95,6 +95,16 @@
         </Preference>
 
         <Preference
+            android:key="havoc_discord"
+            android:title="@string/havoc_discord_title"
+            android:summary="@string/havoc_discord_summary"
+            android:icon="@drawable/havoc_discord">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://discord.gg/YfhBCj4"/>
+        </Preference>
+
+        <Preference
             android:key="havoc_donate"
             android:title="@string/havoc_donate"
             android:summary="@string/havoc_donate_summary"

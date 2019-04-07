@@ -34,6 +34,8 @@
     <string name="havoc_announcements_summary">Official announcements channel</string>
     <string name="havoc_telegram_title">Telegram</string>
     <string name="havoc_telegram_summary">Support group for Official builds</string>
+    <string name="havoc_discord_title">Discord</string>
+    <string name="havoc_discord_summary">Official server for ROM support</string>
     <string name="havoc_source_title">Github</string>
     <string name="havoc_source_summary">Havoc-OS source code</string>
     <string name="havoc_donate">Donate</string>
