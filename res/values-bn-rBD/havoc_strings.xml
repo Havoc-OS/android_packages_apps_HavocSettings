@@ -42,7 +42,7 @@
     <string name="animations_title">Animations</string>
     <string name="buttons_title">Buttons</string>
     <string name="display_title">Screen</string>
-    <string name="gestures_title">Gestures</string>
+    <string name="gestures_title">ইশারা সমূহ</string>
     <string name="ime_title">Input Method</string>
     <string name="interface_title">Interface</string>
     <string name="lockscreen_title">Lock Screen</string>
@@ -73,7 +73,7 @@
     <string name="switch_bar_off">Off</string>
     <!--Titles-->
     <string name="battery_wakelock">Blocking</string>
-    <string name="battery_title">Battery Saving</string>
+    <string name="battery_title">ব্যাটারি সংরক্ষণ</string>
     <string name="scroll_title">Scroll</string>
     <string name="toast_animation_cat_title">Toast</string>
     <string name="tile_animation_title">QS Tiles</string>
@@ -84,13 +84,13 @@
     <string name="gesture_misc">Misc</string>
     <string name="gesture_ls">Screen</string>
     <string name="themes_title">Themes</string>
-    <string name="havoc_density">Display</string>
+    <string name="havoc_density">ডিসপ্লে</string>
     <string name="corners_category">Corners</string>
     <string name="ls_clock">Widgets</string>
     <string name="ls_date">Date Styles</string>
     <string name="ls_shortcuts">Shortcuts</string>
     <string name="ls_disable_elements">Elements</string>
-    <string name="ls_aplha">Priehľadnosť</string>
+    <string name="ls_aplha">স্বচ্ছতা</string>
     <string name="ls_info">Advanced Information</string>
     <string name="ls_unlocking">Unlocking</string>
     <string name="ls_nofi">Notification Limiter</string>
@@ -99,7 +99,7 @@
     <string name="misc_screenshot">Screen Capture</string>
     <string name="statusbar_clock">Clock</string>
     <string name="statusbar_battery">Battery</string>
-    <string name="statusbar_gestures">Gestures</string>
+    <string name="statusbar_gestures">ইশারা সমূহ</string>
     <string name="statusbar_icons">Icons</string>
     <string name="statusbar_ntraffic">Network</string>
     <string name="statusbar_networkicon">Network Icons</string>
@@ -134,7 +134,7 @@
     <!-- Power Menu -->
     <string name="powermenu_title">Power Menu</string>
     <string name="powermenu_summary">Customize elements to be displayed in power menu</string>
-    <string name="powermenu_torch">Flashlight</string>
+    <string name="powermenu_torch">ফ্ল্যাশলাইট</string>
     <string name="powermenu_lockdown">Lockdown</string>
     <string name="advanced_power_menu">Power menu options</string>
     <string name="arrow_reboot_menu">Advanced reboot menu</string>
@@ -143,7 +143,7 @@
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
     <string name="powermenu_advanced_reboot_summary">Enables the advanced reboot menu for rebooting options</string>
     <string name="powermenu_screenshot_title">Screenshot</string>
-    <string name="powermenu_screenrecord_title">Nahrávanie obrazovky</string>
+    <string name="powermenu_screenrecord_title">স্ক্রিন রেকর্ড করা</string>
     <string name="powermenu_category_visibility">Lockscreen options</string>
     <string name="powermenu_lockscreen_title">Visibility on the lockscreen</string>
     <string name="powermenu_lockscreen_summary">Enable the ability to show and use the power menu dialog while on the lockscreen</string>
@@ -161,7 +161,7 @@
     <string name="face_auto_unlock_summary">Dismiss lockscreen automatically after face is recognized</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_fade">Miznúť</string>
+    <string name="screen_off_animation_fade">বিবর্ণ</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
     <!-- Force expanded notifications -->
@@ -169,9 +169,9 @@
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
     <!-- Toast Animation -->
     <string name="toast_animation_title">Toast animation</string>
-    <string name="toast_none_animation">None</string>
+    <string name="toast_none_animation">কিছু নয়</string>
     <string name="toast_default_animation">Default</string>
-    <string name="toast_fade_animation">Miznúť</string>
+    <string name="toast_fade_animation">বিবর্ণ</string>
     <string name="toast_SlideRight_animation">Slide right</string>
     <string name="toast_SlideLeft_animation">Slide left</string>
     <string name="toast_Xylon_animation">Xylon</string>
@@ -182,7 +182,7 @@
     <string name="toast_GrowFade_animation">Grow fade</string>
     <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
     <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
-    <string name="toast_Translucent_animation">Priesvitné</string>
+    <string name="toast_Translucent_animation">আলোক-ভেদ্য</string>
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
     <string name="toast_animation_test">This is test for selected toast animation</string>
@@ -314,7 +314,7 @@
     <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_category">Icons</string>
-    <string name="statusbar_items_title">Statusbar icons</string>
+    <string name="statusbar_items_title">স্ট্যাটাস-বার আইকনসমূহ</string>
     <string name="statusbar_items_summary">Toggle visibility of icons in statusbar</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Bottom shortcuts</string>
@@ -345,7 +345,7 @@
     <string name="block_on_secure_keyguard_summary">Show quick settings on secure lockscreen</string>
     <!-- On-The-Go -->
     <string name="onthego_title">On-The-Go Mode</string>
-    <string name="global_actions_onthego_title">On-The-Go</string>
+    <string name="global_actions_onthego_title">ওটিজি</string>
     <string name="onthego_alpha_title">On-The-Go Alpha</string>
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay</string>
     <string name="app_ops_settings_title">Privacy Guard</string>
@@ -399,7 +399,7 @@
     <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
     <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
     <!-- Heads up -->
-    <string name="heads_up_notifications">Plávajúce upozornenia</string>
+    <string name="heads_up_notifications">হেডস্ আপ</string>
     <string name="heads_up_notifications_summary">Pop up statusbar notifications</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
@@ -432,12 +432,12 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
     <!--Volume keys -->
-    <string name="volume_rocker_wake_title">Wake device</string>
+    <string name="volume_rocker_wake_title">ডিভাইসকে জাগান</string>
     <string name="volume_rocker_wake_summary">Press volume keys to wake your device</string>
     <string name="volume_rocker_music_controls_title">Control music</string>
     <string name="volume_rocker_music_controls_summary">Long press volume keys to switch tracks while screen is off</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_title">Smart Pixels</string>
+    <string name="smart_pixels_title">স্মার্ট পিক্সেলসমূহ</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
     <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
     <string name="smart_pixels_on_power_save_summary">Enable with battery saver to increase power savings</string>
@@ -476,7 +476,7 @@
     <!-- Ambient display battery percentage -->
     <string name="ambient_battery_percent_title">Battery level</string>
     <string name="ambient_battery_percent_summary">Show battery percent at the bottom while dozing</string>
-    <string name="doze_display_title">Ambientné zobrazenie</string>
+    <string name="doze_display_title">পরিবেষ্টিত ডিসপ্লে</string>
     <!-- Wakeup options -->
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
@@ -512,7 +512,7 @@
     <string name="screen_state_off_delay_summary">Number of seconds to wait before performing actions after screen off</string>
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
-    <string name="sysui_qqs_count_title">Columns (Quickbar)</string>
+    <string name="sysui_qqs_count_title">কলামসমূহ (কুইকবার)</string>
     <!-- CPU info -->
     <string name="show_cpu_info">Show CPU info</string>
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
@@ -576,7 +576,7 @@
     <string name="status_bar_clock_style_left">Left</string>
     <string name="status_bar_am_pm_title">AM/PM style</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
-    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_normal">স্বাভাবিক</string>
     <string name="status_bar_am_pm_small">Small</string>
     <string name="status_bar_am_pm_hidden">Hidden</string>
     <string name="clock_seconds_display">Show seconds</string>
@@ -584,9 +584,9 @@
     <string name="clock_date_display_summary">Display custom date before the clock</string>
     <string name="clock_date_display_none">Hidden</string>
     <string name="clock_date_display_small">Small</string>
-    <string name="clock_date_display_normal">Normal</string>
+    <string name="clock_date_display_normal">স্বাভাবিক</string>
     <string name="clock_date_style">Date style</string>
-    <string name="clock_date_style_normal">Normal</string>
+    <string name="clock_date_style_normal">স্বাভাবিক</string>
     <string name="clock_date_style_lowercase">Lowercase</string>
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
@@ -634,13 +634,13 @@
     <string name="status_bar_carrier_font_style_summary">%1$s</string>
     <string name="status_bar_carrier_color">Carrier label color</string>
     <!-- Screen Stabilization -->
-    <string name="screen_stabilization_title">Stabilizácia obrazovky</string>
+    <string name="screen_stabilization_title">স্ক্রিন স্থিতিশীলতা</string>
     <string name="screen_stabilization_summary">Move display content when device is in motion</string>
     <string name="stabilization_velocity_friction_title">Velocity friction</string>
     <string name="stabilization_position_friction_title">Position friction</string>
     <string name="stabilization_velocity_amplitude_title">Velocity amplitude</string>
     <!-- Lockscreen visualizer -->
-    <string name="lockscreen_media_category">Music</string>
+    <string name="lockscreen_media_category">গান</string>
     <string name="lockscreen_visualizer_enable">Music Visualizer</string>
     <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
     <string name="lockscreen_visualizer_enable_custom">Use custom color</string>
@@ -654,9 +654,9 @@
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
     <!-- Quick settings tiles columns and rows config -->
     <string name="qs_rows_portrait_title">Rows (Portrait)</string>
-    <string name="qs_rows_landscape_title">Rows (Landscape)</string>
+    <string name="qs_rows_landscape_title">সারিসমূহ (ল্যান্ডস্কেপ)</string>
     <string name="qs_columns_portrait_title">Columns (Portrait)</string>
-    <string name="qs_columns_landscape_title">Columns (Landscape)</string>
+    <string name="qs_columns_landscape_title">কলামসমূহ (ল্যান্ডস্কেপ)</string>
     <string name="brightness_icon_title">Auto brightness icon</string>
     <string name="brightness_icon_summary">Show an icon to toggle auto-brightness</string>
     <string name="qs_auto_brightness_right_title">Auto brightness icon on right</string>
@@ -1038,7 +1038,7 @@
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Notification preview in status bar</string>
     <string name="ticker_animation_mode_title">Ticker animation</string>
-    <string name="ticker_animation_mode_alpha_fade">Miznúť</string>
+    <string name="ticker_animation_mode_alpha_fade">বিবর্ণ</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     <string name="ticker_tick_duration_title">Ticker duration</string>
     <!-- Lock Date Fonts -->
@@ -1074,7 +1074,7 @@
     <!-- Lock Clock & Date Size -->
     <string name="lockdate_font_size_title">Date font size</string>
     <string name="lockclock_font_size_title">Clock font size</string>
-    <string name="ambient_play">Music</string>
+    <string name="ambient_play">গান</string>
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Power menu animation</string>
     <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
@@ -1228,7 +1228,7 @@
     <string name="switch_style_title">Switch appearance</string>
     <string name="switch_default">Default</string>
     <string name="switch_md2">Material Design 2</string>
-    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_oneplus">ওয়ান প্লাস</string>
     <!-- Ambient visualizer -->
     <string name="ambient_visualizer_title">Show on Ambient Display</string>
     <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display</string>
@@ -1258,7 +1258,7 @@
     <string name="cutout_main">Display Cutout</string>
     <string name="cutout_main_summary">Customize notch settings</string>
     <string name="display_cutout_style_title">Cutout style</string>
-    <string name="display_cutout_style_normal">Normal</string>
+    <string name="display_cutout_style_normal">স্বাভাবিক</string>
     <string name="display_cutout_style_immerse">Immerse</string>
     <string name="display_cutout_style_hide">Hide</string>
     <string name="stock_statusbar_in_hide">Stock statusbar height</string>
@@ -1298,10 +1298,10 @@
     <string name="file_header_provider_title">Single image</string>
     <!-- Pie -->
     <string name="pa_pie_control_summary">Edge shortcuts and navigation controls</string>
-    <string name="pa_pie_control_title">Pie Control</string>
+    <string name="pa_pie_control_title">পাই নিয়ন্ত্রণ</string>
     <string name="pie_settings_summary">Adjust pie to your liking</string>
     <string name="pie_theme_mode_title">Theme</string>
-    <string name="pie_auto">Automatic</string>
+    <string name="pie_auto">স্বয়ংক্রিয়</string>
     <string name="pie_white">White</string>
     <string name="pie_dark">Dark</string>
     <string name="pie_battery_title">Battery indicator</string>
@@ -1311,7 +1311,7 @@
     <string name="pie_status_indicator">Network indicator</string>
     <string name="pie_status_wifi">Wifi only</string>
     <string name="pie_status_mobile">Mobile network only</string>
-    <string name="pie_status_none">None</string>
+    <string name="pie_status_none">কিছু নয়</string>
     <string name="pie_status_both">Both</string>
     <string name="pa_pie_gravity_title">Pie Gravity</string>
     <string name="pa_pie_gravity_summary">Select the location where the Pie will be placed</string>
@@ -1340,10 +1340,10 @@
     <string name="action_app_switch">Recents</string>
     <string name="action_search">Assistant</string>
     <string name="action_voice_search">Voice search</string>
-    <string name="action_launch_camera">Camera</string>
+    <string name="action_launch_camera">ক্যামেরা</string>
     <string name="action_last_app">Last app</string>
     <string name="action_splitscreen">Split screen</string>
-    <string name="action_flashlight">Flashlight</string>
+    <string name="action_flashlight">ফ্ল্যাশলাইট</string>
     <string name="action_clear_notifications">Clear notifications</string>
     <string name="action_volume_panel">Volume panel</string>
     <string name="action_screen_off">Screen off</string>

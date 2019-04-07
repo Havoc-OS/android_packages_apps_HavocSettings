@@ -90,7 +90,7 @@
     <string name="ls_date">Date Styles</string>
     <string name="ls_shortcuts">Shortcuts</string>
     <string name="ls_disable_elements">Elements</string>
-    <string name="ls_aplha">Priehľadnosť</string>
+    <string name="ls_aplha">Transparency</string>
     <string name="ls_info">Advanced Information</string>
     <string name="ls_unlocking">Unlocking</string>
     <string name="ls_nofi">Notification Limiter</string>
@@ -143,7 +143,7 @@
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
     <string name="powermenu_advanced_reboot_summary">Enables the advanced reboot menu for rebooting options</string>
     <string name="powermenu_screenshot_title">Screenshot</string>
-    <string name="powermenu_screenrecord_title">Nahrávanie obrazovky</string>
+    <string name="powermenu_screenrecord_title">Screenrecord</string>
     <string name="powermenu_category_visibility">Lockscreen options</string>
     <string name="powermenu_lockscreen_title">Visibility on the lockscreen</string>
     <string name="powermenu_lockscreen_summary">Enable the ability to show and use the power menu dialog while on the lockscreen</string>
@@ -161,7 +161,7 @@
     <string name="face_auto_unlock_summary">Dismiss lockscreen automatically after face is recognized</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_fade">Miznúť</string>
+    <string name="screen_off_animation_fade">Fade</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
     <!-- Force expanded notifications -->
@@ -171,7 +171,7 @@
     <string name="toast_animation_title">Toast animation</string>
     <string name="toast_none_animation">None</string>
     <string name="toast_default_animation">Default</string>
-    <string name="toast_fade_animation">Miznúť</string>
+    <string name="toast_fade_animation">Fade</string>
     <string name="toast_SlideRight_animation">Slide right</string>
     <string name="toast_SlideLeft_animation">Slide left</string>
     <string name="toast_Xylon_animation">Xylon</string>
@@ -182,7 +182,7 @@
     <string name="toast_GrowFade_animation">Grow fade</string>
     <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
     <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
-    <string name="toast_Translucent_animation">Priesvitné</string>
+    <string name="toast_Translucent_animation">Translucent</string>
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
     <string name="toast_animation_test">This is test for selected toast animation</string>
@@ -399,7 +399,7 @@
     <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
     <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
     <!-- Heads up -->
-    <string name="heads_up_notifications">Plávajúce upozornenia</string>
+    <string name="heads_up_notifications">Heads Up</string>
     <string name="heads_up_notifications_summary">Pop up statusbar notifications</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
@@ -476,7 +476,7 @@
     <!-- Ambient display battery percentage -->
     <string name="ambient_battery_percent_title">Battery level</string>
     <string name="ambient_battery_percent_summary">Show battery percent at the bottom while dozing</string>
-    <string name="doze_display_title">Ambientné zobrazenie</string>
+    <string name="doze_display_title">Ambient Display</string>
     <!-- Wakeup options -->
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
@@ -634,7 +634,7 @@
     <string name="status_bar_carrier_font_style_summary">%1$s</string>
     <string name="status_bar_carrier_color">Carrier label color</string>
     <!-- Screen Stabilization -->
-    <string name="screen_stabilization_title">Stabilizácia obrazovky</string>
+    <string name="screen_stabilization_title">Screen Stabilization</string>
     <string name="screen_stabilization_summary">Move display content when device is in motion</string>
     <string name="stabilization_velocity_friction_title">Velocity friction</string>
     <string name="stabilization_position_friction_title">Position friction</string>
@@ -1038,7 +1038,7 @@
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Notification preview in status bar</string>
     <string name="ticker_animation_mode_title">Ticker animation</string>
-    <string name="ticker_animation_mode_alpha_fade">Miznúť</string>
+    <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     <string name="ticker_tick_duration_title">Ticker duration</string>
     <!-- Lock Date Fonts -->
