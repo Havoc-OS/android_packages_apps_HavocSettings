@@ -29,33 +29,14 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.havoc.support.colorpicker.ColorPickerPreference;
-
 public class Visualizer extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
-
-    private static final String LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR = "lock_screen_visualizer_custom_color";
-
-    private ColorPickerPreference mVisualizerColor;
 
     @Override
     public void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         addPreferencesFromResource(R.xml.visualizer_settings);
         ContentResolver resolver = getActivity().getContentResolver();
-
-        mVisualizerColor = (ColorPickerPreference) findPreference(LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR);
-        int visColor = Settings.System.getInt(resolver,
-                Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, 0xFFFFFFFF);
-        String visColorHex = String.format("#%08x", (0xFFFFFFFF & visColor));
-        if (visColorHex.equals("#ffffffff")) {
-            mVisualizerColor.setSummary(R.string.default_string);
-        } else {
-            mVisualizerColor.setSummary(visColorHex);
-        }
-        mVisualizerColor.setNewPreviewColor(visColor);
-        mVisualizerColor.setAlphaSliderEnabled(true);
-        mVisualizerColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -66,19 +47,6 @@ public class Visualizer extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mVisualizerColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ffffffff")) {
-                preference.setSummary(R.string.default_string);
-            } else {
-                preference.setSummary(hex);
-            }
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(resolver,
-                    Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, intHex);
-            return true;
-        }
         return false;
     }
 

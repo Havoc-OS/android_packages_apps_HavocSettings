@@ -745,9 +745,6 @@
     <string name="lockscreen_media_category">Music</string>
     <string name="lockscreen_visualizer_enable">Music Visualizer</string>
     <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
-    <string name="lockscreen_visualizer_enable_custom">Use custom color</string>
-    <string name="lockscreen_visualizer_enable_custom_summary">Use a custom color instead of the auto generated color</string>
-    <string name="lockscreen_visualizer_custom_color">Visualizer color</string>
 
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Answer call</string>

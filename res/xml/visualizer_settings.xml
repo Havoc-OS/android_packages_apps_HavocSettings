@@ -24,16 +24,4 @@
         android:summary="@string/ambient_visualizer_summary"
         android:defaultValue="false" />
 
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="lock_screen_visualizer_use_custom_color"
-        android:title="@string/lockscreen_visualizer_enable_custom"
-        android:summary="@string/lockscreen_visualizer_enable_custom_summary"
-        android:defaultValue="false" />
-
-    <com.havoc.support.colorpicker.ColorPickerPreference
-        android:key="lock_screen_visualizer_custom_color"
-        android:title="@string/lockscreen_visualizer_custom_color"
-        android:dependency="lock_screen_visualizer_use_custom_color"
-        settings:defaultColorValue="0xFFFFFFFF" />
-
 </PreferenceScreen>
