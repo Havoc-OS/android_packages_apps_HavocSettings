@@ -24,7 +24,8 @@
     <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="recent_panel_scale_factor"
         android:title="@string/recent_panel_scale_title"
-        android:min="60"
+        settings:min="60"
+        settings:interval="5"
         android:max="160"
         android:defaultValue="100"
         settings:units="%" />
@@ -45,7 +46,7 @@
         android:key="recents_max_apps"
         android:title="@string/recents_max_apps_title"
         android:defaultValue="15"
-        android:min="5"
+        settings:min="5"
         android:max="105" />
 
     <SwitchPreference
@@ -64,7 +65,7 @@
     <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="slim_recents_corner_radius"
         android:title="@string/slim_recents_corner_radius_title"
-        android:min="0"
+        settings:min="0"
         android:max="20"
         android:defaultValue="8"
         settings:units="dp" />

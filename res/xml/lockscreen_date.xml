@@ -22,7 +22,7 @@
         android:key="lockdate_font_size"
         android:title="@string/lockdate_font_size_title"
         android:max="40"
-        android:min="10"
+        settings:min="10"
         android:defaultValue="16"
         settings:units="dp"
         android:persistent="false" />

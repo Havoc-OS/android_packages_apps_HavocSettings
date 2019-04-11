@@ -25,8 +25,9 @@
         android:key="recent_app_sidebar_scale_factor"
         android:title="@string/recent_app_sidebar_scale_title"
         android:defaultValue="100"
-        android:min="60"
         android:max="160"
+        settings:min="60"
+        settings:interval="5"
         settings:units="%" />
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference

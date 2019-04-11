@@ -27,7 +27,7 @@
     <com.havoc.support.preferences.SystemSettingSeekBarPreference
         android:key="volume_dialog_timeout"
         android:title="@string/volume_dialog_timeout_title"
-        android:min="1"
+        settings:min="1"
         android:max="10"
         android:defaultValue="3"
         settings:units="sec" />

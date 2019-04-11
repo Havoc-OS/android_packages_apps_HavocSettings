@@ -49,9 +49,10 @@
             android:key="burn_in_protection_interval"
             android:title="@string/burn_in_protection_interval_title"
             android:max="90"
-            android:min="45"
+            settings:min="45"
+            settings:interval="5"
             android:defaultValue="60"
-            settings:units=" sec"
+            settings:units="sec"
             android:persistent="false" />
     </PreferenceCategory>
 </PreferenceScreen>

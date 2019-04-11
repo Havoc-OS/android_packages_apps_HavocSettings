@@ -37,7 +37,8 @@
             android:key="button_brightness"
             android:title="@string/button_brightness_title"
             android:max="255"
-            android:min="0"
+            settings:min="0"
+            settings:interval="5"
 	        android:defaultValue="255"
             android:persistent="false" />
 

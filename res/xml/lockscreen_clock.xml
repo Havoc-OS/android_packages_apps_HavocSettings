@@ -29,7 +29,7 @@
         android:key="lockclock_font_size"
         android:title="@string/lockclock_font_size_title"
         android:max="120"
-        android:min="50"
+        settings:min="50"
         android:defaultValue="64"
         settings:units="dp"
         android:persistent="false" />

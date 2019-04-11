@@ -9,9 +9,10 @@
         android:title="@string/screen_state_off_delay_title"
         android:summary="@string/screen_state_off_delay_summary"
         android:max="180"
-        android:min="0"
+        settings:min="0"
+        settings:interval="5"
         android:defaultValue="0"
-        settings:units=" sec"
+        settings:units="sec"
         android:persistent="false" />
 
     <com.havoc.support.preferences.CustomSeekBarPreference
@@ -19,9 +20,10 @@
         android:title="@string/screen_state_on_delay_title"
         android:summary="@string/screen_state_on_delay_summary"
         android:max="180"
-        android:min="0"
+        settings:min="0"
+        settings:interval="5"
         android:defaultValue="0"
-        settings:units=" sec"
+        settings:units="sec"
         android:persistent="false" />
 
     <PreferenceCategory
