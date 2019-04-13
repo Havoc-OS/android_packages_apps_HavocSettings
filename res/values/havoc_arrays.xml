@@ -1201,6 +1201,7 @@
         <item>@string/lockscreen_clock_selection_dot</item>
         <item>@string/lockscreen_clock_selection_spectrum</item>
         <item>@string/lockscreen_clock_selection_sneeky</item>
+        <item>@string/lockscreen_clock_selection_text</item>
     </string-array>
     <string-array name="lockscreen_clock_selection_values" translatable="false">
         <item>0</item>
@@ -1218,6 +1219,7 @@
         <item>12</item>
         <item>13</item>
         <item>14</item>
+        <item>15</item>
     </string-array>
 
     <string-array name="display_cutout_style_entries" translatable="false">
