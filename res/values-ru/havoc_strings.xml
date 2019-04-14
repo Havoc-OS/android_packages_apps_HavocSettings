@@ -30,6 +30,7 @@
     <string name="havoc_announcements_summary">Официальный канал объявлений</string>
     <string name="havoc_telegram_title">Telegram</string>
     <string name="havoc_telegram_summary">Группа поддержки для официальных сборок</string>
+    <string name="havoc_discord_title">Discord</string>
     <string name="havoc_discord_summary">Официальный сервер Discord</string>													   
     <string name="havoc_source_title">Github</string>
     <string name="havoc_source_summary">Исходный код Havoc-OS</string>
@@ -184,13 +185,13 @@
     <string name="toast_GrowFadeCenter_animation">Увеличение центра затухания</string>
     <string name="toast_GrowFadeBottom_animation">Постепенное затухание вниз</string>
     <string name="toast_Translucent_animation">Полупрозрачный</string>
-    <string name="toast_SlideLeftRight_animation">Сдвиг слева-направо</string>
+    <string name="toast_SlideLeftRight_animation">Сдвиг слева в право</string>
     <string name="toast_SlideRightLeft_animation">Сдвиг справа в влево</string>
     <string name="toast_animation_test">Проверка анимации всплывающих уведомлений</string>
     <string name="toast">Всплывающие уведомления</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Кэш прокрутки</string>
-    <string name="pref_scrollingcache_summary">Кэш может улучшить производительность прокрутки за счет памяти</string>
+    <string name="pref_scrollingcache_summary">Кэш может улучшить производительность прокрутки за счет дополнительного использования ОЗУ</string>
     <string name="pref_scrollingcache_force_enable">Включить (принудительно)</string>
     <string name="pref_scrollingcache_default_enable">Включить</string>
     <string name="pref_scrollingcache_default_disable">Отключить</string>
@@ -244,9 +245,9 @@
     <string name="qs_tile_animation_style_off">Без анимации</string>
     <string name="qs_tile_animation_style_flip">Отразить</string>
     <string name="qs_tile_animation_style_rotate">Вращение</string>
-    <string name="qs_tile_animation_duration_low">Низкий</string>
+    <string name="qs_tile_animation_duration_low">Короткая</string>
     <string name="qs_tile_animation_duration_default">По умолчанию</string>
-    <string name="qs_tile_animation_duration_fast">Быстрый</string>
+    <string name="qs_tile_animation_duration_fast">Длинная</string>
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_tile_animation_interpolator_title">Длительность анимации плиток QS</string>
@@ -347,8 +348,8 @@
     <!-- On-The-Go -->
     <string name="onthego_title">Режим \"На ходу\"</string>
     <string name="global_actions_onthego_title">На ходу</string>
-    <string name="onthego_alpha_title">На ходу (альфа)</string>
-    <string name="onthego_alpha_summary">Альфа значение наложения режима «На ходу»</string>
+    <string name="onthego_alpha_title">На ходу (прозрачность)</string>
+    <string name="onthego_alpha_summary">Прозрачность наложения режима «На ходу»</string>
     <string name="app_ops_settings_title">Защита конфиденциальности</string>
     <string name="app_ops_settings_summary">Блокировать права доступа</string>
     <!-- Volume key cursor control -->
@@ -380,12 +381,12 @@
     <string name="volume_steps_title">Шаги громкости</string>
     <string name="volume_steps_summary">Установить пользовательский шаг регулировки громкости для звуков</string>
     <string name="volume_steps_alarm_title">Шаг регулировки громкости: Будильник</string>
-    <string name="volume_steps_dtmf_title">Шаги регулировки громкости: звук тонального набора</string>
+    <string name="volume_steps_dtmf_title">Шаги регулировки громкости: Тональный набор </string>
     <string name="volume_steps_music_title">Шаги регулировки громкости: Музыка</string>
     <string name="volume_steps_notification_title">Шаги громкости: Уведомления </string>
     <string name="volume_steps_ring_title">Шаг регулировки громкости: Звонок</string>
     <string name="volume_steps_system_title">Шаг регулировки громкости: Система</string>
-    <string name="volume_steps_voice_call_title">Шаг регулировки громкости: голосовой вызов</string>
+    <string name="volume_steps_voice_call_title">Шаг регулировки громкости: Голосовой вызов</string>
     <string name="volume_steps_reset">Восстановить настройки по умолчанию</string>
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">Поменять кнопки местами</string>
@@ -439,7 +440,7 @@
     <string name="volume_rocker_music_controls_summary">Удерживайте клавиши громкости, чтобы переключить треки во время выключенного экрана</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Умные пиксели</string>
-    <string name="smart_pixels_summary">Сохраните батарею, отключив дополнительные пиксели</string>
+    <string name="smart_pixels_summary">Уменьшите энергопотребление дисплея, отключив дополнительные пиксели</string>
     <string name="smart_pixels_on_power_save_title">Автовключение при энергосбережении</string>
     <string name="smart_pixels_on_power_save_summary">Включать «Умные пиксели» в режиме энергосбережения</string>
     <string name="smart_pixels_percent">Отключить % пикселей</string>
@@ -534,7 +535,7 @@
     <string name="status_bar_battery_style_title">Стиль батареи</string>
     <string name="status_bar_battery_style_port">Вертикальный</string>
     <string name="status_bar_battery_style_circle">Круг</string>
-    <string name="status_bar_battery_style_dotted_circle">Круг из точек</string>
+    <string name="status_bar_battery_style_dotted_circle">Пунктирный круг</string>
     <string name="status_bar_battery_style_text">Текст</string>
     <string name="status_bar_battery_style_hidden">Скрытый</string>
     <string name="notification_light_settings">LED-Индикатор уведомлений</string>
@@ -819,7 +820,6 @@
     <string name="no_stat_because_reset_wakelock">Нажмите кнопку сброса, чтобы начать сбор данных о пробуждения</string>
     <string name="no_stat_because_plugged">Отключите зарядное устройство для начала сбора данных о пробуждениях</string>
     <string name="no_states_file_found">\"Файл состояний не найден. Вы уверены, что Ваш телефон поддерживается?
-
 Если Вы используете кастомную прошивку или ядро, сообщите разработчику о недоступном файле состояний.\".</string>
     <string name="deep_sleep">"Глубокий сон"</string>
     <string name="mt_refresh">Обновить</string>
@@ -869,7 +869,7 @@
     <string name="expanded_nothing_to_show">Чтобы настроить параметры расширенного экрана для отдельных приложений, переведите переключатель \"Включить для всех\" в положение \"выкл\"</string>
     <string name="expanded_desktop_state">Расширенный экран</string>
     <string name="expanded_enabled_for_all">Включено для всех</string>
-    <string name="expanded_user_configurable">Пользоваьельские кофигурации</string>
+    <string name="expanded_user_configurable">Пользовательские кофигурации</string>
     <string name="expanded_desktop_style">Стиль расширенного режима</string>
     <string name="expanded_desktop_style_description">Выбрать стиль расширенного рабочего стола по умолчанию</string>
     <string name="expanded_desktop_title">Настройки расширенного рабочего стола</string>
@@ -1197,7 +1197,7 @@
     <string name="recent_app_sidebar_bg_color_title">Цвет фона</string>
     <string name="recent_app_sidebar_scale_title">Размер</string>
     <string name="recent_app_sidebar_open_simultaneously_title">Открывать одновременно с недавними</string>
-    <string name="recent_app_sidebar_open_simultaneously_summary">Уменьшить подлагивание открытия недавних, отключив это</string>
+    <string name="recent_app_sidebar_open_simultaneously_summary">Уменьшите подлагивание открытия меню недавних приложений, отключив это</string>
     <string name="default_auto_string">По умолчанию (На основе приложения)</string>
     <!-- Slim recents membar -->
     <string name="slim_recents_mem_display_category_title">Панель ОЗУ</string>
@@ -1254,6 +1254,7 @@
     <string name="lockscreen_clock_selection_dot">Аналоговые (Точки)</string>
     <string name="lockscreen_clock_selection_spectrum">Аналоговые (Спектр)</string>
     <string name="lockscreen_clock_selection_sneeky">Аналоговые (Sneeky)</string>
+    <string name="lockscreen_clock_selection_text">Текст (Android Q)</string>
     <!-- Display cutout options -->
     <string name="cutout_main">Вырез в дисплее</string>
     <string name="cutout_main_summary">Изменение настроек выреза</string>
@@ -1301,9 +1302,9 @@
     <string name="pa_pie_control_title">Круговое меню</string>
     <string name="pie_settings_summary">Настройте PIE как вам нравится</string>
     <string name="pie_theme_mode_title">Тема</string>
-    <string name="pie_auto">Автоматически</string>
-    <string name="pie_white">Белый</string>
-    <string name="pie_dark">Тёмный</string>
+    <string name="pie_auto">Автоматическая</string>
+    <string name="pie_white">Белая</string>
+    <string name="pie_dark">Тёмная</string>
     <string name="pie_battery_title">Индикатор батареи</string>
     <string name="pie_battery_text">Только текст</string>
     <string name="pie_battery_circle">Только круг</string>
@@ -1363,7 +1364,7 @@
     <string name="power_button_torch_gesture_lp">Долгое нажатие кнопки питания</string>
     <!-- Adaptive icon shape -->
     <string name="icon_shape_title">Форма иконок приложений</string>
-    <string name="icon_shape_system_default">По умолчанию (системн.)</string>
+    <string name="icon_shape_system_default">По умолчанию (системная)</string>
     <string name="icon_shape_square">Квадрат</string>
     <string name="icon_shape_rounded_square">Скругленный квадрат</string>
     <string name="icon_shape_squircle">Округлый квадрат</string>
@@ -1375,8 +1376,8 @@
     <string name="reboot_dialog_ok">Перезагрузка</string>
     <string name="reboot_dialog_cancel">@string/cancel</string>
     <!-- Lockscreen cover art filter -->
-    <string name="lockscreen_cover_filter_title">Фильтр обложки альбома на экране блокировки</string>
-    <string name="lockscreen_cover_filter_none">Отключить</string>
+    <string name="lockscreen_cover_filter_title">Фильтр обложки песни</string>
+    <string name="lockscreen_cover_filter_none">Нет</string>
     <string name="lockscreen_cover_filter_grayscale">Оттенки серого</string>
     <string name="lockscreen_cover_filter_tint">Тонировано под цвет акцента</string>
     <string name="lockscreen_cover_filter_blur">Размытие</string>
@@ -1384,7 +1385,7 @@
     <!-- Aggressive battery -->
     <string name="aggressive_battery_title">Агресивная экономия батареи</string>
     <string name="aggressive_battery_summary">Более строгая экономия батареи</string>
-    <string name="aggressive_battery_warning_text">Это функции энергосбережения. Они могут создавать помехи службам, предназначенным для работы в режиме ожидания, например навигационным приложениям. Вы можете включить эти приложения в белый список в настройках батареи приложения.</string>
+    <string name="aggressive_battery_warning_text">Это функции энергосбережения. Они могут создавать помехи службам, предназначенным для работы в режиме ожидания, например навигационным приложениям. Вы можете включить эти приложения в белый список в настройках экономии батареи.</string>
     <string name="aggressive_idle_title">Агрессивный режим сна</string>
     <string name="aggressive_idle_summary">Входить в режим сна более часто и меньше просыпаться</string>
     <string name="aggressive_standby_title">Агрессивный режим ожидания</string>
@@ -1392,7 +1393,7 @@
     <string name="aggressive_battery_saver_title">Автоматическое включение экономии заряда батареи</string>
     <string name="aggressive_battery_saver_summary">Включите агрессивную экономию батареи автоматически при использовании экономии заряда батареи</string>
     <string name="slim_recents_enter_exit_animation_title">Анимация</string>
-    <string name="slim_recents_enter_exit_animation_translate">Translate</string>
+    <string name="slim_recents_enter_exit_animation_translate">Перевести</string>
     <string name="slim_recents_enter_exit_animation_fade">Затухание</string>
     <!-- Statusbar logo -->
     <string name="statusbar_logo">Логотип</string>
@@ -1452,6 +1453,14 @@
     <string name="status_bar_logo_style_wallet">Бумажник</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
-    <string name="status_bar_logo_style_xbox_controller">XBOX Controller</string>
+    <string name="status_bar_logo_style_xbox_controller">Контроллер XBOX</string>
     <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <!-- Lockscreen Visualizer -->
+    <string name="lockscreen_autocolor_title">Автоматический цвет</string>
+    <string name="lockscreen_autocolor_summary">Синхронизировать цвет с обложкой песни</string>
+    <string name="lockscreen_autocolor_mediametadata">Необходимо включить отображение обложки песни на экране блокировки</string>
+    <string name="lockscreen_autocolor_lavalamp">Необходимо выключить Лавовую лампу</string>
+    <string name="lockscreen_lavalamp_title">Лавовая лампа</string>
+    <string name="lockscreen_lavalamp_summary">Использовать плавную анимацию смены цвета</string>
+    <string name="lockscreen_lavalamp_speed_title">Интервал смены цветов</string>
 </resources>
