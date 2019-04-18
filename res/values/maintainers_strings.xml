@@ -108,8 +108,8 @@
     <string name="device_tissot" translatable="false">Xiaomi Mi A1</string>
     <string name="device_tissot_summary" translatable="false">tissot\nMountaser Halak</string>
 
-    <string name="device_jasminie_sprout" translatable="false">Xiaomi Mi A2</string>
-    <string name="device_jasminie_sprout_summary" translatable="false">jasminie_sprout\nMax Weffers (rcstar6696)</string>
+    <string name="device_jasmine_sprout" translatable="false">Xiaomi Mi A2</string>
+    <string name="device_jasmine_sprout_summary" translatable="false">jasmine_sprout\nMax Weffers (rcstar6696)</string>
 
     <string name="device_oxygen" translatable="false">Xiaomi Mi Max 2</string>
     <string name="device_oxygen_summary" translatable="false">oxygen\nRakesh Roshan (Hard_Rocks83)</string>

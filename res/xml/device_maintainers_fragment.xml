@@ -298,10 +298,10 @@
         </Preference>
 
         <Preference
-            android:id="@+id/device_jasminie_sprout"
+            android:id="@+id/device_jasmine_sprout"
             android:icon="@drawable/havoc_device"
-            android:summary="@string/device_jasminie_sprout_summary"
-            android:title="@string/device_jasminie_sprout" >
+            android:summary="@string/device_jasmine_sprout_summary"
+            android:title="@string/device_jasmine_sprout" >
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/rcstar6696" />
