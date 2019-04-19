@@ -1661,4 +1661,8 @@
     <string name="lockscreen_lavalamp_title">Lava lamp</string>
     <string name="lockscreen_lavalamp_summary">Use a smooth lava lamp style color blend animation</string>
     <string name="lockscreen_lavalamp_speed_title">Color blend interval</string>
+    <string name="lockscreen_solid_lines_category">Solid Lines</string>
+    <string name="lockscreen_solid_units_count_title">Lines count</string>
+    <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
+    <string name="lockscreen_solid_units_opacity_title">Lines opacity</string>
 </resources>
