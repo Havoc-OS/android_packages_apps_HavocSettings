@@ -146,7 +146,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Douglas_DG" />
         </Preference>
- 
+
         <Preference 
             android:id="@+id/device_hlte"
             android:icon="@drawable/havoc_device"
@@ -185,6 +185,26 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/brunowp8" />
+        </Preference>
+
+	    <Preference
+            android:id="@+id/device_herolte"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_herolte_summary"
+            android:title="@string/device_herolte" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Giblyat" />
+	    </Preference>
+
+	    <Preference
+            android:id="@+id/device_hero2lte"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_hero2lte_summary"
+            android:title="@string/device_hero2lte" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Giblyat" />
         </Preference>
     </PreferenceCategory>
 
