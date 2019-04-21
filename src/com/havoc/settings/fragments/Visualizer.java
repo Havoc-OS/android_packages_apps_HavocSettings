@@ -48,20 +48,14 @@ public class Visualizer extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        boolean mMediaArtEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1,
-                UserHandle.USER_CURRENT) != 0;
         boolean mLavaLampEnabled = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.LOCKSCREEN_LAVALAMP_ENABLED, 1,
                 UserHandle.USER_CURRENT) != 0;
 
         mAutoColor = (SwitchPreference) findPreference(KEY_AUTOCOLOR);
-        mAutoColor.setEnabled(mMediaArtEnabled && !mLavaLampEnabled);
+        mAutoColor.setEnabled(!mLavaLampEnabled);
 
-        if (!mMediaArtEnabled) {
-            mAutoColor.setSummary(getActivity().getString(
-                    R.string.lockscreen_autocolor_mediametadata));
-        } else if (mLavaLampEnabled) {
+        if (mLavaLampEnabled) {
             mAutoColor.setSummary(getActivity().getString(
                     R.string.lockscreen_autocolor_lavalamp));
         } else {
@@ -78,16 +72,7 @@ public class Visualizer extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mLavaLamp) {
             boolean mLavaLampEnabled = (Boolean) newValue;
-            boolean mMediaArtEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1,
-                UserHandle.USER_CURRENT) != 0;
-
-            mAutoColor.setEnabled(mMediaArtEnabled && !mLavaLampEnabled);
-
-            if (!mMediaArtEnabled) {
-                mAutoColor.setSummary(getActivity().getString(
-                        R.string.lockscreen_autocolor_mediametadata));
-            } else if (mLavaLampEnabled) {
+            if (mLavaLampEnabled) {
                 mAutoColor.setSummary(getActivity().getString(
                         R.string.lockscreen_autocolor_lavalamp));
             } else {
