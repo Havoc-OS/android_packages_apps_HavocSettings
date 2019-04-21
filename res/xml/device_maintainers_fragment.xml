@@ -456,6 +456,16 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Advertpavan" />
         </Preference>-->
+
+        <Preference
+            android:id="@+id/device_violet"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_violet_summary"
+            android:title="@string/device_violet" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/notallowedontelegram" />
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory

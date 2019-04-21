@@ -156,6 +156,9 @@
     <string name="device_tulip" translatable="false">Xiaomi Redmi Note 6 Pro</string>
     <string name="device_tulip_summary" translatable="false">tulip\nPavan Patel (Pavanpatel)</string>
 
+    <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
+    <string name="device_violet_summary" translatable="false">violet\nRuturaj Kadam</string>
+
     <string name="device_kuntao" translatable="false">Lenovo P2</string>
     <string name="device_kuntao_summary" translatable="false">kuntao\nAdvaith Bhat (advaithbhat)</string>
 
