@@ -51,8 +51,8 @@
     <string name="notifications_title">알림</string>
     <string name="panels_title">패널</string>
     <string name="quicksettings_title">빠른 설정</string>
-    <string name="recents_title">최근앱</string>
-    <string name="statusbar_title">상단바</string>
+    <string name="recents_title">최근 실행 목록</string>
+    <string name="statusbar_title">상태표시줄</string>
     <string name="system_title">시스템</string>
     <string name="weather_title">날씨</string>
     <string name="volume_title">볼륨 버튼</string>
@@ -137,20 +137,20 @@
     <string name="powermenu_torch">손전등</string>
     <string name="powermenu_lockdown">바로 잠금</string>
     <string name="advanced_power_menu">전원 메뉴 옵션</string>
-    <string name="arrow_reboot_menu">고급 재부팅 메뉴</string>
-    <string name="powermenu_reboot_title">재부팅</string>
+    <string name="arrow_reboot_menu">고급 다시 시작 메뉴</string>
+    <string name="powermenu_reboot_title">다시 시작</string>
     <string name="powermenu_airplane_title">비행기 모드</string>
-    <string name="powermenu_advanced_reboot_title">고급 재부팅</string>
-    <string name="powermenu_advanced_reboot_summary">재부팅 옵션에 고급 재부팅 메뉴 사용</string>
+    <string name="powermenu_advanced_reboot_title">고급 다시 시작</string>
+    <string name="powermenu_advanced_reboot_summary">다시 시작 옵션에 고급 다시 시작 메뉴 사용</string>
     <string name="powermenu_screenshot_title">스크린샷</string>
     <string name="powermenu_screenrecord_title">화면 녹화</string>
     <string name="powermenu_category_visibility">잠금화면 옵션</string>
     <string name="powermenu_lockscreen_title">잠금화면에 표시할 내용</string>
     <string name="powermenu_lockscreen_summary">잠금 화면에 있는 동안 전원 메뉴 대화 상자를 표시하고 사용하는 기능을 활성화</string>
-    <string name="powermenu_ls_reboot_summary">잠금화면에서 재시작 옵션 표시</string>
-    <string name="powermenu_ls_advanced_reboot_summary">잠금화면에 고급 부팅 옵션 표시</string>
+    <string name="powermenu_ls_reboot_summary">잠금화면에서 다시 시작 옵션 표시</string>
+    <string name="powermenu_ls_advanced_reboot_summary">잠금화면에 고급 다시 시작 옵션 표시</string>
     <string name="powermenu_ls_screenshot_summary">잠금 화면에 스크린샷 옵션 표시</string>
-    <string name="powermenu_ls_airplane_summary">잠금화면에 비행기 모드 옵션 표시</string>
+    <string name="powermenu_ls_airplane_summary">잠금 화면에 비행기 모드 옵션 표시</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">충전 정보</string>
     <string name="lockscreen_battery_info_summary">충전 중 충전기의 최대 전류와 전압, 배터리 온도를 표시합니다</string>
@@ -1372,6 +1372,6 @@
     <string name="icon_shape_hexagon">Hexagon</string>
     <string name="icon_shape_changed_title">Update icon shape</string>
     <string name="icon_shape_changed_message">Changing the icon shape will only affect new started apps. Thus, it is recommended to reboot your device to fully apply this setting. If some apps still use the old shape after that, try clearing their app cache.</string>
-    <string name="reboot_dialog_ok">재부팅</string>
+    <string name="reboot_dialog_ok">다시 시작</string>
     <string name="reboot_dialog_cancel">@string/cancel</string>
 </resources>
