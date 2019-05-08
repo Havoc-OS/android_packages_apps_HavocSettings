@@ -539,6 +539,21 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:id="@+id/device_category_nubia"
+        android:title="@string/device_category_nubia_title" >
+              
+        <Preference
+            android:id="@+id/device_nx531j"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_nx531j_summary"
+            android:title="@string/device_nx531j" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Lightvortex242" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:id="@+id/device_category_yu"
         android:title="@string/device_category_yu_title" >
 

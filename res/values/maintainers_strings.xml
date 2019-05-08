@@ -30,6 +30,7 @@
     <string name="device_category_asus_title" translatable="false">Asus</string>
     <string name="device_category_leeco_title" translatable="false">LeEco</string>
     <string name="device_category_nextbit_title" translatable="false">Nextbit</string>
+    <string name="device_category_nubia_title" translatable="false">Nubia</string>
     <string name="device_category_yu_title" translatable="false">YU</string>
 
     <!-- Devices & Maintainers -->
@@ -173,6 +174,9 @@
 
     <string name="device_ether" translatable="false">Nextbit Robin</string>
     <string name="device_ether_summary" translatable="false">ether\nAnierin Bliss (anierinb)</string>
+
+    <string name="device_nx531j" translatable="false">Nubia Z11</string>
+    <string name="device_nx531j_summary" translatable="false">nx531j\nRishi Shukla (lightvortex)</string>
 
     <string name="device_lettuce" translatable="false">YU Yuphoria</string>
     <string name="device_lettuce_summary" translatable="false">lettuce\nGaurav Kumar (Gaurav24)</string>
