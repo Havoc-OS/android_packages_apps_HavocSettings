@@ -384,7 +384,7 @@
             android:title="@string/device_markw" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/DarkAngelGR" />
+                android:data="https://t.me/rpeter" />
         </Preference>
 
         <Preference
