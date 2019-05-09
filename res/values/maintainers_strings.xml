@@ -85,6 +85,9 @@
     <string name="device_hero2lte" translatable="false">Samsung Galaxy S7 Edge</string>
     <string name="device_hero2lte_summary" translatable="false">hero2lte\nGibran Mather (gibranm)</string>
 
+    <string name="device_potter" translatable="false">Moto G5 Plus</string>
+    <string name="device_potter_summary" translatable="false">potter\nShiv (Spdroid)</string>
+
     <string name="device_sanders" translatable="false">Moto G5S Plus</string>
     <string name="device_sanders_summary" translatable="false">sanders\nRonax (ronaxdevil)</string>
 

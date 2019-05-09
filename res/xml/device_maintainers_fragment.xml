@@ -212,6 +212,16 @@
         android:id="@+id/device_category_motorola"
         android:title="@string/device_category_motorola_title" >
 
+	    <Preference
+            android:id="@+id/device_potter"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_potter_summary"
+            android:title="@string/device_potter" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/shivvvvvv" />
+        </Preference>
+
         <Preference
             android:id="@+id/device_sanders"
             android:icon="@drawable/havoc_device"
