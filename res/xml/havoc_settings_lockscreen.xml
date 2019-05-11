@@ -96,6 +96,19 @@
         android:key="ls_unlocking"
         android:title="@string/ls_unlocking">
 
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="pocket_judge"
+            android:title="@string/pocket_judge_title"
+            android:summary="@string/pocket_judge_summary"
+            android:defaultValue="false" />
+
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="pocket_judge_allow_fp"
+            android:title="@string/pocket_judge_fp_title"
+            android:summary="@string/pocket_judge_fp_summary"
+            android:defaultValue="false"
+            android:dependency="pocket_judge" />
+
         <SwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"
@@ -107,12 +120,6 @@
             android:title="@string/fp_unlock_keystore_title" 
             android:summary="@string/fp_unlock_keystore_summary" 
             android:defaultValue="false" /> 
-
-        <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="pocket_judge" 
-            android:title="@string/pocket_judge_title" 
-            android:summary="@string/pocket_judge_summary" 
-            android:defaultValue="false" />	
 
         <com.havoc.support.preferences.SecureSettingSwitchPreference
             android:key="face_auto_unlock"
