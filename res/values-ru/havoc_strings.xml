@@ -1463,4 +1463,16 @@
     <string name="lockscreen_lavalamp_title">Лавовая лампа</string>
     <string name="lockscreen_lavalamp_summary">Использовать плавную анимацию смены цвета</string>
     <string name="lockscreen_lavalamp_speed_title">Интервал смены цветов</string>
+    <string name="lockscreen_solid_lines_category">Сплошные линии</string>
+    <string name="lockscreen_solid_units_count_title">Количество kbybq</string>
+    <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
+    <string name="lockscreen_solid_units_opacity_title">Непрозрачнисть линий</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Режим кармане</string>
+    <string name="pocket_judge_summary">Блокировать экран и кнопки, когда устройство находится в кармане</string>
+
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
+    <string name="display_cutout_force_fullscreen_summary">Разрешить полноэкранные приложения</string>
 </resources>
