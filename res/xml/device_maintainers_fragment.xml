@@ -222,6 +222,16 @@
                 android:data="https://t.me/shivvvvvv" />
         </Preference>
 
+	    <Preference
+            android:id="@+id/device_montana"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_montana_summary"
+            android:title="@string/device_montana" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/JohnLaff" />
+        </Preference>
+
         <Preference
             android:id="@+id/device_sanders"
             android:icon="@drawable/havoc_device"
