@@ -1045,7 +1045,7 @@
     <string name="lock_date_font_title">Стиль шрифта даты</string>
     <!-- Rounded corners -->
     <string name="corner_fwvals">Использовать значения framework</string>
-    <string name="corner_fwvals_summary">Полезно, если устройство не имеет скруглённых углов</string>
+    <string name="corner_fwvals_summary">Полезно, если устройство имеет скруглённые углы</string>
     <string name="corner_radius">Радиус скругления углов</string>
     <string name="content_padding">Отступ в быстрых настройках</string>
     <string name="status_bar_padding">Отступ в строке состояния</string>
@@ -1402,8 +1402,8 @@
     <string name="status_bar_logo_color">Цвет логотипа</string>
     <string name="status_bar_logo_position">Позиция логотипа</string>
     <string name="status_bar_logo_position_summary">%1$s</string>
-    <string name="status_bar_logo_position_right">Слева</string>
-    <string name="status_bar_logo_position_left">Справа</string>
+    <string name="status_bar_logo_position_right">Справа</string>
+    <string name="status_bar_logo_position_left">Слева</string>
     <string name="status_bar_logo_style">Стиль логотипа</string>
     <string name="status_bar_logo_style_havoc">Havoc</string>
     <string name="status_bar_logo_style_android">Android</string>
