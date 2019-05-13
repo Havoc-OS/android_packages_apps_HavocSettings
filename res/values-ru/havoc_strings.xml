@@ -1469,8 +1469,10 @@
     <string name="lockscreen_solid_units_opacity_title">Непрозрачнисть линий</string>
 
     <!-- Pocket judge -->
-    <string name="pocket_judge_title">Режим кармане</string>
+    <string name="pocket_judge_title">Режим в кармане</string>
     <string name="pocket_judge_summary">Блокировать экран и кнопки, когда устройство находится в кармане</string>
+    <string name="pocket_judge_fp_title">Сканер отпечатков при режиме в кармане</string>
+    <string name="pocket_judge_fp_summary">Не блокировать сканер отпечатков при вкюченном режиме в кармане</string>
 
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
