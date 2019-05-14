@@ -64,6 +64,9 @@
     <string name="device_taimen" translatable="false">Google Pixel 2 XL</string>
     <string name="device_taimen_summary" translatable="false">taimen\nSteve Provancal (slothdabski)</string>
 
+    <string name="device_j7xelte" translatable="false">Samsung Galaxy J7 2016</string>
+    <string name="device_j7xelte_summary" translatable="false">j7xelte\nRuturaj Kadam</string>
+
     <string name="device_on7xelte" translatable="false">Samsung Galaxy J7 Prime</string>
     <string name="device_on7xelte_summary" translatable="false">on7xelte\nDouglas Gomes</string>
 

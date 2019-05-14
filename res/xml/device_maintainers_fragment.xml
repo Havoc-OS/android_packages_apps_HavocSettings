@@ -137,6 +137,16 @@
         android:id="@+id/device_category_samsung"
         android:title="@string/device_category_samsung_title" >
 
+        <Preference
+            android:id="@+id/device_j7xelte"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_j7xelte_summary"
+            android:title="@string/device_j7xelte" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/notallowedontelegram" />
+        </Preference> 
+
         <Preference 
             android:id="@+id/device_on7xelte"
             android:icon="@drawable/havoc_device"
