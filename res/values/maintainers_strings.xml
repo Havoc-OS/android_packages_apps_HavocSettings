@@ -76,6 +76,9 @@
     <string name="device_trlte" translatable="false">Samsung Galaxy Note 4</string>
     <string name="device_trlte_summary" translatable="false">trlte\nKhalvat-M (khalvat)</string>
 
+    <string name="device_tblte" translatable="false">Samsung Galaxy Note Edge</string>
+    <string name="device_tblte_summary" translatable="false">tblte\nKhalvat-M (khalvat)</string>
+
     <string name="device_ks01ltex" translatable="false">Samsung Galaxy S4 i9506</string>
     <string name="device_ks01ltex_summary" translatable="false">ks01ltex\nKhalvat-M (khalvat)</string>
 

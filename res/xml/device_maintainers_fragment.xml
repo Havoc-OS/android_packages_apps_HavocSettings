@@ -176,6 +176,16 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Mba65music" />
         </Preference>
+
+        <Preference 
+            android:id="@+id/device_tblte"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_tblte_summary"
+            android:title="@string/device_tblte" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Mba65music" />
+        </Preference>
  
         <Preference 
             android:id="@+id/device_ks01ltex"
