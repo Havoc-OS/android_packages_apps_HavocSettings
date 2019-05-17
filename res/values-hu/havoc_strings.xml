@@ -17,156 +17,169 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
     <string name="havoc_settings_title">Havoc beállítások</string>
+
     <!-- About -->
     <string name="developers_category_title">Fejlesztők</string>
     <string name="support_category_title">Támogató csapat</string>
-    <string name="maintainers_category_title">Maintainers</string>
+    <string name="maintainers_category_title">Karbantartók</string>
     <string name="device_maintainers_title">Hivatalos eszközök</string>
-    <string name="device_maintainers_title_summary">List of official devices and their maintainers</string>
+    <string name="device_maintainers_title_summary">Hivatalos eszközök és karbantartóiknak listája</string>
     <string name="changelog_title">Változás lista</string>
-    <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="changelog_title_summary">A ROM legutóbbi változásainak listája</string>
     <string name="changelog_error">Nem lehet betölteni a változás listát</string>
     <string name="havoc_announcements_title">Bejelentések</string>
     <string name="havoc_announcements_summary">Hivatalos bejelentések csatorna</string>
     <string name="havoc_telegram_title">Telegram</string>
-    <string name="havoc_telegram_summary">Support group for Official builds</string>
+    <string name="havoc_telegram_summary">A hivatalos kiadások támogató csoportja</string>
     <string name="havoc_source_title">Github</string>
     <string name="havoc_source_summary">Havoc-OS forrás kód</string>
     <string name="havoc_donate">Támogatás</string>
-    <string name="havoc_donate_summary">Show your support to Havoc-OS Team</string>
+    <string name="havoc_donate_summary">Mutasd meg támogatásod a Havoc-OS Csapatnak</string>
     <string name="havoc_links">Linkek</string>
     <string name="website_title">Weboldal</string>
     <string name="website_title_summary">Havoc-OS letöltése a te eszközödre</string>
+
     <!-- Categories -->
-    <string name="about_title">About</string>
+    <string name="about_title">Rólunk</string>
     <string name="animations_title">Animációk</string>
     <string name="buttons_title">Gombok</string>
     <string name="display_title">Kijelző</string>
     <string name="gestures_title">Gesztusok</string>
-    <string name="ime_title">Input Method</string>
-    <string name="interface_title">Interface</string>
+    <string name="ime_title">Beviteli lehetőségek</string>
+    <string name="interface_title">Felület</string>
     <string name="lockscreen_title">Zárképernyő</string>
-    <string name="misc_title">Miscellaneous</string>
+    <string name="misc_title">Különfélék</string>
     <string name="navigation_title">Navigációs sáv</string>
     <string name="notifications_title"> Értesítések</string>
     <string name="panels_title">Panelek</string>
     <string name="quicksettings_title">Gyors beállítások</string>
-    <string name="recents_title">Recents</string>
-    <string name="statusbar_title">Status Bar</string>
+    <string name="recents_title">Előzmények</string>
+    <string name="statusbar_title">Állapotsáv</string>
     <string name="system_title">Rendszer</string>
     <string name="weather_title">Időjárás</string>
     <string name="volume_title">Hangerő gombok</string>
     <string name="device_part_title">Eszköz</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Visszaállítás</string>
     <string name="cancel">Mégse</string>
     <string name="save">Mentés</string>
-    <string name="attention">Attention</string>
+    <string name="attention">Figyelem</string>
     <string name="action_save">Mentés</string>
     <string name="action_cancel">Mégse</string>
-    <string name="enabled">Enabled</string>
-    <string name="default_string">Default</string>
+    <string name="enabled">Engedélyezve</string>
+    <string name="default_string">Alapértelmezett</string>
+
     <!-- Label for feature switch [CHAR LIMIT=30] -->
-    <string name="switch_bar_on">On</string>
+    <string name="switch_bar_on">Be</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
-    <string name="switch_bar_off">Off</string>
+    <string name="switch_bar_off">Ki</string>
+
     <!--Titles-->
-    <string name="battery_wakelock">Blocking</string>
+    <string name="battery_wakelock">Blokkoló</string>
     <string name="battery_title">Akku kímélő</string>
-    <string name="scroll_title">Scroll</string>
+    <string name="scroll_title">Görgetés</string>
     <string name="toast_animation_cat_title">Toast</string>
-    <string name="tile_animation_title">QS Tiles</string>
-    <string name="list_animation_title">ListView</string>
+    <string name="tile_animation_title">GyB csempék</string>
+    <string name="list_animation_title">ListaNézet</string>
     <string name="system_keyguard_animation_title">System and Keyguard Animation</string>
-    <string name="gesture_nav">Navigation</string>
-    <string name="gesture_app">Applications</string>
-    <string name="gesture_misc">Misc</string>
+    <string name="gesture_nav">Navigáció</string>
+    <string name="gesture_app">Alkalmazások</string>
+    <string name="gesture_misc">Vegyes</string>
     <string name="gesture_ls">Kijelző</string>
     <string name="themes_title">Témák</string>
     <string name="havoc_density">Kijelző</string>
     <string name="corners_category">Sarkok</string>
     <string name="ls_clock">Widgets</string>
-    <string name="ls_date">Date Styles</string>
-    <string name="ls_shortcuts">Shortcuts</string>
-    <string name="ls_disable_elements">Elements</string>
+    <string name="ls_date">Dátum stílusok</string>
+    <string name="ls_shortcuts">Parancsikonok</string>
+    <string name="ls_disable_elements">Elemek</string>
     <string name="ls_aplha">Átlátszóság</string>
-    <string name="ls_info">Advanced Information</string>
+    <string name="ls_info">Speciális információk</string>
     <string name="ls_unlocking">Unlocking</string>
-    <string name="ls_nofi">Notification Limiter</string>
+    <string name="ls_nofi">Értesítés limitáló</string>
     <string name="ls_colors">Element Colors</string>
     <string name="misc_plug">USB and Plug</string>
     <string name="misc_screenshot">Screen Capture</string>
-    <string name="statusbar_clock">Clock</string>
-    <string name="statusbar_battery">Battery</string>
+    <string name="statusbar_clock">Óra</string>
+    <string name="statusbar_battery">Akkumulátor</string>
     <string name="statusbar_gestures">Kézmozdulatok</string>
-    <string name="statusbar_icons">Icons</string>
-    <string name="statusbar_ntraffic">Network</string>
-    <string name="statusbar_networkicon">Network Icons</string>
+    <string name="statusbar_icons">Ikonok</string>
+    <string name="statusbar_ntraffic">Hálózat</string>
+    <string name="statusbar_networkicon">Hálózati ikonok</string>
     <string name="statusbar_ticker">Ticker</string>
-    <string name="statusbar_pulldown">Pulldown</string>
-    <string name="statusbar_carrier">Carrier</string>
-    <string name="statusbar_tuner">Statusbar Icons</string>
+    <string name="statusbar_pulldown">Lehúzás</string>
+    <string name="statusbar_carrier">Szolgáltató</string>
+    <string name="statusbar_tuner">Állapotsáv ikonok</string>
     <string name="statusbar_logo_cat">Logo</string>
-    <string name="hafr_title">Hide Apps from Recent</string>
-    <string name="immersive_recent_title">Immersive Recent</string>
-    <string name="notification_lights">Lights</string>
+    <string name="hafr_title">Alkalmazások elrejtése az Előzményekben</string>
+    <string name="immersive_recent_title">Fordított Előzmények</string>
+    <string name="notification_lights">Fények</string>
     <string name="notification_messages">Rendszer</string>
-    <string name="notification_stat">Statusbar</string>
-    <string name="notification_misc">Misc</string>
-    <string name="qs_layout_category">Layout</string>
-    <string name="qs_element_title">Elements</string>
-    <string name="footer_title">Footer</string>
-    <string name="animation_duration_custom">Custom</string>
+    <string name="notification_stat">Állapotsor</string>
+    <string name="notification_misc">Vegyes</string>
+    <string name="qs_layout_category">Elrendezés</string>
+    <string name="qs_element_title">Elemek</string>
+    <string name="footer_title">Lábrész</string>
+    <string name="animation_duration_custom">Egyedi</string>
     <string name="ambient_element">Doze</string>
     <string name="brightness_category_title">Brightness Slider</string>
     <string name="volume_key_title">Hangerő gombok</string>
-    <string name="power_menu_category">Power Menu</string>
+    <string name="power_menu_category">Kikapcsoló menü</string>
+
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Villogás híváskor</string>
-    <string name="flashlight_on_call_disabled">Disabled</string>
-    <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
-    <string name="flashlight_on_call_dnd">Only in DND mode</string>
-    <string name="flashlight_on_call_always">Always</string>
+    <string name="flashlight_on_call_disabled">Letiltva</string>
+    <string name="flashlight_on_call_not_dnd">Csak csengő módban</string>
+    <string name="flashlight_on_call_dnd">Csak Ne zavarjanak módban</string>
+    <string name="flashlight_on_call_always">Mindig</string>
+
     <!-- Recents Membar -->
-    <string name="systemui_recents_mem_display_title">Memory Bar</string>
-    <string name="systemui_recents_mem_display_summary">Show a progress bar displaying RAM</string>
+    <string name="systemui_recents_mem_display_title">Memória sáv</string>
+    <string name="systemui_recents_mem_display_summary">Mutasson egy sávot a RAM-ot megjelenítve</string>
+
     <!-- Power Menu -->
-    <string name="powermenu_title">Power Menu</string>
-    <string name="powermenu_summary">Customize elements to be displayed in power menu</string>
+    <string name="powermenu_title">Kikapcsoló menü</string>
+    <string name="powermenu_summary">Kikapcsoló menü elemeinek testreszabása</string>
     <string name="powermenu_torch">Zseblámpa</string>
-    <string name="powermenu_lockdown">Lockdown</string>
-    <string name="advanced_power_menu">Power menu options</string>
-    <string name="arrow_reboot_menu">Advanced reboot menu</string>
+    <string name="powermenu_lockdown">Lezárás</string>
+    <string name="advanced_power_menu">Kikapcsoló menü lehetőségek</string>
+    <string name="arrow_reboot_menu">Speciális újraindítás menü</string>
     <string name="powermenu_reboot_title">Újraindítás</string>
     <string name="powermenu_airplane_title">Repülőgépes üzemmód</string>
     <string name="powermenu_advanced_reboot_title">Speciális újraindítás</string>
     <string name="powermenu_advanced_reboot_summary">Enables the advanced reboot menu for rebooting options</string>
     <string name="powermenu_screenshot_title">Képernyőmentés</string>
     <string name="powermenu_screenrecord_title">Képernyőfelvétel</string>
-    <string name="powermenu_category_visibility">Lockscreen options</string>
-    <string name="powermenu_lockscreen_title">Visibility on the lockscreen</string>
-    <string name="powermenu_lockscreen_summary">Enable the ability to show and use the power menu dialog while on the lockscreen</string>
+    <string name="powermenu_category_visibility">Zárképernyő lehetőségek</string>
+    <string name="powermenu_lockscreen_title">Láthatóság a zárképernyőn</string>
+    <string name="powermenu_lockscreen_summary">Engedélyezd, hogy megjelenjen és használni tudd a kikapcsoló menüt a zárképernyőn</string>
     <string name="powermenu_ls_reboot_summary">Show the reboot option on the lockscreen</string>
     <string name="powermenu_ls_advanced_reboot_summary">Show the advanced reboot option on the lockscreen</string>
     <string name="powermenu_ls_screenshot_summary">Show the screenshot option on the lockscreen</string>
     <string name="powermenu_ls_airplane_summary">Show the airplane mode option on the lockscreen</string>
+
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Charging info</string>
     <string name="lockscreen_battery_info_summary">Display charger max current, voltage and battery temperature while charging</string>
+
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">FP authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate when fingerprint authentication is successful</string>
     <string name="face_auto_unlock_title">Face Unlock</string>
     <string name="face_auto_unlock_summary">Dismiss lockscreen automatically after face is recognized</string>
+
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
     <string name="screen_off_animation_fade">Áttűnés</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
+
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>
+
     <!-- Toast Animation -->
     <string name="toast_animation_title">Toast animation</string>
     <string name="toast_none_animation">Egyik sem</string>
@@ -187,6 +200,7 @@
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
     <string name="toast_animation_test">This is test for selected toast animation</string>
     <string name="toast">Toast</string>
+
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Scrolling Cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
@@ -194,6 +208,7 @@
     <string name="pref_scrollingcache_default_enable">Enable</string>
     <string name="pref_scrollingcache_default_disable">Disable</string>
     <string name="pref_scrollingcache_force_disable">Disable (Forced)</string>
+
     <!-- ListView animation -->
     <string name="listview_animation_title">ListView animation</string>
     <string name="listview_off">Default</string>
@@ -207,6 +222,7 @@
     <string name="listview_fold">Fold</string>
     <string name="listview_translate_left">Translate (left)</string>
     <string name="listview_translate_right">Translate (right)</string>
+
     <!-- ListView interpolator -->
     <string name="listview_interpolator_title">ListView animation interpolator</string>
     <string name="listview_accelerate_interpolator">Accelerate</string>
@@ -216,6 +232,7 @@
     <string name="listview_overshoot_interpolator">Overshoot</string>
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
+
     <!-- AOKP custom system animations -->
     <string name="system_animation_title">Rendszer</string>
     <string name="system_animation_summary">Customize the animations of each window in system</string>
@@ -236,6 +253,7 @@
     <string name="animation_duration_default">Default</string>
     <string name="disable_transition_animations_title">Transition animations</string>
     <string name="disable_transition_animations_summary">Enable all system animations</string>
+
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_category">QS tiles animations</string>
     <string name="qs_tile_animation_style_title">QS tiles animation</string>
@@ -258,9 +276,11 @@
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
+
     <!-- Incall Home button behavior-->
     <string name="allow_incall_home_title">Home button when ringing</string>
     <string name="allow_incall_home_summary">Allow to use Home button when device is ringing</string>
+
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">Button backlight timeout</string>
     <string name="backlight_timeout_on">Enabled always</string>
@@ -272,6 +292,7 @@
     <string name="backlight_timeout_15s">15 mp</string>
     <string name="backlight_timeout_20s">20 mp</string>
     <string name="backlight_timeout_30s">30 mp</string>
+
     <!-- Dashboard conditions-->
     <string name="dashboard_category">Settings</string>
     <string name="dashboard_conditions_title">Dashboard conditions</string>
@@ -280,12 +301,15 @@
     <string name="dashboard_suggestions_title">Dashboard suggestions</string>
     <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string>
     <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string>
+
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">Button backlight brightness</string>
+
     <!-- Enable keys backlight-->
     <string name="button_brightness_sw_title">Enable backlight</string>
     <string name="button_backlight_on_touch_only_title">Button backlight on touch</string>
     <string name="button_backlight_on_touch_only_summary">Enable backlight with timeout only on button touch</string>
+
     <!-- HW Keys customization -->
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
@@ -309,24 +333,30 @@
     <string name="hardware_keys_category">Hardware Keys</string>
     <string name="hardware_keys_disable_title">Disable keys</string>
     <string name="hardware_keys_disable_summary">Disable the device hardware keys</string>
+
     <!-- ANBI -->
     <string name="anbi_title">Véletlen érintés</string>
     <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+
     <!-- Statusbar Tuner -->
-    <string name="statusbar_items_category">Icons</string>
-    <string name="statusbar_items_title">Statusbar icons</string>
-    <string name="statusbar_items_summary">Toggle visibility of icons in statusbar</string>
+    <string name="statusbar_items_category">Ikonok</string>
+    <string name="statusbar_items_title">Állapotsáv ikonok</string>
+    <string name="statusbar_items_summary">Állítsd be melyik ikonok jelenjenek meg az állapotsávon</string>
+
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Bottom shortcuts</string>
     <string name="lockscreen_tuner_summary">Change the bottom left/right shortcuts</string>
+
     <!-- FC notifications -->
     <string name="disable_fc_notifications_title">Force close notifications</string>
     <string name="disable_fc_notifications_summary">Show a dialog when an app crashes</string>
+
     <!-- Navbar tuner -->
     <string name="navbar_tuner_title">Navbar Buttons</string>
     <string name="navbar_tuner_summary">Customize the buttons displayed on Navbar</string>
     <string name="navbar_visibility">Navigation Bar</string>
     <string name="navbar_visibility_summary">Enable to display the navbar</string>
+
     <!-- Recents panel settings -->
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Display a clear all button in recents</string>
@@ -337,12 +367,15 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+
     <!-- Show QS on lockscreen -->
     <string name="block_on_secure_keyguard_title">Quick settings</string>
     <string name="block_on_secure_keyguard_summary">Show quick settings on secure lockscreen</string>
+
     <!-- On-The-Go -->
     <string name="onthego_title">On-The-Go Mode</string>
     <string name="global_actions_onthego_title">On-The-Go</string>
@@ -350,6 +383,7 @@
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay</string>
     <string name="app_ops_settings_title">Privacy Guard</string>
     <string name="app_ops_settings_summary">Block app permissions</string>
+
     <!-- Volume key cursor control -->
     <string name="hardware_keys_volume_keys_title">Volume Buttons</string>
     <string name="volbtn_cursor_control_title">Keyboard cursor control</string>
@@ -357,10 +391,12 @@
     <string name="volbtn_cursor_control_on">Volume up/down - cursor left/right</string>
     <string name="volbtn_cursor_control_on_reverse">Volume up/down - cursor right/left</string>
     <string name="volume_summary">Customize settings for volume buttons</string>
+
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Apps blacklist</string>
     <string name="hide_from_recents_add_app">Add App</string>
     <string name="hide_apps_from_recents_summary">Select certian apps to hide in recents</string>
+
     <!-- Keyboard and IME  -->
     <string name="disable_fullscreen_keyboard_title">Fullscreen keyboard</string>
     <string name="disable_fullscreen_keyboard_summary">Allow keyboard to take up entire screen in landscape</string>
@@ -375,6 +411,7 @@
     <string name="keyboard_ime_summury">Advanced IME Settings</string>
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
+
     <!-- Volume Steps -->
     <string name="volume_steps_title">Volume steps</string>
     <string name="volume_steps_summary">Set custom volume steps for sounds</string>
@@ -386,18 +423,23 @@
     <string name="volume_steps_system_title">Volume steps: System</string>
     <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
     <string name="volume_steps_reset">Reset</string>
+
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">Swap keys</string>
     <string name="swap_volume_buttons_summary">Swap volume keys when the device is rotated</string>
+
     <!-- Toast icon -->
     <string name="toast_icon_title">Toast icon</string>
     <string name="toast_icon_summary">Display icon of activity that generates toast message</string>
+
     <!-- Pin ripple -->
     <string name="lockscreen_pin_ripple_title">Pin ripple</string>
     <string name="lockscreen_pin_ripple_summary">Show ripple when entering pin numbers</string>
+
     <!-- Power menu on lockscreen -->
     <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
     <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
+
     <!-- Heads up -->
     <string name="heads_up_notifications">Heads Up</string>
     <string name="heads_up_notifications_summary">Pop up statusbar notifications</string>
@@ -409,6 +451,7 @@
     <string name="profile_choose_app">Choose app</string>
     <string name="dialog_delete_title">Törlés</string>
     <string name="dialog_delete_message">Remove selected item?</string>
+
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Time out</string>
     <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
@@ -418,6 +461,7 @@
     <string name="heads_up_time_out_6sec">6 seconds</string>
     <string name="heads_up_time_out_8sec">8 seconds</string>
     <string name="heads_up_time_out_10sec">10 seconds</string>
+
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Snooze timer</string>
     <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
@@ -428,14 +472,17 @@
     <string name="heads_up_snooze_10min">10 minutes</string>
     <string name="heads_up_snooze_15min">15 minutes</string>
     <string name="heads_up_snooze_20min">20 minutes</string>
+
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
     <!--Volume keys -->
     <string name="volume_rocker_wake_title">Eszköz felébresztése</string>
     <string name="volume_rocker_wake_summary">Press volume keys to wake your device</string>
     <string name="volume_rocker_music_controls_title">Control music</string>
     <string name="volume_rocker_music_controls_summary">Long press volume keys to switch tracks while screen is off</string>
+
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
@@ -443,58 +490,70 @@
     <string name="smart_pixels_on_power_save_summary">Enable with battery saver to increase power savings</string>
     <string name="smart_pixels_percent">Disable % of Pixels</string>
     <string name="smart_pixels_shift">Burn-in protection interval</string>
+
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Show media cover art as the lockscreen background</string>
+
     <!-- Hide brightness slider -->
     <string name="brightness_slider_title">Brightness slider</string>
     <string name="brightness_slider_summary">Show the brightness slider in quick settings</string>
+
     <!-- Double-tap-to sleep -->
     <string name="double_tap_sleep_gesture_title">Double tap to sleep</string>
     <string name="double_tap_sleep_gesture_summary">Double tap on the status bar to put the device to sleep</string>
+
     <!-- DoubleTap2Sleep -->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
     <string name="double_tap_sleep_lockscreen_sumary">Double tap anywhere on the lockscreen to put the device to sleep</string>
+
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call Vibration</string>
     <string name="incall_vibrate_connect_title">Vibrate on Connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on Call Waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on Disconnect</string>
     <string name="incall_notifications_vibrate">Vibrate for Notifications</string>
+
     <!-- Battery light -->
-    <string name="battery_light_settings">Charging LED</string>
-    <string name="battery_light_settings_summary">Customize the battery indication LED</string>
-    <string name="battery_light_allow_on_dnd_title">Battery light in DND</string>
-    <string name="battery_light_allow_on_dnd_summary">Blink LED for battery in Do Not Disturb mode</string>
-    <string name="battery_light_low_blinking_title">Low battery indication</string>
-    <string name="battery_light_low_blinking_summary">Blink LED when battery level is low</string>
-    <string name="battery_light_cat">Charging</string>
+    <string name="battery_light_settings">Töltés LED</string>
+    <string name="battery_light_settings_summary">Szabd testre az akku töltés jelző LED színét</string>
+    <string name="battery_light_allow_on_dnd_title">Akku jelzés NE zavarjanak módban</string>
+    <string name="battery_light_allow_on_dnd_summary">Villogó akku LED Ne zavarjanak módban</string>
+    <string name="battery_light_low_blinking_title">Alacsony akku jelzés</string>
+    <string name="battery_light_low_blinking_summary">Villogó LED ha az akku töltöttsége alacsony</string>
+    <string name="battery_light_cat">Töltés</string>
     <string name="battery_light_low_color">Alacsony töltöttség</string>
-    <string name="battery_light_medium_color">Medium battery</string>
-    <string name="battery_light_full_color">Almost full battery</string>
-    <string name="battery_light_reallyfull_color">Full battery</string>
+    <string name="battery_light_medium_color">Közepes töltöttség</string>
+    <string name="battery_light_full_color">Akku majdnem tele</string>
+    <string name="battery_light_reallyfull_color">Teljes töltöttség</string>
+
     <!-- Ambient display battery percentage -->
-    <string name="ambient_battery_percent_title">Battery level</string>
-    <string name="ambient_battery_percent_summary">Show battery percent at the bottom while dozing</string>
-    <string name="doze_display_title">Ambient Display</string>
+    <string name="ambient_battery_percent_title">Akku szintje</string>
+    <string name="ambient_battery_percent_summary">Mutatja az akkumulátor százalékos töltöttségét amíg a készülék alszik</string>
+    <string name="doze_display_title">Környezeti kijelző</string>
+
     <!-- Wakeup options -->
-    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
+    <string name="wakeup_when_plugged_unplugged_title">Töltéskor ébredjen fel</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Ébredjen fel a készülék amikor a töltő csatlakozik vagy lecsatlakozik</string>
+
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Swipe to screenshot</string>
-    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+    <string name="three_finger_gesture">Csúsztatás képernyőmentéshez</string>
+    <string name="three_finger_gesture_summary">Képernyőkép mentéséhez csúsztasd három ujjad a kijelzőn</string>
+
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>
     <string name="wakelock_blocker_save">Mentés</string>
     <string name="wakelock_list_header">Available wakelocks</string>
     <string name="wakelock_blocker_reload">Reload</string>
+
     <!-- Alarm blocker -->
     <string name="alarm_blocker_title">Alarm Blocker</string>
     <string name="alarm_blocker_summary">Block alarms while screen off</string>
     <string name="alarm_blocker_save">Mentés</string>
     <string name="alarm_list_header">Available alarms</string>
     <string name="alarm_blocker_reload">Reload</string>
+
     <!-- Screen state service -->
     <string name="screen_state_toggles_title">Suspend Actions</string>
     <string name="screen_state_toggles_summary">Actions executed on screen off</string>
@@ -513,34 +572,40 @@
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
     <string name="sysui_qqs_count_title">Oszlopok</string>
+
     <!-- CPU info -->
-    <string name="show_cpu_info">Show CPU info</string>
-    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+    <string name="show_cpu_info">CPU infók mutatása</string>
+    <string name="show_cpu_info_summary">CPU információk mutatása a kijelző felületén</string>
+
     <!-- Fingerprint unlock keystore -->
-    <string name="fp_unlock_keystore_title">Force FP authentication</string>
-    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot or lockdown</string>
+    <string name="fp_unlock_keystore_title">Ujjlenyomat azonosítás</string>
+    <string name="fp_unlock_keystore_summary">Újraindulás vagy zárolás után a készülék ujjlenyomattal is feloldható lesz</string>
+
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor block per-package</string>
     <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
+
     <!-- Battery percentage -->
-    <string name="battery_style_category_title">Battery icon</string>
-    <string name="battery_style_category_summary">Customize the battery icon in statusbar</string>
-    <string name="status_bar_battery_percentage_title">Battery percentage</string>
-    <string name="status_bar_battery_percentage_default">Hidden</string>
-    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
-    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="battery_style_category_title">Akku ikonja</string>
+    <string name="battery_style_category_summary">Szabd testre az akkumulátor ikonját az állapotsávon</string>
+    <string name="status_bar_battery_percentage_title">Akku százalék</string>
+    <string name="status_bar_battery_percentage_default">Rejtett</string>
+    <string name="status_bar_battery_percentage_text_next">Az ikon mellett</string>
+    <string name="status_bar_battery_percentage_text_inside">Az ikonban</string>
+
     <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">Battery style</string>
-    <string name="status_bar_battery_style_port">Portrait</string>
-    <string name="status_bar_battery_style_circle">Circle</string>
-    <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
-    <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="notification_light_settings">Notification LED</string>
-    <string name="notification_light_settings_summary">Configure notification light on per-app basis</string>
+    <string name="status_bar_battery_style_title">Akku stílusa</string>
+    <string name="status_bar_battery_style_port">Portré</string>
+    <string name="status_bar_battery_style_circle">Kör</string>
+    <string name="status_bar_battery_style_dotted_circle">Pontozott kör</string>
+    <string name="status_bar_battery_style_text">Szöveg</string>
+    <string name="status_bar_battery_style_hidden">Rejtett</string>
+    <string name="notification_light_settings">Értesítés LED</string>
+    <string name="notification_light_settings_summary">Konfiguráld be az alkalmazásokhoz az értesítések villogását</string>
+
     <!-- Statusbar net monitor -->
-    <string name="net_traffic_title">Network Traffic</string>
-    <string name="net_traffic_summary">Network speed indicator in statusbar</string>
+    <string name="net_traffic_title">Hálózati forgalom</string>
+    <string name="net_traffic_summary">Hálózat sebességének mutatása az állapotsávon</string>
     <string name="network_traffic_state_title">Location</string>
     <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
     <string name="network_traffic_hidearrow">Activity arrows</string>
@@ -559,6 +624,7 @@
     <string name="gesture_swipe_length_title">Swipe trigger height</string>
     <string name="gesture_action_timeout_title">Swipe trigger timeout</string>
     <string name="bottom_gestures_feedback_duration_title">Haptic feedback duration</string>
+
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
     <string name="qs_brightness_position_bottom_summary">Show brightness slider at the bottom of QS panel</string>
@@ -566,6 +632,7 @@
     <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
     <string name="gesture_preference_aosp">System Gestures</string>
     <string name="gesture_preference_aosp_summary">Access the device specific system gestures</string>
+
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">Clock &amp; Date</string>
     <string name="status_bar_clock_summary">Customize clock and date in statusbar</string>
@@ -607,17 +674,20 @@
     <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular intervals</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
+
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">VPN warning</string>
     <string name="qs_footer_warnings_summary">Display a warning when network is monitored by external apps or vpn</string>
     <string name="hardware_keys_power_category">Power Button</string>
     <string name="power_end_call_title">End call</string>
     <string name="power_end_call_summary">End the current call by pressing the power button</string>
+
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">Media Scanner behavior</string>
     <string name="media_scanner_on_boot_enabled">Scan media</string>
     <string name="media_scanner_on_boot_ask">Ask to scan (Notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
+
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Carrier label</string>
     <string name="carrier_label_settings_summary">Customize the carrier label</string>
@@ -633,12 +703,14 @@
     <string name="status_bar_carrier_font_style_title">Carrier label font</string>
     <string name="status_bar_carrier_font_style_summary">%1$s</string>
     <string name="status_bar_carrier_color">Carrier label color</string>
+
     <!-- Screen Stabilization -->
     <string name="screen_stabilization_title">Képernyő stabilizálás</string>
     <string name="screen_stabilization_summary">Move display content when device is in motion</string>
     <string name="stabilization_velocity_friction_title">Velocity friction</string>
     <string name="stabilization_position_friction_title">Position friction</string>
     <string name="stabilization_velocity_amplitude_title">Velocity amplitude</string>
+
     <!-- Lockscreen visualizer -->
     <string name="lockscreen_media_category">Zene</string>
     <string name="lockscreen_visualizer_enable">Music Visualizer</string>
@@ -646,12 +718,15 @@
     <string name="lockscreen_visualizer_enable_custom">Use custom color</string>
     <string name="lockscreen_visualizer_enable_custom_summary">Use a custom color instead of the auto generated color</string>
     <string name="lockscreen_visualizer_custom_color">Visualizer color</string>
+
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Answer call</string>
     <string name="volume_answer_call_summary">Press volume keys to answer calls</string>
+
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Launch music app</string>
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
+
     <!-- Quick settings tiles columns and rows config -->
     <string name="qs_rows_portrait_title">Rows (Portrait)</string>
     <string name="qs_rows_landscape_title">Sorok (fektetve)</string>
@@ -663,6 +738,7 @@
     <string name="qs_auto_brightness_right_summary">Show the icon on right of the brightness slider</string>
     <string name="qs_show_brightness_buttons_title">Brightness control buttons</string>
     <string name="qs_show_brightness_buttons_summary">Show buttons beside the brightness slider to adjust brightness</string>
+
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>
     <string name="battery_bar_summary">Customize battery bar</string>
@@ -686,10 +762,12 @@
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
     <string name="battery_bar_high_color">High level color</string>
     <string name="battery_bar_low_color">Low level color\"</string>
+
     <!-- Screenshot -->
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Full</string>
     <string name="screenshot_type_partial">Partial</string>
+
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Clock font style</string>
     <string name="lock_clock_font_stock">Regular</string>
@@ -712,14 +790,17 @@
     <string name="lock_clock_font_black_italic">Black Italic</string>
     <string name="use_old_mobiletype_title">Old mobile type icons</string>
     <string name="use_old_mobiletype_summary">Merge signal and type icons like Oreo</string>
+
     <!-- Burn-in Protection -->
     <string name="navigation_burnin_category">Burn-in Protection</string>
     <string name="burn_in_protection_title">Burn-in Protection</string>
     <string name="burn_in_protection_summary">Shift statusbar icons to prevent burn-in</string>
     <string name="burn_in_protection_interval_title">Shift interval</string>
+
     <!-- Show statusbar on lockscreen -->
     <string name="lockscreen_hide_status_bar_title">Statusbar</string>
     <string name="lockscreen_hide_status_bar_summary">Show statusbar on the lockscreen</string>
+
     <!-- Doze settings editor -->
     <string name="advanced_doze_settings">Advanced Doze</string>
     <string name="doze_settings_title">Doze settings</string>
@@ -785,6 +866,7 @@
     <string name="SHORT_MIN_LIGHT_MAINTENANCE_TIME">Maintenance mode light doze min timeout</string>
     <string name="SHORT_MIN_DEEP_MAINTENANCE_TIME">Maintenance mode full doze min timeout</string>
     <string name="SHORT_KEY_NOTIFICATION_WHITELIST_DURATION">Max notification whitelist duration</string>
+
     <!-- Time In State & CPU State -->
     <string name="state_time_mode">Awake</string>
     <string name="since_boot">Boot</string>
@@ -827,15 +909,19 @@
     <string name="mt_reset">Reset</string>
     <string name="time_in_state_title">Time in state</string>
     <string name="time_in_state_summary">Show CPU frequency statistics</string>
+
     <!-- Swap navigation keys -->
     <string name="swap_navigation_keys_title">Swap keys</string>
     <string name="swap_navigation_keys_title_summary">Swap back and recents hardware keys</string>
+
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+
     <!-- Data disabled icon -->
     <string name="data_disabled_icon_title">Data disabled icon</string>
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
+
     <!-- Quick pull down-->
     <string name="quick_pulldown_title">Quick pulldown</string>
     <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
@@ -844,6 +930,7 @@
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
     <string name="quick_pulldown_always">Always</string>
+
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Smart pulldown</string>
     <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
@@ -852,6 +939,7 @@
     <string name="smart_pulldown_none">No notifications</string>
     <string name="smart_pulldown_dismissable">No dismissable</string>
     <string name="smart_pulldown_ongoing">No ongoing</string>
+
     <!-- QS footer icons -->
     <string name="qs_footer_services_title">Running Services icon</string>
     <string name="qs_footer_services_summary">Display Running Services icon in quick settings footer</string>
@@ -859,6 +947,7 @@
     <string name="qs_footer_settings_summary">Display Settings icon in quick settings footer</string>
     <string name="qs_footer_user_title">User switcher icon</string>
     <string name="qs_footer_user_summary">Display Multi-user switcher icon in quick settings footer</string>
+
     <!-- Expanded desktop -->
     <string name="expanded_desktop_pref_title">Expanded desktop</string>
     <string name="expanded_desktop_pref_summary">Hide statusbar and navbar in some apps</string>
@@ -873,12 +962,15 @@
     <string name="expanded_desktop_style">Expanded desktop style</string>
     <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
     <string name="expanded_desktop_title">Expanded desktop options</string>
+
     <!-- Allow fake signature checkbox in developer settings -->
     <string name="allow_signature_fake">Signature Spoofing</string>
     <string name="allow_signature_fake_summary">Allow apps to bypass security systems by pretending to be a different app</string>
+
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+
     <!-- CarbonGestures -->
     <string name="carbon_gesture_preference_title">Swipe Gestures</string>
     <string name="carbon_gestures_summary">Configure custom swipe gestures</string>
@@ -901,9 +993,11 @@
     <string name="carbon_gesture_media_previous">Previous media</string>
     <string name="carbon_gesture_customapp">Launch application</string>
     <string name="carbon_gesture_launch">Launch</string>
+
     <!-- Bluetooth battery status -->
     <string name="bluetooth_battery_title">Bluetooth battery status</string>
     <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
+
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Recents Style</string>
     <string name="recents_quickstep">Quickstep</string>
@@ -911,9 +1005,11 @@
     <string name="recents_grid">Grid</string>
     <string name="recents_go">Android Go</string>
     <string name="recents_slim">Slim</string>
+
     <!-- AOSP Recents -->
     <string name="aosp_first_time_title">AOSP recents</string>
     <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
+
     <!-- Immersive Recents -->
     <string name="immersive_recents_title">Immersive mode</string>
     <string name="immersive_recents_summary">Change the view of the recents screen</string>
@@ -921,6 +1017,7 @@
     <string name="immersive_recents_fullscreen">Fullscreen</string>
     <string name="immersive_recents_statusbar">Statusbar</string>
     <string name="immersive_recents_navbar">Navbar</string>
+
     <!-- Clock and date immersive recents-->
     <string name="recents_full_screen_clock_title">Show clock</string>
     <string name="recents_full_screen_clock_summary">Shows clock at the top while in immersive</string>
@@ -995,6 +1092,7 @@
     <string name="animation14">Slide Out Up </string>
     <string name="animation15">Fast Rotation</string>
     <string name="reset_message">Reset all entries to default?</string>
+
     <!-- Lockscreen shortcuts on secure Lockscreen -->
     <string name="lockscreen_hide_shortcuts_title">Shortcuts</string>
     <string name="lockscreen_hide_shortcuts_summary">Show left/right shortcuts on secure lock screens</string>
@@ -1002,6 +1100,7 @@
     <string name="hide_lockscreen_indicator_display_summary">Show charging information and unlock hints</string>
     <string name="hide_lockscreen_icon_title">Lock icon</string>
     <string name="hide_lockscreen_icon_summary">Show lock icon on the bottom</string>
+
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">QS Tile style</string>
     <string name="qstile_default">Default</string>
@@ -1024,16 +1123,20 @@
     <string name="qstile_squircle_trim">Squircle (Trim)</string>
     <string name="qstile_teardrop">Teardrop</string>
     <string name="qstile_wavey">Wavey</string>
+
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon in statusbar</string>
     <string name="statusbar_show_wifi_activity_title">Wi-Fi data indicators</string>
     <string name="statusbar_show_wifi_activity_summary">Show indicators when Wi-Fi is sending/receiving data like mobile</string>
+
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+
     <!-- Weather -->
-    <string name="weather_unit">Temperature unit</string>
+    <string name="weather_unit">Hőmérséklet egység</string>
+
     <!-- Statusbar ticker -->
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Notification preview in status bar</string>
@@ -1041,75 +1144,89 @@
     <string name="ticker_animation_mode_alpha_fade">Áttűnés</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     <string name="ticker_tick_duration_title">Ticker duration</string>
+
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Date font style</string>
+
     <!-- Rounded corners -->
     <string name="corner_fwvals">Use framework values</string>
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="corner_radius">Rounded Corner Radius</string>
     <string name="content_padding">Corner Content Padding</string>
     <string name="status_bar_padding">Statusbar Padding</string>
+
     <!-- SystemUI theme -->
-    <string name="systemui_theme_style_title">SystemUI Theme</string>
-    <string name="systemui_theme_style_auto">Automatic (Wallpaper based)</string>
-    <string name="systemui_theme_style_light">Light</string>
-    <string name="systemui_theme_style_dark">Dark</string>
-    <string name="systemui_theme_style_shady">Shady</string>
-    <string name="systemui_theme_style_glassy">Glassy</string>
-    <string name="applying_theme_toast">Applying theme, please wait...</string>
-    <string name="theme_applied_toast">Theme applied!</string>
+    <string name="systemui_theme_style_title">Rendszerfelület témája</string>
+    <string name="systemui_theme_style_auto">Automatikus (háttérkép alapján)</string>
+    <string name="systemui_theme_style_light">Világos</string>
+    <string name="systemui_theme_style_dark">Sötét</string>
+    <string name="systemui_theme_style_shady">Árnyékos</string>
+    <string name="systemui_theme_style_glassy">Üveg</string>
+    <string name="applying_theme_toast">Téma alkalmazása, kérlek várj!</string>
+    <string name="theme_applied_toast">Téma alkalmazva!</string>
+
     <!-- QS header styles -->
-    <string name="qs_header_style_title">QS Header style</string>
-    <string name="qs_header_black">Black</string>
-    <string name="qs_header_grey">Grey</string>
-    <string name="qs_header_lightgrey">Light Grey</string>
-    <string name="qs_header_accent">Accent Based</string>
-    <string name="qs_header_transparent">Transparent</string>
+    <string name="qs_header_style_title">GyB fejléc stílusa</string>
+    <string name="qs_header_black">Fekete</string>
+    <string name="qs_header_grey">Szürke</string>
+    <string name="qs_header_lightgrey">Világosszürke</string>
+    <string name="qs_header_accent">Kiemelés színével azonos</string>
+    <string name="qs_header_transparent">Átlátszó</string>
+
     <!-- Heads up options -->
-    <string name="less_boring_heads_up_title">Less boring heads up</string>
-    <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app</string>
+    <string name="less_boring_heads_up_title">Kevésbé unalmas felugró üzenetek</string>
+    <string name="less_boring_heads_up_summary">Csak hívó és csevegő alkalmazásoknál legyn felügró értesítés</string>
+
     <!-- Hide header -->
-    <string name="tuner_show_info_header_title">Information header</string>
-    <string name="tuner_show_info_header_category">Shows information on top of the QS panel</string>
+    <string name="tuner_show_info_header_title">Információs fejléc</string>
+    <string name="tuner_show_info_header_category">Információkat mutat a GyB tetején</string>
+
     <!-- Lock Clock & Date Size -->
-    <string name="lockdate_font_size_title">Date font size</string>
-    <string name="lockclock_font_size_title">Clock font size</string>
+    <string name="lockdate_font_size_title">Dátum betűmérete</string>
+    <string name="lockclock_font_size_title">Óra betűmérete</string>
     <string name="ambient_play">Zene</string>
+
     <!-- Power menu Animations  -->
-    <string name="power_menu_animation_title">Power menu animation</string>
-    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
-    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
-    <string name="power_menu_animation_aosp">Default</string>
-    <string name="power_menu_animation_bottom">Bottom</string>
-    <string name="power_menu_animation_top">Top</string>
-    <string name="power_menu_animation_xylon">Fly</string>
-    <string name="power_menu_animation_slide">Slide</string>
-    <string name="power_menu_animation_turn">Turn</string>
-    <string name="power_menu_animation_fly">Glow</string>
+    <string name="power_menu_animation_title">Kikapcsoló menü animációja</string>
+    <string name="power_menu_animation_summary">Változtasd meg a kikapcsoló menü felbukkanó/eltűnő animációját</string>
+    <string name="power_menu_animation_dialog_title">Válassz kikapcsoló menü animációt</string>
+    <string name="power_menu_animation_aosp">Alapértelmezett</string>
+    <string name="power_menu_animation_bottom">Lent</string>
+    <string name="power_menu_animation_top">Fent</string>
+    <string name="power_menu_animation_xylon">Repülés</string>
+    <string name="power_menu_animation_slide">Csúszás</string>
+    <string name="power_menu_animation_turn">Lapozás</string>
+    <string name="power_menu_animation_fly">Ragyogás</string>
     <string name="power_menu_animation_card">3D</string>
-    <string name="power_menu_animation_translucent_top">Translucent (top)</string>
-    <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
-    <string name="power_menu_animation_rotate">Rotate</string>
+    <string name="power_menu_animation_translucent_top">Áttetsző (fent)</string>
+    <string name="power_menu_animation_translucent_bottom">Áttetsző (alul)</string>
+    <string name="power_menu_animation_rotate">Fordulás</string>
+
     <!-- Breathing Notifications -->
-    <string name="breathing_notifications_category">Breathing Notifications</string>
-    <string name="breathing_notifications_title">Breathing notifications</string>
-    <string name="sms_breath_title">Breathing SMS</string>
-    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the status bar</string>
-    <string name="missed_call_breath_title">Breathing Missed Call</string>
-    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
-    <string name="voicemail_breath_title">Breathing Voicemail</string>
-    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
+    <string name="breathing_notifications_category">Lélegző értesítések</string>
+    <string name="breathing_notifications_title">Lélegző értesítések</string>
+    <string name="sms_breath_title">Lélegző SMS</string>
+    <string name="sms_breath_summary">Lélegző hatást ad az értesítési sávon az SMS értesítéseknek.</string>
+    <string name="missed_call_breath_title">Lélegző elmulasztott hívás</string>
+    <string name="missed_call_breath_summary">Lélegző hatást ad az értesítési sávon az elmulasztott hívásoknak.</string>
+    <string name="voicemail_breath_title">Lélegző hangüzenet</string>
+    <string name="voicemail_breath_summary">Lélegző hatást ad az értesítési sávon a beérkező hangüzeneteknek.</string>
+
     <!-- Immersive mode messages -->
-    <string name="disable_immersive_message_title">Immersive mode messages</string>
-    <string name="disable_immersive_message_summary">Show all fullscreen messages</string>
+    <string name="disable_immersive_message_title">Ragadós üzenetek</string>
+    <string name="disable_immersive_message_summary">Mutassa az összes teljes képernyős üzenetet</string>
+
     <!-- Volume dialog timeout -->
-    <string name="volume_dialog_timeout_title">Volume dialog timeout</string>
+    <string name="volume_dialog_timeout_title">Hangkezelő panel időtúllépése</string>
+
     <!-- Volume keys control rint tone stream -->
     <string name="volume_keys_control_ring_tone_title">Control ring volume</string>
     <string name="volume_keys_control_ring_tone_summary">Control ring volume with volume keys instead of media volume</string>
+
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Kill app button</string>
     <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+
     <!-- Settings dashboard icon style -->
     <string name="theming_settings_dashboard_icons_title">Dashboard icons</string>
     <string name="theming_settings_dashboard_icons_default">Round</string>
@@ -1117,22 +1234,27 @@
     <string name="theming_settings_dashboard_icons_default_oneplus">Round (OnePlus)</string>
     <string name="theming_settings_dashboard_icons_plain">Oreo</string>
     <string name="theming_settings_dashboard_icons_plain_accent">Oreo (Accent)</string>
+
     <!-- UI styles -->
-    <string name="ui_style_title">UI style</string>
+    <string name="ui_style_title">Felület stílusa</string>
     <string name="ui_pixel">Pixel</string>
     <string name="ui_aosp">AOSP</string>
+
     <!-- ScreenRecord Shortcut -->
     <string name="screen_record_shortcut">Screenrecord shortcut</string>
     <string name="screen_record_shortcut_summary">Start screenrecord when Power + Volume Up buttons are pressed</string>
+
     <!-- ScreenShot Shortcut -->
     <string name="screen_shot_shortcut">Screenshot shortcut</string>
     <string name="screen_shot_shortcut_summary">Take screenshot when Power + Volume Down buttons are pressed</string>
+
     <!-- FastCharge LED -->
     <string name="fast_color_cat_title">Fast Charging</string>
     <string name="fast_charging_led_enabled_title">Fast charging LED</string>
     <string name="fast_charging_led_enabled_summary">When fast charging, use different color till 90% charged</string>
     <string name="fast_charging_light_color_title">Fast charging color</string>
     <string name="fast_charging_light_color_summary"></string>
+
     <!-- Battery Color Blend -->
     <string name="battery_light_blend_title">Blend colors</string>
     <string name="battery_light_blend_summary">Gradually change colors between full and empty</string>
@@ -1141,18 +1263,22 @@
     <string name="battery_blend_start">Empty</string>
     <string name="battery_blend_end">Full</string>
     <string name="battery_blend_between">Between</string>
+
     <!-- Volume Panel on Left -->
     <string name="volume_panel_on_left_title">Volume Panel on Left</string>
     <string name="volume_panel_on_left_summary">Show volume panel on the left side of the screen</string>
+
     <!-- Screenrecord quality -->
     <string name="screenrecord_quality_title">Screenrecord quality</string>
     <string name="screenrecord_quality_low">Low</string>
     <string name="screenrecord_quality_medium">Medium</string>
     <string name="screenrecord_quality_high">High</string>
+
     <!-- Stock recents -->
     <string name="recents_settings_title">Settings</string>
     <string name="stock_recents_title">Stock Recents</string>
     <string name="stock_recents_summary">Customize the additional settings for stock recents</string>
+
     <!-- Slim recents -->
     <string name="slim_recents_title">Slim Recents</string>
     <string name="slim_recents_summary">Enable to use an alternative recents screen</string>
@@ -1176,6 +1302,7 @@
     <string name="dialog_pick_iconpack_title">Pick icon pack</string>
     <string name="default_iconpack_title">Default icons</string>
     <string name="slim_recents_corner_radius_title">Card corner radius</string>
+
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge of the screen</string>
@@ -1184,6 +1311,7 @@
     <string name="slim_blacklist_apps_summary">Apps to not show in the panel</string>
     <string name="slim_blacklist_add_apps_title">Add app</string>
     <string name="slim_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
+
     <!-- Slim Recent App Sidebar  -->
     <string name="recent_app_sidebar_cat_title">App Sidebar</string>
     <string name="recent_app_sidebar_title">Recents app sidebar</string>
@@ -1199,6 +1327,7 @@
     <string name="recent_app_sidebar_open_simultaneously_title">Open simultaneously with recents</string>
     <string name="recent_app_sidebar_open_simultaneously_summary">Reduce recents opening lag by disabling this</string>
     <string name="default_auto_string">Default (App based)</string>
+
     <!-- Slim recents membar -->
     <string name="slim_recents_mem_display_category_title">Memory Bar</string>
     <string name="slim_recents_mem_display_title">Memory bar</string>
@@ -1207,36 +1336,44 @@
     <string name="slim_recents_mem_display_text_color">Memory bar text color</string>
     <string name="usb_default_config_title">USB configuration</string>
     <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
+
     <!-- Ambient music ticker -->
     <string name="force_ambient_for_media_title">Music ticker</string>
     <string name="force_ambient_for_media_summary">Display the playing music track info within Ambient display</string>
+
     <!-- QS background opacity -->
-    <string name="qs_panel_alpha_title">QS Panel opacity</string>
+    <string name="qs_panel_alpha_title">GyB panel átlátszóság</string>
+
     <!-- Recents icon pack -->
     <string name="recents_icon_pack_title">Icon Pack</string>
     <string name="recents_icon_pack_summary">Apply a custom icon pack for Recents panel</string>
+
     <!-- QS themes -->
-    <string name="qs_themes_category_title">QS Themes</string>
-    <string name="qs_panel_color_title">QS Panel color</string>
-    <string name="qs_bg_wall_title">Use Wallpaper colors</string>
-    <string name="qs_bg_wall_summary">Set QS background color from Wallpaper</string>
-    <string name="qs_bg_accent_title">Use Accent color</string>
-    <string name="qs_bg_accent_summary">Set QS background color from System Accent</string>
-    <string name="qs_bg_use_fw">Use default colors</string>
-    <string name="qs_bg_use_fw_summary">Disable custom QS styles for external theme engines</string>
+    <string name="qs_themes_category_title">GyB témák</string>
+    <string name="qs_panel_color_title">GyB panel színek</string>
+    <string name="qs_bg_wall_title">Háttérkép színeinek használata</string>
+    <string name="qs_bg_wall_summary">A GyB hátterének színét állítsa a háttérképből</string>
+    <string name="qs_bg_accent_title">Kiemelés színének használata</string>
+    <string name="qs_bg_accent_summary">A rendszer kiemelés színének használata</string>
+    <string name="qs_bg_use_fw">Alapértelmezett színek használata</string>
+    <string name="qs_bg_use_fw_summary">A GyB stílusok letiltása a külső témamotoroknak</string>
+
     <!-- Switch styles -->
     <string name="switch_style_title">Switch appearance</string>
     <string name="switch_default">Default</string>
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_oneplus">OnePlus</string>
+
     <!-- Ambient visualizer -->
     <string name="ambient_visualizer_title">Show on Ambient Display</string>
     <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display</string>
+
     <!-- Lockscreen items -->
     <string name="lockscreen_clock_title">Clock Widget</string>
     <string name="lockscreen_clock_summary">Display the clock widget</string>
     <string name="lockscreen_info_title">Info Widget</string>
     <string name="lockscreen_info_summary">Display date, weather, alarms and zen</string>
+
     <!-- Lockscreen clock styles -->
     <string name="lockscreen_clock_selection_title">Clock style</string>
     <string name="lockscreen_clock_selection_digital">Default</string>
@@ -1254,6 +1391,7 @@
     <string name="lockscreen_clock_selection_dot">Analog (Dot)</string>
     <string name="lockscreen_clock_selection_spectrum">Analog (Spectrum)</string>
     <string name="lockscreen_clock_selection_sneeky">Analog (Sneeky)</string>
+
     <!-- Display cutout options -->
     <string name="cutout_main">Display Cutout</string>
     <string name="cutout_main_summary">Customize notch settings</string>
@@ -1265,6 +1403,7 @@
     <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
     <string name="qs_edit_title">Edit icon</string>
     <string name="qs_edit_summary">Display the tile edit icon in quick settings footer</string>
+
     <!-- Edge gestures -->
     <string name="edge_gestures_title">Edge Gestures</string>
     <string name="edge_gestures_summary">Use edge gestures for navigation</string>
@@ -1296,6 +1435,7 @@
     <string name="file_header_select_title">Select local image</string>
     <string name="file_header_select_summary">Select image from storage</string>
     <string name="file_header_provider_title">Single image</string>
+
     <!-- Pie -->
     <string name="pa_pie_control_summary">Edge shortcuts and navigation controls</string>
     <string name="pa_pie_control_title">Pie Control</string>
@@ -1318,13 +1458,16 @@
     <string name="pa_pie_gravity_bottom">Bottom</string>
     <string name="pa_pie_gravity_right">Right</string>
     <string name="pa_pie_gravity_left">Left</string>
+
     <!-- Ambient category -->
     <string name="custom_ambient_display_title">Ambient options</string>
     <string name="custom_ambient_display_summary">Configure advanced ambient display behaviour</string>
+
     <!-- Theme picker -->
     <string name="theme_picker_title">Theme color</string>
     <string name="theme_picker_summary">Select color for Shady/Glassy themes</string>
     <string name="theme_picker_dialog_title">Select a theme color</string>
+
     <!-- Active edge -->
     <string name="active_edge_title">Active Edge</string>
     <string name="active_edge_summary">Configure Active Edge options</string>
@@ -1342,7 +1485,7 @@
     <string name="action_voice_search">Voice search</string>
     <string name="action_launch_camera">Kamera</string>
     <string name="action_last_app">Last app</string>
-    <string name="action_splitscreen">Split screen</string>
+    <string name="action_splitscreen">Osztott képernyő</string>
     <string name="action_flashlight">Zseblámpa</string>
     <string name="action_clear_notifications">Clear notifications</string>
     <string name="action_volume_panel">Volume panel</string>
@@ -1350,17 +1493,20 @@
     <string name="action_notifications"> Értesítések</string>
     <string name="action_power_menu">Power menu</string>
     <string name="action_screenshot">Screenshot</string>
-    <string name="action_qs_panel">QS panel</string>
-    <string name="action_app_action">Application</string>
-    <string name="action_ringer_modes">Ringer modes</string>
+    <string name="action_qs_panel">GyB panel</string>
+    <string name="action_app_action">Alkalmazás</string>
+    <string name="action_ringer_modes">Csengő módok</string>
+
     <!-- Keyguard multiuser switch -->
     <string name="keyguard_multiuser_switch_title">Multiuser switch</string>
     <string name="keyguard_multiuser_switch_summary">Show multiuser switch on the statusbar</string>
+
     <!-- Torch Power button gestures -->
     <string name="power_button_torch_gesture_title">Screen off torch</string>
     <string name="power_button_torch_gesture_none">Disabled</string>
     <string name="power_button_torch_gesture_dt">Double tap power button</string>
     <string name="power_button_torch_gesture_lp">Long press power button</string>
+
     <!-- Adaptive icon shape -->
     <string name="icon_shape_title">App icon shape</string>
     <string name="icon_shape_system_default">System default</string>
