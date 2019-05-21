@@ -447,6 +447,16 @@
                 android:data="https://t.me/beingstargazer" />
         </Preference>
 
+		<Preference
+            android:id="@+id/device_rosy"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_rosy_summary"
+            android:title="@string/device_rosy" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Sukrut4778" />
+        </Preference>
+
         <Preference
             android:id="@+id/device_vince"
             android:icon="@drawable/havoc_device"

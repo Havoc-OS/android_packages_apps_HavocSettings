@@ -154,6 +154,9 @@
     <string name="device_santoni" translatable="false">Xiaomi Redmi 4X</string>
     <string name="device_santoni_summary" translatable="false">santoni\nViraj Patil (Stargazer19)</string>
 
+    <string name="device_rosy" translatable="false">Xiaomi Redmi 5</string>
+    <string name="device_rosy_summary" translatable="false">rosy\nSukrut Bhagwat (Sukrut4778)</string>	
+
     <string name="device_vince" translatable="false">Xiaomi Redmi 5 Plus</string>
     <string name="device_vince_summary" translatable="false">vince\nAbubakar Yagoub (Blacksuan19)</string>
 
