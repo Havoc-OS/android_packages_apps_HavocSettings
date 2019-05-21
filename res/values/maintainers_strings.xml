@@ -193,4 +193,7 @@
     <string name="device_lettuce" translatable="false">YU Yuphoria</string>
     <string name="device_lettuce_summary" translatable="false">lettuce\nGaurav Kumar (Gaurav24)</string>
 
+    <string name="device_yureka2" translatable="false">YU Yureka 2</string>
+    <string name="device_yureka2_summary" translatable="false">YUREKA2\nJathin (jmjxperia)</string>
+
 </resources>
