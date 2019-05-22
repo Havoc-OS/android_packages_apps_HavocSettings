@@ -523,6 +523,16 @@
         android:title="@string/device_category_lenovo_title" >
 
         <Preference
+            android:id="@+id/device_a6000"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_a6000_summary"
+            android:title="@string/device_a6000" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/IvanHephaestus" />
+        </Preference>
+
+        <Preference
             android:id="@+id/device_kuntao"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_kuntao_summary"

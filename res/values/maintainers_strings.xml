@@ -175,6 +175,9 @@
     <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
     <string name="device_violet_summary" translatable="false">violet\nRuturaj Kadam</string>
 
+    <string name="device_a6000" translatable="false">Lenovo A6000/Plus</string>
+    <string name="device_a6000_summary" translatable="false">a6000\nIvan Hephaestus</string>
+
     <string name="device_kuntao" translatable="false">Lenovo P2</string>
     <string name="device_kuntao_summary" translatable="false">kuntao\nAdvaith Bhat (advaithbhat)</string>
 
