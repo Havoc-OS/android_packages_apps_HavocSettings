@@ -497,15 +497,15 @@
                 android:data="https://t.me/notallowedontelegram" />
         </Preference>
 
-        <!--<Preference
+        <Preference
             android:id="@+id/device_tulip"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_tulip_summary"
             android:title="@string/device_tulip" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/Advertpavan" />
-        </Preference>-->
+                android:data="https://t.me/Linuxlover1337" />
+        </Preference>
 
         <Preference
             android:id="@+id/device_violet"
