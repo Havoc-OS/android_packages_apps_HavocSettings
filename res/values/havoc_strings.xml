@@ -1675,4 +1675,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+
+    <string name="lock_screen_weather_title">Show Weather</string>
+    <string name="lock_screen_weather_summary">Display the current weather info on lockscreen</string>
 </resources>
