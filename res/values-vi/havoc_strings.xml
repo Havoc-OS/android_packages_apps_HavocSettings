@@ -560,7 +560,7 @@
     <string name="gesture_action_timeout_title">Hết thời gian kích hoạt vuốt</string>
     <string name="bottom_gestures_feedback_duration_title">Thời gian chờ phản hồi</string>
     <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_position_bottom_title">Màu thanh trượt độ sáng</string>
+    <string name="qs_brightness_position_bottom_title">Thanh điều chỉnh độ sáng ở bên dưới bảng QS</string>
     <string name="qs_brightness_position_bottom_summary">Hiển thị thanh trượt chỉnh độ sáng phía dưới bảng cài đặt nhanh</string>
     <string name="qs_tile_title_visibility_title">Ô tiêu đề</string>
     <string name="qs_tile_title_visibility_summary">Hiển thị tiêu đề dưới mỗi ô</string>
