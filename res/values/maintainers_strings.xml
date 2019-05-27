@@ -124,6 +124,9 @@
     <string name="device_platina" translatable="false">Xiaomi Mi 8 Lite</string>
     <string name="device_platina_summary" translatable="false">platina\nYuhan (rsyhan)\nYuanyi (GeorgeYuan233)</string>
 
+    <string name="device_sirius" translatable="false">Xiaomi Mi 8 SE</string>
+    <string name="device_sirius_summary" translatable="false">sirius\nZakwan Zach (Zachx)</string>
+
     <string name="device_tissot" translatable="false">Xiaomi Mi A1</string>
     <string name="device_tissot_summary" translatable="false">tissot\nMountaser Halak</string>
 
