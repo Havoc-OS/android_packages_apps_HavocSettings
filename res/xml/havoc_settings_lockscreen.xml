@@ -170,6 +170,12 @@
             android:defaultValue="true"
             android:dependency="show_lockscreen_indicator_display" />
     
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_charging_animation"
+            android:title="@string/lockscreen_charging_animation_title"
+            android:summary="@string/lockscreen_charging_animation_summary"
+            android:defaultValue="true" />
+    
         <com.havoc.support.preferences.SecureSettingSwitchPreference 
             android:key="show_lock_shortcuts" 
             android:title="@string/lockscreen_hide_shortcuts_title" 

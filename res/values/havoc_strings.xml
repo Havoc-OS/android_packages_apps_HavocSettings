@@ -1678,4 +1678,8 @@
 
     <string name="lock_screen_weather_title">Show Weather</string>
     <string name="lock_screen_weather_summary">Display the current weather info on lockscreen</string>
+
+    <!-- Charging animation -->
+    <string name="lockscreen_charging_animation_title">Charging animation</string>
+    <string name="lockscreen_charging_animation_summary">Display a bolt animation when the device is charging</string>
 </resources>
