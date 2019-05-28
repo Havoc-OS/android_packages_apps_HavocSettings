@@ -63,6 +63,14 @@
         android:key="qs_category"
         android:title="@string/qs_themes_category_title" >
 
+        <com.havoc.support.preferences.CustomSeekBarPreference
+            android:key="qs_panel_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:max="255"
+            settings:min="100"
+            settings:interval="5"
+            android:defaultValue="255" />
+
         <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_fw"
             android:title="@string/qs_bg_use_fw"
@@ -91,16 +99,6 @@
             android:persistent="false"
             android:dependency="qs_panel_bg_use_fw"
             settings:defaultColorValue="0xFFFFFFFF" />
-
-        <com.havoc.support.preferences.CustomSeekBarPreference
-            android:key="qs_panel_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:max="255"
-            settings:min="100"
-            settings:interval="5"
-            android:defaultValue="255"
-            android:persistent="false"
-            android:dependency="qs_panel_bg_use_fw" />
 
 	    <ListPreference
             android:key="qs_header_style"
