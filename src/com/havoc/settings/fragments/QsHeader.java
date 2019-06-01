@@ -58,6 +58,7 @@ public class QsHeader extends SettingsPreferenceFragment
     private CustomSeekBarPreference mHeaderShadow;
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
+    private String mStaticHeaderProvider;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
 
@@ -75,6 +76,7 @@ public class QsHeader extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
 
         mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
+        mStaticHeaderProvider = getResources().getString(R.string.static_header_provider);
         mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
 
@@ -210,16 +212,17 @@ public class QsHeader extends SettingsPreferenceFragment
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_PROVIDER);
         if (providerName == null) {
             providerName = mDaylightHeaderProvider;
-        }
-        if (!providerName.equals(mDaylightHeaderProvider)) {
+        } else if (providerName.equals(mFileHeaderProvider)) {
             providerName = mFileHeaderProvider;
-        }
+        } else if (providerName.equals(mStaticHeaderProvider)) {
+           providerName = mStaticHeaderProvider;
+        } else providerName = mDaylightHeaderProvider;
         int valueIndex = mHeaderProvider.findIndexOfValue(providerName);
         mHeaderProvider.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
         mHeaderProvider.setSummary(mHeaderProvider.getEntry());
         mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
         mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
-        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && providerName.equals(mFileHeaderProvider));
+        mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && providerName.equals(mStaticHeaderProvider));
     }
 
     @Override
