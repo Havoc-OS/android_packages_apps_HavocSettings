@@ -23,13 +23,23 @@
         android:title="@string/device_category_generic_title" >
 
         <Preference
+            android:id="@+id/device_generica64aonly"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_generica64aonly_summary"
+            android:title="@string/device_generica64aonly" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/vince31fr" />
+        </Preference>
+
+        <Preference
             android:id="@+id/device_genericarmaonly"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_genericarmaonly_summary"
             android:title="@string/device_genericarmaonly" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/mountaser_halak" />
+                android:data="https://t.me/vince31fr" />
         </Preference>
 
         <Preference
@@ -39,7 +49,7 @@
             android:title="@string/device_genericarm64aonly" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/mountaser_halak" />
+                android:data="https://t.me/vince31fr" />
         </Preference>
 
         <Preference
@@ -49,7 +59,7 @@
             android:title="@string/device_genericarm64ab" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/mountaser_halak" />
+                android:data="https://t.me/vince31fr" />
         </Preference>
     </PreferenceCategory>
  

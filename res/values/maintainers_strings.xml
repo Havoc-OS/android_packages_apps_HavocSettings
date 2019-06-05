@@ -34,14 +34,17 @@
     <string name="device_category_yu_title" translatable="false">YU</string>
 
     <!-- Devices & Maintainers -->
+    <string name="device_generica64aonly" translatable="false">Generic System Image</string>
+    <string name="device_generica64aonly_summary" translatable="false">a64-aonly\nVincent Vidal</string>
+
     <string name="device_genericarmaonly" translatable="false">Generic System Image</string>
-    <string name="device_genericarmaonly_summary" translatable="false">arm-aonly\nMountaser Halak</string>
+    <string name="device_genericarmaonly_summary" translatable="false">arm-aonly\nVincent Vidal</string>
 
     <string name="device_genericarm64aonly" translatable="false">Generic System Image</string>
-    <string name="device_genericarm64aonly_summary" translatable="false">arm64-aonly\nMountaser Halak</string>
+    <string name="device_genericarm64aonly_summary" translatable="false">arm64-aonly\nVincent Vidal</string>
 
     <string name="device_genericarm64ab" translatable="false">Generic System Image</string>
-    <string name="device_genericarm64ab_summary" translatable="false">arm64-ab\nMountaser Halak</string>
+    <string name="device_genericarm64ab_summary" translatable="false">arm64-ab\nVincent Vidal</string>
 
     <string name="device_oneplus2" translatable="false">OnePlus 2</string>
     <string name="device_oneplus2_summary" translatable="false">oneplus2\nJef (SimplyJeevS)</string>
