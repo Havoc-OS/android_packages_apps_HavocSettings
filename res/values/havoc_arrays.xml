@@ -975,13 +975,17 @@
         <item>@string/qstile_circle_gradient</item>
         <item>@string/qstile_circle_trim</item>
         <item>@string/qstile_cookie</item>
+        <item>@string/qstile_cosmos</item>
+        <item>@string/qstile_dividedcircle</item>
         <item>@string/qstile_dottedcircle</item>
         <item>@string/qstile_circle_dualtone</item>
         <item>@string/qstile_dual_tone_circle</item>
         <item>@string/qstile_ink</item>
         <item>@string/qstile_inkdrop</item>
         <item>@string/qstile_mountain</item>
+        <item>@string/qstile_neon</item>
         <item>@string/qstile_ninja</item>
+        <item>@string/qstile_oos</item>
         <item>@string/qstile_oreo</item>
         <item>@string/qstile_oreo_circle_trim</item>
         <item>@string/qstile_oreo_squircle_trim</item>
@@ -990,6 +994,7 @@
         <item>@string/qstile_squircle</item>
         <item>@string/qstile_squircle_trim</item>
         <item>@string/qstile_teardrop</item>
+        <item>@string/qstile_triangle</item>
         <item>@string/qstile_wavey</item>
     </string-array>
     <string-array name="qs_selector_values" translatable="false">
@@ -997,13 +1002,17 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>24</item>
+        <item>23</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
         <item>8</item>
         <item>9</item>
+        <item>20</item>
         <item>10</item>
+        <item>21</item>
         <item>11</item>
         <item>12</item>
         <item>13</item>
@@ -1012,6 +1021,7 @@
         <item>16</item>
         <item>17</item>
         <item>18</item>
+        <item>22</item>
         <item>19</item>
     </string-array>
 
