@@ -32,7 +32,7 @@
         android:key="gaming_mode_hw_keys_toggle"
         android:title="@string/gaming_mode_hardware_keys_title"
         android:summary="@string/gaming_mode_hardware_keys_summary"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <!-- Manual brightness -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
@@ -41,12 +41,13 @@
         android:summary="@string/gaming_mode_brightness_summary"
         android:defaultValue="true" />
 
-    <!-- DND -->
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="gaming_mode_enter_dnd"
-        android:title="@string/gaming_mode_dnd_title"
-        android:summary="@string/gaming_mode_dnd_summary"
-        android:defaultValue="true" />
+    <com.havoc.support.preferences.SystemSettingListPreference
+        android:key="gaming_mode_ringer_mode"
+        android:title="@string/gaming_mode_ringer_title"
+        android:entries="@array/gaming_mode_ringer_entries"
+        android:entryValues="@array/gaming_mode_ringer_values"
+        android:defaultValue="0"
+        android:summary="%s" />
 
     <!-- Max media volume -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
