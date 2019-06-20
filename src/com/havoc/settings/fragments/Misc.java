@@ -32,6 +32,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
 
+import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
+
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -41,9 +43,11 @@ public class Misc extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "3";
+    private static final String GAMING_MODE_MASTER_SWITCH = "gaming_mode_master_switch";
 
     private ListPreference mMSOB;
     private ListPreference mScrollingCachePref;
+    private SystemSettingMasterSwitchPreference mGamingMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,11 @@ public class Misc extends SettingsPreferenceFragment
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
         mScrollingCachePref.setSummary(mScrollingCachePref.getEntry());
         mScrollingCachePref.setOnPreferenceChangeListener(this);
+
+        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_MASTER_SWITCH);
+        mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.GAMING_MODE_MASTER_SWITCH, 1) == 1));
+        mGamingMode.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -81,6 +90,11 @@ public class Misc extends SettingsPreferenceFragment
             int index = mScrollingCachePref.findIndexOfValue(value);
             SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, value);
             mScrollingCachePref.setSummary(mScrollingCachePref.getEntries()[index]);
+            return true;
+		} else if (preference == mGamingMode) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.GAMING_MODE_MASTER_SWITCH, value ? 1 : 0);
             return true;
         }
         return false;

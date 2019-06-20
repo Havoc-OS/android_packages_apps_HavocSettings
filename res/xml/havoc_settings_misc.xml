@@ -18,11 +18,12 @@
 	android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="gaming_mode"
+    <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="gaming_mode_master_switch"
+        android:fragment="com.havoc.settings.fragments.GamingMode"
         android:title="@string/gaming_mode_title"
         android:summary="@string/gaming_mode_summary"
-        android:fragment="com.havoc.settings.fragments.GamingMode" />
+        android:defaultValue="true" />
 
     <ListPreference 
         android:key="media_scanner_on_boot" 
