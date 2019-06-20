@@ -13,13 +13,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	android:title="@string/gaming_mode_title">
 
-    <!-- Loudspeaker for calls -->
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="gaming_mode_speaker_in_call_toggle"
-        android:title="@string/gaming_mode_speaker_title"
-        android:summary="@string/gaming_mode_speaker_summary"
-        android:defaultValue="false" />
-
     <!-- HeadsUP -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="gaming_mode_headsup_toggle"
