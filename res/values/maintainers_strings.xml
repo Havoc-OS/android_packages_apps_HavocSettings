@@ -64,6 +64,9 @@
     <string name="device_oneplus6t" translatable="false">OnePlus 6T</string>
     <string name="device_oneplus6t_summary" translatable="false">fajita\nSoufiane Boulbayem (Eliminater)\nTim Wall (Linuxpenguin)</string>
 
+    <string name="device_guacamole" translatable="false">OnePlus 7 Pro</string>
+    <string name="device_guacamole_summary" translatable="false">guacamole\nAnushek Prasal (SKULSHADY)</string>
+
     <string name="device_taimen" translatable="false">Google Pixel 2 XL</string>
     <string name="device_taimen_summary" translatable="false">taimen\nSteve Provancal (slothdabski)</string>
 
