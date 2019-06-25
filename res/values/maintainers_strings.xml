@@ -46,6 +46,9 @@
     <string name="device_genericarm64ab" translatable="false">Generic System Image</string>
     <string name="device_genericarm64ab_summary" translatable="false">arm64-ab\nVincent Vidal</string>
 
+    <string name="device_bacon" translatable="false">OnePlus One</string>
+    <string name="device_bacon_summary" translatable="false">bacon\nClint Thebus (ClintT)</string>
+
     <string name="device_oneplus2" translatable="false">OnePlus 2</string>
     <string name="device_oneplus2_summary" translatable="false">oneplus2\nJef (SimplyJeevS)</string>
 
