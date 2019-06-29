@@ -13,21 +13,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	android:title="@string/gaming_mode_title">
 
-    <!-- HeadsUP -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="gaming_mode_headsup_toggle"
         android:title="@string/gaming_mode_headsup_title"
         android:summary="@string/gaming_mode_headsup_summary"
         android:defaultValue="true" />
 
-    <!-- Hardware keys -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="gaming_mode_hw_keys_toggle"
         android:title="@string/gaming_mode_hardware_keys_title"
         android:summary="@string/gaming_mode_hardware_keys_summary"
         android:defaultValue="false" />
 
-    <!-- Manual brightness -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="gaming_mode_manual_brightness_toggle"
         android:title="@string/gaming_mode_brightness_title"
@@ -50,14 +47,12 @@
         android:defaultValue="3"
         android:summary="%s" />
 
-    <!-- Dynamic gaming mode -->
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="gaming_mode_dynamic_state"
         android:title="@string/gaming_mode_dynamic_title"
         android:summary="@string/gaming_mode_dynamic_summary"
         android:defaultValue="false" />
 
-    <!-- App picker activity for gaming mode -->
     <PreferenceCategory
         android:title="@string/gaming_mode_app_picker_title"
         android:key="gamingmode_applications">

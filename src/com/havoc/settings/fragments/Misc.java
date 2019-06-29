@@ -43,7 +43,7 @@ public class Misc extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "3";
-    private static final String GAMING_MODE_MASTER_SWITCH = "gaming_mode_master_switch";
+    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
 
     private ListPreference mMSOB;
     private ListPreference mScrollingCachePref;
@@ -70,9 +70,9 @@ public class Misc extends SettingsPreferenceFragment
         mScrollingCachePref.setSummary(mScrollingCachePref.getEntry());
         mScrollingCachePref.setOnPreferenceChangeListener(this);
 
-        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_MASTER_SWITCH);
+        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
         mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.GAMING_MODE_MASTER_SWITCH, 1) == 1));
+                Settings.System.GAMING_MODE_ENABLED, 0) == 1));
         mGamingMode.setOnPreferenceChangeListener(this);
     }
 
@@ -94,7 +94,7 @@ public class Misc extends SettingsPreferenceFragment
 		} else if (preference == mGamingMode) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.GAMING_MODE_MASTER_SWITCH, value ? 1 : 0);
+                    Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
