@@ -88,6 +88,8 @@ public class GamingMode extends SettingsPreferenceFragment
         // Get launch-able applications
         addPreferencesFromResource(R.xml.gaming_mode_settings);
 
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.add_gaming_mode_package_summary);
+
         final PreferenceScreen prefScreen = getPreferenceScreen();
         mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
 
