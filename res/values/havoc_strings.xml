@@ -1263,7 +1263,7 @@
     <string name="disable_immersive_message_summary">Show all fullscreen messages</string>
 
     <!-- Volume dialog timeout -->
-    <string name="volume_dialog_timeout_title">Volume dialog timeout</string>
+    <string name="volume_dialog_timeout_title">Volume panel timeout</string>
 
     <!-- Volume keys control rint tone stream -->
     <string name="volume_keys_control_ring_tone_title">Control ring volume</string>
@@ -1311,7 +1311,7 @@
     <string name="battery_blend_between">Between</string>
 
     <!-- Volume Panel on Left -->
-    <string name="volume_panel_on_left_title">Volume Panel on Left</string>
+    <string name="volume_panel_on_left_title">Volume panel on left</string>
     <string name="volume_panel_on_left_summary">Show volume panel on the left side of the screen</string>
 
     <!-- Screenrecord quality -->
