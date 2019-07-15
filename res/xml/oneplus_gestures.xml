@@ -37,13 +37,15 @@
         settings:units="ms"
         android:persistent="false" />
 
-    <com.havoc.support.preferences.SystemSettingListPreference
-        android:key="bottom_gesture_navigation_feedback_duration"
-        android:entries="@array/bottom_gestures_feedback_time_labels"
-        android:entryValues="@array/bottom_gestures_feedback_time"
+    <com.havoc.support.preferences.CustomSeekBarPreference
+        android:key="gesture_feedback_duration"
         android:title="@string/bottom_gestures_feedback_duration_title"
-        android:summary="%s"
-        android:defaultValue="50" />
+        android:max="250"
+        settings:min="0"
+        settings:interval="5"
+        android:defaultValue="50"
+        settings:units="ms"
+        android:persistent="false" />
 
     <Preference
         android:key="oneplus_gestures_description"

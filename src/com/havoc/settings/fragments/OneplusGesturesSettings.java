@@ -47,9 +47,11 @@ public class OneplusGesturesSettings extends SettingsPreferenceFragment implemen
 
     private static final String KEY_SWIPE_LENGTH = "gesture_swipe_length";
     private static final String KEY_SWIPE_TIMEOUT = "gesture_swipe_timeout";
+    private static final String KEY_FEEDBACK_DURATION = "gesture_feedback_duration";
 
     private CustomSeekBarPreference mSwipeTriggerLength;
     private CustomSeekBarPreference mSwipeTriggerTimeout;
+    private CustomSeekBarPreference mFeedbackDuration;
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -69,6 +71,11 @@ public class OneplusGesturesSettings extends SettingsPreferenceFragment implemen
         mSwipeTriggerTimeout.setValue(triggerTimeout);
         mSwipeTriggerTimeout.setOnPreferenceChangeListener(this);
 
+        mFeedbackDuration = (CustomSeekBarPreference) findPreference(KEY_FEEDBACK_DURATION);
+        int feedbackDuration = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_FEEDBACK_DURATION, 50);
+        mFeedbackDuration.setValue(feedbackDuration);
+        mFeedbackDuration.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -83,6 +90,11 @@ public class OneplusGesturesSettings extends SettingsPreferenceFragment implemen
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
+            return true;
+        } else if (preference == mFeedbackDuration) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.BOTTOM_GESTURE_FEEDBACK_DURATION, value);
             return true;
         }
         return false;
