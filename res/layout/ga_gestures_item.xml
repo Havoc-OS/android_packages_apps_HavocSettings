@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 Havoc-OS
+<!-- Copyright (C) 2009 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,17 +13,19 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
 
-    <!-- ColorPicker -->
-    <color name="list_background_pressed">#ff555555</color>
-    <color name="transparent">@android:color/transparent</color>
-	
-    <color name="switchBarBackgroundActivatedColor">@*android:color/accent_device_default_light</color>
-    <color name="floating_action_button_touch_tint">#80ffffff</color> 
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-    <color name="actionbar_icon_color">#ffffff</color>
+    android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
 
-    <color name="ga_gesture_color">@*android:color/accent_material_dark</color>
+    android:drawablePadding="12dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
 
-</resources>
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:textAppearance="?android:attr/textAppearanceLarge" />

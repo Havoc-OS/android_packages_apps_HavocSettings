@@ -47,6 +47,13 @@
             android:key="carbongestures"  
             android:fragment="com.havoc.settings.fragments.CarbonGesturesSettings" />  
 
+        <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="gesture_anywhere_enabled"
+            android:fragment="com.havoc.settings.fragments.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title"
+            android:summary="@string/gesture_anywhere_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -67,13 +74,12 @@
             android:summary="@string/edge_gestures_summary"
             android:defaultValue="false" />
 
+        <com.havoc.support.preferences.SecureSettingMasterSwitchPreference
+            android:key="pie_state"
+            android:fragment="com.havoc.settings.fragments.PieSettings"
+            android:title="@string/pa_pie_control_title"
+            android:summary="@string/pa_pie_control_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
-
-    <com.havoc.support.preferences.SecureSettingMasterSwitchPreference
-        android:key="pie_state"
-        android:fragment="com.havoc.settings.fragments.PieSettings"
-        android:title="@string/pa_pie_control_title"
-        android:summary="@string/pa_pie_control_summary"
-        android:defaultValue="false" />
-
 </PreferenceScreen>

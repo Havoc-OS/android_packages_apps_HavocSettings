@@ -51,10 +51,12 @@ public class Gestures extends SettingsPreferenceFragment implements
     private static final String EDGE_GESTURES_ENABLED = "edge_gestures_enabled";
     private static final String PIE_STATE = "pie_state";
     private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
+    private static final String GESTURE_ANYWHERE_ENABLED = "gesture_anywhere_enabled";
 
     private SystemSettingMasterSwitchPreference mUseBottomGestureNavigation;
     private SecureSettingMasterSwitchPreference mEdgeGesturesEnabled; 
     private SecureSettingMasterSwitchPreference mPieGestureEnabled; 
+    private SystemSettingMasterSwitchPreference mGestureAnywhereEnabled; 
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -78,6 +80,11 @@ public class Gestures extends SettingsPreferenceFragment implements
         mPieGestureEnabled.setOnPreferenceChangeListener(this);
         int usePieGestures = Settings.Secure.getInt(resolver, PIE_STATE, 0);
         mPieGestureEnabled.setChecked(usePieGestures != 0);
+
+        mGestureAnywhereEnabled = (SystemSettingMasterSwitchPreference) findPreference(GESTURE_ANYWHERE_ENABLED);
+        mGestureAnywhereEnabled.setOnPreferenceChangeListener(this);
+        int gestureAnywhereEnabled = Settings.System.getInt(resolver, GESTURE_ANYWHERE_ENABLED, 0);
+        mGestureAnywhereEnabled.setChecked(gestureAnywhereEnabled != 0);
 
         Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
         if (!getResources().getBoolean(R.bool.has_active_edge)) {
@@ -117,6 +124,10 @@ public class Gestures extends SettingsPreferenceFragment implements
         } else if (preference == mPieGestureEnabled) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(resolver, PIE_STATE, value ? 1 : 0);
+            return true;
+        } else if (preference == mGestureAnywhereEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, GESTURE_ANYWHERE_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
