@@ -1742,4 +1742,10 @@
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
+    <!-- Lockscreen Date styles -->
+    <string name="lockscreen_date_selection_title">Date style</string>
+    <string name="lockscreen_date_selection_default">Default</string>
+    <string name="lockscreen_date_selection_str_box">Semi-Transparent (Box)</string>
+    <string name="lockscreen_date_selection_str_round">Semi-Transparent</string>
+
 </resources>
