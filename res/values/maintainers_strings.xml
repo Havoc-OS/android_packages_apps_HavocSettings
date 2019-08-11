@@ -145,6 +145,9 @@
     <string name="device_oxygen" translatable="false">Xiaomi Mi Max 2</string>
     <string name="device_oxygen_summary" translatable="false">oxygen\nRakesh Roshan (Hard_Rocks83)</string>
 
+    <string name="device_lithium" translatable="false">Xiaomi Mi Mix</string>
+    <string name="device_lithium_summary" translatable="false">lithium\nNicholas Magill (Inkypen)</string>
+
     <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
     <string name="device_chiron_summary" translatable="false">chiron\nRishi Shukla (lightvortex)</string>
 

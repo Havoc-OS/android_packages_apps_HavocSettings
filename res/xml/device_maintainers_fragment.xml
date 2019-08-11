@@ -418,6 +418,16 @@
         </Preference>
 
         <Preference
+            android:id="@+id/device_lithium"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_lithium_summary"
+            android:title="@string/device_lithium" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Inkypen" />
+        </Preference>
+
+        <Preference
             android:id="@+id/device_chiron"
             android:icon="@drawable/havoc_device"
             android:summary="@string/device_chiron_summary"
