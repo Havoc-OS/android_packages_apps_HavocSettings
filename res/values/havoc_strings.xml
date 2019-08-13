@@ -1590,7 +1590,7 @@
     <string name="aggressive_idle_title">Aggressive Idle</string>
     <string name="aggressive_idle_summary">Enter device idle more frequently and wake up less</string>
     <string name="aggressive_standby_title">Aggressive Standby</string>
-    <string name="aggressive_standby_summary">Restrict apps from running the background</string>
+    <string name="aggressive_standby_summary">Restrict apps from running in the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver </string>
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
 
@@ -1750,7 +1750,7 @@
     <string name="trigger_width_title">Trigger width</string>
     <string name="trigger_width_summary">Adjust the width of the trigger area</string>
     <string name="trigger_top_title">Trigger position</string>
-    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_top_summary">Adjust the vertical position of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
