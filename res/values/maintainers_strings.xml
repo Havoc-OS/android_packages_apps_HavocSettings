@@ -178,6 +178,9 @@
     <string name="device_sakura" translatable="false">Xiaomi Redmi 6 Pro</string>
     <string name="device_sakura_summary" translatable="false">sakura\nTushar Mahajan (mahajant99)</string>
 
+    <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
+    <string name="device_raphael_summary" translatable="false">raphael\nJosh Leivenzon (theOriginalSuperl2)</string>
+
     <string name="device_kenzo" translatable="false">Xiaomi Redmi Note 3</string>
     <string name="device_kenzo_summary" translatable="false">kenzo\nPratik Pithore (pratik@2799)</string>
 
