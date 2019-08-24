@@ -1747,5 +1747,13 @@
     <string name="lockscreen_date_selection_default">Default</string>
     <string name="lockscreen_date_selection_str_box">Semi-Transparent (Box)</string>
     <string name="lockscreen_date_selection_str_round">Semi-Transparent</string>
+    <string name="lockscreen_date_selection_qbeta_style">Android Q</string>
+    <string name="lockscreen_date_selection_str_accent">Accent</string>
+    <string name="lockscreen_date_selection_str_accent_day">Accent (Alt)</string>
+    <string name="lockscreen_date_selection_str_accent_transparent">Accent (Transparent)</string>
+    <string name="lockscreen_date_selection_str_accent_transparent_day">Accent (Transparent - Alt)</string>
+    <string name="lockscreen_date_selection_str_gradient">Gradient</string>
+    <string name="lockscreen_date_selection_str_border_accent">Accent (Borders)</string>
+    <string name="lockscreen_date_selection_str_border_gradient">Gradient (Borders)</string>
 
 </resources>
