@@ -40,11 +40,6 @@
         android:defaultValue="false" />
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference
-        android:key="global_actions_screenrecord"
-        android:title="@string/powermenu_screenrecord_title"
-        android:defaultValue="false" />
-
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="global_actions_onthego"
         android:title="@string/global_actions_onthego_title"
         android:defaultValue="false" />

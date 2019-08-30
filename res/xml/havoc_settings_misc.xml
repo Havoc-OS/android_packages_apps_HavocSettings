@@ -67,19 +67,6 @@
         android:title="@string/misc_screenshot">
 
         <com.havoc.support.preferences.SystemSettingSwitchPreference
-            android:key="screen_record_shortcut"
-            android:title="@string/screen_record_shortcut"
-            android:summary="@string/screen_record_shortcut_summary"
-            android:defaultValue="true" />
-
-        <com.havoc.support.preferences.SystemSettingListPreference
-            android:key="screenrecord_quality_mode"
-            android:entries="@array/screenrecord_quality_entries"
-            android:entryValues="@array/screenrecord_quality_values"
-            android:title="@string/screenrecord_quality_title"
-            android:defaultValue="2" />
-
-        <com.havoc.support.preferences.SystemSettingSwitchPreference
             android:key="screen_shot_shortcut"
             android:title="@string/screen_shot_shortcut"
             android:summary="@string/screen_shot_shortcut_summary"
