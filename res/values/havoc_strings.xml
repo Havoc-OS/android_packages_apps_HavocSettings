@@ -1755,5 +1755,7 @@
     <string name="lockscreen_date_selection_str_gradient">Gradient</string>
     <string name="lockscreen_date_selection_str_border_accent">Accent (Borders)</string>
     <string name="lockscreen_date_selection_str_border_gradient">Gradient (Borders)</string>
+    <string name="lockscreen_date_selection_str_half_gradient">Gradient (Transparent ending)</string>
+    <string name="lockscreen_date_selection_str_half_accent">Accent (Transparent ending)</string>
 
 </resources>
