@@ -651,6 +651,8 @@
     <string name="use_bottom_gesture_description">Must hide navbar to use these gestures. Swipe up from left/right is back. Swipe up center is home. Swipe up and hold is recents.</string>
     <string name="gesture_swipe_length_title">Swipe trigger height</string>
     <string name="gesture_action_timeout_title">Swipe trigger timeout</string>
+    <string name="bottom_gestures_feedback_title">Haptic feedback</string>
+    <string name="bottom_gestures_feedback_summary">Vibrate when gestures are triggered</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>

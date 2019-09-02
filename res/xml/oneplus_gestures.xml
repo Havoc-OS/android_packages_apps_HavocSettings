@@ -19,6 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/use_bottom_gesture_title">
 
+    <com.havoc.support.preferences.SystemSettingSwitchPreference
+        android:key="bottom_gesture_feedback"
+        android:title="@string/bottom_gestures_feedback_title"
+        android:summary="@string/bottom_gestures_feedback_summary"
+        android:defaultValue="true" />
+
     <com.havoc.support.preferences.CustomSeekBarPreference
         android:key="gesture_swipe_length"
         android:title="@string/gesture_swipe_length_title"
