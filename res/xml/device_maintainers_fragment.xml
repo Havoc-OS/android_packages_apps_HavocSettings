@@ -299,7 +299,7 @@
             android:title="@string/device_evert" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/fjsanti" />
+                android:data="https://t.me/fjsantim" />
         </Preference>
 
         <Preference
@@ -385,6 +385,16 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Zachx" />
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_cepheus"
+            android:icon="@drawable/havoc_device"
+            android:summary="@string/device_cepheus_summary"
+            android:title="@string/device_cepheus" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/fjsantim" />
         </Preference>
 
         <Preference
