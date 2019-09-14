@@ -374,7 +374,7 @@
             android:title="@string/device_platina" >
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/rsyhan" />
+                android:data="https://t.me/riquebarros17" />
         </Preference>
 
         <Preference
